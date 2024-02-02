@@ -31,6 +31,22 @@ on_colonized = {
 	}
 }
 
+# Scope: Leader (just before unassignment)
+# Fires if a leader is unassigned from their position for any reason (including being assigned elsewhere)
+on_leader_unassigned = {
+	events = {
+		gem_off_colors.1042
+	}
+}
+
+# Triggers when ground combat starts
+# This = planet
+# From = country attacking
+on_ground_combat_started = {
+	events = {
+		#gem_off_colors.2010 #make it so invations are impossible, idk how to do it
+	}
+}
 
 #Fired whenever a new owner is set for a planet,
 #be it after a war or through a trade or at the start of colonisation

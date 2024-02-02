@@ -36,11 +36,11 @@ crystal_gem_army2 = {
 gem_defense_army = {
 	defensive = yes
 	is_pop_spawned = no
-	health = 100
-	damage = 0.1
-	morale = 100
+	health = 2.5
+	damage = 0.6
+	morale = 1
 	has_morale = no
-	collateral_damage = -10
+	collateral_damage = 1
 	war_exhaustion = 0.0 # No WE from defense armies
 	icon = GFX_army_type_defensive
 	

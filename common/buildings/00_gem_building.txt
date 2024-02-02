@@ -458,7 +458,44 @@ building_buff_kindergarten3 = {
 		}
 	}
 }
-
+building_crystal_gem_temple = {
+	base_buildtime = @b1_time
+	position_priority = 1
+	
+	category = amenity
+	
+	potential = {
+		exists = owner
+	}
+	
+	allow = {
+#		always = no
+	}
+	
+	
+	planet_modifier = {
+		planet_max_buildings_add = 1
+		planet_amenities_add = 10
+	}
+	
+	resources = {
+		category = planet_buildings
+		produces = {
+		unity = 2
+		energy = 2
+		food = 2
+		minerals = 2
+		alloys = 2
+		consumer_goods = 2
+		}
+		upkeep = {
+		energy =  @b1_upkeep
+		}
+		cost = {
+		minerals = @b1_minerals
+		}
+	}
+}
 # building_colony_shelter = {
 	# capital = yes
 	# can_build = no
