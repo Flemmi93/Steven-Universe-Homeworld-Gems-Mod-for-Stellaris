@@ -1,0 +1,89 @@
+soundeffect = {
+	name = pc_gem
+	volume = 0.25
+	loop = no
+	sounds = {
+		sound = gem_planet_01
+		sound = gem_planet_02
+		sound = gem_planet_03
+	} 
+	playbackrate_random_offset = { -10.0 10.0 }
+	fade_out = 0.3
+	max_audible = 1
+	max_audible_behaviour = fail	
+}
+
+soundeffect = {
+	name = pc_gemworld
+	volume = 0.20
+	loop = no
+	sounds = {
+		sound = gemworld_01
+		sound = gemworld_02
+		sound = gemworld_03
+	} 
+	playbackrate_random_offset = { -10.0 10.0 }
+	fade_out = 0.3
+	max_audible = 1
+	max_audible_behaviour = fail
+}
+
+soundeffect = {
+	name = pc_gem_kindergarten
+	volume = 0.20
+	loop = no
+	sounds = {
+		sound = gem_planet_01
+		sound = gem_planet_02
+		sound = gem_planet_03
+	} 
+	playbackrate_random_offset = { -10.0 10.0 }
+	fade_out = 0.3
+	max_audible = 1
+	max_audible_behaviour = fail
+}
+
+soundeffect = {
+	name = pc_gem_city
+	volume = 0.20
+	loop = no
+	sounds = {
+		sound = ai_planet_01
+		sound = ai_planet_02
+		sound = ai_planet_03
+	} 
+	playbackrate_random_offset = { -10.0 10.0 }
+	fade_out = 0.3
+	max_audible = 1
+	max_audible_behaviour = fail
+}
+
+soundeffect = {
+	name = pc_gem_asteroid
+	volume = 0.20
+	loop = no
+	sounds = {
+		sound = pc_ice_asteroid_01  
+		sound = pc_ice_asteroid_02
+		sound = pc_ice_asteroid_03
+		sound = pc_ice_asteroid_04
+		sound = pc_ice_asteroid_05
+	} 
+	playbackrate_random_offset = { -10.0 10.0 }
+	fade_out = 0.3
+	max_audible = 1
+	max_audible_behaviour = fail
+}
+
+soundeffect = {
+	name = offcolors_01
+	volume = 0.50
+	loop = no
+	sounds = {
+		sound = offcolors_01
+	} 
+	playbackrate_random_offset = { -10.0 10.0 }
+	fade_out = 0.3
+	max_audible = 1
+	max_audible_behaviour = fail
+}

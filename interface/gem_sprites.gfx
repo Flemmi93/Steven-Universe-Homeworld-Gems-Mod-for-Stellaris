@@ -1,0 +1,105 @@
+spriteTypes = {
+	
+	################################################################
+	# PLANETARY ICONS
+	################################################################
+	
+	spriteType = {
+		name = "GFX_planet_type_gem"
+		texturefile = "gfx/interface/icons/planet_type_icon_gem.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_planet_type_no_star"
+		alwaystransparent = yes
+		sprite_sheet_sprite_type = "GFX_planet_type"
+		default_frame = 32
+	}
+	
+	################################################################
+	# EVENT ICONS
+	################################################################
+	
+	spriteType = {
+		name = "GFX_evt_gem_homeworld"
+		texturefile = "gfx/event_pictures/gem_homeworld.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes		
+	}
+	spriteType = {
+		name = "GFX_evt_gem_shattered"
+		texturefile = "gfx/event_pictures/gem_shattered.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_gem_ball"
+		texturefile = "gfx/event_pictures/gem_ball.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}	
+	spriteType = {
+		name = "GFX_evt_gem_off_colors"
+		texturefile = "gfx/event_pictures/gem_off_colors.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_gem_off_colors_2"
+		texturefile = "gfx/event_pictures/gem_off_colors_gone.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_gem_rebellion_1"
+		texturefile = "gfx/event_pictures/gem_rebellion_flag1.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_gem_white_sleeps"
+		texturefile = "gfx/event_pictures/gem_white_sleeps.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	
+	################################################################
+	# Planetary Modifier
+	################################################################
+
+	spriteType = {
+		name = "GFX_decision_galaxy_warp"
+		texturefile = "gfx/interface/icons/planet_modifiers/gem_galaxy_warp.dds"
+		alwaystransparent = yes
+	}
+	
+	################################################################
+	# Planetary Buildings
+	################################################################
+	
+	spriteType = {
+		name = "GFX_building_gem_spire1"
+		texturefile = "gfx/interface/icons/buildings/building_gem_spire1.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_building_gem_spire2"
+		texturefile = "gfx/interface/icons/buildings/building_gem_spire2.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_building_gem_spire3"
+		texturefile = "gfx/interface/icons/buildings/building_gem_spire3.dds"
+		alwaystransparent = yes
+	}
+	
+	################################################################
+	# Situation Icons
+	################################################################
+	
+	spriteType = {
+		name = "GFX_situation_happy"
+		texturefile = "gfx/interface/icons/situation_log/situations/outcomes/situation_outcome_icon_happy.dds"
+		alwaystransparent = yes
+	}
+}

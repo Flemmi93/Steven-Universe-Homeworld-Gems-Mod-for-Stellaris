@@ -1,0 +1,17 @@
+Pearl = {
+	name = "Pearl"
+    icon = "gfx/interface/icons/pearl.dds"
+	
+	weight = {
+		base = 0
+	}
+}
+
+Pearlfiltered = {
+	name = "Pearl filtered"
+    icon = "gfx/interface/icons/pearlfiltered.dds"
+	
+	weight = {
+		base = 0
+	}
+}

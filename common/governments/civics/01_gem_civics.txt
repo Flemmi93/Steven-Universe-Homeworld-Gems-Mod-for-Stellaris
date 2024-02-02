@@ -1,0 +1,104 @@
+civic_tetrarchy = {
+	icon = "gfx/interface/icons/governments/civics/civic_tetrarchy.dds"
+	playable = {}
+	potential = {
+		authority = {
+			NOR = { 
+				value = auth_corporate 
+				value = auth_hive_mind
+				value = auth_machine_intelligence
+			}
+		}
+		origin = { value = origin_geoform }
+	}
+	possible = {
+		origin { value = origin_geoform }
+	}
+
+	modification = no
+
+	random_weight = {
+		base = 0
+	}
+	modifier = {
+		empire_size_penalty_mult = -0.25
+		empire_size_pops_mult = -0.1
+		empire_size_colonies_mult = -0.1
+		#pop_ethic_white_attraction_mult = 0.1
+		#pop_ethic_yellow_attraction_mult = 0.1
+		#pop_ethic_blue_attraction_mult = 0.1
+		#pop_ethic_pink_attraction_mult = 0.1
+	}
+}
+civic_triarchy = {
+	icon = "gfx/interface/icons/governments/civics/civic_triarchy.dds"
+	playable = {}
+	pickable_at_start = no
+	
+	potential = {
+		authority = { 
+			NOR = {
+				value = auth_corporate 
+				value = auth_hive_mind
+				value = auth_machine_intelligence
+			}
+		}
+		origin = { value = origin_geoform }
+	}
+	
+	possible = {
+		origin { value = origin_geoform }
+	}
+
+	modification = no
+
+	random_weight = {
+		base = 0
+	}
+	modifier = {
+		ship_fire_rate_mult = 0.15
+		army_damage_mult = 0.1
+		#pop_ethic_white_attraction_mult = 0.15
+		#pop_ethic_yellow_attraction_mult = 0.15
+		#pop_ethic_blue_attraction_mult = 0.15
+		#pop_ethic_pink_attraction_mult = 0
+	}
+}
+
+civic_whitearchy = {
+	icon = "gfx/interface/icons/governments/civics/civic_triarchy_tame.dds"
+	playable = {}	
+	
+	potential = {
+		authority = { value = auth_hive_mind }
+	}
+	
+	possible = {
+		civics = {
+			NOR = {
+				value = civic_hive_idyllic_bloom
+				value = civic_hive_devouring_swarm
+				#value = civic_machine_terminator
+			}
+		}
+		origin = { value = origin_geoform }
+	}
+	
+	modification = no
+	
+	random_weight = {
+		base = 0
+	}
+	
+	description = "civic_tooltip_devouring_swarm_lithoid_effects"
+		
+	modifier = {
+		pop_resettlement_cost_mult = -0.5
+		army_damage_mult = 0.10
+		planet_jobs_produces_mult = 0.05
+		#pop_ethic_white_attraction_mult = 0.25
+		#pop_ethic_yellow_attraction_mult = 0
+		#pop_ethic_blue_attraction_mult = 0
+		#pop_ethic_pink_attraction_mult = 0
+	}
+}

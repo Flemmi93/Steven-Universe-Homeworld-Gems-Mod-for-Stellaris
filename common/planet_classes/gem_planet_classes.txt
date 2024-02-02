@@ -1,0 +1,127 @@
+# Star glow from sun is set under atmosphere in   00_planet_classes
+# Star surface is set in worldgfx file for each star
+# Effects are set in particle effect for each star
+# New planets also need planet tiles (game\gfx\interface\icons\tile_backgrounds)
+# New planets need surface background (game\gfx\portraits\environments)
+
+
+# ###########
+# Habitable Planets
+# ###########
+
+# Gemworld (Starting Planet "Homeworld" only)
+pc_gem = {
+	entity = "gem_planet"
+	entity_scale = @planet_standard_scale
+	picture = pc_gem
+	#tile_set = pc_gem
+	
+	icon = GFX_planet_type_gem
+	
+	atmosphere_color 		= hsv { 0.75 0.10 0.60  }		#DONE
+	atmosphere_intensity 	= 0.8
+	atmosphere_width 		= 0.75
+
+	city_color_lut = "gfx/portraits/misc/colorcorrection_neutral.dds"
+	
+	modifier = {
+		planet_jobs_produces_mult = 0.10
+		pop_housing_usage_mult = -0.10
+	}
+	spawn_odds = 0
+	extra_orbit_size = 1
+	extra_planet_count = 2
+	
+	chance_of_ring = 1.0
+	
+	carry_cap_per_free_district = @carry_cap_normal
+	
+	planet_size = { min = @habitable_planet_min_size max = @habitable_planet_max_size }
+	moon_size = { min = @habitable_moon_min_size max = @habitable_moon_max_size }
+	
+	starting_planet = no
+	colonizable = yes
+	district_set = standard
+	ideal = no
+	show_city = no
+	uses_alternative_skies_for_moons = no
+}
+pc_gemworld = { # gemworld terraforming
+	entity = "gem_planet"
+	entity_scale = @planet_standard_scale
+	picture = pc_gem
+	#tile_set = pc_gem
+	
+	icon = GFX_planet_type_gem
+	
+	atmosphere_color 		= hsv { 0.75 0.10 0.60  }		#DONE
+	atmosphere_intensity 	= 0.8
+	atmosphere_width 		= 0.75
+
+	city_color_lut = "gfx/portraits/misc/colorcorrection_neutral.dds"
+	
+	modifier = {
+		planet_jobs_produces_mult = 0.10
+		pop_housing_usage_mult = -0.10
+	}
+	
+	spawn_odds = 0
+	extra_orbit_size = 1
+	extra_planet_count = 2
+	
+	chance_of_ring = 1.0
+	
+	carry_cap_per_free_district = @carry_cap_high
+	
+	planet_size = { min = @habitable_planet_min_size max = @habitable_planet_max_size }
+	moon_size = { min = @habitable_moon_min_size max = @habitable_moon_max_size }
+	
+	starting_planet = no
+	colonizable = yes
+	district_set = machine_world # "gem" could be used if we wanna flavor up the districts
+	ideal = no
+	show_city = no
+	uses_alternative_skies_for_moons = no
+}
+
+pc_no_star = {
+	entity = "neutron_star_entity"
+	entity_scale = 0.1
+	icon = GFX_planet_type_no_star
+
+	star = yes
+
+	min_distance_from_sun = 0
+	max_distance_from_sun = 0
+	spawn_odds = 0
+
+	extra_orbit_size = 0
+	extra_planet_count = 0
+
+	chance_of_ring = 0
+
+	planet_size = { min = 1 max = 2 }
+
+	colonizable = no
+}
+
+pc_gem_asteroid = {
+	entity = "asteroid_crystal_large"
+	picture = pc_crystal_asteroid
+	entity_scale = 1
+	icon = GFX_planet_type_asteroid
+	
+	asteroid = yes
+	
+	spawn_odds = 0
+	
+	extra_orbit_size = 0
+	extra_planet_count = 0
+	
+	chance_of_ring = 0
+	
+	planet_size = 3
+	
+	colonizable = no
+	survey_time_factor = 0.5
+}

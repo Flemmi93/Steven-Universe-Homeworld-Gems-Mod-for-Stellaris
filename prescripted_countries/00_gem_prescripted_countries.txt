@@ -1,0 +1,227 @@
+#Diamond Authority
+gem = {
+	name = "Homeworld Empire"
+	adjective = "PRESCRIPTED_adjective_gem"
+	ship_prefix = "PRESCRIPTED_ship_prefix_gem"
+	spawn_enabled = no # yes / no / always
+	ignore_portrait_duplication = no
+	spawn_as_fallen = no
+
+	advisor_voice_type = "Pearl"
+
+	species = {
+		class = "GEO"
+		portrait = "gem"
+		name = "PRESCRIPTED_species_name_gem"
+		plural = "PRESCRIPTED_species_plural_gem"
+		adjective = "PRESCRIPTED_species_adjective_gem"
+		name_list = "GEO1"
+		trait = "trait_geoloid"
+		trait = "trait_gem_holobody"
+		trait = "trait_gem_hardness"
+		trait = "trait_gem_unquestionable"
+		trait = "trait_gem_donteat"
+		trait = "trait_gem_static"
+	}
+		
+	room = "personality_fanatic_befrienders_room"
+	
+	authority = "auth_imperial"
+	civics = {
+		"civic_tetrarchy"
+		"civic_corvee_system"
+	}
+	government = "gov_harmonious_authority"
+	
+	ethic = "ethic_fanatic_authoritarian"
+	ethic = "ethic_xenophobe"
+	
+	origin = "origin_geoform"
+
+	flags = { gem custom_start_screen }
+	
+	planet_name = "PRESCRIPTED_planet_name_gem"
+	planet_class = "pc_continental"
+	initializer = "gem_system_initializer"
+	system_name = "PRESCRIPTED_system_name_gem"
+	
+	graphical_culture = "geoloid_01"
+	city_graphical_culture = "geoloid_01"
+
+	empire_flag = {
+		icon = {
+			category = "gem"
+			file = "gemblem.dds"
+		}
+		background = {
+			category = "backgrounds"
+			file = "v.dds"
+		}
+		colors = {
+			"turquoise"
+			"grey"
+			"null"
+			"null"
+		}
+	}
+
+	ruler = {
+		gender = female
+		name = "PRESCRIPTED_ruler_name_gemwhite"
+		portrait = gemD1 #White
+		texture = 0
+		hair = 0
+		clothes = 0
+		trait = "trait_ruler_eye_for_talent"
+		leader_class = official
+	}
+}
+
+
+#Diamond Authority with Rogue Planet
+gem_rogue = {
+	name = "Homeworld Empire"
+	adjective = "PRESCRIPTED_adjective_gem"
+	ship_prefix = "PRESCRIPTED_ship_prefix_gem"
+	spawn_enabled = no # yes / no / always
+	ignore_portrait_duplication = no
+	spawn_as_fallen = yes
+
+	flags = { gem custom_start_screen }
+	advisor_voice_type = "Pearl"
+
+	species = {
+		class = "GEO"
+		portrait = "gem"
+		name = "PRESCRIPTED_species_name_gem"
+		plural = "PRESCRIPTED_species_plural_gem"
+		adjective = "PRESCRIPTED_species_adjective_gem"
+		name_list = "GEO1"
+		trait = "trait_geoloid"
+		trait = "trait_gem_holobody"
+		trait = "trait_gem_hardness"
+		trait = "trait_gem_unquestionable"
+		trait = "trait_gem_donteat"
+		trait = "trait_gem_static"
+	}
+
+	room = "personality_fanatic_befrienders_room"
+	ethic = "ethic_fanatic_authoritarian"
+	ethic = "ethic_xenophobe"
+	authority = "auth_imperial"
+	civics = {
+		"civic_tetrarchy"
+		"civic_corvee_system"
+	}
+	government = "gov_harmonious_authority"
+	origin = "origin_geoform"
+
+	planet_name = "PRESCRIPTED_planet_name_gem"
+	planet_class = "pc_continental"
+	system_name = "PRESCRIPTED_system_name_gem"
+	initializer = "gem_planet_initializer"
+	graphical_culture = "geoloid_01"
+	city_graphical_culture = "geoloid_01"
+
+	empire_flag = {
+		icon = {
+			category = "gem"
+			file = "gemblem.dds"
+		}
+		background = {
+			category = "backgrounds"
+			file = "v.dds"
+		}
+		colors = {
+			"black"
+			"black"
+			"null"
+			"null"
+		}
+	}
+
+	ruler = {
+		gender = female
+		name = "PRESCRIPTED_ruler_name_gemwhite"
+		portrait = gemD1 #White
+		texture = 0
+		hair = 0
+		clothes = 0
+		trait = "trait_ruler_eye_for_talent"
+		leader_class = official
+	}
+}
+
+# WhiteDiamond Prescripted Empire
+gem_white = {
+	name="White Diamond"
+	adjective = "PRESCRIPTED_adjective_gem"
+	ship_prefix = "PRESCRIPTED_ship_prefix_gem"
+	spawn_enabled = no # yes / no / always
+	ignore_portrait_duplication = no
+	spawn_as_fallen = no
+	
+	flags = { gem custom_start_screen }
+	advisor_voice_type="l_the_diplomat"
+	
+	species={
+		class = "GEO"
+		portrait = "whitegestalt"
+		name = "PRESCRIPTED_species_name_gem"
+		plural = "PRESCRIPTED_species_plural_gem"
+		adjective = "PRESCRIPTED_species_adjective_gem"
+		name_list = "GEO1"
+		trait = "trait_geoloid"
+		trait = "trait_hive_mind"
+		trait = "trait_gem_holobody"
+		trait = "trait_gem_hardness"
+		trait = "trait_gem_donteat"
+		trait = "trait_gem_static"
+	}
+	
+	room="personality_hegemonic_imperialists_room"
+	ethic="ethic_gestalt_consciousness"
+	
+	authority="auth_hive_mind"
+	civics={
+		"civic_whitearchy"
+		"civic_hive_one_mind"
+	}
+	government="gov_perfect_authority"
+	origin="origin_geoform"
+	
+	planet_name="PRESCRIPTED_planet_name_gem"
+	planet_class="pc_continental"
+	system_name="PRESCRIPTED_system_name_gem"
+	initializer="gem_planet_initializer"
+	graphical_culture="geoloid_01"
+	city_graphical_culture="geoloid_01"
+	
+	empire_flag={
+		icon={
+			category="gem"
+			file="gemblem white.dds"
+		}
+		background={
+			category="backgrounds"
+			file="00_solid.dds"
+		}
+		colors={
+			"black"
+			"black"
+			"null"
+			"null"
+		}
+	}
+	
+	ruler={
+		gender = female
+		name = "PRESCRIPTED_ruler_name_gemwhite"
+		portrait = gemD1 #White
+		texture = 0
+		hair = 0
+		clothes = 0
+		trait = "trait_leader_geoloid"
+		leader_class = official
+	}
+}

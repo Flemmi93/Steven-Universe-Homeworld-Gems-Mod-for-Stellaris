@@ -1,0 +1,308 @@
+character = {
+	size = { x = 475 y = 380 }
+
+	#2d Portrait position
+	icon = {
+		orientation = center_down
+		position = { x = 80 y = 0 }
+		scale = 1.1
+	}
+}
+portraits = {
+
+	gemdef =	{texturefile = "gfx/models/portraits/gems/gems_default.dds" }
+	gemA1 =		{texturefile = "gfx/models/portraits/gems/gems_Agate_01.dds" }
+	gemA2 =		{texturefile = "gfx/models/portraits/gems/gems_Aquamarine_01.dds" }
+	gemB1 =		{texturefile = "gfx/models/portraits/gems/gems_Bismuth_01.dds" }
+	gemB2 =		{texturefile = "gfx/models/portraits/gems/gems_Bismuth_02.dds" }
+	gemD1 =		{texturefile = "gfx/models/portraits/gems/gems_ruler_04_white.dds" }
+	gemD2 =		{texturefile = "gfx/models/portraits/gems/gems_ruler_03_yellow.dds" }
+	gemD3 =		{texturefile = "gfx/models/portraits/gems/gems_ruler_01_blue.dds" }
+	gemD4 =		{texturefile = "gfx/models/portraits/gems/gems_ruler_02_pink.dds" }
+	gemE1 =		{texturefile = "gfx/models/portraits/gems/gems_Emerald_01.dds" }
+	gemJ1 =		{texturefile = "gfx/models/portraits/gems/gems_Jasper_01.dds" }
+	gemJ2 =		{texturefile = "gfx/models/portraits/gems/gems_Jasper_02.dds" }
+	gemJ3 =		{texturefile = "gfx/models/portraits/gems/gems_Jasper_03.dds" }
+	gemJ4 =		{texturefile = "gfx/models/portraits/gems/gems_Jasper_04.dds" }
+	gemJ5 =		{texturefile = "gfx/models/portraits/gems/gems_Jade_01.dds" }
+	gemJ6 =		{texturefile = "gfx/models/portraits/gems/gems_Jade_02.dds" }
+	gemL1 =		{texturefile = "gfx/models/portraits/gems/gems_Lapis_01.dds" }
+	gemL2 =		{texturefile = "gfx/models/portraits/gems/gems_Lapis_02.dds" }
+	gemL3 =		{texturefile = "gfx/models/portraits/gems/gems_Lapis_03.dds" }
+	gemL4 =		{texturefile = "gfx/models/portraits/gems/gems_Lapis_04.dds" }
+	gemN1 =		{texturefile = "gfx/models/portraits/gems/gems_Nephrite_01.dds" }
+	gemN2 =		{texturefile = "gfx/models/portraits/gems/gems_Nephrite_02.dds" }
+	gemP1 =		{texturefile = "gfx/models/portraits/gems/gems_Pearl_01.dds" }
+	gemP2 =		{texturefile = "gfx/models/portraits/gems/gems_Pearl_02.dds" }
+	gemP3 =		{texturefile = "gfx/models/portraits/gems/gems_Pearl_03.dds" }
+	gemP4 =		{texturefile = "gfx/models/portraits/gems/gems_Peridot_01.dds" }
+	gemP5 =		{texturefile = "gfx/models/portraits/gems/gems_Peridot_02.dds" }
+	gemP6 =		{texturefile = "gfx/models/portraits/gems/gems_Peridot_03.dds" }
+	gemP7 =		{texturefile = "gfx/models/portraits/gems/gems_Peridot_04.dds" }
+	gemQ1 =		{texturefile = "gfx/models/portraits/gems/gems_Amethyst_01.dds" }
+	gemQ2 =		{texturefile = "gfx/models/portraits/gems/gems_Amethyst_02.dds" }
+	gemQ3 =		{texturefile = "gfx/models/portraits/gems/gems_Amethyst_03.dds" }
+	gemQ4 =		{texturefile = "gfx/models/portraits/gems/gems_Amethyst_04.dds" }
+	gemQ5 =		{texturefile = "gfx/models/portraits/gems/gems_Amethyst_05.dds" }
+	gemQ6 =		{texturefile = "gfx/models/portraits/gems/gems_Amethyst_06.dds" }
+	gemQ7 =		{texturefile = "gfx/models/portraits/gems/gems_Amethyst_07.dds" }
+	gemQ8 =		{texturefile = "gfx/models/portraits/gems/gems_Amethyst_08.dds" }
+	gemR1 =		{texturefile = "gfx/models/portraits/gems/gems_Ruby_01.dds" }
+	gemR2 =		{texturefile = "gfx/models/portraits/gems/gems_Ruby_02.dds" }
+	gemR3 =		{texturefile = "gfx/models/portraits/gems/gems_Ruby_03.dds" }
+	gemR4 =		{texturefile = "gfx/models/portraits/gems/gems_Ruby_04.dds" }
+	gemRE =		{texturefile = "gfx/models/portraits/gems/gems_red_eye_01.dds" }
+	gemS1 =		{texturefile = "gfx/models/portraits/gems/gems_Sapphire_01.dds" }
+	gemS2 =		{texturefile = "gfx/models/portraits/gems/gems_Sapphire_02.dds" }
+	gemS3 =		{texturefile = "gfx/models/portraits/gems/gems_Sapphire_03.dds" }
+	gemS4 =		{texturefile = "gfx/models/portraits/gems/gems_Sapphire_04.dds" }
+	gemS5 =		{texturefile = "gfx/models/portraits/gems/gems_Sapphire_05.dds" }
+	gemT1 =		{texturefile = "gfx/models/portraits/gems/gems_Topaz_01.dds" }
+	gemZ1 =		{texturefile = "gfx/models/portraits/gems/gems_Zircon_01.dds" }
+	gemZ2 =		{texturefile = "gfx/models/portraits/gems/gems_Zircon_02.dds" }
+	gemZ3 =		{texturefile = "gfx/models/portraits/gems/gems_Zircon_03.dds" }
+	gemZ4 =		{texturefile = "gfx/models/portraits/gems/gems_Zircon_04.dds" }
+	
+	gemWdef =	{texturefile = "gfx/models/portraits/gems/gem_wd_default.dds" }
+	gemW1 =		{texturefile = "gfx/models/portraits/gems/gem_wd_aquamarine.dds" }
+	gemW2 =		{texturefile = "gfx/models/portraits/gems/gem_wd_emerald.dds" }	
+	gemW3 =		{texturefile = "gfx/models/portraits/gems/gem_wd_pearl.dds" }
+	gemW4 =		{texturefile = "gfx/models/portraits/gems/gem_wd_peridot.dds" }	
+	gemW5 =		{texturefile = "gfx/models/portraits/gems/gem_wd_ruby.dds" }
+	gemW6 =		{texturefile = "gfx/models/portraits/gems/gem_wd_sapphire.dds" }	
+	gemW7 =		{texturefile = "gfx/models/portraits/gems/gem_wd_zirkon.dds" }
+	gemW8 = 	{texturefile = "gfx/models/portraits/gems/gem_wd_jade.dds" }
+	
+		# AI
+	gem_robot = {
+        texturefile = "gfx/models/portraits/gems/robonoid.dds"
+    }
+	gem_android ={
+        texturefile = "gfx/models/portraits/gems/shatteringrobonoid.dds"
+    }
+	gem_synth = {
+        texturefile = "gfx/models/portraits/gems/holopearl.dds"
+    }
+}
+	
+portrait_groups = {
+
+	gem = {
+		default = gemP3
+		game_setup = { #will run with a limited country scope. species and government is set but the country does not actually exist
+			set = {
+				trigger = {}
+				portraits = {
+					gemD1 #White
+					gemD2 #Yellow
+					gemD3 #Blue
+					gemD4 #Pink
+				}
+			}
+		}
+		
+		#species scope
+		species = { #generic portrait for a species
+			add = {
+				trigger = {}
+				portraits = {
+					gemP1
+					gemP2
+					gemP3
+					gemP5
+					gemP7
+
+				}
+			}
+		}
+		
+		#pop scope
+		pop = { #for a specific pop
+				#trigger = {}
+			add = {
+				portraits = {
+					gemA1
+					gemB1
+					gemB2
+					gemJ1
+					gemJ2
+					gemJ3
+					gemJ5
+					gemJ6
+					gemL1
+					gemL2
+					gemN1
+					gemP1
+					gemP2
+					gemP3
+					gemP4
+					gemP5
+					gemP6
+					gemP7
+					gemQ1
+					gemQ2
+					gemQ3
+					gemQ4
+					gemQ5
+					gemQ6
+					gemQ7
+					gemQ8
+					gemR1
+					gemR2
+					gemR3
+					gemR4
+					gemT1
+					gemS1
+					gemS2
+					gemS3
+					gemS4
+					gemS5
+				}
+			}
+		}
+		
+		#leader scope
+		leader = { #scientists, commander, official
+			add = {
+				trigger = { leader_class = scientist }
+				portraits = {
+					gemP4
+					gemP5
+					gemP6
+					gemP7
+					gemL1
+					gemL2
+					gemL3
+					gemL4
+					gemS1
+					gemS2
+					gemS3
+					gemS4
+					gemS5
+				}
+			}
+			add = {
+				trigger = { leader_class = commander }
+				portraits = {
+					gemR1
+					gemR2
+					gemR3
+					gemR4
+					gemJ4
+					gemT1
+				}
+			}
+			add = {
+				trigger = { leader_class = commander }
+				portraits = {
+					gemA1
+					gemA2
+					gemE1
+					gemN2
+				}
+			}
+			add = {
+				trigger = { leader_class = official }
+				portraits = {
+					gemZ1
+					gemZ2
+					gemZ3
+					gemZ4
+				}
+			}
+		}
+
+		#leader scope 
+		ruler = {
+			add = {
+				trigger = { leader_class = diamond_class }
+				portraits = {
+					gemD1 #White
+					gemD2 #Yellow
+					gemD3 #Blue
+					gemD4 #Pink
+				}
+			}	
+		}
+	}
+	
+	whitegestalt = {
+	default = gemW3
+		game_setup = { #will run with a limited country scope. species and government is set but the country does not actually exist
+			set = {
+				trigger = {}
+				portraits = {
+					gemD1 #White
+				}
+			}
+		}
+			#species scope
+		species = { #generic portrait for a species
+			add = {
+				trigger = {}
+				portraits = {
+					gemW3
+					gemW4
+					gemW5
+					gemW6
+				}
+			}
+		}
+		
+		#pop scope
+		pop = { #for a specific pop
+				#trigger = {}
+			add = {
+				portraits = {
+					gemW3
+					gemW5
+					gemW6
+					gemW7
+					gemW8
+				}
+			}
+		}
+		
+		#leader scope
+		leader = { #scientists, commander, official
+			add = {
+				trigger = { leader_class = scientist }
+				portraits = {
+				gemW4
+				gemW6
+				}
+			}
+			add = {
+				trigger = { leader_class = commander }
+				portraits = {
+				gemW5
+				}
+			}
+			add = {
+				trigger = { leader_class = commander }
+				portraits = {
+				gemW1
+				gemW2
+				}
+			}
+			add = {
+				trigger = { leader_class = official }
+				portraits = {
+				gemW7
+				}
+			}  		
+
+		}
+
+		#leader scope 
+		ruler = {
+			add = {
+				trigger = { leader_class = diamond_class }
+				portraits = {
+					gemD1 #White
+				}
+			}
+			
+		}
+	}
+}

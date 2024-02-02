@@ -1,0 +1,1163 @@
+namespace = gem_off_colors
+
+###########
+# Era One #
+###########
+# Start of the earth story	
+country_event = {
+	id = gem_off_colors.0010
+	hide_window = yes
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		set_global_flag = gem_sol_discovered
+		set_country_flag = gem_sol_system
+		if = {
+			limit = {
+				any_system_within_border = { has_star_flag = gem_sol_system }
+			}
+			random_system_within_border = {
+				limit = { has_star_flag = gem_sol_system }
+				save_event_target_as = gem_sol_spawn_system
+			}
+		}
+		else = {
+			random_system_within_border = {
+				save_event_target_as = gem_sol_spawn_system
+			}
+		}
+		event_target:gem_sol_spawn_system = {
+			spawn_system = {
+				min_distance = 10
+				max_distance = 30
+				max_jumps = 0
+				initializer = "gem_sol_system"
+			}
+			if = {
+				limit = { last_created_system = { NOT = { has_hyperlane_to = prev } } }
+				add_hyperlane = {
+					from = this
+					to = last_created_system
+				}
+			}
+			else = {
+				add_extra_hyperlane_to_spawned_system_effect = yes
+			}
+		}
+		country_event = { id = gem_off_colors.0020 days = 2 }
+	}
+}
+
+country_event = { #triggers sol spawn after x-number of  colony
+	id = gem_off_colors.0011
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+		NOR = { 
+			has_country_flag = gem_way_to_sol_step_1
+			has_country_flag = gem_way_to_sol_step_2
+			has_country_flag = gem_way_to_sol_step_3
+			has_country_flag = gem_way_to_sol_step_4
+		}
+	}
+	immediate = {
+		set_country_flag = gem_way_to_sol_step_1
+	}
+}
+country_event = { #triggers sol spawn after x-number of  colony
+	id = gem_off_colors.0012
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+		has_country_flag = gem_way_to_sol_step_1
+	}
+	immediate = {
+		remove_country_flag = gem_way_to_sol_step_1
+		set_country_flag = gem_way_to_sol_step_2
+	}
+}
+country_event = { #triggers sol spawn after 3rd colony
+	id = gem_off_colors.0013
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+		has_country_flag = gem_way_to_sol_step_2
+	}
+	immediate = {
+		remove_country_flag = gem_way_to_sol_step_2
+		set_country_flag = gem_way_to_sol_step_3
+	}
+}
+country_event = { #triggers sol spawn after 3rd colony
+	id = gem_off_colors.0014
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+		has_country_flag = gem_way_to_sol_step_3
+	}
+	immediate = {
+		remove_country_flag = gem_way_to_sol_step_3
+		set_country_flag = gem_way_to_sol_step_4
+		set_country_flag = gem_way_to_sol_done #moveable to later events for balance
+		if = {
+			limit = {
+				AND = {
+					NOT = { has_country_flag = pink_got_earth }
+					is_geo_empire = yes
+				}
+			}
+				country_event = { id = gem_off_colors.0010 }
+		}
+	}
+}
+country_event = { #triggers sol spawn after 3rd colony
+	id = gem_off_colors.0015
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		country_event = { id = gem_off_colors.0011 days = 4}
+		country_event = { id = gem_off_colors.0012 days = 3}
+		country_event = { id = gem_off_colors.0013 days = 2}
+		country_event = { id = gem_off_colors.0014 days = 1}
+	}
+	
+}
+
+#a colony for pink
+country_event = {
+	id = gem_off_colors.0020
+	title = "gem_off_colors.0020.name"
+	desc = "gem_off_colors.0020.desc"
+	picture = GFX_evt_gem_pale_rose1
+	show_sound = offcolors_01 #replace with offcolor music-clip
+	is_triggered_only = yes
+	
+	trigger = {
+		is_hive_empire = no
+	}
+	
+	option = {
+		trigger = {
+			NOT = { has_country_flag = pink_got_earth }
+		}
+		name = MARVELOUS
+		hidden_effect = { country_event = { id = gem_off_colors.0030 days = 480 random = 120 } }
+	}
+	
+	option = {
+		trigger = { has_country_flag = pink_got_earth }
+		name = MARVELOUS
+	}
+}
+#a colony for pink
+system_event = {
+	id = gem_off_colors.0021
+	title = "gem_off_colors.0020.name"
+	desc = "gem_off_colors.0020.desc"
+	picture = GFX_evt_gem_pale_rose1
+	show_sound = offcolors_01 #replace with offcolor music-clip
+	is_triggered_only = yes
+
+	option = {
+		name = MARVELOUS
+	}
+}
+
+#Pink demands a colony (tantrum)
+country_event = {
+	id = gem_off_colors.0030
+	title = "gem_off_colors.0030.name"
+	desc = "gem_off_colors.0030.desc"
+	picture = GFX_evt_gem_pale_rose1
+	show_sound = event_screams
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = { has_country_flag = pink_got_earth }
+	}
+	
+	option = {
+		name = gem_off_colors.0030.a
+		owner = { capital_scope = { add_modifier = { modifier = pm_pink_tantrum_1 days = 180 } } }
+		hidden_effect = { country_event = { id = gem_off_colors.0031 days = 480 random = 120 } }
+	}
+	
+	after = {
+		set_country_flag = pink_wants_earth
+		#hidden_effect = { start_situation = { type = pink_situation } }
+	}
+	
+	option = {
+		trigger = { NOT = { is_diamond_empire = yes } }
+		name = gem_off_colors.0030.d
+		custom_tooltip = gem_off_colors.0030.d.desc
+	}
+}
+
+#Pink demands a colony (tantrum 2)
+country_event = {
+	id = gem_off_colors.0031
+	title = "gem_off_colors.0030.name"
+	desc = "gem_off_colors.0031.desc"
+	picture = GFX_evt_gem_pale_rose1
+	show_sound = event_bad_omen
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = { has_country_flag = pink_got_earth }
+	}
+	
+	option = {
+		name = gem_off_colors.0031.a
+		owner = { capital_scope = { add_modifier = { modifier = pm_pink_tantrum_2 days = 360} } }
+		hidden_effect = { country_event = { id = gem_off_colors.0032 days = 480 random = 120 } }
+	}
+	
+	option = {
+		trigger = { NOT = { is_diamond_empire = yes } }
+		name = gem_off_colors.0030.d
+		custom_tooltip = gem_off_colors.0030.d.desc
+	}
+}
+
+#Pink demands a colony (tantrum 3)
+country_event = {
+	id = gem_off_colors.0032
+	title = "gem_off_colors.0030.name"
+	desc = "gem_off_colors.0032.desc"
+	picture = GFX_evt_gem_pale_rose1
+	show_sound = event_whispering
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = { has_country_flag = pink_got_earth }
+	}
+	
+	option = {
+		name = gem_off_colors.0031.a
+		owner = {
+			capital_scope = {
+				add_modifier = {
+					modifier = pm_pink_tantrum_3 days = 360
+				}
+			}
+		}
+		random = {
+			chance = 1
+			owner = {
+				capital_scope = {
+					random_owned_pop = { kill_pop = yes }
+				}
+			}
+		}
+		hidden_effect = { country_event = { id = gem_off_colors.0032 days = 480 random = 120 } }
+	}
+	
+	option = {
+		trigger = { NOT = { is_diamond_empire = yes } }
+		name = gem_off_colors.0030.d
+		custom_tooltip = gem_off_colors.0030.d.desc
+	}
+}
+#Pink's Mood shows up again
+planet_event = {
+	id = gem_off_colors.0033
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		remove_modifier = pm_pink_celebration
+		owner = {
+			start_situation = {
+				type = pink_situation
+			}
+		}
+	}
+}
+
+country_event = {
+	id = gem_off_colors.0034
+	title = "gem_off_colors.0034.name"
+	desc = "gem_off_colors.0034.desc"
+	picture = GFX_evt_gem_pink_happy
+	show_sound = event_celebration
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = gem_off_colors.0034.a
+		owner = {
+			random_owned_planet = {
+				add_modifier = {
+					modifier = pm_pink_celebration
+				}
+				hidden_effect = { planet_event = { id = gem_off_colors.0033 days = 10 } }
+			}
+		}
+	}
+}
+#Rose Quartz shows up (trigger)
+planet_event = {
+	id = gem_off_colors.1000
+	hide_window = yes
+	is_triggered_only = yes
+	pre_triggers = {
+		is_homeworld = no
+		is_ai = no
+	}
+	trigger = {
+			OR = {
+				has_planet_flag = gem_planet_earth
+				has_planet_flag = planet_earth
+			}
+			owner = { has_country_flag = era_one_flag }
+	}
+	immediate = {
+		planet_event = { id = gem_off_colors.1010 days = 360 } # appearence of an unknown Rose Gem
+		planet_event = { id = gem_diamond_choice.1001 } # forces to assign this planet to pink
+		owner = { country_event = { id = gem_off_colors.1001 } }
+	}
+}
+
+country_event = {
+	id = gem_off_colors.1001
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		has_country_flag = gem_pink_rules
+	}
+	immediate = {
+		#country_event = { id = gem_diamond_traits.0001 }
+	}
+}
+#Rose Quartz shows up
+planet_event = {
+	id = gem_off_colors.1010
+	fire_only_once = yes
+	is_triggered_only = yes
+	title = gem_off_colors.1010.name
+	desc = gem_off_colors.1010.desc
+	picture = GFX_evt_gem_rose_kindergarten
+	show_sound = event_bad_omen
+
+	option = {
+		name = PECULIAR
+		create_pop = { species = owner_main_species }
+		hidden_effect = {
+			planet_event = { id = gem_off_colors.1020 days = 270 random  = 90 }
+			save_global_event_target_as = gem_planet_earth_event
+		}
+	}
+}
+
+#Rebel Rousing.
+planet_event = {
+	id = gem_off_colors.1020
+	is_triggered_only = yes
+	title = gem_off_colors.1020.name
+	desc = gem_off_colors.1020.desc
+	picture = GFX_evt_gem_perdiot1
+	show_sound = event_construction
+	option = { 
+		name = WORRYING 
+		hidden_effect = {
+			planet_event = { id = gem_off_colors.1030 days = 270 random = 90 }
+			planet_event = { id = gem_off_colors.1040 days = 30 random = 90 }
+		}
+		remove_modifier = pm_gem_human_experiement
+		add_modifier = { modifier = "pm_off_color_saboteur" days = 720 }
+		
+		add_planet_devastation = 20
+	}
+}
+
+# first appearence of the Crystal Gems (unnamed)
+planet_event = {
+	id = gem_off_colors.1030
+	is_triggered_only = yes
+	title = gem_off_colors.1030.name
+	desc = gem_off_colors.1030.desc
+	picture = GFX_evt_gem_rebellion_1
+	option = { 
+		name = gem_off_colors.1030.a
+		hidden_effect = {
+			planet_event = { id = gem_off_colors.1031 days = 30 }
+		}
+	}
+}
+
+# Pink doesnt cut it
+planet_event = {
+	id = gem_off_colors.1031
+	is_triggered_only = yes
+	title = gem_off_colors.1031.name
+	desc = gem_off_colors.1031.desc
+	picture = GFX_evt_gem_rebellion_1
+	
+	option = { 
+		name = gem_off_colors.1031.a
+		add_modifier = { modifier = pm_blue_visits days = 50}
+		hidden_effect = {
+			planet_event = { id = gem_off_colors.1033 days = 10 }
+		}
+	}
+	option = { 
+		name = gem_off_colors.1031.b
+		add_modifier = { modifier = pm_yellow_visits days = 50}
+		hidden_effect = {
+			planet_event = { id = gem_off_colors.1034 days = 10 }
+		}
+	}
+}
+
+# Atempt on ##blue##
+planet_event = {
+	id = gem_off_colors.1033
+	is_triggered_only = yes
+	title = gem_off_colors.1033.name
+	desc = gem_off_colors.1033.desc
+	picture = GFX_evt_gem_visit_to_earth
+	option = { 
+		name = gem_off_colors.1033.a
+		hidden_effect = {
+			planet_event = { id = gem_off_colors.1035 days = 1 }
+		}
+	}
+}
+
+
+# Atempt on ##yellow##
+planet_event = {
+	id = gem_off_colors.1034
+	is_triggered_only = yes
+	title = gem_off_colors.1034.name
+	desc = gem_off_colors.1034.desc
+	picture = GFX_evt_gem_visit_to_earth
+	option = { 
+		name = gem_off_colors.1034.a
+		hidden_effect = {
+			planet_event = { id = gem_off_colors.1035 days = 1 }
+		}
+	}
+}
+
+# Strategic Warning
+planet_event = {
+	id = gem_off_colors.1035
+	is_triggered_only = yes
+	title = gem_off_colors.1035.name
+	desc = gem_off_colors.1035.desc
+	picture = GFX_evt_gem_disgraced_sapphire
+	option = { 
+		name = gem_off_colors.1035.a
+		hidden_effect = {
+			planet_event = { id = gem_off_colors.1999 days = 3600 }
+			planet_event = { id = gem_off_colors.1998 days = 360 }
+			planet_event = { id = gem_off_colors.1053 days = 30 random = 30 }
+			set_planet_flag = 1000year_war_ongoing
+		}
+	}
+}
+
+# Pink Diamond moves to Earth
+planet_event = {
+	id = gem_off_colors.1040
+	is_triggered_only = yes
+	title = gem_off_colors.1040.name
+	desc = gem_off_colors.1040.desc
+	picture = GFX_evt_gem_pinkvisits
+	option = {
+		name = gem_off_colors.1040.a
+		assign_leader = event_target:gem_pink_diamond
+	}
+}
+
+# Pink Diamond moves back to Earth
+planet_event = {
+	id = gem_off_colors.1041
+	is_triggered_only = yes
+	title = gem_off_colors.1041.name
+	desc = gem_off_colors.1041.desc
+	picture = GFX_evt_gem_pinkvisits
+	option = {
+		name = gem_off_colors.1041.a
+		assign_leader = event_target:gem_pink_diamond
+		event_target:gem_pink_diamond = { set_leader_flag = pink_earth_flag }
+	}
+}
+# Pink Diamond moves back to Earth
+leader_event = {
+	id = gem_off_colors.1042
+	is_triggered_only = yes
+	hide_window = yes
+	pre_triggers = { is_ai = no}
+	trigger = { has_leader_flag = pink_earth_flag }
+	immediate = {
+		event_target:gem_planet_earth_event = { planet_event = { id = gem_off_colors.1041 days = 30 } }
+	}
+}
+
+#The Rebellion begins
+planet_event = {
+	id = gem_off_colors.1050
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes 
+	immediate = {
+		planet_event = {
+			id = gem_off_colors.1051 
+		}
+	}
+}
+
+#constant reinforcment during fights
+planet_event = {
+	id = gem_off_colors.1051
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = { has_planet_flag = 1000year_war_ongoing }
+	
+	immediate = {
+		create_army = {
+			name = "Crystal Gems"
+			owner = last_created_country
+			type = "crystal_gem_army"
+		}
+		last_created_army = {
+			set_owner = event_target:crystal_gems_faction
+		}
+		planet_event = { id = gem_off_colors.1052 days = 20 random = 10 }
+		planet_event = { id = gem_off_colors.1053 days = 60 }
+	}
+}
+
+#spawns defensive armies to keep the fight going
+planet_event = {
+	id = gem_off_colors.1052
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = { has_planet_flag = 1000year_war_ongoing }
+	
+	immediate = {
+		create_army = {
+			name = "Gem defense Army"
+			owner = owner
+			type = "gem_defense_army"
+		}
+		create_army = {
+			name = "Gem defense Army"
+			owner = owner
+			type = "gem_defense_army"
+		}
+		planet_event = { id = gem_off_colors.1051 days = 25 random = 10 }
+		planet_event = { id = gem_off_colors.1055 }
+	}
+}
+
+#restarts the fight if need be
+planet_event = {
+	id = gem_off_colors.1053
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		has_ground_combat = no
+		has_planet_flag = 1000year_war_ongoing
+	}
+	
+	immediate = {
+		create_country = {
+			name = "Crystal Gems"
+			authority = auth_democratic
+			type = faction
+			auto_delete = no
+			flag = {
+				icon = {
+					category = "crystalgems"
+					file = "crystalgems.dds"
+				}
+				background= {
+					category = "backgrounds"
+					file = "00_solid.dds"
+				}
+				colors={
+					"pink"
+					"pink"
+					"null"
+					"null"
+				}
+			}
+			effect = {
+				establish_communications_no_message = root.owner
+			}
+		}
+		last_created_country = { save_event_target_as = crystal_gems_faction }
+		create_army = {
+			name = "Crystal Gems"
+			owner = last_created_country
+			type = "crystal_gem_army2"
+		}
+		create_army = {
+			name = "Crystal Gems"
+			owner = last_created_country
+			type = "crystal_gem_army2"
+		}
+		create_army = {
+			name = "Crystal Gems"
+			owner = last_created_country
+			type = "crystal_gem_army2"
+		}
+		create_army = {
+			name = "Crystal Gems"
+			owner = last_created_country
+			type = "crystal_gem_army"
+		}
+		create_army = {
+			name = "Crystal Gems"
+			owner = last_created_country
+			type = "crystal_gem_army"
+		}
+		create_army = {
+			name = "Crystal Gems"
+			owner = last_created_country
+			type = "primitive_army"
+		}
+		planet_event = { id = gem_off_colors.1050 }
+		planet_event = { id = gem_off_colors.1054 days = 360 random = 120 }
+		planet_event = { id = gem_off_colors.1056 }
+	}
+}
+#massive devistation event
+planet_event = {
+	id = gem_off_colors.1054
+	title = gem_off_colors.1054.name
+	desc = gem_off_colors.1054.desc
+	picture = GFX_evt_gem_perdiot1
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = gem_off_colors.1054.a
+		add_planet_devastation = 5
+	}
+}
+#all production into military
+planet_event = {
+	id = gem_off_colors.1055
+	title = gem_off_colors.1055.name
+	desc = gem_off_colors.1055.desc
+	picture = GFX_evt_gem_jasper
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = gem_off_colors.1055.a
+		add_modifier = { modifier = pm_gem_no_assemble }
+	}
+}
+
+#new enemies appeared
+planet_event = {
+	id = gem_off_colors.1056
+	title = gem_off_colors.1056.name
+	desc = gem_off_colors.1056.desc
+	picture = GFX_evt_gem_rebellion_1
+	is_triggered_only = yes
+	option = {
+		name = gem_off_colors.1056.a
+	}
+}
+
+#Pink dissapears
+planet_event = { #this will be a long war
+	id = gem_off_colors.1998 # 
+	title= gem_off_colors.1998.name
+	desc = gem_off_colors.1998.desc
+	picture = GFX_evt_gem_rebellion_1
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = gem_off_colors.1998.a
+	}
+}
+
+#Pink dissapears
+planet_event = { #happens when pink dissapears
+	id = gem_off_colors.1999 # ending of the crystal gem War / War for earthen indipendence
+	is_triggered_only = yes
+	hide_window = yes
+	immediate = {
+		remove_planet_flag = gem_planet_earth_owned_by_pink_pre_era_2
+		remove_planet_flag = 1000year_war_ongoing
+		set_planet_flag = gem_planet_pink_gone
+		owner = { country_event = { id = gem_era.2 days = 30 } } # Era 3 will fire 50-60 years later.
+		planet_event = { id = gem_off_colors.2000 days = 90 } # the rose question
+		planet_event = { id = gem_off_colors.2002 days = 180 } # the earth question
+	}
+}
+
+###########
+# Era Two #
+###########
+
+#Death of Rose Quartz
+planet_event = {
+	id = gem_off_colors.2000
+	title = gem_off_colors.2000.name
+	desc = gem_off_colors.2000.desc
+	is_triggered_only = yes
+	picture = "GFX_evt_gem_pink_death"
+	option = {
+		name = gem_off_colors.2000.a
+		owner = { country_event = { id = gem_off_colors.2001 } }
+	}
+}
+
+#the Rose Quartz Question
+country_event = {
+	id = gem_off_colors.2001
+	title = gem_off_colors.2001.name
+	desc = gem_off_colors.2001.desc
+	is_triggered_only = yes
+	picture = "GFX_evt_gem_rosequestion"
+	
+	option = {
+		name = gem_off_colors.2001.a
+		while = {
+			count = 2
+			random_planet_within_border = {
+				limit = {
+					has_planet_flag = yellow_court_flag
+					NOT = { has_modifier = pm_boubled_rose_gem } 
+				}
+				random_owned_pop = { 
+					limit = { has_trait = trait_geoloid }
+					kill_pop = yes
+				}
+				add_modifier = { modifier = pm_boubled_rose_gem }
+			}
+		}
+		capital_scope = {
+			add_modifier = { modifier = pm_boubled_rose_gem }
+		}
+	}
+	option = {
+		name = gem_off_colors.2001.b
+		while = {
+			count = 2
+			random_planet_within_border = {
+				limit = {
+					has_planet_flag = blue_court_flag
+					NOT = { has_modifier = pm_shattered_rose_gem } 
+				}
+				random_owned_pop = { 
+					limit = { has_trait = trait_geoloid }
+					kill_pop = yes
+				}
+			}
+			add_modifier = { modifier = pm_shattered_rose_gem }
+		add_resource = { minerals = 1000 }
+		}
+		capital_scope = {
+			add_modifier = { modifier = pm_shattered_rose_gem }
+		}
+	}
+#	option = {
+#		name = gem_off_colors.2001.c
+#		while = {
+#			count = 2
+#			random_planet_within_border = {
+#				limit = {
+#					AND = {
+#						has_planet_flag = blue_court_flag
+#						NOT = { has_modifier = pm_shattered_rose_gem } 
+#					}
+#				}
+#				random_owned_pop = {
+#					limit = { has_trait = trait_geoloid }
+#					kill_pop = yes
+#				}
+#				add_modifier = { modifier = pm_shattered_rose_gem }
+#			}
+#		}
+#		while = {
+#			count = 2
+#			random_planet_within_border = {
+#				limit = {
+#					AND = {
+#						has_planet_flag = yellow_court_flag
+#						NOT = { has_modifier = pm_boubled_rose_gem }
+#					}
+#				}
+#				random_owned_pop = {
+#					limit = { has_trait = trait_geoloid }
+#					kill_pop = yes
+#				}
+#				add_modifier = { modifier = pm_boubled_rose_gem }
+#			}
+#			add_resource = { minerals = 1000 }
+#		}
+#	}
+}
+#Full Evacuation of Earth
+planet_event = {
+	id = gem_off_colors.2002
+	title = gem_off_colors.2002.name
+	desc = gem_off_colors.2002.desc
+	picture = GFX_evt_gem_full_retreat
+	is_triggered_only = yes
+	
+	option = {
+		name = gem_off_colors.2002.a
+		planet_event = { id = gem_off_colors.2003 days = 1 }
+		hidden_effect = {
+			remove_modifier = pm_gem_no_assemble
+			remove_modifier = pm_gem_galaxy_warp
+			remove_modifier = pm_gem_pink_court
+		}
+	}
+}
+
+#Earth becomes locked away
+planet_event = {
+	id = gem_off_colors.2003
+	title = gem_off_colors.2003.name
+	desc = gem_off_colors.2003.desc
+	picture = GFX_evt_gem_tridiamondattack
+	is_triggered_only = yes	
+	
+	option = {
+		name = gem_off_colors.2003.a
+		every_owned_pop = {
+			limit = { has_trait = trait_geoloid }
+			resettle_pop = {
+				pop = this
+				planet = owner.capital_scope
+			}
+		}
+		hidden_effect = {
+			every_owned_pop = {
+				limit = { NOT = { has_trait = trait_geoloid } }
+				kill_pop = yes
+			}
+			remove_planet_flag = gem_planet_pink_gone
+		}
+	}
+	after = { hidden_effect = { planet_event = { id = gem_off_colors.2004 } } }
+}
+
+planet_event = {
+	id = gem_off_colors.2004
+	is_triggered_only = yes
+	hide_window = yes
+	immediate = {
+	set_planet_flag = no_observation
+	# bronce age
+		create_species = {
+			name = NAME_Human
+			plural = NAME_Humans
+			class = "HUM"
+			portrait = "human"
+			homeworld = THIS
+			traits = {
+				trait = "trait_adaptive"
+				trait = "trait_nomadic"
+				trait = "trait_wasteful"
+			}
+		}
+		create_country = {
+			name = random
+			authority = auth_democratic
+			civics = {
+				civic = civic_secret_of_fire
+				civic = civic_the_wheel
+			}
+			species = last_created_species
+			ethos = {
+				ethic = "ethic_xenophobe"
+				ethic = "ethic_spiritualist"
+				ethic = "ethic_egalitarian"
+			}
+			origin = "origin_enlightened" # Should only be visible if they become spacefaring
+			flag = {
+				icon = {
+					category = "special"
+					file = "primitive.dds"
+				}
+				background= {
+					category = "backgrounds"
+					file = "new_dawn.dds"
+				}
+				colors={
+					"turquoise"
+					"green"
+					"null"
+					"null"
+				}
+			}
+			day_zero_contact = no
+			type = primitive
+		}
+		last_created_country = {
+			set_country_flag = bronze_age
+			set_pre_ftl_age = bronze_age
+			set_graphical_culture = preindustrial_01
+		}
+
+		set_owner = last_created_country
+		owner = { set_awareness = 0 }
+		
+		while = {
+			count = 4
+			create_pop = {
+				species = last_created_species
+			}
+			last_created_pop = { save_event_target_as = gem_sol_spawn_humans }
+		}
+		add_building = building_primitive_dwellings
+		add_building = building_primitive_dwellings
+		add_building = building_stone_palace
+		#solar_system = { owner = { establish_communications_no_message = last_created_country } }
+		last_created_country = { save_global_event_target_as  = new_earth_civilisation_w_cg }
+	}
+	after = {
+		#last_created_country = { country_event = { id = primitive.20 } }
+		last_created_country = { country_event = { id = gem_off_colors.2005 days = 360 } }
+		create_species = { #make new portraits for crystal gems
+			class="GEO"
+			portrait="gem"
+			name = "Gem"
+			plural = "Gems"
+			name_list="GEO1"
+			gender=not_set
+			traits = {
+				trait="trait_geoloid"
+				trait="trait_crystal_gems"
+				trait="trait_gem_holobody"
+				trait="trait_gem_hardness"
+				trait="trait_gem_donteat"
+			}
+				homeworld = FROM
+		}
+		last_created_species = {
+			save_event_target_as = crystal_gems_species
+		}
+        FROM = {
+			create_pop = { species = last_created_species }
+		}
+		reset_planet = yes
+		add_deposit = d_kindergarten_blocker
+		
+		every_deposit = {
+			limit = {
+				OR = {
+					is_deposit_type = d_kindergarten_large
+					is_deposit_type = d_kindergarten_small
+					is_deposit_type = d_kindergarten_med
+				}
+			}
+			clear_blocker = yes
+		}
+		add_deposit = d_rugged_woods
+		add_deposit = d_rugged_woods
+		add_deposit = d_green_hills
+		add_deposit = d_green_hills
+		add_deposit = d_black_soil
+		add_deposit = d_bountiful_plains
+		add_deposit = d_dense_jungle
+		add_deposit = d_alien_sanctuary
+	}
+}
+country_event = { #Bronze Age -> Iron Age
+	id = gem_off_colors.2005
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		remove_country_flag = recently_advanced
+		country_event = { id = preftl.299 }
+		country_event = { id = gem_off_colors.2006 days = 720 random = 360 }
+	}
+}
+country_event = { #Iron Age -> Medieval Age
+	id = gem_off_colors.2006
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		remove_country_flag = recently_advanced
+		country_event = { id = preftl.399 }
+		country_event = { id = gem_off_colors.2007 days = 720 random = 360 }
+	}
+}
+country_event = { #Medieval Age -> Renaissance Age
+	id = gem_off_colors.2007
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		remove_country_flag = recently_advanced
+		country_event = { id = preftl.499 }
+	}
+}
+country_event = { #Renaissance Age -> Steam Age 
+	id = gem_off_colors.2008
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		remove_country_flag = recently_advanced
+		country_event = { id = preftl.599 }
+		solar_system = { owner = { establish_communications = event_target:new_earth_civilisation_w_cg } }
+	}
+}
+
+
+country_event = {
+	id = gem_off_colors.2009
+	title = gem_off_colors.2009.name
+	desc = gem_off_colors.2009.desc
+	picture = GFX_evt_gem_communication_established
+	show_sound = pearl_advisor_notification_alien_empire_communication
+	is_triggered_only = yes
+	option = {
+		name = OK
+	}
+}
+planet_event = { #prevents earth from being invaded
+	id = gem_off_colors.2010
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		AND = {
+			has_planet_flag = gem_planet_earth
+			owner = { has_country_flag = era_two_flag }
+		}
+	}
+	immediate = {
+			create_army = {
+				name = "NAME_crystal_gem_army"
+				type = "gem_defense_army"
+			}
+	}
+}
+#############
+# Era Three #
+#############
+
+planet_event = {
+	id = gem_off_colors.3
+	title = "gem_off_colors.3.name"
+	desc = "gem_off_colors.3.desc"
+	picture = GFX_evt_gem_off_colors_2
+	show_sound = event_criminal_activity #replace with offcolor music-clip
+	location = ROOT
+	
+	trigger = {
+		has_modifier = "pm_off_colors"
+		has_owner = yes
+		num_pops > 0
+		owner = { is_ai = no }
+		owner = { has_country_flag = "gem" }
+		owner = { NOT = { has_country_flag = "era_two_flag" } }
+	}
+	
+	mean_time_to_happen = {
+		months = 12
+	}
+	
+	option = {
+		name = EXCELLENT
+		remove_modifier = "pm_off_colors" 
+	}
+
+}
+
+###########
+# Various #
+###########
+
+#Diamond Deaths, currently unused
+country_event = { # White Diamond Death
+	is_triggered_only = yes
+	id = gem_off_colors.9001
+	hide_window = yes
+	immediate = {
+		remove_country_flag = white_alive
+		every_owned_planet = {
+			limit = {
+				is_colony = yes
+			}
+			planet_event = { id = gem_diamond_choice.1000 }
+		}
+	}
+}
+country_event = { # Yellow Diamond Death
+	is_triggered_only = yes
+	id = gem_off_colors.9002
+	hide_window = yes
+	immediate = {
+		remove_country_flag = yellow_alive
+		every_owned_planet = {
+			limit = {
+				is_colony = yes
+			}
+			planet_event = { id = gem_diamond_choice.1000 }
+		}
+	}
+}
+country_event = { # Blue Diamond Death
+	is_triggered_only = yes
+	id = gem_off_colors.9003
+	hide_window = yes
+	immediate = {
+		remove_country_flag = blue_alive
+		every_owned_planet = {
+			limit = {
+				is_colony = yes
+			}
+			planet_event = { id = gem_diamond_choice.1000 }
+		}
+	}
+}
+country_event = { # Pink Diamond Death
+	is_triggered_only = yes
+	id = gem_off_colors.9004
+	hide_window = yes
+	immediate = {
+		remove_country_flag = pink_alive
+		every_owned_planet = {
+			limit = {
+				is_colony = yes
+			}
+			planet_event = { id = gem_diamond_choice.1000 }
+		}
+	}
+}
+
+country_event = { # Pink Diamond Death
+	is_triggered_only = yes
+	id = gem_off_colors.9005
+	hide_window = yes
+	trigger = { has_country_flag = era_two_flag }
+	immediate = {
+		set_policy = {
+			policy = interference
+			option = interference_subtle #find alternative to allow all but aggressive
+			cooldown = yes
+		}
+		country_event = { id = gem_off_colors.9005 days = 3600 }
+	}
+}
+
+
+#ideas
+# event picture to end the aerth war of indipendence GFX_evt_planet_beam
+	# this event shoud also creat corrupted gem blockers
+# event for Battle of the Ziggurat
+	#laser light canons
+# event 

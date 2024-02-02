@@ -1,0 +1,27 @@
+### AGENDAS ####
+#
+# Agendas are given to leader-candidates in Oligarchic government-forms
+#
+# weight_modifier - scope = leader, from = country
+# modifier
+
+
+agenda_homeworld_gems = {
+	weight_modifier = {
+		weight = 100000
+		modifier = {
+			factor = 0
+				from = {
+					NOT = { is_geo_empire = yes }
+				}
+			}
+
+	}
+
+	modifier = {
+		planet_stability_add = 1
+		planet_jobs_alloys_produces_mult = 0.01
+		trade_value_mult = 0.01
+		pop_happiness = 0.01
+	}
+}

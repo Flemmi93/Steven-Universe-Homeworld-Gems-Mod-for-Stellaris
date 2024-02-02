@@ -1,0 +1,189 @@
+namespace = gem_diamond_ascention
+
+
+####################
+# Ascention Events #
+####################
+
+country_event = {
+	id = gem_diamond_ascention.0001
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		random_planet_within_border = {
+			limit = { NOT = { exists = archaeological_site } }
+			create_archaeological_site = white_ascention_dig_site
+		}
+		random_planet_within_border = {
+			limit = { NOT = { exists = archaeological_site } }
+			create_archaeological_site = yellow_ascention_dig_site
+		}
+		random_planet_within_border = {
+			limit = { NOT = { exists = archaeological_site } }
+			create_archaeological_site = blue_ascention_dig_site
+		}
+		random_planet_within_border = {
+			limit = { NOT = { exists = archaeological_site } }
+			create_archaeological_site = pink_ascention_dig_site
+		}
+	}
+}
+
+
+###################
+# Arc Site Events #
+###################
+
+fleet_event = {
+	ID = gem_diamond_ascention.1101
+	is_triggered_only = yes
+	title =  gem_diamond_ascention.1101.name
+	desc =  gem_diamond_ascention.1101.desc
+	picture = GFX_evt_gem_white_accension
+	show_sound = event_mystic_reveal
+	option = {
+		name = MARVELOUS
+		small_artifact_reward = yes
+	}
+}
+fleet_event = {
+	ID = gem_diamond_ascention.1102
+	is_triggered_only = yes
+	title =  gem_diamond_ascention.1101.name
+	desc =  gem_diamond_ascention.1102.desc
+	picture = GFX_evt_gem_white_accension
+	show_sound = event_mystic_reveal
+	option = {
+		name = MARVELOUS
+		medium_artifact_reward = yes
+	}
+}
+fleet_event = {
+	ID = gem_diamond_ascention.1103
+	is_triggered_only = yes
+	title =  gem_diamond_ascention.1101.name
+	desc =  gem_diamond_ascention.1103.desc
+	picture = GFX_evt_gem_white_accension
+	show_sound = event_mystic_reveal
+	option = {
+		name = EXCELLENT
+		owner = {
+			add_relic = r_gem_whitepart
+		}
+	}
+}
+fleet_event = {
+	ID = gem_diamond_ascention.1201
+	is_triggered_only = yes
+	title =  gem_diamond_ascention.1201.name
+	desc =  gem_diamond_ascention.1201.desc
+	picture = GFX_evt_gem_yellow_accension
+	show_sound = event_mystic_reveal
+	option = {
+		name = MARVELOUS
+		small_artifact_reward = yes
+	}
+}
+fleet_event = {
+	ID = gem_diamond_ascention.1202
+	is_triggered_only = yes
+	title =  gem_diamond_ascention.1201.name
+	desc =  gem_diamond_ascention.1202.desc
+	picture = GFX_evt_gem_yellow_accension
+	show_sound = event_mystic_reveal
+	option = {
+		name = MARVELOUS
+		medium_artifact_reward = yes
+	}
+}
+fleet_event = {
+	ID = gem_diamond_ascention.1203
+	is_triggered_only = yes
+	title =  gem_diamond_ascention.1201.name
+	desc =  gem_diamond_ascention.1203.desc
+	picture = GFX_evt_gem_yellow_accension
+	show_sound = event_mystic_reveal
+	option = {
+		name = EXCELLENT
+		owner = {
+			add_relic = r_gem_yellowpart
+		}
+	}
+}
+fleet_event = {
+	ID = gem_diamond_ascention.1301
+	is_triggered_only = yes
+	title =  gem_diamond_ascention.1301.name
+	desc =  gem_diamond_ascention.1301.desc
+	picture = GFX_evt_gem_blue_accension
+	show_sound = event_mystic_reveal
+	option = {
+		name = MARVELOUS
+		small_artifact_reward = yes
+	}
+}
+fleet_event = {
+	ID = gem_diamond_ascention.1302
+	is_triggered_only = yes
+	title =  gem_diamond_ascention.1301.name
+	desc =  gem_diamond_ascention.1302.desc
+	picture = GFX_evt_gem_blue_accension
+	show_sound = event_mystic_reveal
+	option = {
+		name = MARVELOUS
+		medium_artifact_reward = yes
+	}
+}
+fleet_event = {
+	ID = gem_diamond_ascention.1303
+	is_triggered_only = yes
+	title =  gem_diamond_ascention.1301.name
+	desc =  gem_diamond_ascention.1303.desc
+	picture = GFX_evt_gem_blue_accension
+	show_sound = event_mystic_reveal
+	option = {
+		name = EXCELLENT
+		owner = {
+			add_relic = r_gem_bluepart
+		}
+	}
+}
+fleet_event = {
+	ID = gem_diamond_ascention.1401
+	is_triggered_only = yes
+	title =  gem_diamond_ascention.1401.name
+	desc =  gem_diamond_ascention.1401.desc
+	picture = GFX_evt_gem_pink_accension
+	show_sound = event_mystic_reveal
+	option = {
+		name = MARVELOUS
+		small_artifact_reward = yes
+	}
+}
+fleet_event = {
+	ID = gem_diamond_ascention.1402
+	is_triggered_only = yes
+	title =  gem_diamond_ascention.1401.name
+	desc =  gem_diamond_ascention.1402.desc
+	picture = GFX_evt_gem_pink_accension
+	show_sound = event_mystic_reveal
+	option = {
+		name = MARVELOUS
+		medium_artifact_reward = yes
+	}
+}
+fleet_event = {
+	ID = gem_diamond_ascention.1403
+	is_triggered_only = yes
+	title =  gem_diamond_ascention.1401.name
+	desc =  gem_diamond_ascention.1403.desc
+	picture = GFX_evt_gem_pink_accension
+	show_sound = event_mystic_reveal
+	option = {
+		name = EXCELLENT
+		owner = {
+			add_relic = r_gem_pinkpart
+		}
+	}
+}

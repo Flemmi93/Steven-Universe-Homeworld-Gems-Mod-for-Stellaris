@@ -1,0 +1,50 @@
+# Enraged Gem Colonist Armies
+crystal_gem_army = {
+	defensive = yes
+	damage = 0.8
+	health = 5.0
+	morale = 1
+	has_morale = no
+	icon = GFX_army_type_rebel
+	has_species = no
+	collateral_damage = 1
+	
+	rebel = yes 
+	
+	potential = {
+		always = no
+	}
+}
+crystal_gem_army2 = {
+	defensive = yes
+	damage = 0.8
+	health = 20
+	morale = 1.25
+	has_morale = no
+	icon = GFX_army_type_rebel
+	has_species = no
+	collateral_damage = 1
+	
+	rebel = yes 
+	
+	potential = {
+		always = no
+	}
+}
+
+# gem Defense Armies
+gem_defense_army = {
+	defensive = yes
+	is_pop_spawned = no
+	health = 100
+	damage = 0.1
+	morale = 100
+	has_morale = no
+	collateral_damage = -10
+	war_exhaustion = 0.0 # No WE from defense armies
+	icon = GFX_army_type_defensive
+	
+	potential = {
+		always = no
+	}
+}

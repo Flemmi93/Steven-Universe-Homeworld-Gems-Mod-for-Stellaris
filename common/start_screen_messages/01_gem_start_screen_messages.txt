@@ -1,0 +1,26 @@
+# Geoformed
+part = {
+	location = 0
+	localization = "START_SCREEN_PART_ONE_GEM"
+	
+	trigger = {
+		ideal_planet_class = pc_gem
+		NOR = { 
+			has_country_flag = custom_start_screen 
+			has_authority = auth_hive_mind
+			has_authority = auth_machine_intelligence
+		}
+	}
+}
+
+### PRE-SCRIPTED
+
+# Diamond Authority
+part = {
+	location = 0
+	localization = "START_SCREEN_GEM"
+	
+	trigger = {
+		has_country_flag = gem
+	}
+}

@@ -1,0 +1,11 @@
+spriteTypes = {
+	################################################################
+	# ASCENSION PERK ICONS
+	################################################################
+
+	spriteType = {
+		name = "GFX_ap_gemcology_project"
+		texturefile = "gfx/interface/icons/ascension_perks/ap_gemcology_project2.dds"
+		alwaystransparent = yes
+	}
+}

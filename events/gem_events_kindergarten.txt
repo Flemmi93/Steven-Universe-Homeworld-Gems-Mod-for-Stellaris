@@ -1,0 +1,60 @@
+namespace = gem_kg
+
+
+#To inform about the kindergarten mechanic
+planet_event = {
+	id = gem_kg.1
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		is_geo_empire = yes
+	}
+
+	immediate = {
+		owner = { country_event = { id = gem_kg.2 days = 1 }
+		}
+		
+	}
+
+
+}
+
+country_event = {
+	id = gem_kg.2
+	title = "gem_kg.2.name"
+	desc = gem_kg.2.desc
+	picture = GFX_evt_gem_kindergarten
+	show_sound = event_mystic_reveal
+	is_triggered_only = yes
+
+
+	trigger = {
+		is_geo_empire = yes
+		owner = {
+			NOT = { has_country_flag = gem_dontshow_kg_tut } #every time a colony is founded and they havent converted Farms to Kindergarten deposits they should get this
+			}
+	}
+
+	option = { 
+	name = OK 
+	}
+	option = {
+	name = "gem_kg.2.b"
+			if = {
+			limit = {
+				NOT = { has_country_flag = gem_dontshow_kg_tut }
+			}
+			set_country_flag = gem_dontshow_kg_tut
+		}
+	}
+}
+
+country_event = {
+	id = gem_kg.3
+	is_triggered_only = yes
+	hide_window = yes
+	immediate = { 
+		remove_country_flag = wenkwort_custodian
+	}
+}

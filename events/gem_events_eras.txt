@@ -1,0 +1,395 @@
+namespace = gem_era
+
+##############
+# Era Events #
+##############
+
+#Era 1 Beigns
+country_event = {
+	id = gem_era.1
+	title = "gem_era.1.name"
+	desc = "gem_era.1.desc"
+	picture = GFX_evt_gem_homeworld
+	show_sound = event_mystic_reveal
+	is_triggered_only = yes
+	trigger = {
+		is_geo_empire = yes
+		is_diamond_empire = yes
+	}
+	
+	option = {
+		name = "gem_era.1.a"
+		
+		hidden_effect = {
+		
+			remove_country_flag = era_two_flag
+			remove_country_flag = era_three_flag
+			set_country_flag = era_one_flag
+			
+			set_country_flag = white_alive
+			set_country_flag = yellow_alive
+			set_country_flag = blue_alive
+			set_country_flag = pink_alive
+			
+			country_event = { id = gem_diamond_ruler.0001 }
+		}
+		add_modifier = { modifier = era_one }
+	}
+	
+	after = {
+#		start_situation = {
+#			type = pink_situation # implement this one day
+#		}
+	}
+}
+
+
+#Era 2 Begins
+country_event = {
+	id = gem_era.2
+	title = "gem_era.2.name"
+	desc = "gem_era.2.desc"
+	picture = GFX_evt_gem_shattered
+	show_sound = event_public_unrest
+	is_triggered_only = yes
+	trigger = {
+		is_geo_empire = yes
+		is_diamond_empire = yes
+	}
+	immediate = {
+		set_policy = {
+			policy = interference
+			option = interference_subtle
+			cooldown = yes
+		}
+		country_event = { id = gem_off_colors.9005 days = 3600 }
+	}
+	option = {
+		trigger = { has_country_flag = gem_white_rules }
+		name = "gem_era.2.a"
+		hidden_effect = {
+			force_remove_civic = civic_tetrarchy
+			force_add_civic = civic_triarchy
+			remove_modifier = era_one
+			event_target:gem_planet_earth_event = {
+				assign_leader = event_target:gem_pink_diamond
+			}
+			event_target:gem_pink_diamond = {
+				kill_leader = {
+				class = diamond_class
+				show_notification = yes
+				}
+			}
+			add_resource = { minerals = 1 }
+			set_heir = event_target:gem_yellow_diamond
+			remove_country_flag = era_one_flag
+			remove_country_flag = era_three_flag
+			remove_country_flag = pink_got_earth
+			set_country_flag = era_two_flag
+			country_event = { id = gem_off_colors.9004 days = 1 }
+			country_event = { id = gem_era.3 days = 21600 random = 3600 }
+			#country_event = { id = gem_era.2001 days = 1800 random = 1080 }  #Path to White Gestalt currently not active
+			capital_scope = {
+				remove_modifier = pm_grand_court_1
+				add_modifier = { modifier = pm_grand_court_2 }
+			}
+		}
+		add_resource = { minerals = 1 }
+		add_modifier = { modifier = era_two }
+	}
+	option = {
+		trigger = { has_country_flag = gem_yellow_rules }
+		name = "gem_era.2.a"
+		hidden_effect = {
+			force_remove_civic = civic_tetrarchy
+			force_add_civic = civic_triarchy
+			remove_modifier = era_one
+			kill_leader = {
+				class = official
+				heir = yes
+				show_notification = yes
+			}
+			add_resource = { minerals = 1 }
+			create_leader = {
+				class = official
+				name = "Blue Diamond"
+				species = owner_main_species
+				traits = {
+					trait = "trait_ruler_deep_connections"
+					trait = "trait_ruler_home_in_the_sky"
+				}
+			}
+			last_created_leader = {
+				change_leader_portrait = gemD3 #Blue
+				save_global_event_target_as = gem_heir
+			}
+			set_heir = last_created_leader
+			remove_country_flag = era_one_flag
+			remove_country_flag = era_three_flag
+			remove_country_flag = pink_got_earth
+			set_country_flag = era_two_flag
+			country_event = { id = gem_off_colors.9004 days = 1 }
+			country_event = { id = gem_era.3 days = 21600 random = 3600 }
+			capital_scope = {
+				remove_modifier = pm_grand_court_1
+				add_modifier = { modifier = pm_grand_court_2 }
+			}
+		}
+		add_resource = { minerals = 1 }
+		add_modifier = { modifier = era_two }
+	}
+	option = {
+		trigger = { has_country_flag = gem_blue_rules }
+		name = "gem_era.2.a"
+		hidden_effect = {
+			force_remove_civic = civic_tetrarchy
+			force_add_civic = civic_triarchy
+			remove_modifier = era_one
+			kill_leader = {
+				class = official
+				heir = yes
+				show_notification = yes
+			}
+			add_resource = { minerals = 1 }
+			create_leader = {
+				class = official
+				name = "Yellow Diamond"
+				species = owner_main_species
+				traits = {
+					trait = "trait_ruler_logistic_understanding"
+					trait = "trait_ruler_warlike"
+				}
+			}
+			last_created_leader = {
+				change_leader_portrait = gemD2 #Yellow
+				save_global_event_target_as = gem_heir
+			}
+			set_heir = last_created_leader
+			remove_country_flag = era_one_flag
+			remove_country_flag = era_three_flag
+			remove_country_flag = pink_got_earth
+			set_country_flag = era_two_flag
+			country_event = { id = gem_off_colors.9004 days = 1 }
+			country_event = { id = gem_era.3 days = 21600 random = 3600 }
+			capital_scope = {
+				remove_modifier = pm_grand_court_1
+				add_modifier = { modifier = pm_grand_court_2 }
+			}
+		}
+		add_resource = { minerals = 1 }
+		add_modifier = { modifier = era_two }
+	}
+	option = {
+		trigger = { has_country_flag = gem_pink_rules }
+		name = "gem_era.2.a"
+		hidden_effect = {
+			force_remove_civic = civic_tetrarchy
+			force_add_civic = civic_triarchy
+			remove_modifier = era_one
+			kill_leader = {
+				class = official
+				heir = yes
+				show_notification = yes
+			}
+			add_resource = { minerals = 1 }
+			create_leader = {
+				class = official
+				name = "Yellow Diamond"
+				species = owner_main_species
+				traits = {
+					trait = "trait_ruler_logistic_understanding"
+					trait = "trait_ruler_warlike"
+				}
+			}
+			last_created_leader = {
+				change_leader_portrait = gemD2 #yellow
+				save_global_event_target_as = gem_heir
+			}
+			set_heir = last_created_leader
+			remove_country_flag = era_one_flag
+			remove_country_flag = era_three_flag
+			remove_country_flag = pink_got_earth
+			set_country_flag = era_two_flag
+			country_event = { id = gem_off_colors.9004 days = 1 }
+			country_event = { id = gem_era.3 days = 21600 random = 3600 }
+			#country_event = { id = gem_era.2001 days = 1800 random = 1080 }  #Path to White Gestalt currently not active
+			capital_scope = {
+				remove_modifier = pm_grand_court_1
+				add_modifier = { modifier = pm_grand_court_2 }
+			}
+		}
+		add_resource = { minerals = 1 }
+		add_modifier = { modifier = era_two }
+	}
+	
+}
+
+country_event = {
+    hide_window = yes
+	id = gem_era.2002
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+		set_country_flag = chose_yellow
+			create_leader = {
+				class = official
+				name = "Blue Diamond"
+				species = owner_main_species
+				traits = {
+					trait = "trait_ruler_charismatic"
+					trait = "trait_ruler_home_in_the_sky"
+				}
+			}
+			last_created_leader = {
+				change_leader_portrait = gemD3 #Blue
+			}
+			set_heir = last_created_leader
+		}
+	}
+}
+country_event = {
+    hide_window = yes
+	id = gem_era.2003
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+		set_country_flag = chose_blue
+			create_leader = {
+				class = official
+				name = "Yellow Diamond"
+				species = owner_main_species
+				traits = {
+					trait = "trait_ruler_logistic_understanding"
+					trait = "trait_ruler_warlike"
+				}
+			}
+			last_created_leader = {
+				change_leader_portrait = gemD2 #Yellow
+			}
+			set_heir = last_created_leader
+		}
+	}
+}
+
+planet_event = {
+    hide_window = yes
+	id = gem_era.2004
+	is_triggered_only = yes
+	immediate = {
+		remove_planet_flag = gem_planet_pink_gone
+	}
+}
+country_event = {
+	id = gem_era.3
+	title = "gem_era.3.name"
+	desc = "gem_era.3.desc"
+	picture = GFX_evt_gem_ball
+	show_sound = event_celebration
+	is_triggered_only = yes
+	trigger = {
+		is_geo_empire = yes
+		is_diamond_empire = yes
+	}
+	immediate = { set_country_flag = pink_alive }
+	option = {
+		name = "gem_era.3.a"
+		hidden_effect = {
+			create_leader = {
+				class = diamond_class
+				name = "Pink Diamond"
+				species = owner_main_species
+				#LEVEL = 4
+				GENDER = female
+				IMMORTAL = yes
+				#HIDEAGE = yes
+				traits = {
+					trait = "trait_ruler_diamond"
+				}
+			}
+			last_created_leader = {
+				change_leader_portrait = gemD4 #Pink
+				save_global_event_target_as = gem_pink_diamond
+			}
+			set_heir = last_created_leader
+			force_remove_civic = civic_triarchy
+			remove_modifier = era_two
+			force_add_civic = civic_tetrarchy
+			owner = { remove_country_flag = era_one_flag }
+			owner = { remove_country_flag = era_two_flag }
+			owner = { set_country_flag = era_three_flag }
+			capital_scope = {
+				remove_modifier = pm_grand_court_2
+				add_modifier = { modifier = pm_grand_court_1 }
+			}
+			event_target:new_earth_civilisation_w_cg = { country_event = { id = gem_off_colors.2008 } }
+		}
+		country_event = { id = gem_off_colors.2009 days = 10 }
+		add_resource = { unity = 500 }
+		add_modifier = { modifier = era_three }
+	}
+}
+
+#Era white Beigns
+country_event = {
+	id = gem_era.4
+	title = "gem_era.4.name"
+	desc = "gem_era.4.desc"
+	picture = GFX_evt_gem_homeworld
+	show_sound = event_mystic_reveal
+	is_triggered_only = yes
+	
+	trigger = {
+		is_geo_empire = yes
+		is_hive_empire = yes
+	}
+	option = {
+		name = "gem_era.4.a"
+		
+		hidden_effect = {		
+			#Sets Leader with specific traits
+			leader = {
+				#gem_remove_all_ruler_traits = yes
+				add_trait = trait_ruler_diamond
+			}
+			remove_country_flag = era_two_flag
+			remove_country_flag = era_three_flag
+			remove_country_flag = era_one_flag
+			set_country_flag = era_white_flag
+			
+			set_country_flag = first_choice_made
+			set_country_flag = gem_white_rules
+			
+			set_country_flag = white_alive
+			
+			#country_event = { id = gem_diamond_traits.0001 }
+		}
+		add_modifier = { modifier = era_white }
+	}	
+}
+#Era Crystal Gems Beigns
+country_event = {
+	id = gem_era.5
+	title = "gem_era.5.name"
+	desc = "gem_era.5.desc"
+	picture = GFX_evt_gem_homeworld
+	show_sound = event_mystic_reveal
+	is_triggered_only = yes
+	
+	trigger = {
+		owner = {
+			has_origin = origin_crystal_gems
+		}
+	}
+	option = {
+		name = "gem_era.5.a"
+		
+		hidden_effect = {	
+			remove_country_flag = era_two_flag
+			remove_country_flag = era_three_flag
+			remove_country_flag = era_one_flag
+			remove_country_flag = era_white_flag
+			set_country_flag = era_crystal_gems_flag
+		}
+		add_modifier = { modifier = era_crystal_gems }
+	}	
+}

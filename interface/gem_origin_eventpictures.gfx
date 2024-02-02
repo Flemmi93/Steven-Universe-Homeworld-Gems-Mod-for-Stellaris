@@ -1,0 +1,17 @@
+spriteTypes = {	
+	spriteType = {
+		name = "GFX_origin_geoform"
+		texturefile = "gfx/event_pictures/origins/origin_geoform.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_origin_gem_rebellion"
+		texturefile = "gfx/event_pictures/origins/origin_gem_rebellion.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_origin_gem_crystal_gems"
+		texturefile = "gfx/event_pictures/origins/origin_gem_crystal_gems.dds"
+		alwaystransparent = yes
+	}
+}

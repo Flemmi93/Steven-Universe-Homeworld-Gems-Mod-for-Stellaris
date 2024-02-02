@@ -1,0 +1,209 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_evt_gem_homeworld"
+		texturefile = "gfx/event_pictures/gem_homeworld.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes		
+	}
+	spriteType = {
+		name = "GFX_evt_gem_shattered"
+		texturefile = "gfx/event_pictures/gem_shattered.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_gem_ball"
+		texturefile = "gfx/event_pictures/gem_ball.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_gem_off_colors"
+		texturefile = "gfx/event_pictures/gem_off_colors.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_gem_off_colors_2"
+		texturefile = "gfx/event_pictures/gem_off_colors_gone.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_gem_rebellion_1"
+		texturefile = "gfx/event_pictures/gem_rebellion_flag1.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_origin_gem_one"
+		texturefile = "gfx/event_pictures/gem_homeworld.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_origin_gem_white"
+		texturefile = "gfx/event_pictures/gem_homeworld_white.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_origin_gem_rebellion"
+		texturefile = "gfx/event_pictures/gem_rebellion_flag1.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_gem_choseyellow"
+		texturefile = "gfx/event_pictures/gem_choseyellow.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_gem_choseblue"
+		texturefile = "gfx/event_pictures/gem_choseblue.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_gem_changeleader"
+		texturefile = "gfx/event_pictures/gem_changeleader.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_gem_kindergarten"
+		texturefile = "gfx/event_pictures/gem_kindergarten.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_gem_diamond_choice"
+		texturefile = "gfx/event_pictures/gem_diamond_choice.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_gem_rose_kindergarten"
+		texturefile = "gfx/event_pictures/gem_rose_kindergarten.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_gem_humans_spotted"
+		texturefile = "gfx/event_pictures/gem_humans_spotted.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_gem_pale_rose1"
+		texturefile = "gfx/event_pictures/gem_rebellion_palerose1.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_gem_perdiot1"
+		texturefile = "gfx/event_pictures/gem_rebellion_peridot1.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_gem_pinkvisits"
+		texturefile = "gfx/event_pictures/gem_pink_visits.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_gem_rosequestion"
+		texturefile = "gfx/event_pictures/gem_rose_question.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_gem_pink_death"
+		texturefile = "gfx/event_pictures/gem_rebellion_pink_death.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_gem_jasper"
+		texturefile = "gfx/event_pictures/gem_jasper_event.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_gem_tridiamondattack"
+		texturefile = "gfx/event_pictures/gem_tridiamondattack.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_gem_full_retreat"
+		texturefile = "gfx/event_pictures/gem_full_retreat.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_gem_visit_to_earth"
+		texturefile = "gfx/event_pictures/gem_visit_to_earth.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_gem_disgraced_sapphire"
+		texturefile = "gfx/event_pictures/gem_disgraced_sapphire.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_gem_pink_mood"
+		texturefile = "gfx/event_pictures/gem_pink_diamond_mood.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_gem_homeworld_yellowish"
+		texturefile = "gfx/event_pictures/gem_homeworld_yellowish.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_gem_diamonds_worried"
+		texturefile = "gfx/event_pictures/gem_diamonds_worried.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_gem_pink_happy"
+		texturefile = "gfx/event_pictures/gem_festival.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_gem_white_accension"
+		texturefile = "gfx/event_pictures/gem_accension_white.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_gem_yellow_accension"
+		texturefile = "gfx/event_pictures/gem_accension_yellow.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_gem_blue_accension"
+		texturefile = "gfx/event_pictures/gem_accension_blue.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_gem_pink_accension"
+		texturefile = "gfx/event_pictures/gem_accension_pink.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_gem_communication_established"
+		texturefile = "gfx/event_pictures/gem_communication_established.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+}

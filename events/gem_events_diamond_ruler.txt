@@ -1,0 +1,444 @@
+namespace = gem_diamond_ruler
+# Main screen to choose what diamond should rule
+country_event = {
+	id = gem_diamond_ruler.0001
+	title = gem_diamond_traits.0001.name:
+	desc = gem_diamond_traits.0001.desc
+	picture = "GFX_evt_gem_diamond_choice"
+	is_triggered_only = yes
+
+	#White############################################
+	option = {
+		name = white_diamond
+		trigger = {
+			OR = {
+				has_country_flag = era_one_flag
+				has_country_flag = era_two_flag
+				has_country_flag = era_three_flag
+				has_country_flag = era_white_flag
+				has_country_flag = no_era_flag
+			}
+		}
+		allow = { has_country_flag = white_alive }
+		hidden_effect = {
+			country_event = { ID = gem_diamond_ruler.0010 }
+		}
+	
+	}
+	
+	#Yellow###########################################
+	option = {
+		name = yellow_diamond
+		trigger = {
+			OR = {
+				has_country_flag = era_one_flag
+				has_country_flag = era_two_flag
+				has_country_flag = era_three_flag
+				has_country_flag = no_era_flag
+			}
+		}
+		allow = { has_country_flag = yellow_alive }
+		hidden_effect = {
+			country_event = { ID = gem_diamond_ruler.0020 }
+		}
+	}
+	
+	#Yellow###########################################
+	option = {
+		name = blue_diamond
+		trigger = {
+			OR = {
+				has_country_flag = era_one_flag
+				has_country_flag = era_two_flag
+				has_country_flag = era_three_flag
+				has_country_flag = no_era_flag
+			}
+		}
+		allow = { has_country_flag = blue_alive }
+		hidden_effect = {
+			country_event = { ID = gem_diamond_ruler.0030 }
+		}
+	}
+	
+	#Pink#############################################
+	option = {
+		name = pink_diamond
+		trigger = {
+			OR = {
+				has_country_flag = era_one_flag
+				has_country_flag = era_three_flag
+				has_country_flag = no_era_flag
+			}
+		}
+		allow = {
+			AND = {
+				has_country_flag = pink_alive
+				NOT = { has_country_flag = pink_got_earth }
+			}
+		}
+		hidden_effect = {
+			country_event = { ID = gem_diamond_ruler.0040 }
+		}
+	}
+	option = {
+		name = CANCEL
+		trigger = { is_ai = yes}
+	}
+}
+
+#Chose White Diamond
+country_event = {
+	ID = gem_diamond_ruler.0010
+	title = gem_diamond_traits.0001.name
+	desc = gem_diamond_traits.0010.desc
+	picture = "GFX_evt_gem_diamond_choice"
+	is_triggered_only = yes
+	
+	immediate = {
+		set_country_flag = gem_white_rules
+		remove_country_flag = gem_yellow_rules
+		remove_country_flag = gem_blue_rules
+		remove_country_flag = gem_pink_rules
+	}
+	
+	option = {
+		name = MAKE_IT_SO
+		hidden_effect = {
+		#Create the choosen leader
+			create_leader = {
+				class = diamond_class
+				name = "White Diamond"
+				species = owner_main_species
+				traits = {
+					trait = "trait_ruler_diamond"
+				}
+			}
+			last_created_leader = {
+				change_leader_portrait = gemD1 #White
+			}
+			
+			set_heir = last_created_leader
+			kill_leader = { show_notification = no }
+			set_leader = last_created_leader
+			
+			leader = {
+				add_trait = "trait_imperial_heir"
+			}
+			#Spwn in all the other Diamonds
+			create_leader = {
+					class = diamond_class
+					name = "Yellow Diamond"
+					species = owner_main_species
+					traits = {
+						trait = "trait_ruler_diamond"
+					}
+				}
+			last_created_leader = {
+				change_leader_portrait = gemD2 #Yellow
+				save_global_event_target_as = gem_yellow_diamond
+			}
+			create_leader = {
+					class = diamond_class
+					name = "Blue Diamond"
+					species = owner_main_species
+					traits = {
+						trait = "trait_ruler_diamond"
+					}
+				}
+			last_created_leader = {
+				change_leader_portrait = gemD3 #Blue
+				save_global_event_target_as = gem_blue_diamond
+			}
+			create_leader = {
+					class = diamond_class
+					name = "Pink Diamond"
+					species = owner_main_species
+					traits = {
+						trait = "trait_ruler_diamond"
+					}
+				}
+			set_heir = last_created_leader
+			last_created_leader = {
+				change_leader_portrait = gemD4 #Pink
+				save_global_event_target_as = gem_pink_diamond
+			}
+		}
+	}
+	option = {
+		name = Back
+		hidden_effect = { country_event = { id = gem_diamond_ruler.0001 } }
+	}
+	#option = {
+	#	name = CANCEL
+	#	hidden_effect = { country_event = { id = gem_diamond_ruler.0008 days = 1 } }
+	#}
+}
+
+#Chose Yellow Diamond
+country_event = {
+	ID = gem_diamond_ruler.0020
+	title = gem_diamond_traits.0001.name
+	desc = gem_diamond_traits.0020.desc
+	picture = "GFX_evt_gem_diamond_choice"
+	is_triggered_only = yes
+	
+	immediate = {
+		remove_country_flag = gem_white_rules
+		set_country_flag = gem_yellow_rules
+		remove_country_flag = gem_blue_rules
+		remove_country_flag = gem_pink_rules
+	}
+	
+	option = {
+		name = MAKE_IT_SO
+		hidden_effect = {
+		#Create the choosen leader
+			create_leader = {
+				class = diamond_class
+				name = "Yellow Diamond"
+				species = owner_main_species
+				traits = {
+					trait = "trait_ruler_diamond"
+				}
+			}
+			last_created_leader = {
+				change_leader_portrait = gemD2 #Yellow
+			}
+			
+			set_heir = last_created_leader
+			kill_leader = { show_notification = no }
+			set_leader = last_created_leader
+			
+			leader = {
+				add_trait = "trait_imperial_heir"
+			}
+			#Spwn in all the other Diamonds
+			create_leader = {
+					class = diamond_class
+					name = "White Diamond"
+					species = owner_main_species
+					traits = {
+						trait = "trait_ruler_diamond"
+					}
+				}
+			last_created_leader = {
+				change_leader_portrait = gemD1 #White
+				save_global_event_target_as = gem_white_diamond
+			}
+			create_leader = {
+					class = diamond_class
+					name = "Blue Diamond"
+					species = owner_main_species
+					traits = {
+						trait = "trait_ruler_diamond"
+					}
+				}
+			last_created_leader = {
+				change_leader_portrait = gemD3 #Blue
+				save_global_event_target_as = gem_blue_diamond
+			}
+			create_leader = {
+					class = diamond_class
+					name = "Pink Diamond"
+					species = owner_main_species
+					traits = {
+						trait = "trait_ruler_diamond"
+					}
+				}
+			set_heir = last_created_leader
+			last_created_leader = {
+				change_leader_portrait = gemD4 #Pink
+				save_global_event_target_as = gem_pink_diamond
+			}
+		}
+	}
+	option = {
+		name = Back
+		hidden_effect = { country_event = { id = gem_diamond_ruler.0001 } }
+	}
+	#option = {
+	#	name = CANCEL
+	#	hidden_effect = { country_event = { id = gem_diamond_ruler.0008 days = 1 } }
+	#}
+}
+
+#Chose Blue Diamond
+country_event = {
+	ID = gem_diamond_ruler.0030
+	title = gem_diamond_traits.0001.name
+	desc = gem_diamond_traits.0030.desc
+	picture = "GFX_evt_gem_diamond_choice"
+	is_triggered_only = yes
+	
+	immediate = {
+		remove_country_flag = gem_white_rules
+		remove_country_flag = gem_yellow_rules
+		set_country_flag = gem_blue_rules
+		remove_country_flag = gem_pink_rules	
+	}
+	
+	option = {
+		name = MAKE_IT_SO
+		hidden_effect = {
+		#Create the choosen leader
+			create_leader = {
+				class = diamond_class
+				name = "Blue Diamond"
+				species = owner_main_species
+				traits = {
+					trait = "trait_ruler_diamond"
+				}
+			}
+			last_created_leader = {
+				change_leader_portrait = gemD3 #Blue
+			}
+			
+			set_heir = last_created_leader
+			kill_leader = { show_notification = no }
+			set_leader = last_created_leader
+			
+			leader = {
+				add_trait = "trait_imperial_heir"
+			}
+			#Spwn in all the other Diamonds
+			create_leader = {
+					class = diamond_class
+					name = "Yellow Diamond"
+					species = owner_main_species
+					traits = {
+						trait = "trait_ruler_diamond"
+					}
+				}
+			last_created_leader = {
+				change_leader_portrait = gemD2 #Yellow
+				save_global_event_target_as = gem_yellow_diamond
+			}
+			create_leader = {
+					class = diamond_class
+					name = "White Diamond"
+					species = owner_main_species
+					traits = {
+						trait = "trait_ruler_diamond"
+					}
+				}
+			last_created_leader = {
+				change_leader_portrait = gemD1 #White
+				save_global_event_target_as = gem_white_diamond
+			}
+			create_leader = {
+					class = diamond_class
+					name = "Pink Diamond"
+					species = owner_main_species
+					traits = {
+						trait = "trait_ruler_diamond"
+					}
+				}
+			set_heir = last_created_leader
+			last_created_leader = {
+				change_leader_portrait = gemD4 #Pink
+				save_global_event_target_as = gem_pink_diamond
+			}
+		}
+	}
+	option = {
+		name = Back
+		hidden_effect = { country_event = { id = gem_diamond_ruler.0001 } }
+	}
+	#option = {
+	#	name = CANCEL
+	#	hidden_effect = { country_event = { id = gem_diamond_ruler.0008 days = 1 } }
+	#}
+}
+
+
+#Chose Pink Diamond
+country_event = {
+	ID = gem_diamond_ruler.0040
+	title = gem_diamond_traits.0001.name
+	desc = gem_diamond_traits.0040.desc
+	picture = "GFX_evt_gem_diamond_choice"
+	is_triggered_only = yes
+
+	immediate = {
+		remove_country_flag = gem_white_rules
+		remove_country_flag = gem_yellow_rules
+		remove_country_flag = gem_blue_rules
+		set_country_flag = gem_pink_rules
+	}
+	
+	option = {
+	allow = {
+		always = no
+	}
+		name = pink_is_ready5
+		hidden_effect = {
+		#Create the choosen leader
+			create_leader = {
+				class = diamond_class
+				name = "Pink Diamond"
+				species = owner_main_species
+				traits = {
+					trait = "trait_ruler_diamond"
+				}
+			}
+			last_created_leader = {
+				change_leader_portrait = gemD4 #Pink
+			}
+			
+			set_heir = last_created_leader
+			kill_leader = { show_notification = no }
+			set_leader = last_created_leader
+			
+			leader = {
+				add_trait = "trait_imperial_heir"
+			}
+		#Spwn in all the other Diamonds
+			
+			create_leader = {
+					class = diamond_class
+					name = "Yellow Diamond"
+					species = owner_main_species
+					traits = {
+						trait = "trait_ruler_diamond"
+					}
+				}
+			last_created_leader = {
+				change_leader_portrait = gemD2 #Yellow
+				save_global_event_target_as = gem_yellow_diamond
+			}
+			create_leader = {
+					class = diamond_class
+					name = "Blue Diamond"
+					species = owner_main_species
+					traits = {
+						trait = "trait_ruler_diamond"
+					}
+				}
+			last_created_leader = {
+				change_leader_portrait = gemD3 #Blue
+				save_global_event_target_as = gem_blue_diamond
+			}
+			create_leader = {
+					class = diamond_class
+					name = "White Diamond"
+					species = owner_main_species
+					traits = {
+						trait = "trait_ruler_diamond"
+					}
+				}
+			set_heir = last_created_leader
+			last_created_leader = {
+				change_leader_portrait = gemD1 #White
+				save_global_event_target_as = gem_white_diamond
+			}
+		}
+	}
+	option = {
+		name = Back
+		hidden_effect = { country_event = { id = gem_diamond_ruler.0001 } }
+	}
+	#option = {
+	#	name = CANCEL
+	#	hidden_effect = { country_event = { id = gem_diamond_ruler.0008 days = 1 } }
+	#}
+}

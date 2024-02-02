@@ -1,0 +1,25 @@
+# Check which robot portrait to use for a newly built or upgraded robot in a country.
+# With the new robot portraits in synthetic dawn, robots select a portrait depending on the species class of the founder species.
+# See robot field in 00_robot_pops.txt
+# scope: country, from: upgraded from species (optional)
+
+is_geo_empire = {
+	owner_species = {
+		has_trait = trait_geoloid
+	}
+}
+is_diamond_empire = {
+	owner = {
+		OR = {
+			has_civic = civic_tetrarchy
+			has_civic = civic_triarchy
+		}
+	}
+}
+has_district_kindergarten = {
+	has_planet_flag = gem_has_kindergarten
+}
+
+has_district_kindergarten2 = {
+	has_planet_flag = gem_has_kindergarten2
+}

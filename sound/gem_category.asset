@@ -1,0 +1,21 @@
+category = {
+ name = "Effects"
+ soundeffects = {
+	pc_gem
+	pc_gemworld
+	pc_gem_kindergarten
+	pc_gem_city
+	pc_gem_asteroid
+	offcolors_01
+ }
+ compressor = 
+ {
+ enabled = yes
+ pregain = 2.0
+ postgain = 1.5
+ ratio = 10.0
+ threshold = -8.0
+ attacktime = 0.30
+ releasetime = 0.020
+ }
+}

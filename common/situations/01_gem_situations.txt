@@ -1,0 +1,353 @@
+
+####################
+### Court Levels ###
+####################
+
+white_ascencion_situation = {
+
+	picture = "GFX_evt_gem_white_accension"
+	complete_icon_frame = GFX_situation_outcome_frame_green
+	complete_icon = GFX_situation_outcome_positive
+	category = situation
+	
+	on_progress_complete = {
+		destroy_situation = this
+		custom_tooltip = white_ascencion_complete
+		owner = { set_country_flag = white_ascended_flag }
+		hidden_effect = { owner = { country_event = { id = gem_diamond_choice.1003 days = 1 } } }
+	}
+	
+	stages = {
+		diamond_accension_step1 = {
+			icon = GFX_situation_stage_1
+			icon_background = GFX_situation_stage_frame_green
+			end = 20
+		}
+		diamond_accension_step2 = {
+			icon = GFX_situation_stage_2
+			icon_background = GFX_situation_stage_frame_green
+			end = 40
+		}
+		diamond_accension_step3 = {
+			icon = GFX_situation_stage_3
+			icon_background = GFX_situation_stage_frame_green
+			end = 60
+			on_first_enter = {
+			}
+		}
+		diamond_accension_step4 = {
+			icon = GFX_situation_stage_4
+			icon_background = GFX_situation_stage_frame_green
+			end = 80
+		}
+		diamond_accension_step5 = {
+			icon = GFX_situation_stage_5
+			icon_background = GFX_situation_stage_frame_green
+			end = 100
+		}
+	}
+	
+	approach = {
+		name = approach_default
+		icon = GFX_situation_approach_this_is_fine
+		icon_background = GFX_situation_approach_bg_yellow
+		default = yes
+		on_select = {
+			custom_tooltip = approach_outcome_tooltip
+		}
+		ai_weight = {
+			base = 1
+		}
+	}
+	
+	monthly_progress = {
+		base = 1
+	}
+	
+}
+
+yellow_ascencion_situation = {
+
+	picture = "GFX_evt_gem_yellow_accension"
+	complete_icon_frame = GFX_situation_outcome_frame_green
+	complete_icon = GFX_situation_outcome_positive
+	category = situation
+	
+	on_progress_complete = {
+		destroy_situation = this
+		custom_tooltip = yellow_ascencion_complete
+		owner = { set_country_flag = yellow_ascended_flag }
+		hidden_effect = { owner = { country_event = { id = gem_diamond_choice.1003 days = 1 } } }
+	}
+	
+	stages = {
+		diamond_accension_step1 = {
+			icon = GFX_situation_stage_1
+			icon_background = GFX_situation_stage_frame_green
+			end = 20
+		}
+		diamond_accension_step2 = {
+			icon = GFX_situation_stage_2
+			icon_background = GFX_situation_stage_frame_green
+			end = 40
+		}
+		diamond_accension_step3 = {
+			icon = GFX_situation_stage_3
+			icon_background = GFX_situation_stage_frame_green
+			end = 60
+			on_first_enter = {
+			}
+		}
+		diamond_accension_step4 = {
+			icon = GFX_situation_stage_4
+			icon_background = GFX_situation_stage_frame_green
+			end = 80
+		}
+		diamond_accension_step5 = {
+			icon = GFX_situation_stage_5
+			icon_background = GFX_situation_stage_frame_green
+			end = 100
+		}
+	}
+	
+	approach = {
+		name = approach_default
+		icon = GFX_situation_approach_this_is_fine
+		icon_background = GFX_situation_approach_bg_yellow
+		default = yes
+		on_select = {
+			custom_tooltip = approach_outcome_tooltip
+		}
+		ai_weight = {
+			base = 1
+		}
+	}
+	
+	monthly_progress = {
+		base = 1
+	}
+	
+}
+
+blue_ascencion_situation = {
+
+	picture = "GFX_evt_gem_blue_accension"
+	complete_icon_frame = GFX_situation_outcome_frame_green
+	complete_icon = GFX_situation_outcome_positive
+	category = situation
+	
+	on_progress_complete = {
+		destroy_situation = this
+		custom_tooltip = blue_ascencion_complete
+		owner = { set_country_flag = blue_ascended_flag }
+		hidden_effect = { owner = { country_event = { id = gem_diamond_choice.1003 days = 1 } } }
+	}
+	
+	stages = {
+		diamond_accension_step1 = {
+			icon = GFX_situation_stage_1
+			icon_background = GFX_situation_stage_frame_green
+			end = 20
+		}
+		diamond_accension_step2 = {
+			icon = GFX_situation_stage_2
+			icon_background = GFX_situation_stage_frame_green
+			end = 40
+		}
+		diamond_accension_step3 = {
+			icon = GFX_situation_stage_3
+			icon_background = GFX_situation_stage_frame_green
+			end = 60
+			on_first_enter = {
+			}
+		}
+		diamond_accension_step4 = {
+			icon = GFX_situation_stage_4
+			icon_background = GFX_situation_stage_frame_green
+			end = 80
+		}
+		diamond_accension_step5 = {
+			icon = GFX_situation_stage_5
+			icon_background = GFX_situation_stage_frame_green
+			end = 100
+		}
+	}
+	
+	approach = {
+		name = approach_default
+		icon = GFX_situation_approach_this_is_fine
+		icon_background = GFX_situation_approach_bg_yellow
+		default = yes
+		on_select = {
+			custom_tooltip = approach_outcome_tooltip
+		}
+		ai_weight = {
+			base = 1
+		}
+	}
+	
+	monthly_progress = {
+		base = 1
+	}
+	
+}
+
+pink_ascencion_situation = {
+
+	picture = "GFX_evt_gem_pink_accension"
+	complete_icon_frame = GFX_situation_outcome_frame_green
+	complete_icon = GFX_situation_outcome_positive
+	category = situation
+	
+	on_progress_complete = {
+		destroy_situation = this
+		custom_tooltip = pink_ascencion_complete
+		owner = { set_country_flag = pink_ascended_flag }
+		hidden_effect = { owner = { country_event = { id = gem_diamond_choice.1003 days = 1 } } }
+	}
+	
+	stages = {
+		diamond_accension_step1 = {
+			icon = GFX_situation_stage_1
+			icon_background = GFX_situation_stage_frame_green
+			end = 20
+		}
+		diamond_accension_step2 = {
+			icon = GFX_situation_stage_2
+			icon_background = GFX_situation_stage_frame_green
+			end = 40
+		}
+		diamond_accension_step3 = {
+			icon = GFX_situation_stage_3
+			icon_background = GFX_situation_stage_frame_green
+			end = 60
+			on_first_enter = {
+			}
+		}
+		diamond_accension_step4 = {
+			icon = GFX_situation_stage_4
+			icon_background = GFX_situation_stage_frame_green
+			end = 80
+		}
+		diamond_accension_step5 = {
+			icon = GFX_situation_stage_5
+			icon_background = GFX_situation_stage_frame_green
+			end = 100
+		}
+	}
+	
+	approach = {
+		name = approach_default
+		icon = GFX_situation_approach_this_is_fine
+		icon_background = GFX_situation_approach_bg_yellow
+		default = yes
+		on_select = {
+			custom_tooltip = approach_outcome_tooltip
+		}
+		ai_weight = {
+			base = 1
+		}
+	}
+	
+	monthly_progress = {
+		base = 1
+	}
+	
+}
+
+#############################
+### Story Line Situations ###
+#############################
+
+pink_situation = {
+	
+	picture = GFX_evt_gem_diamonds_worried
+	complete_icon_frame = GFX_situation_outcome_frame_green
+	complete_icon = GFX_situation_happy
+	category = neutral
+	start_value = 99
+	
+	desc = {
+		text = pink_situation_desc
+		trigger = {
+			owner = { NOT = { has_country_flag = pink_low_mood } }
+		} 
+	}
+	desc = {
+		text = pink_situation_desc_bad
+		trigger = {
+			owner = { has_country_flag = pink_low_mood }
+		} 
+	}
+	
+	on_progress_complete = {
+		destroy_situation = this
+		owner = { country_event = { id = gem_off_colors.0034 days = 1 random = 59 } }
+		custom_tooltip = pink_situation_complete
+	}
+	on_fail = {
+		destroy_situation = this
+		custom_tooltip = pink_situation_complete_desc
+	}
+	
+	on_abort =  {}#event abot how pink is dead
+	abort_trigger = { owner = { NOT = { has_country_flag = pink_alive } } }
+	
+	stages = {
+		pm_pink_tantrum_3 = {
+			icon = GFX_situation_stage_1
+			icon_background = GFX_situation_stage_frame_red
+			end = 25
+#			on_first_enter = {
+#				owner = { country_event = { id = gem_off_colors.0020 } }
+#			}
+			#triggered_modifier = {}
+			#modifier = {}
+		}
+		pm_pink_tantrum_2 = {
+			icon = GFX_situation_stage_2
+			icon_background = GFX_situation_stage_frame_red
+			end = 50
+			on_first_enter = {
+				owner = { set_country_flag = pink_low_mood }
+			}
+		}
+		pm_pink_tantrum_1 = {
+			icon = GFX_situation_stage_3
+			icon_background = GFX_situation_stage_frame_red
+			end = 75
+			on_first_enter = {
+			}
+		}
+		pm_pink_tantrum_0 = {
+			icon = GFX_situation_stage_4
+			icon_background = GFX_situation_stage_frame_blue
+			end = 100
+			modifier = {
+			
+			}
+		}
+	}
+	
+	approach = {
+		name = deficit_approach_do_nothing
+		icon = GFX_situation_approach_this_is_fine
+		icon_background = GFX_situation_approach_bg_yellow
+		default = yes
+		on_select = {
+			custom_tooltip = deficit_approach_do_nothing_tooltip
+		}
+		ai_weight = {
+			base = 1
+		}
+	}
+	
+	monthly_progress = {
+		base = 0
+		modifier = {
+			add = -1
+			desc = situation_snow_very_hostile_tt
+			owner = { has_country_flag = gem_way_to_sol_done }
+		}
+	}
+}

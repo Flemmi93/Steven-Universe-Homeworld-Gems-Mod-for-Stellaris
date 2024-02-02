@@ -1,0 +1,158 @@
+kindergartener = {
+	category = specialist
+	condition_string = SPECIALIST_JOB_TRIGGER
+	building_icon = injector1
+	
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+
+	possible_precalc = can_fill_specialist_job
+
+	possible = {
+		complex_specialist_job_check_trigger = yes
+	}
+	
+	resources = {
+		category = planet_managers
+		produces = {
+			unity = 2
+		}
+		upkeep = {
+			consumer_goods = 0.75
+			energy = 2
+			minerals = 3
+		}
+	}
+	
+	planet_modifier = {
+		planet_pop_assembly_organic_add = 2
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			has_trait = trait_repugnant
+		}
+		modifier = {
+			planet_amenities_add = -1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			OR = {
+				has_trait = trait_robot_domestic_protocols
+				has_trait = trait_charismatic
+			}
+		}
+		modifier = {
+			planet_amenities_add = 1
+		}
+	}
+	weight = {
+		weight = @specialist_job_weight
+		modifier = {
+			factor = 100
+			planet = {
+				exists = owner
+				is_geo_empire = yes
+			}		
+		}
+		modifier = {
+			factor = 1.5
+			has_job = kindergartener
+		}
+	}
+}
+
+#white hive jobs
+kindergartener_drone = {
+	category = complex_drone
+	condition_string = DRONE_JOB_TRIGGER
+	building_icon = injector1
+	
+	possible_pre_triggers = {
+		has_owner = yes
+		is_enslaved = no
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+	
+	possible_precalc = can_fill_drone_job
+	
+	possible = { NOT = { has_trait = trait_nerve_stapled } }
+	
+	resources = {
+		category = planet_researchers
+		produces = {
+			unity = 2
+		}	
+	}
+	
+	resources = {
+		category = planet_jobs
+		upkeep = {
+			energy = 4
+			minerals = 3
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			has_trait = trait_charismatic
+		}
+		modifier = {
+			planet_amenities_no_happiness_add = 3
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			has_trait = trait_repugnant
+		}
+		modifier = {
+			planet_amenities_no_happiness_add = -1
+		}
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			can_assemble_hive_pop = yes
+		}
+		modifier = {
+			planet_pop_assembly_organic_add = 1
+		}
+	}
+	
+	weight = {
+		weight = @spawner_drone_job_weight
+		modifier = {
+			factor = 1.25
+			has_trait = trait_charismatic
+		}
+		modifier = {
+			factor = 0.9
+			has_trait = trait_repugnant
+		}
+		modifier = {
+			factor = 0.5 # job is less useful if pop control is active, but still gives amenities
+			planet = {
+				has_modifier = planet_population_control_gestalt
+			}
+		}
+		modifier = {
+			factor = 0.01 # crisis purge
+			exists = planet
+			exists = planet.controller
+			planet.controller = {
+				OR = {
+					is_country_type = swarm
+					is_country_type = ai_empire
+				}
+			}
+		}
+	}
+}

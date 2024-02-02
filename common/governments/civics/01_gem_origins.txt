@@ -1,0 +1,69 @@
+origin_geoform = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origins_geoform.dds"
+	picture = GFX_origin_geoform
+
+	starting_colony = pc_gem
+	#habitability_preference = pc_gem
+	preferred_planet_class_neighbor = no
+	max_once_global = yes
+	
+	possible = {
+		civics = {
+			NOR = {
+				text = civic_tooltip_not_idyllic_bloom
+				value = civic_idyllic_bloom
+				value = civic_hive_idyllic_bloom
+				value = civic_catalytic_processing
+				value = civic_hive_catalytic_processing
+				value = civic_corporate_catalytic_processing
+				value = civic_machine_catalytic_processing
+			}
+		}
+	}
+	description = "civic_tooltip_geoform_effects"
+
+	advanced_start = yes
+
+	random_weight = {
+		base = 0 # Should be fairly rare
+	}
+}
+origin_crystal_gems = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origins_crystalgems.dds"
+	picture = GFX_origin_gem_crystal_gems
+
+	preferred_planet_class_neighbor = yes
+	max_once_global = yes
+	
+	possible = {
+		civics = {
+			NOR = {
+				value = civic_tetrarchy
+				value = ethic_gestalt_consciousness
+				value = civic_fanatic_purifiers
+			}
+		}
+	}
+
+	possible = {
+		species_archetype = {
+			NOR = {
+				value = GEOLOID 
+				value = LITHOID
+			}
+		}
+		ethics = { NOT = { value = ethic_gestalt_consciousness } }
+		civics = { NOT = { value = civic_fanatic_purifiers } }
+	}
+
+	description = civic_tooltip_crystal_gems_effects
+
+
+	advanced_start = yes
+
+	random_weight = {
+		base = 1
+	}
+}

@@ -1,0 +1,139 @@
+namespace = GEM_start        
+
+country_event = {
+    id = GEM_start.1000
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = { has_origin = origin_geoform }
+    
+    immediate = {
+        capital_scope = {
+			
+            # 3 + 3 energy               
+            add_deposit = d_geothermal_vent
+            add_deposit = d_geothermal_vent
+        
+            # 4 mining
+            add_deposit = d_space_mining
+			
+			# 0 farming 
+			
+			# 6 kindargarden
+			add_deposit = d_kindergarten_large
+			add_deposit = d_kindergarten_large
+			
+			add_deposit = d_homeworld_special
+			
+			set_planet_flag = gem_has_kindergarten
+			
+			set_planet_flag = grand_court
+			add_modifier = { modifier = pm_grand_court_1 }
+			add_building = building_buff_kindergarten2
+		}
+		country_event = { id = GEM_start.1001 }
+		country_event = { id = GEM_start.1002 }
+    }
+}
+country_event = { # for play without Lithoid DLC
+    id = GEM_start.1001
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = { owner = { is_lithoid_empire = no } }
+	
+    immediate = {
+        capital_scope = {
+			add_district  = {
+				district_type = district_kindergarten
+				ignore_cap = yes
+			}
+			add_district  = {
+				district_type = district_kindergarten
+			}
+			add_district  = {
+				district_type = district_mining
+				district_type = district_mining
+			}
+			set_planet_flag = grand_court
+			add_modifier = { modifier = pm_grand_court_1 }
+		}
+    }
+}
+country_event = {
+    id = GEM_start.1002
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = { owner = { is_lithoid_empire = yes } }
+
+    immediate = {
+        capital_scope = {
+			add_district  = {
+				district_type = district_kindergarten
+				ignore_cap = yes
+			}
+			add_district  = {
+				district_type = district_kindergarten
+			}
+		}
+    }
+}
+country_event = { #for crystal gems to have a gem producing building
+    id = GEM_start.1003
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = { has_origin = origin_crystal_gems }
+
+    immediate = {
+		create_species = { #make new portraits for crystal gems
+			class="GEO"
+			portrait="gem"
+			name = "Gem"
+			plural = "Gems"
+			name_list="GEO1"
+			gender=not_set
+			traits = {
+				trait="trait_geoloid"
+				trait="trait_crystal_gems"
+				trait="trait_gem_holobody"
+				trait="trait_gem_hardness"
+				trait="trait_gem_donteat"
+			}
+				homeworld = FROM
+		}
+		last_created_species = {
+			save_event_target_as = crystal_gems_species
+		}
+        capital_scope = {
+			add_building = building_buff_kindergarten1
+			create_pop = { species = last_created_species }
+		}
+	}
+}
+
+country_event = {
+    id = GEM_start.1004
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = {
+		is_geo_empire = yes
+		NOT = { has_origin = origin_geoform }
+	}
+    
+    immediate = {
+        capital_scope = {
+			
+			# 2 kindargarden
+			add_deposit = d_kindergarten_med
+			
+			add_deposit = d_homeworld_special
+			
+			set_planet_flag = gem_has_kindergarten
+			
+			set_planet_flag = grand_court
+			add_modifier = { modifier = pm_grand_court_1 }
+			add_building = building_buff_kindergarten2
+		}
+		country_event = { id = GEM_start.1001 }
+		country_event = { id = GEM_start.1002 }
+		country_event = { id = gem_era.1 }
+    }
+}

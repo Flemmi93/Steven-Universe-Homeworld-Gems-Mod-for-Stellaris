@@ -1,0 +1,35 @@
+namespace = gem_rebellion
+
+###########
+# Era One #
+###########
+
+
+###########
+# Era Two #
+###########
+
+
+
+country_event = {
+	id = gem_rebellion.1
+	title = "gem_rebellion.1.name"
+	picture = "GFX_evt_gem_rebellion_1"
+	desc = "gem_rebellion.1.desc"
+	show_sound = event_bad_omen
+	is_triggered_only = yes
+	
+	option = {
+	name = gem_rebellion.1.a
+		}
+	option = {
+	name = gem_rebellion.1.b
+		}
+	option = {
+	name = gem_rebellion.1.c
+		}
+	
+	}
+#############
+# Era Three #
+#############

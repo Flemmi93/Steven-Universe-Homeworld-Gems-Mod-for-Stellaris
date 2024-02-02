@@ -1,0 +1,242 @@
+##########################################################################
+# Planet Modifiers
+##########################################################################
+
+pm_off_colors = {
+	icon = "gfx/interface/icons/planet_modifiers/gem_off_colors.dds"
+	icon_frame = 3
+	planet_crime_add = 25
+}
+
+pm_gem_white_court = {
+	icon = "gfx/interface/icons/planet_modifiers/gem_white_diamond.dds"
+	icon_frame = 1
+	planet_stability_add = 5
+}
+
+pm_gem_yellow_court = {
+	icon = "gfx/interface/icons/planet_modifiers/gem_yellow_diamond.dds"
+	icon_frame = 1
+	planet_jobs_alloys_produces_mult = 0.05
+}
+
+pm_gem_blue_court = {
+	icon = "gfx/interface/icons/planet_modifiers/gem_blue_diamond.dds"
+	icon_frame = 1
+	trade_value_mult = 0.05
+}
+
+pm_gem_pink_court = {
+	icon = "gfx/interface/icons/planet_modifiers/gem_pink_diamond.dds"
+	icon_frame = 1
+	pop_citizen_happiness = 0.10
+}
+
+pm_gem_white_court2 = {
+	icon = "gfx/interface/icons/planet_modifiers/gem_white_diamond.dds"
+	icon_frame = 1
+	planet_stability_add = 7.5
+}
+
+pm_gem_yellow_court2 = {
+	icon = "gfx/interface/icons/planet_modifiers/gem_yellow_diamond.dds"
+	icon_frame = 1
+	planet_jobs_alloys_produces_mult = 0.075
+}
+
+pm_gem_blue_court2 = {
+	icon = "gfx/interface/icons/planet_modifiers/gem_blue_diamond.dds"
+	icon_frame = 1
+	trade_value_mult = 0.075
+}
+
+pm_gem_pink_court2 = {
+	icon = "gfx/interface/icons/planet_modifiers/gem_pink_diamond.dds"
+	icon_frame = 1
+	pop_citizen_happiness = 0.15
+}
+
+pm_gem_galaxy_warp = { 
+	icon = "gfx/interface/icons/planet_modifiers/gem_galaxy_warp.dds"
+	icon_frame = 1
+	pop_resettlement_cost_mult = -0.1
+	planet_resettlement_unemployed_mult = 0.5
+}
+
+pm_off_color_saboteur = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_crime.dds"
+	icon_frame = 3
+	planet_building_build_speed_mult = -0.20
+}
+
+pm_boubled_rose_gem = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_boubled_rose_gem.dds"
+	icon_frame = 2
+	planet_crime_mult = -0.15
+}
+
+pm_shattered_rose_gem = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_shattered_rose_gem.dds"
+	icon_frame = 2
+	planet_crime_mult = -0.15
+}
+
+pm_pink_tantrum_1 = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_unrest.dds"
+	icon_frame = 3
+	pop_citizen_happiness = -0.1
+}
+pm_pink_tantrum_2 = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_unrest.dds"
+	icon_frame = 3
+	pop_citizen_happiness = -0.2
+}
+pm_pink_tantrum_3 = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_unrest.dds"
+	icon_frame = 3
+	pop_citizen_happiness = -0.3
+}
+pm_blue_visits = {
+	icon = "gfx/interface/icons/planet_modifiers/gem_blue_diamond.dds"
+	icon_frame = 2
+}
+pm_yellow_visits = {
+	icon = "gfx/interface/icons/planet_modifiers/gem_yellow_diamond.dds"
+	icon_frame = 2
+}
+pm_gem_no_assemble = {
+	icon = "gfx/interface/icons/planet_modifiers/gem_off_colors.dds"
+	icon_frame = 3
+	planet_pop_assembly_organic_mult = -1.2
+}
+pm_gem_human_experiement = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_human_experiement.dds"
+	icon_frame = 2
+	pop_growth_speed = -0.15
+	planet_amenities_mult = 0.20
+}
+pm_grand_court_1 = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_grand_court_1.dds"
+	icon_frame = 1
+	planet_stability_add = 10
+	planet_jobs_alloys_produces_mult = 0.1
+	trade_value_mult = 0.1
+	pop_citizen_happiness = 0.10
+	planet_jobs_upkeep_mult = -0.15
+}
+pm_grand_court_2 = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_grand_court_2.dds"
+	icon_frame = 1
+	planet_stability_add = 10
+	planet_jobs_alloys_produces_mult = 0.1
+	trade_value_mult = 0.1
+	planet_jobs_upkeep_mult = -0.075
+}
+pm_pink_celebration = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_alien_propaganda.dds"
+	icon_frame = 1
+	pop_happiness = 0.15
+}
+
+##########################################################################
+# Country Modifiers
+##########################################################################
+
+era_white = {
+	icon = "gfx/interface/icons/traits/trait_gem_erawhite.dds"
+	pop_resettlement_cost_mult = -0.25
+	pop_amenities_usage_no_happiness_mult = -0.25
+}
+era_one = {
+	icon = "gfx/interface/icons/traits/trait_gem_eraone.dds"
+	pop_resettlement_cost_mult = -0.75
+	planet_colony_development_speed_mult = 0.50
+	ship_colonizer_cost_mult = -0.1
+}
+era_two = {
+	icon = "gfx/interface/icons/traits/trait_gem_eratwo.dds"
+	pop_resettlement_cost_mult = -0.25
+	planet_pop_assembly_organic_mult = -0.15
+	pop_cat_ruler_happiness = -0.05
+	country_leader_pool_size = -1
+}
+era_three = {
+	icon = "gfx/interface/icons/traits/trait_gem_erathree.dds"
+	pop_resettlement_cost_mult = -0.5
+	country_alloys_produces_mult = 0.05
+	pop_happiness = 0.05
+	leader_skill_levels = 1
+}
+era_crystal_gems = {
+	icon = "gfx/interface/icons/traits/trait_gem_crystal_gems.dds"
+	pop_happiness = 0.10
+	planet_crime_add = -10
+}
+white_part_relict = {
+	icon = "gfx/interface/icons/traits/trait_gem_crystal_gems.dds"
+	planet_stability_add = -1
+}
+yellow_part_relict = {
+	icon = "gfx/interface/icons/traits/trait_gem_crystal_gems.dds"
+	pop_happiness = 0.10
+	planet_crime_add = -10
+}
+blue_part_relict = {
+	icon = "gfx/interface/icons/traits/trait_gem_crystal_gems.dds"
+	pop_happiness = 0.10
+	planet_crime_add = -10
+}
+pink_part_relict = {
+	icon = "gfx/interface/icons/traits/trait_gem_crystal_gems.dds"
+	pop_happiness = 0.10
+	planet_crime_add = -10
+}
+
+
+##########################################################################
+# Faction Modifiers
+##########################################################################
+
+suppressed_whiteethic = {
+	pop_ethic_authoritarian_attraction_mult = -0.75
+	country_base_influence_produces_add = -1
+}
+
+promoted_whiteethic = {
+	pop_ethic_authoritarian_attraction_mult = 1
+	country_base_influence_produces_add = -2
+}
+
+
+suppressed_yellowethic = {
+	pop_ethic_authoritarian_attraction_mult = -0.75
+	country_base_influence_produces_add = -1
+}
+
+promoted_yellowethic = {
+	pop_ethic_authoritarian_attraction_mult = 1
+	country_base_influence_produces_add = -2
+}
+
+
+suppressed_blueethic = {
+	pop_ethic_authoritarian_attraction_mult = -0.75
+	country_base_influence_produces_add = -1
+}
+
+promoted_blueethic = {
+	pop_ethic_authoritarian_attraction_mult = 1
+	country_base_influence_produces_add = -2
+}
+
+
+suppressed_pinkethic = {
+	pop_ethic_authoritarian_attraction_mult = -0.75
+	country_base_influence_produces_add = -1
+}
+
+promoted_pinkethic = {
+	pop_ethic_authoritarian_attraction_mult = 1
+	country_base_influence_produces_add = -2
+}
+

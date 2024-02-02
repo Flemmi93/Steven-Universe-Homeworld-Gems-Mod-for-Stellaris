@@ -1,0 +1,42 @@
+sound =
+{
+	name = "gem_planet_01"
+	file = "ambient/gem_planet_01.wav"
+	volume = 0.7
+}
+sound =
+{
+	name = "gem_planet_02"
+	file = "ambient/gem_planet_02.wav"
+	volume = 0.7
+}
+sound =
+{
+	name = "gem_planet_03"
+	file = "ambient/gem_planet_03.wav"
+	volume = 0.7
+}
+sound =
+{
+	name = "gemworld_01"
+	file = "ambient/gemworld_01.wav"
+	volume = 0.7
+}
+sound =
+{
+	name = "gemworld_02"
+	file = "ambient/gemworld_02.wav"
+	volume = 0.7
+}
+sound =
+{
+	name = "gemworld_03"
+	file = "ambient/gemworld_03.wav"
+	volume = 0.7
+}
+sound =
+{
+	name = "offcolors_01"
+	file = "ambient/offcolors_01.wav"
+	volume = 0.7
+}

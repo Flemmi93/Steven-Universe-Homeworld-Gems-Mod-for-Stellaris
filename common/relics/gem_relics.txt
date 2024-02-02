@@ -1,0 +1,199 @@
+@activation_cost = 3000
+@triumph_duration = 3600
+@triumph_duration_short = 1800
+@triumph_duration_veryshort = 900
+r_gem_whitepart = {
+	activation_duration = 1800
+	portrait = "GFX_relic_whitepart"
+	sound = "relic_activation_whitepart"
+
+	resources = {
+		category = relics
+		# Activation cost
+		cost = {
+			unity = 1500
+		}
+	}
+
+	ai_weight = {
+		weight = 100
+	}
+
+	triggered_country_modifier = {
+		potential = {
+			always = yes
+		}
+		planet_stability_add = 1
+	}
+
+	score = 250
+
+	active_effect = {
+		add_modifier = {
+			modifier = "white_part_relict"
+			days = 1800
+		}
+		custom_tooltip = relic_triumph_cooldown
+		hidden_effect = {
+			add_modifier = {
+				modifier = "relic_activation_cooldown"
+				days = 2000
+			}
+		}
+	}
+
+	# Possible check for activation
+	possible = {
+		custom_tooltip = {
+			fail_text = "requires_relic_no_cooldown"
+			NOT = { has_modifier = relic_activation_cooldown }
+		}
+	}
+}
+
+r_gem_yellowpart = {
+	activation_duration = 1800
+	portrait = "GFX_relic_yellowpart"
+	sound = "relic_activation_yellowpart"
+
+	resources = {
+		category = relics
+		# Activation cost
+		cost = {
+			unity = 1500
+		}
+	}
+
+	ai_weight = {
+		weight = 100
+	}
+
+	triggered_country_modifier = {
+		potential = {
+			always = yes
+		}
+		planet_stability_add = 1
+	}
+
+	score = 250
+
+	active_effect = {
+		add_modifier = {
+			modifier = "yellow_part_relict"
+			days = 1800
+		}
+		custom_tooltip = relic_triumph_cooldown
+		hidden_effect = {
+			add_modifier = {
+				modifier = "relic_activation_cooldown"
+				days = 2000
+			}
+		}
+	}
+
+	# Possible check for activation
+	possible = {
+		custom_tooltip = {
+			fail_text = "requires_relic_no_cooldown"
+			NOT = { has_modifier = relic_activation_cooldown }
+		}
+	}
+}
+
+r_gem_bluepart = {
+	activation_duration = 1800
+	portrait = "GFX_relic_bluepart"
+	sound = "relic_activation_bluepart"
+
+	resources = {
+		category = relics
+		# Activation cost
+		cost = {
+			unity = 1500
+		}
+	}
+
+	ai_weight = {
+		weight = 100
+	}
+
+	triggered_country_modifier = {
+		potential = {
+			always = yes
+		}
+		planet_stability_add = 1
+	}
+
+	score = 250
+
+	active_effect = {
+		add_modifier = {
+			modifier = "blue_part_relict"
+			days = 1800
+		}
+		custom_tooltip = relic_triumph_cooldown
+		hidden_effect = {
+			add_modifier = {
+				modifier = "relic_activation_cooldown"
+				days = 2000
+			}
+		}
+	}
+
+	# Possible check for activation
+	possible = {
+		custom_tooltip = {
+			fail_text = "requires_relic_no_cooldown"
+			NOT = { has_modifier = relic_activation_cooldown }
+		}
+	}
+}
+
+r_gem_pinkpart = {
+	activation_duration = 1800
+	portrait = "GFX_relic_pinkpart"
+	sound = "relic_activation_pinkpart"
+
+	resources = {
+		category = relics
+		# Activation cost
+		cost = {
+			unity = 1500
+		}
+	}
+
+	ai_weight = {
+		weight = 100
+	}
+
+	triggered_country_modifier = {
+		potential = {
+			always = yes
+		}
+		planet_stability_add = 1
+	}
+
+	score = 250
+
+	active_effect = {
+		add_modifier = {
+			modifier = "pink_part_relict"
+			days = 1800
+		}
+		custom_tooltip = relic_triumph_cooldown
+		hidden_effect = {
+			add_modifier = {
+				modifier = "relic_activation_cooldown"
+				days = 2000
+			}
+		}
+	}
+
+	# Possible check for activation
+	possible = {
+		custom_tooltip = {
+			fail_text = "requires_relic_no_cooldown"
+			NOT = { has_modifier = relic_activation_cooldown }
+		}
+	}
+}

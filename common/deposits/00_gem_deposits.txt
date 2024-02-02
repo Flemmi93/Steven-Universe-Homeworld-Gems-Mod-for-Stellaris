@@ -1,0 +1,122 @@
+@low_rare = 0.1
+
+# Kindergarten Deposits
+d_kindergarten_small = {
+	is_for_colonizable = yes
+	
+	icon = d_kindergarten
+	category = deposit_cat_rare
+	
+	use_weights_for_terraforming_swap_types = yes
+	should_swap_deposit_on_terraforming = yes
+	terraforming_swap_types = {
+		d_nutritious_mudland
+		d_lichen_fields
+		d_bountiful_plains
+		d_rugged_woods
+		d_green_hills
+		d_forgiving_tundra
+		d_boggy_fens
+		d_natural_farmland # gaia
+	}
+
+	planet_modifier = { 
+		district_kindergarten_max = 1
+		district_kindergarten2_max = 0.5
+	}
+
+	potential = { always = no }
+}
+
+d_kindergarten_med = {
+	is_for_colonizable = yes
+
+	icon = d_kindergarten
+	category = deposit_cat_rare
+	
+	use_weights_for_terraforming_swap_types = yes
+	should_swap_deposit_on_terraforming = yes
+	terraforming_swap_types = {
+		d_great_river
+		d_fungal_caves
+		d_lush_jungle
+		d_fertile_lands
+	}
+
+	planet_modifier = { 
+		district_kindergarten_max = 2
+		district_kindergarten2_max = 1
+	}
+	
+	potential = { always = no }
+}
+
+d_kindergarten_large = {
+	is_for_colonizable = yes
+
+	icon = d_kindergarten
+	category = deposit_cat_rare
+	
+	use_weights_for_terraforming_swap_types = yes
+	should_swap_deposit_on_terraforming = yes
+	terraforming_swap_types = {
+		d_black_soil
+		d_teeming_reef
+		d_marvelous_oasis
+		d_tropical_island
+		d_fungal_forest
+	}
+
+	planet_modifier = { 
+		district_kindergarten_max = 3
+		district_kindergarten2_max = 1.5
+	}
+
+	potential = { always = no }
+}
+
+d_kindergarten_blocker = {
+	
+	icon = d_kindergarten
+	category = deposit_cat_rare_blocker
+	
+	potential = { always = no }
+	can_be_cleared = { always = no }
+
+	planet_modifier = { 
+	}
+
+}
+
+# Homeworld Mining Deposits
+d_space_mining = {
+	#is_for_colonizeable = yes
+	icon = unused/d_space_walk
+	category = deposit_cat_rare
+	
+	planet_modifier = { 
+		district_mining_max = 4
+	}
+
+	drop_weight = {
+		weight = 0
+	}
+}
+
+
+# Homeworld Special Deposits
+d_homeworld_special = {
+	#is_for_colonizeable = yes
+	icon = d_kindergarten
+	category = deposit_cat_rare
+	
+	planet_modifier = { 
+		planet_non_artificial_max_districts_add = 10
+		planet_orbital_bombardment_damage = -0.1
+		planet_pop_assembly_organic_mult = 0.1
+		planet_stability_add = 5
+		planet_max_buildings_add = 12
+	}
+
+	potential = { always = no }
+}
