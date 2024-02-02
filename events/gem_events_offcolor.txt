@@ -458,9 +458,9 @@ planet_event = {
 	option = { 
 		name = gem_off_colors.1035.a
 		hidden_effect = {
-			planet_event = { id = gem_off_colors.1999 days = 3600 }
-			planet_event = { id = gem_off_colors.1998 days = 360 }
-			planet_event = { id = gem_off_colors.1053 days = 30 random = 30 }
+			planet_event = { id = gem_off_colors.1999 days = 4000 }
+			planet_event = { id = gem_off_colors.1998 days = 720 }
+			planet_event = { id = gem_off_colors.1053 days = 360 random = 30 }
 			set_planet_flag = 1000year_war_ongoing
 		}
 	}
@@ -473,9 +473,20 @@ planet_event = {
 	title = gem_off_colors.1040.name
 	desc = gem_off_colors.1040.desc
 	picture = GFX_evt_gem_pinkvisits
+	trigger = { owner = { has_country_flag = era_one_flag } }
+	immediate = {
+		hidden_effect = {
+			event_target:gem_pink_diamond = { set_leader_flag = pink_earth_flag }
+		}
+	}
 	option = {
 		name = gem_off_colors.1040.a
 		assign_leader = event_target:gem_pink_diamond
+	}
+after = {
+		hidden_effect = {
+			event_target:gem_pink_diamond = { remove_leader_flag = pink_earth_flag }
+		}
 	}
 }
 
@@ -486,36 +497,40 @@ planet_event = {
 	title = gem_off_colors.1041.name
 	desc = gem_off_colors.1041.desc
 	picture = GFX_evt_gem_pinkvisits
+immediate = {
+		hidden_effect = {
+			event_target:gem_pink_diamond = { set_leader_flag = pink_earth_flag }
+		}
+	}
 	option = {
 		name = gem_off_colors.1041.a
 		assign_leader = event_target:gem_pink_diamond
-		event_target:gem_pink_diamond = { set_leader_flag = pink_earth_flag }
+		}
+	after = {
+		hidden_effect = {
+			event_target:gem_pink_diamond = { remove_leader_flag = pink_earth_flag }
+}
 	}
 }
 # Pink Diamond moves back to Earth
-leader_event = {
+	leader_event = {
 	id = gem_off_colors.1042
 	is_triggered_only = yes
 	hide_window = yes
 	pre_triggers = { is_ai = no}
-	trigger = { has_leader_flag = pink_earth_flag }
-	immediate = {
-		event_target:gem_planet_earth_event = { planet_event = { id = gem_off_colors.1041 days = 30 } }
+	trigger = {
+		AND = {
+			NOT = { has_leader_flag = pink_earth_flag }
+			has_leader_flag = is_pink_era_one
+		}
 	}
-}
-
-#The Rebellion begins
-planet_event = {
-	id = gem_off_colors.1050
-	hide_window = yes
-	is_triggered_only = yes
-	fire_only_once = yes 
 	immediate = {
-		planet_event = {
-			id = gem_off_colors.1051 
+		event_target:gem_planet_earth_event = {
+			planet_event = { id = gem_off_colors.1041 }
 		}
 	}
 }
+
 
 #constant reinforcment during fights
 planet_event = {
@@ -526,18 +541,16 @@ planet_event = {
 	trigger = { has_planet_flag = 1000year_war_ongoing }
 	
 	immediate = {
-		create_army = {
+				create_army = {
 			name = "Crystal Gems"
-			owner = last_created_country
-			type = "crystal_gem_army"
-		}
-		last_created_army = {
-			set_owner = event_target:crystal_gems_faction
-		}
-		planet_event = { id = gem_off_colors.1052 days = 20 random = 10 }
+						type = "crystal_gem_army"
+owner = crystal_gems_faction
+								}
+			planet_event = { id = gem_off_colors.1052 days = 20 random = 10 }
 		planet_event = { id = gem_off_colors.1053 days = 60 }
 	}
 }
+
 
 #spawns defensive armies to keep the fight going
 planet_event = {
@@ -606,10 +619,22 @@ planet_event = {
 			owner = last_created_country
 			type = "crystal_gem_army2"
 		}
+		last_created_country = {
+			create_leader = {
+				class = commander
+				name = "Rose Quartz"
+				species = root.solar_system.owner.species
+			}
+		}
 		create_army = {
 			name = "Crystal Gems"
 			owner = last_created_country
 			type = "crystal_gem_army2"
+		leader = last_created_leader
+		}
+		last_created_leader = {
+			change_leader_portrait = gemD5 #Rose
+			save_global_event_target_as = gem_pink_diamond
 		}
 		create_army = {
 			name = "Crystal Gems"
@@ -631,9 +656,9 @@ planet_event = {
 			owner = last_created_country
 			type = "primitive_army"
 		}
-		planet_event = { id = gem_off_colors.1050 }
-		planet_event = { id = gem_off_colors.1054 days = 360 random = 120 }
 		planet_event = { id = gem_off_colors.1056 }
+		planet_event = { id = gem_off_colors.1052 days = 1 }
+		planet_event = { id = gem_off_colors.1054 days = 460 random = 120 }
 	}
 }
 #massive devistation event
@@ -715,6 +740,7 @@ planet_event = {
 	desc = gem_off_colors.2000.desc
 	is_triggered_only = yes
 	picture = "GFX_evt_gem_pink_death"
+
 	option = {
 		name = gem_off_colors.2000.a
 		owner = { country_event = { id = gem_off_colors.2001 } }
@@ -859,6 +885,8 @@ planet_event = {
 	is_triggered_only = yes
 	hide_window = yes
 	immediate = {
+	reset_planet = yes
+	add_deposit = d_kindergarten_blocker
 	set_planet_flag = no_observation
 	# bronce age
 		create_species = {
@@ -914,67 +942,70 @@ planet_event = {
 
 		set_owner = last_created_country
 		owner = { set_awareness = 0 }
-		
 		while = {
-			count = 4
+			count = 5
 			create_pop = {
 				species = last_created_species
 			}
-			last_created_pop = { save_event_target_as = gem_sol_spawn_humans }
 		}
+		create_pop = {
+			species = root.solar_system.owner.species
+		}
+		add_building = building_crystal_gem_temple
 		add_building = building_primitive_dwellings
 		add_building = building_primitive_dwellings
 		add_building = building_stone_palace
 		#solar_system = { owner = { establish_communications_no_message = last_created_country } }
 		last_created_country = { save_global_event_target_as  = new_earth_civilisation_w_cg }
-	}
-	after = {
-		#last_created_country = { country_event = { id = primitive.20 } }
-		last_created_country = { country_event = { id = gem_off_colors.2005 days = 360 } }
-		create_species = { #make new portraits for crystal gems
-			class="GEO"
-			portrait="gem"
-			name = "Gem"
-			plural = "Gems"
-			name_list="GEO1"
-			gender=not_set
-			traits = {
-				trait="trait_geoloid"
-				trait="trait_crystal_gems"
-				trait="trait_gem_holobody"
-				trait="trait_gem_hardness"
-				trait="trait_gem_donteat"
-			}
-				homeworld = FROM
-		}
-		last_created_species = {
-			save_event_target_as = crystal_gems_species
-		}
-        FROM = {
-			create_pop = { species = last_created_species }
-		}
-		reset_planet = yes
-		add_deposit = d_kindergarten_blocker
-		
-		every_deposit = {
-			limit = {
-				OR = {
-					is_deposit_type = d_kindergarten_large
-					is_deposit_type = d_kindergarten_small
-					is_deposit_type = d_kindergarten_med
+	owner = {
+		create_leader = {
+				class = official
+				name = "Rose Quartz"
+				species = root.solar_system.owner.species
+				traits = {
 				}
 			}
-			clear_blocker = yes
 		}
-		add_deposit = d_rugged_woods
-		add_deposit = d_rugged_woods
-		add_deposit = d_green_hills
-		add_deposit = d_green_hills
-		add_deposit = d_black_soil
-		add_deposit = d_bountiful_plains
-		add_deposit = d_dense_jungle
-		add_deposit = d_alien_sanctuary
+		last_created_leader = {
+			change_leader_portrait = gemD6 #Rose
+			save_global_event_target_as = gem_pink_diamond
+		}
+		owner = {
+			create_leader = {
+				class = commander
+				name = "Pearl"
+				species = root.solar_system.owner.species
+			traits = {
+				}
+			}
+		}
+		
+		last_created_leader = {
+			change_leader_portrait = gemP8 #Crystal Gem Pearl
+			save_global_event_target_as = gem_crystalgem_pearl
+		}
+		#assign_leader = last_created_leader
+		create_army = {
+			name = "NAME_crystal_gem_army"
+			owner = root.owner
+			type = "crystal_gem_army"
+			species = root.solar_system.owner.species
+		}
+		create_army = {
+			name = "NAME_crystal_gem_army"
+			owner = root.owner
+			type = "crystal_gem_army"
+			species = root.solar_system.owner.species
+		}
+		create_army = {
+			name = "NAME_crystal_gem_army"
+			owner = root.owner
+			type = "crystal_gem_army2"
+			species = root.solar_system.owner.species
+			leader = last_created_leader
+		}
 	}
+	after = { last_created_country = { country_event = { id = gem_off_colors.2005 days = 720 random = 360  } } }
 }
 country_event = { #Bronze Age -> Iron Age
 	id = gem_off_colors.2005
@@ -993,7 +1024,7 @@ country_event = { #Iron Age -> Medieval Age
 	immediate = {
 		remove_country_flag = recently_advanced
 		country_event = { id = preftl.399 }
-		country_event = { id = gem_off_colors.2007 days = 720 random = 360 }
+		country_event = { id = gem_off_colors.2007 days = 720 random = 360  }
 	}
 }
 country_event = { #Medieval Age -> Renaissance Age
@@ -1003,6 +1034,7 @@ country_event = { #Medieval Age -> Renaissance Age
 	immediate = {
 		remove_country_flag = recently_advanced
 		country_event = { id = preftl.499 }
+country_event = { id = gem_off_colors.2008 days = 720 random = 360  }
 	}
 }
 country_event = { #Renaissance Age -> Steam Age 
@@ -1035,14 +1067,12 @@ planet_event = { #prevents earth from being invaded
 	trigger = {
 		AND = {
 			has_planet_flag = gem_planet_earth
-			owner = { has_country_flag = era_two_flag }
+			owner = { NOT = { has_country_flag = era_one_flag } }
+			owner = { NOT = { is_diamond_empire	= yes } }
 		}
 	}
 	immediate = {
-			create_army = {
-				name = "NAME_crystal_gem_army"
-				type = "gem_defense_army"
-			}
+
 	}
 }
 #############
@@ -1130,6 +1160,8 @@ country_event = { # Pink Diamond Death
 	hide_window = yes
 	immediate = {
 		remove_country_flag = pink_alive
+		set_heir = event_target:gem_blue_diamond
+		set_heir = event_target:gem_yellow_diamond
 		every_owned_planet = {
 			limit = {
 				is_colony = yes

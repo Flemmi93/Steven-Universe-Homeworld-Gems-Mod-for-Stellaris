@@ -19,6 +19,8 @@ portraits = {
 	gemD2 =		{texturefile = "gfx/models/portraits/gems/gems_ruler_03_yellow.dds" }
 	gemD3 =		{texturefile = "gfx/models/portraits/gems/gems_ruler_01_blue.dds" }
 	gemD4 =		{texturefile = "gfx/models/portraits/gems/gems_ruler_02_pink.dds" }
+	gemD5 =		{texturefile = "gfx/models/portraits/gems/gems_ruler_05_rose.dds" }
+	gemD6 =		{texturefile = "gfx/models/portraits/gems/gems_ruler_05_rose2.dds" }
 	gemE1 =		{texturefile = "gfx/models/portraits/gems/gems_Emerald_01.dds" }
 	gemJ1 =		{texturefile = "gfx/models/portraits/gems/gems_Jasper_01.dds" }
 	gemJ2 =		{texturefile = "gfx/models/portraits/gems/gems_Jasper_02.dds" }
@@ -35,6 +37,7 @@ portraits = {
 	gemP1 =		{texturefile = "gfx/models/portraits/gems/gems_Pearl_01.dds" }
 	gemP2 =		{texturefile = "gfx/models/portraits/gems/gems_Pearl_02.dds" }
 	gemP3 =		{texturefile = "gfx/models/portraits/gems/gems_Pearl_03.dds" }
+	gemP8 =		{texturefile = "gfx/models/portraits/gems/gems_Pearl_04.dds" }
 	gemP4 =		{texturefile = "gfx/models/portraits/gems/gems_Peridot_01.dds" }
 	gemP5 =		{texturefile = "gfx/models/portraits/gems/gems_Peridot_02.dds" }
 	gemP6 =		{texturefile = "gfx/models/portraits/gems/gems_Peridot_03.dds" }
@@ -87,6 +90,7 @@ portraits = {
 	
 portrait_groups = {
 
+	
 	gem = {
 		default = gemP3
 		game_setup = { #will run with a limited country scope. species and government is set but the country does not actually exist
@@ -201,16 +205,7 @@ portrait_groups = {
 					gemN2
 				}
 			}
-			add = {
-				trigger = { leader_class = official }
-				portraits = {
-					gemZ1
-					gemZ2
-					gemZ3
-					gemZ4
-				}
-			}
-		}
+					}
 
 		#leader scope 
 		ruler = {
