@@ -351,3 +351,106 @@ pink_situation = {
 		}
 	}
 }
+gem_1000_year_war = {
+
+	picture = "GFX_evt_gem_1000_year_war"
+	complete_icon_frame = GFX_situation_outcome_frame_green
+	complete_icon = GFX_situation_outcome_positive
+	fail_icon_frame = GFX_situation_outcome_frame_red
+	fail_icon = GFX_situation_outcome_negative
+	category = negative
+	start_value = 1
+	
+	on_progress_complete = {
+		destroy_situation = this
+		custom_tooltip = 1000_year_war_victory
+		owner = { set_country_flag = won_1000_year_war }
+	}
+	
+	stages = {
+		gem_1000_year_war_step8 = { # protests
+			icon = GFX_situation_stage_8
+			icon_background = GFX_situation_stage_frame_green
+			end = 5
+		}
+		gem_1000_year_war_step7 = { # Civil Disobedience
+			icon = GFX_situation_stage_7
+			icon_background = GFX_situation_stage_frame_green
+			end = 15
+		}
+		gem_1000_year_war_step6 = { # Sabotage
+			icon = GFX_situation_stage_6
+			icon_background = GFX_situation_stage_frame_yellow
+			end = 25
+		}
+		gem_1000_year_war_step5 = { # Gurrilla War
+			icon = GFX_situation_stage_5
+			icon_background = GFX_situation_stage_frame_yellow
+			end = 40
+		}
+		gem_1000_year_war_step4 = { # Insurgency
+			icon = GFX_situation_stage_4
+			icon_background = GFX_situation_stage_frame_orange
+			end = 65
+		}
+		gem_1000_year_war_step3 = { # Civil war
+			icon = GFX_situation_stage_3
+			icon_background = GFX_situation_stage_frame_orange
+			end = 80
+			on_first_enter = {
+			}
+		}
+		gem_1000_year_war_step2 = { # total war
+			icon = GFX_situation_stage_2
+			icon_background = GFX_situation_stage_frame_red
+			end = 90
+		}
+		gem_1000_year_war_step1 = { # retreat
+			icon = GFX_situation_stage_1
+			icon_background = GFX_situation_stage_frame_red
+			end = 100
+		}
+	}
+	approach = {
+		name = approach_revolt_do_nothing
+		icon = GFX_situation_approach_this_is_fine
+		icon_background = GFX_situation_approach_bg_yellow
+		default = yes
+		on_select = {
+			custom_tooltip = approach_outcome_tooltip
+		}
+		potential = {
+			NOT = {
+				event_target:gem_planet_earth_event = {
+					has_planet_flag = gem_cant_ignore_1
+				}
+			}
+		}
+	}
+	approach = {
+		name = approach_revolt_crackdown
+		icon = GFX_situation_approach_fist
+		icon_background = GFX_situation_approach_bg_red
+		on_select = {
+			custom_tooltip = approach_destroy_labyrinth_tooltip
+		}
+		resources = {
+			category = situations
+			upkeep = {
+				energy = 5
+				minerals = 5
+				unity = 4
+			}
+		}
+	}
+	monthly_progress = {
+		base = 0
+		modifier = {
+			trigger = {
+				
+			}
+			add =1
+		}
+	}
+	
+}

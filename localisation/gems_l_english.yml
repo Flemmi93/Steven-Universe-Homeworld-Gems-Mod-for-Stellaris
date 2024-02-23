@@ -182,6 +182,9 @@
  decision_kindergarten_large_requirements: "Abundant quantities of nutrient-rich soil are required for any large-scale £job_kindergartener£ §YKindergarten§! site to be capable of producing new gems."
  decision_gemcology_project_requirements: "All £food£ §YAgriculture§! deposits on this world must have first been converted into £job_kindergartener£ §YKindergarten§! sites."
  
+#Deposites
+ d_kindergarten_blocker: "Kindergarten Ruins"
+
  living_standard_gem: "Purposeful Creation"
  living_standard_gem_tooltip: "$living_standard_gem$ means that every gem is created with a purpose to serve the order of the Diamonds.\n\n$GEM_LIVING_STANDARDS_POP_EFFECTS$\n\n$UNEMPLOYED_REDUCED_HAPPINESS$"
  living_standard_gem_tooltip_delayed: "§LThere is no point in wanting any change.§!"
@@ -538,6 +541,25 @@
  pink_situation_monthly_change_tooltip: "Her mood is going down"
  pink_situation_complete: "Pink Complete"
  pink_situation_complete_desc: "Pink Complete description"
+ 
+#1000 year war
+ gem_1000_year_war: "[gem_planet_earth_event.GetName] Rebellion"
+ gem_1000_year_war_desc: "Offcolors and dissitant Gems on [gem_planet_earth_event.GetName] have Rose against us!\n\n §LCry 'Havoc!' and let slip the dogs of war!§!"
+ 1000_year_war_victory: "This rebellion will be crushed as swiftly as ever, at most a footnote for future historians."
+ gem_1000_year_war_type: "The $gem_1000_year_war$"
+ gem_1000_year_war_monthly_change_tooltip:"The Rebels on [gem_planet_earth_event.GetName] seek to liverate the world they see as their own new $NAME_Homeworld$."
+ gem_1000_year_war_step1: "Collapse"
+ gem_1000_year_war_step2: "Total War"
+ gem_1000_year_war_step3: "Civil War"
+ gem_1000_year_war_step4: "Insurgency"
+ gem_1000_year_war_step5: "Guerillia Warfare"
+ gem_1000_year_war_step6: "Sabotage"
+ gem_1000_year_war_step7: "Disobedience"
+ gem_1000_year_war_step8: "Protests"
+ approach_destroy_crystal_gems_tooltip:"We will §Bshatter§! the $crystal_gems$ to the last!"
+ approach_destroy_crystal_gems_tooltip2:"We will §YBouble§! the $crystal_gems$ to the last!"
+ approach_destroy_crystal_gems_tooltip3:"We will §Wwhipe§! the $crystal_gems$'s midns. They will serve once more"
+
  
  white_ascencion_situation: "The accension of $white_diamond$"
  white_ascencion_situation_type: "The accension of $white_diamond$"
