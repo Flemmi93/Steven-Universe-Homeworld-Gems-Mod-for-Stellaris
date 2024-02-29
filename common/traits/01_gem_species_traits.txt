@@ -89,7 +89,7 @@ trait_ruler_diamond = {
 	councilor_modifier = {
 		pop_happiness = 0.05
 	}
-	leader_class = { diamond_class }
+	leader_class = { official }
 	requires_traits = { trait_geoloid }
 	ai_weight = 0
 	selectable_weight = 0

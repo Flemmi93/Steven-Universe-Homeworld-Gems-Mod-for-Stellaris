@@ -106,7 +106,7 @@ country_event = {
 		hidden_effect = {
 		#Create the choosen leader
 			create_leader = {
-				class = diamond_class
+				class = official
 				name = "White Diamond"
 				species = owner_main_species
 				traits = {
@@ -126,7 +126,7 @@ country_event = {
 			}
 			#Spwn in all the other Diamonds
 			create_leader = {
-					class = diamond_class
+					class = official
 					name = "Yellow Diamond"
 					species = owner_main_species
 					traits = {
@@ -138,7 +138,7 @@ country_event = {
 				save_global_event_target_as = gem_yellow_diamond
 			}
 			create_leader = {
-					class = diamond_class
+					class = official
 					name = "Blue Diamond"
 					species = owner_main_species
 					traits = {
@@ -150,7 +150,7 @@ country_event = {
 				save_global_event_target_as = gem_blue_diamond
 			}
 			create_leader = {
-					class = diamond_class
+					class = official
 					name = "Pink Diamond"
 					species = owner_main_species
 					traits = {
@@ -161,6 +161,7 @@ country_event = {
 			last_created_leader = {
 				change_leader_portrait = gemD4 #Pink
 				save_global_event_target_as = gem_pink_diamond
+				set_leader_flag = is_pink_era_one
 			}
 		}
 	}
@@ -194,7 +195,7 @@ country_event = {
 		hidden_effect = {
 		#Create the choosen leader
 			create_leader = {
-				class = diamond_class
+				class = official
 				name = "Yellow Diamond"
 				species = owner_main_species
 				traits = {
@@ -214,7 +215,7 @@ country_event = {
 			}
 			#Spwn in all the other Diamonds
 			create_leader = {
-					class = diamond_class
+					class = official
 					name = "White Diamond"
 					species = owner_main_species
 					traits = {
@@ -226,7 +227,7 @@ country_event = {
 				save_global_event_target_as = gem_white_diamond
 			}
 			create_leader = {
-					class = diamond_class
+					class = official
 					name = "Blue Diamond"
 					species = owner_main_species
 					traits = {
@@ -238,7 +239,7 @@ country_event = {
 				save_global_event_target_as = gem_blue_diamond
 			}
 			create_leader = {
-					class = diamond_class
+					class = official
 					name = "Pink Diamond"
 					species = owner_main_species
 					traits = {
@@ -249,6 +250,7 @@ country_event = {
 			last_created_leader = {
 				change_leader_portrait = gemD4 #Pink
 				save_global_event_target_as = gem_pink_diamond
+				set_leader_flag = is_pink_era_one
 			}
 		}
 	}
@@ -282,7 +284,7 @@ country_event = {
 		hidden_effect = {
 		#Create the choosen leader
 			create_leader = {
-				class = diamond_class
+				class = official
 				name = "Blue Diamond"
 				species = owner_main_species
 				traits = {
@@ -302,7 +304,7 @@ country_event = {
 			}
 			#Spwn in all the other Diamonds
 			create_leader = {
-					class = diamond_class
+					class = official
 					name = "Yellow Diamond"
 					species = owner_main_species
 					traits = {
@@ -314,7 +316,7 @@ country_event = {
 				save_global_event_target_as = gem_yellow_diamond
 			}
 			create_leader = {
-					class = diamond_class
+					class = official
 					name = "White Diamond"
 					species = owner_main_species
 					traits = {
@@ -326,7 +328,7 @@ country_event = {
 				save_global_event_target_as = gem_white_diamond
 			}
 			create_leader = {
-					class = diamond_class
+					class = official
 					name = "Pink Diamond"
 					species = owner_main_species
 					traits = {
@@ -337,6 +339,7 @@ country_event = {
 			last_created_leader = {
 				change_leader_portrait = gemD4 #Pink
 				save_global_event_target_as = gem_pink_diamond
+				set_leader_flag = is_pink_era_one
 			}
 		}
 	}
@@ -374,7 +377,7 @@ country_event = {
 		hidden_effect = {
 		#Create the choosen leader
 			create_leader = {
-				class = diamond_class
+				class = official
 				name = "Pink Diamond"
 				species = owner_main_species
 				traits = {
@@ -383,6 +386,7 @@ country_event = {
 			}
 			last_created_leader = {
 				change_leader_portrait = gemD4 #Pink
+				set_leader_flag = is_pink_era_one
 			}
 			
 			set_heir = last_created_leader
@@ -395,7 +399,7 @@ country_event = {
 		#Spwn in all the other Diamonds
 			
 			create_leader = {
-					class = diamond_class
+					class = official
 					name = "Yellow Diamond"
 					species = owner_main_species
 					traits = {
@@ -407,7 +411,7 @@ country_event = {
 				save_global_event_target_as = gem_yellow_diamond
 			}
 			create_leader = {
-					class = diamond_class
+					class = official
 					name = "Blue Diamond"
 					species = owner_main_species
 					traits = {
@@ -419,7 +423,7 @@ country_event = {
 				save_global_event_target_as = gem_blue_diamond
 			}
 			create_leader = {
-					class = diamond_class
+					class = official
 					name = "White Diamond"
 					species = owner_main_species
 					traits = {

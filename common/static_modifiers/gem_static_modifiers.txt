@@ -5,8 +5,7 @@
 pm_off_colors = {
 	icon = "gfx/interface/icons/planet_modifiers/gem_off_colors.dds"
 	icon_frame = 3
-	planet_crime_add = 25
-}
+	}
 
 pm_gem_white_court = {
 	icon = "gfx/interface/icons/planet_modifiers/gem_white_diamond.dds"
@@ -99,21 +98,45 @@ pm_pink_tantrum_3 = {
 pm_blue_visits = {
 	icon = "gfx/interface/icons/planet_modifiers/gem_blue_diamond.dds"
 	icon_frame = 2
+planet_jobs_unity_produces_mult = 0.25
+	planet_stability_add = 5
 }
 pm_yellow_visits = {
 	icon = "gfx/interface/icons/planet_modifiers/gem_yellow_diamond.dds"
 	icon_frame = 2
+planet_jobs_alloys_produces_mult = 0.25
+	planet_stability_add = 5
 }
 pm_gem_no_assemble = {
 	icon = "gfx/interface/icons/planet_modifiers/gem_off_colors.dds"
 	icon_frame = 3
-	planet_pop_assembly_organic_mult = -1.2
+	planet_pop_assembly_organic_mult = -2
+}
+pm_gem_less_assemble1 = {
+	icon = "gfx/interface/icons/planet_modifiers/gem_off_colors.dds"
+	icon_frame = 3
+	planet_pop_assembly_organic_mult = -0.05
+	job_soldier_add = 1
+}
+pm_gem_less_assemble2 = {
+	icon = "gfx/interface/icons/planet_modifiers/gem_off_colors.dds"
+	icon_frame = 3
+	planet_pop_assembly_organic_mult = -0.10
+	job_soldier_add = 3
+}
+pm_gem_less_assemble3 = {
+	icon = "gfx/interface/icons/planet_modifiers/gem_off_colors.dds"
+	icon_frame = 3
+	planet_pop_assembly_organic_mult = -0.2
+	job_soldier_add = 5
 }
 pm_gem_human_experiement = {
 	icon = "gfx/interface/icons/planet_modifiers/pm_human_experiement.dds"
 	icon_frame = 2
-	pop_growth_speed = -0.15
+	planet_pop_assembly_organic_mult = -0.15
 	planet_amenities_mult = 0.20
+	all_technology_research_speed = 0.1
+	job_head_researcher_add = 1
 }
 pm_grand_court_1 = {
 	icon = "gfx/interface/icons/planet_modifiers/pm_grand_court_1.dds"
