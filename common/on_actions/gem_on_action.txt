@@ -54,7 +54,7 @@ on_ground_combat_started = {
 #This = Planet scope
 on_planet_transfer = {
 	events = {
-		gem_diamond_choice.1000 # cleans up when gems lose the world and initalizes the choice event
+		gem_diamond_choice.1000 # cleans up when gems lose the world
 	}
 }
 

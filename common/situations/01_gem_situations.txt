@@ -282,7 +282,7 @@ pink_situation = {
 	
 	on_progress_complete = {
 		destroy_situation = this
-		owner = { country_event = { id = gem_off_colors.0034 days = 1 random = 59 } }
+		#owner = { country_event = { id = gem_off_colors.0034 days = 1 random = 59 } } #event not real, # to remove error from log
 		custom_tooltip = pink_situation_complete
 	}
 	on_fail = {
@@ -351,6 +351,11 @@ pink_situation = {
 		}
 	}
 }
+
+########################
+#### 1000 Year War #####
+########################
+
 gem_1000_year_war = {
 
 	picture = "GFX_evt_gem_1000_year_war"
@@ -379,10 +384,11 @@ destroy_situation = this
 			icon_background = GFX_situation_stage_frame_green
 			end = 5
 modifier = {
-				#Downsides
+				#Upside
 				pop_cat_slave_happiness = 0.10
 				pop_cat_worker_happiness = 0.05
 				pop_cat_specialist_happiness = 0.05
+#Downsides
 				pop_cat_ruler_happiness = -0.05
 				planet_jobs_worker_produces_mult = -0.05
 				#Upside
@@ -393,9 +399,10 @@ modifier = {
 			icon_background = GFX_situation_stage_frame_green
 			end = 15
 modifier = {
-				#Downsides
+				#Upside
 				pop_cat_slave_happiness = 0.15
 				pop_cat_worker_happiness = 0.05
+#Downsides
 				pop_cat_specialist_happiness = -0.05
 				pop_cat_ruler_happiness = -0.075
 				planet_jobs_worker_produces_mult = -0.05
@@ -411,9 +418,10 @@ modifier = {
 			icon_background = GFX_situation_stage_frame_yellow
 			end = 25
 modifier = {
-				#Downsides
+				#Upside
 				pop_cat_slave_happiness = 0.15
 				pop_cat_worker_happiness = 0.05
+#Downsides
 				pop_cat_specialist_happiness = -0.075
 				pop_cat_ruler_happiness = -0.10
 				planet_jobs_worker_produces_mult = -0.05
@@ -430,9 +438,10 @@ modifier = {
 			icon_background = GFX_situation_stage_frame_yellow
 			end = 40
 modifier = {
-				#Downsides
+				#Upside
 				pop_cat_slave_happiness = 0.15
 				pop_cat_worker_happiness = 0.05
+#Downsides
 				pop_citizen_happiness = -0.10
 				trade_value_mult = -0.05
 				planet_jobs_worker_produces_mult = -0.05
@@ -449,9 +458,11 @@ modifier = {
 			icon_background = GFX_situation_stage_frame_orange
 			end = 65
 modifier = {
-				#Downsides
+				#Upside
 				pop_cat_slave_happiness = 0.15
 				pop_cat_worker_happiness = 0.05
+job_soldier_add = 2
+				#Downsides
 				pop_citizen_happiness = -0.15
 				pop_government_ethic_attraction = -0.05
 				trade_value_mult = -0.075
@@ -468,8 +479,10 @@ modifier = {
 			icon_background = GFX_situation_stage_frame_orange
 			end = 80
 			modifier = {
-#Downsides
+#Upside
 				pop_cat_slave_happiness = 0.15
+job_soldier_add = 2
+				#Downsides
 				pop_citizen_happiness = -0.15
 				pop_government_ethic_attraction = -0.075
 				trade_value_mult = -0.10
@@ -481,8 +494,10 @@ modifier = {
 			icon_background = GFX_situation_stage_frame_red
 			end = 90
 modifier = {
-				#Downsides
+				#Upside
 				pop_cat_slave_happiness = 0.15
+job_soldier_add = 2
+				#Downsides
 				pop_citizen_happiness = -0.15
 				pop_government_ethic_attraction = -0.10
 				trade_value_mult = -0.10

@@ -115,8 +115,7 @@ planet_event = { #removes any trace of the previous choice
 		remove_modifier = "pm_gem_yellow_court2"
 		remove_modifier = "pm_gem_blue_court2"
 		remove_modifier = "pm_gem_pink_court2"
-		planet_event = { id = gem_diamond_choice.1001 }
-	}
+			}
 }
 	
 planet_event = { #triggers the step counter
@@ -124,14 +123,36 @@ planet_event = { #triggers the step counter
 	hide_window = yes
 	is_triggered_only = yes
 	trigger = {
-		NAND = {
+		NOT = {
 			has_planet_flag = planet_had_court_before
-			owner = {has_country_flag = gem_way_to_sol_done }
-		}
+					}
 	}
 	immediate = {
-		owner = { country_event = { id = gem_off_colors.0015} }
+		owner = { country_event = { id = gem_off_colors.0009} }
 	}
+}
+planet_event = {
+	id = gem_diamond_choice.1010
+	
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		owner = {
+			OR = {
+				has_civic = civic_tetrarchy
+				has_civic = civic_triarchy
+			}
+		}
+		NOR = {
+			has_planet_flag = white_court_flag		
+			has_planet_flag = yellow_court_flag
+			has_planet_flag = blue_court_flag
+			has_planet_flag = pink_court_flag
+			has_planet_flag = grand_court
+			has_planet_flag = gem_planet_pink_gone
+		}
+	}
+	immediate = { planet_event = { id = gem_diamond_choice.1001 } }
 }
 #The Event that regulates what diamond rules any given planet.
 #all 4 Diamonds are represented here but each diamonds section is made up of several choices

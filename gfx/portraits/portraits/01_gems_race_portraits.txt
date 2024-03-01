@@ -19,8 +19,8 @@ portraits = {
 	gemD2 =		{texturefile = "gfx/models/portraits/gems/gems_ruler_03_yellow.dds" }
 	gemD3 =		{texturefile = "gfx/models/portraits/gems/gems_ruler_01_blue.dds" }
 	gemD4 =		{texturefile = "gfx/models/portraits/gems/gems_ruler_02_pink.dds" }
-	gemD5 =		{texturefile = "gfx/models/portraits/gems/gems_ruler_05_rose.dds" }
-	gemD6 =		{texturefile = "gfx/models/portraits/gems/gems_ruler_05_rose2.dds" }
+	gemD5 =		{texturefile = "gfx/models/portraits/gems/gems_ruler_05_rose.dds" } # looks left
+	gemD6 =		{texturefile = "gfx/models/portraits/gems/gems_ruler_05_rose2.dds" } #looks right
 	gemE1 =		{texturefile = "gfx/models/portraits/gems/gems_Emerald_01.dds" }
 	gemJ1 =		{texturefile = "gfx/models/portraits/gems/gems_Jasper_01.dds" }
 	gemJ2 =		{texturefile = "gfx/models/portraits/gems/gems_Jasper_02.dds" }
@@ -210,7 +210,7 @@ portrait_groups = {
 		#leader scope 
 		ruler = {
 			add = {
-				trigger = { leader_class = diamond_class }
+				trigger = { leader_class = official }
 				portraits = {
 					gemD1 #White
 					gemD2 #Yellow
@@ -292,7 +292,7 @@ portrait_groups = {
 		#leader scope 
 		ruler = {
 			add = {
-				trigger = { leader_class = diamond_class }
+				trigger = { leader_class = official }
 				portraits = {
 					gemD1 #White
 				}

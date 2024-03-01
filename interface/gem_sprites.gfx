@@ -100,6 +100,14 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_situation_happy"
 		texturefile = "gfx/interface/icons/situation_log/situations/outcomes/situation_outcome_icon_happy.dds"
-		alwaystransparent = yes
+		}
+	
+	spriteType = {
+		name = "GFX_situation_stage_frame_yellow"
+		texturefile = "gfx/interface/icons/situation_log/situations/stages/situation_severity_level_frame_yellow.dds"
+	}
+	spriteType = {
+		name = "GFX_situation_stage_frame_orange"
+		texturefile = "gfx/interface/icons/situation_log/situations/stages/situation_severity_level_frame_orange.dds"
 	}
 }

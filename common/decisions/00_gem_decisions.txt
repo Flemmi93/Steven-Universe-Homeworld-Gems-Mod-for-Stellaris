@@ -332,10 +332,8 @@ reassign_court = {
 		custom_tooltip = "cause_event_reassign_court"
 		hidden_effect = {
 			set_planet_flag = gem_decision_trigger
-			planet_event = { id = gem_diamond_choice.1002 days = 1} # triggers step cpunter
-			planet_event = { id = gem_diamond_choice.1000 }
-			#owner = { country_event = { id = gem_off_colors.0015} } # triggers step counter
-		}
+						planet_event = { id = gem_diamond_choice.1000 }
+					}
 	}
 }
 

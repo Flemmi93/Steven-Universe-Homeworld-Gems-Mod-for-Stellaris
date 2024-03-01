@@ -176,6 +176,12 @@ spriteTypes = {
 		masking_texture = "gfx/interface/situation_log/event_mask.dds"
 		alwaystransparent = yes
 	}
+spriteType = {
+		name = "GFX_evt_gem_1000_year_war"
+		texturefile = "gfx/event_pictures/gem_1000_year_war.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
 	spriteType = {
 		name = "GFX_evt_gem_white_accension"
 		texturefile = "gfx/event_pictures/gem_accension_white.dds"

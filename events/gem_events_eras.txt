@@ -62,7 +62,7 @@ country_event = {
 			option = interference_subtle
 			cooldown = yes
 		}
-		country_event = { id = gem_off_colors.9005 days = 3600 }
+		country_event = { id = gem_off_colors.9005 days = 3601 }
 		event_target:gem_pink_diamond = {
 			set_leader_flag = pink_earth_flag
 		}
@@ -291,7 +291,7 @@ country_event = {
 		name = "gem_era.3.a"
 		hidden_effect = {
 			create_leader = {
-				class = diamond_class
+				class = official
 				name = "Pink Diamond"
 				species = owner_main_species
 				#LEVEL = 4

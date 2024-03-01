@@ -13,7 +13,8 @@ country_event = {
             add_deposit = d_geothermal_vent
             add_deposit = d_geothermal_vent
         
-            # 4 mining
+            # 8 mining
+			add_deposit = d_space_mining
             add_deposit = d_space_mining
 			
 			# 0 farming 
