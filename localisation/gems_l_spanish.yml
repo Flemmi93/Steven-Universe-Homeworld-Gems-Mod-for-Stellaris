@@ -455,7 +455,7 @@
  gem_off_colors.1031.b: "§YThis needs a strong hand§!"
  gem_off_colors.1033.name: "$blue_d$"
  gem_off_colors.1033.desc: "When $blue_diamond$ arrived on §Y[This.GetName]§! she met with a §BSapphire§! to have her predict how to end the rebellion.\n\nAs Predicted the meeting between $blue_diamond$ and the §BSapphire§! was attacked by §PThe Rebels§! they Proclaimed themself to be the Crystal Gems. They cleeved through all defenders.\nBut just before the predicted capture of §PThe Rebels§! the unthinkable happend.\n\nA §RRuby Guard§! fused with the §BSapphire§!. But before they could be punished they fled together with §PThe Rebels§!."
- gem_more_gem_production: "The Rubies have failt us, being in more Topaz"
+ gem_more_gem_production: "The Rubies have failt us, bring in more Topaz"
  gem_more_weapon_production: "The Rubies have failt us, they need better weapons"
  gem_off_colors.1033.a: "§BOrganize the meeting at once!§!"
  gem_off_colors.1034.name: "$yellow_d$"
@@ -492,6 +492,7 @@
  gem_off_colors.0030.b_desc: "§PWhoops ^^§!"
  gem_off_colors.0031.desc: "$pink_d$ has thrown another tantrum, her outbreaks are becoming worse every time.\n\nShe damaged the Palace on §Y[Owner.Capital.GetName]§!.\n\n§R-5% £happiness£ $HAPPINESS_LABEL$ on §Y[Owner.Capital.GetName]§!."
  gem_off_colors.0031.a: "We should do something about it"
+ gem_off_colors.0031.b: "$pink_d$ will have her planet"
  gem_off_colors.0032.desc: "$pink_d$ has thrown another tantrum, her outbreaks are becoming worse every time.\n\nShe has gone and physicaly abused subserviant gems, leaving some of them cracked §Y[Owner.Capital.GetName]§!."
  gem_off_colors.0032.a: "We should do something about it!"
  gem_off_colors.0034.name: "$pink_d$'s Party year"
@@ -531,7 +532,7 @@
  pm_pink_tantrum_2: "$pink_d$'s Tantrum"
  pm_pink_tantrum_3: "$pink_d$'s Tantrum"
  pm_gem_human_experiement: "Human Experiements"
- pm_gem_human_experiement_desc: "These creatures show remarcable instincts, its fun to see them experiements."
+ pm_gem_human_experiement_desc: "These creatures show remarcable instincts, its fun to see them try."
  pm_grand_court_1: "The Grand Court"
  pm_grand_court_1_desc: "The Grand Court on Homeworld is the primary home of our Diamonds"
  pm_grand_court_2: "$pm_grand_court_1$"
@@ -542,6 +543,7 @@
  blue_alive: "$blue_d$ is Alive"
  pink_alive: "$pink_d$ is alive"
  pink_got_earth: "$pink_d$ is busy on earth"
+ approach_lost_controll: "We lost control of the Situation"
  
  #Diamon ascention events
  gem_diamond_ascention.1101.name: "$white_diamond$'s Ascention"
