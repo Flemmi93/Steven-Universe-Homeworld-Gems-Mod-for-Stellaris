@@ -23,3 +23,5 @@ has_district_kindergarten = {
 has_district_kindergarten2 = {
 	has_planet_flag = gem_has_kindergarten2
 }
+
+is_geoloid = { has_trait = trait_geoloid }
