@@ -25,3 +25,4 @@ has_district_kindergarten2 = {
 }
 
 is_geoloid = { has_trait = trait_geoloid }
+is_steven_no_star = { is_planet_class = pc_no_star }

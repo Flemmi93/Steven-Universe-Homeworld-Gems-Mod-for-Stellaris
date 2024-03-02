@@ -162,7 +162,7 @@ country_event = {
 		event_target:gem_planet_earth_event = {
 			add_modifier = { modifier = "pm_gem_human_experiement" }
 			set_planet_flag = gem_planet_earth_owned_by_pink_pre_era_2
-			assign_leader = event_target:gem_pink_diamond
+			#assign_leader = event_target:gem_pink_diamond
 		}
 		set_country_flag = pink_got_earth
 		remove_country_flag = pink_wants_earth
@@ -690,16 +690,26 @@ planet_event = {
 	trigger = { owner = { has_country_flag = era_one_flag } }
 	immediate = {
 		hidden_effect = {
-			event_target:gem_pink_diamond = { set_leader_flag = pink_earth_flag }
+			event_target:gem_pink_diamond = {
+				set_leader_flag = pink_earth_flag
+			}
 		}
 	}
 	option = {
 		name = gem_off_colors.1040.a
 		assign_leader = event_target:gem_pink_diamond
+		event_target:gem_pink_diamond = {
+			add_trait = "trait_pink_court"
+		}
 	}
 	after = {
 		hidden_effect = {
 			event_target:gem_pink_diamond = { remove_leader_flag = pink_earth_flag }
+			owner = {
+				capital_scope = {
+					remove_modifier = pm_gem_pink_court
+				}
+			}
 		}
 	}
 }
@@ -854,20 +864,13 @@ planet_event = {
 			owner = last_created_country
 			type = "crystal_gem_army2"
 		}
-		create_army = {
-			name = "Crystal Gems"
-			owner = last_created_country
-			type = "crystal_gem_army"
-		}
-		create_army = {
-			name = "Crystal Gems"
-			owner = last_created_country
-			type = "crystal_gem_army"
-		}
-		create_army = {
-			name = "Crystal Gems"
-			owner = last_created_country
-			type = "primitive_army"
+		while = {
+			count = 6
+			create_army = {
+				name = "Crystal Gems"
+				owner = last_created_country
+				type = "crystal_gem_army"
+			}
 		}
 		planet_event = { id = gem_off_colors.1056 }
 		planet_event = { id = gem_off_colors.1052 days = 1 }

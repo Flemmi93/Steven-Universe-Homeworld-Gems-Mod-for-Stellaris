@@ -307,7 +307,6 @@ decision_gemcology_project = {
 galaxy_warp = {
 	owned_planets_only = yes
 	icon = decision_galaxy_warp
-	
 	enactment_time = 720
 	resources = {
 		category = decisions

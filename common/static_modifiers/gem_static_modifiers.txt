@@ -28,7 +28,7 @@ pm_gem_blue_court = {
 pm_gem_pink_court = {
 	icon = "gfx/interface/icons/planet_modifiers/gem_pink_diamond.dds"
 	icon_frame = 1
-	#pop_citizen_happiness = 0.10
+	pop_citizen_happiness = 0.10
 }
 
 pm_gem_white_court2 = {
@@ -58,8 +58,8 @@ pm_gem_pink_court2 = {
 pm_gem_galaxy_warp = { 
 	icon = "gfx/interface/icons/planet_modifiers/gem_galaxy_warp.dds"
 	icon_frame = 1
-	#pop_resettlement_cost_mult = -0.1
-	#planet_resettlement_unemployed_mult = 0.5
+	pop_resettlement_cost_mult = -0.1
+	planet_resettlement_unemployed_mult = 0.5
 }
 
 pm_off_color_saboteur = {
@@ -133,7 +133,7 @@ pm_gem_less_assemble3 = {
 pm_gem_human_experiement = {
 	icon = "gfx/interface/icons/planet_modifiers/pm_human_experiement.dds"
 	icon_frame = 2
-	planet_pop_growth_mult = -0.15
+	pop_growth_speed_reduction = 0.15
 	planet_amenities_mult = 0.20
 	all_technology_research_speed = 0.1
 	job_head_researcher_add = 1
@@ -175,6 +175,7 @@ era_one = {
 	pop_resettlement_cost_mult = -0.75
 	planet_colony_development_speed_mult = 0.50
 	ship_colonizer_cost_mult = -0.1
+	country_official_cap_add = 2
 }
 era_two = {
 	icon = "gfx/interface/icons/traits/trait_gem_eratwo.dds"

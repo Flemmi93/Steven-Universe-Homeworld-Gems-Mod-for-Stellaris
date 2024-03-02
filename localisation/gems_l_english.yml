@@ -116,7 +116,7 @@
  
  origin_crystal_gems: "Failed Colony Origin"
  origin_crystal_gems_desc: "§RWIP, but works on a basic level§!\n\nMany thousands of years ago this planet was the target of an intergalactic colonial effort of an advanced alien race. During a hasty war of independence, that went on for 1000 years, many of our people supposedly died too. The colony failed and without their intervention our world would be uninhabitable today. Now only a hand full of the aliens remain and they protect the planet from the corruption their former overlords caused on their brethren and the alien artifacts they lost control over."
- civic_tooltip_crystal_gems_effects: "Start the Game with a single Crystal Gem pop £pops£.\n\Thousands of years ago these Gems where embroiled in a brutal civil war.\n\nTo this day, we are suffering from the consequences of this conflict, but this also could bring new opportunities."
+ civic_tooltip_crystal_gems_effects: "Start the Game with a single Crystal Gem pop £pops£.\n\nThousands of years ago these Gems where embroiled in a brutal civil war.\n\nTo this day, we are suffering from the consequences of this conflict, but this also could bring new opportunities."
  
  civic_tooltip_geoform_effects: "Capital starts as a §YGeoformed World§!\nGain the §Y$trait_geoloid$§! trait, granting:\n  Geoformed World Habitability: §G+100%§!"
  civic_tooltip_gem_rebellion_effects: "Capital starts as a §YGeoformed World§!\nGain the §Y$trait_geoloid$§! trait, granting:\n  Geoformed World Habitability: §G+100%§!"
@@ -412,6 +412,7 @@
  pm_gem_yellow_court: "$yellowfaction$"
  pm_gem_blue_court: "$bluefaction$"
  pm_gem_pink_court: "$pinkfaction$"
+ pm_gem_pink_court_desc: "$pink_diamond$ is a free spirit, she tries to avoid being tied down by her own court and travels with a light entourage."
  pm_gem_white_court2: "$whitefaction$"
  pm_gem_yellow_court2: "$yellowfaction$"
  pm_gem_blue_court2: "$bluefaction$"
