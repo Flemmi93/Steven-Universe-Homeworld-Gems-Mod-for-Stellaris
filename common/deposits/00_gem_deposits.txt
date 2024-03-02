@@ -120,19 +120,3 @@ d_homeworld_special = {
 	potential = { always = no }
 can_be_cleared = { always = no }
 }
-# Kindergarten Deposits
-d_kindergarten_blocker = {
-	
-	icon = d_kindergarten
-	category = deposit_cat_rare_blocker
-	
-	potential = { always = no }
-	can_be_cleared = { always = no }
-
-	planet_modifier = {
-		planet_orbital_bombardment_damage = -100
-		army_health = 100
-		army_morale = 100
-	}
-
-}

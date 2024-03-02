@@ -60,72 +60,13 @@ planet_event = { #replaces the grand court
 		}
 	}
 }
-planet_event = { #removes any trace of the previous choice
-    id = gem_diamond_choice.1000
-	hide_window = yes
-	is_triggered_only = yes
-	pre_triggers = {
-		has_owner = yes
-	}
-	trigger = {
-		OR = {
-			AND = {
-				OR = {
-					has_modifier = pm_gem_white_court
-					has_modifier = pm_gem_white_court2
-				}
-				owner = { NOT = { has_country_flag = white_alive } }
-			}
-			AND = {
-				OR = {
-					has_modifier = pm_gem_yellow_court
-					has_modifier = pm_gem_yellow_court2
-				}
-				owner = { NOT = { has_country_flag = yellow_alive } }
-			}
-			AND = {
-				OR = {
-					has_modifier = pm_gem_blue_court
-					has_modifier = pm_gem_blue_court2
-				}
-				owner = { NOT = { has_country_flag = blue_alive } }
-			}
-			AND = {
-				OR = {
-					has_modifier = pm_gem_pink_court
-					has_modifier = pm_gem_pink_court2
-				}
-				owner = { NOT = { has_country_flag = pink_alive } }
-			}
-			has_planet_flag = gem_decision_trigger # is set by the decision and immediatly removed by this event
-		}
-	}
-
-	immediate = {
-		remove_planet_flag = white_court_flag
-		remove_planet_flag = yellow_court_flag
-		remove_planet_flag = blue_court_flag
-		remove_planet_flag = pink_court_flag
-		remove_planet_flag = gem_decision_trigger
-		remove_modifier = "pm_gem_white_court"
-		remove_modifier = "pm_gem_yellow_court"
-		remove_modifier = "pm_gem_blue_court"
-		remove_modifier = "pm_gem_pink_court"
-		remove_modifier = "pm_gem_white_court2"
-		remove_modifier = "pm_gem_yellow_court2"
-		remove_modifier = "pm_gem_blue_court2"
-		remove_modifier = "pm_gem_pink_court2"
-			}
-}
 	
 planet_event = { #triggers the step counter
     id = gem_diamond_choice.1002
 	hide_window = yes
 	is_triggered_only = yes
 	trigger = {
-		NOT = {
-			has_planet_flag = planet_had_court_before
-					}
+		NOT = { has_planet_flag = planet_had_court_before }
 	}
 	immediate = {
 		owner = { country_event = { id = gem_off_colors.0009} }

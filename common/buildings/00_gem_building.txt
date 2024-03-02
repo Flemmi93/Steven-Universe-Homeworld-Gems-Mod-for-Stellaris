@@ -176,16 +176,9 @@ building_buff_kindergarten1 = {
 			AND = {
 				is_geo_empire = yes
 				OR = {
-					has_modifier = pm_gem_white_court
-					has_modifier = pm_gem_yellow_court
-					has_modifier = pm_gem_blue_court
-					has_modifier = pm_gem_pink_court
-					has_modifier = pm_gem_white_court2
-					has_modifier = pm_gem_yellow_court2
-					has_modifier = pm_gem_blue_court2
-					has_modifier = pm_gem_pink_court2
-					has_modifier = pm_grand_court_1
-					has_modifier = pm_grand_court_2
+					has_deposit = d_kindergarten_small
+					has_deposit = d_kindergarten_med
+					has_deposit = d_kindergarten_large
 				}
 			}
 			owner = { has_origin = origin_crystal_gems }
@@ -466,10 +459,11 @@ building_crystal_gem_temple = {
 	
 	potential = {
 		exists = owner
+		is_geo_empire = no
 	}
 	
 	allow = {
-#		always = no
+		always = no
 	}
 	
 	

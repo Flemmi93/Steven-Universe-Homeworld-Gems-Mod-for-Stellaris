@@ -31,6 +31,13 @@ on_colonized = {
 	}
 }
 
+# X years has passed since a planet was colonized (won't trigger on empire homeworld)
+on_colony_1_year_old = {
+	events = {
+		gem_diamond_choice.1002 #triggers step counter
+	}
+}
+
 # Scope: Leader (just before unassignment)
 # Fires if a leader is unassigned from their position for any reason (including being assigned elsewhere)
 on_leader_unassigned = {
@@ -45,16 +52,6 @@ on_leader_unassigned = {
 on_ground_combat_started = {
 	events = {
 		#gem_off_colors.2010 #make it so invations are impossible, idk how to do it
-	}
-}
-
-#Fired whenever a new owner is set for a planet,
-#be it after a war or through a trade or at the start of colonisation
-#From = Country scope (new owner)
-#This = Planet scope
-on_planet_transfer = {
-	events = {
-		gem_diamond_choice.1000 # cleans up when gems lose the world
 	}
 }
 
@@ -78,5 +75,15 @@ on_pop_assembled = {
 on_building_observation_station = {
 	events = {
 		#make it possible for pink to be happy with observation post
+	}
+}
+
+
+# Executed as a leader has died
+# This = Country
+# From = Leader
+on_leader_death = {
+	events = {
+		
 	}
 }

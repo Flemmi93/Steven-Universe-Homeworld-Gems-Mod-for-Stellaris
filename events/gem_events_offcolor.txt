@@ -6,7 +6,7 @@ namespace = gem_off_colors
 
 #counts colonies for earth spawn
 country_event = {
-	id = gem_off_colors.09
+	id = gem_off_colors.0009
 	hide_window = yes
 	is_triggered_only = yes
 	trigger = {
@@ -27,12 +27,13 @@ country_event = {
 	is_triggered_only = yes
 
 trigger = {
-		check_variable = { which = gem_road_to_sol value = 3 } # has to be one lower than id = gem_off_colors.0009 trigger
+		check_variable = { which = gem_road_to_sol value > 2 } # has to be one lower than id = gem_off_colors.0009 trigger
 	}
 
 	immediate = {
 		set_global_flag = gem_sol_discovered
 		set_country_flag = gem_sol_system
+		set_country_flag = pink_wants_earth
 		if = {
 			limit = {
 				any_system_within_border = { has_star_flag = gem_sol_system }
@@ -65,6 +66,14 @@ trigger = {
 				add_extra_hyperlane_to_spawned_system_effect = yes
 			}
 		}
+		last_created_system = {
+			random_system_planet = {
+				limit = { 
+					has_planet_flag = gem_planet_earth
+				}
+				save_global_event_target_as = gem_planet_earth_event
+			}
+		}
 		country_event = { id = gem_off_colors.0020 days = 3 }
 	}
 }
@@ -81,7 +90,6 @@ country_event = {
 	trigger = {
 		is_hive_empire = no
 	}
-	
 	option = {
 		trigger = {
 			NOT = { has_country_flag = pink_got_earth }
@@ -123,13 +131,17 @@ country_event = {
 	}
 	
 	option = {
+		trigger = {
+			event_target:gem_planet_earth_event = {
+				is_homeworld = yes
+			}
+		}
 		name = gem_off_colors.0030.a
 		owner = { capital_scope = { add_modifier = { modifier = pm_pink_tantrum_1 days = 180 } } }
 		hidden_effect = { country_event = { id = gem_off_colors.0031 days = 480 random = 120 } }
 	}
 	
 	after = {
-		set_country_flag = pink_wants_earth
 		#hidden_effect = { start_situation = { type = pink_situation } }
 	}
 	
@@ -137,6 +149,23 @@ country_event = {
 		trigger = { NOT = { is_diamond_empire = yes } }
 		name = gem_off_colors.0030.d
 		custom_tooltip = gem_off_colors.0030.d.desc
+	}
+
+	option = {
+		name = gem_off_colors.0031.b
+		trigger = {
+			event_target:gem_planet_earth_event = {
+				is_colony = yes
+				is_homeworld = no
+			}
+		}
+		event_target:gem_planet_earth_event = {
+			add_modifier = { modifier = "pm_gem_human_experiement" }
+			set_planet_flag = gem_planet_earth_owned_by_pink_pre_era_2
+			assign_leader = event_target:gem_pink_diamond
+		}
+		set_country_flag = pink_got_earth
+		remove_country_flag = pink_wants_earth
 	}
 }
 
@@ -154,6 +183,11 @@ country_event = {
 	}
 	
 	option = {
+		trigger = {
+			event_target:gem_planet_earth_event = {
+				is_homeworld = yes
+			}
+		}
 		name = gem_off_colors.0031.a
 		owner = { capital_scope = { add_modifier = { modifier = pm_pink_tantrum_2 days = 360} } }
 		hidden_effect = { country_event = { id = gem_off_colors.0032 days = 480 random = 120 } }
@@ -163,6 +197,23 @@ country_event = {
 		trigger = { NOT = { is_diamond_empire = yes } }
 		name = gem_off_colors.0030.d
 		custom_tooltip = gem_off_colors.0030.d.desc
+	}
+
+	option = {
+		name = gem_off_colors.0031.b
+		trigger = {
+			event_target:gem_planet_earth_event = {
+				is_colony = yes
+				is_homeworld = no
+			}
+		}
+		event_target:gem_planet_earth_event = {
+			add_modifier = { modifier = "pm_gem_human_experiement" }
+			set_planet_flag = gem_planet_earth_owned_by_pink_pre_era_2
+			assign_leader = event_target:gem_pink_diamond
+		}
+		set_country_flag = pink_got_earth
+		remove_country_flag = pink_wants_earth
 	}
 }
 
@@ -175,11 +226,14 @@ country_event = {
 	show_sound = event_whispering
 	is_triggered_only = yes
 	
-	trigger = {
-		NOT = { has_country_flag = pink_got_earth }
-	}
+	trigger = { NOT = { has_country_flag = pink_got_earth } }
 	
 	option = {
+		trigger = {
+			event_target:gem_planet_earth_event = {
+				is_homeworld = yes
+			}
+		}
 		name = gem_off_colors.0031.a
 		owner = {
 			capital_scope = {
@@ -189,7 +243,7 @@ country_event = {
 			}
 		}
 		random = {
-			chance = 1
+			chance = 5
 			owner = {
 				capital_scope = {
 					random_owned_pop = { kill_pop = yes }
@@ -203,6 +257,23 @@ country_event = {
 		trigger = { NOT = { is_diamond_empire = yes } }
 		name = gem_off_colors.0030.d
 		custom_tooltip = gem_off_colors.0030.d.desc
+	}
+
+	option = {
+		name = gem_off_colors.0031.b
+		trigger = {
+			event_target:gem_planet_earth_event = {
+				is_colony = yes
+				is_homeworld = no
+			}
+		}
+		event_target:gem_planet_earth_event = {
+			add_modifier = { modifier = "pm_gem_human_experiement" }
+			set_planet_flag = gem_planet_earth_owned_by_pink_pre_era_2
+			#assign_leader = event_target:gem_pink_diamond #happens later, could happer here tho
+		}
+		set_country_flag = pink_got_earth
+		remove_country_flag = pink_wants_earth
 	}
 }
 
@@ -224,7 +295,7 @@ planet_event = {
 	}
 	immediate = {
 		planet_event = { id = gem_off_colors.1010 days = 360 } # appearence of an unknown Rose Gem
-		planet_event = { id = gem_diamond_choice.1001 } # forces to assign this planet to pink
+		#planet_event = { id = gem_diamond_choice.1001 } # forces to assign this planet to pink
 		}
 }
 
@@ -256,9 +327,8 @@ after = {
 			}
 			random_targeting_situation = {
 				limit = { is_situation_type = gem_1000_year_war }
-				set_variable = { which = gem_1000_year_war_progressing value = 4 }
+				set_variable = { which = gem_1000_year_war_progressing value = 4 } #Advances the situation from 1 to 5
 			}
-
 		}
 		custom_tooltip = gem_1000_year_war_name
 	}
@@ -285,20 +355,21 @@ planet_event = {
 	desc = gem_off_colors.1020.desc
 	picture = GFX_evt_gem_perdiot1
 	show_sound = event_construction
-	option = { 
+	option = {
 		name = WORRYING 
 		hidden_effect = {
 			planet_event = { id = gem_off_colors.1030 days = 180 random = 30 }
 			planet_event = { id = gem_off_colors.1040 days = 30 random = 90 }
-#advances situation to 5
-			random_targeting_situation = {
-				limit = { is_situation_type = gem_1000_year_war }
-				change_variable = { which = gem_1000_year_war_progressing value = 3 }
-		}
+			hidden_effect = {
+				random_targeting_situation = {
+					limit = { is_situation_type = gem_1000_year_war }
+					change_variable = { which = gem_1000_year_war_progressing value = 5 }
+				}
+			}
 		}
 		#remove_modifier = pm_gem_human_experiement
 		add_modifier = { modifier = "pm_off_color_saboteur" days = 720 }
-		}
+	}
 }
 
 # Less Pop Production / Growth 1
@@ -343,6 +414,49 @@ situation_event = {
 	}
 }
 
+#updates approch
+planet_event = {
+	id = gem_off_colors.1025
+	is_triggered_only = yes
+	hide_window = yes
+	immediate = {
+		set_planet_flag = gem_cant_ignore_2
+		random_targeting_situation = {
+			limit = { is_situation_type = gem_1000_year_war }
+			set_situation_approach = approach_destroy
+		}
+		remove_planet_flag = gem_cant_ignore_1
+	}
+}
+#speeds up counter for a bit
+planet_event = {
+	id = gem_off_colors.1026
+	is_triggered_only = yes
+	hide_window = yes
+	immediate = {
+		random_targeting_situation = {
+			limit = { is_situation_type = gem_1000_year_war }
+			change_variable = { which = gem_1000_year_war_progressing value = 10 }
+		}
+	}
+}
+
+#speeds up counter for a bit
+planet_event = {
+	id = gem_off_colors.1027
+	is_triggered_only = yes
+	hide_window = yes
+	immediate = {
+		set_planet_flag = gem_cant_ignore_3
+		random_targeting_situation = {
+			limit = { is_situation_type = gem_1000_year_war }
+			change_variable = { which = gem_1000_year_war_progressing value = 1 }
+		}
+		remove_planet_flag = gem_cant_ignore_2
+	}
+}
+
+
 # first appearence of the Crystal Gems (unnamed)
 planet_event = {
 	id = gem_off_colors.1030
@@ -352,9 +466,11 @@ planet_event = {
 	picture = GFX_evt_gem_rebellion_1
 	option = { 
 		name = gem_off_colors.1030.a
-		random_targeting_situation = {
-			limit = { is_situation_type = gem_1000_year_war }
-			add_situation_progress = 10
+		hidden_effect = {
+			random_targeting_situation = {
+				limit = { is_situation_type = gem_1000_year_war }
+				change_variable = { which = gem_1000_year_war_progressing value = 10 }
+			}
 		}
 	}
 }
@@ -373,7 +489,7 @@ immediate = {
 	option = { 
 		name = gem_off_colors.1031.a
 		add_modifier = { modifier = pm_blue_visits days = 150}
-custom_tooltip = gem_more_gem_production
+		custom_tooltip = gem_more_gem_production
 		hidden_effect = {
 			planet_event = { id = gem_off_colors.1033 days = 150 }
 		}
@@ -381,7 +497,7 @@ custom_tooltip = gem_more_gem_production
 	option = { 
 		name = gem_off_colors.1031.b
 		add_modifier = { modifier = pm_yellow_visits days = 150}
-custom_tooltip = gem_more_weapon_production
+		custom_tooltip = gem_more_weapon_production
 		hidden_effect = {
 			planet_event = { id = gem_off_colors.1034 days = 150 }
 		}
@@ -397,13 +513,13 @@ planet_event = {
 	picture = GFX_evt_gem_visit_to_earth
 	option = { 
 		name = gem_off_colors.1033.a
-create_pop = {
+		create_pop = {
 			species = owner_main_species
 		}
 		hidden_effect = {
-random_targeting_situation = {
+			random_targeting_situation = {
 				limit = { is_situation_type = gem_1000_year_war }
-				change_variable = { which = gem_1000_year_war_progressing value = 10 }
+				change_variable = { which = gem_1000_year_war_progressing value = 10 } #gets it to 30
 			}
 		}
 	}
@@ -411,7 +527,7 @@ random_targeting_situation = {
 		random_targeting_situation = {
 			limit = { is_situation_type = gem_1000_year_war }
 			set_situation_approach = approach_revolt_crackdown
-					}
+		}
 	}
 }
 
@@ -433,7 +549,7 @@ planet_event = {
 		hidden_effect = {
 		random_targeting_situation = {
 				limit = { is_situation_type = gem_1000_year_war }
-				change_variable = { which = gem_1000_year_war_progressing value = 10 }
+				change_variable = { which = gem_1000_year_war_progressing value = 10 } #gets it to 30
 			}
 		}
 	}
@@ -441,7 +557,7 @@ planet_event = {
 		random_targeting_situation = {
 			limit = { is_situation_type = gem_1000_year_war }
 			set_situation_approach = approach_revolt_crackdown
-					}
+		}
 	}
 }
 
@@ -449,7 +565,7 @@ planet_event = {
 #starts the fight
 planet_event = {
 	id = gem_off_colors.1035
-hide_window = yes
+	hide_window = yes
 	is_triggered_only = yes
 	
 	trigger = {
@@ -457,6 +573,10 @@ hide_window = yes
 	}
 	
 	immediate = {
+		random_targeting_situation = {
+			limit = { is_situation_type = gem_1000_year_war }
+			set_situation_approach = approach_lost_controll
+		}
 		if = {
 			limit = {	
 				NOT = { has_planet_flag = 1000year_war_ongoing }
@@ -554,7 +674,7 @@ hide_window = yes
 			planet_event = { id = gem_off_colors.1052 days = 1 }
 			set_planet_flag = 1000year_war_ongoing
 		}
-else = {
+		else = {
 			remove_planet_flag = 1000year_war_ongoing
 		}
 	}
@@ -577,7 +697,7 @@ planet_event = {
 		name = gem_off_colors.1040.a
 		assign_leader = event_target:gem_pink_diamond
 	}
-after = {
+	after = {
 		hidden_effect = {
 			event_target:gem_pink_diamond = { remove_leader_flag = pink_earth_flag }
 		}
@@ -779,7 +899,7 @@ planet_event = {
 	option = {
 		name = gem_off_colors.1055.a
 		add_modifier = { modifier = "pm_gem_no_assemble" }
-remove_modifier = "pm_gem_less_assemble3"
+		remove_modifier = "pm_gem_less_assemble3"
 		custom_tooltip = gem_1000_year_war_create_jasper
 		hidden_effect = {
 			owner = {
@@ -1238,64 +1358,25 @@ planet_event = {
 ###########
 # Various #
 ###########
-
+#makee these events resapwn the diamond
 #Diamond Deaths, currently unused
 country_event = { # White Diamond Death
 	is_triggered_only = yes
 	id = gem_off_colors.9001
 	hide_window = yes
+	trigger = {
+		from = {
+			OR = {
+			has_leader_flag = white_diamond_flag
+			has_leader_flag = blue_diamond_flag
+			has_leader_flag = yellow_diamond_flag
+			has_leader_flag = pink_diamond_flag
+			}
+			leader_class = official
+		}
+	}
 	immediate = {
 		remove_country_flag = white_alive
-		every_owned_planet = {
-			limit = {
-				is_colony = yes
-			}
-			planet_event = { id = gem_diamond_choice.1000 }
-		}
-	}
-}
-country_event = { # Yellow Diamond Death
-	is_triggered_only = yes
-	id = gem_off_colors.9002
-	hide_window = yes
-	immediate = {
-		remove_country_flag = yellow_alive
-		every_owned_planet = {
-			limit = {
-				is_colony = yes
-			}
-			planet_event = { id = gem_diamond_choice.1000 }
-		}
-	}
-}
-country_event = { # Blue Diamond Death
-	is_triggered_only = yes
-	id = gem_off_colors.9003
-	hide_window = yes
-	immediate = {
-		remove_country_flag = blue_alive
-		every_owned_planet = {
-			limit = {
-				is_colony = yes
-			}
-			planet_event = { id = gem_diamond_choice.1000 }
-		}
-	}
-}
-country_event = { # Pink Diamond Death
-	is_triggered_only = yes
-	id = gem_off_colors.9004
-	hide_window = yes
-	immediate = {
-		remove_country_flag = pink_alive
-		set_heir = event_target:gem_blue_diamond
-		set_heir = event_target:gem_yellow_diamond
-		every_owned_planet = {
-			limit = {
-				is_colony = yes
-			}
-			planet_event = { id = gem_diamond_choice.1000 }
-		}
 	}
 }
 

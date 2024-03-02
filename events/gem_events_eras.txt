@@ -92,7 +92,6 @@ country_event = {
 			remove_country_flag = era_three_flag
 			remove_country_flag = pink_got_earth
 			set_country_flag = era_two_flag
-			country_event = { id = gem_off_colors.9004 days = 1 }
 			country_event = { id = gem_era.3 days = 21600 random = 3600 }
 			#country_event = { id = gem_era.2001 days = 1800 random = 1080 }  #Path to White Gestalt currently not active
 			capital_scope = {
@@ -123,7 +122,6 @@ event_target:gem_planet_earth_event = {
 			remove_country_flag = era_three_flag
 			remove_country_flag = pink_got_earth
 			set_country_flag = era_two_flag
-			country_event = { id = gem_off_colors.9004 days = 1 }
 			country_event = { id = gem_era.3 days = 21600 random = 3600 }
 			#country_event = { id = gem_era.2001 days = 1800 random = 1080 }  #Path to White Gestalt currently not active
 			capital_scope = {
@@ -165,7 +163,6 @@ event_target:gem_planet_earth_event = {
 			remove_country_flag = era_three_flag
 			remove_country_flag = pink_got_earth
 			set_country_flag = era_two_flag
-			country_event = { id = gem_off_colors.9004 days = 1 }
 			country_event = { id = gem_era.3 days = 21600 random = 3600 }
 			capital_scope = {
 				remove_modifier = pm_grand_court_1
@@ -206,7 +203,6 @@ event_target:gem_planet_earth_event = {
 			remove_country_flag = era_three_flag
 			remove_country_flag = pink_got_earth
 			set_country_flag = era_two_flag
-			country_event = { id = gem_off_colors.9004 days = 1 }
 			country_event = { id = gem_era.3 days = 21600 random = 3600 }
 			#country_event = { id = gem_era.2001 days = 1800 random = 1080 }  #Path to White Gestalt currently not active
 			capital_scope = {

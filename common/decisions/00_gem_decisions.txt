@@ -304,39 +304,6 @@ decision_gemcology_project = {
 	}
 }
 
-# reassign a diamond Court to this planet
-reassign_court = {
-	owned_planets_only = yes
-	
-	icon = decision_politics
-	sound = event_celebration
-	
-	enactment_time = 360
-	resources = {
-		category = decisions
-		cost = {
-			energy = 100
-		}
-	}
-	potential = {
-	
-		is_diamond_empire = yes
-		
-		NOR = {
-			has_planet_flag = gem_planet_earth_owned_by_pink_pre_era_2 
-			has_planet_flag = grand_court
-		}
-	}
-	
-	effect = {
-		custom_tooltip = "cause_event_reassign_court"
-		hidden_effect = {
-			set_planet_flag = gem_decision_trigger
-						planet_event = { id = gem_diamond_choice.1000 }
-					}
-	}
-}
-
 galaxy_warp = {
 	owned_planets_only = yes
 	icon = decision_galaxy_warp
