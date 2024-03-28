@@ -129,7 +129,7 @@ country_event = {
 			}
 			#Spwn in all the other Diamonds
 			create_leader = {
-					class = official
+					class = commander
 					name = "Yellow Diamond"
 					species = owner_main_species
 					traits = {
@@ -143,7 +143,7 @@ country_event = {
 				set_leader_flag = yellow_diamond_flag
 			}
 			create_leader = {
-					class = official
+					class = scientist
 					name = "Blue Diamond"
 					species = owner_main_species
 					traits = {
@@ -204,7 +204,7 @@ country_event = {
 		hidden_effect = {
 		#Create the choosen leader
 			create_leader = {
-				class = official
+				class = commander
 				name = "Yellow Diamond"
 				species = owner_main_species
 				traits = {
@@ -241,7 +241,7 @@ country_event = {
 				set_leader_flag = white_diamond_flag
 			}
 			create_leader = {
-					class = official
+					class = scientist
 					name = "Blue Diamond"
 					species = owner_main_species
 					traits = {
@@ -302,7 +302,7 @@ country_event = {
 		hidden_effect = {
 		#Create the choosen leader
 			create_leader = {
-				class = official
+				class = scientist
 				name = "Blue Diamond"
 				species = owner_main_species
 				traits = {
@@ -325,7 +325,7 @@ save_global_event_target_as = gem_blue_diamond
 			}
 			#Spwn in all the other Diamonds
 			create_leader = {
-					class = official
+					class = commander
 					name = "Yellow Diamond"
 					species = owner_main_species
 					traits = {
@@ -429,7 +429,7 @@ country_event = {
 		#Spwn in all the other Diamonds
 			
 			create_leader = {
-					class = official
+					class = commander
 					name = "Yellow Diamond"
 					species = owner_main_species
 					traits = {
@@ -443,7 +443,7 @@ country_event = {
 				set_leader_flag = yellow_diamond_flag
 			}
 			create_leader = {
-					class = official
+					class = scientist
 					name = "Blue Diamond"
 					species = owner_main_species
 					traits = {
@@ -481,4 +481,22 @@ country_event = {
 	#	name = CANCEL
 	#	hidden_effect = { country_event = { id = gem_diamond_ruler.0008 days = 1 } }
 	#}
+}
+
+# Executed as a leader has died
+# This = Country
+# From = Leader
+country_event = {
+	id = gem_diamond_ruler.100
+	title = 1
+	desc = 1
+	picture = "GFX_evt_gem_diamond_choice"
+	is_triggered_only = yes
+	trigger = {
+		is_geo_empire = yes
+		from = { has_trait = trait_ruler_diamond }
+	}
+	option = {
+		name = "ok"
+	}
 }

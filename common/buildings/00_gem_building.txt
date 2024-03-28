@@ -81,7 +81,7 @@ building_gem_spire2 = {
 
 	planet_modifier = {
 		job_clerk_add = 1
-		job_politician_add = 1
+		job_trader_add = 1
 		planet_amenities_add = 16
 	}
 	
@@ -118,7 +118,10 @@ building_gem_spire3 = {
 	
 	allow = {
 		has_upgraded_capital = yes
-		#also add a tech requirement for this
+		OR = {
+			is_capital = yes
+			owner = { has_technology = tech_housing_1 }
+		}
 	}
 	
 	destroy_trigger = {
@@ -133,7 +136,7 @@ building_gem_spire3 = {
 
 	planet_modifier = {
 		job_merchant_add = 1
-		job_politician_add = 1
+		job_trader_add = 2
 		planet_amenities_add = 24
 	}
 	

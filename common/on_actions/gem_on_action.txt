@@ -82,8 +82,16 @@ on_building_observation_station = {
 # Executed as a leader has died
 # This = Country
 # From = Leader
-on_leader_death = {
+on_leader_death_notify = {
 	events = {
-		
+		gem_diamond_ruler.100
+	}
+}
+# Executed as a leader has died
+# This = Country
+# From = Leader
+on_leader_death_no_notify = {
+	events = {
+		gem_diamond_ruler.100
 	}
 }

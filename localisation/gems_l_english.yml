@@ -13,15 +13,17 @@
  Blue: "§BBlue§!"
  Pink: "§PPink§!"
  Diamond: "Diamond"
+ diamond: "Diamond"
  Diamonds: "Diamonds"
+ diamonds: "Diamonds"
 
  
  #Ruler Class unused
- diamond_class: "Diamond"
- diamond_class_plural: "Diamonds"
- diamond_class_plural_with_icon: "£minerals£ Diamonds"
- diamond_class_description: "The $diamond_class_plural$ are the perfect beings and as such naturaly the only ones that can rule our Empire."
- diamond_class_with_icon: "£minerals£ Diamond"
+ su_diamond_class: "Diamond"
+ su_diamond_class_plural: "Diamonds"
+ su_diamond_class_plural_with_icon: "£minerals£ Diamonds"
+ su_diamond_class_description: "§LThe Diamonds are the perfect beings and as such naturaly the only ones that can rule our Empire§!"
+ su_diamond_class_with_icon: "£minerals£ Diamond"
  councilor_diamond: "Diamond"
  councilor_diamond_desc: "Our Diamond rules form this seat"
  

@@ -175,7 +175,7 @@ era_one = {
 	pop_resettlement_cost_mult = -0.75
 	planet_colony_development_speed_mult = 0.50
 	ship_colonizer_cost_mult = -0.1
-	country_official_cap_add = 2
+	#country_official_cap_add = 2
 }
 era_two = {
 	icon = "gfx/interface/icons/traits/trait_gem_eratwo.dds"

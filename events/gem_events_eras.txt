@@ -146,7 +146,7 @@ event_target:gem_planet_earth_event = {
 			}
 			add_resource = { minerals = 1 }
 			create_leader = {
-				class = official
+				class = commander
 				name = "Yellow Diamond"
 				species = owner_main_species
 				traits = {
@@ -186,7 +186,7 @@ event_target:gem_planet_earth_event = {
 			}
 			add_resource = { minerals = 1 }
 			create_leader = {
-				class = official
+				class = commander
 				name = "Yellow Diamond"
 				species = owner_main_species
 				traits = {
@@ -224,7 +224,7 @@ country_event = {
 		hidden_effect = {
 		set_country_flag = chose_yellow
 			create_leader = {
-				class = official
+				class = scientist
 				name = "Blue Diamond"
 				species = owner_main_species
 				traits = {
@@ -247,7 +247,7 @@ country_event = {
 		hidden_effect = {
 		set_country_flag = chose_blue
 			create_leader = {
-				class = official
+				class = commander
 				name = "Yellow Diamond"
 				species = owner_main_species
 				traits = {

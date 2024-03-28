@@ -166,7 +166,7 @@ portrait_groups = {
 		}
 		
 		#leader scope
-		leader = { #scientists, commander, official
+		leader = { #scientist, commander, official
 			add = {
 				trigger = { leader_class = scientist }
 				portraits = {
@@ -210,7 +210,13 @@ portrait_groups = {
 		#leader scope 
 		ruler = {
 			add = {
-				trigger = { leader_class = official }
+				trigger = {
+					OR = {
+						leader_class = official
+						leader_class = scientist
+						leader_class = commander
+					}
+				}
 				portraits = {
 					gemD1 #White
 					gemD2 #Yellow
@@ -259,7 +265,7 @@ portrait_groups = {
 		}
 		
 		#leader scope
-		leader = { #scientists, commander, official
+		leader = { #scientist, commander, official
 			add = {
 				trigger = { leader_class = scientist }
 				portraits = {

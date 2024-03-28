@@ -140,3 +140,5 @@ country_event = {
 		country_event = { id = gem_era.1 }
     }
 }
+
+#Event to make sure that random non playable empires are lead by a diamond should they spawn in.

@@ -1210,7 +1210,7 @@ planet_event = {
 		last_created_country = { save_global_event_target_as  = new_earth_civilisation_w_cg }
 	owner = {
 		create_leader = {
-				class = official
+				class = commander
 				name = "Rose Quartz"
 				species = root.solar_system.owner.species
 				traits = {
