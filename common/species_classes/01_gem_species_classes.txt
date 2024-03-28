@@ -1,3 +1,41 @@
+GEO = { # when the player has the Lithoid species pack this will be playable 
+	archetype = LITHOID 
+	
+	playable = {
+		has_lithoids = yes
+	}
+	possible = { authority = { NOT = { value = auth_machine_intelligence text = SPECIES_CLASS_MUST_NOT_USE_MACHINE_INTELLIGENCE } } }
+	
+	randomized = no
+	
+	gender = no
+	use_climate_preference = no
+	
+	leader_age_min = 200
+	leader_age_max = 800
+	
+	custom_portraits = {
+		playable = { has_lithoids = yes }
+		portraits = {
+			"gem"
+		}
+	}	
+	
+	custom_portraits = {
+		playable = { has_utopia = yes }
+		portraits = {
+			"whitegestalt"
+		}
+	}
+	
+	graphical_culture = geoloid_01
+	move_pop_sound_effect = "robot_pops_move"
+
+	resources = {}
+	
+	trait = "trait_geoloid"
+}
+
 GEO1 = { # for when the player has no DLC
 	archetype = GEOLOID
 	
@@ -32,11 +70,11 @@ GEO1 = { # for when the player has no DLC
 	trait = "trait_geoloid"
 }
 
-GEO = { # when the player has the Lithoid species pack this will be playable 
-	archetype = LITHOID 
+GEO2 = { #fir AI use only, can spawn only when the player isnt playing gems
+	archetype = GEOLOID 
 	
 	playable = {
-		has_lithoids = yes
+		is_ai = yes
 	}
 	possible = { authority = { NOT = { value = auth_machine_intelligence text = SPECIES_CLASS_MUST_NOT_USE_MACHINE_INTELLIGENCE } } }
 	
@@ -48,18 +86,8 @@ GEO = { # when the player has the Lithoid species pack this will be playable
 	leader_age_min = 200
 	leader_age_max = 800
 	
-	custom_portraits = {
-		playable = { has_lithoids = yes }
-		portraits = {
-			"gem"
-		}
-	}	
-	
-	custom_portraits = {
-		playable = { has_utopia = yes }
-		portraits = {
-			"whitegestalt"
-		}
+	portraits = {
+		"gem"
 	}
 	
 	graphical_culture = geoloid_01

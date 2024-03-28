@@ -1,5 +1,5 @@
 ﻿GEO1 = {
-	randomized = yes
+	randomized = no
 	ship_names = {
 
 		generic = {Anorthite Antigorite Antigorite Apatite Apophyllite Childrenite Chlorastrolite Chloromelanite Chondrodite Druzy Dumortierite Elbaite Elbaite Malaya Manganaxinite Manganocalcite }
@@ -200,9 +200,9 @@
 			# Always combined with a first name
 			second_names = { Cut-2CN Cut-4WY Cut-6LZ Cut-8IS Cut-5XG Cut-7FE Cut-9HI Cut-3TR Cut-1UJ Cut-4OV Cut-5SW Cut-7GA Cut-2JJ Cut-8XM Cut-4ND Cabochon-1 Cabochon-2 Cabochon-3 Cabochon-4 Cabochon-5 Cabochon-6 Cabochon-7 Cabochon-8 Cabochon-9 Cabochon-10 Cabochon-11 Cabochon-12 }
 			
-			regnal_first_names = { White Pink Blue Yellow }
+			#regnal_first_names = { White Pink Blue Yellow }
 			
-			regnal_second_names = { Diamond }
+			#regnal_second_names = { Diamond }
 		}
 	}
 	
@@ -210,9 +210,9 @@
 		default = { 
 			full_names = {}
 			
-			first_names = { #White Pink Blue Yellow }
+			#first_names = { White Pink Blue Yellow }
 			
-			second_names = { #Diamond }
+			#second_names = { Diamond }
 		}
 	}
 }

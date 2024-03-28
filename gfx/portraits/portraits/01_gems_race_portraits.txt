@@ -1,11 +1,11 @@
 character = {
-	size = { x = 475 y = 380 }
+	size = { x = 575 y = 380 }
 
 	#2d Portrait position
 	icon = {
 		orientation = center_down
-		position = { x = 80 y = 0 }
-		scale = 1.1
+		position = { x = 0 y = 0 }
+		scale = 1.0
 	}
 }
 portraits = {

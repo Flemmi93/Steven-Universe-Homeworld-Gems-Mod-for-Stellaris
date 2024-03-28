@@ -18,7 +18,7 @@
  diamonds: "Diamonds"
 
  
- #Ruler Class unused
+#Ruler Class unused
  su_diamond_class: "Diamond"
  su_diamond_class_plural: "Diamonds"
  su_diamond_class_plural_with_icon: "£minerals£ Diamonds"
@@ -27,12 +27,13 @@
  councilor_diamond: "Diamond"
  councilor_diamond_desc: "Our Diamond rules form this seat"
  
- #advisor
+#advisor
  Pearlfiltered: "Pearl with filter"
  Pearl: "Pearl"
  
  GEO: "Geoloid"
  GEO1: "Geoloid"
+ GEO2: "Geoloid"
  GEO_desc: "Species Class has no effect on your Empire, but Geoloid-class Species may consider other Geoloids to be less alien than other Species Classes."
  GEO_plural: "Geoloids"
  GEO_insult_01: "rock"
@@ -50,6 +51,7 @@
  GEO_mouth: "mouth"
  GEO_hand: "hand"
  
+#Initializers
  geoloid_01: "Geoloid"
  geoloid: "Geoloid"
  GEOLOID: "Geoloid"
@@ -74,6 +76,7 @@
  START_SCREEN_GEM: "The work has been completed. Our Homeworld has been transformed and repurposed for all it is capable of, all available resources being put to use for our purposes. The filthy organic life that once existed on it with us is no more, its essence harnessed for us to make use of in growing more of our kind.\n\nDespite our grand accomplishment, more resources are needed to sustain us and keep our numbers strong. The strength of our society and the vision of the Diamonds will guide us to a prosperous future, so long as all do as they are meant for since their emergence. It is this that allowed us to escape our Homeworld, and harness the off-world resources in our own system.\n\nThe time has come now to look to the stars, and find other worlds that we may inhabit and create future generations of Gems. Any organics or other alien foes will fall before our new empire, and we shall easily crush the lower forms of life who dare to oppose our shining greatness!"
  START_SCREEN_PART_ONE_GEM: "In the eons since the first primitive [GetSpeciesName] communities took shape in the sterile and resource-rich landscapes of [GetHomeWorldName], our civilization has spread and prospered."
  
+#traits
  trait_geoloid: "Geoloid"
  trait_geoloid_desc: "§LThis species is largely enigmatic and unique in its design and function, likely artificial but possessing many traits similar to lithoids despite this.§!\n"
  TRAIT_GEOLOID_EFFECT: "Requires £job_kindergartener£ Kindergarten districts in order to grow new £pops£ Pops\nHabitability: §G+50%§!\n"
@@ -111,6 +114,7 @@
  trait_pink_court: "$pink_diamond$'s Court"
  trait_pink_court_desc: "This is $pink_diamond$'s Court, she brings her entourage where ever she goes, anything else is unthinkable. This large following of Gems however has some distict advantages."
  
+#Origin & Civics & Government
  origin_geoform: "Planetary Transformation"
  origin_geoform_desc: "This society has worked tirelessly to transform their home planet into a paradise for their kind, though it may not be a paradise for most other forms of life."
  origin_gem_rebellion: "Gem Rebellion"
@@ -130,8 +134,13 @@
  civic_new_tetrarchy_desc: "This society is ruled by four individuals of, in theory, equal status to one another, with each having dominion over a specific court and administrative duty."
  civic_whitearchy: "Shining Perfection"
  civic_whitearchy_desc: "This society is ruled by a single being whose mission it is to preserve and maintain their own view of 'perfection' among their subjects, making all individuals subsumed under their will in rigid and unerring servitude."
- 
- 
+  
+ gov_harmonious_authority: "Harmonious Authority"
+ gov_harmonious_authority_desc: "This government is a unique form of autocracy, with multiple immortal rulers constantly striving to ensure that each of their subjects have a purpose, place, and task to complete with perfect efficiency and competence. The lower castes are expected to follow rigid guidelines and revere their rulers like demigods, else they are eliminated as deviants and traitors. These 'Matriarchs' possess absolute power and are totally free to exercise it without limit across their own administrative realms.\n \n ... §Rfor now.§!"
+ gov_perfect_authority: "Perfect Authority"
+ gov_perfect_authority_desc: "This government is a unique form of gestalt autocracy, with a single immortal ruler forcefully imposing their vision of a perfect society in which each of their subjects have a purpose, place, and task to complete with perfect efficiency and competence. Free will is entirely unheard of."
+ RT_MATRIARCH: "Matriarch"
+#Eras 
  era_one: "Era One"
  era_two_desc: "Our empire is experiencing a period of rapid growth and unprecedented prosperity. We should take advantage of this opportunity to expand and colonize new worlds while it lasts."
  era_two: "Era Two"
@@ -143,12 +152,7 @@
  gem_era.5.desc: "The Era of the Gems is over, their power is broken and now the empire is rules by lesser gems"
  gem_era.5.a: "§WI'll be back§!"
  
- gov_harmonious_authority: "Harmonious Authority"
- gov_harmonious_authority_desc: "This government is a unique form of autocracy, with multiple immortal rulers constantly striving to ensure that each of their subjects have a purpose, place, and task to complete with perfect efficiency and competence. The lower castes are expected to follow rigid guidelines and revere their rulers like demigods, else they are eliminated as deviants and traitors. These 'Matriarchs' possess absolute power and are totally free to exercise it without limit across their own administrative realms.\n \n ... §Rfor now.§!"
- gov_perfect_authority: "Perfect Authority"
- gov_perfect_authority_desc: "This government is a unique form of gestalt autocracy, with a single immortal ruler forcefully imposing their vision of a perfect society in which each of their subjects have a purpose, place, and task to complete with perfect efficiency and competence. Free will is entirely unheard of."
- RT_MATRIARCH: "Matriarch"
-
+#Kindergarten
  d_kindergarten_small: "Small Kindergarten Site"
  d_kindergarten_small_desc: "A fertile and malleable location of minimal size, decently suited for Kindergarten development."
  d_kindergarten_med: "Standard Kindergarten Site"
@@ -175,7 +179,9 @@
  job_kindergartener_drone: "$job_kindergartener$"
  job_kindergartener_drone_plural: "$job_kindergartener_plural$"
  job_kindergartener_drone_desc: "$job_kindergartener_desc$"
+ d_kindergarten_blocker: "Kindergarten Ruins"
  
+#Decisions
  decision_create_kindergarten_small: "Establish Small Kindergarten Site"
  decision_create_kindergarten_small_desc: "Efforts will be undertaken to make use of the planet's organic nutrients and minerals for the growth and development of new gems. To this end, a Kindergarten site of minimal size and scale will be excavated, after which we may construct injectors to seed the site and assign gems to oversee the growth process."
  decision_create_kindergarten_med: "Establish Kindergarten Site"
@@ -195,9 +201,7 @@
  decision_kindergarten_large_requirements: "Abundant quantities of nutrient-rich soil are required for any large-scale £job_kindergartener£ §YKindergarten§! site to be capable of producing new gems."
  decision_gemcology_project_requirements: "All £food£ §YAgriculture§! deposits on this world must have first been converted into £job_kindergartener£ §YKindergarten§! sites."
  
-#Deposites
- d_kindergarten_blocker: "Kindergarten Ruins"
-
+#Politics
  living_standard_gem: "Purposeful Creation"
  living_standard_gem_tooltip: "$living_standard_gem$ means that every gem is created with a purpose to serve the order of the Diamonds.\n\n$GEM_LIVING_STANDARDS_POP_EFFECTS$\n\n$UNEMPLOYED_REDUCED_HAPPINESS$"
  living_standard_gem_tooltip_delayed: "§LThere is no point in wanting any change.§!"
@@ -255,6 +259,7 @@
  mod_pop_ethic_blue_attraction_mult: "Attraction to $blue_diamond$"
  mod_pop_ethic_pink_attraction_mult: "Attraction to $pink_diamond$"
  
+#Planet Classes
  pc_gem: "Geoformed World"
  pc_gemworld: "$pc_gem$"
  pc_gem_desc: "Rocky world with a nitrogen-oxygen atmosphere. No traces of biological life can be found whatsoever on this planet, and it appears as though it has been altered considerably by its inhabitants for a specific purpose."
@@ -276,11 +281,12 @@
  col_gem_default: "$col_default$"
  col_gem_default_desc: "$col_default_desc$"
 
+#Techs
  tech_gem_terraforming: "Geoforming"
  tech_gem_terraforming_desc: "Allows for the complete terraforming of a planet into a Geoformed world to replicate conditions on Homeworld. Geoformed worlds will have a higher potential for Gem creation, as the planets organic resources can be used more efficiently in artificial kindergartens."
  requires_technology_tech_terrestrial_sculpting: "$TRIGGER_FAIL$Requires the £society£ §Y$tech_terrestrial_sculpting$§! technology."
  
- #Buildings
+#Buildings
  building_gem_spire1: "Spire"
  building_gem_spire1_desc: "The foundation for a spire "
  building_gem_spire2: "Tall Spire"
@@ -296,6 +302,7 @@
  building_crystal_gem_temple: "Crystal Gem Temple"
  building_crystal_gem_temple_desc: "The Temple is the statue of a gigantic 8 armed woman carved into the side of a cliff in an idyllic little beach town. The §l$crystal_gems$§! live here in their enigmatic ways."
  
+#Events
  gem_era.4.name: "Era of $white_diamond$"
  gem_era.4.desc: "All are one. All are perfect and harmonious!"
  gem_era.1.name: "Era One"
@@ -316,6 +323,10 @@
  gem_era.2001.a.tooltip: "Her Military might will crush our foes: \n$yellow_traits_desc$"
  gem_era.2001.b: "$blue_d$"
  gem_era.2001.b.tooltip: "Her empathy will heal the wounds of our people: \n$blue_traits_desc$"
+
+ GEM_start.1005.name: "Gem Invasion"
+ GEM_start.1005.desc: "Do you Want the Gem Empire to invade this Galaxy as a Crisis during the midgame?."
+ gem_start.1005.c: "make it random"
 
  gem_kg.2.name: "This is a §RTutorial§!"
  old_gem_kg.2.desc: "§WThere is a decision on any colonized planet with §GFarming Deposits§W £food£ to turn the §GFarming Deposits§W £food£ into §MKindergarten deposits§W £pops£.\n\nFurthermore there are several §Gadditional §YDecisions§W in this mod. For Example, you can §Gassign§! what §WDi§Yam§Bon§Pd§W controlls what planet.\n\nThere is also a Special Project in the Situation log."
@@ -345,7 +356,8 @@
  pink_is_ready4: "$pink_d$ wouldn't cut it"
  pink_is_ready5: "$pink_d$ is too young"
  gem_diamond_choice.d.unready: "$pink_d$ has a long way ahead of her to get her own colony."
-
+ gem_diamond_ruler.100.name: "A Diamond got poofed"
+ gem_diamond_ruler.100.desc: "The unthinkable has happed, and soon we will make it unhappen. For now we must suffer the indignity of waiting for her return"
  
  
  gem_new_features: "New Features!"
@@ -391,7 +403,7 @@
  gem_rebellion.1.b: "'Tis only but a scratch!"
  gem_rebellion.1.c: "Just kick in the door and the whole structure comes crumbling down!"
  
- #Off-Colors Events including the 1000 year War
+#Off-Colors Events including the 1000 year War
  gem_off_colors.1.name: "'Off-Color' Dissidence"
  gem_off_colors.1.desc: "A lawless cadre of defective and unwanted gems has begun to make their presence known on our worlds. Investments should be made to ensure that these renegades are crushed as soon as possible."
  gem_off_colors.1.a: "Uncouth deviants!"

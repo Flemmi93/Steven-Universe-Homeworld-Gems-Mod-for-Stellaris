@@ -21,3 +21,13 @@ GEO1 = {
 		name_list = "GEM"
 	}
 }
+
+GEO2 = {
+	gem = {
+		name = Gem
+		plural = Gems
+		home_planet = Homeworld
+		home_system = Luster
+		name_list = "GEM"
+	}
+}

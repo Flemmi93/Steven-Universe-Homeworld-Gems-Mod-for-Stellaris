@@ -85,7 +85,7 @@ gem_rogue = {
 	ship_prefix = "PRESCRIPTED_ship_prefix_gem"
 	spawn_enabled = no # yes / no / always
 	ignore_portrait_duplication = no
-	spawn_as_fallen = yes
+	spawn_as_fallen = no
 
 	flags = { gem custom_start_screen }
 	advisor_voice_type = "Pearl"

@@ -488,8 +488,8 @@ country_event = {
 # From = Leader
 country_event = {
 	id = gem_diamond_ruler.100
-	title = 1
-	desc = 1
+	title = "gem_diamond_ruler.100.name"
+	desc = "gem_diamond_ruler.100.desc"
 	picture = "GFX_evt_gem_diamond_choice"
 	is_triggered_only = yes
 	trigger = {
@@ -497,6 +497,6 @@ country_event = {
 		from = { has_trait = trait_ruler_diamond }
 	}
 	option = {
-		name = "ok"
+		name = OK
 	}
 }

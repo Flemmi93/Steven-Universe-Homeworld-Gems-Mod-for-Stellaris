@@ -4,6 +4,7 @@ on_game_start_country = {
 		GEM_start.1000
 		GEM_start.1003
 		GEM_start.1004
+		GEM_start.1005
 		gem_era.1
 		gem_era.4
 	}

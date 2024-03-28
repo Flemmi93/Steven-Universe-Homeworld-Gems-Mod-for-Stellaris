@@ -7,7 +7,7 @@ origin_geoform = {
 	#habitability_preference = pc_gem
 	preferred_planet_class_neighbor = no
 	max_once_global = yes
-	
+
 	possible = {
 		civics = {
 			NOR = {
@@ -23,11 +23,6 @@ origin_geoform = {
 	}
 	description = "civic_tooltip_geoform_effects"
 
-	advanced_start = yes
-
-	random_weight = {
-		base = 0 # Should be fairly rare
-	}
 }
 origin_crystal_gems = {
 	is_origin = yes
@@ -36,7 +31,7 @@ origin_crystal_gems = {
 
 	preferred_planet_class_neighbor = yes
 	max_once_global = yes
-	
+
 	possible = {
 		civics = {
 			NOR = {
@@ -62,8 +57,4 @@ origin_crystal_gems = {
 
 
 	advanced_start = yes
-
-	random_weight = {
-		base = 1
-	}
 }
