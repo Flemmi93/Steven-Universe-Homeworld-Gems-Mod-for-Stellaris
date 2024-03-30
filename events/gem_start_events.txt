@@ -154,6 +154,7 @@ country_event = {
 	trigger = {
 		is_geo_empire = no
 		is_ai = no
+
 	}
 	option = {
 		name = YES
@@ -161,25 +162,6 @@ country_event = {
 			random_system = {
 				limit = {
 					has_owner = no
-					NOR = {
-						has_planet_class = pc_shattered_ring_habitable
-						has_planet_class = pc_ringworld_habitable
-						has_planet_class = pc_hive
-						has_planet_class = pc_nuked
-						has_planet_class = pc_alpine
-						has_planet_class = pc_arctic
-						has_planet_class = pc_tundra
-						has_planet_class = pc_ocean
-						has_planet_class = pc_continental
-						has_planet_class = pc_tropical
-						has_planet_class = pc_savannah
-						has_planet_class = pc_arid
-						has_planet_class = pc_desert
-						has_planet_class = pc_relic
-						has_planet_class = pc_city
-						has_planet_class = pc_ai
-						has_planet_class = pc_gaia
-					}
 					is_rim_system = yes
 					NOT = {
 						any_neighbor_system = {
@@ -188,6 +170,7 @@ country_event = {
 					}
 				}
 				save_global_event_target_as = Gem_midgame_crisis_target
+				set_global_flag = choose_gem_invasion
 			}
 		}
 	}
@@ -196,39 +179,27 @@ country_event = {
 	}
 	option = {
 		name = "gem_start.1005.c"
+		custom_tooltip = "gem_start.1005.c.desc" 
 		hidden_effect = {
 			random_list = {
 				50 = {
 					random_system = {
 						limit = {
 							has_owner = no
-							NOR = {
-								has_planet_class = pc_shattered_ring_habitable
-								has_planet_class = pc_ringworld_habitable
-								has_planet_class = pc_hive
-								has_planet_class = pc_nuked
-								has_planet_class = pc_alpine
-								has_planet_class = pc_arctic
-								has_planet_class = pc_tundra
-								has_planet_class = pc_ocean
-								has_planet_class = pc_continental
-								has_planet_class = pc_tropical
-								has_planet_class = pc_savannah
-								has_planet_class = pc_arid
-								has_planet_class = pc_desert
-								has_planet_class = pc_relic
-								has_planet_class = pc_city
-								has_planet_class = pc_ai
-								has_planet_class = pc_gaia
-							}
 							is_rim_system = yes
 							NOT = {
 								any_neighbor_system = {
 									has_owner = yes
+									NOT = {
+										any_neighbor_system = {
+											has_owner = yes
+										}
+									}
 								}
 							}
 						}
 						save_global_event_target_as = Gem_midgame_crisis_target
+						set_global_flag = choose_gem_invasion
 					}
 				}
 				50 = {

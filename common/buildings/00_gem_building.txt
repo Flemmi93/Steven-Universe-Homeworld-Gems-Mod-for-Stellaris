@@ -463,6 +463,7 @@ building_crystal_gem_temple = {
 	potential = {
 		exists = owner
 		is_geo_empire = no
+		owner = { has_origin = origin_crystal_gems }
 	}
 	
 	allow = {

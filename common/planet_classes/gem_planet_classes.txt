@@ -42,7 +42,7 @@ pc_gem = {
 	starting_planet = no
 	colonizable = yes
 	district_set = standard
-	ideal = no
+	ideal = yes
 	show_city = no
 	uses_alternative_skies_for_moons = no
 }
@@ -63,7 +63,7 @@ pc_gemworld = { # gemworld terraforming
 	modifier = {
 		planet_jobs_produces_mult = 0.10
 		pop_housing_usage_mult = -0.10
-		job_kindergartener_add = 1
+		job_kindergartener_growth_add = 1
 	}
 	
 	spawn_odds = 0
@@ -80,7 +80,7 @@ pc_gemworld = { # gemworld terraforming
 	starting_planet = no
 	colonizable = yes
 	district_set = machine_world # "gem" could be used if we wanna flavor up the districts
-	ideal = no
+	ideal = yes
 	show_city = no
 	uses_alternative_skies_for_moons = no
 }

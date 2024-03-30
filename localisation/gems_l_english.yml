@@ -65,7 +65,11 @@
  gem_planet_initializer_DESC: "The origin of Gemkind, a fantastic and utopian city-world which hosts the seat of Gem government."
  gem_system_initializer_NAME: "Gem Home System"
  gem_system_initializer_DESC: "The origin of Gemkind, a fantastic and utopian city-world which hosts the seat of Gem government."
- 
+ NAME_Gem_Homeworld: "Luster"
+
+ EMPIRE_gem_invaders: "Homeworld Empire"
+ EMPIRE_gem_invaders_adj: "Radiant Empire"
+
  EMPIRE_DESIGN_gem: "Diamond Authority"
  EMPIRE_DESIGN_gem_desc: "The Great Diamond Authority is a vast interstellar empire, dominated by a race of polymorphic sentient geoloids, known colloquially as 'Gems'. Mysterious in their origins and possessing unusual abilities, it remains uncertain whether the Gem race is a natural product of evolution, a manufactured mechanical construct, a random convergence of quantum energy, or the result of some other unforeseen catalyst. All that is known is their parasitic behavior, invading and conquering worlds to drain the organic energy from its very soil, and use it to grow more of their kind.\n\nThe beauty of their forms and the structures they build hide a bleak and terrible nature, a society built upon the indentured servitude of all Gems to their Diamonds, where all know their place and dare not deviate from it."
  EMPIRE_DESIGN_gem_rogue: "$EMPIRE_DESIGN_gem$"
@@ -78,6 +82,8 @@
  
 #traits
  trait_geoloid: "Geoloid"
+ trait_geoloid2: "$trait_geoloid$"
+ trait_geoloid2_desc: "$trait_geoloid_desc$"
  trait_geoloid_desc: "§LThis species is largely enigmatic and unique in its design and function, likely artificial but possessing many traits similar to lithoids despite this.§!\n"
  TRAIT_GEOLOID_EFFECT: "Requires £job_kindergartener£ Kindergarten districts in order to grow new £pops£ Pops\nHabitability: §G+50%§!\n"
  trait_crystal_gems: "Crystal Gem"
@@ -120,6 +126,7 @@
  origin_gem_rebellion: "Gem Rebellion"
  origin_gem_rebellion_desc: "This society of gems has undergone a severe societal change at the hands of a lower-class revolution, toppling the original power structure and establishing a more equal and fair method of governance in its place."
  
+ gem_invaders: "Support from an Empire"
  origin_crystal_gems: "Failed Colony Origin"
  origin_crystal_gems_desc: "§RWIP, but works on a basic level§!\n\nMany thousands of years ago this planet was the target of an intergalactic colonial effort of an advanced alien race. During a hasty war of independence, that went on for 1000 years, many of our people supposedly died too. The colony failed and without their intervention our world would be uninhabitable today. Now only a hand full of the aliens remain and they protect the planet from the corruption their former overlords caused on their brethren and the alien artifacts they lost control over."
  civic_tooltip_crystal_gems_effects: "Start the Game with a single Crystal Gem pop £pops£.\n\nThousands of years ago these Gems where embroiled in a brutal civil war.\n\nTo this day, we are suffering from the consequences of this conflict, but this also could bring new opportunities."
@@ -128,6 +135,8 @@
  civic_tooltip_gem_rebellion_effects: "Capital starts as a §YGeoformed World§!\nGain the §Y$trait_geoloid$§! trait, granting:\n  Geoformed World Habitability: §G+100%§!"
  civic_tetrarchy: "Tetrarchy"
  civic_tetrarchy_desc: "This society is ruled by four individuals of, in theory, equal status to one another, with each having dominion over a specific court and administrative duty."
+ civic_tetrarchy_inv: "$civic_tetrarchy$"
+ civic_tetrarchy_inv_desc: "$civic_tetrarchy_desc$"
  civic_triarchy: "Triarchy"
  civic_triarchy_desc: "With the shattering of $pink_diamond$, the Tetrarchy has been irrevocably altered. Now only three Diamonds rule the Authority, and our expansive potential has been stunted as a result."
  civic_new_tetrarchy: "Tetrarchy"
@@ -172,9 +181,13 @@
  mod_district_kindergarten2_max: "$mod_district_kindergarten_max$" 
  job_kindergartener: "Kindergartener"
  job_kindergartener_plural: "Kindergarteners"
+ job_kindergartener_growth: "$job_kindergartener$"
+ job_kindergartener_growth_plural: "$job_kindergartener_plural$"
  job_kindergartener_desc: "The growing of new gems is a very precise science, one that only specially-trained Kindergarteners can do with any hope of producing ideal results."
  job_kindergartener_effect_desc: "£job_kindergartener£ $job_kindergartener_plural$ increase £mod_pop_assembly_speed£ §Y$MOD_POP_ASSEMBLY_SPEED$§! and produce £unity£ §E§H$unity$§!"
+ job_kindergartener_growth_desc: "$job_kindergartener_desc$"
  mod_job_kindergartener_add: "$job_kindergartener$ Jobs"
+ mod_job_kindergartener_growth_add: "$mod_job_kindergartener_add$"
  mod_planet_jobs_food_upkeep_mult: "Food Upkeep"
  job_kindergartener_drone: "$job_kindergartener$"
  job_kindergartener_drone_plural: "$job_kindergartener_plural$"
@@ -327,6 +340,7 @@
  GEM_start.1005.name: "Gem Invasion"
  GEM_start.1005.desc: "Do you Want the Gem Empire to invade this Galaxy as a Crisis during the midgame?."
  gem_start.1005.c: "make it random"
+ gem_start.1005.c.desc: "There is a §Y50%§! Chance it will happen."
 
  gem_kg.2.name: "This is a §RTutorial§!"
  old_gem_kg.2.desc: "§WThere is a decision on any colonized planet with §GFarming Deposits§W £food£ to turn the §GFarming Deposits§W £food£ into §MKindergarten deposits§W £pops£.\n\nFurthermore there are several §Gadditional §YDecisions§W in this mod. For Example, you can §Gassign§! what §WDi§Yam§Bon§Pd§W controlls what planet.\n\nThere is also a Special Project in the Situation log."

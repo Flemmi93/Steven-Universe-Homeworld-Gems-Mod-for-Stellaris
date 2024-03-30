@@ -1,0 +1,315 @@
+namespace = gem_gal_invasion
+
+country_event = {
+	id = gem_gal_invasion.001
+	is_triggered_only = yes
+	hide_window = yes
+	trigger = {
+		has_global_flag = choose_gem_invasion
+	}
+	immediate = {
+		event_target:Gem_midgame_crisis_target = {
+			spawn_system = {
+				min_distance = 10
+				max_distance = 30
+				max_jumps = 0
+				initializer = "gem_invasion_initializer"
+			}
+			add_extra_hyperlane_to_spawned_system_effect = yes
+			add_extra_hyperlane_to_spawned_system_effect = yes
+		}
+		last_created_system = {
+			save_global_event_target_as = Gem_midgame_crisis_target
+		}
+		create_species = {
+			class = "GEO"
+			portrait = "gem"
+			name = "PRESCRIPTED_species_name_gem"
+			plural = "PRESCRIPTED_species_plural_gem"
+			adjective = "PRESCRIPTED_species_adjective_gem"
+			name_list = "GEO1"
+			traits = {
+				trait = "trait_geoloid2"
+				trait = "trait_gem_holobody"
+				trait = "trait_gem_hardness"
+				trait = "trait_gem_unquestionable"
+				trait = "trait_gem_donteat"
+				trait = "trait_gem_static"
+			}
+		}
+		last_created_species = {
+			save_global_event_target_as = gem_invasion_species
+		}
+		event_target:Gem_midgame_crisis_target = {
+			random_system_planet = {
+				limit = { has_planet_flag = gem_invander_homeworld }
+				save_global_event_target_as = gem_invasion_planet
+				create_country = {
+					name = "EMPIRE_gem_invaders"
+					adjective = "PRESCRIPTED_adjective_gem"
+					ship_prefix = "PRESCRIPTED_ship_prefix_gem"
+					authority = "auth_imperial"
+					civics = {
+						civic = civic_tetrarchy_inv
+						civic = civic_corvee_system
+					}
+					species = last_created_species
+					ethos = {
+						ethic = "ethic_fanatic_authoritarian"
+						ethic = "ethic_xenophobe"
+					}
+					flag = {
+						icon = {
+							category = "gem"
+							file = "gemblem.dds"
+						}
+						background = {
+							category = "backgrounds"
+							file = "v.dds"
+						}
+						colors = {
+							"turquoise"
+							"grey"
+							"null"
+							"null"
+						}
+					}
+					type = default
+
+					effect = {
+						save_global_event_target_as = gem_invasion_country
+						species = {
+							save_global_event_target_as = gem_invasion_species
+						}
+						add_modifier = {
+							modifier = gem_invaders
+						}
+						set_origin = "origin_geoform"
+						##Add resources
+						add_resource = { minerals = 10000 }
+						add_resource = { energy = 10000 }
+						add_resource = { food = 3000 }
+						add_resource = { consumer_goods = 3000 }
+						add_resource = { alloys = 7000 }
+						add_resource = { influence = 1000 }
+						add_resource = { unity = 27000 }
+						
+						#gurantee some Techs
+						give_technology = { tech = tech_colonial_centralization }
+						give_technology = { tech = tech_galactic_administration }
+						give_technology = { tech = tech_housing_1 }
+						give_technology = { tech = tech_housing_2 }
+						give_technology = { tech = tech_destroyers }
+						give_technology = { tech = tech_cruisers }
+						give_technology = { tech = tech_battleships }
+						give_technology = { tech = tech_alloys_1 }
+						give_technology = { tech = tech_alloys_2 }
+						give_technology = { tech = tech_luxuries_1 }
+						give_technology = { tech = tech_luxuries_2 }
+
+						create_leader = {
+							class = official
+							name = "White Diamond"
+							species = owner_main_species
+							traits = {
+								trait = "trait_ruler_diamond"
+								trait = "trait_white_court"
+							}
+						}
+						set_leader = last_created_leader
+						last_created_leader = {
+							set_skill = 8
+							change_leader_portrait = gemD1 #White
+							save_global_event_target_as = gem_white_diamond
+							set_leader_flag = white_diamond_flag
+						}
+						create_leader = {
+							class = commander
+							name = "Yellow Diamond"
+							species = owner_main_species
+							traits = {
+								trait = "trait_ruler_diamond"
+								trait = "trait_yellow_court"
+							}
+						}
+						last_created_leader = {
+							set_skill = 6
+							change_leader_portrait = gemD2 #Yellow
+							save_global_event_target_as = gem_heir
+						}
+						set_heir = last_created_leader
+						##Copy technology
+						copy_techs_from = {
+							target = root
+							except = {
+								# Horizon Signal
+								tech_akx_worm_1
+								tech_akx_worm_2
+								tech_akx_worm_3
+							}
+						}
+
+						##Create fleets
+						set_variable = {
+							which = num_gem_fleets
+							value = trigger:max_naval_capacity
+						}
+
+						divide_variable = {
+							which = num_gem_fleets
+							value = 90
+						}
+
+						ceiling_variable = num_gem_fleets
+						
+						create_fleet = {
+							effect = {
+								set_owner = event_target:gem_invasion_country
+								create_ship = {
+									name = random
+									random_existing_design = science
+								}
+							}
+						}
+						create_fleet = {
+							effect = {
+								set_owner = event_target:gem_invasion_country
+								create_ship = {
+									name = random
+									random_existing_design = construction
+								}
+							}
+						}
+							
+						while = {
+							count = num_gem_fleets
+							add_resource = { energy = 1000 } # Give some energy to pay for ship upkeep
+							create_fleet = {
+								effect = {
+									set_owner = event_target:gem_invasion_country
+									create_ship = {
+										name = random
+										design = "NAME_Ancestral_Glory"
+										graphical_culture = "pirate_01"
+									}
+									while = {
+										count = 24
+										create_ship = {
+											name = random
+											design = "NAME_Outrider"
+											graphical_culture = "pirate_01"
+										}
+									}
+									while = {
+										count = 12
+										create_ship = {
+											name = random
+											design = "NAME_Lancer"
+											graphical_culture = "pirate_01"
+										}
+									}
+									while = {
+										count = 6
+										create_ship = {
+											name = random
+											design = "NAME_Void_Champion"
+											graphical_culture = "pirate_01"
+										}
+									}
+									set_location = {
+										target = event_target:gem_invasion_planet
+										distance = 10
+										angle = random
+									}
+								}
+							}
+						}
+					}
+				}
+
+				event_target:gem_invasion_planet = {
+					set_owner = last_created_country
+					set_capital = yes
+					while = {
+						count = 50
+						create_pop = {
+							species = gem_invasion_species
+						}
+					}
+					
+					while = {
+						count = 5
+						add_district = district_city
+					}
+					
+					while = {
+						count = 6
+						add_district = district_industrial
+					}
+					
+					while = {
+						count = 6
+						add_district = district_generator_uncapped
+					}
+					
+					while = {
+						count = 6
+						add_district = district_mining_uncapped
+					}
+					remove_building = building_colony_shelter
+					add_building = building_system_capital
+					add_building = building_gem_spire3
+					add_building = building_gem_spire3
+					solar_system = {
+						create_starbase = {
+							size = starbase_starport
+							module = shipyard
+							owner = event_target:gem_invasion_country
+						}
+					}
+					# Flip control of the solar system
+					solar_system = {
+						if = {
+							limit = { exists = starbase }
+							starbase = {
+								if = {
+									limit = {
+										is_owned_by = root
+									}
+									set_owner = event_target:gem_invasion_country
+									if = {
+										limit = { has_starbase_size = starbase_outpost }
+										set_starbase_size = starbase_starport
+										set_starbase_module = {
+											slot = 1
+											module = shipyard
+										}
+										set_starbase_module = {
+											slot = 2
+											module = shipyard
+										}
+									}
+									else_if = {
+										limit = {
+											NOT = { has_starbase_module = shipyard }
+										}
+										set_starbase_module = {
+											slot = 1
+											module = shipyard
+										}
+										set_starbase_module = {
+											slot = 2
+											module = shipyard
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+
+	}
+}
