@@ -118,6 +118,7 @@ country_event = {
 				change_leader_portrait = gemD1 #White
 				save_global_event_target_as = gem_white_diamond
 				set_leader_flag = white_diamond_flag
+				change_background_ethic = ethic_authoritarian
 			}
 			
 			set_heir = last_created_leader
@@ -141,6 +142,8 @@ country_event = {
 				change_leader_portrait = gemD2 #Yellow
 				save_global_event_target_as = gem_yellow_diamond
 				set_leader_flag = yellow_diamond_flag
+				change_background_ethic = ethic_militarist
+				set_council_position = councilor_defense
 			}
 			create_leader = {
 					class = scientist
@@ -155,6 +158,8 @@ country_event = {
 				change_leader_portrait = gemD3 #Blue
 				save_global_event_target_as = gem_blue_diamond
 				set_leader_flag = blue_diamond_flag
+				change_background_ethic = ethic_spiritualist
+				set_council_position = councilor_research
 			}
 			create_leader = {
 					class = official
@@ -171,6 +176,8 @@ country_event = {
 				save_global_event_target_as = gem_pink_diamond
 				set_leader_flag = is_pink_era_one
 				set_leader_flag = pink_diamond_flag
+				change_background_ethic = ethic_xenophobe
+				set_council_position = councilor_state
 			}
 		}
 	}
@@ -216,6 +223,7 @@ country_event = {
 				change_leader_portrait = gemD2 #Yellow
 				save_global_event_target_as = gem_yellow_diamond
 				set_leader_flag = yellow_diamond_flag
+				change_background_ethic = ethic_militarist
 			}
 			
 			set_heir = last_created_leader
@@ -239,6 +247,7 @@ country_event = {
 				change_leader_portrait = gemD1 #White
 				save_global_event_target_as = gem_white_diamond
 				set_leader_flag = white_diamond_flag
+				change_background_ethic = ethic_authoritarian
 			}
 			create_leader = {
 					class = scientist
@@ -253,6 +262,8 @@ country_event = {
 				change_leader_portrait = gemD3 #Blue
 				save_global_event_target_as = gem_blue_diamond
 				set_leader_flag = blue_diamond_flag
+				change_background_ethic = ethic_spiritualist
+				set_council_position = councilor_research
 			}
 			create_leader = {
 					class = official
@@ -269,6 +280,8 @@ country_event = {
 				save_global_event_target_as = gem_pink_diamond
 				set_leader_flag = is_pink_era_one
 				set_leader_flag = pink_diamond_flag
+				change_background_ethic = ethic_xenophobe
+				set_council_position = councilor_state
 			}
 		}
 	}
@@ -312,8 +325,9 @@ country_event = {
 			}
 			last_created_leader = {
 				change_leader_portrait = gemD3 #Blue
-save_global_event_target_as = gem_blue_diamond
+				save_global_event_target_as = gem_blue_diamond
 				set_leader_flag = blue_diamond_flag
+				change_background_ethic = ethic_spiritualist
 			}
 			
 			set_heir = last_created_leader
@@ -336,7 +350,9 @@ save_global_event_target_as = gem_blue_diamond
 			last_created_leader = {
 				change_leader_portrait = gemD2 #Yellow
 				save_global_event_target_as = gem_yellow_diamond
-set_leader_flag = yellow_diamond_flag
+				set_leader_flag = yellow_diamond_flag
+				change_background_ethic = ethic_militarist
+				set_council_position = councilor_defense
 			}
 			create_leader = {
 					class = official
@@ -350,7 +366,8 @@ set_leader_flag = yellow_diamond_flag
 			last_created_leader = {
 				change_leader_portrait = gemD1 #White
 				save_global_event_target_as = gem_white_diamond
-set_leader_flag = white_diamond_flag
+				change_background_ethic = ethic_authoritarian
+				set_leader_flag = white_diamond_flag
 			}
 			create_leader = {
 					class = official
@@ -366,7 +383,9 @@ set_leader_flag = white_diamond_flag
 				change_leader_portrait = gemD4 #Pink
 				save_global_event_target_as = gem_pink_diamond
 				set_leader_flag = is_pink_era_one
-set_leader_flag = pink_diamond_flag
+				set_leader_flag = pink_diamond_flag
+				change_background_ethic = ethic_xenophobe
+				set_council_position = councilor_state
 			}
 		}
 	}
@@ -417,6 +436,7 @@ country_event = {
 				save_global_event_target_as = gem_pink_diamond
 				set_leader_flag = is_pink_era_one
 				set_leader_flag = pink_diamond_flag
+				change_background_ethic = ethic_xenophobe
 			}
 			
 			set_heir = last_created_leader
@@ -441,6 +461,8 @@ country_event = {
 				change_leader_portrait = gemD2 #Yellow
 				save_global_event_target_as = gem_yellow_diamond
 				set_leader_flag = yellow_diamond_flag
+				change_background_ethic = ethic_militarist
+				set_council_position = councilor_defense
 			}
 			create_leader = {
 					class = scientist
@@ -455,6 +477,8 @@ country_event = {
 				change_leader_portrait = gemD3 #Blue
 				save_global_event_target_as = gem_blue_diamond
 				set_leader_flag = blue_diamond_flag
+				change_background_ethic = ethic_spiritualist
+				set_council_position = councilor_research
 			}
 			create_leader = {
 					class = official
@@ -470,6 +494,8 @@ country_event = {
 				change_leader_portrait = gemD1 #White
 				save_global_event_target_as = gem_white_diamond
 				set_leader_flag = white_diamond_flag
+				change_background_ethic = ethic_authoritarian
+				set_council_position = councilor_state
 			}
 		}
 	}

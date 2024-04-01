@@ -6,6 +6,7 @@
 building_gem_spire1 = {
 	base_buildtime = @b1_time
 	position_priority = 200
+	base_cap_amount = 2
 	
 	category = amenity
 	
@@ -50,6 +51,10 @@ building_gem_spire1 = {
 	upgrades = {
 		building_gem_spire2
 	}
+
+	ai_weight = {
+		base = 1000
+	}
 }
 
 building_gem_spire2 = {
@@ -80,9 +85,9 @@ building_gem_spire2 = {
 	}
 
 	planet_modifier = {
-		job_clerk_add = 1
-		job_trader_add = 1
-		planet_amenities_add = 16
+		job_clerk_add = 2
+		job_culture_worker_add = 1
+		planet_amenities_add = 12
 	}
 	
 	resources = {
@@ -100,6 +105,10 @@ building_gem_spire2 = {
 	
 	upgrades = {
 		building_gem_spire3
+	}
+	
+	ai_weight = {
+		base = 1000
 	}
 }
 
@@ -135,9 +144,10 @@ building_gem_spire3 = {
 	}
 
 	planet_modifier = {
-		job_merchant_add = 1
-		job_trader_add = 2
-		planet_amenities_add = 24
+		job_noble_add = 1
+		job_culture_worker_add = 2
+		job_clerk_add = 2
+		planet_amenities_add = 14
 	}
 	
 	resources = {
@@ -151,6 +161,10 @@ building_gem_spire3 = {
 		cost = {
 		minerals = @b3_minerals
 		}
+	}
+	
+	ai_weight = {
+		base = 1000
 	}
 }
 
@@ -493,6 +507,60 @@ building_crystal_gem_temple = {
 		minerals = @b1_minerals
 		}
 	}
+}
+
+building_gem_sky_arena = {
+	
+	base_buildtime = @b1_time
+	position_priority = 200
+	base_cap_amount = 1
+	
+	category = amenity
+	
+	potential = {
+		exists = owner
+		owner = { has_origin = origin_geoform } 
+	}
+	
+	ai_weight = {
+		base = 1000
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			owner = {
+				has_origin = origin_geoform
+			}
+		}
+		modifier = { # Adjust for Balance
+			job_duelist_add = 2
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			owner = {
+				NOT = { has_origin = origin_geoform }
+			}
+		}
+		modifier = { # Adjust for Balance
+			job_duelist_add = 1
+			job_scrap_miner_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			owner = {
+				OR = {
+					has_ethic = ethic_xenophobe
+					has_ethic = ethic_fanatic_xenophobe
+				}
+			}
+		}
+		modifier = { # Adjust for Balance
+			job_xeno_zoo_beast_add = 1
+		}
+	}
+	
 }
 # building_colony_shelter = {
 	# capital = yes

@@ -38,12 +38,10 @@ planet_event = { #replaces the grand court
 	
 	after = {
 		hidden_effect = {
-			from = {
+			this = {
 				remove_modifier = pm_grand_court_1
 				remove_modifier = pm_grand_court_2
 				remove_planet_flag = grand_court
-			}
-			this = {
 				remove_modifier = "pm_gem_white_court"
 				remove_modifier = "pm_gem_yellow_court"
 				remove_modifier = "pm_gem_blue_court"

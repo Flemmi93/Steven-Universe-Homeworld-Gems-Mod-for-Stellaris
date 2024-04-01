@@ -314,6 +314,8 @@
  building_buff_kindergarten3_desc: "All Kindergardens on this planet are being coordianted and managed for maximum efficiency."
  building_crystal_gem_temple: "Crystal Gem Temple"
  building_crystal_gem_temple_desc: "The Temple is the statue of a gigantic 8 armed woman carved into the side of a cliff in an idyllic little beach town. The §l$crystal_gems$§! live here in their enigmatic ways."
+ building_gem_sky_arena: "Sky Arena"
+ building_gem_sky_arena_desc: "This Arena floats between the clouds, a marvel of gem-engineering. Combatants of all stripes can test their metal here."
  
 #Events
  gem_era.4.name: "Era of $white_diamond$"
