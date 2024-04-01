@@ -1,0 +1,18 @@
+namespace = gem_events_misc
+
+country_event = {
+	id = gem_events_misc.001
+	title = gem_events_misc.001.name
+	desc = gem_events_misc.001.desc
+	picture = GFX_evt_gem_cookie_cats
+	is_triggered_only = yes
+
+	option = {
+		name = gem_events_misc.001.a
+			event_target:gem_planet_earth_event = {
+				add_modifier = {
+					modifier = pm_gem_cookie_cats
+				}
+			}
+	}
+}

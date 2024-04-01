@@ -436,6 +436,13 @@
  gem_off_colors.2009.desc: "Having regained contact with $pink_diamond$ we also made contact with the Species she protected for so long.\n\nWe can interact with Planet Earth once more."
  gem_off_colors.0020.name: "A World for $pink_d$"
  gem_off_colors.0020.desc: "We discovered a world that would be ideal for $pink_diamond$ it is nearby our Homeworld in the §YSol§! system."
+
+#Misc Events
+ gem_events_misc.001.name: "Cookie Cats"
+ gem_events_misc.001.desc: "We found a frozen treat with an all new taste\n\nAnd as far as we know, this is the only source in the Universe."
+ gem_events_misc.001.a: "We should harvest and distribute them"
+
+#Planet Modifiers
  pm_off_colors: "Off-Colors"
  pm_off_colors_desc: "A lawless cadre of defective and unwanted gems has begun to make their presence known on this world."
  pm_gem_white_court: "$whitefaction$"
@@ -453,6 +460,7 @@
  pm_yellow_visits: "Visited by $yellow_diamond$"
  pm_pink_celebration: "Big Party for $pink_d$"
  pm_pink_celebration_desc: "$pink_diamond$ has been so happy lately, she is playing and partying with her gems and isn't even thinking about her colony, for now."
+ pm_gem_cookie_cats: "Cookie Cats"
  
  galaxy_warp: "Construct $pm_gem_galaxy_warp$"
  galaxy_warp_desc: "$pm_gem_galaxy_warp_desc$"
@@ -470,6 +478,7 @@
  gem_defense_army2: " $defense_army$"
  gems_lost_earth: "Abandoned World"
  gems_lost_earth_desc: "This world is a black mark in our collective memory, we do no wish to settle here."
+
  #Gem Rebellion Events, included 1000 (10-20) year war
  gem_off_colors.1010.name: "Production above expectations"
  gem_off_colors.1010.desc: "Recent reports from §Y[This.GetName]§! have shown Rose Quartz Gem £pops£ Production is above previously expected levels."
@@ -733,3 +742,11 @@
  PRESCRIPTED_ruler_name_gemwhite: "White Diamond"
  PRESCRIPTED_ruler_title_gem: "Matriarch"
  PRESCRIPTED_heir_title_gem: "Matriarch"
+
+#misc
+ mod_GEOLOID_pop_growth_speed: "Geoloid Pop Growth Speed"
+ mod_GEOLOID_pop_growth_speed_desc: "This value affects the speed at which new Geoloid Pops are grown."
+ mod_country_base_physics_research_produces_add: "Monthly £physics£ Physics Research:"
+ mod_country_base_society_research_produces_add: "Monthly £society£ Society Research:"
+ mod_country_base_engineering_research_produces_add: "Monthly £engineering£ Engineering Research:"
+ mod_country_base_minor_artifacts_produces_add: "Monthly Minor Artifacts"

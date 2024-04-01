@@ -4,10 +4,24 @@ country_event = {
 	id = gem_gal_invasion.001
 	is_triggered_only = yes
 	hide_window = yes
+	fire_only_once = yes
 	trigger = {
-		has_global_flag = choose_gem_invasion
+		has_country_flag = choose_gem_invasion_cf
+		years_passed > halfway_to_mid_game_years_var
 	}
 	immediate = {
+		set_variable = {
+			which = num_gem_fleets
+			value = trigger:max_naval_capacity
+		}
+
+		divide_variable = {
+			which = num_gem_fleets
+			value = 90
+		}
+
+		ceiling_variable = num_gem_fleets
+
 		event_target:Gem_midgame_crisis_target = {
 			spawn_system = {
 				min_distance = 10
@@ -118,19 +132,29 @@ country_event = {
 							}
 						}
 
-						##Create fleets
 						set_variable = {
 							which = num_gem_fleets
 							value = trigger:max_naval_capacity
 						}
-
+				
 						divide_variable = {
 							which = num_gem_fleets
 							value = 90
 						}
-
+				
 						ceiling_variable = num_gem_fleets
-						
+
+						create_fleet = {
+							effect = {
+								set_owner = event_target:gem_invasion_country
+								create_ship = {
+									name = random
+									random_existing_design = science
+								}
+								set_fleet_stance = evasive
+								set_location = event_target:gem_invasion_planet
+							}
+						}
 						create_fleet = {
 							effect = {
 								set_owner = event_target:gem_invasion_country
@@ -153,40 +177,61 @@ country_event = {
 								set_location = event_target:gem_invasion_planet
 							}
 						}
-							
+						create_fleet = {
+							effect = {
+								set_owner = event_target:gem_invasion_country
+								create_ship = {
+									name = random
+									random_existing_design = colonizer
+								}
+								set_fleet_stance = evasive
+								set_location = event_target:gem_invasion_planet
+							}
+						}
+						create_fleet = {
+							effect = {
+								set_owner = event_target:gem_invasion_country
+								create_ship = {
+									name = random
+									random_existing_design = colonizer
+								}
+								set_fleet_stance = evasive
+								set_location = event_target:gem_invasion_planet
+							}
+						}
+
 						while = {
 							count = num_gem_fleets
 							add_resource = { energy = 1000 } # Give some energy to pay for ship upkeep
 							create_fleet = {
 								effect = {
 									set_owner = event_target:gem_invasion_country
-									create_ship = {
-										name = random
-										design = "NAME_Ancestral_Glory"
-										graphical_culture = "pirate_01"
-									}
-									while = {
-										count = 24
-										create_ship = {
-											name = random
-											design = "NAME_Outrider"
-											graphical_culture = "pirate_01"
-										}
-									}
 									while = {
 										count = 12
 										create_ship = {
 											name = random
-											design = "NAME_Lancer"
-											graphical_culture = "pirate_01"
+											design = "NAME_fotd_corvette_3"
+										}
+									}
+									while = {
+										count = 8
+										create_ship = {
+											name = random
+											design = "NAME_fotd_destroyer_4"
 										}
 									}
 									while = {
 										count = 6
 										create_ship = {
 											name = random
-											design = "NAME_Void_Champion"
-											graphical_culture = "pirate_01"
+											design = "NAME_fotd_cruiser_3"
+										}
+									}
+									while = {
+										count = 2
+										create_ship = {
+											name = random
+											design = "NAME_Spearhead"
 										}
 									}
 									set_location = {
@@ -211,7 +256,7 @@ country_event = {
 					}
 					
 					while = {
-						count = 5
+						count = 2
 						add_district = district_city
 					}
 					
@@ -238,46 +283,9 @@ country_event = {
 						create_starbase = {
 							size = starbase_starport
 							module = shipyard
+							module = shipyard
+							building = crew_quarters
 							owner = event_target:gem_invasion_country
-						}
-					}
-					# Flip control of the solar system
-					solar_system = {
-						if = {
-							limit = { exists = starbase }
-							starbase = {
-								if = {
-									limit = {
-										is_owned_by = root
-									}
-									set_owner = event_target:gem_invasion_country
-									if = {
-										limit = { has_starbase_size = starbase_outpost }
-										set_starbase_size = starbase_starport
-										set_starbase_module = {
-											slot = 1
-											module = shipyard
-										}
-										set_starbase_module = {
-											slot = 2
-											module = shipyard
-										}
-									}
-									else_if = {
-										limit = {
-											NOT = { has_starbase_module = shipyard }
-										}
-										set_starbase_module = {
-											slot = 1
-											module = shipyard
-										}
-										set_starbase_module = {
-											slot = 2
-											module = shipyard
-										}
-									}
-								}
-							}
 						}
 					}
 				}
@@ -285,6 +293,11 @@ country_event = {
 		}
 		last_created_country = {
 			country_event = { id = gem_gal_invasion.002 }
+			country_event = { id = gem_gal_invasion.004 days = 1 }
+			country_event = { id = gem_gal_invasion.003 days = 2 }
+			country_event = { id = gem_gal_invasion.003 days = 3 }
+			country_event = { id = gem_gal_invasion.003 days = 4 }
+			country_event = { id = gem_gal_invasion.003 days = 5 }
 		}
 
 	}
@@ -371,5 +384,88 @@ country_event = {
 			set_council_position = councilor_state
 		}
 		every_country = { establish_communications_no_message = event_target:gem_invasion_country }
+		set_variable = { which = gem_armies value = trigger:num_armies }
 	}
 }
+
+country_event = {
+	id = gem_gal_invasion.003
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		set_ai_personality = fanatic_purifiers
+		
+		every_system = {
+			add_claims = {
+				who = event_target:gem_invasion_country
+				num_of_claims = 2
+				show_notification = no
+			}
+		}
+		while = {
+			count = 5
+			random_system = {
+				limit = {
+					distance = {
+						source = prev
+						use_bypasses = no
+						min_jumps = 1
+						max_jumps = 3
+					}
+					OR = {
+						NOT = { exists = space_owner }
+						space_owner = { is_regular_empire = yes }
+					}
+				}
+				create_starbase = {
+					size = starbase_outpost
+					owner = event_target:gem_invasion_country
+				}
+			}
+		}
+	}
+}
+
+
+country_event = {
+	id = gem_gal_invasion.004
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		every_system = {
+			set_surveyed = {
+				surveyed = yes
+				surveyor = event_target:gem_invasion_country
+			}
+		}
+	}
+}		
+
+country_event = {
+	id = gem_gal_invasion.005
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		has_modifier = gem_invaders
+	#	check_variable = {
+	#		which = trigger:num_armies
+	#		value < trigger:num_pops
+	#	}
+	}
+	immediate = {
+		set_variable = { which = gem_armies value = trigger:years_passed } #example 35 armies
+		multiply_variable = { which = gem_armies value = 0.05 } #example 35*1.1= 38.5
+		ceiling_variable = gem_armies #example 38.5 -> 39
+		while = {
+			count = gem_armies
+			capital_scope = {
+				create_army = {
+					name = random
+					owner = this
+					species = owner_main_species
+					type = assault_army
+				}
+			}
+		}
+	}
+}		

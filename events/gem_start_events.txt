@@ -154,11 +154,20 @@ country_event = {
 	trigger = {
 		is_geo_empire = no
 		is_ai = no
-
+	}
+	immediate = {
+		get_galaxy_setup_value = {
+			setting = mid_game_year
+			which = halfway_to_mid_game_years_var
+			scale_by = 0.75
+		}
+		#divide_variable = { which = halfway_to_mid_game_years_var value = 2 }
 	}
 	option = {
 		name = YES
+		allow = { NOT = { has_global_flag = choose_gem_invasion } }
 		hidden_effect = {
+			set_country_flag = choose_gem_invasion_cf
 			random_system = {
 				limit = {
 					has_owner = no
@@ -180,9 +189,11 @@ country_event = {
 	option = {
 		name = "gem_start.1005.c"
 		custom_tooltip = "gem_start.1005.c.desc" 
+		allow = { NOT = { has_global_flag = choose_gem_invasion } }
 		hidden_effect = {
 			random_list = {
 				50 = {
+					set_country_flag = choose_gem_invasion_cf
 					random_system = {
 						limit = {
 							has_owner = no

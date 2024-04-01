@@ -24,6 +24,21 @@ on_late_game_pulse_country = {
 	}
 }
 
+on_five_year_pulse_country = {
+	events = {
+	}
+}
+on_yearly_pulse_country = {
+	events = {
+		gem_gal_invasion.005
+	}
+}
+on_monthly_pulse_country = {
+	events = {
+		gem_gal_invasion.001
+	}
+}
+
 # A planet has been colonized.
 # Scope = Planet
 on_colonized = {
