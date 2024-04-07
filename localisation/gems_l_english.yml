@@ -112,7 +112,7 @@
  trait_gem_dormant: "Dormant"
  trait_gem_dormant_desc: "§LGems under this condition have turned inwards, and will never reform their lightform.§!\n"
  trait_ruler_diamond: "Radiance"
- trait_ruler_diamond_desc: "This Gems is simply perfect, a radiant example of gem kind, truly deserving of their leadership position\n\n§RThey can perform any task in the empire§!"
+ trait_ruler_diamond_desc: "This Gems is simply perfect, a radiant example of gem kind, truly deserving of their leadership position."
  
  trait_pc_gem_preference: "Geoform Preference"
  trait_pc_gem_preference_desc: "$trait_pc_arctic_preference_desc$"

@@ -26,12 +26,12 @@ on_late_game_pulse_country = {
 
 on_five_year_pulse_country = {
 	events = {
-		#gem_gal_invasion.001 #spwn the invasion 0.75 of midgame timer
+		gem_gal_invasion.001 #spwn the invasion 0.75 of midgame timer
 	}
 }
 on_yearly_pulse_country = {
 	events = {
-		#gem_gal_invasion.005 #reinforced the gem invasders with 15% of years passed with soldiers yearly. just so they have some on hand should AI bug and not build any.
+		gem_gal_invasion.005 #reinforced the gem invasders with 15% of years passed with soldiers yearly. just so they have some on hand should AI bug and not build any.
 	}
 }
 on_monthly_pulse_country = {
