@@ -30,7 +30,7 @@ country_event = {
 			set_planet_flag = grand_court
 			add_modifier = { modifier = pm_grand_court_1 }
 			add_modifier = { modifier = pm_gem_pink_court }
-			add_modifier = { modifier = "pm_gem_galaxy_warp" }
+			add_deposit = d_galaxy_warp
 			add_building = building_buff_kindergarten2
 		}
 		country_event = { id = GEM_start.1001 }
@@ -161,6 +161,7 @@ country_event = {
 			which = halfway_to_mid_game_years_var
 			scale_by = 0.75
 		}
+		
 		#divide_variable = { which = halfway_to_mid_game_years_var value = 2 }
 	}
 	option = {

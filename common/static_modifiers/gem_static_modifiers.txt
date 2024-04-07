@@ -61,6 +61,10 @@ pm_gem_galaxy_warp = {
 	pop_resettlement_cost_mult = -0.1
 	planet_resettlement_unemployed_mult = 0.5
 }
+pm_gem_galaxy_warp_invasion = { 
+	icon = "gfx/interface/icons/planet_modifiers/gem_galaxy_warp.dds"
+	icon_frame = 1
+}
 
 pm_off_color_saboteur = {
 	icon = "gfx/interface/icons/planet_modifiers/pm_crime.dds"

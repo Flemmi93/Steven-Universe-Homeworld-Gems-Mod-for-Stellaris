@@ -19,6 +19,10 @@ portraits = {
 	gemD2 =		{texturefile = "gfx/models/portraits/gems/gems_ruler_03_yellow.dds" }
 	gemD3 =		{texturefile = "gfx/models/portraits/gems/gems_ruler_01_blue.dds" }
 	gemD4 =		{texturefile = "gfx/models/portraits/gems/gems_ruler_02_pink.dds" }
+	gemWG =		{texturefile = "gfx/models/portraits/gems/gems_ruler_04_white_gemstone.dds" }
+	gemYG =		{texturefile = "gfx/models/portraits/gems/gems_ruler_03_yellow_gemstone.dds" }
+	gemBG =		{texturefile = "gfx/models/portraits/gems/gems_ruler_01_blue_gemstone.dds" }
+	gemPG =		{texturefile = "gfx/models/portraits/gems/gems_ruler_02_pink_gemstone.dds" }
 	gemD5 =		{texturefile = "gfx/models/portraits/gems/gems_ruler_05_rose.dds" } # looks left
 	gemD6 =		{texturefile = "gfx/models/portraits/gems/gems_ruler_05_rose2.dds" } #looks right
 	gemE1 =		{texturefile = "gfx/models/portraits/gems/gems_Emerald_01.dds" }

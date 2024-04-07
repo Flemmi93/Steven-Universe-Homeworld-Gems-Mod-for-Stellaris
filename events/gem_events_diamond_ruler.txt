@@ -509,6 +509,41 @@ country_event = {
 	#}
 }
 
+#Events to revive Fallen Diamond Gems
+leader_event = {
+	id = gem_diamond_ruler.99
+	title = gem_diamond_ruler.99.name
+	desc = gem_diamond_ruler.99.desc
+	picture = GFX_evt_gem_diamond_choice
+	is_triggered_only = yes
+	option = {
+		name = EXCELLENT
+		remove_trait = trait_poofed_gem
+		hidden_effect = {
+			if = {
+				limit = {
+					has_trait = trait_white_court
+				}
+				change_leader_portrait = gemD1 #White
+			}
+			else_if = {
+				limit = {
+					has_trait = trait_yellow_court
+				}
+				change_leader_portrait = gemD2 #Yellow
+			}
+			else_if = {
+				limit = {
+					has_trait = trait_blue_court
+				}
+				change_leader_portrait = gemD3 #Blue
+			}
+			else_if = {
+				change_leader_portrait = gemD4 #Pink
+			}
+		}
+	}
+}
 # Executed as a leader has died
 # This = Country
 # From = Leader
@@ -522,7 +557,198 @@ country_event = {
 		is_geo_empire = yes
 		from = { has_trait = trait_ruler_diamond }
 	}
+	immediate = {
+		clone_leader = {
+			target = FROM
+		}
+		if = {
+			limit = {
+				from = { has_trait = trait_white_court }
+			}
+			last_created_leader = {
+				remove_all_traits = yes
+				add_trait = trait_ruler_diamond
+				add_trait = trait_white_court
+				add_trait = trait_poofed_gem
+				set_skill = 1
+				change_leader_portrait = gemWG
+				#change_leader_class = poofed_gem_class #waiting for recruitable = no to be fixed
+				save_global_event_target_as = white_got_poofed
+			}
+		}
+		else_if = {
+			limit = {
+				from = { has_trait = trait_yellow_court }
+			}
+			last_created_leader = {
+				remove_all_traits = yes
+				add_trait = trait_ruler_diamond
+				add_trait = trait_yellow_court
+				add_trait = trait_poofed_gem
+				set_skill = 1
+				change_leader_portrait = gemYG
+				#change_leader_class = poofed_gem_class #waiting for recruitable = no to be fixed
+				save_global_event_target_as = yellow_got_poofed
+			}
+		}
+		else_if = {
+			limit = {
+				from = { has_trait = trait_blue_court }
+			}
+			last_created_leader = {
+				remove_all_traits = yes
+				add_trait = trait_ruler_diamond
+				add_trait = trait_blue_court
+				add_trait = trait_poofed_gem
+				set_skill = 1
+				change_leader_portrait = gemBG
+				#change_leader_class = poofed_gem_class #waiting for recruitable = no to be fixed
+				save_global_event_target_as = blue_got_poofed
+			}
+		}
+		else_if = {
+			limit = {
+				from = { has_trait = trait_pink_court }
+			}
+			last_created_leader = {
+				remove_all_traits = yes
+				add_trait = trait_ruler_diamond
+				add_trait = trait_pink_court
+				set_skill = 1
+				change_leader_portrait = gemBG
+				#change_leader_class = poofed_gem_class #waiting for recruitable = no to be fixed
+				save_global_event_target_as = pink_got_poofed
+			}
+		}
+		else_if = {
+			limit = {
+				from = {
+					NOR = {
+						has_trait = trait_white_court
+						has_trait = trait_yellow_court
+						has_trait = trait_blue_court
+						has_trait = trait_pink_court
+					}
+				}
+			}
+			last_created_leader = {
+				remove_all_traits = yes
+				add_trait = trait_ruler_diamond
+				add_trait = trait_poofed_gem
+				set_skill = 1
+				change_leader_portrait = gemPG
+				#change_leader_class = poofed_gem_class #waiting for recruitable = no to be fixed
+				save_global_event_target_as = pink_got_poofed
+			}
+		}
+	}
 	option = {
 		name = OK
+		last_created_leader = { leader_event = { id = gem_diamond_ruler.99 days = 360 } }
+	}
+}
+
+
+# Executed as a leader has been fired
+# This = Country
+# From = Leader
+country_event = {
+	id = gem_diamond_ruler.101
+	title = "gem_diamond_ruler.101.name"
+	desc = "gem_diamond_ruler.101.desc"
+	picture = "GFX_evt_gem_diamond_choice"
+	is_triggered_only = yes
+	trigger = {
+		is_geo_empire = yes
+		from = { has_trait = trait_ruler_diamond }
+	}
+	immediate = {
+		clone_leader = {
+			target = FROM
+		}
+		if = {
+			limit = {
+				from = { has_trait = trait_white_court }
+			}
+			last_created_leader = {
+				remove_all_traits = yes
+				add_trait = trait_ruler_diamond
+				add_trait = trait_white_court
+				add_trait = trait_poofed_gem
+				set_skill = 1
+				change_leader_portrait = gemWG
+				#change_leader_class = poofed_gem_class #waiting for recruitable = no to be fixed
+				save_global_event_target_as = white_got_poofed
+			}
+		}
+		else_if = {
+			limit = {
+				from = { has_trait = trait_yellow_court }
+			}
+			last_created_leader = {
+				remove_all_traits = yes
+				add_trait = trait_ruler_diamond
+				add_trait = trait_yellow_court
+				add_trait = trait_poofed_gem
+				set_skill = 1
+				change_leader_portrait = gemYG
+				#change_leader_class = poofed_gem_class #waiting for recruitable = no to be fixed
+				save_global_event_target_as = yellow_got_poofed
+			}
+		}
+		else_if = {
+			limit = {
+				from = { has_trait = trait_blue_court }
+			}
+			last_created_leader = {
+				remove_all_traits = yes
+				add_trait = trait_ruler_diamond
+				add_trait = trait_blue_court
+				add_trait = trait_poofed_gem
+				set_skill = 1
+				change_leader_portrait = gemBG
+				#change_leader_class = poofed_gem_class #waiting for recruitable = no to be fixed
+				save_global_event_target_as = blue_got_poofed
+			}
+		}
+		else_if = {
+			limit = {
+				from = { has_trait = trait_pink_court }
+			}
+			last_created_leader = {
+				remove_all_traits = yes
+				add_trait = trait_ruler_diamond
+				add_trait = trait_pink_court
+				set_skill = 1
+				change_leader_portrait = gemBG
+				#change_leader_class = poofed_gem_class #waiting for recruitable = no to be fixed
+				save_global_event_target_as = pink_got_poofed
+			}
+		}
+		else_if = {
+			limit = {
+				from = {
+					NOR = {
+						has_trait = trait_white_court
+						has_trait = trait_yellow_court
+						has_trait = trait_blue_court
+						has_trait = trait_pink_court
+					}
+				}
+			}
+			last_created_leader = {
+				remove_all_traits = yes
+				add_trait = trait_ruler_diamond
+				add_trait = trait_poofed_gem
+				set_skill = 1
+				change_leader_portrait = gemPG
+				#change_leader_class = poofed_gem_class #waiting for recruitable = no to be fixed
+				save_global_event_target_as = pink_got_poofed
+			}
+		}
+	}
+	option = {
+		name = OK
+		last_created_leader = { leader_event = { id = gem_diamond_ruler.99 days = 360 } }
 	}
 }

@@ -26,16 +26,17 @@ on_late_game_pulse_country = {
 
 on_five_year_pulse_country = {
 	events = {
+		#gem_gal_invasion.001 #spwn the invasion 0.75 of midgame timer
 	}
 }
 on_yearly_pulse_country = {
 	events = {
-		gem_gal_invasion.005
+		#gem_gal_invasion.005 #reinforced the gem invasders with 15% of years passed with soldiers yearly. just so they have some on hand should AI bug and not build any.
 	}
 }
 on_monthly_pulse_country = {
 	events = {
-		gem_gal_invasion.001
+		gem_events_misc.002
 	}
 }
 
@@ -51,6 +52,12 @@ on_colonized = {
 on_colony_1_year_old = {
 	events = {
 		gem_diamond_choice.1002 #triggers step counter
+	}
+}
+# X years has passed since a planet was colonized (won't trigger on empire homeworld)
+on_colony_5_years_old = {
+	events = {
+		#gem_gal_invasion.007
 	}
 }
 
@@ -82,7 +89,7 @@ on_capital_changed = {
 
 on_pop_assembled = {
 	events = {
-	gem_off_colors.1000
+		gem_off_colors.1000
 	}
 }
 
@@ -109,5 +116,14 @@ on_leader_death_notify = {
 on_leader_death_no_notify = {
 	events = {
 		gem_diamond_ruler.100
+	}
+}
+
+# Executed as a leader has been fired
+# This = Country
+# From = Leader
+on_leader_fired = {
+	events = {
+		gem_diamond_ruler.101
 	}
 }

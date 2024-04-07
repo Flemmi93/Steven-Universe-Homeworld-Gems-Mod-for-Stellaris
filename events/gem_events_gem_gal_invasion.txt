@@ -394,14 +394,6 @@ country_event = {
 	is_triggered_only = yes
 	immediate = {
 		set_ai_personality = fanatic_purifiers
-		
-		every_system = {
-			add_claims = {
-				who = event_target:gem_invasion_country
-				num_of_claims = 2
-				show_notification = no
-			}
-		}
 		while = {
 			count = 5
 			random_system = {
@@ -437,6 +429,12 @@ country_event = {
 				surveyed = yes
 				surveyor = event_target:gem_invasion_country
 			}
+			
+			add_claims = {
+				who = event_target:gem_invasion_country
+				num_of_claims = 10
+				show_notification = no
+			}
 		}
 	}
 }		
@@ -447,17 +445,15 @@ country_event = {
 	is_triggered_only = yes
 	trigger = {
 		has_modifier = gem_invaders
-	#	check_variable = {
-	#		which = trigger:num_armies
-	#		value < trigger:num_pops
-	#	}
 	}
 	immediate = {
 		set_variable = { which = gem_armies value = trigger:years_passed } #example 35 armies
-		multiply_variable = { which = gem_armies value = 0.05 } #example 35*1.1= 38.5
+		multiply_variable = { which = gem_armies value = 0.15 } #example 35*1.1= 38.5
 		ceiling_variable = gem_armies #example 38.5 -> 39
+
 		while = {
 			count = gem_armies
+			add_resource = { energy = 100 }
 			capital_scope = {
 				create_army = {
 					name = random
@@ -468,4 +464,51 @@ country_event = {
 			}
 		}
 	}
-}		
+}
+
+planet_event = { #event chain to make gems spawn on a colony world first as a warning.
+	id = gem_gal_invasion.101
+	is_triggered_only = yes
+	title = gem_gal_invasion.006.name
+	desc = gem_gal_invasion.006.desc
+	picture = GFX_evt_gem_homeworld
+	fire_only_once = yes
+	pre_triggers = {
+		has_owner = yes
+		is_homeworld = no
+		is_ai = no
+		is_capital = no
+		is_occupied_flag = no
+	}
+	trigger = {
+		NOT = { has_modifier = gem_invaders }
+		has_global_flag = choose_gem_invasion
+		can_have_habitable_deposits = yes
+		owner = {
+			OR = {
+				AND = {
+					num_owned_planets > 6
+					num_pops > 100
+				}
+				num_pops > 200
+			}
+		}
+	}
+	immediate = {
+		add_deposit = d_galaxy_warp
+	}
+	option = { #continues event chain
+		name = gem_gal_invasion.006.a
+		custom_tooltip = gem_gal_invasion.006.a.desc
+	}
+	option = { #continues event chain but differently
+		name = gem_gal_invasion.006.b
+		custom_tooltip = gem_gal_invasion.006.b.desc
+		remove_deposit = d_galaxy_warp_damaged
+		add_deposit = d_galaxy_warp_damaged
+	}
+	option = { # aboards event chain
+		name = gem_gal_invasion.006.c
+		custom_tooltip = gem_gal_invasion.006.c.desc
+	}
+}

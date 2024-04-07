@@ -16,3 +16,18 @@ country_event = {
 			}
 	}
 }
+
+country_event = {
+	id = gem_events_misc.002
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		every_owned_planet = {
+			if = {
+				limit = { has_modifier = pm_gem_galaxy_warp }
+				remove_modifier = pm_gem_galaxy_warp
+				add_deposit = d_galaxy_warp
+			}
+		}
+	}
+}

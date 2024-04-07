@@ -15,6 +15,7 @@ planet_event = { #replaces the grand court
 			this = { NOT = { has_modifier = pm_grand_court_1 } }
 			this = { NOT = { has_modifier = pm_grand_court_2 } }
 		}
+		owner = { is_ai = no }
 	}
 	option = {
 		trigger = {

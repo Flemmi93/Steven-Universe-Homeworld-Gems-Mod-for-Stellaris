@@ -319,10 +319,14 @@ galaxy_warp = {
 		owner = {
 			is_geo_empire = yes
 		}
-		NOT = { has_modifier = pm_gem_galaxy_warp } 
+		NOT = { has_deposit = d_galaxy_warp } 
 	}
 	
 	effect = {
-		add_modifier = { modifier = "pm_gem_galaxy_warp" }
+		random_deposit = { 
+			limit = { has_deposit = d_galaxy_warp_damaged }
+			clear_blocker = yes
+		}
+		add_deposit = d_galaxy_warp
 	}
 }

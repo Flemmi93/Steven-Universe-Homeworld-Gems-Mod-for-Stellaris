@@ -1097,7 +1097,6 @@ planet_event = {
 		planet_event = { id = gem_off_colors.2003 days = 1 }
 		hidden_effect = {
 			remove_modifier = pm_gem_no_assemble
-			remove_modifier = pm_gem_galaxy_warp
 			remove_modifier = pm_gem_pink_court
 		}
 	}

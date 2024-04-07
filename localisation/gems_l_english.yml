@@ -16,7 +16,10 @@
  diamond: "Diamond"
  Diamonds: "Diamonds"
  diamonds: "Diamonds"
-
+ white_alive: "$white_d$ is alive"
+ yellow_alive: "$yellow_d$ is alive"
+ blue_alive: "$blue_d$ is Alive"
+ pink_alive: "$pink_d$ is alive"
  
 #Ruler Class unused
  su_diamond_class: "Diamond"
@@ -26,6 +29,11 @@
  su_diamond_class_with_icon: "£minerals£ Diamond"
  councilor_diamond: "Diamond"
  councilor_diamond_desc: "Our Diamond rules form this seat"
+ poofed_gem_class: "Raw Gem"
+ poofed_gem_class_plural: "Raw Gems"
+ poofed_gem_class_desc: "This Gem has lost her Physical form and is now in the process of refroming. This will happen when she is ready."
+ poofed_gem_class_plural_with_icon: "£minerals£ Raw Gems"
+ poofed_gem_class_with_icon: "£minerals£ Raw Gem"
  
 #advisor
  Pearlfiltered: "Pearl with filter"
@@ -120,6 +128,9 @@
  trait_pink_court: "$pink_diamond$'s Court"
  trait_pink_court_desc: "This is $pink_diamond$'s Court, she brings her entourage where ever she goes, anything else is unthinkable. This large following of Gems however has some distict advantages."
  
+ trait_poofed_gem: "Poofed Gem"
+ trait_poofed_gem_desc: "This gem has lost her physical form and needs some times to reform."
+
 #Origin & Civics & Government
  origin_geoform: "Planetary Transformation"
  origin_geoform_desc: "This society has worked tirelessly to transform their home planet into a paradise for their kind, though it may not be a paradise for most other forms of life."
@@ -172,6 +183,10 @@
  d_space_mining_desc: "There are a lot of exploitable Asteroids nearby"
  d_homeworld_special: "Radiant Homeworld"
  d_homeworld_special_desc: "Our Homeworld is the heart of out Empire, all expansions serves to better it.\n\nThis Planet was carefully developed and designed for millenia."
+ d_galaxy_warp: "Galaxy Warp"
+ d_galaxy_warp_desc: "This construct enables our people to near instantly travel across the galaxy"
+ d_galaxy_warp_damaged: "$d_galaxy_warp$"
+ d_galaxy_warp_damaged_desc: "$d_galaxy_warp_desc$"
  district_kindergarten: "Kindergarten"
  district_kindergarten_desc: "§LMassive structures dug out of the surface of the planet. Kindergartens extract minerals and nutrients from the surrounding environment to create brand new Gems. The Gems emerge from their holes in the Kindergarten walls fully conscious and ready to serve their purpose.§!\n§RThese districts cannot be demolished after being built§!"
  district_kindergarten2: "$district_kindergarten$"
@@ -372,8 +387,12 @@
  pink_is_ready4: "$pink_d$ wouldn't cut it"
  pink_is_ready5: "$pink_d$ is too young"
  gem_diamond_choice.d.unready: "$pink_d$ has a long way ahead of her to get her own colony."
- gem_diamond_ruler.100.name: "A Diamond got poofed"
- gem_diamond_ruler.100.desc: "The unthinkable has happed, and soon we will make it unhappen. For now we must suffer the indignity of waiting for her return"
+ gem_diamond_ruler.99.name: "[Leader.GetName] returns"
+ gem_diamond_ruler.99.desc: "[Leader.GetName] has reformed and is returning to her normnal duties.\n\nAll is well."
+ gem_diamond_ruler.100.name: "[FROM.Leader.GetName] got poofed"
+ gem_diamond_ruler.100.desc: "The unthinkable has happed, and soon we will make it unhappen. For now we must suffer the indignity of waiting for her return."
+ gem_diamond_ruler.101.name: "[FROM.Leader.GetName] went into seclusion"
+ gem_diamond_ruler.101.desc: "For her own reason [FROM.Leader.GetName] decided to retreat to her private chambers, she will return to us in her own time. We can only hope it wont be too long."
  
  
  gem_new_features: "New Features!"
@@ -392,7 +411,6 @@
  gem_diamond_traits.0041.desc: "$pink_diamond$'s traits"
  diamond_trait_change_project: "Change [Root.Leader.GetName]'s Traits"
  diamond_trait_change_project_desc: "[Root.Leader.GetName] Can retreat to her chamber and meditate, as a Diamond she can present different aspects of herself as she incumbers many forms."
- 
  
  reassign_court: "Assign Diamond Court"
  reassign_court_desc: "To no fault of the current ruling Diamond this world needs to be controlled by another Diamond."
@@ -456,6 +474,8 @@
  pm_gem_pink_court2: "$pinkfaction$"
  pm_gem_galaxy_warp: "Galaxy Warp"
  pm_gem_galaxy_warp_desc: "This construct enables our people to near instantly travel across the galaxy"
+ pm_gem_galaxy_warp_invasion: "$pm_gem_galaxy_warp$"
+ pm_gem_galaxy_warp_invasion_desc: "$pm_gem_galaxy_warp_desc$"
  pm_blue_visits: "Visited by $blue_diamond$"
  pm_yellow_visits: "Visited by $yellow_diamond$"
  pm_pink_celebration: "Big Party for $pink_d$"
@@ -479,7 +499,7 @@
  gems_lost_earth: "Abandoned World"
  gems_lost_earth_desc: "This world is a black mark in our collective memory, we do no wish to settle here."
 
- #Gem Rebellion Events, included 1000 (10-20) year war
+#Gem Rebellion Events, included 1000 (10-20) year war
  gem_off_colors.1010.name: "Production above expectations"
  gem_off_colors.1010.desc: "Recent reports from §Y[This.GetName]§! have shown Rose Quartz Gem £pops£ Production is above previously expected levels."
  gem_off_colors.1019.name: "Protests Escalate"
@@ -577,33 +597,10 @@
  pm_grand_court_1_desc: "The Grand Court on Homeworld is the primary home of our Diamonds"
  pm_grand_court_2: "$pm_grand_court_1$"
  pm_grand_court_2_desc: "$pm_grand_court_1_desc$"
- #
- white_alive: "$white_d$ is alive"
- yellow_alive: "$yellow_d$ is alive"
- blue_alive: "$blue_d$ is Alive"
- pink_alive: "$pink_d$ is alive"
  pink_got_earth: "$pink_d$ is busy on earth"
  approach_lost_controll: "We lost control of the Situation"
  
- #Diamon ascention events
- gem_diamond_ascention.1101.name: "$white_diamond$'s Ascention"
- gem_diamond_ascention.1101.desc: ""
- gem_diamond_ascention.1102.desc: ""
- gem_diamond_ascention.1103.desc: ""
- gem_diamond_ascention.1201.name: "$yellow_diamond$'s Ascention"
- gem_diamond_ascention.1201.desc: ""
- gem_diamond_ascention.1202.desc: ""
- gem_diamond_ascention.1203.desc: ""
- gem_diamond_ascention.1301.name: "$blue_diamond$'s Ascention"
- gem_diamond_ascention.1301.desc: ""
- gem_diamond_ascention.1302.desc: ""
- gem_diamond_ascention.1303.desc: ""
- gem_diamond_ascention.1401.name: "$pink_diamond$'s Ascention"
- gem_diamond_ascention.1401.desc: ""
- gem_diamond_ascention.1402.desc: ""
- gem_diamond_ascention.1403.desc: ""
- 
- #Situations
+#Situations
  pink_situation: "$pink_d$'s Mood"
  pink_situation_type: "$pink_d$'s Mood£happiness£"
  pink_situation_desc: "$pink_d$'s mood is good for now but it isn't stable, her mood can go up and down depending on what is happening to her or in the empire at large."
@@ -613,7 +610,11 @@
  pink_situation_complete_desc: "Pink Complete description"
  gem_sit_nothing_happens: "Nothing is happening"
  gem_sit_something_happens: "Something is happening"
- 
+ pink_diamond_got_poofed: "$pink_diamond$ is reforming"
+ white_diamond_got_poofed: "$white_diamond$ is reforming"
+ yellow_diamond_got_poofed: "$yellow_diamond$ is reforming"
+ blue_diamond_got_poofed: "$blue_diamond$ is reforming"
+
 #1000 year war
  gem_1000_year_war: "Crystal Gem Rebellion"
  gem_1000_year_war_name: "$START_SITUATION_EFFECT$the §Y[Planet.GetName] Rebellion§!"
@@ -634,7 +635,7 @@
  approach_destroy_crystal_gems_tooltip2:"We will §YBouble§! the $crystal_gems$ to the last!"
  approach_destroy_crystal_gems_tooltip3:"We will §Wwhipe§! the $crystal_gems$'s midns. They will serve once more"
 
- 
+#ascension events #unused
  white_ascencion_situation: "The accension of $white_diamond$"
  white_ascencion_situation_type: "The accension of $white_diamond$"
  white_ascencion_situation_desc: "Having spend millenia contemplating existance $white_d$ has found a path to advance herself to an even higher form of existance."
@@ -656,6 +657,23 @@
  blue_ascended_flag: "$blue_d$ ascended"
  pink_ascended_flag: "$pink_d$ ascended"
  
+ gem_diamond_ascention.1101.name: "$white_diamond$'s Ascention"
+ gem_diamond_ascention.1101.desc: ""
+ gem_diamond_ascention.1102.desc: ""
+ gem_diamond_ascention.1103.desc: ""
+ gem_diamond_ascention.1201.name: "$yellow_diamond$'s Ascention"
+ gem_diamond_ascention.1201.desc: ""
+ gem_diamond_ascention.1202.desc: ""
+ gem_diamond_ascention.1203.desc: ""
+ gem_diamond_ascention.1301.name: "$blue_diamond$'s Ascention"
+ gem_diamond_ascention.1301.desc: ""
+ gem_diamond_ascention.1302.desc: ""
+ gem_diamond_ascention.1303.desc: ""
+ gem_diamond_ascention.1401.name: "$pink_diamond$'s Ascention"
+ gem_diamond_ascention.1401.desc: ""
+ gem_diamond_ascention.1402.desc: ""
+ gem_diamond_ascention.1403.desc: ""
+ 
  ap_diamond_ascention: "Ascension of Diamonds"
  ap_diamond_ascention_desc: "The Diamonds are clearly superior beings to all other gems, it is only appropriate that additional resources are diverted to their own personal growth."
  ap_diamond_ascention_tooltip: "We will prepare a special project to enhance our Diamonds"
@@ -670,7 +688,17 @@
  blue_ascencion_situation_monthly_change_tooltip: "$stuation_monthly_change_tooltip_little_control$"
  pink_ascencion_situation_monthly_change_tooltip: "$stuation_monthly_change_tooltip_little_control$"
  
- #Arc Sites for Ascention
+#Gem Invasion
+ gem_gal_invasion.006.name: "Xeno Structure Found"
+ gem_gal_invasion.006.desc: "We found a strange structure on §Y[Planet.GetName]§! We hesitate to call it alien, as it could be left by some ancient native civilisation.\n\nWe have some options on how to proceed."
+ gem_gal_invasion.006.a: "Studiy it"
+ gem_gal_invasion.006.a.desc: "The Structure will remain undamaged. This could slow down research"
+ gem_gal_invasion.006.b: "Take a Sample"
+ gem_gal_invasion.006.b.desc: "The Structure will be slightly dmaaged. But having a piece of it, could speed up our research"
+ gem_gal_invasion.006.c: "Take it apart"
+ gem_gal_invasion.006.c.desc: "The structure will be destroyed. Whatever it is, its propably valuable"
+
+#Arc Sites for Ascention
  white_ascention_dig_site: "Designated dig site"
  white_ascention_dig_site_desc: "$white_d$ suspects something here, we have to unearth whatever it is."
  yellow_ascention_dig_site: "Designated dig site"
@@ -683,18 +711,18 @@
  yellow_ascencion_situation_monthly_change_tooltip: ""
  blue_ascencion_situation_monthly_change_tooltip: ""
  pink_ascencion_situation_monthly_change_tooltip: ""
- #Relicts
+#Relicts
  white_part_relict: "White Shard"
  yellow_part_relict: "Yellow Shard"
  blue_part_relict: "Blue Shard"
  pink_part_relict: "Pink Shard"
- #describes the effects of the diamonds traits
+#describes the effects of the diamonds traits
  white_traits_desc: "§Y$trait_ruler_architectural_sense$\n§G-10% §W$mod_planet_structures_cost_mult$\n§G+10% §W$MOD_PLANET_BUILDING_TIME_MULT$\n§Y$trait_ruler_world_shaper$\n§G+25% §W$MOD_COUNTRY_TERRAFORM_SPEED_MULT$\n§G-15% §W$MOD_COUNTRY_CLEAR_BLOCKER_COST_MULT$"
  yellow_traits_desc: "§Y$trait_ruler_logistic_understanding$\n§G-5% §W$mod_ships_upkeep_mult$\n§G-10% §W$mod_armies_upkeep_mult$\n§Y$trait_ruler_warlike$\n§G+5% §W$MOD_SHIP_WEAPON_DAMAGE$\n§G+10% §W$MOD_ARMY_DAMAGE_MULT$"
  blue_traits_desc: "§Y$trait_ruler_eye_for_talent$\n§G+1 §W$MOD_LEADER_SKILL_LEVELS$\n§G+20% §W$MOD_LEADER_SPECIES_EXP_GAIN$\n§Y$trait_ruler_home_in_the_sky$\n§G-20% §W$mod_starbase_modules_cost_mult$\n§G-10% §W$MOD_STARBASE_UPGRADE_COST_MULT$"
  pink_traits_desc: "§Y$trait_ruler_champion_of_the_people$\n§G+5% §W$HAPPINESS_LABEL$\n§Y$trait_ruler_explorer$\n§G-25% §W$mod_ship_science_cost_mult$\n§G+33% §W$MOD_SHIP_ANOMALY_RESEARCH_SPEED$"
   
- #unused ethical localization, just so they dont show up in the error logs
+#unused ethical localization, just so they dont show up in the error logs
  suppressed_whiteethic: "Supress Faction"
  promoted_whiteethic: "Promote Faction"
  suppressed_yellowethic: "Supress Faction"
@@ -705,9 +733,10 @@
  promoted_pinkethic: "Promote Faction"
  Back: "Back"
  
- #Ship/Fleet Names
+#Ship/Fleet Names
  GEM1_xxSTELLARCLUSTER_ORD: "$O$ Gem Armada"
- #Army names
+
+#Army names
  GEM1_xxDEFENSECONTINGENT_ORD: "$O$ Ruby Guard"
  GEM1_xxBATTLEPHALANX_ORD: "$O$ Ruby Battalion"
  GEM1_xxSERFCONTINGENT_ORD: ""$O$ Native Slave group"
@@ -724,7 +753,7 @@
  GEM1_INDUSTRIALARMYxx_SEQ: "Industrial Army $C$"
  GEM1_POSTATOMICARMYxx_SEQ: "Post-Atomic Army $C$"
  
- ######### Prescripted Names
+######### Prescripted Names
  NAME_Gem_System: "Gem Home System"
  NAME_Luster: "Luster"
  NAME_Homeworld: "Homeworld"

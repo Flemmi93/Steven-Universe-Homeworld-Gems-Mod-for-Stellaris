@@ -102,7 +102,6 @@ d_space_mining = {
 	can_be_cleared = { always = no }
 }
 
-
 # Homeworld Special Deposits
 d_homeworld_special = {
 	#is_for_colonizeable = yes
@@ -119,4 +118,41 @@ d_homeworld_special = {
 
 	potential = { always = no }
 can_be_cleared = { always = no }
+}
+
+#Galaxy Warp Deposite
+d_galaxy_warp = {
+	icon = d_galaxy_warp
+	category = deposit_cat_rare
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_geo_empire = yes
+			}
+		}
+		modifier = {
+			pop_resettlement_cost_mult = -0.1
+			planet_resettlement_unemployed_mult = 0.5
+		}
+	}
+}
+
+#Galaxy Warp Deposite
+d_galaxy_warp_damaged = {
+	icon = d_galaxy_warp
+	category = deposit_cat_blockers
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_geo_empire = yes
+			}
+		}
+		modifier = {
+			planet_amenities_add = -5
+		}
+	}
 }
