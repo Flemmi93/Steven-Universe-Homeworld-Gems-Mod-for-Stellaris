@@ -218,4 +218,28 @@ spriteTypes = {
 		masking_texture = "gfx/interface/situation_log/event_mask.dds"
 		alwaystransparent = yes
 	}
+	spriteType = {
+		name = "GFX_evt_gem_lapis_lazuli_1"
+		texturefile = "gfx/event_pictures/gem_lapis_story_1.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_gem_lapis_lazuli_2"
+		texturefile = "gfx/event_pictures/gem_lapis_story_2.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_gem_lapis_lazuli_3"
+		texturefile = "gfx/event_pictures/gem_lapis_story_3.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_gem_lapis_lazuli_4"
+		texturefile = "gfx/event_pictures/gem_lapis_story_4.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
 }

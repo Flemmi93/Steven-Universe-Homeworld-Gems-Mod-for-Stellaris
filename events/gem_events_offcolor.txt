@@ -952,6 +952,99 @@ planet_event = {
 	}
 }
 
+
+# wartime crimes, lapis lazuli story
+planet_event = {
+	id = gem_off_colors.1060
+	is_triggered_only = yes
+	title = gem_off_colors.1060.name
+	desc = gem_off_colors.1060.desc
+	picture = GFX_evt_gem_lapis_lazuli_1
+
+	immediate = {
+		owner = {
+			create_leader = {
+				name = Lapis_Lazuli
+				class = scientist
+				species = owner_main_species
+				skill = 6
+				traits = {
+					trait = leader_trait_slippery_3
+					trait = leader_trait_homesteader
+					trait = subclass_scientist_explorer
+				}
+			}
+		}
+		last_created_leader = {
+			change_leader_portrait = gemL1
+			save_global_event_target_as = lapis_lazuli_target
+		}
+	}
+	option = {
+		name = OK
+	}
+}
+
+
+planet_event = {
+	id = gem_off_colors.1061
+	is_triggered_only = yes
+	title = gem_off_colors.1061.name
+	desc = gem_off_colors.1061.desc
+	picture = GFX_evt_gem_lapis_lazuli_2
+
+	immediate = {
+		owner = {
+			event_target:gem_pink_diamond = { set_leader_flag = pink_earth_flag }
+			event_target:gem_planet_earth_event = {
+				assign_leader = event_target:lapis_lazuli_target 
+			}
+			event_target:lapis_lazuli_target = {
+				kill_leader = {
+					class = scientist
+					show_notification = yes
+				}
+			}
+			event_target:gem_planet_earth_event = {
+				assign_leader = event_target:gem_pink_diamond 
+			}
+			event_target:gem_pink_diamond = { remove_leader_flag = pink_earth_flag }
+		}
+	}
+	option = {
+		name = OK
+	}
+}
+
+planet_event = {
+	id = gem_off_colors.1062
+	is_triggered_only = yes
+	title = gem_off_colors.1062.name
+	desc = gem_off_colors.1062.desc
+	picture = GFX_evt_gem_lapis_lazuli_3
+
+	option = {
+		owner = {
+			event_target:gem_yellow_diamond = {
+				add_experience = 300
+			}
+		}
+		name = OK
+	}
+}
+
+planet_event = {
+	id = gem_off_colors.1063
+	is_triggered_only = yes
+	title = gem_off_colors.1063.name
+	desc = gem_off_colors.1063.desc
+	picture = GFX_evt_gem_lapis_lazuli_4
+
+	option = {
+		name = OK
+	}
+}
+
 #Pink dissapears
 planet_event = { #this will be a long war
 	id = gem_off_colors.1998 # 

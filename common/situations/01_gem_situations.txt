@@ -471,6 +471,7 @@ gem_1000_year_war = {
 			on_first_enter = {
 				event_target:gem_planet_earth_event = {
 					planet_event = { id = gem_off_colors.1023 }
+					planet_event = { id = gem_off_colors.1060 days = 10 random = 60 }
 				}
 			}
 		}
@@ -490,6 +491,7 @@ gem_1000_year_war = {
 			}
 			on_first_enter = {
 				event_target:gem_planet_earth_event = {
+					planet_event = { id = gem_off_colors.1061 days = 10 random = 60 }
 					planet_event = { id = gem_off_colors.1025 days = 330 }
 					planet_event = { id = gem_off_colors.1026 }
 					planet_event = { id = gem_off_colors.1027 days = 530 random = 24 }
@@ -512,6 +514,7 @@ gem_1000_year_war = {
 			}
 			on_first_enter = {
 				event_target:gem_planet_earth_event = {
+					planet_event = { id = gem_off_colors.1062 days = 10 random = 60 }
 					planet_event = { id = gem_off_colors.1035 }
 					planet_event = { id = gem_off_colors.1055 days = 90 random = 30 }
 				}
@@ -531,6 +534,7 @@ gem_1000_year_war = {
 			}
 			on_first_enter = {
 				event_target:gem_planet_earth_event = {
+					planet_event = { id = gem_off_colors.1063 days = 10 random = 60 }
 					planet_event = { id = gem_off_colors.1035 }
 					planet_event = { id = gem_off_colors.1999 }
 					
