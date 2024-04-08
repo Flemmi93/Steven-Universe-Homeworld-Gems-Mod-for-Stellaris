@@ -34,7 +34,7 @@ country_event = { #updating the old planet modifier to the new planetary feature
 
 pop_event = {
 	id = gem_events_misc.003
-	picture = GFX_evt_gem_rebellion_1
+	picture = "GFX_evt_gem_rebellion_1"
 	title = gem_events_misc.004.name
 	desc = gem_events_misc.004.desc
 	is_triggered_only = yes
