@@ -66,154 +66,75 @@ country_event = {
 		event_target:gem_pink_diamond = {
 			set_leader_flag = pink_earth_flag
 		}
-	}
-	option = {
-		trigger = {
-			OR = {
-				has_country_flag = gem_white_rules
-				has_country_flag = gem_blue_rules
-			}
-		}
-		name = "gem_era.2.a"
-		hidden_effect = {
-			force_remove_civic = civic_tetrarchy
-			force_add_civic = civic_triarchy
-			remove_modifier = era_one
-			event_target:gem_planet_earth_event = {
-				assign_leader = event_target:gem_pink_diamond
-			}
-				event_target:gem_pink_diamond = {
-				kill_leader = {
-				class = official
-				show_notification = yes
-				}
-			}
-			remove_country_flag = era_one_flag
-			remove_country_flag = era_three_flag
-			remove_country_flag = pink_got_earth
-			set_country_flag = era_two_flag
-			country_event = { id = gem_era.3 days = 21600 random = 3600 }
-			#country_event = { id = gem_era.2001 days = 1800 random = 1080 }  #Path to White Gestalt currently not active
-			capital_scope = {
-				remove_modifier = pm_grand_court_1
-				add_modifier = { modifier = pm_grand_court_2 }
-			}
-		}
-				add_resource = { minerals = 1 }
-		add_modifier = { modifier = era_two }
+		force_remove_civic = civic_tetrarchy
+		force_add_civic = civic_triarchy
 	}
 	option = {
 		trigger = { has_country_flag = gem_yellow_rules }
 		name = "gem_era.2.a"
 		hidden_effect = {
-			force_remove_civic = civic_tetrarchy
-			force_add_civic = civic_triarchy
-			remove_modifier = era_one
-event_target:gem_planet_earth_event = {
+			event_target:gem_planet_earth_event = {
 				assign_leader = event_target:gem_pink_diamond
-}
+			}
+			set_country_flag = block_revival_of_pink
 			event_target:gem_pink_diamond = {
 				kill_leader = {
 				class = official
 				show_notification = yes
 				}
 			}
-			remove_country_flag = era_one_flag
-			remove_country_flag = era_three_flag
-			remove_country_flag = pink_got_earth
-			set_country_flag = era_two_flag
-			country_event = { id = gem_era.3 days = 21600 random = 3600 }
-			#country_event = { id = gem_era.2001 days = 1800 random = 1080 }  #Path to White Gestalt currently not active
-			capital_scope = {
-				remove_modifier = pm_grand_court_1
-				add_modifier = { modifier = pm_grand_court_2 }
-			}
-				}
-				add_resource = { minerals = 1 }
-		add_modifier = { modifier = era_two }
+			set_heir = event_target:gem_blue_diamond
+		}
+		add_resource = { minerals = 1 }
 	}
+
 	option = {
-		trigger = { has_country_flag = gem_blue_rules }
+		trigger = {
+			OR = {
+				has_country_flag = gem_white_rules
+				has_country_flag = gem_blue_rules 
+			}
+		}
+		
 		name = "gem_era.2.a"
 		hidden_effect = {
-			force_remove_civic = civic_tetrarchy
-			force_add_civic = civic_triarchy
-			remove_modifier = era_one
+			set_country_flag = block_revival_of_pink
 			kill_leader = {
 				class = official
 				heir = yes
 				show_notification = yes
 			}
-			add_resource = { minerals = 1 }
-			create_leader = {
-				class = commander
-				name = "Yellow Diamond"
-				species = owner_main_species
-				traits = {
-					trait = "trait_ruler_logistic_understanding"
-					trait = "trait_ruler_warlike"
-				}
-			}
-			last_created_leader = {
-				change_leader_portrait = gemD2 #Yellow
-				save_global_event_target_as = gem_heir
-			}
-			set_heir = last_created_leader
-			remove_country_flag = era_one_flag
-			remove_country_flag = era_three_flag
-			remove_country_flag = pink_got_earth
-			set_country_flag = era_two_flag
-			country_event = { id = gem_era.3 days = 21600 random = 3600 }
-			capital_scope = {
-				remove_modifier = pm_grand_court_1
-				add_modifier = { modifier = pm_grand_court_2 }
-			}
+			set_heir = event_target:gem_yellow_diamond
 		}
 		add_resource = { minerals = 1 }
-		add_modifier = { modifier = era_two }
 	}
-	option = {
-		trigger = { has_country_flag = gem_pink_rules }
-		name = "gem_era.2.a"
+
+	after = {
 		hidden_effect = {
-			force_remove_civic = civic_tetrarchy
-			force_add_civic = civic_triarchy
-			remove_modifier = era_one
-			kill_leader = {
-				class = official
-				heir = yes
-				show_notification = yes
-			}
-			add_resource = { minerals = 1 }
-			create_leader = {
-				class = commander
-				name = "Yellow Diamond"
-				species = owner_main_species
-				traits = {
-					trait = "trait_ruler_logistic_understanding"
-					trait = "trait_ruler_warlike"
-				}
-			}
-			last_created_leader = {
-				change_leader_portrait = gemD2 #yellow
-				save_global_event_target_as = gem_heir
-			}
-			set_heir = last_created_leader
+			set_country_flag = era_two_flag
 			remove_country_flag = era_one_flag
 			remove_country_flag = era_three_flag
 			remove_country_flag = pink_got_earth
-			set_country_flag = era_two_flag
 			country_event = { id = gem_era.3 days = 21600 random = 3600 }
-			#country_event = { id = gem_era.2001 days = 1800 random = 1080 }  #Path to White Gestalt currently not active
 			capital_scope = {
 				remove_modifier = pm_grand_court_1
 				add_modifier = { modifier = pm_grand_court_2 }
 			}
+			country_event = { id = gem_era.201 }
 		}
-		add_resource = { minerals = 1 }
+		remove_modifier = era_one
 		add_modifier = { modifier = era_two }
 	}
 	
+}
+
+country_event = {
+	id = gem_era.201
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		remove_country_flag = block_revival_of_pink
+	}
 }
 
 country_event = {

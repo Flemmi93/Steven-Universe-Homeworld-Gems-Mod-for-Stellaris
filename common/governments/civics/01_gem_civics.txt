@@ -21,7 +21,6 @@ civic_tetrarchy = {
 		base = 0
 	}
 	modifier = {
-		empire_size_penalty_mult = -0.25
 		empire_size_pops_mult = -0.1
 		empire_size_colonies_mult = -0.1
 		#pop_ethic_white_attraction_mult = 0.1
@@ -51,7 +50,6 @@ civic_tetrarchy_inv = {
 		base = 0
 	}
 	modifier = {
-		empire_size_penalty_mult = -0.25
 		empire_size_pops_mult = -0.1
 		empire_size_colonies_mult = -0.1
 		#pop_ethic_white_attraction_mult = 0.1

@@ -51,18 +51,12 @@ kindergartener = {
 			planet_amenities_add = 1
 		}
 	}
+
 	weight = {
-		weight = @specialist_job_weight
+		weight = 500
 		modifier = {
-			factor = 100
-			planet = {
-				exists = owner
-				is_geo_empire = yes
-			}		
-		}
-		modifier = {
-			factor = 1.5
-			has_job = kindergartener
+			factor = 10
+			owner = { is_geo_empire = yes }
 		}
 	}
 }

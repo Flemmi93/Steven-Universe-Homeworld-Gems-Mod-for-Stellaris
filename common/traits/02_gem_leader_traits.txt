@@ -94,6 +94,29 @@ trait_pink_court = {
 		job_entertainer_add = 2
 		pop_citizen_happiness = 0.1
 		planet_amenities_add = 10
+	}
+	#triggered_planet_modifier = {
+	#	potential = { has_planet_flag = gem_planet_earth }
+	#	pop_ethic_xenophile_attraction_mult = 0.25
+	#}
+	triggered_planet_modifier = {
+		#potential = { NOT = { has_planet_flag = gem_planet_earth } }
 		pop_ethic_xenophobe_attraction_mult = 0.25
+	}
+}
+trait_pink_court2 = {
+	cost = 0
+	randomized = no
+	sorting_priority = 0
+	icon = "gfx/interface/icons/planet_modifiers/gem_pink_diamond.dds"
+	leader_class = { official }
+	requires_traits = { trait_geoloid }
+	ai_weight = 0
+	selectable_weight = 0
+	planet_modifier = { 
+		job_entertainer_add = 2
+		pop_citizen_happiness = 0.1
+		planet_amenities_add = 10
+		pop_ethic_xenophile_attraction_mult = 0.25
 	}
 }

@@ -17,7 +17,7 @@ country_event = {
 	}
 }
 
-country_event = {
+country_event = { #updating the old planet modifier to the new planetary feature system. change happend between 3.11 and 3.12
 	id = gem_events_misc.002
 	hide_window = yes
 	is_triggered_only = yes

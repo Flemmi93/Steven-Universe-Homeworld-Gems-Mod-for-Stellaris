@@ -556,6 +556,7 @@ country_event = {
 	trigger = {
 		is_geo_empire = yes
 		from = { has_trait = trait_ruler_diamond }
+		NOT = { has_country_flag = block_revival_of_pink }
 	}
 	immediate = {
 		clone_leader = {
@@ -609,6 +610,7 @@ country_event = {
 		else_if = {
 			limit = {
 				from = { has_trait = trait_pink_court }
+				NOT = { owner = { has_modifier = era_one } }
 			}
 			last_created_leader = {
 				remove_all_traits = yes
@@ -628,6 +630,7 @@ country_event = {
 						has_trait = trait_yellow_court
 						has_trait = trait_blue_court
 						has_trait = trait_pink_court
+						NOT = { owner = { has_modifier = era_one } }
 					}
 				}
 			}

@@ -10,10 +10,17 @@ country_event = {
 	hide_window = yes
 	is_triggered_only = yes
 	trigger = {
-		check_variable = { which = gem_road_to_sol value < 4 }
+		is_geo_empire = yes
+		OR = {
+			AND = {
+				num_owned_planets > 6
+				num_pops > 100
+			}
+			num_pops > 200
+			years_passed > partway_to_mid_game_years_var
+		}
 	}
 	immediate = {
-		change_variable = { which = gem_road_to_sol value = 1 }
 		country_event = { id = gem_off_colors.0010 }
 	}
 }
@@ -23,12 +30,7 @@ country_event = {
 	id = gem_off_colors.0010
 	hide_window = yes
 	fire_only_once = yes
-
 	is_triggered_only = yes
-
-trigger = {
-		check_variable = { which = gem_road_to_sol value > 2 } # has to be one lower than id = gem_off_colors.0009 trigger
-	}
 
 	immediate = {
 		set_global_flag = gem_sol_discovered
@@ -699,7 +701,7 @@ planet_event = {
 		name = gem_off_colors.1040.a
 		assign_leader = event_target:gem_pink_diamond
 		event_target:gem_pink_diamond = {
-			add_trait = "trait_pink_court"
+			add_trait = "trait_pink_court2"
 		}
 	}
 	after = {
@@ -1098,6 +1100,7 @@ planet_event = {
 		hidden_effect = {
 			remove_modifier = pm_gem_no_assemble
 			remove_modifier = pm_gem_pink_court
+			owner = { add_modifier = { modifier = gems_pop_demotion_time_reduction days = 30 } }
 		}
 	}
 }

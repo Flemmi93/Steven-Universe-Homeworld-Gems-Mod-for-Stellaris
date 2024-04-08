@@ -247,6 +247,10 @@ gem_invaders = {
 	command_limit_add = 20
 }
 
+gems_pop_demotion_time_reduction = {
+	icon = "gfx/interface/icons/planet_modifiers/gem_galaxy_warp.dds"
+	pop_demotion_time_mult = -10
+}
 ##########################################################################
 # Faction Modifiers
 ##########################################################################

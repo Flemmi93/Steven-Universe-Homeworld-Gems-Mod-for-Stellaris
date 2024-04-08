@@ -7,7 +7,7 @@ country_event = {
 	fire_only_once = yes
 	trigger = {
 		has_country_flag = choose_gem_invasion_cf
-		years_passed > halfway_to_mid_game_years_var
+		years_passed > partway_to_mid_game_years_var
 	}
 	immediate = {
 		set_variable = {

@@ -33,6 +33,7 @@ country_event = {
 			add_deposit = d_galaxy_warp
 			add_building = building_buff_kindergarten2
 		}
+		set_policy = { policy = robot_pop_policy option = robot_pops_outlawed }
 		country_event = { id = GEM_start.1001 }
 		country_event = { id = GEM_start.1002 }
     }
@@ -158,7 +159,7 @@ country_event = {
 	immediate = {
 		get_galaxy_setup_value = {
 			setting = mid_game_year
-			which = halfway_to_mid_game_years_var
+			which = partway_to_mid_game_years_var
 			scale_by = 0.75
 		}
 		

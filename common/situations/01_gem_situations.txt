@@ -383,7 +383,7 @@ gem_1000_year_war = {
 			icon = GFX_situation_stage_1
 			icon_background = GFX_situation_stage_frame_green
 			end = 5
-			modifier = {
+			target_modifier = {
 				#Upside
 				pop_cat_slave_happiness = 0.10
 				pop_cat_worker_happiness = 0.05
@@ -398,7 +398,7 @@ gem_1000_year_war = {
 			icon = GFX_situation_stage_2
 			icon_background = GFX_situation_stage_frame_green
 			end = 15
-			modifier = {
+			target_modifier = {
 				#Upside
 				pop_cat_slave_happiness = 0.15
 				pop_cat_worker_happiness = 0.05
@@ -417,7 +417,7 @@ gem_1000_year_war = {
 			icon = GFX_situation_stage_3
 			icon_background = GFX_situation_stage_frame_yellow
 			end = 25
-				modifier = {
+				target_modifier = {
 				#Upside
 				pop_cat_slave_happiness = 0.15
 				pop_cat_worker_happiness = 0.05
@@ -437,7 +437,7 @@ gem_1000_year_war = {
 			icon = GFX_situation_stage_4
 			icon_background = GFX_situation_stage_frame_yellow
 			end = 40
-			modifier = {
+			target_modifier = {
 				#Upside
 				pop_cat_slave_happiness = 0.15
 				pop_cat_worker_happiness = 0.05
@@ -457,7 +457,7 @@ gem_1000_year_war = {
 			icon = GFX_situation_stage_5
 			icon_background = GFX_situation_stage_frame_orange
 			end = 65
-			modifier = {
+			target_modifier = {
 				#Upside
 				pop_cat_slave_happiness = 0.15
 				pop_cat_worker_happiness = 0.05
@@ -478,7 +478,7 @@ gem_1000_year_war = {
 			icon = GFX_situation_stage_6
 			icon_background = GFX_situation_stage_frame_orange
 			end = 80
-			modifier = {
+			target_modifier = {
 				#Upside
 				pop_cat_slave_happiness = 0.15
 				job_soldier_add = 2
@@ -500,7 +500,7 @@ gem_1000_year_war = {
 			icon = GFX_situation_stage_7
 			icon_background = GFX_situation_stage_frame_red
 			end = 90
-			modifier = {
+			target_modifier = {
 				#Upside
 				pop_cat_slave_happiness = 0.15
 				job_soldier_add = 2
@@ -521,7 +521,7 @@ gem_1000_year_war = {
 			icon = GFX_situation_stage_8
 			icon_background = GFX_situation_stage_frame_red
 			end = 100
-			modifier = {
+			target_modifier = {
 				#Downsides
 				pop_cat_slave_happiness = 0.15
 				pop_citizen_happiness = -0.15

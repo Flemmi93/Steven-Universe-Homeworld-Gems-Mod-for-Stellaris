@@ -58,11 +58,6 @@ trait_pc_gemworld_preference = {
 }
 
 ##################
-# Leader Traits #
-##################
-
-
-##################
 # Species Traits #
 ##################
 
