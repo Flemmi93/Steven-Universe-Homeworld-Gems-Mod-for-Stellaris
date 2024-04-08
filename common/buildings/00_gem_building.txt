@@ -30,7 +30,7 @@ building_gem_spire1 = {
 	
 	planet_modifier = {
 		job_clerk_add = 1
-		planet_amenities_add = 10
+		planet_amenities_add = 8
 	}
 	
 	resources = {
@@ -136,12 +136,14 @@ building_gem_spire3 = {
 			}
 		}
 	}
-
-	planet_modifier = {
+	triggered_planet_modifier = {
+		potential = { owner = { is_geo_empire = yes } }
 		job_noble_add = 1
+	}
+	planet_modifier = {
 		job_culture_worker_add = 2
 		job_clerk_add = 2
-		planet_amenities_add = 14
+		planet_amenities_add = 16
 	}
 	
 	resources = {
@@ -453,7 +455,7 @@ building_buff_kindergarten3 = {
 		}
 		modifier = { # Adjust for Balance
 			job_kindergartener_add = 3
-			planet_amenities_add = 20
+			planet_amenities_add = 16
 			job_roboticist_add = -2
 		}
 	}

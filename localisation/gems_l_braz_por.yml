@@ -1,4 +1,4 @@
-﻿l_english:
+﻿l_braz_por:
 #Diamond Names
  white_diamond: "§WWhite Diamond§!"
  yellow_diamond: "§YYellow Diamond§!"
@@ -13,24 +13,35 @@
  Blue: "§BBlue§!"
  Pink: "§PPink§!"
  Diamond: "Diamond"
+ diamond: "Diamond"
  Diamonds: "Diamonds"
-
+ diamonds: "Diamonds"
+ white_alive: "$white_d$ is alive"
+ yellow_alive: "$yellow_d$ is alive"
+ blue_alive: "$blue_d$ is Alive"
+ pink_alive: "$pink_d$ is alive"
  
- #Ruler Class unused
- diamond_class: "Diamond"
- diamond_class_plural: "Diamonds"
- diamond_class_plural_with_icon: "£minerals£ Diamonds"
- diamond_class_description: "The $diamond_class_plural$ are the perfect beings and as such naturaly the only ones that can rule our Empire."
- diamond_class_with_icon: "£minerals£ Diamond"
+#Ruler Class unused
+ su_diamond_class: "Diamond"
+ su_diamond_class_plural: "Diamonds"
+ su_diamond_class_plural_with_icon: "£minerals£ Diamonds"
+ su_diamond_class_description: "§LThe Diamonds are the perfect beings and as such naturaly the only ones that can rule our Empire§!"
+ su_diamond_class_with_icon: "£minerals£ Diamond"
  councilor_diamond: "Diamond"
  councilor_diamond_desc: "Our Diamond rules form this seat"
+ poofed_gem_class: "Raw Gem"
+ poofed_gem_class_plural: "Raw Gems"
+ poofed_gem_class_desc: "This Gem has lost her Physical form and is now in the process of refroming. This will happen when she is ready."
+ poofed_gem_class_plural_with_icon: "£minerals£ Raw Gems"
+ poofed_gem_class_with_icon: "£minerals£ Raw Gem"
  
- #advisor
+#advisor
  Pearlfiltered: "Pearl with filter"
  Pearl: "Pearl"
  
  GEO: "Geoloid"
  GEO1: "Geoloid"
+ GEO2: "Geoloid"
  GEO_desc: "Species Class has no effect on your Empire, but Geoloid-class Species may consider other Geoloids to be less alien than other Species Classes."
  GEO_plural: "Geoloids"
  GEO_insult_01: "rock"
@@ -48,6 +59,7 @@
  GEO_mouth: "mouth"
  GEO_hand: "hand"
  
+#Initializers
  geoloid_01: "Geoloid"
  geoloid: "Geoloid"
  GEOLOID: "Geoloid"
@@ -61,7 +73,11 @@
  gem_planet_initializer_DESC: "The origin of Gemkind, a fantastic and utopian city-world which hosts the seat of Gem government."
  gem_system_initializer_NAME: "Gem Home System"
  gem_system_initializer_DESC: "The origin of Gemkind, a fantastic and utopian city-world which hosts the seat of Gem government."
- 
+ NAME_Gem_Homeworld: "Luster"
+
+ EMPIRE_gem_invaders: "Homeworld Empire"
+ EMPIRE_gem_invaders_adj: "Radiant Empire"
+
  EMPIRE_DESIGN_gem: "Diamond Authority"
  EMPIRE_DESIGN_gem_desc: "The Great Diamond Authority is a vast interstellar empire, dominated by a race of polymorphic sentient geoloids, known colloquially as 'Gems'. Mysterious in their origins and possessing unusual abilities, it remains uncertain whether the Gem race is a natural product of evolution, a manufactured mechanical construct, a random convergence of quantum energy, or the result of some other unforeseen catalyst. All that is known is their parasitic behavior, invading and conquering worlds to drain the organic energy from its very soil, and use it to grow more of their kind.\n\nThe beauty of their forms and the structures they build hide a bleak and terrible nature, a society built upon the indentured servitude of all Gems to their Diamonds, where all know their place and dare not deviate from it."
  EMPIRE_DESIGN_gem_rogue: "$EMPIRE_DESIGN_gem$"
@@ -72,7 +88,10 @@
  START_SCREEN_GEM: "The work has been completed. Our Homeworld has been transformed and repurposed for all it is capable of, all available resources being put to use for our purposes. The filthy organic life that once existed on it with us is no more, its essence harnessed for us to make use of in growing more of our kind.\n\nDespite our grand accomplishment, more resources are needed to sustain us and keep our numbers strong. The strength of our society and the vision of the Diamonds will guide us to a prosperous future, so long as all do as they are meant for since their emergence. It is this that allowed us to escape our Homeworld, and harness the off-world resources in our own system.\n\nThe time has come now to look to the stars, and find other worlds that we may inhabit and create future generations of Gems. Any organics or other alien foes will fall before our new empire, and we shall easily crush the lower forms of life who dare to oppose our shining greatness!"
  START_SCREEN_PART_ONE_GEM: "In the eons since the first primitive [GetSpeciesName] communities took shape in the sterile and resource-rich landscapes of [GetHomeWorldName], our civilization has spread and prospered."
  
+#traits
  trait_geoloid: "Geoloid"
+ trait_geoloid2: "$trait_geoloid$"
+ trait_geoloid2_desc: "$trait_geoloid_desc$"
  trait_geoloid_desc: "§LThis species is largely enigmatic and unique in its design and function, likely artificial but possessing many traits similar to lithoids despite this.§!\n"
  TRAIT_GEOLOID_EFFECT: "Requires £job_kindergartener£ Kindergarten districts in order to grow new £pops£ Pops\nHabitability: §G+50%§!\n"
  trait_crystal_gems: "Crystal Gem"
@@ -93,7 +112,7 @@
  trait_gem_dormant: "Dormant"
  trait_gem_dormant_desc: "§LGems under this condition have turned inwards, and will never reform their lightform.§!\n"
  trait_ruler_diamond: "Radiance"
- trait_ruler_diamond_desc: "This Gems is simply perfect, a radiant example of gem kind, truly deserving of their leadership position\n\n§RThey can perform any task in the empire§!"
+ trait_ruler_diamond_desc: "This Gems is simply perfect, a radiant example of gem kind, truly deserving of their leadership position."
  
  trait_pc_gem_preference: "Geoform Preference"
  trait_pc_gem_preference_desc: "$trait_pc_arctic_preference_desc$"
@@ -108,28 +127,41 @@
  trait_blue_court_desc: "This is $blue_diamond$'s Court, she brings her entourage where ever she goes, anything else is unthinkable. This large following of Gems however has some distict advantages."
  trait_pink_court: "$pink_diamond$'s Court"
  trait_pink_court_desc: "This is $pink_diamond$'s Court, she brings her entourage where ever she goes, anything else is unthinkable. This large following of Gems however has some distict advantages."
- 
+ trait_pink_court2: "$trait_pink_court$"
+ trait_pink_court2_desc: "$trait_pink_court_desc$"
+ trait_poofed_gem: "Poofed Gem"
+ trait_poofed_gem_desc: "This gem has lost her physical form and needs some times to reform."
+
+#Origin & Civics & Government
  origin_geoform: "Planetary Transformation"
  origin_geoform_desc: "This society has worked tirelessly to transform their home planet into a paradise for their kind, though it may not be a paradise for most other forms of life."
  origin_gem_rebellion: "Gem Rebellion"
  origin_gem_rebellion_desc: "This society of gems has undergone a severe societal change at the hands of a lower-class revolution, toppling the original power structure and establishing a more equal and fair method of governance in its place."
  
+ gem_invaders: "Support from an Empire"
  origin_crystal_gems: "Failed Colony Origin"
  origin_crystal_gems_desc: "§RWIP, but works on a basic level§!\n\nMany thousands of years ago this planet was the target of an intergalactic colonial effort of an advanced alien race. During a hasty war of independence, that went on for 1000 years, many of our people supposedly died too. The colony failed and without their intervention our world would be uninhabitable today. Now only a hand full of the aliens remain and they protect the planet from the corruption their former overlords caused on their brethren and the alien artifacts they lost control over."
- civic_tooltip_crystal_gems_effects: "Start the Game with a single Crystal Gem pop £pops£.\n\Thousands of years ago these Gems where embroiled in a brutal civil war.\n\nTo this day, we are suffering from the consequences of this conflict, but this also could bring new opportunities."
+ civic_tooltip_crystal_gems_effects: "Start the Game with a single Crystal Gem pop £pops£.\n\nThousands of years ago these Gems where embroiled in a brutal civil war.\n\nTo this day, we are suffering from the consequences of this conflict, but this also could bring new opportunities."
  
  civic_tooltip_geoform_effects: "Capital starts as a §YGeoformed World§!\nGain the §Y$trait_geoloid$§! trait, granting:\n  Geoformed World Habitability: §G+100%§!"
  civic_tooltip_gem_rebellion_effects: "Capital starts as a §YGeoformed World§!\nGain the §Y$trait_geoloid$§! trait, granting:\n  Geoformed World Habitability: §G+100%§!"
  civic_tetrarchy: "Tetrarchy"
  civic_tetrarchy_desc: "This society is ruled by four individuals of, in theory, equal status to one another, with each having dominion over a specific court and administrative duty."
+ civic_tetrarchy_inv: "$civic_tetrarchy$"
+ civic_tetrarchy_inv_desc: "$civic_tetrarchy_desc$"
  civic_triarchy: "Triarchy"
  civic_triarchy_desc: "With the shattering of $pink_diamond$, the Tetrarchy has been irrevocably altered. Now only three Diamonds rule the Authority, and our expansive potential has been stunted as a result."
  civic_new_tetrarchy: "Tetrarchy"
  civic_new_tetrarchy_desc: "This society is ruled by four individuals of, in theory, equal status to one another, with each having dominion over a specific court and administrative duty."
  civic_whitearchy: "Shining Perfection"
  civic_whitearchy_desc: "This society is ruled by a single being whose mission it is to preserve and maintain their own view of 'perfection' among their subjects, making all individuals subsumed under their will in rigid and unerring servitude."
- 
- 
+  
+ gov_harmonious_authority: "Harmonious Authority"
+ gov_harmonious_authority_desc: "This government is a unique form of autocracy, with multiple immortal rulers constantly striving to ensure that each of their subjects have a purpose, place, and task to complete with perfect efficiency and competence. The lower castes are expected to follow rigid guidelines and revere their rulers like demigods, else they are eliminated as deviants and traitors. These 'Matriarchs' possess absolute power and are totally free to exercise it without limit across their own administrative realms.\n \n ... §Rfor now.§!"
+ gov_perfect_authority: "Perfect Authority"
+ gov_perfect_authority_desc: "This government is a unique form of gestalt autocracy, with a single immortal ruler forcefully imposing their vision of a perfect society in which each of their subjects have a purpose, place, and task to complete with perfect efficiency and competence. Free will is entirely unheard of."
+ RT_MATRIARCH: "Matriarch"
+#Eras 
  era_one: "Era One"
  era_two_desc: "Our empire is experiencing a period of rapid growth and unprecedented prosperity. We should take advantage of this opportunity to expand and colonize new worlds while it lasts."
  era_two: "Era Two"
@@ -141,12 +173,7 @@
  gem_era.5.desc: "The Era of the Gems is over, their power is broken and now the empire is rules by lesser gems"
  gem_era.5.a: "§WI'll be back§!"
  
- gov_harmonious_authority: "Harmonious Authority"
- gov_harmonious_authority_desc: "This government is a unique form of autocracy, with multiple immortal rulers constantly striving to ensure that each of their subjects have a purpose, place, and task to complete with perfect efficiency and competence. The lower castes are expected to follow rigid guidelines and revere their rulers like demigods, else they are eliminated as deviants and traitors. These 'Matriarchs' possess absolute power and are totally free to exercise it without limit across their own administrative realms.\n \n ... §Rfor now.§!"
- gov_perfect_authority: "Perfect Authority"
- gov_perfect_authority_desc: "This government is a unique form of gestalt autocracy, with a single immortal ruler forcefully imposing their vision of a perfect society in which each of their subjects have a purpose, place, and task to complete with perfect efficiency and competence. Free will is entirely unheard of."
- RT_MATRIARCH: "Matriarch"
-
+#Kindergarten
  d_kindergarten_small: "Small Kindergarten Site"
  d_kindergarten_small_desc: "A fertile and malleable location of minimal size, decently suited for Kindergarten development."
  d_kindergarten_med: "Standard Kindergarten Site"
@@ -157,6 +184,10 @@
  d_space_mining_desc: "There are a lot of exploitable Asteroids nearby"
  d_homeworld_special: "Radiant Homeworld"
  d_homeworld_special_desc: "Our Homeworld is the heart of out Empire, all expansions serves to better it.\n\nThis Planet was carefully developed and designed for millenia."
+ d_galaxy_warp: "Galaxy Warp"
+ d_galaxy_warp_desc: "This construct enables our people to near instantly travel across the galaxy"
+ d_galaxy_warp_damaged: "$d_galaxy_warp$"
+ d_galaxy_warp_damaged_desc: "$d_galaxy_warp_desc$\n\nAll it takes it time to clean the site up and make it a nice thing to look at."
  district_kindergarten: "Kindergarten"
  district_kindergarten_desc: "§LMassive structures dug out of the surface of the planet. Kindergartens extract minerals and nutrients from the surrounding environment to create brand new Gems. The Gems emerge from their holes in the Kindergarten walls fully conscious and ready to serve their purpose.§!\n§RThese districts cannot be demolished after being built§!"
  district_kindergarten2: "$district_kindergarten$"
@@ -166,14 +197,21 @@
  mod_district_kindergarten2_max: "$mod_district_kindergarten_max$" 
  job_kindergartener: "Kindergartener"
  job_kindergartener_plural: "Kindergarteners"
+ job_kindergartener_growth: "$job_kindergartener$"
+ job_kindergartener_growth_plural: "$job_kindergartener_plural$"
  job_kindergartener_desc: "The growing of new gems is a very precise science, one that only specially-trained Kindergarteners can do with any hope of producing ideal results."
  job_kindergartener_effect_desc: "£job_kindergartener£ $job_kindergartener_plural$ increase £mod_pop_assembly_speed£ §Y$MOD_POP_ASSEMBLY_SPEED$§! and produce £unity£ §E§H$unity$§!"
+ job_kindergartener_growth_desc: "$job_kindergartener_desc$"
  mod_job_kindergartener_add: "$job_kindergartener$ Jobs"
+ mod_job_kindergartener_growth_add: "$mod_job_kindergartener_add$"
  mod_planet_jobs_food_upkeep_mult: "Food Upkeep"
  job_kindergartener_drone: "$job_kindergartener$"
  job_kindergartener_drone_plural: "$job_kindergartener_plural$"
  job_kindergartener_drone_desc: "$job_kindergartener_desc$"
+ d_kindergarten_blocker: "Kindergarten Ruins"
+ d_kindergarten_blocker_desc: "This Ancient structure is a plight on this world. A scare dug into the landscape by a terrifying species. they Consume life itself and obtain magic like abilities. Fixing this, will be costly."
  
+#Decisions
  decision_create_kindergarten_small: "Establish Small Kindergarten Site"
  decision_create_kindergarten_small_desc: "Efforts will be undertaken to make use of the planet's organic nutrients and minerals for the growth and development of new gems. To this end, a Kindergarten site of minimal size and scale will be excavated, after which we may construct injectors to seed the site and assign gems to oversee the growth process."
  decision_create_kindergarten_med: "Establish Kindergarten Site"
@@ -193,9 +231,7 @@
  decision_kindergarten_large_requirements: "Abundant quantities of nutrient-rich soil are required for any large-scale £job_kindergartener£ §YKindergarten§! site to be capable of producing new gems."
  decision_gemcology_project_requirements: "All £food£ §YAgriculture§! deposits on this world must have first been converted into £job_kindergartener£ §YKindergarten§! sites."
  
-#Deposites
- d_kindergarten_blocker: "Kindergarten Ruins"
-
+#Politics
  living_standard_gem: "Purposeful Creation"
  living_standard_gem_tooltip: "$living_standard_gem$ means that every gem is created with a purpose to serve the order of the Diamonds.\n\n$GEM_LIVING_STANDARDS_POP_EFFECTS$\n\n$UNEMPLOYED_REDUCED_HAPPINESS$"
  living_standard_gem_tooltip_delayed: "§LThere is no point in wanting any change.§!"
@@ -253,6 +289,7 @@
  mod_pop_ethic_blue_attraction_mult: "Attraction to $blue_diamond$"
  mod_pop_ethic_pink_attraction_mult: "Attraction to $pink_diamond$"
  
+#Planet Classes
  pc_gem: "Geoformed World"
  pc_gemworld: "$pc_gem$"
  pc_gem_desc: "Rocky world with a nitrogen-oxygen atmosphere. No traces of biological life can be found whatsoever on this planet, and it appears as though it has been altered considerably by its inhabitants for a specific purpose."
@@ -274,11 +311,12 @@
  col_gem_default: "$col_default$"
  col_gem_default_desc: "$col_default_desc$"
 
+#Techs
  tech_gem_terraforming: "Geoforming"
  tech_gem_terraforming_desc: "Allows for the complete terraforming of a planet into a Geoformed world to replicate conditions on Homeworld. Geoformed worlds will have a higher potential for Gem creation, as the planets organic resources can be used more efficiently in artificial kindergartens."
  requires_technology_tech_terrestrial_sculpting: "$TRIGGER_FAIL$Requires the £society£ §Y$tech_terrestrial_sculpting$§! technology."
  
- #Buildings
+#Buildings
  building_gem_spire1: "Spire"
  building_gem_spire1_desc: "The foundation for a spire "
  building_gem_spire2: "Tall Spire"
@@ -286,14 +324,18 @@
  building_gem_spire3: "Monumental Spire"
  building_gem_spire3_desc: "This mighty construct reaches into the sky connecting our gems with the rest of gemkind."
  building_buff_kindergarten1: "Experiemental Kindergarten"
- building_buff_kindergarten1_desc: "We are testing different Methods to grow Gems on this world. We can expand this site."
+ building_buff_kindergarten1_desc: "We are testing different Methods to grow Gems on this world. We can expand this site.$building_buff_warning$"
  building_buff_kindergarten2: "Kindergarden Coordination Center"
- building_buff_kindergarten2_desc: "In addition to improving our Gem creation we are also coordinating each Kindergarden for improved performance."
+ building_buff_kindergarten2_desc: "In addition to improving our Gem creation we are also coordinating each Kindergarden for improved performance.$building_buff_warning$"
  building_buff_kindergarten3: "Kindergarden Managment Complex"
- building_buff_kindergarten3_desc: "All Kindergardens on this planet are being coordianted and managed for maximum efficiency."
- building_crystal_gem_temple: "Crystal Gem Temple"
+ building_buff_kindergarten3_desc: "All Kindergardens on this planet are being coordianted and managed for maximum efficiency.$building_buff_warning$"
+ building_buff_warning: "\n\n§RRemoves Robotist Jobs to avoid conflict, Organic and Mechanical Pop assembly are incompatible§!" 
+building_crystal_gem_temple: "Crystal Gem Temple"
  building_crystal_gem_temple_desc: "The Temple is the statue of a gigantic 8 armed woman carved into the side of a cliff in an idyllic little beach town. The §l$crystal_gems$§! live here in their enigmatic ways."
+ building_gem_sky_arena: "Sky Arena"
+ building_gem_sky_arena_desc: "This Arena floats between the clouds, a marvel of gem-engineering. Combatants of all stripes can test their metal here."
  
+#Events
  gem_era.4.name: "Era of $white_diamond$"
  gem_era.4.desc: "All are one. All are perfect and harmonious!"
  gem_era.1.name: "Era One"
@@ -314,6 +356,11 @@
  gem_era.2001.a.tooltip: "Her Military might will crush our foes: \n$yellow_traits_desc$"
  gem_era.2001.b: "$blue_d$"
  gem_era.2001.b.tooltip: "Her empathy will heal the wounds of our people: \n$blue_traits_desc$"
+
+ GEM_start.1005.name: "Gem Invasion"
+ GEM_start.1005.desc: "Do you Want the Gem Empire to invade this Galaxy as a Crisis during the midgame?."
+ gem_start.1005.c: "make it random"
+ gem_start.1005.c.desc: "There is a §Y50%§! Chance it will happen."
 
  gem_kg.2.name: "This is a §RTutorial§!"
  old_gem_kg.2.desc: "§WThere is a decision on any colonized planet with §GFarming Deposits§W £food£ to turn the §GFarming Deposits§W £food£ into §MKindergarten deposits§W £pops£.\n\nFurthermore there are several §Gadditional §YDecisions§W in this mod. For Example, you can §Gassign§! what §WDi§Yam§Bon§Pd§W controlls what planet.\n\nThere is also a Special Project in the Situation log."
@@ -343,7 +390,12 @@
  pink_is_ready4: "$pink_d$ wouldn't cut it"
  pink_is_ready5: "$pink_d$ is too young"
  gem_diamond_choice.d.unready: "$pink_d$ has a long way ahead of her to get her own colony."
-
+ gem_diamond_ruler.99.name: "[Leader.GetName] returns"
+ gem_diamond_ruler.99.desc: "[Leader.GetName] has reformed and is returning to her normnal duties.\n\nAll is well."
+ gem_diamond_ruler.100.name: "[FROM.Leader.GetName] got poofed"
+ gem_diamond_ruler.100.desc: "The unthinkable has happed, and soon we will make it unhappen. For now we must suffer the indignity of waiting for her return."
+ gem_diamond_ruler.101.name: "[FROM.Leader.GetName] went into seclusion"
+ gem_diamond_ruler.101.desc: "For her own reason [FROM.Leader.GetName] decided to retreat to her private chambers, she will return to us in her own time. We can only hope it wont be too long."
  
  
  gem_new_features: "New Features!"
@@ -362,7 +414,6 @@
  gem_diamond_traits.0041.desc: "$pink_diamond$'s traits"
  diamond_trait_change_project: "Change [Root.Leader.GetName]'s Traits"
  diamond_trait_change_project_desc: "[Root.Leader.GetName] Can retreat to her chamber and meditate, as a Diamond she can present different aspects of herself as she incumbers many forms."
- 
  
  reassign_court: "Assign Diamond Court"
  reassign_court_desc: "To no fault of the current ruling Diamond this world needs to be controlled by another Diamond."
@@ -389,7 +440,7 @@
  gem_rebellion.1.b: "'Tis only but a scratch!"
  gem_rebellion.1.c: "Just kick in the door and the whole structure comes crumbling down!"
  
- #Off-Colors Events including the 1000 year War
+#Off-Colors Events including the 1000 year War
  gem_off_colors.1.name: "'Off-Color' Dissidence"
  gem_off_colors.1.desc: "A lawless cadre of defective and unwanted gems has begun to make their presence known on our worlds. Investments should be made to ensure that these renegades are crushed as soon as possible."
  gem_off_colors.1.a: "Uncouth deviants!"
@@ -406,25 +457,38 @@
  gem_off_colors.2009.desc: "Having regained contact with $pink_diamond$ we also made contact with the Species she protected for so long.\n\nWe can interact with Planet Earth once more."
  gem_off_colors.0020.name: "A World for $pink_d$"
  gem_off_colors.0020.desc: "We discovered a world that would be ideal for $pink_diamond$ it is nearby our Homeworld in the §YSol§! system."
+
+#Misc Events
+ gem_events_misc.001.name: "Cookie Cats"
+ gem_events_misc.001.desc: "We found a frozen treat with an all new taste\n\nAnd as far as we know, this is the only source in the Universe."
+ gem_events_misc.001.a: "We should harvest and distribute them"
+
+#Planet Modifiers
  pm_off_colors: "Off-Colors"
  pm_off_colors_desc: "A lawless cadre of defective and unwanted gems has begun to make their presence known on this world."
  pm_gem_white_court: "$whitefaction$"
  pm_gem_yellow_court: "$yellowfaction$"
  pm_gem_blue_court: "$bluefaction$"
  pm_gem_pink_court: "$pinkfaction$"
+ pm_gem_pink_court_desc: "$pink_diamond$ is a free spirit, she tries to avoid being tied down by her own court and travels with a light entourage."
  pm_gem_white_court2: "$whitefaction$"
  pm_gem_yellow_court2: "$yellowfaction$"
  pm_gem_blue_court2: "$bluefaction$"
  pm_gem_pink_court2: "$pinkfaction$"
  pm_gem_galaxy_warp: "Galaxy Warp"
  pm_gem_galaxy_warp_desc: "This construct enables our people to near instantly travel across the galaxy"
+ pm_gem_galaxy_warp_invasion: "$pm_gem_galaxy_warp$"
+ pm_gem_galaxy_warp_invasion_desc: "$pm_gem_galaxy_warp_desc$"
  pm_blue_visits: "Visited by $blue_diamond$"
  pm_yellow_visits: "Visited by $yellow_diamond$"
  pm_pink_celebration: "Big Party for $pink_d$"
  pm_pink_celebration_desc: "$pink_diamond$ has been so happy lately, she is playing and partying with her gems and isn't even thinking about her colony, for now."
+ pm_gem_cookie_cats: "Cookie Cats"
  
  galaxy_warp: "Construct $pm_gem_galaxy_warp$"
  galaxy_warp_desc: "$pm_gem_galaxy_warp_desc$"
+ gems_pop_demotion_time_reduction: "Retreat from Earth"
+ gems_pop_demotion_time_reduction_desc: "Many Gems Fled Earth, and now have to find new work in the Empire."
  gem_diamond_choice.a.dead: "$white_diamond$ is no longer with us."
  gem_diamond_choice.b.dead: "$yellow_diamond$ is no longer with us."
  gem_diamond_choice.c.dead: "$blue_diamond$ is no longer with us."
@@ -437,9 +501,14 @@
  gem_defense_army: " $defense_army$"
  crystal_gem_army2: " $NAME_crystal_gem_army$"
  gem_defense_army2: " $defense_army$"
+ crystal_gem_army3: " $NAME_crystal_gem_army$"
+ gem_defense_army3: " $assault_army$"
  gems_lost_earth: "Abandoned World"
  gems_lost_earth_desc: "This world is a black mark in our collective memory, we do no wish to settle here."
- #Gem Rebellion Events, included 1000 (10-20) year war
+ gem_events_misc.004.name: "Crystal Gems refuse"
+ gem_events_misc.004.desc: "The Crystal Gems refuse to board a colony ship. Being unable or unwilling to Create more Gems leaves us with no option."
+
+#Gem Rebellion Events, included 1000 (10-20) year war
  gem_off_colors.1010.name: "Production above expectations"
  gem_off_colors.1010.desc: "Recent reports from §Y[This.GetName]§! have shown Rose Quartz Gem £pops£ Production is above previously expected levels."
  gem_off_colors.1019.name: "Protests Escalate"
@@ -514,6 +583,17 @@
  gem_off_colors.1056.name: "The flames of war rage once more"
  gem_off_colors.1056.desc: "For a brief moment we thought to have defeated the Crystal Gems but they are back and even some of our defenders have joined them."
  gem_off_colors.1056.a: "§PShe§! attacked what!?"
+ #lapis story 
+ Lapis_Lazuli: "§BLapis Lazuli§!"
+ gem_off_colors.1060.name: "Wartime Reporting"
+ gem_off_colors.1060.desc: "Unconfirmed reports from §Y[This.GetName]§! are worrisome. We are sending a $Lapis_Lazuli$ to investigate and document any instances she can find."
+ gem_off_colors.1061.name: "Warcrimes on §Y[This.GetName]§!"
+ gem_off_colors.1061.desc: "The §RCrystal Gems§! are out of control, they are attacking soldiers and civilians alike. Is nobody save from their wrath?"
+ gem_off_colors.1062.name: "We have captured a Spy"
+ gem_off_colors.1062.desc: "She used a very cunning strategy. By disguising herself as a civilian casualty she hoped of being transfered from §Y[This.GetName]§! to §Y[Owner.Capital.GetName]§! but we have captured her.\n\nShe is being interogated as we speak."
+ gem_off_colors.1063.name: "Pointles Questions"
+ gem_off_colors.1063.desc: "We have interogated the $Lapis_Lazuli$ Gem quite a bit. But we have gotten no useful intel. A dead end."
+
  gem_off_colors.2002.name: "Full Evacuation of §Y[This.GetName]§!"
  gem_off_colors.2002.desc: "a full retreat of all Diamond aligned Gems has been ordered.\n\nall Pops from £pops£ §Y[This.GetName]§! will be distriputed across the empire."
  gem_off_colors.2002.a: "none will be left behind"
@@ -537,33 +617,10 @@
  pm_grand_court_1_desc: "The Grand Court on Homeworld is the primary home of our Diamonds"
  pm_grand_court_2: "$pm_grand_court_1$"
  pm_grand_court_2_desc: "$pm_grand_court_1_desc$"
- #
- white_alive: "$white_d$ is alive"
- yellow_alive: "$yellow_d$ is alive"
- blue_alive: "$blue_d$ is Alive"
- pink_alive: "$pink_d$ is alive"
  pink_got_earth: "$pink_d$ is busy on earth"
  approach_lost_controll: "We lost control of the Situation"
  
- #Diamon ascention events
- gem_diamond_ascention.1101.name: "$white_diamond$'s Ascention"
- gem_diamond_ascention.1101.desc: ""
- gem_diamond_ascention.1102.desc: ""
- gem_diamond_ascention.1103.desc: ""
- gem_diamond_ascention.1201.name: "$yellow_diamond$'s Ascention"
- gem_diamond_ascention.1201.desc: ""
- gem_diamond_ascention.1202.desc: ""
- gem_diamond_ascention.1203.desc: ""
- gem_diamond_ascention.1301.name: "$blue_diamond$'s Ascention"
- gem_diamond_ascention.1301.desc: ""
- gem_diamond_ascention.1302.desc: ""
- gem_diamond_ascention.1303.desc: ""
- gem_diamond_ascention.1401.name: "$pink_diamond$'s Ascention"
- gem_diamond_ascention.1401.desc: ""
- gem_diamond_ascention.1402.desc: ""
- gem_diamond_ascention.1403.desc: ""
- 
- #Situations
+#Situations
  pink_situation: "$pink_d$'s Mood"
  pink_situation_type: "$pink_d$'s Mood£happiness£"
  pink_situation_desc: "$pink_d$'s mood is good for now but it isn't stable, her mood can go up and down depending on what is happening to her or in the empire at large."
@@ -573,7 +630,11 @@
  pink_situation_complete_desc: "Pink Complete description"
  gem_sit_nothing_happens: "Nothing is happening"
  gem_sit_something_happens: "Something is happening"
- 
+ pink_diamond_got_poofed: "$pink_diamond$ is reforming"
+ white_diamond_got_poofed: "$white_diamond$ is reforming"
+ yellow_diamond_got_poofed: "$yellow_diamond$ is reforming"
+ blue_diamond_got_poofed: "$blue_diamond$ is reforming"
+
 #1000 year war
  gem_1000_year_war: "Crystal Gem Rebellion"
  gem_1000_year_war_name: "$START_SITUATION_EFFECT$the §Y[Planet.GetName] Rebellion§!"
@@ -594,7 +655,7 @@
  approach_destroy_crystal_gems_tooltip2:"We will §YBouble§! the $crystal_gems$ to the last!"
  approach_destroy_crystal_gems_tooltip3:"We will §Wwhipe§! the $crystal_gems$'s midns. They will serve once more"
 
- 
+#ascension events #unused
  white_ascencion_situation: "The accension of $white_diamond$"
  white_ascencion_situation_type: "The accension of $white_diamond$"
  white_ascencion_situation_desc: "Having spend millenia contemplating existance $white_d$ has found a path to advance herself to an even higher form of existance."
@@ -616,6 +677,23 @@
  blue_ascended_flag: "$blue_d$ ascended"
  pink_ascended_flag: "$pink_d$ ascended"
  
+ gem_diamond_ascention.1101.name: "$white_diamond$'s Ascention"
+ gem_diamond_ascention.1101.desc: ""
+ gem_diamond_ascention.1102.desc: ""
+ gem_diamond_ascention.1103.desc: ""
+ gem_diamond_ascention.1201.name: "$yellow_diamond$'s Ascention"
+ gem_diamond_ascention.1201.desc: ""
+ gem_diamond_ascention.1202.desc: ""
+ gem_diamond_ascention.1203.desc: ""
+ gem_diamond_ascention.1301.name: "$blue_diamond$'s Ascention"
+ gem_diamond_ascention.1301.desc: ""
+ gem_diamond_ascention.1302.desc: ""
+ gem_diamond_ascention.1303.desc: ""
+ gem_diamond_ascention.1401.name: "$pink_diamond$'s Ascention"
+ gem_diamond_ascention.1401.desc: ""
+ gem_diamond_ascention.1402.desc: ""
+ gem_diamond_ascention.1403.desc: ""
+ 
  ap_diamond_ascention: "Ascension of Diamonds"
  ap_diamond_ascention_desc: "The Diamonds are clearly superior beings to all other gems, it is only appropriate that additional resources are diverted to their own personal growth."
  ap_diamond_ascention_tooltip: "We will prepare a special project to enhance our Diamonds"
@@ -630,7 +708,17 @@
  blue_ascencion_situation_monthly_change_tooltip: "$stuation_monthly_change_tooltip_little_control$"
  pink_ascencion_situation_monthly_change_tooltip: "$stuation_monthly_change_tooltip_little_control$"
  
- #Arc Sites for Ascention
+#Gem Invasion
+ gem_gal_invasion.006.name: "Xeno Structure Found"
+ gem_gal_invasion.006.desc: "We found a strange structure on §Y[Planet.GetName]§! We hesitate to call it alien, as it could be left by some ancient native civilisation.\n\nWe have some options on how to proceed."
+ gem_gal_invasion.006.a: "Studiy it"
+ gem_gal_invasion.006.a.desc: "The Structure will remain undamaged. This could slow down research"
+ gem_gal_invasion.006.b: "Take a Sample"
+ gem_gal_invasion.006.b.desc: "The Structure will be slightly dmaaged. But having a piece of it, could speed up our research"
+ gem_gal_invasion.006.c: "Take it apart"
+ gem_gal_invasion.006.c.desc: "The structure will be destroyed. Whatever it is, its propably valuable"
+
+#Arc Sites for Ascention
  white_ascention_dig_site: "Designated dig site"
  white_ascention_dig_site_desc: "$white_d$ suspects something here, we have to unearth whatever it is."
  yellow_ascention_dig_site: "Designated dig site"
@@ -643,18 +731,18 @@
  yellow_ascencion_situation_monthly_change_tooltip: ""
  blue_ascencion_situation_monthly_change_tooltip: ""
  pink_ascencion_situation_monthly_change_tooltip: ""
- #Relicts
+#Relicts
  white_part_relict: "White Shard"
  yellow_part_relict: "Yellow Shard"
  blue_part_relict: "Blue Shard"
  pink_part_relict: "Pink Shard"
- #describes the effects of the diamonds traits
+#describes the effects of the diamonds traits
  white_traits_desc: "§Y$trait_ruler_architectural_sense$\n§G-10% §W$mod_planet_structures_cost_mult$\n§G+10% §W$MOD_PLANET_BUILDING_TIME_MULT$\n§Y$trait_ruler_world_shaper$\n§G+25% §W$MOD_COUNTRY_TERRAFORM_SPEED_MULT$\n§G-15% §W$MOD_COUNTRY_CLEAR_BLOCKER_COST_MULT$"
  yellow_traits_desc: "§Y$trait_ruler_logistic_understanding$\n§G-5% §W$mod_ships_upkeep_mult$\n§G-10% §W$mod_armies_upkeep_mult$\n§Y$trait_ruler_warlike$\n§G+5% §W$MOD_SHIP_WEAPON_DAMAGE$\n§G+10% §W$MOD_ARMY_DAMAGE_MULT$"
  blue_traits_desc: "§Y$trait_ruler_eye_for_talent$\n§G+1 §W$MOD_LEADER_SKILL_LEVELS$\n§G+20% §W$MOD_LEADER_SPECIES_EXP_GAIN$\n§Y$trait_ruler_home_in_the_sky$\n§G-20% §W$mod_starbase_modules_cost_mult$\n§G-10% §W$MOD_STARBASE_UPGRADE_COST_MULT$"
  pink_traits_desc: "§Y$trait_ruler_champion_of_the_people$\n§G+5% §W$HAPPINESS_LABEL$\n§Y$trait_ruler_explorer$\n§G-25% §W$mod_ship_science_cost_mult$\n§G+33% §W$MOD_SHIP_ANOMALY_RESEARCH_SPEED$"
   
- #unused ethical localization, just so they dont show up in the error logs
+#unused ethical localization, just so they dont show up in the error logs
  suppressed_whiteethic: "Supress Faction"
  promoted_whiteethic: "Promote Faction"
  suppressed_yellowethic: "Supress Faction"
@@ -665,9 +753,10 @@
  promoted_pinkethic: "Promote Faction"
  Back: "Back"
  
- #Ship/Fleet Names
+#Ship/Fleet Names
  GEM1_xxSTELLARCLUSTER_ORD: "$O$ Gem Armada"
- #Army names
+
+#Army names
  GEM1_xxDEFENSECONTINGENT_ORD: "$O$ Ruby Guard"
  GEM1_xxBATTLEPHALANX_ORD: "$O$ Ruby Battalion"
  GEM1_xxSERFCONTINGENT_ORD: ""$O$ Native Slave group"
@@ -684,7 +773,7 @@
  GEM1_INDUSTRIALARMYxx_SEQ: "Industrial Army $C$"
  GEM1_POSTATOMICARMYxx_SEQ: "Post-Atomic Army $C$"
  
- ######### Prescripted Names
+######### Prescripted Names
  NAME_Gem_System: "Gem Home System"
  NAME_Luster: "Luster"
  NAME_Homeworld: "Homeworld"
@@ -702,3 +791,11 @@
  PRESCRIPTED_ruler_name_gemwhite: "White Diamond"
  PRESCRIPTED_ruler_title_gem: "Matriarch"
  PRESCRIPTED_heir_title_gem: "Matriarch"
+
+#misc
+ mod_GEOLOID_pop_growth_speed: "Geoloid Pop Growth Speed"
+ mod_GEOLOID_pop_growth_speed_desc: "This value affects the speed at which new Geoloid Pops are grown."
+ mod_country_base_physics_research_produces_add: "Monthly £physics£ Physics Research:"
+ mod_country_base_society_research_produces_add: "Monthly £society£ Society Research:"
+ mod_country_base_engineering_research_produces_add: "Monthly £engineering£ Engineering Research:"
+ mod_country_base_minor_artifacts_produces_add: "Monthly Minor Artifacts"

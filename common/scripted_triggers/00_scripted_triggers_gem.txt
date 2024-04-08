@@ -4,6 +4,7 @@
 # scope: country, from: upgraded from species (optional)
 
 is_geo_empire = {
+	owner = { NOT = { has_origin = origin_crystal_gems } }
 	owner_species = {
 		has_trait = trait_geoloid
 	}

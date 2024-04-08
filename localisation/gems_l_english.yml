@@ -187,7 +187,7 @@
  d_galaxy_warp: "Galaxy Warp"
  d_galaxy_warp_desc: "This construct enables our people to near instantly travel across the galaxy"
  d_galaxy_warp_damaged: "$d_galaxy_warp$"
- d_galaxy_warp_damaged_desc: "$d_galaxy_warp_desc$"
+ d_galaxy_warp_damaged_desc: "$d_galaxy_warp_desc$\n\nAll it takes it time to clean the site up and make it a nice thing to look at."
  district_kindergarten: "Kindergarten"
  district_kindergarten_desc: "§LMassive structures dug out of the surface of the planet. Kindergartens extract minerals and nutrients from the surrounding environment to create brand new Gems. The Gems emerge from their holes in the Kindergarten walls fully conscious and ready to serve their purpose.§!\n§RThese districts cannot be demolished after being built§!"
  district_kindergarten2: "$district_kindergarten$"
@@ -209,6 +209,7 @@
  job_kindergartener_drone_plural: "$job_kindergartener_plural$"
  job_kindergartener_drone_desc: "$job_kindergartener_desc$"
  d_kindergarten_blocker: "Kindergarten Ruins"
+ d_kindergarten_blocker_desc: "This Ancient structure is a plight on this world. A scare dug into the landscape by a terrifying species. they Consume life itself and obtain magic like abilities. Fixing this, will be costly."
  
 #Decisions
  decision_create_kindergarten_small: "Establish Small Kindergarten Site"
