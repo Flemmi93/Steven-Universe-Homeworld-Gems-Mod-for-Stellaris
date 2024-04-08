@@ -1309,8 +1309,8 @@ planet_event = {
 		add_building = building_stone_palace
 		#solar_system = { owner = { establish_communications_no_message = last_created_country } }
 		last_created_country = { save_global_event_target_as  = new_earth_civilisation_w_cg }
-	owner = {
-		create_leader = {
+		owner = {
+			create_leader = {
 				class = commander
 				name = "Rose Quartz"
 				species = root.solar_system.owner.species
@@ -1319,6 +1319,7 @@ planet_event = {
 			}
 		}
 		last_created_leader = {
+			add_skill = 8
 			change_leader_portrait = gemD6 #Rose
 			save_global_event_target_as = gem_rose_diamond
 		}
@@ -1327,16 +1328,21 @@ planet_event = {
 				class = commander
 				name = "Pearl"
 				species = root.solar_system.owner.species
-			traits = {
+				traits = {
+					trait = leader_trait_dreaded_2
+					trait = leader_trait_crusader_2
+					trait = leader_trait_supreme_warrior
+					trait = subclass_commander_general
 				}
 			}
 		}
 		
 		last_created_leader = {
+			add_skill = 7
 			change_leader_portrait = gemP8 #Crystal Gem Pearl
 			save_global_event_target_as = gem_crystalgem_pearl
 		}
-		#assign_leader = last_created_leader
+		assign_leader = event_target:gem_rose_diamond
 		create_army = {
 			name = "NAME_crystal_gem_army"
 			owner = root.owner
@@ -1365,8 +1371,27 @@ country_event = { #Bronze Age -> Iron Age
 	is_triggered_only = yes
 	immediate = {
 		remove_country_flag = recently_advanced
-		country_event = { id = preftl.299 }
+		random_situation = { add_situation_progress = 3000 }
 		country_event = { id = gem_off_colors.2006 days = 720 random = 360 }
+		capital_scope = {
+			set_variable = { which = earth_pop_buildup value = 6}
+			if = {
+				limit = {
+					num_pops < earth_pop_buildup
+				}
+				subtract_variable = { which = earth_pop_buildup value = trigger:num_pops }
+				while = {
+					count = earth_pop_buildup
+					create_pop = {
+						species = event_target:gem_human_species
+					}
+				}
+			}
+			if = {
+				limit = { NOT = { has_building = building_crystal_gem_temple } }
+				add_building = building_crystal_gem_temple
+			}
+		}
 	}
 }
 country_event = { #Iron Age -> Medieval Age
@@ -1375,8 +1400,27 @@ country_event = { #Iron Age -> Medieval Age
 	is_triggered_only = yes
 	immediate = {
 		remove_country_flag = recently_advanced
-		country_event = { id = preftl.399 }
-		country_event = { id = gem_off_colors.2007 days = 720 random = 360  }
+		random_situation = { add_situation_progress = 3000 }
+		country_event = { id = gem_off_colors.2007 days = 720 random = 360 }
+		capital_scope = {
+			set_variable = { which = earth_pop_buildup value = 7}
+			if = {
+				limit = {
+					num_pops < earth_pop_buildup
+				}
+				subtract_variable = { which = earth_pop_buildup value = trigger:num_pops }
+				while = {
+					count = earth_pop_buildup
+					create_pop = {
+						species = event_target:gem_human_species
+					}
+				}
+			}
+			if = {
+				limit = { NOT = { has_building = building_crystal_gem_temple } }
+				add_building = building_crystal_gem_temple
+			}
+		}
 	}
 }
 country_event = { #Medieval Age -> Renaissance Age
@@ -1385,8 +1429,27 @@ country_event = { #Medieval Age -> Renaissance Age
 	is_triggered_only = yes
 	immediate = {
 		remove_country_flag = recently_advanced
-		country_event = { id = preftl.499 }
-country_event = { id = gem_off_colors.2008 days = 720 random = 360  }
+		random_situation = { add_situation_progress = 3000 }
+		country_event = { id = gem_off_colors.2008 days = 720 random = 360 }
+		capital_scope = {
+			set_variable = { which = earth_pop_buildup value = 9}
+			if = {
+				limit = {
+					num_pops < earth_pop_buildup
+				}
+				subtract_variable = { which = earth_pop_buildup value = trigger:num_pops }
+				while = {
+					count = earth_pop_buildup
+					create_pop = {
+						species = event_target:gem_human_species
+					}
+				}
+			}
+			if = {
+				limit = { NOT = { has_building = building_crystal_gem_temple } }
+				add_building = building_crystal_gem_temple
+			}
+		}
 	}
 }
 country_event = { #Renaissance Age -> Steam Age 
@@ -1395,7 +1458,88 @@ country_event = { #Renaissance Age -> Steam Age
 	is_triggered_only = yes
 	immediate = {
 		remove_country_flag = recently_advanced
-		country_event = { id = preftl.599 }
+		random_situation = { add_situation_progress = 3000 }
+		country_event = { id = gem_off_colors.2011 days = 720 random = 360 }
+		capital_scope = {
+			set_variable = { which = earth_pop_buildup value = 12}
+			if = {
+				limit = {
+					num_pops < earth_pop_buildup
+				}
+				subtract_variable = { which = earth_pop_buildup value = trigger:num_pops }
+				while = {
+					count = earth_pop_buildup
+					create_pop = {
+						species = event_target:gem_human_species
+					}
+				}
+			}
+			if = {
+				limit = { NOT = { has_building = building_crystal_gem_temple } }
+				add_building = building_crystal_gem_temple
+			}
+		}
+		solar_system = { owner = { establish_communications = event_target:new_earth_civilisation_w_cg } }
+	}
+}
+country_event = { #Steam Age -> Industrial Age 
+	id = gem_off_colors.2011
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		remove_country_flag = recently_advanced
+		random_situation = { add_situation_progress = 3000 }
+		country_event = { id = gem_off_colors.2012 days = 720 random = 360 }
+		capital_scope = {
+			set_variable = { which = earth_pop_buildup value = 16}
+			if = {
+				limit = {
+					num_pops < earth_pop_buildup
+				}
+				subtract_variable = { which = earth_pop_buildup value = trigger:num_pops }
+				while = {
+					count = earth_pop_buildup
+					create_pop = {
+						species = event_target:gem_human_species
+					}
+				}
+			}
+			if = {
+				limit = { NOT = { has_building = building_crystal_gem_temple } }
+				add_building = building_crystal_gem_temple
+			}
+		}
+		solar_system = { owner = { establish_communications = event_target:new_earth_civilisation_w_cg } }
+	}
+}
+
+country_event = { #industrial Age -> Machine Age 
+	id = gem_off_colors.2012
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		remove_country_flag = recently_advanced
+		random_situation = { add_situation_progress = 3000 }
+		#country_event = { id = gem_off_colors.2013 days = 720 random = 360 }
+		capital_scope = {
+			set_variable = { which = earth_pop_buildup value = 21}
+			if = {
+				limit = {
+					num_pops < earth_pop_buildup
+				}
+				subtract_variable = { which = earth_pop_buildup value = trigger:num_pops }
+				while = {
+					count = earth_pop_buildup
+					create_pop = {
+						species = event_target:gem_human_species
+					}
+				}
+			}
+			if = {
+				limit = { NOT = { has_building = building_crystal_gem_temple } }
+				add_building = building_crystal_gem_temple
+			}
+		}
 		solar_system = { owner = { establish_communications = event_target:new_earth_civilisation_w_cg } }
 	}
 }
