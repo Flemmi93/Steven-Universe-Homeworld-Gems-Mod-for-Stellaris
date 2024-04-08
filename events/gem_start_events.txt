@@ -87,28 +87,85 @@ country_event = { #for crystal gems to have a gem producing building
     trigger = { has_origin = origin_crystal_gems }
 
     immediate = {
-		create_species = { #make new portraits for crystal gems
-			class="GEO"
-			portrait="gem"
-			name = "Gem"
-			plural = "Gems"
-			name_list="GEO1"
-			gender=not_set
-			traits = {
-				trait="trait_geoloid"
-				trait="trait_crystal_gems"
-				trait="trait_gem_holobody"
-				trait="trait_gem_hardness"
-				trait="trait_gem_donteat"
-			}
+		save_global_event_target_as = crystal_gems_nation
+		capital_scope = {
+			add_deposit = d_galaxy_warp_damaged
+			add_deposit = d_kindergarten_blocker
+			create_species = { #make new portraits for crystal gems
+				class="GEO"
+				portrait="crystalgem"
+				name = "Gem"
+				plural = "Gems"
+				name_list="GEO1"
+				gender=not_set
+				can_be_modified = no
+				traits = {
+					trait="trait_geoloid"
+					trait="trait_crystal_gems"
+					trait="trait_gem_holobody"
+					trait="trait_gem_hardness"
+					trait="trait_gem_donteat"
+				}
 				homeworld = FROM
-		}
-		last_created_species = {
-			save_event_target_as = crystal_gems_species
-		}
-        capital_scope = {
-			add_building = building_buff_kindergarten1
+			}
 			create_pop = { species = last_created_species }
+			last_created_species = {
+				save_global_event_target_as = crystal_gems_species
+				set_colonization_controls = { country = FROM type = colonization_control_yes cooldown = no }
+			}
+			
+			add_building = building_crystal_gem_temple
+			owner = {
+				create_leader = {
+					class = official
+					name = "Rose Quartz"
+					species = event_target:crystal_gems_species
+					traits = {
+					}
+				}
+			}
+			last_created_leader = {
+				set_skill = 4
+				change_leader_portrait = gemD6 #Rose
+				save_global_event_target_as = gem_rose_diamond
+				set_council_position = councilor_state
+			}
+			owner = {
+				create_leader = {
+					class = commander
+					name = "Pearl"
+					species = event_target:crystal_gems_species
+					traits = {
+					}
+				}
+			}
+			
+			last_created_leader = {
+				set_skill = 3
+				change_leader_portrait = gemP8 #Crystal Gem Pearl
+				save_global_event_target_as = gem_crystalgem_pearl
+				set_council_position = councilor_defense
+			}
+			assign_leader = event_target:gem_rose_diamond
+			create_army = {
+				name = "NAME_crystal_gem_army"
+				owner = root.owner
+				type = "crystal_gem_army3"
+				species = root.solar_system.owner.species
+			}
+			create_army = {
+				name = "NAME_crystal_gem_army"
+				owner = root.owner
+				type = "crystal_gem_army3"
+				species = root.solar_system.owner.species
+			}
+			create_army = {
+				name = "NAME_crystal_gem_army"
+				owner = root.owner
+				type = "crystal_gem_army3"
+				species = root.solar_system.owner.species
+				leader = last_created_leader
+			}
 		}
 	}
 }
@@ -119,7 +176,11 @@ country_event = {
     is_triggered_only = yes
     trigger = {
 		is_geo_empire = yes
-		NOT = { has_origin = origin_geoform }
+		NOR = {
+			has_origin = origin_geoform
+			has_origin = origin_crystal_gems
+		}
+		
 	}
     
     immediate = {
@@ -217,68 +278,6 @@ country_event = {
 				}
 				50 = {
 				}
-			}
-		}
-	}
-}
-
-country_event = {
-	id = GEM_start.1006
-	hide_window = yes
-	is_triggered_only = yes
-	immediate = {
-		capital_scope = {
-			add_building = building_crystal_gem_temple
-			owner = {
-				create_leader = {
-					class = official
-					name = "Rose Quartz"
-					species = root.solar_system.owner.species
-					traits = {
-					}
-				}
-			}
-			last_created_leader = {
-				set_skill = 4
-				change_leader_portrait = gemD6 #Rose
-				save_global_event_target_as = gem_rose_diamond
-				set_council_position = councilor_state
-			}
-			owner = {
-				create_leader = {
-					class = commander
-					name = "Pearl"
-					species = root.solar_system.owner.species
-					traits = {
-					}
-				}
-			}
-			
-			last_created_leader = {
-				set_skill = 3
-				change_leader_portrait = gemP8 #Crystal Gem Pearl
-				save_global_event_target_as = gem_crystalgem_pearl
-				set_council_position = councilor_defense
-			}
-			assign_leader = event_target:gem_rose_diamond
-			create_army = {
-				name = "NAME_crystal_gem_army"
-				owner = root.owner
-				type = "crystal_gem_army"
-				species = root.solar_system.owner.species
-			}
-			create_army = {
-				name = "NAME_crystal_gem_army"
-				owner = root.owner
-				type = "crystal_gem_army"
-				species = root.solar_system.owner.species
-			}
-			create_army = {
-				name = "NAME_crystal_gem_army"
-				owner = root.owner
-				type = "crystal_gem_army2"
-				species = root.solar_system.owner.species
-				leader = last_created_leader
 			}
 		}
 	}

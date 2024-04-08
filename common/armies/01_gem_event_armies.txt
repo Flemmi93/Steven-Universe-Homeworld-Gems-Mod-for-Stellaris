@@ -31,6 +31,22 @@ crystal_gem_army2 = {
 		always = no
 	}
 }
+crystal_gem_army3 = {
+	defensive = no
+	health = 2.25
+	damage = 2.50
+	morale = 2.25
+	has_morale = no
+	icon = GFX_army_type_rebel
+	has_species = no
+	collateral_damage = 1
+	
+	rebel = yes 
+	
+	potential = {
+		always = no
+	}
+}
 
 # gem Defense Armies
 gem_defense_army = {

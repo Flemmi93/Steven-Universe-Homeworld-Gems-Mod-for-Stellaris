@@ -500,8 +500,12 @@ building_crystal_gem_temple: "Crystal Gem Temple"
  gem_defense_army: " $defense_army$"
  crystal_gem_army2: " $NAME_crystal_gem_army$"
  gem_defense_army2: " $defense_army$"
+ crystal_gem_army3: " $NAME_crystal_gem_army$"
+ gem_defense_army3: " $assault_army$"
  gems_lost_earth: "Abandoned World"
  gems_lost_earth_desc: "This world is a black mark in our collective memory, we do no wish to settle here."
+ gem_events_misc.004.name: "Crystal Gems refuse"
+ gem_events_misc.004.desc: "The Crystal Gems refuse to board a colony ship. Being unable or unwilling to Create more Gems leaves us with no option."
 
 #Gem Rebellion Events, included 1000 (10-20) year war
  gem_off_colors.1010.name: "Production above expectations"

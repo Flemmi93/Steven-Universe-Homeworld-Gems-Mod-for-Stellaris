@@ -81,9 +81,12 @@ d_kindergarten_blocker = {
 	category = deposit_cat_rare_blocker
 	
 	potential = { always = no }
-	can_be_cleared = { always = no }
+	can_be_cleared = { 
+		owner = { has_technology = tech_housing_2 }
+	 }
 
 	planet_modifier = { 
+		planet_non_artificial_max_districts_add = -3
 	}
 
 }

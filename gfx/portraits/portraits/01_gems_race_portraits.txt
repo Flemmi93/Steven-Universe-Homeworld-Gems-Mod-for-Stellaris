@@ -93,7 +93,21 @@ portraits = {
 }
 	
 portrait_groups = {
+	crystalgem = {
+		default = gemP6
+		species = { #generic portrait for a species
+			add = {
+				trigger = {}
+				portraits = {
+					gemN1
+					gemB2
+					gemS2
+					gemP8
 
+				}
+			}
+		}
+	}
 	
 	gem = {
 		default = gemP3
