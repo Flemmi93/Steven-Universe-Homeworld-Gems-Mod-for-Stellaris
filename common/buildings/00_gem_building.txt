@@ -488,10 +488,11 @@ building_crystal_gem_temple = {
 				has_origin = origin_crystal_gems
 			}
 		}
+		NOT = { has_building = building_crystal_gem_temple }
 	}
 	
 	allow = {
-		always = no
+		owner = { has_origin = origin_crystal_gems }
 	}
 	
 	
