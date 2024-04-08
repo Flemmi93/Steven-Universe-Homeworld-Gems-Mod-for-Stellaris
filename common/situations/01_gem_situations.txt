@@ -282,7 +282,7 @@ pink_situation = {
 	
 	on_progress_complete = {
 		destroy_situation = this
-		owner = { country_event = { id = gem_off_colors.0034 days = 1 random = 59 } }
+		#owner = { country_event = { id = gem_off_colors.0034 days = 1 random = 59 } } #event not real, # to remove error from log
 		custom_tooltip = pink_situation_complete
 	}
 	on_fail = {
@@ -348,6 +348,302 @@ pink_situation = {
 			add = -1
 			desc = situation_snow_very_hostile_tt
 			owner = { has_country_flag = gem_way_to_sol_done }
+		}
+	}
+}
+
+########################
+#### 1000 Year War #####
+########################
+
+gem_1000_year_war = {
+
+	picture = "GFX_evt_gem_1000_year_war"
+	complete_icon_frame = GFX_situation_outcome_frame_red
+	complete_icon = GFX_situation_outcome_negative
+	fail_icon_frame = GFX_situation_outcome_frame_green
+	fail_icon = GFX_situation_outcome_positive
+	category = negative
+	start_value = 1
+	
+	on_progress_complete = {
+	destroy_situation = this
+		custom_tooltip = 1000_year_war_defeat
+		owner = { set_country_flag = lost_1000_year_war }
+	}
+
+	on_fail = {
+		destroy_situation = this
+		custom_tooltip = 1000_year_war_victory
+		owner = { set_country_flag = won_1000_year_war }
+	}
+	
+	stages = {
+		gem_1000_year_war_step8 = { # protests
+			icon = GFX_situation_stage_1
+			icon_background = GFX_situation_stage_frame_green
+			end = 5
+			target_modifier = {
+				#Upside
+				pop_cat_slave_happiness = 0.10
+				pop_cat_worker_happiness = 0.05
+				pop_cat_specialist_happiness = 0.05
+				#Downsides
+				pop_cat_ruler_happiness = -0.05
+				planet_jobs_worker_produces_mult = -0.05
+				#Upside
+			}
+		}
+		gem_1000_year_war_step7 = { # Civil Disobedience
+			icon = GFX_situation_stage_2
+			icon_background = GFX_situation_stage_frame_green
+			end = 15
+			target_modifier = {
+				#Upside
+				pop_cat_slave_happiness = 0.15
+				pop_cat_worker_happiness = 0.05
+				#Downsides
+				pop_cat_specialist_happiness = -0.05
+				pop_cat_ruler_happiness = -0.075
+				planet_jobs_worker_produces_mult = -0.05
+			}
+			on_first_enter = {
+				event_target:gem_planet_earth_event = {
+					planet_event = { id = gem_off_colors.1019 }
+				}
+			}
+		}
+		gem_1000_year_war_step6 = { # Sabotage
+			icon = GFX_situation_stage_3
+			icon_background = GFX_situation_stage_frame_yellow
+			end = 25
+				target_modifier = {
+				#Upside
+				pop_cat_slave_happiness = 0.15
+				pop_cat_worker_happiness = 0.05
+				#Downsides
+				pop_cat_specialist_happiness = -0.075
+				pop_cat_ruler_happiness = -0.10
+				planet_jobs_worker_produces_mult = -0.05
+			}
+			on_first_enter = {
+				event_target:gem_planet_earth_event = {
+					planet_event = { id = gem_off_colors.1021 }
+					planet_event = { id = gem_off_colors.1031 }
+				}
+			}
+		}
+		gem_1000_year_war_step5 = { # Gurrilla War
+			icon = GFX_situation_stage_4
+			icon_background = GFX_situation_stage_frame_yellow
+			end = 40
+			target_modifier = {
+				#Upside
+				pop_cat_slave_happiness = 0.15
+				pop_cat_worker_happiness = 0.05
+				#Downsides
+				pop_citizen_happiness = -0.10
+				trade_value_mult = -0.05
+				planet_jobs_worker_produces_mult = -0.05
+
+			}
+			on_first_enter = {
+				event_target:gem_planet_earth_event = {
+					planet_event = { id = gem_off_colors.1022 }
+				}
+			}
+		}
+		gem_1000_year_war_step4 = { # Insurgency
+			icon = GFX_situation_stage_5
+			icon_background = GFX_situation_stage_frame_orange
+			end = 65
+			target_modifier = {
+				#Upside
+				pop_cat_slave_happiness = 0.15
+				pop_cat_worker_happiness = 0.05
+				job_soldier_add = 2
+				#Downsides
+				pop_citizen_happiness = -0.15
+				pop_government_ethic_attraction = -0.05
+				trade_value_mult = -0.075
+				planet_jobs_produces_mult = -0.1
+			}
+			on_first_enter = {
+				event_target:gem_planet_earth_event = {
+					planet_event = { id = gem_off_colors.1023 }
+					planet_event = { id = gem_off_colors.1060 days = 10 random = 60 }
+				}
+			}
+		}
+		gem_1000_year_war_step3 = { # Civil war
+			icon = GFX_situation_stage_6
+			icon_background = GFX_situation_stage_frame_orange
+			end = 80
+			target_modifier = {
+				#Upside
+				pop_cat_slave_happiness = 0.15
+				job_soldier_add = 2
+				#Downsides
+				pop_citizen_happiness = -0.15
+				pop_government_ethic_attraction = -0.075
+				trade_value_mult = -0.10
+				planet_jobs_produces_mult = -0.15
+			}
+			on_first_enter = {
+				event_target:gem_planet_earth_event = {
+					planet_event = { id = gem_off_colors.1061 days = 10 random = 60 }
+					planet_event = { id = gem_off_colors.1025 days = 330 }
+					planet_event = { id = gem_off_colors.1026 }
+					planet_event = { id = gem_off_colors.1027 days = 530 random = 24 }
+				}
+			}
+		}
+		gem_1000_year_war_step2 = { # total war
+			icon = GFX_situation_stage_7
+			icon_background = GFX_situation_stage_frame_red
+			end = 90
+			target_modifier = {
+				#Upside
+				pop_cat_slave_happiness = 0.15
+				job_soldier_add = 2
+				#Downsides
+				pop_citizen_happiness = -0.15
+				pop_government_ethic_attraction = -0.10
+				trade_value_mult = -0.10
+				planet_jobs_produces_mult = -0.20
+			}
+			on_first_enter = {
+				event_target:gem_planet_earth_event = {
+					planet_event = { id = gem_off_colors.1062 days = 10 random = 60 }
+					planet_event = { id = gem_off_colors.1035 }
+					planet_event = { id = gem_off_colors.1055 days = 90 random = 30 }
+				}
+			}
+		}
+		gem_1000_year_war_step1 = { # retreat
+			icon = GFX_situation_stage_8
+			icon_background = GFX_situation_stage_frame_red
+			end = 100
+			target_modifier = {
+				#Downsides
+				pop_cat_slave_happiness = 0.15
+				pop_citizen_happiness = -0.15
+				pop_government_ethic_attraction = -0.15
+				trade_value_mult = -0.125
+				planet_jobs_produces_mult = -1
+			}
+			on_first_enter = {
+				event_target:gem_planet_earth_event = {
+					planet_event = { id = gem_off_colors.1063 days = 10 random = 60 }
+					planet_event = { id = gem_off_colors.1035 }
+					planet_event = { id = gem_off_colors.1999 }
+					
+				}
+			}
+		}
+	}
+	approach = {
+		name = approach_revolt_do_nothing
+		icon = GFX_situation_approach_this_is_fine
+		icon_background = GFX_situation_approach_bg_yellow
+		default = yes
+		on_select = {
+			custom_tooltip = approach_outcome_tooltip
+		}
+		potential = {
+			event_target:gem_planet_earth_event = {
+				NOR = {
+					has_planet_flag = gem_cant_ignore_1
+					has_planet_flag = gem_cant_ignore_2
+					has_planet_flag = gem_cant_ignore_3
+				}	
+			}
+		}
+	}
+	approach = {
+		name = approach_revolt_crackdown
+		icon = GFX_situation_approach_fist
+		icon_background = GFX_situation_approach_bg_red
+		potential = {
+			event_target:gem_planet_earth_event = {
+				has_planet_flag = gem_cant_ignore_1
+			}
+		}
+		resources = {
+			category = situations
+			upkeep = {
+				energy = 10
+				minerals = 5
+				unity = 40
+			}
+		}
+	}
+	approach = {
+		name = approach_destroy
+		icon = GFX_situation_approach_fist
+		icon_background = GFX_situation_approach_bg_red
+		potential = {
+			event_target:gem_planet_earth_event = {
+				has_planet_flag = gem_cant_ignore_2
+			}
+		}
+		resources = {
+			category = situations
+			upkeep = {
+				energy = 10
+				minerals = 15
+				alloys = 25
+			}
+			produces = {
+				unity = 20
+			}
+		}
+	}
+	
+	approach = {
+		name = approach_lost_controll
+		icon = GFX_situation_approach_shrug
+		icon_background = GFX_situation_approach_bg_red
+		potential = {
+			event_target:gem_planet_earth_event = {
+				has_planet_flag = gem_cant_ignore_3
+			}
+		}
+		on_select = {
+			custom_tooltip = approach_outcome_tooltip
+		}
+	}
+	monthly_progress = {
+		base = 0
+		modifier = {
+			check_variable = { which = gem_1000_year_war_progressing value < 1 }
+			add = 0
+			desc = "gem_sit_nothing_happens"
+		}
+		modifier = {
+			check_variable = { which = gem_1000_year_war_progressing value > 0 }
+			add = 1
+			desc = "gem_sit_something_happens"
+		}
+		modifier = {
+			current_situation_approach = approach_revolt_crackdown
+			add = 0.5
+			desc = "gem_sit_something_happens"
+		}
+		modifier = {
+			current_situation_approach = approach_destroy
+			add = 0
+			desc = "gem_sit_something_happens"
+		}
+		modifier = {
+			current_situation_approach = approach_lost_controll
+			add = 1
+			desc = "gem_sit_something_happens"
+		}
+	}
+	on_monthly = {
+		events = {
+			gem_off_colors.1024 # monthly reduces the progressing variable
 		}
 	}
 }

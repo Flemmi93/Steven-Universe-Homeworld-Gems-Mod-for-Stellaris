@@ -7,6 +7,6 @@ tags={
 	"Species"
 }
 name="Steven Universe Homeworld Gems"
-supported_version="3.10.*"
 picture="thumbnail.png"
+supported_version="3.11.*"
 remote_file_id="1104213489"

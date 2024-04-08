@@ -1,0 +1,56 @@
+namespace = gem_events_misc
+
+country_event = {
+	id = gem_events_misc.001
+	title = gem_events_misc.001.name
+	desc = gem_events_misc.001.desc
+	picture = GFX_evt_gem_cookie_cats
+	is_triggered_only = yes
+
+	option = {
+		name = gem_events_misc.001.a
+			event_target:gem_planet_earth_event = {
+				add_modifier = {
+					modifier = pm_gem_cookie_cats
+				}
+			}
+	}
+}
+
+country_event = { #updating the old planet modifier to the new planetary feature system. change happend between 3.11 and 3.12
+	id = gem_events_misc.002
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		every_owned_planet = {
+			if = {
+				limit = { has_modifier = pm_gem_galaxy_warp }
+				remove_modifier = pm_gem_galaxy_warp
+				add_deposit = d_galaxy_warp
+			}
+		}
+	}
+}
+
+pop_event = {
+	id = gem_events_misc.003
+	picture = GFX_evt_gem_visit_to_earth
+	title = gem_events_misc.004.name
+	desc = gem_events_misc.004.desc
+	is_triggered_only = yes
+	trigger = {
+		years_passed > 0
+		owner = { NOT = { has_country_flag = gem_events_misc_003_blocks } }
+		NOT = { owner = { is_ai = yes } }
+	}
+	immediate = {
+		event_target:crystal_gems_nation = { set_country_flag = gem_events_misc_003_blocks }
+		set_colonization_controls = { country = event_target:crystal_gems_nation type = colonization_control_yes cooldown = no }
+	}
+	option = {
+		name = OK
+		hidden_effect = {
+			event_target:crystal_gems_nation = { remove_country_flag = gem_events_misc_003_blocks }
+		}
+	}
+}

@@ -21,7 +21,35 @@ civic_tetrarchy = {
 		base = 0
 	}
 	modifier = {
-		empire_size_penalty_mult = -0.25
+		empire_size_pops_mult = -0.1
+		empire_size_colonies_mult = -0.1
+		#pop_ethic_white_attraction_mult = 0.1
+		#pop_ethic_yellow_attraction_mult = 0.1
+		#pop_ethic_blue_attraction_mult = 0.1
+		#pop_ethic_pink_attraction_mult = 0.1
+	}
+}
+#same but for invasion
+civic_tetrarchy_inv = {
+	icon = "gfx/interface/icons/governments/civics/civic_tetrarchy.dds"
+	playable = {}
+	pickable_at_start = no
+	potential = {
+		authority = {
+			NOR = { 
+				value = auth_corporate 
+				value = auth_hive_mind
+				value = auth_machine_intelligence
+			}
+		}
+	}
+
+	modification = no
+
+	random_weight = {
+		base = 0
+	}
+	modifier = {
 		empire_size_pops_mult = -0.1
 		empire_size_colonies_mult = -0.1
 		#pop_ethic_white_attraction_mult = 0.1

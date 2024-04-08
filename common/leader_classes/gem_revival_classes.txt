@@ -40,8 +40,9 @@
 #		modifier = {}
 # 	}
 #
-#	ai_leader_weight = {	# used to evaluate a specific leader for an assignment to the class,
+#	ai_location_weight = {	# used to evaluate a specific leader for an assignment to a specific location (right now only used for fleet),
 #							# scope is the leader, from is the leader location (can be a planet, a fleet, an army etc)
+#							# if the score is 0 or less, the leader will not be assigned to that location
 #		base = <num>
 #		modifier = {}
 #	}
@@ -55,43 +56,30 @@
 # }
 #
 # icon = 1 # 1-based index in the icon file. might be replaced by an icon name later
+#
+# paragon_background_selector = <name of an asset_selector>, used to display a background behind paragon portraits
+#
+#
+# How the AI assigns leaders now:
+#
+# Step 1: Sort all possible location using the NDefines::NAI::LOCATION_WEIGHT_* values (all of them are multipliers except the galactic community which is a flat value)
+# Step 2: Sort all available leaders by skill
+# Step 3: for each leader in order, calculate a location weight based on the ai_location_weight of their class
+# Step 4: Assign the highest leader/location pair based on the weight
+# Step 5: if no leader was assigned, see if hiring a leader is possible repeating the same steps
 
-diamond_class = {
-	name = diamond_class
-	name_plural = diamond_class_plural
-	description = diamond_class_description
-	recruitable = no
-	can_lead_army = yes
-	can_lead_navy = yes
-	can_govern_planet = yes
- 	can_research_tech = yes
- 	can_research_special_projects = yes
- 	can_crew_science_ship = yes
- 	can_research_anomalies = yes
- 	can_research_archaeology_site = yes
- 	can_survey = yes
-	can_boost_cloaking_detection = yes
- 	can_explore_rifts = yes
- 	can_conduct_active_reconnaissance = yes
-	max_trait_points = 1
-	can_have_traits = yes
-	leader_capacity = 4
-	resources = {
-		cost = {
-			unity = 1000000000
-		}
-		category = leader_officials
-		produces = {
-			unity = 1
-			mult = trigger:has_skill
-		}
-	}
-
-	ai_weight = {
-	base = 0
-	}
-	leader_background_job_weight = {
-		noble = 1000
-	}
-	icon = 4
-}
+#poofed_gem_class = {
+#	name = poofed_gem_class
+#	name_plural = poofed_gem_class_plural
+#	description = poofed_gem_class_desc
+#	can_be_envoy = no
+#	default_category = envoy
+#	assignment_cooldown = 360
+#	can_have_traits = no
+#	recruitable = no
+#	can_rule_empire = no
+#	can_be_assigned_to_federation = no
+#	can_be_assigned_to_galactic_community = no
+#	icon = 5
+#	paragon_background_selector = "paragon_background_selector"
+#}

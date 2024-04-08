@@ -1,11 +1,11 @@
 character = {
-	size = { x = 475 y = 380 }
+	size = { x = 575 y = 380 }
 
 	#2d Portrait position
 	icon = {
 		orientation = center_down
-		position = { x = 80 y = 0 }
-		scale = 1.1
+		position = { x = 0 y = 0 }
+		scale = 1.0
 	}
 }
 portraits = {
@@ -19,8 +19,12 @@ portraits = {
 	gemD2 =		{texturefile = "gfx/models/portraits/gems/gems_ruler_03_yellow.dds" }
 	gemD3 =		{texturefile = "gfx/models/portraits/gems/gems_ruler_01_blue.dds" }
 	gemD4 =		{texturefile = "gfx/models/portraits/gems/gems_ruler_02_pink.dds" }
-	gemD5 =		{texturefile = "gfx/models/portraits/gems/gems_ruler_05_rose.dds" }
-	gemD6 =		{texturefile = "gfx/models/portraits/gems/gems_ruler_05_rose2.dds" }
+	gemWG =		{texturefile = "gfx/models/portraits/gems/gems_ruler_04_white_gemstone.dds" }
+	gemYG =		{texturefile = "gfx/models/portraits/gems/gems_ruler_03_yellow_gemstone.dds" }
+	gemBG =		{texturefile = "gfx/models/portraits/gems/gems_ruler_01_blue_gemstone.dds" }
+	gemPG =		{texturefile = "gfx/models/portraits/gems/gems_ruler_02_pink_gemstone.dds" }
+	gemD5 =		{texturefile = "gfx/models/portraits/gems/gems_ruler_05_rose.dds" } # looks left
+	gemD6 =		{texturefile = "gfx/models/portraits/gems/gems_ruler_05_rose2.dds" } #looks right
 	gemE1 =		{texturefile = "gfx/models/portraits/gems/gems_Emerald_01.dds" }
 	gemJ1 =		{texturefile = "gfx/models/portraits/gems/gems_Jasper_01.dds" }
 	gemJ2 =		{texturefile = "gfx/models/portraits/gems/gems_Jasper_02.dds" }
@@ -89,7 +93,21 @@ portraits = {
 }
 	
 portrait_groups = {
+	crystalgem = {
+		default = gemP6
+		species = { #generic portrait for a species
+			add = {
+				trigger = {}
+				portraits = {
+					gemN1
+					gemB2
+					gemS2
+					gemP8
 
+				}
+			}
+		}
+	}
 	
 	gem = {
 		default = gemP3
@@ -166,7 +184,7 @@ portrait_groups = {
 		}
 		
 		#leader scope
-		leader = { #scientists, commander, official
+		leader = { #scientist, commander, official
 			add = {
 				trigger = { leader_class = scientist }
 				portraits = {
@@ -210,7 +228,13 @@ portrait_groups = {
 		#leader scope 
 		ruler = {
 			add = {
-				trigger = { leader_class = diamond_class }
+				trigger = {
+					OR = {
+						leader_class = official
+						leader_class = scientist
+						leader_class = commander
+					}
+				}
 				portraits = {
 					gemD1 #White
 					gemD2 #Yellow
@@ -259,7 +283,7 @@ portrait_groups = {
 		}
 		
 		#leader scope
-		leader = { #scientists, commander, official
+		leader = { #scientist, commander, official
 			add = {
 				trigger = { leader_class = scientist }
 				portraits = {
@@ -292,7 +316,7 @@ portrait_groups = {
 		#leader scope 
 		ruler = {
 			add = {
-				trigger = { leader_class = diamond_class }
+				trigger = { leader_class = official }
 				portraits = {
 					gemD1 #White
 				}

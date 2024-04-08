@@ -6,12 +6,12 @@
 building_gem_spire1 = {
 	base_buildtime = @b1_time
 	position_priority = 200
+	base_cap_amount = 2
 	
 	category = amenity
 	
 	potential = {
 		exists = owner
-		owner = { has_origin = origin_geoform } 
 		is_geo_empire = yes
 	}
 	
@@ -22,7 +22,6 @@ building_gem_spire1 = {
 	destroy_trigger = {
 		owner = {
 			NOR = {
-				has_origin = origin_geoform
 				has_origin = origin_crystal_gems
 				is_geo_empire = yes
 			}
@@ -50,6 +49,10 @@ building_gem_spire1 = {
 	upgrades = {
 		building_gem_spire2
 	}
+
+	ai_weight = {
+		base = 1000
+	}
 }
 
 building_gem_spire2 = {
@@ -61,7 +64,6 @@ building_gem_spire2 = {
 	
 	potential = {
 		exists = owner
-		owner = { has_origin = origin_geoform } 
 		is_geo_empire = yes
 	}
 	
@@ -72,7 +74,6 @@ building_gem_spire2 = {
 	destroy_trigger = {
 		owner = {
 			NOR = {
-				has_origin = origin_geoform
 				has_origin = origin_crystal_gems
 				is_geo_empire = yes
 			}
@@ -80,9 +81,9 @@ building_gem_spire2 = {
 	}
 
 	planet_modifier = {
-		job_clerk_add = 1
-		job_politician_add = 1
-		planet_amenities_add = 16
+		job_clerk_add = 2
+		job_culture_worker_add = 1
+		planet_amenities_add = 12
 	}
 	
 	resources = {
@@ -101,6 +102,10 @@ building_gem_spire2 = {
 	upgrades = {
 		building_gem_spire3
 	}
+	
+	ai_weight = {
+		base = 1000
+	}
 }
 
 building_gem_spire3 = {
@@ -112,29 +117,31 @@ building_gem_spire3 = {
 	
 	potential = {
 		exists = owner
-		owner = { has_origin = origin_geoform } 
 		is_geo_empire = yes
 	}
 	
 	allow = {
 		has_upgraded_capital = yes
-		#also add a tech requirement for this
+		OR = {
+			is_capital = yes
+			owner = { has_technology = tech_housing_1 }
+		}
 	}
 	
 	destroy_trigger = {
 		owner = {
 			NOR = {
-				has_origin = origin_geoform
-				has_origin = origin_crystal_gems
 				is_geo_empire = yes
+				has_origin = origin_crystal_gems
 			}
 		}
 	}
 
 	planet_modifier = {
-		job_merchant_add = 1
-		job_politician_add = 1
-		planet_amenities_add = 24
+		job_noble_add = 1
+		job_culture_worker_add = 2
+		job_clerk_add = 2
+		planet_amenities_add = 14
 	}
 	
 	resources = {
@@ -148,6 +155,10 @@ building_gem_spire3 = {
 		cost = {
 		minerals = @b3_minerals
 		}
+	}
+	
+	ai_weight = {
+		base = 1000
 	}
 }
 
@@ -163,7 +174,6 @@ building_buff_kindergarten1 = {
 		exists = owner
 		owner = {
 			OR = {
-				has_origin = origin_geoform
 				has_origin = origin_crystal_gems
 				is_geo_empire = yes
 			} 
@@ -171,23 +181,8 @@ building_buff_kindergarten1 = {
 	}
 	
 	allow = {
-#		buildings_simple_allow = yes
 		OR = {
-			AND = {
-				is_geo_empire = yes
-				OR = {
-					has_modifier = pm_gem_white_court
-					has_modifier = pm_gem_yellow_court
-					has_modifier = pm_gem_blue_court
-					has_modifier = pm_gem_pink_court
-					has_modifier = pm_gem_white_court2
-					has_modifier = pm_gem_yellow_court2
-					has_modifier = pm_gem_blue_court2
-					has_modifier = pm_gem_pink_court2
-					has_modifier = pm_grand_court_1
-					has_modifier = pm_grand_court_2
-				}
-			}
+			is_geo_empire = yes
 			owner = { has_origin = origin_crystal_gems }
 		}
 	}
@@ -195,9 +190,8 @@ building_buff_kindergarten1 = {
 	destroy_trigger = {
 		owner = {
 			NOR = {
-				has_origin = origin_geoform
-				has_origin = origin_crystal_gems
 				is_geo_empire = yes
+				has_origin = origin_crystal_gems
 			}
 		}
 	}
@@ -213,6 +207,7 @@ building_buff_kindergarten1 = {
 		modifier = { # Adjust for Balance
 			job_kindergartener_add = 1
 			planet_pop_assembly_organic_mult = 0.05
+			job_roboticist_add = -2
 		}
 	}
 
@@ -246,6 +241,7 @@ building_buff_kindergarten1 = {
 		modifier = { # Adjust for Balance
 			job_kindergartener_add = 1
 			planet_amenities_add = 5
+			job_roboticist_add = -2
 		}
 	}
 	
@@ -264,6 +260,10 @@ building_buff_kindergarten1 = {
 	upgrades = {
 		building_buff_kindergarten2
 	}
+	
+	ai_weight = {
+		base = 1000
+	}
 }
 
 
@@ -280,9 +280,8 @@ building_buff_kindergarten2 = {
 		exists = owner
 		owner = {
 			OR = { 
-				has_origin = origin_geoform
-				has_origin = origin_crystal_gems
 				is_geo_empire = yes
+				has_origin = origin_crystal_gems
 			} 
 		}
 	}
@@ -290,12 +289,16 @@ building_buff_kindergarten2 = {
 	allow = {
 		has_upgraded_capital = yes
 		owner = { has_technology = tech_housing_1 }
+		OR = {
+			has_deposit = d_kindergarten_small
+			has_deposit = d_kindergarten_med
+			has_deposit = d_kindergarten_large
+		}
 	}
 	
 	destroy_trigger = {
 		owner = {
 			NOR = {
-				has_origin = origin_geoform
 				has_origin = origin_crystal_gems
 				is_geo_empire = yes
 			}
@@ -313,6 +316,7 @@ building_buff_kindergarten2 = {
 		modifier = { # Adjust for Balance
 			job_kindergartener_add = 1
 			planet_pop_assembly_organic_mult = 0.1
+			job_roboticist_add = -2
 		}
 	}
 	triggered_desc = {
@@ -345,6 +349,7 @@ building_buff_kindergarten2 = {
 		modifier = { # Adjust for Balance
 			job_kindergartener_add = 2
 			planet_amenities_add = 10
+			job_roboticist_add = -2
 		}
 	}
 	
@@ -363,6 +368,9 @@ building_buff_kindergarten2 = {
 	upgrades = {
 		building_buff_kindergarten3
 	}
+	ai_weight = {
+		base = 1000
+	}
 }
 
 building_buff_kindergarten3 = {
@@ -377,9 +385,8 @@ building_buff_kindergarten3 = {
 	potential = {
 		exists = owner
 		owner = {
-			OR = { 
-				has_origin = origin_geoform
-				has_origin = origin_crystal_gems
+			OR = {
+				#has_origin = origin_crystal_gems
 				is_geo_empire = yes
 			} 
 		}
@@ -387,12 +394,16 @@ building_buff_kindergarten3 = {
 	
 	allow = {
 		owner = { has_technology = tech_housing_2 }		# make it so planet acension level 1 has to be reached for this
+		OR = {
+			has_deposit = d_kindergarten_small
+			has_deposit = d_kindergarten_med
+			has_deposit = d_kindergarten_large
+		}
 	}
 	
 	destroy_trigger = {
 		owner = {
 			NOR = {
-				has_origin = origin_geoform
 				has_origin = origin_crystal_gems
 				is_geo_empire = yes
 			}
@@ -410,6 +421,7 @@ building_buff_kindergarten3 = {
 		modifier = { # Adjust for Balance
 			job_kindergartener_add = 1.5
 			planet_pop_assembly_organic_mult = 0.15
+			job_roboticist_add = -2
 		}
 	}
 	triggered_desc = {
@@ -442,6 +454,7 @@ building_buff_kindergarten3 = {
 		modifier = { # Adjust for Balance
 			job_kindergartener_add = 3
 			planet_amenities_add = 20
+			job_roboticist_add = -2
 		}
 	}
 	
@@ -457,6 +470,9 @@ building_buff_kindergarten3 = {
 		minerals = @b3_minerals
 		}
 	}
+	ai_weight = {
+		base = 1000
+	}
 }
 building_crystal_gem_temple = {
 	base_buildtime = @b1_time
@@ -466,10 +482,17 @@ building_crystal_gem_temple = {
 	
 	potential = {
 		exists = owner
+		owner = {
+			OR = { 
+				is_primitive = yes
+				has_origin = origin_crystal_gems
+			}
+		}
+		NOT = { has_building = building_crystal_gem_temple }
 	}
 	
 	allow = {
-#		always = no
+		owner = { has_origin = origin_crystal_gems }
 	}
 	
 	
@@ -495,6 +518,62 @@ building_crystal_gem_temple = {
 		minerals = @b1_minerals
 		}
 	}
+}
+
+building_gem_sky_arena = {
+	
+	base_buildtime = @b1_time
+	position_priority = 200
+	base_cap_amount = 1
+	
+	category = amenity
+	
+	potential = {
+		exists = owner
+		is_geo_empire = yes
+	}
+	
+	ai_weight = {
+		base = 1000
+	}
+
+	resources = {
+		category = planet_buildings
+		produces = {
+		unity = 6
+		}
+		upkeep = {
+		energy =  @b1_upkeep
+		}
+		cost = {
+		minerals = @b1_minerals
+		}
+	}
+	
+	 planet_modifier = {
+		 planet_amenities_add = 5
+	 }
+
+	triggered_planet_modifier = {
+		potential = {
+			is_geo_empire = yes
+		}
+		modifier = { # Adjust for Balance
+			job_duelist_add = 2
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			owner = {
+				is_geo_empire = no
+			}
+		}
+		modifier = { # Adjust for Balance
+			job_duelist_add = 1
+			job_scrap_miner_add = 1
+		}
+	}
+	
 }
 # building_colony_shelter = {
 	# capital = yes

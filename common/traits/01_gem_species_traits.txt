@@ -58,44 +58,6 @@ trait_pc_gemworld_preference = {
 }
 
 ##################
-# Leader Traits #
-##################
-
-trait_ruler_diamond = {
-	cost = 1
-	icon = "gfx/interface/icons/traits/trait_gem_authority.dds"
-	immortal_leaders = yes
-	randomized = no
-	notify_on_gained = no
-	
-	modifier = {
-	}
-	self_modifier = {
-		leader_skill_levels = 2
-	}
-	planet_modifier = {
-		planet_buildings_cost_mult = -0.025
-		planet_jobs_upkeep_mult = -0.025
-		planet_stability_add = 5
-	}
-	system_modifier = { 
-		planet_pop_assembly_organic_mult = 0.05
-		planet_stability_add = 5
-	}
-	sector_modifier = { }
-	fleet_modifier = { }
-	army_modifier = { }
-	galcom_modifier = { }
-	councilor_modifier = {
-		pop_happiness = 0.05
-	}
-	leader_class = { diamond_class }
-	requires_traits = { trait_geoloid }
-	ai_weight = 0
-	selectable_weight = 0
-}
-
-##################
 # Species Traits #
 ##################
 
@@ -117,7 +79,7 @@ trait_geoloid = {
 		always = no
 	}
 	
-	opposites = { trait_crystal_gems trait_lithoid trait_aquatic }
+	opposites = { trait_crystal_gems trait_lithoid trait_aquatic trait_geoloid2 }
 	
 	forced_happiness = no
 	immortal_leaders = yes
@@ -147,6 +109,52 @@ trait_geoloid = {
 	custom_tooltip = TRAIT_GEOLOID_EFFECT
 }
 
+#same trait but with pop growth
+trait_geoloid2 = {
+	cost = 0
+	potential_crossbreeding_chance = 0
+	
+	sorting_priority = 20
+	
+	initial = yes
+	randomized = no
+	
+	species_potential_add = {
+		always = no
+	}
+	species_possible_remove = {
+		always = no
+	}
+	
+	opposites = { trait_crystal_gems trait_lithoid trait_aquatic trait_geoloid }
+	
+	forced_happiness = no
+	immortal_leaders = yes
+	
+	modifier = {
+		pc_gem_habitability = 1
+		pc_gemworld_habitability = 1
+		pop_environment_tolerance = 2
+		planet_jobs_food_upkeep_mult = -0.75
+		planet_jobs_food_produces_mult = -0.75
+	}
+	
+	triggered_planet_growth_habitability_modifier = {
+		potential = { 
+			always = yes
+		}
+	}
+	
+	allowed_archetypes = { GEOLOID LITHOID }
+	ai_weight = {
+		weight = 0
+	}
+	
+	icon = "gfx/interface/icons/traits/trait_gem_authority.dds"
+	
+	custom_tooltip = TRAIT_GEOLOID_EFFECT
+}
+
 trait_crystal_gems = { #should be used together with geoloid trait
 	icon = "gfx/interface/icons/traits/trait_gem_weak_diamond.dds"
 	cost = 0
@@ -159,7 +167,7 @@ trait_crystal_gems = { #should be used together with geoloid trait
 		always = no
 	}
 	
-	opposites = { trait_gem_unquestionable trait_hive_mind }
+	opposites = { trait_gem_unquestionable trait_hive_mind trait_geoloid2 }
 	
 	potential_crossbreeding_chance = 1.0
 	allowed_archetypes = { GEOLOID LITHOID }

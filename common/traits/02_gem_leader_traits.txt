@@ -1,0 +1,122 @@
+trait_poofed_gem = {
+	cost = 0
+	icon = "gfx/interface/icons/traits/trait_gem_boubbled.dds"
+	randomized = no
+	notify_on_gained = no
+	leader_class = { official scientist commander }
+	ai_weight = 0
+	selectable_weight = 0
+	self_modifier = {
+		species_leader_exp_gain = -10
+	}
+}
+
+trait_ruler_diamond = {
+	cost = 1
+	icon = "gfx/interface/icons/traits/trait_gem_authority.dds"
+	immortal_leaders = yes
+	randomized = no
+	notify_on_gained = no
+	
+	modifier = {
+	}
+	self_modifier = {
+		leader_skill_levels = 5
+		species_leader_exp_gain = 0.1
+		leaders_upkeep_mult = -0.25
+	}
+	councilor_modifier = {
+		tech_cost_empire_size_mult = -0.025
+	}
+	leader_class = { official scientist commander }
+	requires_traits = { trait_geoloid }
+	ai_weight = 0
+	selectable_weight = 0
+}
+trait_white_court = {
+	cost = 0
+	randomized = no
+	sorting_priority = 0
+	icon = "gfx/interface/icons/planet_modifiers/gem_white_diamond.dds"
+	leader_class = { official }
+	requires_traits = { trait_geoloid }
+	ai_weight = 0
+	selectable_weight = 0
+	planet_modifier = { 
+		planet_jobs_produces_mult = 0.1
+		pop_citizen_happiness = 0.1
+		planet_amenities_add = 10
+		pop_ethic_authoritarian_attraction_mult = 0.25
+	}
+}
+trait_yellow_court = {
+	cost = 0
+	randomized = no
+	sorting_priority = 0
+	icon = "gfx/interface/icons/planet_modifiers/gem_yellow_diamond.dds"
+	leader_class = { commander }
+	requires_traits = { trait_geoloid }
+	ai_weight = 0
+	selectable_weight = 0
+	planet_modifier = { 
+		planet_researchers_engineering_research_produces_mult = 0.25
+		pop_citizen_happiness = 0.1
+		planet_amenities_add = 10
+		pop_ethic_militarist_attraction_mult = 0.25
+	}
+}
+trait_blue_court = {
+	cost = 0
+	randomized = no
+	sorting_priority = 0
+	icon = "gfx/interface/icons/planet_modifiers/gem_blue_diamond.dds"
+	leader_class = { scientist }
+	requires_traits = { trait_geoloid }
+	ai_weight = 0
+	selectable_weight = 0
+	planet_modifier = { 
+		planet_jobs_upkeep_mult = -0.1
+		pop_citizen_happiness = 0.1
+		planet_amenities_add = 10
+		pop_ethic_spiritualist_attraction_mult = 0.25
+	}
+}
+trait_pink_court = {
+	cost = 0
+	randomized = no
+	sorting_priority = 0
+	icon = "gfx/interface/icons/planet_modifiers/gem_pink_diamond.dds"
+	leader_class = { official }
+	requires_traits = { trait_geoloid }
+	ai_weight = 0
+	selectable_weight = 0
+	planet_modifier = { 
+		job_entertainer_add = 2
+		pop_citizen_happiness = 0.1
+		planet_amenities_add = 10
+	}
+	#triggered_planet_modifier = {
+	#	potential = { has_planet_flag = gem_planet_earth }
+	#	pop_ethic_xenophile_attraction_mult = 0.25
+	#}
+	triggered_planet_modifier = {
+		#potential = { NOT = { has_planet_flag = gem_planet_earth } }
+		pop_ethic_xenophobe_attraction_mult = 0.25
+	}
+}
+trait_pink_court2 = {
+	cost = 0
+	randomized = no
+	sorting_priority = 0
+	icon = "gfx/interface/icons/planet_modifiers/gem_pink_diamond.dds"
+	leader_class = { official }
+	requires_traits = { trait_geoloid }
+	ai_weight = 0
+	selectable_weight = 0
+	planet_modifier = { 
+		job_entertainer_add = 2
+		pop_citizen_happiness = 0.1
+		planet_amenities_add = 10
+		pop_ethic_xenophile_attraction_mult = 0.25
+	}
+}

@@ -146,6 +146,71 @@ gem_planet_initializer = {
 	}
 }
 
+
+### Gem Homeworld invasion
+gem_invasion_initializer = {
+	name = "NAME_Gem_Homeworld"
+	
+	class = "sc_no_star"
+	asteroid_belt = {
+		type = icy_asteroid_belt
+		radius = 15
+	}
+	
+	flags = { gem_invasion_home_system }
+	
+	usage = misc_system_init
+	
+	init_effect = {
+		generate_home_system_resources = yes
+	}
+		
+	planet = {
+		name = "NAME_Homeworld"
+		class = star
+		orbit_distance = 0
+		orbit_angle = random
+		size = { min = 0 max = 0 }
+		has_ring = yes
+		modifiers = none
+		
+		init_effect = {
+			prevent_anomaly = yes		
+		}
+	}
+
+	planet = {
+		name = "NAME_Homeworld"
+		class = pc_gemworld
+		orbit_distance = 1
+		orbit_angle = random
+		size = { min = 23 max = 23 }
+		starting_planet = no
+		has_ring = yes
+		deposit_blockers = none
+		modifiers = none
+		flags = { gem_invander_homeworld }	
+		init_effect = {
+			prevent_anomaly = yes		
+		}
+		
+		planet = {
+			class = pc_gem_asteroid
+			orbit_distance = 8
+			orbit_angle = random
+			size = 1
+		}
+
+		planet = {
+			count = 11
+			class = pc_gem_asteroid
+			orbit_distance = 2
+			orbit_angle = random
+			size = 1
+		}
+	}
+}
+
 gem_system_neighbor_1 = {
 	class = "rl_standard_stars"
 	flags = { gem_sol_system }
@@ -278,6 +343,7 @@ gem_sol_system = {
 					trait = "trait_wasteful"
 				}
 			}
+			last_created_species = { save_global_event_target_as = gem_human_species }
 			create_country = {
 				name = random
 				authority = auth_democratic

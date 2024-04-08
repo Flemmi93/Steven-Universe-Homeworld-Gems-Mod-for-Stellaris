@@ -5,25 +5,24 @@
 pm_off_colors = {
 	icon = "gfx/interface/icons/planet_modifiers/gem_off_colors.dds"
 	icon_frame = 3
-	planet_crime_add = 25
-}
+	}
 
 pm_gem_white_court = {
 	icon = "gfx/interface/icons/planet_modifiers/gem_white_diamond.dds"
 	icon_frame = 1
-	planet_stability_add = 5
+	#planet_stability_add = 5
 }
 
 pm_gem_yellow_court = {
 	icon = "gfx/interface/icons/planet_modifiers/gem_yellow_diamond.dds"
 	icon_frame = 1
-	planet_jobs_alloys_produces_mult = 0.05
+	#planet_jobs_alloys_produces_mult = 0.05
 }
 
 pm_gem_blue_court = {
 	icon = "gfx/interface/icons/planet_modifiers/gem_blue_diamond.dds"
 	icon_frame = 1
-	trade_value_mult = 0.05
+	#trade_value_mult = 0.05
 }
 
 pm_gem_pink_court = {
@@ -35,25 +34,25 @@ pm_gem_pink_court = {
 pm_gem_white_court2 = {
 	icon = "gfx/interface/icons/planet_modifiers/gem_white_diamond.dds"
 	icon_frame = 1
-	planet_stability_add = 7.5
+	#planet_stability_add = 7.5
 }
 
 pm_gem_yellow_court2 = {
 	icon = "gfx/interface/icons/planet_modifiers/gem_yellow_diamond.dds"
 	icon_frame = 1
-	planet_jobs_alloys_produces_mult = 0.075
+	#planet_jobs_alloys_produces_mult = 0.075
 }
 
 pm_gem_blue_court2 = {
 	icon = "gfx/interface/icons/planet_modifiers/gem_blue_diamond.dds"
 	icon_frame = 1
-	trade_value_mult = 0.075
+	#trade_value_mult = 0.075
 }
 
 pm_gem_pink_court2 = {
 	icon = "gfx/interface/icons/planet_modifiers/gem_pink_diamond.dds"
 	icon_frame = 1
-	pop_citizen_happiness = 0.15
+	#pop_citizen_happiness = 0.15
 }
 
 pm_gem_galaxy_warp = { 
@@ -61,6 +60,10 @@ pm_gem_galaxy_warp = {
 	icon_frame = 1
 	pop_resettlement_cost_mult = -0.1
 	planet_resettlement_unemployed_mult = 0.5
+}
+pm_gem_galaxy_warp_invasion = { 
+	icon = "gfx/interface/icons/planet_modifiers/gem_galaxy_warp.dds"
+	icon_frame = 1
 }
 
 pm_off_color_saboteur = {
@@ -99,21 +102,45 @@ pm_pink_tantrum_3 = {
 pm_blue_visits = {
 	icon = "gfx/interface/icons/planet_modifiers/gem_blue_diamond.dds"
 	icon_frame = 2
+planet_jobs_unity_produces_mult = 0.25
+	planet_stability_add = 5
 }
 pm_yellow_visits = {
 	icon = "gfx/interface/icons/planet_modifiers/gem_yellow_diamond.dds"
 	icon_frame = 2
+planet_jobs_alloys_produces_mult = 0.25
+	planet_stability_add = 5
 }
 pm_gem_no_assemble = {
 	icon = "gfx/interface/icons/planet_modifiers/gem_off_colors.dds"
 	icon_frame = 3
-	planet_pop_assembly_organic_mult = -1.2
+	planet_pop_assembly_organic_mult = -2
+}
+pm_gem_less_assemble1 = {
+	icon = "gfx/interface/icons/planet_modifiers/gem_off_colors.dds"
+	icon_frame = 3
+	planet_pop_assembly_organic_mult = -0.05
+	job_soldier_add = 1
+}
+pm_gem_less_assemble2 = {
+	icon = "gfx/interface/icons/planet_modifiers/gem_off_colors.dds"
+	icon_frame = 3
+	planet_pop_assembly_organic_mult = -0.10
+	job_soldier_add = 3
+}
+pm_gem_less_assemble3 = {
+	icon = "gfx/interface/icons/planet_modifiers/gem_off_colors.dds"
+	icon_frame = 3
+	planet_pop_assembly_organic_mult = -0.2
+	job_soldier_add = 5
 }
 pm_gem_human_experiement = {
 	icon = "gfx/interface/icons/planet_modifiers/pm_human_experiement.dds"
 	icon_frame = 2
-	pop_growth_speed = -0.15
+	pop_growth_speed_reduction = 0.15
 	planet_amenities_mult = 0.20
+	all_technology_research_speed = 0.1
+	job_head_researcher_add = 1
 }
 pm_grand_court_1 = {
 	icon = "gfx/interface/icons/planet_modifiers/pm_grand_court_1.dds"
@@ -137,6 +164,12 @@ pm_pink_celebration = {
 	icon_frame = 1
 	pop_happiness = 0.15
 }
+pm_gem_cookie_cats = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_gem_cookie_cats.dds"
+	icon_frame = 1
+	country_base_food_produces_add = 1
+	pop_happiness = 0.01
+}
 
 ##########################################################################
 # Country Modifiers
@@ -152,6 +185,7 @@ era_one = {
 	pop_resettlement_cost_mult = -0.75
 	planet_colony_development_speed_mult = 0.50
 	ship_colonizer_cost_mult = -0.1
+	#country_official_cap_add = 2
 }
 era_two = {
 	icon = "gfx/interface/icons/traits/trait_gem_eratwo.dds"
@@ -191,8 +225,32 @@ pink_part_relict = {
 	pop_happiness = 0.10
 	planet_crime_add = -10
 }
+gem_invaders = {
+	icon = "gfx/interface/icons/traits/trait_gem_eraone.dds"
+	country_base_volatile_motes_produces_add = 5
+	country_base_exotic_gases_produces_add = 5
+	country_base_rare_crystals_produces_add = 5
+	country_base_energy_produces_add = 250
+	country_base_minerals_produces_add = 250
+	country_base_alloys_produces_add = 50
+	country_base_consumer_goods_produces_add = 50
+	country_base_unity_produces_add = 50
+	country_base_engineering_research_produces_add = 250
+	country_base_physics_research_produces_add = 250
+	country_base_society_research_produces_add = 250
+	country_base_sr_dark_matter_produces_add = 1
+	country_base_sr_living_metal_produces_add = 1
+	country_base_sr_zro_produces_add = 1
+	country_base_minor_artifacts_produces_add = 1
+	country_base_nanites_produces_add = 1
+	country_naval_cap_add = 200
+	command_limit_add = 20
+}
 
-
+gems_pop_demotion_time_reduction = {
+	icon = "gfx/interface/icons/planet_modifiers/gem_galaxy_warp.dds"
+	pop_demotion_time_mult = -10
+}
 ##########################################################################
 # Faction Modifiers
 ##########################################################################

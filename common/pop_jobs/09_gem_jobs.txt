@@ -51,6 +51,69 @@ kindergartener = {
 			planet_amenities_add = 1
 		}
 	}
+
+	weight = {
+		weight = 500
+		modifier = {
+			factor = 10
+			owner = { is_geo_empire = yes }
+		}
+	}
+}
+
+kindergartener_growth = {
+	category = specialist
+	condition_string = SPECIALIST_JOB_TRIGGER
+	building_icon = injector1
+	
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+
+	possible_precalc = can_fill_specialist_job
+
+	possible = {
+		complex_specialist_job_check_trigger = yes
+	}
+	
+	resources = {
+		category = planet_managers
+		produces = {
+			unity = 2
+		}
+		upkeep = {
+			consumer_goods = 0.75
+			energy = 2
+			minerals = 3
+		}
+	}
+	
+	planet_modifier = {
+		pop_growth_speed = 0.1
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			has_trait = trait_repugnant
+		}
+		modifier = {
+			planet_amenities_add = -1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			OR = {
+				has_trait = trait_robot_domestic_protocols
+				has_trait = trait_charismatic
+			}
+		}
+		modifier = {
+			planet_amenities_add = 1
+		}
+	}
 	weight = {
 		weight = @specialist_job_weight
 		modifier = {

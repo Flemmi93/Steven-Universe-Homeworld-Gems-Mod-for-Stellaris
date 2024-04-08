@@ -177,6 +177,12 @@ spriteTypes = {
 		alwaystransparent = yes
 	}
 	spriteType = {
+		name = "GFX_evt_gem_1000_year_war"
+		texturefile = "gfx/event_pictures/gem_1000_year_war.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
 		name = "GFX_evt_gem_white_accension"
 		texturefile = "gfx/event_pictures/gem_accension_white.dds"
 		masking_texture = "gfx/interface/situation_log/event_mask.dds"
@@ -203,6 +209,36 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_evt_gem_communication_established"
 		texturefile = "gfx/event_pictures/gem_communication_established.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_gem_cookie_cats"
+		texturefile = "gfx/event_pictures/gem_cookie_cats.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_gem_lapis_lazuli_1"
+		texturefile = "gfx/event_pictures/gem_lapis_story_1.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_gem_lapis_lazuli_2"
+		texturefile = "gfx/event_pictures/gem_lapis_story_2.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_gem_lapis_lazuli_3"
+		texturefile = "gfx/event_pictures/gem_lapis_story_3.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_gem_lapis_lazuli_4"
+		texturefile = "gfx/event_pictures/gem_lapis_story_4.dds"
 		masking_texture = "gfx/interface/situation_log/event_mask.dds"
 		alwaystransparent = yes
 	}
