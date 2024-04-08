@@ -181,3 +181,23 @@ d_galaxy_warp_damaged = {
 		}
 	}
 }
+
+d_crystal_gem_temple = {
+	
+	icon = d_crystal_gem_temple
+	category = deposit_cat_rare
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_geo_empire = no }
+		}
+		modifier = {
+			planet_max_buildings_add = 1
+			planet_amenities_add = 10
+			planet_stability_add = 5
+			planet_structures_upkeep_mult = 0.05
+		}
+	}
+	
+}

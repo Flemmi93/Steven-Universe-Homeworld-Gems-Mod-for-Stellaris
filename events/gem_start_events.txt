@@ -114,7 +114,7 @@ country_event = { #for crystal gems to have a gem producing building
 				set_colonization_controls = { country = FROM type = colonization_control_yes cooldown = no }
 			}
 			
-			add_building = building_crystal_gem_temple
+			add_deposit = d_crystal_gem_temple
 			owner = {
 				create_leader = {
 					class = official
@@ -125,7 +125,7 @@ country_event = { #for crystal gems to have a gem producing building
 				}
 			}
 			last_created_leader = {
-				set_skill = 4
+				add_experience = 6000
 				change_leader_portrait = gemD6 #Rose
 				save_global_event_target_as = gem_rose_diamond
 				set_council_position = councilor_state
@@ -141,7 +141,7 @@ country_event = { #for crystal gems to have a gem producing building
 			}
 			
 			last_created_leader = {
-				set_skill = 3
+				add_experience = 4000
 				change_leader_portrait = gemP8 #Crystal Gem Pearl
 				save_global_event_target_as = gem_crystalgem_pearl
 				set_council_position = councilor_defense

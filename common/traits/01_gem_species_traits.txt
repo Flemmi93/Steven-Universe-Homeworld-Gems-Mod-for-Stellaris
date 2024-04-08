@@ -79,7 +79,7 @@ trait_geoloid = {
 		always = no
 	}
 	
-	opposites = { trait_crystal_gems trait_lithoid trait_aquatic trait_geoloid2 }
+	opposites = { trait_lithoid trait_aquatic trait_geoloid2 }
 	
 	forced_happiness = no
 	immortal_leaders = yes
@@ -126,7 +126,7 @@ trait_geoloid2 = {
 		always = no
 	}
 	
-	opposites = { trait_crystal_gems trait_lithoid trait_aquatic trait_geoloid }
+	opposites = { trait_lithoid trait_aquatic trait_geoloid }
 	
 	forced_happiness = no
 	immortal_leaders = yes
@@ -167,14 +167,14 @@ trait_crystal_gems = { #should be used together with geoloid trait
 		always = no
 	}
 	
-	opposites = { trait_gem_unquestionable trait_hive_mind trait_geoloid2 }
+	opposites = { trait_gem_unquestionable trait_hive_mind }
 	
 	potential_crossbreeding_chance = 1.0
 	allowed_archetypes = { GEOLOID LITHOID }
 	modifier = {
-		leader_skill_levels = 2
+		leader_skill_levels = 4
 		planet_jobs_produces_mult = 0.1
-		leader_cost_empire_size_mult = 10
+		leader_cost_empire_size_mult = 0.5
 	}
 }
 

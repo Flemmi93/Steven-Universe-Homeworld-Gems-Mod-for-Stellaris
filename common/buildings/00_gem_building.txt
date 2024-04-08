@@ -176,7 +176,6 @@ building_buff_kindergarten1 = {
 		exists = owner
 		owner = {
 			OR = {
-				has_origin = origin_crystal_gems
 				is_geo_empire = yes
 			} 
 		}
@@ -185,7 +184,6 @@ building_buff_kindergarten1 = {
 	allow = {
 		OR = {
 			is_geo_empire = yes
-			owner = { has_origin = origin_crystal_gems }
 		}
 	}
 	
@@ -484,17 +482,12 @@ building_crystal_gem_temple = {
 	
 	potential = {
 		exists = owner
-		owner = {
-			OR = { 
-				is_primitive = yes
-				has_origin = origin_crystal_gems
-			}
-		}
-		NOT = { has_building = building_crystal_gem_temple }
+		NOT = { always = yes }
 	}
 	
 	allow = {
 		owner = { has_origin = origin_crystal_gems }
+		NOT = { has_building = building_crystal_gem_temple }
 	}
 	
 	

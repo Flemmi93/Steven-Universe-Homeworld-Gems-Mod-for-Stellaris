@@ -1303,7 +1303,7 @@ planet_event = {
 		create_pop = {
 			species = root.solar_system.owner.species
 		}
-		add_building = building_crystal_gem_temple
+		add_deposit = d_crystal_gem_temple
 		add_building = building_primitive_dwellings
 		add_building = building_primitive_dwellings
 		add_building = building_stone_palace
@@ -1388,8 +1388,8 @@ country_event = { #Bronze Age -> Iron Age
 				}
 			}
 			if = {
-				limit = { NOT = { has_building = building_crystal_gem_temple } }
-				add_building = building_crystal_gem_temple
+				limit = { NOT = { has_deposit = d_crystal_gem_temple } }
+				add_deposit = d_crystal_gem_temple
 			}
 		}
 	}
@@ -1417,8 +1417,8 @@ country_event = { #Iron Age -> Medieval Age
 				}
 			}
 			if = {
-				limit = { NOT = { has_building = building_crystal_gem_temple } }
-				add_building = building_crystal_gem_temple
+				limit = { NOT = { has_deposit = d_crystal_gem_temple } }
+				add_deposit = d_crystal_gem_temple
 			}
 		}
 	}
@@ -1446,8 +1446,8 @@ country_event = { #Medieval Age -> Renaissance Age
 				}
 			}
 			if = {
-				limit = { NOT = { has_building = building_crystal_gem_temple } }
-				add_building = building_crystal_gem_temple
+				limit = { NOT = { has_deposit = d_crystal_gem_temple } }
+				add_deposit = d_crystal_gem_temple
 			}
 		}
 	}
@@ -1475,8 +1475,8 @@ country_event = { #Renaissance Age -> Steam Age
 				}
 			}
 			if = {
-				limit = { NOT = { has_building = building_crystal_gem_temple } }
-				add_building = building_crystal_gem_temple
+				limit = { NOT = { has_deposit = d_crystal_gem_temple } }
+				add_deposit = d_crystal_gem_temple
 			}
 		}
 		solar_system = { owner = { establish_communications = event_target:new_earth_civilisation_w_cg } }
@@ -1505,8 +1505,8 @@ country_event = { #Steam Age -> Industrial Age
 				}
 			}
 			if = {
-				limit = { NOT = { has_building = building_crystal_gem_temple } }
-				add_building = building_crystal_gem_temple
+				limit = { NOT = { has_deposit = d_crystal_gem_temple } }
+				add_deposit = d_crystal_gem_temple
 			}
 		}
 		solar_system = { owner = { establish_communications = event_target:new_earth_civilisation_w_cg } }
@@ -1536,8 +1536,8 @@ country_event = { #industrial Age -> Machine Age
 				}
 			}
 			if = {
-				limit = { NOT = { has_building = building_crystal_gem_temple } }
-				add_building = building_crystal_gem_temple
+				limit = { NOT = { has_deposit = d_crystal_gem_temple } }
+				add_deposit = d_crystal_gem_temple
 			}
 		}
 		solar_system = { owner = { establish_communications = event_target:new_earth_civilisation_w_cg } }
