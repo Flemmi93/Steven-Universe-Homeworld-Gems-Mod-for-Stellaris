@@ -1142,6 +1142,10 @@ planet_event = {
 	add_deposit = d_kindergarten_blocker
 	set_planet_flag = no_observation
 	# bronce age
+	if = {
+		limit = {
+			NOT = { exists = event_target:gem_human_species }
+		}
 		create_species = {
 			name = NAME_Human
 			plural = NAME_Humans
@@ -1154,6 +1158,8 @@ planet_event = {
 				trait = "trait_wasteful"
 			}
 		}
+		last_created_species = { save_global_event_target_as = gem_human_species }
+	}
 		create_country = {
 			name = random
 			authority = auth_democratic
@@ -1161,7 +1167,7 @@ planet_event = {
 				civic = civic_secret_of_fire
 				civic = civic_the_wheel
 			}
-			species = last_created_species
+			species = event_target:gem_human_species
 			ethos = {
 				ethic = "ethic_xenophobe"
 				ethic = "ethic_spiritualist"
@@ -1196,9 +1202,9 @@ planet_event = {
 		set_owner = last_created_country
 		owner = { set_awareness = 0 }
 		while = {
-			count = 5
+			count = 7
 			create_pop = {
-				species = last_created_species
+				species = event_target:gem_human_species
 			}
 		}
 		create_pop = {

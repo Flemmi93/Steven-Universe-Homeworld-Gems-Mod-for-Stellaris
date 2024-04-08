@@ -343,6 +343,7 @@ gem_sol_system = {
 					trait = "trait_wasteful"
 				}
 			}
+			last_created_species = { save_global_event_target_as = gem_human_species }
 			create_country = {
 				name = random
 				authority = auth_democratic

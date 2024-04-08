@@ -482,8 +482,12 @@ building_crystal_gem_temple = {
 	
 	potential = {
 		exists = owner
-		is_geo_empire = no
-		owner = { has_origin = origin_crystal_gems }
+		owner = {
+			OR = { 
+				is_primitive = yes
+				has_origin = origin_crystal_gems
+			}
+		}
 	}
 	
 	allow = {
@@ -532,6 +536,23 @@ building_gem_sky_arena = {
 		base = 1000
 	}
 
+	resources = {
+		category = planet_buildings
+		produces = {
+		unity = 6
+		}
+		upkeep = {
+		energy =  @b1_upkeep
+		}
+		cost = {
+		minerals = @b1_minerals
+		}
+	}
+	
+	 planet_modifier = {
+		 planet_amenities_add = 5
+	 }
+
 	triggered_planet_modifier = {
 		potential = {
 			is_geo_empire = yes
@@ -543,25 +564,12 @@ building_gem_sky_arena = {
 	triggered_planet_modifier = {
 		potential = {
 			owner = {
-				is_geo_empire = yes
+				is_geo_empire = no
 			}
 		}
 		modifier = { # Adjust for Balance
 			job_duelist_add = 1
 			job_scrap_miner_add = 1
-		}
-	}
-	triggered_planet_modifier = {
-		potential = {
-			owner = {
-				OR = {
-					has_ethic = ethic_xenophobe
-					has_ethic = ethic_fanatic_xenophobe
-				}
-			}
-		}
-		modifier = { # Adjust for Balance
-			job_xeno_zoo_beast_add = 1
 		}
 	}
 	
