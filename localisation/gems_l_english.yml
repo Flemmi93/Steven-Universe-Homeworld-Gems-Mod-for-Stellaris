@@ -188,6 +188,8 @@
  d_galaxy_warp_desc: "This construct enables our people to near instantly travel across the galaxy"
  d_galaxy_warp_damaged: "$d_galaxy_warp$"
  d_galaxy_warp_damaged_desc: "$d_galaxy_warp_desc$\n\nAll it takes it time to clean the site up and make it a nice thing to look at."
+ d_crystal_gem_temple: "Crystal Gem Temple"
+ d_crystal_gem_temple_desc: "This ancient temple is the homebase of the crystal gems. it got plenty of signs to discourage trespassing."
  district_kindergarten: "Kindergarten"
  district_kindergarten_desc: "§LMassive structures dug out of the surface of the planet. Kindergartens extract minerals and nutrients from the surrounding environment to create brand new Gems. The Gems emerge from their holes in the Kindergarten walls fully conscious and ready to serve their purpose.§!\n§RThese districts cannot be demolished after being built§!"
  district_kindergarten2: "$district_kindergarten$"

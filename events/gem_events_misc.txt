@@ -39,10 +39,11 @@ pop_event = {
 	desc = gem_events_misc.004.desc
 	is_triggered_only = yes
 	trigger = {
-		years_passed > 0
+		days_passed > 4
 		owner = { NOT = { has_country_flag = gem_events_misc_003_blocks } }
 		NOT = { owner = { is_ai = yes } }
 		has_trait = trait_geoloid
+		owner_main_species = { NOT = { has_trait = trait_geoloid } }
 	}
 	immediate = {
 		event_target:crystal_gems_nation = { set_country_flag = gem_events_misc_003_blocks }

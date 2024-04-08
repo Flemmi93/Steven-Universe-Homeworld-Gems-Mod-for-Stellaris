@@ -6,7 +6,12 @@ country_event = {
     is_triggered_only = yes
     trigger = { has_origin = origin_geoform }
     
-    immediate = {
+	immediate = {
+		get_galaxy_setup_value = {
+			setting = mid_game_year
+			which = partway_to_mid_game_years_var
+			scale_by = 0.75
+		}
         capital_scope = {
 			
             # 3 + 3 energy               
@@ -44,7 +49,12 @@ country_event = { # for play without Lithoid DLC
     is_triggered_only = yes
     trigger = { owner = { is_lithoid_empire = no } }
 	
-    immediate = {
+	immediate = {
+		get_galaxy_setup_value = {
+			setting = mid_game_year
+			which = partway_to_mid_game_years_var
+			scale_by = 0.75
+		}
         capital_scope = {
 			add_district  = {
 				district_type = district_kindergarten
@@ -68,7 +78,12 @@ country_event = {
     is_triggered_only = yes
     trigger = { owner = { is_lithoid_empire = yes } }
 
-    immediate = {
+	immediate = {
+		get_galaxy_setup_value = {
+			setting = mid_game_year
+			which = partway_to_mid_game_years_var
+			scale_by = 0.75
+		}
         capital_scope = {
 			add_district  = {
 				district_type = district_kindergarten
@@ -85,8 +100,13 @@ country_event = { #for crystal gems to have a gem producing building
     hide_window = yes
     is_triggered_only = yes
     trigger = { has_origin = origin_crystal_gems }
-
-    immediate = {
+		
+	immediate = {
+		get_galaxy_setup_value = {
+			setting = mid_game_year
+			which = partway_to_mid_game_years_var
+			scale_by = 0.75
+		}
 		save_global_event_target_as = crystal_gems_nation
 		capital_scope = {
 			add_deposit = d_galaxy_warp_damaged
@@ -111,7 +131,7 @@ country_event = { #for crystal gems to have a gem producing building
 			create_pop = { species = last_created_species }
 			last_created_species = {
 				save_global_event_target_as = crystal_gems_species
-				set_colonization_controls = { country = FROM type = colonization_control_yes cooldown = no }
+				set_colonization_controls = { country = FROM type = colonization_control_yes cooldown = yes }
 			}
 			
 			add_deposit = d_crystal_gem_temple
@@ -183,7 +203,12 @@ country_event = {
 		
 	}
     
-    immediate = {
+	immediate = {
+		get_galaxy_setup_value = {
+			setting = mid_game_year
+			which = partway_to_mid_game_years_var
+			scale_by = 0.75
+		}
         capital_scope = {
 			
 			# 2 kindargarden
@@ -223,8 +248,6 @@ country_event = {
 			which = partway_to_mid_game_years_var
 			scale_by = 0.75
 		}
-		
-		#divide_variable = { which = halfway_to_mid_game_years_var value = 2 }
 	}
 	option = {
 		name = YES
