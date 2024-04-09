@@ -1188,7 +1188,13 @@ planet_event = {
 	is_triggered_only = yes
 	
 	option = {
-		name = gem_off_colors.2002.a
+		name = gem_off_colors.2002.agem_off_colors.2002.a
+		while = {
+			count = 4
+			random_owned_pop = {
+				kill_pop = yes
+			}
+		}
 		planet_event = { id = gem_off_colors.2003 days = 1 }
 		hidden_effect = {
 			remove_modifier = pm_gem_no_assemble
