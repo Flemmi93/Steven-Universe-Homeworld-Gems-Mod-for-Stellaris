@@ -447,19 +447,23 @@ country_event = {
 		has_modifier = gem_invaders
 	}
 	immediate = {
-		set_variable = { which = gem_armies value = trigger:years_passed } #example 35 armies
-		multiply_variable = { which = gem_armies value = 0.15 } #example 35*1.1= 38.5
-		ceiling_variable = gem_armies #example 38.5 -> 39
-
-		while = {
-			count = gem_armies
-			add_resource = { energy = 100 }
-			capital_scope = {
-				create_army = {
-					name = random
-					owner = this
-					species = owner_main_species
-					type = assault_army
+		if = {
+			limit = {
+				count_owned_army = {
+					limit = { army_type = assault_army }
+					count < 50
+				}
+			}
+			white = {
+				countr = 5
+				add_resource = { energy = 100 }
+				capital_scope = {
+					create_army = {
+						name = random
+						owner = this
+						species = owner_main_species
+						type = assault_army
+					}
 				}
 			}
 		}

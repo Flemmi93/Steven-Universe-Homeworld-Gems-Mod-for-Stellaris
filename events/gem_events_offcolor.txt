@@ -13,7 +13,10 @@ country_event = {
 		is_geo_empire = yes
 		OR = {
 			AND = {
-				num_owned_planets > 6
+				count_controlled_planet = {
+					count < 5
+					limit = { is_colony = yes }
+				}
 				num_pops > 100
 			}
 			num_pops > 200
