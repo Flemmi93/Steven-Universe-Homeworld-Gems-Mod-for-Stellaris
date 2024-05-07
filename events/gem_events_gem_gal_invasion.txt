@@ -454,8 +454,8 @@ country_event = {
 					count < 50
 				}
 			}
-			white = {
-				countr = 5
+			while = {
+				count = 5
 				add_resource = { energy = 100 }
 				capital_scope = {
 					create_army = {

@@ -3,6 +3,7 @@ GEO = { # when the player has the Lithoid species pack this will be playable
 	
 	playable = {
 		has_lithoids = yes
+	# 	is_ai = no
 	}
 	possible = { authority = { NOT = { value = auth_machine_intelligence text = SPECIES_CLASS_MUST_NOT_USE_MACHINE_INTELLIGENCE } } }
 	
@@ -14,19 +15,7 @@ GEO = { # when the player has the Lithoid species pack this will be playable
 	leader_age_min = 200
 	leader_age_max = 800
 	
-	custom_portraits = {
-		playable = { has_lithoids = yes }
-		portraits = {
-			"gem"
-		}
-	}	
 	
-	custom_portraits = {
-		playable = { has_utopia = yes }
-		portraits = {
-			"whitegestalt"
-		}
-	}
 	
 	graphical_culture = geoloid_01
 	move_pop_sound_effect = "robot_pops_move"
@@ -43,6 +32,7 @@ GEO1 = { # for when the player has no DLC
 	
 	playable = {
 		has_lithoids = no
+		# is_ai = no
 	}
 	
 	gender = no
@@ -51,18 +41,6 @@ GEO1 = { # for when the player has no DLC
 	leader_age_min = 200
 	leader_age_max = 800
 	
-	custom_portraits = {
-		playable = { has_lithoids = no }
-		portraits = {
-			"gem"
-		}
-	}
-	custom_portraits = {
-		playable = { has_utopia = yes }
-		portraits = {
-			"whitegestalt"
-		}
-	}
 	
 	graphical_culture = geoloid_01
 	move_pop_sound_effect = "robot_pops_move"
@@ -70,30 +48,26 @@ GEO1 = { # for when the player has no DLC
 	trait = "trait_geoloid"
 }
 
-GEO2 = { #fir AI use only, can spawn only when the player isnt playing gems
-	archetype = GEOLOID 
+# GEO2 = { #for AI use only, can spawn only when the player isnt playing gems
+# 	archetype = GEOLOID 
 	
-	playable = {
-		is_ai = yes
-	}
-	possible = { authority = { NOT = { value = auth_machine_intelligence text = SPECIES_CLASS_MUST_NOT_USE_MACHINE_INTELLIGENCE } } }
+# 	playable = {
+# 		is_ai = yes
+# 	}
+# 	possible = { authority = { NOT = { value = auth_machine_intelligence text = SPECIES_CLASS_MUST_NOT_USE_MACHINE_INTELLIGENCE } } }
 	
-	randomized = no
+# 	randomized = no
 	
-	gender = no
-	use_climate_preference = no
+# 	gender = no
+# 	use_climate_preference = no
 	
-	leader_age_min = 200
-	leader_age_max = 800
+# 	leader_age_min = 200
+# 	leader_age_max = 800
 	
-	portraits = {
-		"gem"
-	}
-	
-	graphical_culture = geoloid_01
-	move_pop_sound_effect = "robot_pops_move"
+# 	graphical_culture = geoloid_01
+# 	move_pop_sound_effect = "robot_pops_move"
 
-	resources = {}
+# 	resources = {}
 	
-	trait = "trait_geoloid"
-}
+# 	trait = "trait_geoloid"
+# }

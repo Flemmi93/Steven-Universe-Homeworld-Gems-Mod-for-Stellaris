@@ -1191,7 +1191,7 @@ planet_event = {
 	is_triggered_only = yes
 	
 	option = {
-		name = gem_off_colors.2002.agem_off_colors.2002.a
+		name = gem_off_colors.2002.a
 		while = {
 			count = 4
 			random_owned_pop = {
