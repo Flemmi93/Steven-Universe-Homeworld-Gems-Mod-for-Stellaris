@@ -325,8 +325,8 @@ soundgroup =
 	
 	soundoverride =
 	{
-		name = "advisor_notification_spacebourne_encounter_01"
-		file = "vo/pearl/filtered/advisor_notification_spacebourne_encounter_01.wav"
+		name = "advisor_notification_spaceborne_encounter_01"
+		file = "vo/pearl/filtered/advisor_notification_spaceborne_encounter_01.wav"
 	}
 	
 	soundoverride =

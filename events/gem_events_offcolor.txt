@@ -726,7 +726,7 @@ planet_event = {
 	title = gem_off_colors.1041.name
 	desc = gem_off_colors.1041.desc
 	picture = GFX_evt_gem_pinkvisits
-immediate = {
+	immediate = {
 		hidden_effect = {
 			event_target:gem_pink_diamond = { set_leader_flag = pink_earth_flag }
 		}
@@ -734,11 +734,11 @@ immediate = {
 	option = {
 		name = gem_off_colors.1041.a
 		assign_leader = event_target:gem_pink_diamond
-		}
+	}
 	after = {
 		hidden_effect = {
 			event_target:gem_pink_diamond = { remove_leader_flag = pink_earth_flag }
-}
+		}
 	}
 }
 # Pink Diamond moves back to Earth

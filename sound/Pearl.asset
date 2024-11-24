@@ -322,11 +322,11 @@ soundgroup =
 		name = "advisor_notification_pre_sapient_uplifted_01"
 		file = "vo/pearl/unfiltered/advisor_notification_pre_sapient_uplifted_01.wav"
 	}
-	
+
 	soundoverride =
 	{
-		name = "advisor_notification_spacebourne_encounter_01"
-		file = "vo/pearl/unfiltered/advisor_notification_spacebourne_encounter_01.wav"
+		name = "advisor_notification_spaceborne_encounter_01"
+		file = "vo/ethics/egalitarian/advisor_notification_spaceborne_enconter_01.wav"
 	}
 	
 	soundoverride =
