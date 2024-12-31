@@ -17,6 +17,7 @@ country_event = {
 			remove_district = district_kindergarten
 		}
 		hidden_effect = {
+			add_modifier = { modifier = gems_pop_eat_deposits }
 			capital_scope = {
 				remove_deposit = d_kindergarten_large
 				remove_deposit = d_kindergarten_large
@@ -29,5 +30,60 @@ country_event = {
 	}
 	option = {
 		name = f93_deposit_eater.1.b
+	}
+}
+
+planet_event = {
+	id = f93_deposit_eater.2
+	hide_window = yes
+	mean_time_to_happen = 30
+	trigger = {
+		has_modifier = f93_pm_certified_kindergartener
+		owner = { is_geo_empire = yes }
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				num_unemployed < 2
+				owner = { has_resource = { type = minerals amount > 500 } }
+				NOR = {
+					has_planet_flag = f93_just_made_a_pop
+				}
+			}
+			eat_deposit_for_pop = yes
+		}
+		if = {
+			limit = {
+				owner = {
+					has_resource = { type = influence amount = 100 }
+					has_resource = { type = minerals amount = 10000 }
+					has_resource = { type = alloys amount = 500 }
+				}
+			}
+			owner = {
+				add_resource = {
+					influence = -100
+					minerals = -10000
+					alloys = -500
+				}
+			}
+		change_pc = pc_gemworld
+		remove_modifier = f93_pm_certified_kindergartener
+		}
+		if = {
+			limit = { owner = { is_geo_empire = no } }
+			remove_modifier = f93_pm_certified_kindergartener
+		}
+		if = {
+			limit = {
+				has_planet_flag = gem_planet_earth_owned_by_pink_pre_era_2
+				count_owned_pop = {
+					limit = { has_trait = trait_geoloid }
+					count > 3
+				}
+			}
+			planet_event = { id = gem_off_colors.1000 }
+		}
 	}
 }

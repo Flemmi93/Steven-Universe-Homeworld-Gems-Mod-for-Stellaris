@@ -12,9 +12,7 @@ planet_event = {
 	}
 
 	immediate = {
-		owner = { country_event = { id = gem_kg.2 days = 1 }
-		}
-		
+		owner = { country_event = { id = gem_kg.2 days = 1 } }
 	}
 
 
@@ -33,7 +31,8 @@ country_event = {
 		is_geo_empire = yes
 		owner = {
 			NOT = { has_country_flag = gem_dontshow_kg_tut } #every time a colony is founded and they havent converted Farms to Kindergarten deposits they should get this
-			}
+			owner_main_species = { is_geoloid_deposit_eating = no }
+		}
 	}
 
 	option = { 

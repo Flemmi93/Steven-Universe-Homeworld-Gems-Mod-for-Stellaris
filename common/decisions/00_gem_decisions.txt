@@ -357,7 +357,10 @@ decision_gemcology_project_deposit_eater = {
 		}
 		custom_tooltip = decision_gemcology_project_requirements_2
 		num_uncleared_blockers < 1
-		owner = { has_technology = tech_terrestrial_sculpting }
+		or ={
+			owner = { has_technology = tech_terrestrial_sculpting }
+			owner_main_species = { is_geoloid_deposit_eating = yes }
+		}
 	}
 
 	effect = { # Make Gemworld
@@ -377,6 +380,10 @@ decision_gemcology_project_deposit_eater = {
 				set_planet_flag = gem_has_kindergarten2
 			}
 		}
+	}
+	
+	ai_weight = {
+		weight = 50
 	}
 }
 
@@ -423,14 +430,14 @@ decision_pop_project_deposit_eater = {
 	}
 
 	potential = {
-			ROOT = {
-				any_deposit = {
-					NOT = {
-						has_deposit_category = deposit_cat_rare
-						is_blocker = yes
-					}
+		ROOT = {
+			any_deposit = {
+				NOT = {
+					has_deposit_category = deposit_cat_rare
+					is_blocker = yes
 				}
 			}
+		}
 		exists = owner
 		owner = {
 			is_geo_empire = yes
@@ -439,18 +446,93 @@ decision_pop_project_deposit_eater = {
 	}
 
 	effect = { # Make Pop
-		random_deposit = {
-			limit = {
-				NOR = {
-					has_deposit_flag = f93_gem_deposit
-					has_deposit_category = deposit_cat_rare
-					is_blocker = yes
-				}
+		eat_deposit_for_pop_no_cost = yes
+	}
+
+	ai_weight = {
+		weight = 5
+		modifier = {
+			factor = 20
+			num_unemployed < 2
+		}
+		modifier = {
+			factor = 0
+			num_housing < 1
+		}
+	}
+}
+
+
+#Make pops automatic
+decision_pop_project_deposit_eater_auto = {
+	owned_planets_only = yes
+	icon = decision_kindergarten
+
+	enactment_time = 60
+	resources = {
+		category = decisions
+	}
+
+	potential = {
+		ROOT = {
+			NOT = {
+				has_modifier = f93_pm_certified_kindergartener
 			}
-			remove_deposit = yes
-			root = {
-				create_pop = { species = owner_main_species }
+			OR = {
+				any_deposit = {
+					NOT = {
+						has_deposit_category = deposit_cat_rare
+						is_blocker = yes
+					}
+				}
+				NOT = { is_planet_class = pc_gemworld }
 			}
 		}
+		exists = owner
+		owner = {
+			is_ai = no
+			is_geo_empire = yes
+			owner_main_species = { is_geoloid_deposit_eating = yes }
+		}
+	}
+	allow = {
+		OR = {
+			has_building = building_buff_kindergarten1
+			has_building = building_buff_kindergarten2
+			has_building = building_buff_kindergarten3
+		}
+	}
+	effect = { # Make Pops and worlds
+		custom_tooltip = decision_pop_project_deposit_eater_auto_tooltip
+		add_modifier = { modifier = f93_pm_certified_kindergartener }
+		hidden_effect = {
+			planet_event = {
+				id = f93_deposit_eater.2
+			}
+		}
+	}
+}
+
+#Make pops automatic stop
+decision_pop_project_deposit_eater_auto_stop = {
+	owned_planets_only = yes
+	icon = decision_kindergarten
+
+	enactment_time = 0
+	resources = {
+		category = decisions
+	}
+
+	potential = {
+		ROOT = {
+			has_modifier = f93_pm_certified_kindergartener
+		}
+		exists = owner
+	}
+	effect = {
+		remove_modifier = f93_pm_certified_kindergartener
+	}
+	ai_weight = {
+		weight = 1000
 	}
 }

@@ -17,9 +17,9 @@ country_event = {
 					count < 5
 					limit = { is_colony = yes }
 				}
-				num_pops > 100
+				num_pops > 60
 			}
-			num_pops > 200
+			num_pops > 120
 			years_passed > partway_to_mid_game_years_var
 		}
 	}
@@ -287,6 +287,7 @@ planet_event = {
 	id = gem_off_colors.1000
 	hide_window = yes
 	is_triggered_only = yes
+	fire_only_once = yes
 	pre_triggers = {
 		is_homeworld = no
 		is_ai = no
@@ -301,6 +302,7 @@ planet_event = {
 	immediate = {
 		planet_event = { id = gem_off_colors.1010 days = 360 } # appearence of an unknown Rose Gem
 		#planet_event = { id = gem_diamond_choice.1001 } # forces to assign this planet to pink
+		set_planet_flag = f93_no_more_deposit_eating
 		}
 }
 
@@ -322,7 +324,7 @@ planet_event = {
 			save_global_event_target_as = gem_planet_earth_event
 		}
 	}
-after = {
+	after = {
 		hidden_effect = {
 			owner = {
 				start_situation = { 

@@ -1,0 +1,20 @@
+eat_deposit_for_pop = { # planet scope
+		eat_deposit_for_pop_no_cost = yes
+		root.owner = { add_resource = { minerals = -500 } }
+	}
+eat_deposit_for_pop_no_cost = { # planet scope
+	random_deposit = {
+		limit = {
+			NOR = {
+				has_deposit_flag = f93_gem_deposit
+				has_deposit_category = deposit_cat_rare
+				is_blocker = yes
+			}
+		}
+		remove_deposit = yes
+		root = {
+			create_pop = { species = owner_main_species }
+			set_timed_planet_flag = { flag = f93_just_made_a_pop days = 479 }
+		}
+	}
+}

@@ -99,6 +99,7 @@ d_space_mining = {
 	
 	planet_modifier = { 
 		district_mining_max = 4
+		district_generator_max = 1
 	}
 
 	resources = {
