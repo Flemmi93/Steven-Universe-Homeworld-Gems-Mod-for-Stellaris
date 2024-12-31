@@ -27,6 +27,7 @@ country_event = { #updating the old planet modifier to the new planetary feature
 				limit = { has_modifier = pm_gem_galaxy_warp }
 				remove_modifier = pm_gem_galaxy_warp
 				add_deposit = d_galaxy_warp
+				last_added_deposit = { set_deposit_flag = f93_gem_deposit }
 			}
 		}
 	}
@@ -67,6 +68,7 @@ country_event = { #updating the old planet modifier to the new planetary feature
 				limit = { has_building = building_crystal_gem_temple }
 				remove_building = building_crystal_gem_temple
 				add_deposit = d_crystal_gem_temple
+				last_added_deposit = { set_deposit_flag = f93_gem_deposit }
 			}
 		}
 	}

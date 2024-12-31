@@ -500,6 +500,7 @@ planet_event = { #event chain to make gems spawn on a colony world first as a wa
 	}
 	immediate = {
 		add_deposit = d_galaxy_warp
+		last_added_deposit = { set_deposit_flag = f93_gem_deposit }
 	}
 	option = { #continues event chain
 		name = gem_gal_invasion.006.a
@@ -510,6 +511,7 @@ planet_event = { #event chain to make gems spawn on a colony world first as a wa
 		custom_tooltip = gem_gal_invasion.006.b.desc
 		remove_deposit = d_galaxy_warp_damaged
 		add_deposit = d_galaxy_warp_damaged
+		last_added_deposit = { set_deposit_flag = f93_gem_deposit }
 	}
 	option = { # aboards event chain
 		name = gem_gal_invasion.006.c

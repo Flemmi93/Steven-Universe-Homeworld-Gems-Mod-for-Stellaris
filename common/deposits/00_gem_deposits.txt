@@ -131,7 +131,7 @@ d_homeworld_special = {
 can_be_cleared = { always = no }
 }
 
-#Galaxy Warp Deposite
+#Galaxy Warp Deposit
 d_galaxy_warp = {
 	icon = d_galaxy_warp
 	category = deposit_cat_rare
@@ -161,12 +161,13 @@ d_galaxy_warp = {
 	}
 }
 
-#Galaxy Warp Deposite
+#Galaxy Warp Deposit
 d_galaxy_warp_damaged = {
 	icon = d_galaxy_warp
 	category = deposit_cat_blockers
 	on_cleared = {
 		add_deposit = d_galaxy_warp
+		last_added_deposit = { set_deposit_flag = f93_gem_deposit }
 	}
 	time = 360
 	triggered_planet_modifier = {

@@ -178,6 +178,7 @@ building_buff_kindergarten1 = {
 			OR = {
 				is_geo_empire = yes
 			} 
+			owner_main_species = { owner_main_species = { NOT = { is_geoloid_deposit_eating = yes } } }
 		}
 	}
 	
@@ -185,6 +186,7 @@ building_buff_kindergarten1 = {
 		OR = {
 			is_geo_empire = yes
 		}
+		owner = { owner_main_species = { NOT = { is_geoloid_deposit_eating = yes } } }
 	}
 	
 	destroy_trigger = {
@@ -193,6 +195,7 @@ building_buff_kindergarten1 = {
 				is_geo_empire = yes
 				has_origin = origin_crystal_gems
 			}
+			owner_main_species = { NOT = { is_geoloid_deposit_eating = yes } }
 		}
 	}
 	
@@ -302,6 +305,7 @@ building_buff_kindergarten2 = {
 				has_origin = origin_crystal_gems
 				is_geo_empire = yes
 			}
+			owner_main_species = { NOT = { is_geoloid_deposit_eating = yes } }
 		}
 	}
 	
@@ -407,6 +411,7 @@ building_buff_kindergarten3 = {
 				has_origin = origin_crystal_gems
 				is_geo_empire = yes
 			}
+			owner_main_species = { NOT = { is_geoloid_deposit_eating = yes } }
 		}
 	}
 	

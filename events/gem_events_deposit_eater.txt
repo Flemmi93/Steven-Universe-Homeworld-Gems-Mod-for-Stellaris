@@ -1,0 +1,33 @@
+namespace = f93_deposit_eater
+
+country_event = {
+	id = f93_deposit_eater.1
+	title = f93_deposit_eater.1.name
+	picture = GFX_evt_gem_it_could_have_been_great
+	desc = f93_deposit_eater.1.desc
+	is_triggered_only = yes
+
+	option = {
+		name = f93_deposit_eater.1.a
+		owner_main_species = {
+			set_species_flag = f93_deposit_eater
+		}
+		capital_scope = {
+			remove_deposit = d_kindergarten_large
+			remove_district = district_kindergarten
+		}
+		hidden_effect = {
+			capital_scope = {
+				remove_deposit = d_kindergarten_large
+				remove_deposit = d_kindergarten_large
+				remove_deposit = d_kindergarten_large
+				remove_deposit = d_kindergarten_large
+				remove_deposit = d_kindergarten_large
+				remove_district = district_kindergarten
+			}
+		}
+	}
+	option = {
+		name = f93_deposit_eater.1.b
+	}
+}

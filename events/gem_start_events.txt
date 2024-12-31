@@ -20,7 +20,9 @@ country_event = {
         
             # 8 mining
 			add_deposit = d_space_mining
+			last_added_deposit = { set_deposit_flag = f93_gem_deposit }
             add_deposit = d_space_mining
+			last_added_deposit = { set_deposit_flag = f93_gem_deposit }
 			
 			# 0 farming 
 			
@@ -29,6 +31,7 @@ country_event = {
 			add_deposit = d_kindergarten_large
 			
 			add_deposit = d_homeworld_special
+			last_added_deposit = { set_deposit_flag = f93_gem_deposit }
 			
 			set_planet_flag = gem_has_kindergarten
 			
@@ -36,6 +39,7 @@ country_event = {
 			add_modifier = { modifier = pm_grand_court_1 }
 			add_modifier = { modifier = pm_gem_pink_court }
 			add_deposit = d_galaxy_warp
+			last_added_deposit = { set_deposit_flag = f93_gem_deposit }
 			add_building = building_buff_kindergarten2
 		}
 		set_policy = { policy = robot_pop_policy option = robot_pops_outlawed }
@@ -110,6 +114,7 @@ country_event = { #for crystal gems to have a gem producing building
 		save_global_event_target_as = crystal_gems_nation
 		capital_scope = {
 			add_deposit = d_galaxy_warp_damaged
+			last_added_deposit = { set_deposit_flag = f93_gem_deposit }
 			add_deposit = d_kindergarten_blocker
 			create_species = { #make new portraits for crystal gems
 				class="GEO"
@@ -135,6 +140,7 @@ country_event = { #for crystal gems to have a gem producing building
 			}
 			
 			add_deposit = d_crystal_gem_temple
+			last_added_deposit = { set_deposit_flag = f93_gem_deposit }
 			owner = {
 				create_leader = {
 					class = official
@@ -215,6 +221,7 @@ country_event = {
 			add_deposit = d_kindergarten_med
 			
 			add_deposit = d_homeworld_special
+			last_added_deposit = { set_deposit_flag = f93_gem_deposit }
 			
 			set_planet_flag = gem_has_kindergarten
 			

@@ -229,7 +229,9 @@
  decision_create_kindergarten_large: "Establish Large Kindergarten Site"
  decision_create_kindergarten_large_desc: "Efforts will be undertaken to make use of the planet's organic nutrients and minerals for the growth and development of new gems. To this end, a Kindergarten site of great size and scale will be excavated, after which we may construct injectors to seed the site and assign gems to oversee the growth process."
  decision_gemcology_project: "Gemworld Project"
- decision_gemcology_project_desc: "With this world's Kindergarten production having finally reached its full potential, the time has come to transform the planet itself to better suit our needs and preferences. We shall make a gem of this world, a shining beacon in the darkness of space.\n\nHalves the Number of District Slots £planetsize£ Blocked by $district_kindergarten$"
+ decision_gemcology_project_desc: "With this world's Kindergarten production having finally reached its full potential, the time has come to transform the planet itself to better suit our needs and preferences. We shall make a gem of this world, a shining" 
+ decision_gemcology_project_deposit_eater: "Gemworld Project"
+ decision_gemcology_project_deposit_eater_desc: "With this world's Kindergarten production having finally reached its full potential, the time has come to transform the planet itself to better suit our needs and preferences. We shall make a gem of this world, a shining beacon in the darkness of space.\n\nHalves the Number of District Slots £planetsize£ Blocked by $district_kindergarten$"
  decision_gem_wenkwort_defiler: "Betray the Custodian"
  decision_gem_wenkwort_defiler_desc: "Remaining the $pm_wenkwort_custodian$ is not to our advantage, the directive from the $NAME_Gardeners$ are too restrictive."
  
@@ -240,6 +242,7 @@
  decision_kindergarten_large: "A large £food£ §YAgriculture§! deposit will be removed, and be replaced with an equivalent-sized £job_kindergartener£ §YKindergarten§! site."
  decision_kindergarten_large_requirements: "Abundant quantities of nutrient-rich soil are required for any large-scale £job_kindergartener£ §YKindergarten§! site to be capable of producing new gems."
  decision_gemcology_project_requirements: "All £food£ §YAgriculture§! deposits on this world must have first been converted into £job_kindergartener£ §YKindergarten§! sites."
+ decision_gemcology_project_requirements_2: "Most §YDeposits§! on this world must have first been converted into £job_kindergartener£ §YGems§!."
  
 #Politics
  living_standard_gem: "Purposeful Creation"
@@ -809,3 +812,10 @@ building_crystal_gem_temple: "Crystal Gem Temple"
  mod_country_base_society_research_produces_add: "Monthly £society£ Society Research:"
  mod_country_base_engineering_research_produces_add: "Monthly £engineering£ Engineering Research:"
  mod_country_base_minor_artifacts_produces_add: "Monthly Minor Artifacts"
+
+#deposit Eater Events
+ f93_deposit_eater.1.name: "New Gameplay Mode"
+ f93_deposit_eater.1.desc: "Hello §GPlayer§!, sorry to §Rinterrupt!§!$NEW_LINE$But you need to decide if you want to use the new Pop gen creation or stick with the old ways.$NEW_LINE$£time£Quick Overview$TABBED_NEW_LINE$A: You will consume deposits to make £pops£Pops, Making the growth potential massive but limiting it to exploitable £planetsize£planets$TABBED_NEW_LINE$B: You construct a custom £district£District called the Kindergarten, to do this you first transform £food£farming deposits into Kindergarten deposits. Behaves more like Machine Empire £pops£Pop Growth.$NEW_LINE$$NEW_LINE$§GShould another mod overwrite this mods Game Rule changes, than option A is a compatibility mode aswell, it wont be affected by other mods.§!"
+ f93_deposit_eater.1.a: "§RA§! LET'S GO!"
+ f93_deposit_eater.1.b: "§RB§! No, Thanks!"
+ decision_pop_project_deposit_eater: "Expand the Kindergarten"

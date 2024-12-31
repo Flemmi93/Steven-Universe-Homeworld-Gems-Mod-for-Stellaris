@@ -1313,6 +1313,7 @@ planet_event = {
 			species = root.solar_system.owner.species
 		}
 		add_deposit = d_crystal_gem_temple
+		last_added_deposit = { set_deposit_flag = f93_gem_deposit }
 		add_building = building_primitive_dwellings
 		add_building = building_primitive_dwellings
 		add_building = building_stone_palace
@@ -1399,6 +1400,7 @@ country_event = { #Bronze Age -> Iron Age
 			if = {
 				limit = { NOT = { has_deposit = d_crystal_gem_temple } }
 				add_deposit = d_crystal_gem_temple
+				last_added_deposit = { set_deposit_flag = f93_gem_deposit }
 			}
 		}
 	}
@@ -1428,6 +1430,7 @@ country_event = { #Iron Age -> Medieval Age
 			if = {
 				limit = { NOT = { has_deposit = d_crystal_gem_temple } }
 				add_deposit = d_crystal_gem_temple
+				last_added_deposit = { set_deposit_flag = f93_gem_deposit }
 			}
 		}
 	}
@@ -1457,6 +1460,7 @@ country_event = { #Medieval Age -> Renaissance Age
 			if = {
 				limit = { NOT = { has_deposit = d_crystal_gem_temple } }
 				add_deposit = d_crystal_gem_temple
+				last_added_deposit = { set_deposit_flag = f93_gem_deposit }
 			}
 		}
 	}
@@ -1486,6 +1490,7 @@ country_event = { #Renaissance Age -> Steam Age
 			if = {
 				limit = { NOT = { has_deposit = d_crystal_gem_temple } }
 				add_deposit = d_crystal_gem_temple
+				last_added_deposit = { set_deposit_flag = f93_gem_deposit }
 			}
 		}
 		solar_system = { owner = { establish_communications = event_target:new_earth_civilisation_w_cg } }
@@ -1516,6 +1521,7 @@ country_event = { #Steam Age -> Industrial Age
 			if = {
 				limit = { NOT = { has_deposit = d_crystal_gem_temple } }
 				add_deposit = d_crystal_gem_temple
+				last_added_deposit = { set_deposit_flag = f93_gem_deposit }
 			}
 		}
 		solar_system = { owner = { establish_communications = event_target:new_earth_civilisation_w_cg } }
@@ -1547,6 +1553,7 @@ country_event = { #industrial Age -> Machine Age
 			if = {
 				limit = { NOT = { has_deposit = d_crystal_gem_temple } }
 				add_deposit = d_crystal_gem_temple
+				last_added_deposit = { set_deposit_flag = f93_gem_deposit }
 			}
 		}
 		solar_system = { owner = { establish_communications = event_target:new_earth_civilisation_w_cg } }

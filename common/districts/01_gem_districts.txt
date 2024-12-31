@@ -14,11 +14,13 @@ district_kindergarten = {
 	potential = {
 		has_district_kindergarten = yes
 		has_planet_flag = gem_has_kindergarten
+		owner = { owner_main_species = { NOT = { is_geoloid_deposit_eating = yes } } }
 	}
 
 	allow = {
 		owner = {
 			is_geo_empire = yes
+			owner_main_species = { NOT = { is_geoloid_deposit_eating = yes } }
 		}
 		NOT = { has_modifier = resort_colony }
 	}
@@ -122,11 +124,15 @@ district_kindergarten2 = {
 
 	potential = {
 		has_district_kindergarten2 = yes
+		owner = {
+			owner_main_species = { NOT = { is_geoloid_deposit_eating = yes } }
+		}
 	}
 
 	allow = {
 		owner = {
 			is_geo_empire = yes
+			owner_main_species = { NOT = { is_geoloid_deposit_eating = yes } }
 		}
 		NOT = { has_modifier = resort_colony }
 	}

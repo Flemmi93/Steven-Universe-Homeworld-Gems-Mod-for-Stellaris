@@ -14,6 +14,7 @@ decision_create_kindergarten_small = {
 	potential = {
 		owner = {
 			is_geo_empire = yes
+			owner_main_species = { NOT = { is_geoloid_deposit_eating = yes } }
 		}
 		OR = {
 			has_deposit = d_lichen_fields
@@ -90,6 +91,7 @@ decision_create_kindergarten_med = {
 	potential = {
 		owner = {
 			is_geo_empire = yes
+			owner_main_species = { NOT = { is_geoloid_deposit_eating = yes } }
 		}
 		OR = {
 			has_deposit = d_fungal_caves
@@ -154,6 +156,7 @@ decision_create_kindergarten_large = {
 	potential = {
 		owner = {
 			is_geo_empire = yes
+			owner_main_species = { NOT = { is_geoloid_deposit_eating = yes } }
 		}
 		OR = {
 			has_deposit = d_black_soil
@@ -254,6 +257,7 @@ decision_gemcology_project = {
 		exists = owner
 		owner = {
 			is_geo_empire = yes
+			owner_main_species = { NOT = { is_geoloid_deposit_eating = yes } }
 		}
 	}
 
@@ -303,6 +307,78 @@ decision_gemcology_project = {
 		}
 	}
 }
+#Make planet a Gemworld
+decision_gemcology_project_deposit_eater = {
+	owned_planets_only = yes
+	icon = decision_arcology_project
+
+	enactment_time = 360
+	resources = {
+		category = decisions
+		cost = {
+			influence = 100
+			minerals = 10000
+			alloys = 500
+		}
+	}
+
+	potential = {
+		NOR = {
+			is_planet_class = pc_city
+			is_planet_class = pc_relic
+			#is_planet_class = pc_gem
+			is_planet_class = pc_gemworld
+			has_modifier = resort_colony
+			has_modifier = penal_colony
+			has_modifier = slave_colony
+			has_modifier = pm_wenkwort_custodian
+		}
+		is_artificial = no
+		exists = owner
+		owner = {
+			is_geo_empire = yes
+			owner_main_species = { is_geoloid_deposit_eating = yes }
+		}
+	}
+
+	allow = {
+		hidden_trigger = {
+			ROOT = {
+				count_deposit = {
+					count = all
+					limit = {
+						OR = {
+							has_deposit_flag = f93_gem_deposit
+							has_deposit_category = deposit_cat_rare # needs a sort of "every deposit" to work
+						}
+					}
+				}
+			}
+		}
+		custom_tooltip = decision_gemcology_project_requirements_2
+		num_uncleared_blockers < 1
+		owner = { has_technology = tech_terrestrial_sculpting }
+	}
+
+	effect = { # Make Gemworld
+		change_pc = pc_gemworld
+
+		hidden_effect = {
+			if = {
+				limit = {
+					has_planet_flag = gem_has_kindergarten
+				}
+				remove_planet_flag = gem_has_kindergarten
+			}
+			if = {
+				limit = {
+					NOT = { has_planet_flag = gem_has_kindergarten2 }
+				}
+				set_planet_flag = gem_has_kindergarten2
+			}
+		}
+	}
+}
 
 galaxy_warp = {
 	owned_planets_only = yes
@@ -328,5 +404,53 @@ galaxy_warp = {
 			clear_blocker = yes
 		}
 		add_deposit = d_galaxy_warp
+		last_added_deposit = { set_deposit_flag = f93_gem_deposit }
+	}
+}
+
+
+#Make pops
+decision_pop_project_deposit_eater = {
+	owned_planets_only = yes
+	icon = decision_kindergarten
+
+	enactment_time = 360
+	resources = {
+		category = decisions
+		cost = {
+			minerals = 500
+		}
+	}
+
+	potential = {
+			ROOT = {
+				any_deposit = {
+					NOT = {
+						has_deposit_category = deposit_cat_rare
+						is_blocker = yes
+					}
+				}
+			}
+		exists = owner
+		owner = {
+			is_geo_empire = yes
+			owner_main_species = { is_geoloid_deposit_eating = yes }
+		}
+	}
+
+	effect = { # Make Pop
+		random_deposit = {
+			limit = {
+				NOR = {
+					has_deposit_flag = f93_gem_deposit
+					has_deposit_category = deposit_cat_rare
+					is_blocker = yes
+				}
+			}
+			remove_deposit = yes
+			root = {
+				create_pop = { species = owner_main_species }
+			}
+		}
 	}
 }

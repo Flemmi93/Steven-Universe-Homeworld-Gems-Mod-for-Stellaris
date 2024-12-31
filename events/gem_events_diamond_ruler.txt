@@ -2,7 +2,7 @@ namespace = gem_diamond_ruler
 # Main screen to choose what diamond should rule
 country_event = {
 	id = gem_diamond_ruler.0001
-	title = gem_diamond_traits.0001.name:
+	title = gem_diamond_traits.0001.name
 	desc = gem_diamond_traits.0001.desc
 	picture = "GFX_evt_gem_diamond_choice"
 	is_triggered_only = yes
@@ -104,6 +104,7 @@ country_event = {
 	option = {
 		name = MAKE_IT_SO
 		hidden_effect = {
+		country_event = { id = f93_deposit_eater.1 }
 		#Create the choosen leader
 			create_leader = {
 				class = official
@@ -209,6 +210,7 @@ country_event = {
 	option = {
 		name = MAKE_IT_SO
 		hidden_effect = {
+		country_event = { id = f93_deposit_eater.1 }
 		#Create the choosen leader
 			create_leader = {
 				class = commander
@@ -313,6 +315,7 @@ country_event = {
 	option = {
 		name = MAKE_IT_SO
 		hidden_effect = {
+		country_event = { id = f93_deposit_eater.1 }
 		#Create the choosen leader
 			create_leader = {
 				class = scientist
