@@ -205,14 +205,4 @@
 			#regnal_second_names = { Diamond }
 		}
 	}
-	
-	ruler_names = {
-		default = { 
-			full_names = {}
-			
-			#first_names = { White Pink Blue Yellow }
-			
-			#second_names = { Diamond }
-		}
-	}
 }
