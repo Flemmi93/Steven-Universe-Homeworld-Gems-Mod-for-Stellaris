@@ -6,6 +6,7 @@ country_event = {
 	hide_window = yes
 	fire_only_once = yes
 	trigger = {
+		is_ai = no
 		has_country_flag = choose_gem_invasion_cf
 		years_passed > partway_to_mid_game_years_var
 	}
@@ -42,14 +43,16 @@ country_event = {
 			plural = "PRESCRIPTED_species_plural_gem"
 			adjective = "PRESCRIPTED_species_adjective_gem"
 			name_list = "GEO1"
+			immortal = yes
 			traits = {
-				trait = "trait_geoloid2"
+				trait = "trait_geoloid"
 				trait = "trait_gem_holobody"
 				trait = "trait_gem_hardness"
 				trait = "trait_gem_unquestionable"
 				trait = "trait_gem_donteat"
 				trait = "trait_gem_static"
 			}
+			effect = { set_species_flag = f93_deposit_eater }
 		}
 		last_created_species = {
 			save_global_event_target_as = gem_invasion_species

@@ -53,6 +53,14 @@ building_gem_spire1 = {
 
 	ai_weight = {
 		base = 1000
+		modifier = {
+			factor = 0.1
+			or = {
+				has_building = building_gem_spire1
+				has_building = building_gem_spire2
+				has_building = building_gem_spire3
+			}
+		}
 	}
 }
 
@@ -274,10 +282,21 @@ building_buff_kindergarten1 = {
 		minerals = @b1_minerals
 		}
 	}
+	on_built = {
+		if = {
+			limit = { NOT = { is_variable_set = f93_gems_made } }
+			set_variable = { which = f93_gems_made value = 0 }
+			set_variable = { which = f93_gem_efficency value = 2 }
+			export_trigger_value_to_variable = {
+				trigger = planet_size
+				variable = f93_gems_limit
+			}
+			multiply_variable = { which = f93_gems_limit value = 3 }
+		}
+	}
 	upgrades = {
 		building_buff_kindergarten2
 	}
-	
 	ai_weight = {
 		base = 1000
 	}

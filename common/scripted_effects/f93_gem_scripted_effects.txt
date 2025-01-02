@@ -1,20 +1,225 @@
-eat_deposit_for_pop = { # planet scope
-		eat_deposit_for_pop_no_cost = yes
-		root.owner = { add_resource = { minerals = -500 } }
+
+eat_deposit_for_pop = { # planet scope and calculate the cost
+	eat_deposit_for_pop_no_cost = yes
+	if = {
+		limit = { root.owner = { has_technology = tech_genome_mapping } }
+		root.owner = { add_resource = { minerals = 50 } }
 	}
+	if = {
+		limit = { root.owner = { has_technology = tech_cloning } }
+		root.owner = { add_resource = { minerals = 50 } }
+	}
+	if = {
+		limit = { root = { colony_type = col_default } } 
+		root.owner = { add_resource = { minerals = 50 } }
+	}
+	if = {
+		limit = { not = { root.owner = { has_civic = civic_environmental_architects } } }
+		root.owner = { add_resource = { minerals = 25 } }
+	}
+	root.owner = { add_resource = { minerals = -400 } }
+}
+
 eat_deposit_for_pop_no_cost = { # planet scope
+	hidden_effect = {
+		if = {
+			limit = { NOT = { is_variable_set = f93_gems_made } }
+			set_variable = { which = f93_gems_made value = 0 }
+			set_variable = { which = f93_gem_efficency value = 2 }
+			export_trigger_value_to_variable = {
+				trigger = planet_size
+				variable = f93_gems_limit
+			}
+			multiply_variable = { which = f93_gems_limit value = 3 }
+		}
+	}
+	
 	random_deposit = {
 		limit = {
-			NOR = {
-				has_deposit_flag = f93_gem_deposit
-				has_deposit_category = deposit_cat_rare
-				is_blocker = yes
+			OR = {
+				has_deposit_category = deposit_cat_food
+				has_deposit_category = deposit_cat_energy
+				has_deposit_category = deposit_cat_minerals
 			}
+			planet = { num_unemployed < 2 NOT = { has_planet_flag = f93_slow_gem_making } }
 		}
 		remove_deposit = yes
-		root = {
-			create_pop = { species = owner_main_species }
-			set_timed_planet_flag = { flag = f93_just_made_a_pop days = 479 }
+		hidden_effect = {
+			root = {
+				while = {
+					count = f93_gem_efficency
+					create_pop = { species = owner_main_species }
+				}
+				owner = { add_resource = { minerals = 400 } }
+				change_variable = { which = f93_gems_made value = f93_gem_efficency } #this needed a bit of a buff
+				set_timed_planet_flag = { flag = f93_just_made_a_pop days = 479 } #this number set the interval for new pop creations with you let it run automaticly
+			}
 		}
+	}
+	eat_deposit_for_pop_no_cost_no_deposit = yes
+}
+
+eat_deposit_for_pop_no_cost_no_deposit = {
+	if = {
+		limit = {
+			check_variable = { which = f93_gems_made value < f93_gems_limit }
+			NOT = { has_planet_flag = f93_just_made_a_pop }
+		}
+		hidden_effect = {
+			create_pop = { species = owner_main_species }
+			change_variable = { which = f93_gems_made value = 1 } #this needed a bit of a buff
+			set_timed_planet_flag = { flag = f93_just_made_a_pop days = 1079 } #this number set the interval for new pop creations with you let it run automaticly
+		}
+	}
+}
+
+create_gem_empire_normal = {
+	
+	create_species = {
+		class = "GEO"
+		portrait = "gem"
+		name = "PRESCRIPTED_species_name_gem"
+		plural = "PRESCRIPTED_species_plural_gem"
+		adjective = "PRESCRIPTED_species_adjective_gem"
+		name_list = "GEO1"
+		immortal = yes
+		traits = {
+			trait = "trait_geoloid"
+			trait = "trait_gem_holobody"
+			trait = "trait_gem_hardness"
+			trait = "trait_gem_unquestionable"
+			trait = "trait_gem_donteat"
+			trait = "trait_gem_static"
+		}
+		effect = { set_species_flag = f93_deposit_eater }
+	}
+	event_target:gem_spawn_location = {
+		create_country = {
+			name = "EMPIRE_gem_invaders"
+			adjective = "PRESCRIPTED_adjective_gem"
+			ship_prefix = "PRESCRIPTED_ship_prefix_gem"
+			authority = "auth_imperial"
+			type = default
+			origin = origin_geoform
+			civics = {
+				civic = civic_tetrarchy
+				civic = civic_corvee_system
+			}
+			species = last_created_species
+			ethos = {
+				ethic = "ethic_fanatic_authoritarian"
+				ethic = "ethic_xenophobe"
+			}
+			flag = {
+				icon = {
+					category = "gem"
+					file = "gemblem.dds"
+				}
+				background = {
+					category = "backgrounds"
+					file = "v.dds"
+				}
+				colors = {
+					"turquoise"
+					"grey"
+					"null"
+					"null"
+				}
+			}
+			effect = {
+				##Add resources
+				add_resource = { minerals = 1500 }
+				add_resource = { energy = 1000 }
+				add_resource = { food = 100 }
+				add_resource = { consumer_goods = 200 }
+				add_resource = { alloys = 100 }
+				add_resource = { influence = 100 }
+				add_resource = { unity = 270 }
+				
+				##Copy technology
+				copy_techs_from = {
+					target = root
+					except = {
+						# Horizon Signal
+						tech_akx_worm_1
+						tech_akx_worm_2
+						tech_akx_worm_3
+					}
+				}
+				country_event = { id = gem_era.1 days = 1}
+			}
+		}
+		create_colony = {
+			owner = last_created_country
+			species = last_created_species
+		}
+		while = {
+			count = 30
+			create_pop = { species = last_created_species }
+		}
+		set_capital = yes
+		f93_seed_gem_planet_with_stuff = yes
+		remove_building = building_colony_shelter
+		if = { limit = { NOT = { has_building = building_capital } } add_building = building_capital }
+		add_district = district_city
+		add_district = district_city
+		add_district = district_generator
+		add_district = district_generator
+		add_district = district_mining
+		add_district = district_mining
+		add_district = district_industrial
+		add_district = district_industrial
+		add_district = district_mining
+		add_building = building_research_lab_1
+	}
+}
+
+f93_seed_gem_planet_with_stuff = {
+
+	# Variables for descriptions
+	set_variable = { which = f93_gems_made value = 0 }
+	set_variable = { which = f93_gem_efficency value = 3 }
+	export_trigger_value_to_variable = {
+		trigger = planet_size
+		variable = f93_gems_limit
+	}
+	multiply_variable = { which = f93_gems_limit value = 3 }
+
+
+	# 3 + 3 energy               
+	add_deposit = d_geothermal_vent
+	add_deposit = d_geothermal_vent
+
+	# 8 mining
+	add_deposit = d_space_mining
+	last_added_deposit = { set_deposit_flag = f93_gem_deposit }
+	add_deposit = d_space_mining
+	last_added_deposit = { set_deposit_flag = f93_gem_deposit }
+	
+	# 0 farming 
+	
+	# 6 kindargarden
+	add_deposit = d_kindergarten_large
+	add_deposit = d_kindergarten_large
+	
+	add_deposit = d_homeworld_special
+	last_added_deposit = { set_deposit_flag = f93_gem_deposit }
+	
+	set_planet_flag = gem_has_kindergarten
+	
+	set_planet_flag = grand_court
+	add_modifier = { modifier = pm_grand_court_1 }
+	add_modifier = { modifier = pm_gem_pink_court }
+	add_deposit = d_galaxy_warp
+	last_added_deposit = { set_deposit_flag = f93_gem_deposit }
+	if = {
+		limit = {
+			NOR = {
+				has_building = building_buff_kindergarten1
+				has_building = building_buff_kindergarten2
+				has_building = building_buff_kindergarten3
+			}
+		}
+		add_building = building_buff_kindergarten2
 	}
 }

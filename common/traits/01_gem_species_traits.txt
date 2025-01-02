@@ -83,23 +83,18 @@ trait_geoloid = {
 	
 	forced_happiness = no
 	immortal_leaders = yes
+	infertile = yes
 	
 	modifier = {
 		pc_gem_habitability = 1
 		pc_gemworld_habitability = 1
-		pop_environment_tolerance = 2
-		planet_jobs_food_upkeep_mult = -0.75
+		pop_environment_tolerance = 1.5
+		planet_jobs_food_upkeep_mult = -1
 		planet_jobs_food_produces_mult = -0.75
 	}
-	
-	triggered_planet_growth_habitability_modifier = {
-		potential = { 
-			always = yes
-		}
-		pop_growth_speed = -10
-	}
-	
+
 	allowed_archetypes = { GEOLOID LITHOID }
+	
 	ai_weight = {
 		weight = 0
 	}
@@ -110,7 +105,7 @@ trait_geoloid = {
 }
 
 #same trait but with pop growth
-trait_geoloid2 = {
+trait_geoloid2 = { #decrepit
 	cost = 0
 	potential_crossbreeding_chance = 0
 	
@@ -138,13 +133,7 @@ trait_geoloid2 = {
 		planet_jobs_food_upkeep_mult = -0.75
 		planet_jobs_food_produces_mult = -0.75
 	}
-	
-	triggered_planet_growth_habitability_modifier = {
-		potential = { 
-			always = yes
-		}
-	}
-	
+
 	allowed_archetypes = { GEOLOID LITHOID }
 	ai_weight = {
 		weight = 0

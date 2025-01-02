@@ -12,36 +12,9 @@ country_event = {
 			which = partway_to_mid_game_years_var
 			scale_by = 0.75
 		}
-        capital_scope = {
-			
-            # 3 + 3 energy               
-            add_deposit = d_geothermal_vent
-            add_deposit = d_geothermal_vent
-        
-            # 8 mining
-			add_deposit = d_space_mining
-			last_added_deposit = { set_deposit_flag = f93_gem_deposit }
-            add_deposit = d_space_mining
-			last_added_deposit = { set_deposit_flag = f93_gem_deposit }
-			
-			# 0 farming 
-			
-			# 6 kindargarden
-			add_deposit = d_kindergarten_large
-			add_deposit = d_kindergarten_large
-			
-			add_deposit = d_homeworld_special
-			last_added_deposit = { set_deposit_flag = f93_gem_deposit }
-			
-			set_planet_flag = gem_has_kindergarten
-			
-			set_planet_flag = grand_court
-			add_modifier = { modifier = pm_grand_court_1 }
-			add_modifier = { modifier = pm_gem_pink_court }
-			add_deposit = d_galaxy_warp
-			last_added_deposit = { set_deposit_flag = f93_gem_deposit }
-			add_building = building_buff_kindergarten2
-		}
+
+		capital_scope = { f93_seed_gem_planet_with_stuff = yes }
+
 		set_policy = { policy = robot_pop_policy option = robot_pops_outlawed }
 		country_event = { id = GEM_start.1001 }
 		country_event = { id = GEM_start.1002 }
@@ -206,7 +179,7 @@ country_event = {
 			has_origin = origin_geoform
 			has_origin = origin_crystal_gems
 		}
-		
+		is_ai = no
 	}
     
 	immediate = {
@@ -227,7 +200,16 @@ country_event = {
 			
 			set_planet_flag = grand_court
 			add_modifier = { modifier = pm_grand_court_1 }
-			add_building = building_buff_kindergarten2
+			if = {
+				limit = {
+					NOR = {
+						has_building = building_buff_kindergarten1
+						has_building = building_buff_kindergarten2
+						has_building = building_buff_kindergarten3
+					}
+				}
+				add_building = building_buff_kindergarten2
+			}
 		}
 		country_event = { id = GEM_start.1001 }
 		country_event = { id = GEM_start.1002 }
@@ -278,6 +260,91 @@ country_event = {
 	}
 	option = {
 		name = NO
+	}
+	option = {
+		name = GEM_start.1005.b
+		hidden_effect = {
+			if = {
+				limit = {
+					any_system = {
+						any_system_planet = {
+							has_planet_flag = planet_earth
+							OR = {
+								is_colony = no
+								owner = {
+									is_primitive = yes
+								}
+							}
+							owner = { is_ai = yes }
+						}
+					}
+				}
+				random_system = {
+					limit = { any_system_planet = { has_planet_flag = planet_earth } }
+					random_system_planet = {
+						limit = { is_moon = yes orbit = { has_planet_flag = planet_earth } }
+						save_global_event_target_as = gem_spawn_location
+						change_pc = pc_gem
+						create_gem_empire_normal = yes
+						set_name = "Luna"
+					}
+				}
+			}
+			else_if = {
+				random_country = {
+					limit = {
+						is_ai = yes
+						is_country_type = default
+						has_federation = no
+						home_planet.solar_system = {
+							distance = {
+								source = root
+								min_jumps = 10
+								max_jumps = 25
+							}
+						}
+					}
+					home_planet = {
+						save_global_event_target_as = gem_spawn_location
+						change_pc = pc_gem
+						owner = { destroy_country = yes }
+						while = {
+							count = 60
+							random_owned_pop = { kill_pop = yes }
+						}
+						create_gem_empire_normal = yes
+						set_name = Homeworld
+						solar_system = { set_name = Luster }
+					}
+				}
+			}
+			else = {
+				random_system = {
+					set_name = Luster
+					star = { set_name = Luster }
+					limit = {
+						NOT = { any_fleet_in_system = { exists = this } }
+						any_system_planet = {
+							is_colonizable = yes
+							NOT = { is_planet_class = pc_gaia }
+						}
+						any_neighbor_system = {
+							NOT = { any_fleet_in_system = { exists = this } }
+							any_neighbor_system = {
+								NOT = { any_fleet_in_system = { exists = this } }
+							}
+						}
+					}
+					random_system_planet = {
+						limit = { is_colonizable = yes }
+						save_global_event_target_as = gem_spawn_location
+						change_pc = pc_gem
+						create_gem_empire_normal = yes
+						set_name = Homeworld
+					}
+				}
+			}
+		}
 	}
 	option = {
 		name = "gem_start.1005.c"

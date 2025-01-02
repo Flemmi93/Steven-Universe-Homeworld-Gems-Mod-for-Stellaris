@@ -23,7 +23,9 @@ country_event = {
 		hidden_effect = {
 			country_event = { ID = gem_diamond_ruler.0010 }
 		}
-	
+		ai_chance = {
+			base = 1000
+		}
 	}
 	
 	#Yellow###########################################
@@ -180,6 +182,9 @@ country_event = {
 				change_background_ethic = ethic_xenophobe
 				set_council_position = councilor_state
 			}
+		}
+		ai_chance = {
+			base = 1000
 		}
 	}
 	option = {
@@ -545,6 +550,9 @@ leader_event = {
 				change_leader_portrait = gemD4 #Pink
 			}
 		}
+		ai_chance = {
+			base = 1000
+		}
 	}
 }
 # Executed as a leader has died
@@ -651,6 +659,9 @@ country_event = {
 	option = {
 		name = OK
 		last_created_leader = { leader_event = { id = gem_diamond_ruler.99 days = 360 } }
+		ai_chance = {
+			base = 1000
+		}
 	}
 }
 
@@ -756,5 +767,8 @@ country_event = {
 	option = {
 		name = OK
 		last_created_leader = { leader_event = { id = gem_diamond_ruler.99 days = 360 } }
+		ai_chance = {
+			base = 1000
+		}
 	}
 }

@@ -98,8 +98,8 @@ d_space_mining = {
 	category = deposit_cat_rare
 	
 	planet_modifier = { 
-		district_mining_max = 4
-		district_generator_max = 1
+		district_mining_max = 3
+		district_generator_max = 2
 	}
 
 	resources = {

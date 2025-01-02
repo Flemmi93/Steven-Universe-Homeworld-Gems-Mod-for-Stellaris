@@ -10,6 +10,7 @@ country_event = {
 	hide_window = yes
 	is_triggered_only = yes
 	trigger = {
+		is_ai = no
 		is_geo_empire = yes
 		OR = {
 			AND = {
@@ -34,7 +35,7 @@ country_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
-
+	trigger = { is_ai = no }
 	immediate = {
 		set_global_flag = gem_sol_discovered
 		set_country_flag = gem_sol_system

@@ -383,7 +383,7 @@ decision_gemcology_project_deposit_eater = {
 	}
 	
 	ai_weight = {
-		weight = 50
+		weight = 500
 	}
 }
 
@@ -424,19 +424,126 @@ decision_pop_project_deposit_eater = {
 	enactment_time = 360
 	resources = {
 		category = decisions
+	}
+
+	potential = {
+		exists = owner
+		any_deposit = {
+			OR = {
+				has_deposit_category = deposit_cat_food
+				has_deposit_category = deposit_cat_energy
+				has_deposit_category = deposit_cat_minerals
+			}
+		}
+		owner = {
+			is_geo_empire = yes
+			owner_main_species = { is_geoloid_deposit_eating = yes }
+		}
+	}
+
+	allow = {
+		custom_tooltip = decision_pop_project_deposit_eater_countdown
+		check_variable = { which = f93_gems_made value < f93_gems_limit }
+		NOT = { has_planet_flag = f93_just_made_a_pop}
+	}
+	effect = { # Make Pop
+	custom_tooltip = decision_pop_project_deposit_eater_effect
+		eat_deposit_for_pop_no_cost = yes
+	}
+}
+
+
+#Make pops
+decision_pop_project_deposit_eater_slow = {
+	owned_planets_only = yes
+	icon = decision_kindergarten
+
+	enactment_time = 360
+	resources = {
+		category = decisions
 		cost = {
-			minerals = 500
+			minerals = 400
 		}
 	}
 
 	potential = {
-		ROOT = {
+		exists = owner
+		owner = {
+			is_geo_empire = yes
+			owner_main_species = { is_geoloid_deposit_eating = yes }
+		}
+	}
+	allow = {
+		custom_tooltip = decision_pop_project_deposit_eater_countdown
+		is_variable_set = f93_gems_made
+		check_variable = { which = f93_gems_made value < f93_gems_limit }
+		NOT = { has_planet_flag = f93_just_made_a_pop}
+	}
+	effect = { # Make Pop
+	custom_tooltip = decision_pop_project_deposit_eater_slow_effect
+	eat_deposit_for_pop_no_cost_no_deposit = yes
+	}
+}
+
+
+#Make building on ai worlds
+decision_pop_project_build_kg_buff1 = {
+	owned_planets_only = yes
+	icon = decision_kindergarten
+
+	enactment_time = 0
+	resources = {
+		category = decisions
+	}
+
+	potential = {
+		NOR = {
+			has_building = building_buff_kindergarten1
+			has_building = building_buff_kindergarten2
+			has_building = building_buff_kindergarten3
+			has_planet_flag = dont_spam_this
+		}
+		exists = owner
+		owner = {
+			is_geo_empire = yes
+			owner_main_species = { is_geoloid_deposit_eating = yes }
+			is_ai = yes
+		}
+	}
+	effect = { # Make Pops and worlds
+		add_building = building_buff_kindergarten1
+		set_timed_planet_flag = {
+			flag = dont_spam_this
+			days = 180
+		}
+	}
+	ai_weight = {
+		weight = 1000
+	}
+}
+
+#Make pops automatic
+decision_pop_project_deposit_eater_auto = {
+	owned_planets_only = yes
+	icon = decision_kindergarten
+
+	enactment_time = 0
+	resources = {
+		category = decisions
+	}
+
+	potential = {
+		NOT = {
+			has_modifier = f93_pm_certified_kindergartener
+		}
+		OR = {
 			any_deposit = {
 				NOT = {
 					has_deposit_category = deposit_cat_rare
 					is_blocker = yes
 				}
 			}
+			NOT = { is_planet_class = pc_gemworld }
 		}
 		exists = owner
 		owner = {
@@ -444,49 +551,45 @@ decision_pop_project_deposit_eater = {
 			owner_main_species = { is_geoloid_deposit_eating = yes }
 		}
 	}
-
-	effect = { # Make Pop
-		eat_deposit_for_pop_no_cost = yes
+	allow = {
+		OR = {
+			has_building = building_buff_kindergarten1
+			has_building = building_buff_kindergarten2
+			has_building = building_buff_kindergarten3
+		}
 	}
-
+	effect = { # Make Pops and worlds
+		custom_tooltip = decision_pop_project_deposit_eater_auto_tooltip
+		add_modifier = { modifier = f93_pm_certified_kindergartener }
+	}
 	ai_weight = {
-		weight = 5
+		weight = 1000
+		
 		modifier = {
-			factor = 20
-			num_unemployed < 2
+			factor = 0
+			owner = { has_resource = { type = minerals amount < 1000 } }
 		}
 		modifier = {
 			factor = 0
-			num_housing < 1
+			num_unemployed > 1
+			num_pops > 10
 		}
 	}
 }
 
-
-#Make pops automatic
-decision_pop_project_deposit_eater_auto = {
+#Make pops automatic slow
+decision_pop_project_deposit_eater_auto_slow = {
 	owned_planets_only = yes
 	icon = decision_kindergarten
 
-	enactment_time = 60
+	enactment_time = 0
 	resources = {
 		category = decisions
 	}
 
 	potential = {
-		ROOT = {
-			NOT = {
-				has_modifier = f93_pm_certified_kindergartener
-			}
-			OR = {
-				any_deposit = {
-					NOT = {
-						has_deposit_category = deposit_cat_rare
-						is_blocker = yes
-					}
-				}
-				NOT = { is_planet_class = pc_gemworld }
-			}
+		NOT = {
+			has_modifier = f93_pm_certified_kindergartener
 		}
 		exists = owner
 		owner = {
@@ -503,12 +606,10 @@ decision_pop_project_deposit_eater_auto = {
 		}
 	}
 	effect = { # Make Pops and worlds
-		custom_tooltip = decision_pop_project_deposit_eater_auto_tooltip
+		custom_tooltip = decision_pop_project_deposit_eater_auto_slow_tooltip
 		add_modifier = { modifier = f93_pm_certified_kindergartener }
 		hidden_effect = {
-			planet_event = {
-				id = f93_deposit_eater.2
-			}
+			set_planet_flag = f93_slow_gem_making
 		}
 	}
 }
@@ -531,8 +632,23 @@ decision_pop_project_deposit_eater_auto_stop = {
 	}
 	effect = {
 		remove_modifier = f93_pm_certified_kindergartener
+		hidden_effect = {
+			remove_planet_flag = f93_slow_gem_making
+		}
 	}
+	
 	ai_weight = {
 		weight = 1000
+		modifier = {
+			factor = 0
+			owner = { has_resource = { type = minerals amount > 1000 } }
+			num_unemployed < 6
+		}
+		modifier = {
+			factor = 0
+			has_building = building_colony_shelter
+			num_pops < 10
+		}
 	}
+
 }
