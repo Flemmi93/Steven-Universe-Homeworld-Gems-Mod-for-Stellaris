@@ -17,7 +17,7 @@ eat_deposit_for_pop = { # planet scope and calculate the cost
 		limit = { not = { root.owner = { has_civic = civic_environmental_architects } } }
 		root.owner = { add_resource = { minerals = 25 } }
 	}
-	root.owner = { add_resource = { minerals = -400 } }
+	root.owner = { add_resource = { minerals = f93_gem_pop_cost } }
 }
 
 eat_deposit_for_pop_no_cost = { # planet scope
@@ -50,9 +50,9 @@ eat_deposit_for_pop_no_cost = { # planet scope
 					count = f93_gem_efficency
 					create_pop = { species = owner_main_species }
 				}
-				owner = { add_resource = { minerals = 400 } }
+				owner = { add_resource = { minerals = @f93_gem_pop_cost_reverse } }
 				change_variable = { which = f93_gems_made value = f93_gem_efficency } #this needed a bit of a buff
-				set_timed_planet_flag = { flag = f93_just_made_a_pop days = 479 } #this number set the interval for new pop creations with you let it run automaticly
+				set_timed_planet_flag = { flag = f93_just_made_a_pop days = @f93_gem_pop_cooldown } #this number set the interval for new pop creations with you let it run automaticly
 			}
 		}
 	}
@@ -68,7 +68,7 @@ eat_deposit_for_pop_no_cost_no_deposit = {
 		hidden_effect = {
 			create_pop = { species = owner_main_species }
 			change_variable = { which = f93_gems_made value = 1 } #this needed a bit of a buff
-			set_timed_planet_flag = { flag = f93_just_made_a_pop days = 1079 } #this number set the interval for new pop creations with you let it run automaticly
+			set_timed_planet_flag = { flag = f93_just_made_a_pop days = f93_gem_pop_cooldown_long } #this number set the interval for new pop creations with you let it run automaticly
 		}
 	}
 }
