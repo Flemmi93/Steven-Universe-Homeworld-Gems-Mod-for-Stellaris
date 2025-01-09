@@ -61,15 +61,15 @@ country_event = {
 			which = partway_to_mid_game_years_var
 			scale_by = 0.75
 		}
-        capital_scope = {
-			add_district  = {
-				district_type = district_kindergarten
-				ignore_cap = yes
-			}
-			add_district  = {
-				district_type = district_kindergarten
-			}
-		}
+        # capital_scope = {
+		# 	add_district  = {
+		# 		district_type = district_kindergarten
+		# 		ignore_cap = yes
+		# 	}
+		# 	add_district  = {
+		# 		district_type = district_kindergarten
+		# 	}
+		# }
     }
 }
 country_event = { #for crystal gems to have a gem producing building
@@ -294,15 +294,9 @@ country_event = {
 				random_country = {
 					limit = {
 						is_ai = yes
+						has_origin = origin_default
 						is_country_type = default
 						has_federation = no
-						home_planet.solar_system = {
-							distance = {
-								source = root
-								min_jumps = 10
-								max_jumps = 25
-							}
-						}
 					}
 					home_planet = {
 						save_global_event_target_as = gem_spawn_location

@@ -34,6 +34,7 @@ country_event = {
 			country_event = { id = gem_diamond_ruler.0001 }
 		}
 		add_modifier = { modifier = era_one }
+		add_modifier = { modifier = gems_xeno_control mult = 0.85 }
 	}
 	
 	after = {
@@ -121,6 +122,8 @@ country_event = {
 				add_modifier = { modifier = pm_grand_court_2 }
 			}
 			country_event = { id = gem_era.201 }
+			remove_modifier = gems_xeno_control
+			add_modifier = { modifier = gems_xeno_control mult = 0.5 }
 		}
 		remove_modifier = era_one
 		add_modifier = { modifier = era_two }
@@ -239,6 +242,7 @@ country_event = {
 		country_event = { id = gem_off_colors.2009 days = 10 }
 		add_resource = { unity = 500 }
 		add_modifier = { modifier = era_three }
+		remove_modifier = gems_xeno_control
 	}
 }
 

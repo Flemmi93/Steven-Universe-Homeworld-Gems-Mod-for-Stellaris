@@ -17,14 +17,5 @@ is_diamond_empire = {
 		}
 	}
 }
-has_district_kindergarten = {
-	has_planet_flag = gem_has_kindergarten
-}
-
-has_district_kindergarten2 = {
-	has_planet_flag = gem_has_kindergarten2
-}
-
-is_geoloid = { has_trait = trait_geoloid NOT = { has_species_flag = f93_deposit_eater } }
-is_geoloid_deposit_eating = { has_trait = trait_geoloid has_species_flag = f93_deposit_eater }
+is_geoloid = { has_trait = trait_geoloid }
 is_steven_no_star = { is_planet_class = pc_no_star }

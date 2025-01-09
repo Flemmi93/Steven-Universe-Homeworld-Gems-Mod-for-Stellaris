@@ -1,0 +1,205 @@
+# decision_create_kindergarten_small = {
+# 	owned_planets_only = yes
+# 	sound = event_structural_collapse
+# 	icon = decision_kindergarten
+	
+# 	enactment_time = 240
+# 	resources = {
+# 		category = decisions
+# 		cost = {
+# 			minerals = 250
+# 			alloys = 25
+# 		}
+# 	}
+# 	potential = {
+# 		owner = {
+# 			is_geo_empire = yes
+# 		}
+# 		OR = {
+# 			has_deposit = d_lichen_fields
+# 			has_deposit = d_bountiful_plains
+# 			has_deposit = d_rugged_woods
+# 			has_deposit = d_green_hills
+# 			has_deposit = d_forgiving_tundra
+# 			has_deposit = d_boggy_fens
+# 			has_deposit = d_nutritious_mudland
+# 			has_deposit = d_natural_farmland
+# 		}
+# 		NOT = {	has_modifier = pm_wenkwort_custodian}
+# 	}
+
+# 	allow = {
+# 		custom_tooltip = decision_kindergarten_small_requirements
+# 		hidden_trigger = {
+# 			OR = {
+# 				has_deposit = d_lichen_fields
+# 				has_deposit = d_bountiful_plains
+# 				has_deposit = d_rugged_woods
+# 				has_deposit = d_green_hills
+# 				has_deposit = d_forgiving_tundra
+# 				has_deposit = d_boggy_fens
+# 				has_deposit = d_nutritious_mudland
+# 				has_deposit = d_natural_farmland
+# 			}
+# 		}
+# 	}
+
+# 	effect = {
+# 		custom_tooltip = decision_kindergarten_small
+# 		hidden_effect = {
+# 			random_deposit = {
+# 				limit = {
+# 					OR = {
+# 						has_deposit = d_lichen_fields
+# 						has_deposit = d_bountiful_plains
+# 						has_deposit = d_rugged_woods
+# 						has_deposit = d_green_hills
+# 						has_deposit = d_forgiving_tundra
+# 						has_deposit = d_boggy_fens
+# 						has_deposit = d_nutritious_mudland
+# 						has_deposit = d_natural_farmland
+# 					}
+# 				}
+# 			clear_blocker = yes
+# 			}
+# 			add_deposit = d_kindergarten_small
+# 			if = {
+# 				limit = {
+# 					NOT = { has_planet_flag = gem_has_kindergarten }
+# 				}
+# 				set_planet_flag = gem_has_kindergarten
+# 			}
+# 		}
+# 	}
+# }
+
+# decision_create_kindergarten_med = {
+# 	owned_planets_only = yes
+# 	sound = event_structural_collapse
+# 	icon = decision_kindergarten
+	
+# 	enactment_time = 360
+# 	resources = {
+# 		category = decisions
+# 		cost = {
+# 			minerals = 350
+# 			alloys = 50
+# 		}
+# 	}
+
+# 	potential = {
+# 		owner = {
+# 			is_geo_empire = yes
+# 		}
+# 		OR = {
+# 			has_deposit = d_fungal_caves
+# 			has_deposit = d_lush_jungle
+# 			has_deposit = d_fertile_lands
+# 			has_deposit = d_great_river
+# 		}
+# 		NOT = { has_modifier = pm_wenkwort_custodian}
+# 	}
+
+# 	allow = {
+# 		custom_tooltip = decision_kindergarten_med_requirements
+# 		hidden_trigger = {
+# 			OR = {
+# 				has_deposit = d_fungal_caves
+# 				has_deposit = d_lush_jungle
+# 				has_deposit = d_fertile_lands
+# 				has_deposit = d_great_river
+# 			}
+# 		}
+# 	}
+
+# 	effect = {
+# 		custom_tooltip = decision_kindergarten_med
+# 		hidden_effect = {
+# 			random_deposit = {
+# 				limit = {
+# 					OR = {
+# 						has_deposit = d_fungal_caves
+# 						has_deposit = d_lush_jungle
+# 						has_deposit = d_fertile_lands
+# 						has_deposit = d_great_river
+# 					}
+# 				}
+# 				clear_blocker = yes
+# 			}
+# 			add_deposit = d_kindergarten_med
+# 			if = {
+# 				limit = {
+# 					NOT = { has_planet_flag = gem_has_kindergarten }
+# 				}
+# 				set_planet_flag = gem_has_kindergarten
+# 			}
+# 		}
+# 	}
+# }
+
+# decision_create_kindergarten_large = {
+# 	owned_planets_only = yes
+# 	sound = event_structural_collapse
+# 	icon = decision_kindergarten
+	
+# 	enactment_time = 480
+# 	resources = {
+# 		category = decisions
+# 		cost = {
+# 			minerals = 500
+# 			alloys = 75
+# 		}
+# 	}
+
+# 	potential = {
+# 		owner = {
+# 			is_geo_empire = yes
+# 		}
+# 		OR = {
+# 			has_deposit = d_black_soil
+# 			has_deposit = d_teeming_reef
+# 			has_deposit = d_marvelous_oasis
+# 			has_deposit = d_tropical_island
+# 			has_deposit = d_fungal_forest
+# 		}
+# 		NOT = { has_modifier = pm_wenkwort_custodian}
+# 	}
+
+# 	allow = {
+# 		custom_tooltip = decision_kindergarten_large_requirements
+# 		hidden_trigger = {
+# 			OR = {
+# 				has_deposit = d_black_soil
+# 				has_deposit = d_teeming_reef
+# 				has_deposit = d_marvelous_oasis
+# 				has_deposit = d_tropical_island
+# 				has_deposit = d_fungal_forest
+# 			}
+# 		}
+# 	}
+
+# 	effect = {
+# 		custom_tooltip = decision_kindergarten_large
+# 		hidden_effect = {
+# 			random_deposit = {
+# 				limit = {
+# 					OR = {
+# 						has_deposit = d_black_soil
+# 						has_deposit = d_teeming_reef
+# 						has_deposit = d_marvelous_oasis
+# 						has_deposit = d_tropical_island
+# 						has_deposit = d_fungal_forest
+# 					}
+# 				}
+# 				clear_blocker = yes
+# 			}
+# 			add_deposit = d_kindergarten_large
+# 			if = {
+# 				limit = {
+# 					NOT = { has_planet_flag = gem_has_kindergarten }
+# 				}
+# 				set_planet_flag = gem_has_kindergarten
+# 			}
+# 		}
+# 	}
+# }

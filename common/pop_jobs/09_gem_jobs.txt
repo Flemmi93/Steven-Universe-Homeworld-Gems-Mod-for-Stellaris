@@ -28,20 +28,133 @@ kindergartener = {
 		}
 	}
 	
+	planet_modifier = {
+		planet_pop_assembly_organic_add = 1
+	}
+
+#Bonus from techs
 	triggered_planet_modifier = {
 		potential = {
-			owner_main_species = { is_geoloid_deposit_eating = no }
+			exists = owner
+			owner = { has_technology = tech_mineral_purification_1 }
 		}
-		planet_pop_assembly_organic_add = 2
+		modifier = {
+			planet_pop_assembly_organic_add = 0.1
+		}
 	}
-	
+
 	triggered_planet_modifier = {
 		potential = {
-			owner_main_species = { is_geoloid_deposit_eating = yes }
+			exists = owner
+			owner = { has_technology = tech_mineral_purification_2 }
 		}
-		pop_happiness = 0.05
+		modifier = {
+			planet_pop_assembly_organic_add = 0.1
+		}
 	}
-	
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_rare_crystals }
+		}
+		modifier = {
+			planet_pop_assembly_organic_add = 0.05
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_genome_mapping }
+		}
+		modifier = {
+			planet_pop_assembly_organic_add = 0.1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_mine_rare_crystals }
+		}
+		modifier = {
+			planet_pop_assembly_organic_add = 0.05
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_cloning }
+		}
+		modifier = {
+			planet_pop_assembly_organic_add = 0.1
+		}
+	}
+
+
+#Bonus from traditions
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_tradition = tr_expansion_a_new_life }
+		}
+		modifier = {
+			planet_pop_assembly_organic_add = 0.1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { num_ascension_perks > 3 }
+		}
+		modifier = {
+			planet_pop_assembly_organic_add = 0.1
+		}
+	}
+#Bonus from any ascension
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_tradition = tr_genetics_adopt }
+		}
+		modifier = {
+			planet_pop_assembly_organic_add = 0.25
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_tradition = tr_psionics_adopt }
+		}
+		modifier = {
+			planet_pop_assembly_organic_add = 0.25
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_tradition = tr_cybernetics_adopt }
+		}
+		modifier = {
+			planet_pop_assembly_organic_add = 0.25
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_tradition = tr_synthetics_adopt }
+		}
+		modifier = {
+			planet_pop_assembly_organic_add = 0.25
+		}
+	}
+
 	triggered_planet_modifier = {
 		potential = {
 			has_trait = trait_repugnant
@@ -59,7 +172,7 @@ kindergartener = {
 			}
 		}
 		modifier = {
-			planet_amenities_add = 1
+			planet_amenities_add = 2
 		}
 	}
 
@@ -122,7 +235,7 @@ kindergartener_growth = {
 			}
 		}
 		modifier = {
-			planet_amenities_add = 1
+			planet_amenities_add = 2
 		}
 	}
 	weight = {

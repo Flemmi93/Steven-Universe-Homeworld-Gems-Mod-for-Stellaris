@@ -255,9 +255,9 @@ gems_pop_demotion_time_reduction = {
 	icon = "gfx/interface/icons/planet_modifiers/gem_galaxy_warp.dds"
 	pop_demotion_time_mult = -10
 }
-gems_pop_eat_deposits = {
-	icon = "gfx/interface/icons/planet_modifiers/gem_galaxy_warp.dds"
-	pop_growth_speed_reduction = 10
+gems_xeno_control = {
+	# icon = "gfx/interface/icons/planet_modifiers/gem_galaxy_warp.dds"
+	pop_growth_speed_reduction = 1
 }
 ##########################################################################
 # Faction Modifiers

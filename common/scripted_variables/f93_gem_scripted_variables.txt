@@ -1,6 +1,1 @@
-@has_f93_gem_mod = 1
-#Pop Growth
-@f93_gem_pop_cooldown = 479 #time between possible pop generations, pop generation is tested once a year at a random time.
-@f93_gem_pop_cooldown_long = 1079 #time between possible pop generations, pop generation is tested once a year at a random time.
-@f93_gem_pop_cost = -400
-@f93_gem_pop_cost_reverse = 400 #to give back the money if it was already paid
+@has_f93_gem_mod = 1 #themerger mod

@@ -2,6 +2,8 @@
 # Building Documentation
 #############
 
+@forced_weight = 1000
+
 # might be outdated/contain untested features
 building_gem_spire1 = {
 	base_buildtime = @b1_time
@@ -178,6 +180,8 @@ building_gem_spire3 = {
 building_buff_kindergarten1 = {
 	base_buildtime = 360
 	category = pop_assembly
+	is_essential = yes
+	ai_estimate_without_unemployment = yes
 	
 	position_priority = 10
 	can_demolish = yes
@@ -213,7 +217,6 @@ building_buff_kindergarten1 = {
 			owner = {
 				is_geo_empire = yes
 				NOT = { has_authority = auth_hive_mind }
-				owner_main_species = { is_geoloid_deposit_eating = no }
 			}			
 		}
 		modifier = { # Adjust for Balance
@@ -222,20 +225,6 @@ building_buff_kindergarten1 = {
 			job_roboticist_add = -2
 		}
 	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				is_geo_empire = yes
-				NOT = { has_authority = auth_hive_mind }
-				owner_main_species = { is_geoloid_deposit_eating = yes }
-			}			
-		}
-		modifier = { # Adjust for Balance
-			job_kindergartener_add = 1
-		}
-	}
-
 	triggered_desc = {
 		trigger = {
 			exists = owner
@@ -306,6 +295,8 @@ building_buff_kindergarten1 = {
 building_buff_kindergarten2 = {
 	base_buildtime = 720
 	category = pop_assembly
+	is_essential = yes
+	ai_estimate_without_unemployment = yes
 	
 	position_priority = 10
 	can_demolish = yes
@@ -347,26 +338,12 @@ building_buff_kindergarten2 = {
 			owner = {
 				is_geo_empire = yes
 				NOT = { has_authority = auth_hive_mind }
-				owner_main_species = { is_geoloid_deposit_eating = no }
 			}			
 		}
 		modifier = { # Adjust for Balance
 			job_kindergartener_add = 1
 			planet_pop_assembly_organic_mult = 0.1
 			job_roboticist_add = -2
-		}
-	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				is_geo_empire = yes
-				NOT = { has_authority = auth_hive_mind }
-				owner_main_species = { is_geoloid_deposit_eating = yes }
-			}			
-		}
-		modifier = { # Adjust for Balance
-			job_kindergartener_add = 2
 		}
 	}
  
@@ -427,6 +404,8 @@ building_buff_kindergarten2 = {
 building_buff_kindergarten3 = {
 	base_buildtime = 1080
 	category = pop_assembly
+	is_essential = yes
+	ai_estimate_without_unemployment = yes
 	
 	position_priority = 10
 	can_demolish = yes
@@ -467,29 +446,14 @@ building_buff_kindergarten3 = {
 			owner = {
 				is_geo_empire = yes
 				NOT = { has_authority = auth_hive_mind }
-				owner_main_species = { is_geoloid_deposit_eating = no }
 			}			
 		}
 		modifier = { # Adjust for Balance
-			job_kindergartener_add = 1.5
+			job_kindergartener_add = 2
 			planet_pop_assembly_organic_mult = 0.15
 			job_roboticist_add = -2
 		}
 	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				is_geo_empire = yes
-				NOT = { has_authority = auth_hive_mind }
-				owner_main_species = { is_geoloid_deposit_eating = yes }
-			}			
-		}
-		modifier = { # Adjust for Balance
-			job_kindergartener_add = 3
-		}
-	}
-
 	triggered_desc = {
 		trigger = {
 			exists = owner
@@ -595,7 +559,11 @@ building_gem_sky_arena = {
 	}
 	
 	ai_weight = {
-		base = 1000
+		base = @forced_weight
+		modifier = {
+			factor = 0 
+			has_building = building_gem_sky_arena
+		}
 	}
 
 	resources = {

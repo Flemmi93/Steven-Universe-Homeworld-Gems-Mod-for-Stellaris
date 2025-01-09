@@ -1,80 +1,4 @@
-
-eat_deposit_for_pop = { # planet scope and calculate the cost
-	eat_deposit_for_pop_no_cost = yes
-	if = {
-		limit = { root.owner = { has_technology = tech_genome_mapping } }
-		root.owner = { add_resource = { minerals = 50 } }
-	}
-	if = {
-		limit = { root.owner = { has_technology = tech_cloning } }
-		root.owner = { add_resource = { minerals = 50 } }
-	}
-	if = {
-		limit = { root = { colony_type = col_default } } 
-		root.owner = { add_resource = { minerals = 50 } }
-	}
-	if = {
-		limit = { not = { root.owner = { has_civic = civic_environmental_architects } } }
-		root.owner = { add_resource = { minerals = 25 } }
-	}
-	root.owner = { add_resource = { minerals = f93_gem_pop_cost } }
-}
-
-eat_deposit_for_pop_no_cost = { # planet scope
-	hidden_effect = {
-		if = {
-			limit = { NOT = { is_variable_set = f93_gems_made } }
-			set_variable = { which = f93_gems_made value = 0 }
-			set_variable = { which = f93_gem_efficency value = 2 }
-			export_trigger_value_to_variable = {
-				trigger = planet_size
-				variable = f93_gems_limit
-			}
-			multiply_variable = { which = f93_gems_limit value = 3 }
-		}
-	}
-	
-	random_deposit = {
-		limit = {
-			OR = {
-				has_deposit_category = deposit_cat_food
-				has_deposit_category = deposit_cat_energy
-				has_deposit_category = deposit_cat_minerals
-			}
-			planet = { num_unemployed < 2 NOT = { has_planet_flag = f93_slow_gem_making } }
-		}
-		remove_deposit = yes
-		hidden_effect = {
-			root = {
-				while = {
-					count = f93_gem_efficency
-					create_pop = { species = owner_main_species }
-				}
-				owner = { add_resource = { minerals = @f93_gem_pop_cost_reverse } }
-				change_variable = { which = f93_gems_made value = f93_gem_efficency } #this needed a bit of a buff
-				set_timed_planet_flag = { flag = f93_just_made_a_pop days = @f93_gem_pop_cooldown } #this number set the interval for new pop creations with you let it run automaticly
-			}
-		}
-	}
-	eat_deposit_for_pop_no_cost_no_deposit = yes
-}
-
-eat_deposit_for_pop_no_cost_no_deposit = {
-	if = {
-		limit = {
-			check_variable = { which = f93_gems_made value < f93_gems_limit }
-			NOT = { has_planet_flag = f93_just_made_a_pop }
-		}
-		hidden_effect = {
-			create_pop = { species = owner_main_species }
-			change_variable = { which = f93_gems_made value = 1 } #this needed a bit of a buff
-			set_timed_planet_flag = { flag = f93_just_made_a_pop days = f93_gem_pop_cooldown_long } #this number set the interval for new pop creations with you let it run automaticly
-		}
-	}
-}
-
 create_gem_empire_normal = {
-	
 	create_species = {
 		class = "GEO"
 		portrait = "gem"
@@ -134,7 +58,7 @@ create_gem_empire_normal = {
 				add_resource = { consumer_goods = 200 }
 				add_resource = { alloys = 100 }
 				add_resource = { influence = 100 }
-				add_resource = { unity = 270 }
+				add_resource = { unity = 400 }
 				
 				##Copy technology
 				copy_techs_from = {
@@ -171,39 +95,42 @@ create_gem_empire_normal = {
 		add_district = district_industrial
 		add_district = district_mining
 		add_building = building_research_lab_1
+		solar_system = {
+			every_fleet_in_system = {
+				kill_leader = { show_notification = no }
+				set_owner = last_created_country
+			}
+		}
 	}
 }
 
 f93_seed_gem_planet_with_stuff = {
-
-	# Variables for descriptions
-	set_variable = { which = f93_gems_made value = 0 }
-	set_variable = { which = f93_gem_efficency value = 3 }
-	export_trigger_value_to_variable = {
-		trigger = planet_size
-		variable = f93_gems_limit
+	every_deposit = {
+		limit = {
+			OR = {
+				has_deposit_category = deposit_cat_food
+				has_deposit_category = deposit_cat_energy
+				has_deposit_category = deposit_cat_minerals
+			}
+		}
+		remove_deposit = yes
 	}
-	multiply_variable = { which = f93_gems_limit value = 3 }
-
-
 	# 3 + 3 energy               
 	add_deposit = d_geothermal_vent
 	add_deposit = d_geothermal_vent
 
 	# 8 mining
 	add_deposit = d_space_mining
-	last_added_deposit = { set_deposit_flag = f93_gem_deposit }
 	add_deposit = d_space_mining
-	last_added_deposit = { set_deposit_flag = f93_gem_deposit }
 	
 	# 0 farming 
 	
-	# 6 kindargarden
-	add_deposit = d_kindergarten_large
-	add_deposit = d_kindergarten_large
+	# # 4 kindargarden
+	add_deposit = d_kindergarten
+	add_deposit = d_kindergarten
+	add_deposit = d_kindergarten
 	
 	add_deposit = d_homeworld_special
-	last_added_deposit = { set_deposit_flag = f93_gem_deposit }
 	
 	set_planet_flag = gem_has_kindergarten
 	
@@ -211,7 +138,6 @@ f93_seed_gem_planet_with_stuff = {
 	add_modifier = { modifier = pm_grand_court_1 }
 	add_modifier = { modifier = pm_gem_pink_court }
 	add_deposit = d_galaxy_warp
-	last_added_deposit = { set_deposit_flag = f93_gem_deposit }
 	if = {
 		limit = {
 			NOR = {

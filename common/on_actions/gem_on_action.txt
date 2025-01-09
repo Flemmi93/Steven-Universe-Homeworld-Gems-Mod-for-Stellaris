@@ -32,7 +32,7 @@ on_yearly_pulse_country = {
 	events = {
 		gem_gal_invasion.005 #reinforced the gem invasders with 15% of years passed with soldiers yearly. just so they have some on hand should AI bug and not build any.
 		gem_off_colors.0009
-		f93_deposit_eater.3 # ensures pop growth for eaters
+		# f93_deposit_eater.3 # ensures pop growth for eaters
 	}
 }
 on_monthly_pulse_country = {
@@ -47,7 +47,7 @@ on_monthly_pulse_country = {
 on_colonized = {
 	events = {
 		gem_kg.1 #kindergarten tutorial event
-		f93_deposit_eater.4
+		# f93_deposit_eater.4
 	}
 }
 
@@ -136,5 +136,16 @@ on_leader_fired = {
 on_pop_rights_change = {
 	events = {
 		gem_events_misc.003
+	}
+}
+
+
+# Fired whenever a new owner is set for a planet, following a war or through trade
+# This = Planet scope
+# From = Country scope (new owner)
+# FromFrom = Country scope (previous owner, if any)
+on_planet_transfer = {
+	events = {
+		gem_kg.5
 	}
 }

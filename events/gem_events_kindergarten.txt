@@ -14,8 +14,6 @@ planet_event = {
 	immediate = {
 		owner = { country_event = { id = gem_kg.2 days = 1 } }
 	}
-
-
 }
 
 country_event = {
@@ -31,7 +29,6 @@ country_event = {
 		is_geo_empire = yes
 		owner = {
 			NOT = { has_country_flag = gem_dontshow_kg_tut } #every time a colony is founded and they havent converted Farms to Kindergarten deposits they should get this
-			owner_main_species = { is_geoloid_deposit_eating = no }
 		}
 	}
 
@@ -55,5 +52,29 @@ country_event = {
 	hide_window = yes
 	immediate = { 
 		remove_country_flag = wenkwort_custodian
+	}
+}
+
+planet_event = {
+	id = gem_kg.5
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		if = {
+			limit = { From = { is_geo_empire = no } }
+			every_deposit = {
+				limit = { is_deposit_type = d_kindergarten }
+				root = { add_deposit = d_kindergarten_blocker }
+				remove_deposit = yes
+			}
+		}
+		else_if = {
+			limit = { From = { is_geo_empire = yes } }
+			every_deposit = {
+				limit = { is_deposit_type = d_kindergarten_blocker }
+				root = { add_deposit = d_kindergarten }
+				remove_deposit = yes
+			}
+		}
 	}
 }
