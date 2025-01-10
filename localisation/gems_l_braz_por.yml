@@ -217,7 +217,7 @@
  job_kindergartener_growth_plural: "$job_kindergartener_plural$"
  job_kindergartener_desc: "The growing of new gems is a very precise science, one that only specially-trained Kindergarteners can do with any hope of producing ideal results."
  job_kindergartener_effect_desc: "£job_kindergartener£ $job_kindergartener_plural$ increase £mod_pop_growth_speed£ §Y$MOD_POP_ASSEMBLY_SPEED$§! and produce £unity£ §E§H$unity$§!"
- job_kindergartener_agri_effect_desc: "To have any chance farming on [Root.GetName] we need to scale back our $Kindergarten$ operations."
+ job_kindergartener_effect_agri_desc: "To have any chance farming on [Root.GetName] we need to scale back our $Kindergarten$ operations."
  job_kindergartener_growth_desc: "$job_kindergartener_desc$"
  mod_job_kindergartener_add: "$job_kindergartener$ Jobs"
  mod_job_kindergartener_growth_add: "$mod_job_kindergartener_add$"
