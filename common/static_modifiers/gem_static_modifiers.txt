@@ -51,7 +51,7 @@ pm_gem_blue_court2 = {
 
 pm_gem_pink_court2 = {
 	icon = "gfx/interface/icons/planet_modifiers/gem_pink_diamond.dds"
-	icon_frame = 1
+	icon_frame = 2
 	#pop_citizen_happiness = 0.15
 }
 
@@ -170,11 +170,15 @@ pm_gem_cookie_cats = {
 	country_base_food_produces_add = 1
 	pop_happiness = 0.01
 }
-f93_pm_certified_kindergartener = {
+pm_f93_certified_kindergartener = {
 	icon = "gfx/interface/icons/planet_modifiers/f93_pm_certified_kindergartener.dds"
 	icon_frame = 1
 }
-
+pm_f93_human_preserve = {
+	icon = "gfx/interface/icons/planet_modifiers/Pm_archaeology.dds"
+	icon_frame = 1
+	job_farmer_add = 6
+}
 ##########################################################################
 # Country Modifiers
 ##########################################################################
@@ -249,6 +253,14 @@ gem_invaders = {
 	country_base_nanites_produces_add = 1
 	country_naval_cap_add = 200
 	command_limit_add = 20
+}
+
+gem_ai_helper = { #this nation should not go under easly, else whats the point
+	icon = "gfx/interface/icons/traits/trait_gem_eraone.dds"
+	country_base_energy_produces_add = 25
+	country_base_minerals_produces_add = 25
+	country_base_alloys_produces_add = 20
+	country_base_consumer_goods_produces_add = 20
 }
 
 gems_pop_demotion_time_reduction = {

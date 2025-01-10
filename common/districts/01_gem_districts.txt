@@ -4,8 +4,9 @@
 district_kindergarten = {
 	base_buildtime = 360
 	can_demolish = no
-	is_essential = yes
+	# is_essential = yes
 	ai_estimate_without_unemployment = yes
+	exempt_from_ai_planet_specialization = yes
 	
 	min_for_deposits_on_planet = 1
 	max_for_deposits_on_planet = 15
@@ -85,7 +86,6 @@ district_kindergarten = {
 		}
 	}
 	
-	ai_weight = {
-		weight = @forced_weight
-	}
+	
+	additional_ai_weight = 200
 }

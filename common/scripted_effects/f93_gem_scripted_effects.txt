@@ -59,7 +59,10 @@ create_gem_empire_normal = {
 				add_resource = { alloys = 100 }
 				add_resource = { influence = 100 }
 				add_resource = { unity = 400 }
-				
+				add_modifier = {
+					modifier = gem_ai_helper
+					days = 7200
+				}
 				##Copy technology
 				copy_techs_from = {
 					target = root
@@ -118,7 +121,15 @@ f93_seed_gem_planet_with_stuff = {
 	# 3 + 3 energy               
 	add_deposit = d_geothermal_vent
 	add_deposit = d_geothermal_vent
-
+	
+	if = {
+		limit = {
+			exists = orbit
+			orbit = { has_planet_flag = planet_earth }
+		}
+		remove_deposit = d_geothermal_vent
+		remove_deposit = d_geothermal_vent
+	}
 	# 8 mining
 	add_deposit = d_space_mining
 	add_deposit = d_space_mining
@@ -136,7 +147,7 @@ f93_seed_gem_planet_with_stuff = {
 	
 	set_planet_flag = grand_court
 	add_modifier = { modifier = pm_grand_court_1 }
-	add_modifier = { modifier = pm_gem_pink_court }
+	# add_modifier = { modifier = pm_gem_pink_court }
 	add_deposit = d_galaxy_warp
 	if = {
 		limit = {

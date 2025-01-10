@@ -109,6 +109,16 @@ d_space_mining = {
 	}
 }
 
+# Xeno Preserve
+d_f93_xeno_preserve = {
+	icon = d_monument_in_space
+	category = deposit_cat_rare
+	
+	planet_modifier = {
+		job_farmer_add = 3
+	}
+}
+
 # Homeworld Special Deposits
 d_homeworld_special = {
 	icon = d_kindergarten

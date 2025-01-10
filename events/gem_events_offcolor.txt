@@ -25,7 +25,19 @@ country_event = {
 		}
 	}
 	immediate = {
-		country_event = { id = gem_off_colors.0010 }
+		if = {
+			limit = {
+				any_owned_planet = { has_planet_flag = planet_earth }
+			}
+			random_owned_planet = {
+				limit = { has_planet_flag = planet_earth }
+				set_planet_flag = gem_planet_earth
+				save_global_event_target_as = gem_planet_earth_event
+			}
+			
+			country_event = { id = gem_off_colors.0020 days = 3 }
+		}
+		else = { country_event = { id = gem_off_colors.0010 } }
 	}
 }
 
@@ -94,14 +106,26 @@ country_event = {
 	is_triggered_only = yes
 	
 	trigger = {
-		is_hive_empire = no
+		is_geo_empire = yes
 	}
 	option = {
 		trigger = {
-			NOT = { has_country_flag = pink_got_earth }
+			NOR = { has_country_flag = pink_got_earth any_owned_planet = { has_planet_flag = planet_earth } }
 		}
 		name = MARVELOUS
 		hidden_effect = { country_event = { id = gem_off_colors.0030 days = 480 random = 120 } }
+	}
+
+	option = {
+		trigger = {
+			any_owned_planet = { has_planet_flag = planet_earth }
+		}
+		name = MARVELOUS
+		random_owned_planet = {
+			limit = { has_planet_flag = planet_earth }
+			planet_event = { id = gem_off_colors.1040 }
+			save_global_event_target_as = gem_planet_earth_event
+		}
 	}
 	
 	option = {
@@ -298,8 +322,8 @@ planet_event = {
 				has_planet_flag = gem_planet_earth
 				has_planet_flag = planet_earth
 			}
-			owner = { has_country_flag = era_one_flag }
-	}
+			owner = { has_country_flag = era_one_flag is_ai = no }
+		}
 	immediate = {
 		planet_event = { id = gem_off_colors.1010 days = 360 } # appearence of an unknown Rose Gem
 		#planet_event = { id = gem_diamond_choice.1001 } # forces to assign this planet to pink
@@ -316,7 +340,7 @@ planet_event = {
 	desc = gem_off_colors.1010.desc
 	picture = GFX_evt_gem_rose_kindergarten
 	show_sound = event_bad_omen
-
+	trigger = { owner = { is_ai = no } }
 	option = {
 		name = PECULIAR
 		create_pop = { species = owner_main_species }
@@ -698,26 +722,31 @@ planet_event = {
 	trigger = { owner = { has_country_flag = era_one_flag } }
 	immediate = {
 		hidden_effect = {
-			event_target:gem_pink_diamond = {
-				set_leader_flag = pink_earth_flag
-			}
+			event_target:gem_pink_diamond = { set_leader_flag = pink_earth_flag }
+		}
+		owner = {
+			set_country_flag = pink_got_earth
 		}
 	}
 	option = {
 		name = gem_off_colors.1040.a
 		assign_leader = event_target:gem_pink_diamond
 		event_target:gem_pink_diamond = {
-			add_trait = "trait_pink_court2"
+			if = {
+				limit = { NOT = { has_trait = trait_pink_court } }
+				add_trait = trait_pink_court
+			}
+		}
+		owner = {
+			random_owned_planet = {
+				limit = { has_modifier = pm_gem_pink_court }
+				remove_modifier = pm_gem_pink_court
+			}
 		}
 	}
 	after = {
 		hidden_effect = {
 			event_target:gem_pink_diamond = { remove_leader_flag = pink_earth_flag }
-			owner = {
-				capital_scope = {
-					remove_modifier = pm_gem_pink_court
-				}
-			}
 		}
 	}
 }

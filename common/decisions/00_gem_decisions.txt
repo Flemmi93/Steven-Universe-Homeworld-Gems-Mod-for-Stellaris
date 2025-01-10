@@ -96,7 +96,6 @@ decision_gem_wenkwort_defiler = {
 decision_gemcology_project = {
 	owned_planets_only = yes
 	icon = decision_arcology_project
-
 	enactment_time = 360
 	resources = {
 		category = decisions
@@ -106,8 +105,13 @@ decision_gemcology_project = {
 			alloys = 500
 		}
 	}
-
 	potential = {
+		exists = owner
+		owner = {
+			is_geo_empire = yes
+			is_ai = no
+		}
+		is_artificial = no
 		NOR = {
 			is_planet_class = pc_city
 			is_planet_class = pc_relic
@@ -118,13 +122,8 @@ decision_gemcology_project = {
 			has_modifier = slave_colony
 			has_modifier = pm_wenkwort_custodian
 		}
-		is_artificial = no
-		exists = owner
-		owner = {
-			is_geo_empire = yes
-		}
+		NOT = { has_designation = col_nanotech_world }
 	}
-
 	allow = {
 		hidden_trigger = {
 			num_free_districts = {
@@ -136,28 +135,122 @@ decision_gemcology_project = {
 				value = 0
 			}
 		}
-		
 		custom_tooltip = decision_gemcology_project_requirements
 		num_uncleared_blockers < 1
 		owner = { has_technology = tech_terrestrial_sculpting }
 	}
-
 	effect = { # Make Gemworld
 		change_pc = pc_gemworld
-
-		hidden_effect = {
-			if = {
-				limit = {
-					has_planet_flag = gem_has_kindergarten
-				}
-				remove_planet_flag = gem_has_kindergarten
+	}
+}
+#Make planet a Gemworld
+decision_gemcology_project_ai = {
+	owned_planets_only = yes
+	icon = decision_arcology_project
+	enactment_time = 360
+	resources = {
+		category = decisions
+		cost = {
+			influence = 250
+		}
+	}
+	potential = {
+		exists = owner
+		owner = {
+			is_geo_empire = yes
+			is_ai = yes
+			NOT = { has_country_flag = f93_building_gemworld }
+		}
+		is_artificial = no
+		NOR = {
+			is_planet_class = pc_city
+			is_planet_class = pc_relic
+			#is_planet_class = pc_gem
+			is_planet_class = pc_gemworld
+			has_modifier = resort_colony
+			has_modifier = penal_colony
+			has_modifier = slave_colony
+			has_modifier = pm_wenkwort_custodian
+		}
+		NOT = { has_designation = col_nanotech_world }
+	}
+	allow = {
+		hidden_trigger = {
+			num_free_districts = {
+				type = district_farming
+				value = 0
 			}
-			if = {
-				limit = {
-					NOT = { has_planet_flag = gem_has_kindergarten2 }
-				}
-				set_planet_flag = gem_has_kindergarten2
+			num_districts = {
+				type = district_farming
+				value = 0
 			}
+		}
+		owner = {
+			has_country_resource = { type = minerals amount = 10000 }
+			has_country_resource = { type = alloys amount = 500 }
+		}
+		custom_tooltip = decision_gemcology_project_requirements
+		num_uncleared_blockers < 3
+		owner = { has_technology = tech_terrestrial_sculpting }
+	}
+	effect = { # Make Gemworld
+		owner = {
+			add_resource = {
+				minerals = -10000
+				alloys = -500
+			}
+		}
+		change_pc = pc_gemworld
+	}
+	ai_weight = {
+		weight = 75
+		modifier = {
+			exists = owner
+			is_homeworld = yes
+			add = 10000
+		}
+		modifier = {
+			exists = owner
+			owner = { has_country_resource = { type = minerals amount > 15000 } }
+			owner = { has_country_resource = { type = alloys amount > 1000 } }
+			add = 150
+		}
+		modifier = {
+			add = 50
+			num_pops > 35
+		}
+		modifier = {
+			add = 50
+			colony_type = col_mining
+		}
+		modifier = {
+			add = 50
+			colony_type = col_generator
+		}
+		modifier = {
+			add = -500
+			colony_type = col_farming
+			NOT = { has_deposit = d_f93_xeno_preserve }
+		}
+		modifier = {
+			add = 50
+			num_pops > 40
+		}
+		modifier = {
+			add = 50
+			num_pops > 45
+		}
+		modifier = {
+			add = 50
+			num_pops > 50
+		}
+		modifier = {
+			add = 50
+			num_pops > 55
+		}
+		modifier = {
+			add = 150
+			num_pops > 60
 		}
 	}
 }
@@ -180,17 +273,14 @@ galaxy_warp = {
 		}
 		NOT = { has_deposit = d_galaxy_warp } 
 	}
-	
 	effect = {
 		random_deposit = { 
 			limit = { has_deposit = d_galaxy_warp_damaged }
 			clear_blocker = yes
 		}
 		add_deposit = d_galaxy_warp
-		last_added_deposit = { set_deposit_flag = f93_gem_deposit }
 	}
 }
-
 
 galaxy_warp_ai = {
 	owned_planets_only = yes
@@ -198,6 +288,7 @@ galaxy_warp_ai = {
 	enactment_time = 720
 	resources = {
 		category = decisions
+		cost = {}
 	}
 	potential = {
 		owner = {
@@ -206,6 +297,12 @@ galaxy_warp_ai = {
 		}
 		NOT = { has_deposit = d_galaxy_warp } 
 	}
+	allow = {
+		owner = {			
+			has_country_resource = { type = energy amount = 750 }
+			has_country_resource = { type = alloys amount = 150 }
+		}
+	}
 	
 	effect = {
 		random_deposit = { 
@@ -213,7 +310,85 @@ galaxy_warp_ai = {
 			clear_blocker = yes
 		}
 		add_deposit = d_galaxy_warp
-		last_added_deposit = { set_deposit_flag = f93_gem_deposit }
+		owner = {
+			add_resource = {
+				energy = -750
+				alloys = -150
+			}
+		}
+	}
+	ai_weight = {
+		weight = 250
+		modifier = {
+			exists = owner
+			owner = { has_country_resource = { type = alloys amount > 500 } }
+			owner = { has_country_resource = { type = energy amount > 1500 } }
+			add = 250
+		}
+		modifier = {
+			add = 50
+			num_pops > 10
+		}
+		modifier = {
+			add = 50
+			num_pops > 15
+		}
+		modifier = {
+			add = 50
+			num_pops > 20
+		}
+		modifier = {
+			add = 50
+			num_pops > 25
+		}
+		modifier = {
+			add = 50
+			num_pops > 30
+		}
+		modifier = {
+			add = 150
+			num_pops > 35
+		}
 	}
 }
 
+
+f93_gem_xeno_preserve = {
+	owned_planets_only = yes
+	icon = decision_cultivated_worldscaping
+	enactment_time = 180
+	resources = {
+		category = decisions
+		cost = {
+			energy = 150
+			minerals = 400
+		}
+	}
+	potential = {
+		owner = {
+			is_geo_empire = yes
+		}
+	}
+	allow = {
+		owner = { has_deficit = food NOT = { has_country_flag = f93_created_preserve } }
+	}
+	effect = {
+		add_deposit = d_f93_xeno_preserve
+		owner = { set_timed_country_flag = { flag = f93_created_preserve days = 360 } }
+	}
+	ai_weight = {
+		weight = 100
+		modifier = {
+			add = 200
+			any_owned_pop = { NOR = { is_robot_pop = yes is_geoloid = yes is_lithoid = yes } }
+		}
+		modifier = {
+			add = 200
+			owner = {
+				any_owned_planet = {
+					NOT = { has_district = district_farming }
+				}
+			}
+		}
+	}
+}

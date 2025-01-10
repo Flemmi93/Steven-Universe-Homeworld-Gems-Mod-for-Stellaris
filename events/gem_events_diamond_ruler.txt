@@ -169,7 +169,7 @@ country_event = {
 					species = owner_main_species
 					traits = {
 						trait = "trait_ruler_diamond"
-						#trait = "trait_pink_court"
+						trait = "trait_pink_court"
 					}
 				}
 			set_heir = last_created_leader
@@ -276,7 +276,7 @@ country_event = {
 					species = owner_main_species
 					traits = {
 						trait = "trait_ruler_diamond"
-						#trait = "trait_pink_court"
+						trait = "trait_pink_court"
 					}
 				}
 			set_heir = last_created_leader
@@ -380,7 +380,7 @@ country_event = {
 					species = owner_main_species
 					traits = {
 						trait = "trait_ruler_diamond"
-						#trait = "trait_pink_court"
+						trait = "trait_pink_court"
 					}
 				}
 			set_heir = last_created_leader
@@ -433,7 +433,7 @@ country_event = {
 				species = owner_main_species
 				traits = {
 					trait = "trait_ruler_diamond"
-					#trait = "trait_pink_court"
+					trait = "trait_pink_court"
 				}
 			}
 			last_created_leader = {

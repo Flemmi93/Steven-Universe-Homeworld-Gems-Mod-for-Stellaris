@@ -19,6 +19,8 @@ trait_ruler_diamond = {
 	notify_on_gained = no
 	
 	modifier = {
+		pop_citizen_happiness = 0.1
+		planet_amenities_add = 10
 	}
 	self_modifier = {
 		leader_skill_levels = 5
@@ -38,21 +40,13 @@ trait_white_court = {
 	randomized = no
 	sorting_priority = 0
 	icon = "gfx/interface/icons/planet_modifiers/gem_white_diamond.dds"
-	leader_class = { official }
+	leader_class = { official scientist commander }
 	requires_traits = { trait_geoloid }
 	ai_weight = 0
 	selectable_weight = 0
-	planet_modifier = { 
+	modifier = { 
 		planet_jobs_produces_mult = 0.1
-		pop_citizen_happiness = 0.1
-		planet_amenities_add = 10
 		pop_ethic_authoritarian_attraction_mult = 0.25
-	}
-	sector_modifier = { 
-		planet_jobs_produces_mult = 0.05
-		pop_citizen_happiness = 0.05
-		planet_amenities_add = 5
-		pop_ethic_authoritarian_attraction_mult = 0.125
 	}
 }
 trait_yellow_court = {
@@ -60,21 +54,13 @@ trait_yellow_court = {
 	randomized = no
 	sorting_priority = 0
 	icon = "gfx/interface/icons/planet_modifiers/gem_yellow_diamond.dds"
-	leader_class = { commander }
+	leader_class = { official scientist commander }
 	requires_traits = { trait_geoloid }
 	ai_weight = 0
 	selectable_weight = 0
-	planet_modifier = { 
+	modifier = { 
 		planet_researchers_engineering_research_produces_mult = 0.25
-		pop_citizen_happiness = 0.1
-		planet_amenities_add = 10
 		pop_ethic_militarist_attraction_mult = 0.25
-	}
-	sector_modifier = { 
-		planet_researchers_engineering_research_produces_mult = 0.125
-		pop_citizen_happiness = 0.05
-		planet_amenities_add = 5
-		pop_ethic_militarist_attraction_mult = 0.125
 	}
 }
 trait_blue_court = {
@@ -82,21 +68,13 @@ trait_blue_court = {
 	randomized = no
 	sorting_priority = 0
 	icon = "gfx/interface/icons/planet_modifiers/gem_blue_diamond.dds"
-	leader_class = { scientist }
+	leader_class = { official scientist commander }
 	requires_traits = { trait_geoloid }
 	ai_weight = 0
 	selectable_weight = 0
-	planet_modifier = { 
+	modifier = { 
 		planet_jobs_upkeep_mult = -0.1
-		pop_citizen_happiness = 0.1
-		planet_amenities_add = 10
 		pop_ethic_spiritualist_attraction_mult = 0.25
-	}
-	sector_modifier = { 
-		planet_jobs_upkeep_mult = -0.05
-		pop_citizen_happiness = 0.05
-		planet_amenities_add = 5
-		pop_ethic_spiritualist_attraction_mult = 0.125
 	}
 }
 trait_pink_court = {
@@ -104,21 +82,13 @@ trait_pink_court = {
 	randomized = no
 	sorting_priority = 0
 	icon = "gfx/interface/icons/planet_modifiers/gem_pink_diamond.dds"
-	leader_class = { official }
+	leader_class = { official scientist commander }
 	requires_traits = { trait_geoloid }
 	ai_weight = 0
 	selectable_weight = 0
-	planet_modifier = { 
+	modifier = { 
 		job_entertainer_add = 2
-		pop_citizen_happiness = 0.1
-		planet_amenities_add = 10
 		pop_ethic_xenophobe_attraction_mult = 0.25
-	}
-	sector_modifier = { 
-		job_entertainer_add = 1
-		pop_citizen_happiness = 0.05
-		planet_amenities_add = 5
-		pop_ethic_xenophobe_attraction_mult = 0.125
 	}
 }
 trait_pink_court2 = {
@@ -126,14 +96,12 @@ trait_pink_court2 = {
 	randomized = no
 	sorting_priority = 0
 	icon = "gfx/interface/icons/planet_modifiers/gem_pink_diamond.dds"
-	leader_class = { official }
+	leader_class = { official scientist commander }
 	requires_traits = { trait_geoloid }
 	ai_weight = 0
 	selectable_weight = 0
 	planet_modifier = { 
 		job_entertainer_add = 2
-		pop_citizen_happiness = 0.1
-		planet_amenities_add = 10
 		pop_ethic_xenophile_attraction_mult = 0.25
 	}
 }

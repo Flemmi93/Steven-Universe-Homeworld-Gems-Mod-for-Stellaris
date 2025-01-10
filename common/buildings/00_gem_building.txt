@@ -180,7 +180,8 @@ building_gem_spire3 = {
 building_buff_kindergarten1 = {
 	base_buildtime = 360
 	category = pop_assembly
-	is_essential = yes
+	# is_essential = yes
+	additional_ai_weight = 200
 	ai_estimate_without_unemployment = yes
 	
 	position_priority = 10
@@ -295,7 +296,8 @@ building_buff_kindergarten1 = {
 building_buff_kindergarten2 = {
 	base_buildtime = 720
 	category = pop_assembly
-	is_essential = yes
+	# is_essential = yes
+	additional_ai_weight = 200
 	ai_estimate_without_unemployment = yes
 	
 	position_priority = 10
@@ -404,7 +406,8 @@ building_buff_kindergarten2 = {
 building_buff_kindergarten3 = {
 	base_buildtime = 1080
 	category = pop_assembly
-	is_essential = yes
+	# is_essential = yes
+	additional_ai_weight = 200
 	ai_estimate_without_unemployment = yes
 	
 	position_priority = 10

@@ -291,6 +291,49 @@ country_event = {
 				}
 			}
 			else_if = {
+				limit = {
+					any_system = {
+						any_system_planet = {
+							has_planet_flag = planet_earth
+							owner = {
+								has_origin = origin_default
+								is_ai = yes
+							}
+						}
+					}
+				}
+				random_system = {
+					limit = { any_system_planet = { has_planet_flag = planet_earth } owner = { has_origin = origin_default is_ai = yes } }
+					random_system_planet = {
+						limit = { is_moon = yes orbit = { has_planet_flag = planet_earth } }
+						save_global_event_target_as = gem_spawn_location
+						change_pc = pc_gem
+						create_gem_empire_normal = yes
+						set_name = "Luna"
+						orbit = {
+							set_variable = { which = fraction_num_pops value = trigger:num_pops }
+							change_variable = { which = fraction_num_pops value = -10 }
+							while = {
+								count = fraction_num_pops
+								random_owned_pop = { kill_pop = yes }
+							}
+							set_owner = last_created_country
+							save_event_target_as = planet_earth
+							add_modifier = { modifier = pm_f93_human_preserve }
+						}
+						while = {
+							count = 10
+							random_owned_pop = { kill_pop = yes }
+						}
+						while = {
+							count = 3
+							random_owned_pop = { resettle_pop = { pop = this planet = event_target:planet_earth } }
+						}
+
+					}
+				}
+			}
+			else_if = {
 				random_country = {
 					limit = {
 						is_ai = yes

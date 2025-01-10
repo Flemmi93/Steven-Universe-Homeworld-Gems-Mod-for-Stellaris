@@ -40,7 +40,7 @@
 	}
 	
 	fleet_names = {
-		random_names = { "Rainbow Gem Armada" "Rhodizite Gem Armada" "Rhodochrosite Gem Armada" "Rhodolite Gem Armada" "Richterite Gem Armada" "Riebeckite Gem Armada" "Rockcrystal Gem Armada" "Rosasite Gem Armada" "Rose Quartz Gem Armada" "Rosolite Gem Armada" "Rossmanite Gem Armada" "Rubellite Gem Armada" "Ruby Gem Armada" "Rutile Gem Armada" }
+		random_names = { "Rainbow Gem Armada" "Rhodizite Gem Armada" "Rhodochrosite Gem Armada" "Rhodolite Gem Armada" "Richterite Gem Armada" "Riebeckite Gem Armada" "Rockcrystal Gem Armada" "Rosasite Gem Armada" "Rosolite Gem Armada" "Rossmanite Gem Armada" "Rubellite Gem Armada" "Ruby Gem Armada" "Rutile Gem Armada" }
 		
 		sequential_name = GEM1_xxSTELLARCLUSTER_ORD
 	}
