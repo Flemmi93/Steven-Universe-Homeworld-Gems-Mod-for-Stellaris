@@ -15,7 +15,7 @@ country_event = {
 		OR = {
 			AND = {
 				count_controlled_planet = {
-					count < 5
+					count > 5
 					limit = { is_colony = yes }
 				}
 				num_pops > 60
