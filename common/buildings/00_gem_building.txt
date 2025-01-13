@@ -318,11 +318,11 @@ building_buff_kindergarten2 = {
 	allow = {
 		has_upgraded_capital = yes
 		owner = { has_technology = tech_housing_1 }
-		OR = {
-			has_deposit = d_kindergarten_small
-			has_deposit = d_kindergarten_med
-			has_deposit = d_kindergarten_large
-		}
+		# OR = {
+		# 	has_deposit = d_kindergarten_small
+		# 	has_deposit = d_kindergarten_med
+		# 	has_deposit = d_kindergarten_large
+		# }
 	}
 	
 	destroy_trigger = {
@@ -345,7 +345,7 @@ building_buff_kindergarten2 = {
 		modifier = { # Adjust for Balance
 			job_kindergartener_add = 1
 			planet_pop_assembly_organic_mult = 0.1
-			job_roboticist_add = -2
+			job_roboticist_add = -3
 		}
 	}
  
@@ -379,7 +379,7 @@ building_buff_kindergarten2 = {
 		modifier = { # Adjust for Balance
 			job_kindergartener_add = 2
 			planet_amenities_add = 10
-			job_roboticist_add = -2
+			job_roboticist_add = -3
 		}
 	}
 	
@@ -427,11 +427,11 @@ building_buff_kindergarten3 = {
 	
 	allow = {
 		owner = { has_technology = tech_housing_2 }		# make it so planet acension level 1 has to be reached for this
-		OR = {
-			has_deposit = d_kindergarten_small
-			has_deposit = d_kindergarten_med
-			has_deposit = d_kindergarten_large
-		}
+		# OR = {
+		# 	has_deposit = d_kindergarten_small
+		# 	has_deposit = d_kindergarten_med
+		# 	has_deposit = d_kindergarten_large
+		# }
 	}
 	
 	destroy_trigger = {
@@ -454,7 +454,8 @@ building_buff_kindergarten3 = {
 		modifier = { # Adjust for Balance
 			job_kindergartener_add = 2
 			planet_pop_assembly_organic_mult = 0.15
-			job_roboticist_add = -2
+			planet_amenities_add = 10
+			job_roboticist_add = -3
 		}
 	}
 	triggered_desc = {
