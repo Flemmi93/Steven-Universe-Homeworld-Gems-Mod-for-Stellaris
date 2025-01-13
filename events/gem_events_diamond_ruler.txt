@@ -88,6 +88,66 @@ country_event = {
 	}
 }
 
+#Fix Leader Portraits on monthly
+country_event = {
+    id = gem_diamond_ruler.0002
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		is_geo_empire = yes
+	}
+	immediate = {
+		every_owned_leader = {
+			limit = { has_trait = trait_white_court NOT = { has_trait = trait_poofed_gem } }
+			change_leader_portrait = gemD1 #White
+		}
+		every_owned_leader = {
+			limit = { has_trait = trait_yellow_court NOT = { has_trait = trait_poofed_gem } }
+			change_leader_portrait = gemD2 #Yellow
+		}
+		every_owned_leader = {
+			limit = { has_trait = trait_blue_court NOT = { has_trait = trait_poofed_gem } }
+			change_leader_portrait = gemD3 #Blue
+		}
+		every_owned_leader = {
+			limit = { has_trait = trait_pink_court NOT = { has_trait = trait_poofed_gem } }
+			change_leader_portrait = gemD4 #Pink
+		}
+		every_owned_leader = {
+			limit = { has_trait = trait_white_court has_trait = trait_poofed_gem }
+			change_leader_portrait = gemWG #White
+		}
+		every_owned_leader = {
+			limit = { has_trait = trait_yellow_court has_trait = trait_poofed_gem }
+			change_leader_portrait = gemYG #Yellow
+		}
+		every_owned_leader = {
+			limit = { has_trait = trait_blue_court has_trait = trait_poofed_gem }
+			change_leader_portrait = gemBG #Blue
+		}
+		every_owned_leader = {
+			limit = { has_trait = trait_pink_court has_trait = trait_poofed_gem }
+			change_leader_portrait = gemPG #Pink
+		}
+		if = {
+			limit = {
+				exists = event_target:gem_jasper_quartz
+			}
+			event_target:gem_jasper_quartz = {
+				change_leader_portrait = gemJ4 #Jasper (The big one)
+			}
+		}
+		if = {
+			limit = {
+				exists = event_target:lapis_lazuli_target
+			}
+			event_target:lapis_lazuli_target = {
+				change_leader_portrait = gemL1 #Lapis
+			}
+		}
+	}
+}
+
 #Chose White Diamond
 country_event = {
 	ID = gem_diamond_ruler.0010

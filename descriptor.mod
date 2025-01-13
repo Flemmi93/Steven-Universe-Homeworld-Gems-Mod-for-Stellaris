@@ -1,12 +1,11 @@
-version="2"
+version="2.5"
 tags={
-	"Gameplay"
-	"Graphics"
-	"Leaders"
+	"Buildings"
 	"Events"
+	"Leaders"
 	"Species"
 }
 name="Steven Universe Homeworld Gems"
-picture="thumbnail.png"
+picture="thumbnail.jpg"
 supported_version="v3.14.*"
 remote_file_id="1104213489"

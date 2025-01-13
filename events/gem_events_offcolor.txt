@@ -399,7 +399,6 @@ planet_event = {
 				}
 			}
 		}
-		#remove_modifier = pm_gem_human_experiement
 		add_modifier = { modifier = "pm_off_color_saboteur" days = 720 }
 	}
 }
@@ -1011,7 +1010,7 @@ planet_event = {
 			}
 		}
 		last_created_leader = {
-			change_leader_portrait = gemL1
+			change_leader_portrait = gemL1 # Lapis
 			save_global_event_target_as = lapis_lazuli_target
 		}
 	}
@@ -1246,7 +1245,10 @@ planet_event = {
 	desc = gem_off_colors.2003.desc
 	picture = GFX_evt_gem_tridiamondattack
 	is_triggered_only = yes	
-	
+	immediate = {
+		remove_modifier = pm_gem_human_experiement
+	}
+
 	option = {
 		name = gem_off_colors.2003.a
 		every_owned_pop = {
