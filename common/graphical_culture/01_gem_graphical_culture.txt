@@ -3,9 +3,28 @@
 # Culture is scripted for species classes, see "common/species_classes/" and "graphical_culture = xxx"
 
 geoloid_01 = {
-	fallback = fe_national
+	randomized = { always = no }
+	selectable = { always = yes }
+
+	ship_kinds = {
+			default_ship
+			space_amoeba
+			tiyanki
+			voidworm
+			cutholoid
+			crystalline_entity
+		}
+	ship_selection_weight = {
+		base = 0
+		modifier = {
+			set = 10
+			graphical_culture = from
+		}
+	}
 
 	ship_color = yes
+	#edit the fallback if you want to add your own shipset.
+	fallback = reptilian_01 #fallen_empire_01
 	ship_lighting = {
 		cam_light_1_dir = { 0.4 0.0 0.0 }
 		cam_light_2_dir = { -0.5 0.0 0.0 }
