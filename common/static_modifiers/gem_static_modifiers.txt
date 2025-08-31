@@ -22,7 +22,7 @@ pm_gem_yellow_court = {
 pm_gem_blue_court = {
 	icon = "gfx/interface/icons/planet_modifiers/gem_blue_diamond.dds"
 	icon_frame = 1
-	#trade_value_mult = 0.05
+	#pop_lifestyle_trade_value_mult = 0.05
 }
 
 pm_gem_pink_court = {
@@ -46,7 +46,7 @@ pm_gem_yellow_court2 = {
 pm_gem_blue_court2 = {
 	icon = "gfx/interface/icons/planet_modifiers/gem_blue_diamond.dds"
 	icon_frame = 1
-	#trade_value_mult = 0.075
+	#pop_lifestyle_trade_value_mult = 0.075
 }
 
 pm_gem_pink_court2 = {
@@ -114,30 +114,30 @@ planet_jobs_alloys_produces_mult = 0.25
 pm_gem_no_assemble = {
 	icon = "gfx/interface/icons/planet_modifiers/gem_off_colors.dds"
 	icon_frame = 3
-	planet_pop_assembly_organic_mult = -2
+	GEOLOID_bonus_pop_growth_mult = -2
 }
 pm_gem_less_assemble1 = {
 	icon = "gfx/interface/icons/planet_modifiers/gem_off_colors.dds"
 	icon_frame = 3
-	planet_pop_assembly_organic_mult = -0.05
-	job_soldier_add = 1
+	GEOLOID_bonus_pop_growth_mult = -0.05
+	job_soldier_add = 250
 }
 pm_gem_less_assemble2 = {
 	icon = "gfx/interface/icons/planet_modifiers/gem_off_colors.dds"
 	icon_frame = 3
-	planet_pop_assembly_organic_mult = -0.10
-	job_soldier_add = 3
+	GEOLOID_bonus_pop_growth_mult = -0.10
+	job_soldier_add = 400
 }
 pm_gem_less_assemble3 = {
 	icon = "gfx/interface/icons/planet_modifiers/gem_off_colors.dds"
 	icon_frame = 3
-	planet_pop_assembly_organic_mult = -0.2
-	job_soldier_add = 5
+	GEOLOID_bonus_pop_growth_mult = -0.2
+	job_soldier_add = 1000
 }
 pm_gem_human_experiement = {
 	icon = "gfx/interface/icons/planet_modifiers/pm_human_experiement.dds"
 	icon_frame = 2
-	pop_growth_speed_reduction = 0.15
+	BIOLOGICAL_bonus_pop_growth_mult = -0.15
 	planet_amenities_mult = 0.20
 	all_technology_research_speed = 0.1
 	job_head_researcher_add = 1
@@ -147,7 +147,7 @@ pm_grand_court_1 = {
 	icon_frame = 1
 	planet_stability_add = 10
 	planet_jobs_alloys_produces_mult = 0.1
-	trade_value_mult = 0.1
+	pop_lifestyle_trade_value_mult = 0.1
 	pop_citizen_happiness = 0.10
 	planet_jobs_upkeep_mult = -0.15
 }
@@ -156,7 +156,7 @@ pm_grand_court_2 = {
 	icon_frame = 1
 	planet_stability_add = 10
 	planet_jobs_alloys_produces_mult = 0.1
-	trade_value_mult = 0.1
+	pop_lifestyle_trade_value_mult = 0.1
 	planet_jobs_upkeep_mult = -0.075
 }
 pm_pink_celebration = {
@@ -198,7 +198,7 @@ era_one = {
 era_two = {
 	icon = "gfx/interface/icons/traits/trait_gem_eratwo.dds"
 	pop_resettlement_cost_mult = -0.25
-	planet_pop_assembly_organic_mult = -0.15
+	GEOLOID_bonus_pop_growth_mult = -0.15
 	pop_cat_ruler_happiness = -0.05
 	country_leader_pool_size = -1
 }
@@ -269,7 +269,7 @@ gems_pop_demotion_time_reduction = {
 }
 gems_xeno_control = {
 	# icon = "gfx/interface/icons/planet_modifiers/gem_galaxy_warp.dds"
-	pop_growth_speed_reduction = 1
+	BIOLOGICAL_bonus_pop_growth_mult = -1
 }
 ##########################################################################
 # Faction Modifiers

@@ -38,7 +38,7 @@ gem = {
 	
 	origin = "origin_geoform"
 
-	flags = { gem custom_start_screen }
+	# flags = { gem custom_start_screen }
 	
 	planet_name = "PRESCRIPTED_planet_name_gem"
 	planet_class = "pc_continental"
@@ -87,7 +87,7 @@ gem_rogue = {
 	ignore_portrait_duplication = no
 	spawn_as_fallen = no
 
-	flags = { gem custom_start_screen }
+	# flags = { gem custom_start_screen }
 	advisor_voice_type = "Pearl"
 
 	species = {
@@ -161,7 +161,7 @@ gem_white = {
 	ignore_portrait_duplication = no
 	spawn_as_fallen = no
 	
-	flags = { gem custom_start_screen }
+	# flags = { gem custom_start_screen }
 	advisor_voice_type="l_the_diplomat"
 	
 	species={
@@ -264,7 +264,7 @@ gem_no_lithoid = {
 	
 	origin = "origin_geoform"
 
-	flags = { gem custom_start_screen }
+	# flags = { gem custom_start_screen }
 	
 	planet_name = "PRESCRIPTED_planet_name_gem"
 	planet_class = "pc_continental"
@@ -313,7 +313,7 @@ gem_rogue_no_lithoid = {
 	ignore_portrait_duplication = no
 	spawn_as_fallen = no
 
-	flags = { gem custom_start_screen }
+	# flags = { gem custom_start_screen }
 	advisor_voice_type = "Pearl"
 
 	species = {
@@ -387,7 +387,7 @@ gem_white_no_lithoid = {
 	ignore_portrait_duplication = no
 	spawn_as_fallen = no
 	
-	flags = { gem custom_start_screen }
+	# flags = { gem custom_start_screen }
 	advisor_voice_type="l_the_diplomat"
 	
 	species={

@@ -1,74 +1,3 @@
-@low_rare = 0.1
-
-# Kindergarten Deposits
-d_kindergarten_small = {
-	
-	icon = d_kindergarten
-	category = deposit_cat_rare
-	
-	use_weights_for_terraforming_swap_types = yes
-	should_swap_deposit_on_terraforming = yes
-	terraforming_swap_types = {
-		d_nutritious_mudland
-		d_lichen_fields
-		d_bountiful_plains
-		d_rugged_woods
-		d_green_hills
-		d_forgiving_tundra
-		d_boggy_fens
-		d_natural_farmland # gaia
-	}
-
-	planet_modifier = { 
-		district_kindergarten_max = 1
-	}
-
-	potential = { always = no }
-}
-
-d_kindergarten_med = {
-
-	icon = d_kindergarten
-	category = deposit_cat_rare
-	
-	use_weights_for_terraforming_swap_types = yes
-	should_swap_deposit_on_terraforming = yes
-	terraforming_swap_types = {
-		d_great_river
-		d_fungal_caves
-		d_lush_jungle
-		d_fertile_lands
-	}
-
-	planet_modifier = {
-		district_kindergarten_max = 2
-	}
-	
-	potential = { always = no }
-}
-
-d_kindergarten_large = {
-
-	icon = d_kindergarten
-	category = deposit_cat_rare
-	
-	use_weights_for_terraforming_swap_types = yes
-	should_swap_deposit_on_terraforming = yes
-	terraforming_swap_types = {
-		d_black_soil
-		d_teeming_reef
-		d_marvelous_oasis
-		d_tropical_island
-		d_fungal_forest
-	}
-
-	planet_modifier = { 
-		district_kindergarten_max = 3
-	}
-
-	potential = { always = no }
-}
-
 d_kindergarten_blocker = {
 	icon = d_kindergarten
 	category = deposit_cat_rare_blocker
@@ -80,7 +9,7 @@ d_kindergarten_blocker = {
 	on_cleared = {  }
 	planet_modifier = { 
 		planet_non_artificial_max_districts_add = -2
-		district_farming_max = -3
+		district_farming_max_add = -3
 	}
 }
 
@@ -90,12 +19,12 @@ d_kindergarten = {
 	
 	potential = { always = no }
 	planet_modifier = {
-		district_farming_max = -3
-		district_kindergarten_max = 1
+		# district_farming_max = -3
+		# district_kindergarten_max = 1
 	}
 	triggered_planet_modifier = {
 		potential = { colony_type = col_farming }
-		district_farming_max = 3
+		district_farming_max_add = 3
 	}
 }
 
@@ -105,7 +34,7 @@ d_space_mining = {
 	category = deposit_cat_rare
 	
 	planet_modifier = { 
-		district_mining_max = 4
+		district_mining_max_add = 4
 	}
 }
 
@@ -127,7 +56,7 @@ d_homeworld_special = {
 	planet_modifier = { 
 		planet_non_artificial_max_districts_add = 10
 		planet_orbital_bombardment_damage = -0.1
-		planet_pop_assembly_organic_mult = 0.1
+		GEOLOID_bonus_pop_growth_mult = 0.1
 		planet_stability_add = 5
 		planet_max_buildings_add = 12
 	}

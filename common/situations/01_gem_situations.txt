@@ -443,7 +443,7 @@ gem_1000_year_war = {
 				pop_cat_worker_happiness = 0.05
 				#Downsides
 				pop_citizen_happiness = -0.10
-				trade_value_mult = -0.05
+				pop_lifestyle_trade_value_mult = -0.05
 				planet_jobs_worker_produces_mult = -0.05
 
 			}
@@ -465,7 +465,7 @@ gem_1000_year_war = {
 				#Downsides
 				pop_citizen_happiness = -0.15
 				pop_government_ethic_attraction = -0.05
-				trade_value_mult = -0.075
+				pop_lifestyle_trade_value_mult = -0.075
 				planet_jobs_produces_mult = -0.1
 			}
 			on_first_enter = {
@@ -486,7 +486,7 @@ gem_1000_year_war = {
 				#Downsides
 				pop_citizen_happiness = -0.15
 				pop_government_ethic_attraction = -0.075
-				trade_value_mult = -0.10
+				pop_lifestyle_trade_value_mult = -0.10
 				planet_jobs_produces_mult = -0.15
 			}
 			on_first_enter = {
@@ -509,7 +509,7 @@ gem_1000_year_war = {
 				#Downsides
 				pop_citizen_happiness = -0.15
 				pop_government_ethic_attraction = -0.10
-				trade_value_mult = -0.10
+				pop_lifestyle_trade_value_mult = -0.10
 				planet_jobs_produces_mult = -0.20
 			}
 			on_first_enter = {
@@ -529,7 +529,7 @@ gem_1000_year_war = {
 				pop_cat_slave_happiness = 0.15
 				pop_citizen_happiness = -0.15
 				pop_government_ethic_attraction = -0.15
-				trade_value_mult = -0.125
+				pop_lifestyle_trade_value_mult = -0.125
 				planet_jobs_produces_mult = -1
 			}
 			on_first_enter = {

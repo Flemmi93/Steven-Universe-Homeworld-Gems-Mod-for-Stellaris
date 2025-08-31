@@ -266,7 +266,7 @@ country_event = {
 			#Sets Leader with specific traits
 			leader = {
 				#gem_remove_all_ruler_traits = yes
-				add_trait = trait_ruler_diamond
+				add_trait = { trait =  trait_ruler_diamond }
 			}
 			remove_country_flag = era_two_flag
 			remove_country_flag = era_three_flag

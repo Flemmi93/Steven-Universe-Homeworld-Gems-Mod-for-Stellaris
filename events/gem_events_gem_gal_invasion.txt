@@ -67,7 +67,7 @@ country_event = {
 					ship_prefix = "PRESCRIPTED_ship_prefix_gem"
 					authority = "auth_imperial"
 					civics = {
-						civic = civic_tetrarchy_inv
+						civic = civic_tetrarchy
 						civic = civic_corvee_system
 					}
 					species = last_created_species
@@ -253,9 +253,7 @@ country_event = {
 					set_capital = yes
 					while = {
 						count = 50
-						create_pop = {
-							species = gem_invasion_species
-						}
+						create_pop_group = { species = gem_invasion_species }
 					}
 					
 					while = {
@@ -265,7 +263,7 @@ country_event = {
 					
 					while = {
 						count = 6
-						add_district = district_industrial
+						add_district = district_city
 					}
 					
 					while = {
@@ -333,7 +331,7 @@ country_event = {
 		set_leader = last_created_leader
 		
 		leader = {
-			add_trait = "trait_imperial_heir"
+			add_trait = { trait = trait_imperial_heir }
 		}
 		#Spwn in all the other Diamonds
 		create_leader = {
@@ -495,9 +493,9 @@ planet_event = { #event chain to make gems spawn on a colony world first as a wa
 			OR = {
 				AND = {
 					num_owned_planets > 6
-					num_pops > 100
+					count_owned_pop_amount = { count > 100 }
 				}
-				num_pops > 200
+				count_owned_pop_amount = { count > 200 }
 			}
 		}
 	}

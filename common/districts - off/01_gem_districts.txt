@@ -20,6 +20,11 @@ district_kindergarten = {
 		NOT = { has_modifier = resort_colony }
 	}
 
+	
+	zone_slots = {
+		slot_minerals
+	}
+
 	resources = {
 		category = planet_districts
 		cost = {
@@ -45,7 +50,7 @@ district_kindergarten = {
 			NOT = { colony_type = col_farming }
 		}
 		modifier = { # Adjust for Balance
-			job_kindergartener_add = 1
+			job_kindergartener_add = 100
 		}
 	}
 	triggered_desc = {
@@ -82,7 +87,7 @@ district_kindergarten = {
 			NOT = { colony_type = col_farming }
 		}
 		modifier = { # Adjust for Balance
-			job_spawning_drone_add = 1
+			job_spawning_drone_add = 100
 		}
 	}
 	

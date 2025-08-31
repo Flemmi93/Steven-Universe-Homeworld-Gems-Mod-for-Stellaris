@@ -36,7 +36,7 @@ f93_make_kindergarten = {
 			colony_type = col_farming
 			OR = {
 				has_deposit = d_kindergarten
-				num_pops < 10
+				count_owned_pop_amount = { count < 10 }
 			}
 		}
 		modifier = {
@@ -46,30 +46,30 @@ f93_make_kindergarten = {
 				type = d_kindergarten
 			}
 		}
-		modifier = {
-			add = @forced_weight
-			count_deposits = {
-				count < 2
-				type = d_kindergarten
-			}
-			NOT = { colony_type = col_default }
-		}
-		modifier = {
-			add = @forced_weight
-			count_deposits = {
-				count < 3
-				type = d_kindergarten
-			}
-			NOT = { colony_type = col_default }
-		}
-		modifier = {
-			add = @forced_weight
-			count_deposits = {
-				count < 4
-				type = d_kindergarten
-			}
-			NOT = { colony_type = col_default }
-		}
+		# modifier = {
+		# 	add = @forced_weight
+		# 	count_deposits = {
+		# 		count < 2
+		# 		type = d_kindergarten
+		# 	}
+		# 	NOT = { colony_type = col_default }
+		# }
+		# modifier = {
+		# 	add = @forced_weight
+		# 	count_deposits = {
+		# 		count < 3
+		# 		type = d_kindergarten
+		# 	}
+		# 	NOT = { colony_type = col_default }
+		# }
+		# modifier = {
+		# 	add = @forced_weight
+		# 	count_deposits = {
+		# 		count < 4
+		# 		type = d_kindergarten
+		# 	}
+		# 	NOT = { colony_type = col_default }
+		# }
 	}
 }
 #Wenkwort Custodian varriance
@@ -217,7 +217,7 @@ decision_gemcology_project_ai = {
 		}
 		modifier = {
 			add = 50
-			num_pops > 35
+			count_owned_pop_amount = { count > 35 }
 		}
 		modifier = {
 			add = 50
@@ -234,23 +234,23 @@ decision_gemcology_project_ai = {
 		}
 		modifier = {
 			add = 50
-			num_pops > 40
+			count_owned_pop_amount = { count > 40 }
 		}
 		modifier = {
 			add = 50
-			num_pops > 45
+			count_owned_pop_amount = { count > 45 }
 		}
 		modifier = {
 			add = 50
-			num_pops > 50
+			count_owned_pop_amount = { count > 50 }
 		}
 		modifier = {
 			add = 50
-			num_pops > 55
+			count_owned_pop_amount = { count > 55 }
 		}
 		modifier = {
 			add = 150
-			num_pops > 60
+			count_owned_pop_amount = { count > 60 }
 		}
 	}
 }
@@ -327,27 +327,27 @@ galaxy_warp_ai = {
 		}
 		modifier = {
 			add = 50
-			num_pops > 10
+			count_owned_pop_amount = { count > 10 }
 		}
 		modifier = {
 			add = 50
-			num_pops > 15
+			count_owned_pop_amount = { count > 15 }
 		}
 		modifier = {
 			add = 50
-			num_pops > 20
+			count_owned_pop_amount = { count > 20 }
 		}
 		modifier = {
 			add = 50
-			num_pops > 25
+			count_owned_pop_amount = { count > 25 }
 		}
 		modifier = {
 			add = 50
-			num_pops > 30
+			count_owned_pop_amount = { count > 30 }
 		}
 		modifier = {
 			add = 150
-			num_pops > 35
+			count_owned_pop_amount = { count > 35 }
 		}
 	}
 }
@@ -380,7 +380,7 @@ f93_gem_xeno_preserve = {
 		weight = 100
 		modifier = {
 			add = 200
-			any_owned_pop = { NOR = { is_robot_pop = yes is_geoloid = yes is_lithoid = yes } }
+			any_owned_pop_group = { NOR = { is_robot_pop = yes is_geoloid = yes is_lithoid = yes } }
 		}
 		modifier = {
 			add = 200

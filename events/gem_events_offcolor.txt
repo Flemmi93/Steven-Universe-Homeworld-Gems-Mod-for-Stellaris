@@ -18,9 +18,9 @@ country_event = {
 					count > 5
 					limit = { is_colony = yes }
 				}
-				num_pops > 60
+				count_owned_pop_amount = { count > 6000 }
 			}
-			num_pops > 120
+			# count_owned_pop_amount = { count > 12000 }
 			years_passed > partway_to_mid_game_years_var
 		}
 	}
@@ -276,7 +276,12 @@ country_event = {
 			chance = 5
 			owner = {
 				capital_scope = {
-					random_owned_pop = { kill_pop = yes }
+					random_owned_pop_group = {
+						kill_pop_group = {
+							pop_group = this
+							amount = 1
+						}
+					}
 				}
 			}
 		}
@@ -343,7 +348,7 @@ planet_event = {
 	trigger = { owner = { is_ai = no } }
 	option = {
 		name = PECULIAR
-		create_pop = { species = owner_main_species }
+		create_pop_group = { size = 1 species = owner_main_species }
 		hidden_effect = {
 			planet_event = { id = gem_off_colors.1020 days = 60 random  = 30 }
 			save_global_event_target_as = gem_planet_earth_event
@@ -544,9 +549,7 @@ planet_event = {
 	picture = GFX_evt_gem_visit_to_earth
 	option = { 
 		name = gem_off_colors.1033.a
-		create_pop = {
-			species = owner_main_species
-		}
+		create_pop_group = { species = owner_main_species }
 		hidden_effect = {
 			random_targeting_situation = {
 				limit = { is_situation_type = gem_1000_year_war }
@@ -733,7 +736,7 @@ planet_event = {
 		event_target:gem_pink_diamond = {
 			if = {
 				limit = { NOT = { has_trait = trait_pink_court } }
-				add_trait = trait_pink_court
+				add_trait = { trait = trait_pink_court }
 			}
 		}
 		owner = {
@@ -1003,7 +1006,7 @@ planet_event = {
 				species = owner_main_species
 				skill = 6
 				traits = {
-					trait = leader_trait_slippery_3
+					trait = leader_trait_slippery_2
 					trait = leader_trait_homesteader
 					trait = subclass_scientist_explorer
 				}
@@ -1137,6 +1140,9 @@ country_event = {
 	
 	option = {
 		name = gem_off_colors.2001.a
+		capital_scope = {
+			add_modifier = { modifier = "pm_boubled_rose_gem" }
+		}
 		while = {
 			count = 2
 			random_planet_within_border = {
@@ -1144,15 +1150,15 @@ country_event = {
 					has_planet_flag = yellow_court_flag
 					NOT = { has_modifier = "pm_boubled_rose_gem" } 
 				}
-				random_owned_pop = { 
+				random_owned_pop_group = { 
 					limit = { has_trait = trait_geoloid }
-					kill_pop = yes
+					kill_pop_group = {
+						pop_group = this
+						amount = 1
+					}
 				}
 				add_modifier = { modifier = "pm_boubled_rose_gem" }
 			}
-		}
-		capital_scope = {
-			add_modifier = { modifier = "pm_boubled_rose_gem" }
 		}
 	}
 	option = {
@@ -1164,9 +1170,12 @@ country_event = {
 					has_planet_flag = blue_court_flag
 					NOT = { has_modifier = "pm_shattered_rose_gem" } 
 				}
-				random_owned_pop = { 
+				random_owned_pop_group = { 
 					limit = { has_trait = trait_geoloid }
-					kill_pop = yes
+					kill_pop_group = {
+						pop_group = this
+						amount = 1
+					}
 				}
 			}
 			add_modifier = { modifier = "pm_shattered_rose_gem" }
@@ -1176,42 +1185,6 @@ country_event = {
 			add_modifier = { modifier = "pm_shattered_rose_gem" }
 		}
 	}
-#	option = {
-#		name = gem_off_colors.2001.c
-#		while = {
-#			count = 2
-#			random_planet_within_border = {
-#				limit = {
-#					AND = {
-#						has_planet_flag = blue_court_flag
-#						NOT = { has_modifier = pm_shattered_rose_gem } 
-#					}
-#				}
-#				random_owned_pop = {
-#					limit = { has_trait = trait_geoloid }
-#					kill_pop = yes
-#				}
-#				add_modifier = { modifier = pm_shattered_rose_gem }
-#			}
-#		}
-#		while = {
-#			count = 2
-#			random_planet_within_border = {
-#				limit = {
-#					AND = {
-#						has_planet_flag = yellow_court_flag
-#						NOT = { has_modifier = pm_boubled_rose_gem }
-#					}
-#				}
-#				random_owned_pop = {
-#					limit = { has_trait = trait_geoloid }
-#					kill_pop = yes
-#				}
-#				add_modifier = { modifier = pm_boubled_rose_gem }
-#			}
-#			add_resource = { minerals = 1000 }
-#		}
-#	}
 }
 #Full Evacuation of Earth
 planet_event = {
@@ -1223,10 +1196,12 @@ planet_event = {
 	
 	option = {
 		name = gem_off_colors.2002.a
-		while = {
-			count = 4
-			random_owned_pop = {
-				kill_pop = yes
+		random_owned_pop_group = {
+			limit = { is_geoloid = yes }
+			kill_pop_group = {
+				pop_group = this
+				amount = 50
+				random = 250
 			}
 		}
 		planet_event = { id = gem_off_colors.2003 days = 1 }
@@ -1251,22 +1226,39 @@ planet_event = {
 
 	option = {
 		name = gem_off_colors.2003.a
-		every_owned_pop = {
-			limit = { has_trait = trait_geoloid }
-			resettle_pop = {
-				pop = this
-				planet = owner.capital_scope
+		every_owned_pop_group = {
+			limit = { is_geoloid = yes }
+			owner = { random_owned_planet = { limit = { is_colony = yes NOT = { has_planet_flag = planet_earth } } save_event_target_as = planettarget } }
+			resettle_pop_group = {
+				POP_GROUP = this
+				PLANET = event_target:planettarget
+				PERCENTAGE = 0.95
 			}
 		}
 		hidden_effect = {
-			every_owned_pop = {
+			every_owned_pop_group = {
 				limit = { NOT = { has_trait = trait_geoloid } }
-				kill_pop = yes
+				kill_pop_group = {
+					pop_group = this
+					random = 50
+				}
 			}
 			remove_planet_flag = gem_planet_pink_gone
 		}
 	}
-	after = { hidden_effect = { planet_event = { id = gem_off_colors.2004 } } }
+	after = {
+		hidden_effect = {
+			planet_event = { id = gem_off_colors.2004 }
+			every_owned_pop_group = {
+				limit = { is_geoloid = yes }
+				modify_species = {
+					add_trait = trait_gem_corrupt
+					remove_trait = trait_gem_unquestionable
+					sapient = no
+				}
+			}
+		}
+	}
 }
 
 planet_event = {
@@ -1339,13 +1331,9 @@ planet_event = {
 		owner = { set_awareness = 0 }
 		while = {
 			count = 7
-			create_pop = {
-				species = event_target:gem_human_species
-			}
+			create_pop_group = { species = event_target:gem_human_species }
 		}
-		create_pop = {
-			species = root.solar_system.owner.species
-		}
+		create_pop_group = { species = root.solar_system.owner.species }
 		add_deposit = d_crystal_gem_temple
 		last_added_deposit = { set_deposit_flag = f93_gem_deposit }
 		add_building = building_primitive_dwellings
@@ -1421,12 +1409,12 @@ country_event = { #Bronze Age -> Iron Age
 			set_variable = { which = earth_pop_buildup value = 6}
 			if = {
 				limit = {
-					num_pops < earth_pop_buildup
+					count_owned_pop_amount = { count < earth_pop_buildup  }
 				}
-				subtract_variable = { which = earth_pop_buildup value = trigger:num_pops }
+				subtract_variable = { which = earth_pop_buildup value = value:f93_local_pop_numbers }
 				while = {
 					count = earth_pop_buildup
-					create_pop = {
+					create_pop_group = {
 						species = event_target:gem_human_species
 					}
 				}
@@ -1451,12 +1439,12 @@ country_event = { #Iron Age -> Medieval Age
 			set_variable = { which = earth_pop_buildup value = 7}
 			if = {
 				limit = {
-					num_pops < earth_pop_buildup
+					count_owned_pop_amount = { count < earth_pop_buildup }
 				}
-				subtract_variable = { which = earth_pop_buildup value = trigger:num_pops }
+				subtract_variable = { which = earth_pop_buildup value = value:f93_local_pop_numbers }
 				while = {
 					count = earth_pop_buildup
-					create_pop = {
+					create_pop_group = {
 						species = event_target:gem_human_species
 					}
 				}
@@ -1481,12 +1469,12 @@ country_event = { #Medieval Age -> Renaissance Age
 			set_variable = { which = earth_pop_buildup value = 9}
 			if = {
 				limit = {
-					num_pops < earth_pop_buildup
+					count_owned_pop_amount = { count < earth_pop_buildup }
 				}
-				subtract_variable = { which = earth_pop_buildup value = trigger:num_pops }
+				subtract_variable = { which = earth_pop_buildup value = value:f93_local_pop_numbers }
 				while = {
 					count = earth_pop_buildup
-					create_pop = {
+					create_pop_group = {
 						species = event_target:gem_human_species
 					}
 				}
@@ -1511,12 +1499,12 @@ country_event = { #Renaissance Age -> Steam Age
 			set_variable = { which = earth_pop_buildup value = 12}
 			if = {
 				limit = {
-					num_pops < earth_pop_buildup
+					count_owned_pop_amount = { count < earth_pop_buildup }
 				}
-				subtract_variable = { which = earth_pop_buildup value = trigger:num_pops }
+				subtract_variable = { which = earth_pop_buildup value = value:f93_local_pop_numbers }
 				while = {
 					count = earth_pop_buildup
-					create_pop = {
+					create_pop_group = {
 						species = event_target:gem_human_species
 					}
 				}
@@ -1542,12 +1530,12 @@ country_event = { #Steam Age -> Industrial Age
 			set_variable = { which = earth_pop_buildup value = 16}
 			if = {
 				limit = {
-					num_pops < earth_pop_buildup
+					count_owned_pop_amount = { count < earth_pop_buildup }
 				}
-				subtract_variable = { which = earth_pop_buildup value = trigger:num_pops }
+				subtract_variable = { which = earth_pop_buildup value = value:f93_local_pop_numbers }
 				while = {
 					count = earth_pop_buildup
-					create_pop = {
+					create_pop_group = {
 						species = event_target:gem_human_species
 					}
 				}
@@ -1574,12 +1562,12 @@ country_event = { #industrial Age -> Machine Age
 			set_variable = { which = earth_pop_buildup value = 21}
 			if = {
 				limit = {
-					num_pops < earth_pop_buildup
+					count_owned_pop_amount = { count < earth_pop_buildup }
 				}
-				subtract_variable = { which = earth_pop_buildup value = trigger:num_pops }
+				subtract_variable = { which = earth_pop_buildup value = value:f93_local_pop_numbers }
 				while = {
 					count = earth_pop_buildup
-					create_pop = {
+					create_pop_group = {
 						species = event_target:gem_human_species
 					}
 				}
@@ -1636,7 +1624,7 @@ planet_event = {
 	trigger = {
 		has_modifier = "pm_off_colors"
 		has_owner = yes
-		num_pops > 0
+		count_owned_pop_amount = { count > 0 }
 		owner = { is_ai = no }
 		owner = { has_country_flag = "gem" }
 		owner = { NOT = { has_country_flag = "era_two_flag" } }

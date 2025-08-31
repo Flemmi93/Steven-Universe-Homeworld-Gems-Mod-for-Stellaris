@@ -65,7 +65,6 @@ trait_pc_gemworld_preference = {
 
 trait_geoloid = {
 	cost = 0
-	potential_crossbreeding_chance = 0
 	
 	sorting_priority = 20
 	
@@ -107,7 +106,6 @@ trait_geoloid = {
 #same trait but with pop growth
 trait_geoloid2 = { #decrepit
 	cost = 0
-	potential_crossbreeding_chance = 0
 	
 	sorting_priority = 20
 	
@@ -158,7 +156,7 @@ trait_crystal_gems = { #should be used together with geoloid trait
 	
 	opposites = { trait_gem_unquestionable trait_hive_mind }
 	
-	potential_crossbreeding_chance = 1.0
+	
 	allowed_archetypes = { GEOLOID LITHOID }
 	modifier = {
 		leader_skill_levels = 4
@@ -174,7 +172,7 @@ trait_crystal_gems = { #should be used together with geoloid trait
 trait_gem_unquestionable = {
 	icon = "gfx/interface/icons/traits/trait_gem_unquestionable.dds"
 	cost = 2
-	potential_crossbreeding_chance = 1.0
+	
 	opposites = { trait_crystal_gems "trait_hive_mind" }
 	allowed_archetypes = { GEOLOID LITHOID }
 	modifier = {
@@ -186,7 +184,7 @@ trait_gem_unquestionable = {
 trait_gem_holobody = {
 	icon = "gfx/interface/icons/traits/trait_gem_holobody.dds"
 	cost = 1
-	potential_crossbreeding_chance = 1.0
+	
 	allowed_archetypes = { GEOLOID LITHOID }
 	modifier = {
 		planet_jobs_physics_research_produces_mult = 0.1
@@ -197,7 +195,7 @@ trait_gem_holobody = {
 trait_gem_hardness = {
 	icon = "gfx/interface/icons/traits/trait_gem_strong_diamond.dds"
 	cost = 1
-	potential_crossbreeding_chance = 1.0
+	
 	allowed_archetypes = { GEOLOID LITHOID }
 	modifier = {
 		army_health = 0.25
@@ -208,32 +206,20 @@ trait_gem_hardness = {
 trait_gem_donteat = {
 	icon = "gfx/interface/icons/traits/trait_gem_donteat.dds"
 	cost = -1
-	potential_crossbreeding_chance = 1.0
+	
 	allowed_archetypes = { GEOLOID LITHOID }
 	
 	custom_tooltip_with_modifiers = trait_gem_donteat_modifier
 	
-	triggered_pop_modifier = {
-		potential = { 
-			exists = owner
-			owner = { is_hive_empire = no }
-		}
+	modifier = {
 		planet_pops_consumer_goods_upkeep_mult = 0.1
-	}
-	
-	triggered_pop_modifier = {
-		potential = { 
-			exists = owner
-			owner = { is_hive_empire = yes }
-		}
-		pop_amenities_usage_no_happiness_mult = 0.1
 	}
 }
 
 trait_gem_static = {
 	icon = "gfx/interface/icons/traits/trait_gem_weak_diamond.dds"
 	cost = -1
-	potential_crossbreeding_chance = 1.0
+	
 	allowed_archetypes = { GEOLOID LITHOID }
 	modifier = {
 		leader_skill_levels = -2
@@ -256,7 +242,7 @@ trait_gem_dormant = {
 		}
 	}
 	forced_happiness = yes
-	potential_crossbreeding_chance = 1.0
+	
 	allowed_archetypes = { GEOLOID LITHOID }
 	
 	icon = "gfx/interface/icons/traits/trait_gem_weak_diamond.dds"
@@ -265,4 +251,27 @@ trait_gem_dormant = {
 		planet_jobs_produces_mult = -1
 		
 	}
+}
+
+
+trait_gem_corrupt = {
+	icon = "gfx/interface/icons/traits/trait_gem_unquestionable.dds"
+	cost = 0
+	initial = no
+	randomized = no
+	sapient = no
+	forced_happiness = yes
+	species_potential_add = {
+		always = no
+	}
+	species_possible_remove = {
+		custom_tooltip = {
+			text = can_never_remove_this_trait
+			any_species_pop_group = { owner = { has_country_flag = era_three_flag } }
+		}
+	}
+	modifier = {
+		job_max_workforce_mult = -1
+	}
+	allowed_archetypes = { GEOLOID LITHOID }
 }

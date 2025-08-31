@@ -188,7 +188,7 @@ country_event = {
 			set_leader = last_created_leader
 			
 			leader = {
-				add_trait = "trait_imperial_heir"
+				add_trait = { trait = trait_imperial_heir }
 			}
 			#Spwn in all the other Diamonds
 			create_leader = {
@@ -296,7 +296,7 @@ country_event = {
 			set_leader = last_created_leader
 			
 			leader = {
-				add_trait = "trait_imperial_heir"
+				add_trait = { trait = trait_imperial_heir }
 			}
 			#Spwn in all the other Diamonds
 			create_leader = {
@@ -400,7 +400,7 @@ country_event = {
 			set_leader = last_created_leader
 			
 			leader = {
-				add_trait = "trait_imperial_heir"
+				add_trait = { trait = trait_imperial_heir }
 			}
 			#Spwn in all the other Diamonds
 			create_leader = {
@@ -509,7 +509,7 @@ country_event = {
 			set_leader = last_created_leader
 			
 			leader = {
-				add_trait = "trait_imperial_heir"
+				add_trait = { trait = trait_imperial_heir }
 			}
 		#Spwn in all the other Diamonds
 			
@@ -636,9 +636,9 @@ country_event = {
 			}
 			last_created_leader = {
 				remove_all_traits = yes
-				add_trait = trait_ruler_diamond
-				add_trait = trait_white_court
-				add_trait = trait_poofed_gem
+				add_trait = { trait =  trait_ruler_diamond }
+				add_trait = { trait =  trait_white_court }
+				add_trait = { trait =  trait_poofed_gem }
 				set_skill = 1
 				change_leader_portrait = gemWG
 				#change_leader_class = poofed_gem_class #waiting for recruitable = no to be fixed
@@ -651,9 +651,9 @@ country_event = {
 			}
 			last_created_leader = {
 				remove_all_traits = yes
-				add_trait = trait_ruler_diamond
-				add_trait = trait_yellow_court
-				add_trait = trait_poofed_gem
+				add_trait = { trait =  trait_ruler_diamond }
+				add_trait = { trait =  trait_yellow_court }
+				add_trait = { trait =  trait_poofed_gem }
 				set_skill = 1
 				change_leader_portrait = gemYG
 				#change_leader_class = poofed_gem_class #waiting for recruitable = no to be fixed
@@ -666,9 +666,9 @@ country_event = {
 			}
 			last_created_leader = {
 				remove_all_traits = yes
-				add_trait = trait_ruler_diamond
-				add_trait = trait_blue_court
-				add_trait = trait_poofed_gem
+				add_trait = { trait =  trait_ruler_diamond }
+				add_trait = { trait =  trait_blue_court }
+				add_trait = { trait =  trait_poofed_gem }
 				set_skill = 1
 				change_leader_portrait = gemBG
 				#change_leader_class = poofed_gem_class #waiting for recruitable = no to be fixed
@@ -682,8 +682,8 @@ country_event = {
 			}
 			last_created_leader = {
 				remove_all_traits = yes
-				add_trait = trait_ruler_diamond
-				add_trait = trait_pink_court
+				add_trait = { trait =  trait_ruler_diamond }
+				add_trait = { trait =  trait_pink_court }
 				set_skill = 1
 				change_leader_portrait = gemBG
 				#change_leader_class = poofed_gem_class #waiting for recruitable = no to be fixed
@@ -704,8 +704,8 @@ country_event = {
 			}
 			last_created_leader = {
 				remove_all_traits = yes
-				add_trait = trait_ruler_diamond
-				add_trait = trait_poofed_gem
+				add_trait = { trait =  trait_ruler_diamond }
+				add_trait = { trait =  trait_poofed_gem }
 				set_skill = 1
 				change_leader_portrait = gemPG
 				#change_leader_class = poofed_gem_class #waiting for recruitable = no to be fixed
@@ -746,9 +746,9 @@ country_event = {
 			}
 			last_created_leader = {
 				remove_all_traits = yes
-				add_trait = trait_ruler_diamond
-				add_trait = trait_white_court
-				add_trait = trait_poofed_gem
+				add_trait = { trait =  trait_ruler_diamond }
+				add_trait = { trait =  trait_white_court }
+				add_trait = { trait =  trait_poofed_gem }
 				set_skill = 1
 				change_leader_portrait = gemWG
 				#change_leader_class = poofed_gem_class #waiting for recruitable = no to be fixed
@@ -761,9 +761,9 @@ country_event = {
 			}
 			last_created_leader = {
 				remove_all_traits = yes
-				add_trait = trait_ruler_diamond
-				add_trait = trait_yellow_court
-				add_trait = trait_poofed_gem
+				add_trait = { trait =  trait_ruler_diamond }
+				add_trait = { trait =  trait_yellow_court }
+				add_trait = { trait =  trait_poofed_gem }
 				set_skill = 1
 				change_leader_portrait = gemYG
 				#change_leader_class = poofed_gem_class #waiting for recruitable = no to be fixed
@@ -776,9 +776,9 @@ country_event = {
 			}
 			last_created_leader = {
 				remove_all_traits = yes
-				add_trait = trait_ruler_diamond
-				add_trait = trait_blue_court
-				add_trait = trait_poofed_gem
+				add_trait = { trait =  trait_ruler_diamond }
+				add_trait = { trait =  trait_blue_court }
+				add_trait = { trait =  trait_poofed_gem }
 				set_skill = 1
 				change_leader_portrait = gemBG
 				#change_leader_class = poofed_gem_class #waiting for recruitable = no to be fixed
@@ -791,8 +791,8 @@ country_event = {
 			}
 			last_created_leader = {
 				remove_all_traits = yes
-				add_trait = trait_ruler_diamond
-				add_trait = trait_pink_court
+				add_trait = { trait =  trait_ruler_diamond }
+				add_trait = { trait =  trait_pink_court }
 				set_skill = 1
 				change_leader_portrait = gemBG
 				#change_leader_class = poofed_gem_class #waiting for recruitable = no to be fixed
@@ -812,8 +812,8 @@ country_event = {
 			}
 			last_created_leader = {
 				remove_all_traits = yes
-				add_trait = trait_ruler_diamond
-				add_trait = trait_poofed_gem
+				add_trait = { trait =  trait_ruler_diamond }
+				add_trait = { trait =  trait_poofed_gem }
 				set_skill = 1
 				change_leader_portrait = gemPG
 				#change_leader_class = poofed_gem_class #waiting for recruitable = no to be fixed

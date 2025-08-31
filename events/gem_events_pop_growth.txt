@@ -1,0 +1,26 @@
+namespace = gem_pop
+
+planet_event = {
+	id = gem_pop.1
+	is_triggered_only = yes
+	hide_window = yes
+
+	immediate = {
+	}
+}
+
+planet_event = {
+	id = gem_pop.2
+	is_triggered_only = yes
+	hide_window = yes
+	trigger = {
+		FromFrom = { is_geoloid = yes }
+	}
+	immediate = {
+		if = {
+			limit = { NOT = { is_variable_set = gem_pops_made } } 
+			set_variable = { which = gem_pops_made value = 0 }
+		}
+		change_variable = { which = gem_pops_made value = local_pop_amount }
+	}
+}

@@ -20,7 +20,6 @@ col_gem_default = {
 		is_geo_empire = yes
 		has_upgraded_capital = no
 		is_special_colony_type = no
-		num_sapient_pops < 5
 	}
 
 	planet_modifier = {

@@ -1,104 +1,68 @@
-can_species_be_assembled = {
-	is_sapient = yes
-	NOT = {
-		has_trait = trait_exd
-	}
-	NOT = {
-		AND = {
-			has_trait = trait_mechanical
-			root.owner = { is_individual_machine = yes }
-		}
-	}
-	NOT = {
-		AND = {
-			has_virtual_species_trait = yes
-			root.owner = {
-				is_fallen_empire = no
-				has_active_tradition = tr_virtuality_finish
-			}
-		}
-	}
-	#####################################################################################################################
-	# Hello Modder, or Player trying to fix things:																		#
-	#OR = {																												#
-	# is_geoloid = yes																									#
-	# all other codnditions																								#
-	#}																													#
-	# This is my way of including gems in the pops that can be assembled.												#
-	# Should another mod break this first add The Merger of Rules mod to see if that fixes it. Otherwise, read on		#
-	# My rule addition is: "is_geoloid = yes" all that is required is that is stands alone in OR = { [here] } function	#
-	# The OR fuction below encloses all ways to assemble pops, I marked it for your convienence.						#
-	#####################################################################################################################
-	OR = { # Here starts the OR Fuction
+#####################################################################################################################
+# Hello Modder, or Player trying to fix things:																		#
+#OR = {																												#
+# is_geoloid = yes																									#
+# all other codnditions																								#
+#}																													#
+# This is my way of including gems in the pops that can be assembled.												#
+# Should another mod break this first add The Merger of Rules mod to see if that fixes it. Otherwise, read on		#
+# My rule addition is: "is_geoloid = yes" all that is required is that is stands alone in OR = { [here] } function	#
+# The OR fuction below encloses all ways to assemble pops, I marked it for your convienence.						#
+#####################################################################################################################
+# Checks if a species uses bonus_growth modifier
+# This = Species
+# Root = Planet
+species_uses_bonus_growth = {
+	OR = {
 		is_geoloid = yes #custom trait/trigger for the [Homeworld Gems]
 		AND = {
-			is_robotic = yes
-			root = {
-				check_modifier_value = {
-					modifier = planet_pop_assembly_add 
-					value > 0
+			is_sapient = yes
+			is_robotic_species = no
+			has_population_control = {
+				type = no
+				country = root.owner
+			}
+			NAND = {
+				root = { has_modifier = slave_colony }
+				NOT = { has_citizenship_type = { type = citizenship_slavery country = root.owner } }
+			}
+			NOR = {
+				has_citizenship_type = {
+					type = citizenship_protected_drone
+					country = root.owner
 				}
-				owner = {
-					NOT = { has_country_flag = synth_assembly_stopped }
+				has_citizenship_type = {
+					type = citizenship_symbiotic_drone
+					country = root.owner
+				}
+				has_citizenship_type = {
+					type = citizenship_exploited_drone
+					country = root.owner
 				}
 			}
-		}
-		AND = {
-			is_organic_species = yes
+			NOT = { has_species_flag = nivlac_no_procreation }
 			if = {
 				limit = {
-					root.owner = { is_hive_empire = yes }
+					has_infertile_clone_soldier_trait = yes
 				}
-				has_trait = trait_hive_mind
-			}
-			else_if = {
-				limit = { has_budding_trait = yes }
 				root = {
-					any_owned_species = { is_exact_same_species = prevprev }
+					check_variable = { which = clone_pops_missing_per_vat value > 0 }
 				}
 			}
-			else_if = {
-				limit = { has_trait = trait_tiyanki }
-				root = {
-					any_owned_species = { is_exact_same_species = prevprev }
-				}
-			}
-			else_if = {
+			if = {
 				limit = {
-					OR = {
-						has_trait = trait_clone_soldier_infertile
-						has_trait = trait_clone_soldier_infertile_full_potential
-					}
+					has_cybernetic_creed_trait = yes
 				}
-				root = {
-					# Event 'clones.3' should cover this, but extra safety check.
-					has_building = building_clone_army_clone_vat
-					NOT = {
-						check_variable = {
-							which = clone_pops_missing
-							value = 0
+				NOT = {
+					root = {
+						any_owned_species = {
+							has_population_control = { country = root.owner type = no }
+							is_robotic_species = no
+							has_cybernetic_creed_trait = no
 						}
-					}
-				}
-			}
-			else = {
-				root = {
-					OR = {
-						has_building = building_clone_vats
-						has_modifier = tiyanki_trophy
-						owner = { has_modifier = syamelles_curse }
-						AND = {
-							has_building = building_posthumous_employment_center
-							owner = { has_civic = civic_permanent_employment }
-						}
-						has_planet_flag = can_organic_assemble_flag #for mod compatibility
 					}
 				}
 			}
 		}
-	} # This is the end of the OR function. Good luck.
-	has_population_control = {
-		type = no
-		country = root.owner
 	}
 }

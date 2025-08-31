@@ -82,7 +82,7 @@ create_gem_empire_normal = {
 		}
 		while = {
 			count = 30
-			create_pop = { species = last_created_species }
+			create_pop_group = { species = last_created_species }
 		}
 		set_capital = yes
 		f93_seed_gem_planet_with_stuff = yes
@@ -94,8 +94,8 @@ create_gem_empire_normal = {
 		add_district = district_generator
 		add_district = district_mining
 		add_district = district_mining
-		add_district = district_industrial
-		add_district = district_industrial
+		add_district = district_city
+		add_district = district_city
 		add_district = district_mining
 		add_building = building_research_lab_1
 		solar_system = {
@@ -108,6 +108,7 @@ create_gem_empire_normal = {
 }
 
 f93_seed_gem_planet_with_stuff = {
+	set_variable = { which = gem_pops_made value = 0 }
 	every_deposit = {
 		limit = {
 			OR = {

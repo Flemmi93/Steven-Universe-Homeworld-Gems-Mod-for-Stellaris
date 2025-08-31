@@ -34,11 +34,13 @@ country_event = { # for play without Lithoid DLC
 		}
         capital_scope = {
 			add_district  = {
-				district_type = district_kindergarten
+				# district_type = district_kindergarten
+				district_type = district_city
 				ignore_cap = yes
 			}
 			add_district  = {
-				district_type = district_kindergarten
+				# district_type = district_kindergarten
+				district_type = district_city
 			}
 			add_district  = {
 				district_type = district_mining
@@ -106,7 +108,7 @@ country_event = { #for crystal gems to have a gem producing building
 				}
 				homeworld = FROM
 			}
-			create_pop = { species = last_created_species }
+			create_pop_group = { species = last_created_species }
 			last_created_species = {
 				save_global_event_target_as = crystal_gems_species
 				set_colonization_controls = { country = FROM type = colonization_control_yes cooldown = yes }
@@ -191,7 +193,7 @@ country_event = {
         capital_scope = {
 			
 			# 2 kindargarden
-			add_deposit = d_kindergarten_med
+			# add_deposit = d_kindergarten_med
 			
 			add_deposit = d_homeworld_special
 			last_added_deposit = { set_deposit_flag = f93_gem_deposit }
@@ -311,23 +313,30 @@ country_event = {
 						create_gem_empire_normal = yes
 						set_name = "Luna"
 						orbit = {
-							set_variable = { which = fraction_num_pops value = trigger:num_pops }
-							change_variable = { which = fraction_num_pops value = -10 }
-							while = {
-								count = fraction_num_pops
-								random_owned_pop = { kill_pop = yes }
-							}
+							# set_variable = { which = fraction_num_pops value = trigger:count_owned_pop_amount }
+							# change_variable = { which = fraction_num_pops value = -10 }
+							# while = {
+							# 	count = fraction_num_pops
+							# 	kill_pop_group = {
+							# 		pop_group = this
+							# 		amount = 1
+							# 	}
+							# }
+							
 							set_owner = last_created_country
 							save_event_target_as = planet_earth
 							add_modifier = { modifier = pm_f93_human_preserve }
 						}
 						while = {
 							count = 10
-							random_owned_pop = { kill_pop = yes }
+							kill_pop_group = {
+								pop_group = this
+								amount = 1
+							}
 						}
 						while = {
 							count = 3
-							random_owned_pop = { resettle_pop = { pop = this planet = event_target:planet_earth } }
+							random_owned_pop_group = { resettle_pop = { pop = this planet = event_target:planet_earth } }
 						}
 
 					}
@@ -347,7 +356,10 @@ country_event = {
 						owner = { destroy_country = yes }
 						while = {
 							count = 60
-							random_owned_pop = { kill_pop = yes }
+							kill_pop_group = {
+								pop_group = this
+								amount = 1
+							}
 						}
 						create_gem_empire_normal = yes
 						set_name = Homeworld

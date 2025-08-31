@@ -91,9 +91,14 @@ on_capital_changed = {
 	}
 }
 
-on_pop_assembled = {
+# A pop amount has been grown
+# This = Planet scope
+# From = Country
+# FromFrom = Pop group
+# local_pop_amount = variable of how much was grown
+on_pop_growth = {
 	events = {
-		gem_off_colors.1000
+		gem_pop.2
 	}
 }
 
