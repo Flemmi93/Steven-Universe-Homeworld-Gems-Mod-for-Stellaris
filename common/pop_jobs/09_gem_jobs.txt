@@ -1,4 +1,5 @@
-@gem_bonus_growth = 0.3
+@gem_bonus_growth = 10 #0.3 would be similar to what humans have in prebuild empires. 
+#Gems are supposed to grow quickly but have a hard cap that can only be increased by life potential destructive methods
 kindergartener = {
 	category = specialist
 
@@ -37,16 +38,14 @@ kindergartener = {
 	triggered_planet_modifier = {
 		potential = {
 			has_lithoids = yes
-			is_variable_set = gem_pops_made
-			check_variable = { which = gem_pops_made value < value:geoloid_potential_left }
+			f93_can_make_gems = yes
 		}
 		LITHOID_bonus_pop_growth = @gem_bonus_growth
 	}
 	triggered_planet_modifier = {
 		potential = {
 			has_lithoids = no
-			is_variable_set = gem_pops_made
-			check_variable = { which = gem_pops_made value < value:geoloid_potential_left }
+			f93_can_make_gems = yes
 		}
 		GEOLOID_bonus_pop_growth = @gem_bonus_growth
 	}
@@ -320,6 +319,9 @@ kindergartener = {
 			factor = 10
 			owner = { is_geo_empire = yes }
 		}
+		modifier = {
+			f93_can_make_gems = yes
+		}
 	}
 }
 #white hive jobs
@@ -363,16 +365,14 @@ kindergartener_drone = {
 	triggered_planet_modifier = {
 		potential = {
 			has_lithoids = yes
-			is_variable_set = gem_pops_made
-			check_variable = { which = gem_pops_made value < value:geoloid_potential_left }
+			f93_can_make_gems = yes
 		}
 		LITHOID_bonus_pop_growth = @gem_bonus_growth
 	}
 	triggered_planet_modifier = {
 		potential = {
 			has_lithoids = no
-			is_variable_set = gem_pops_made
-			check_variable = { which = gem_pops_made value < value:geoloid_potential_left }
+			f93_can_make_gems = yes
 		}
 		GEOLOID_bonus_pop_growth = @gem_bonus_growth
 	}

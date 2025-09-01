@@ -1,1 +1,5 @@
 @has_f93_gem_mod = 1 #themerger mod
+
+@base_gem_capacity = 5000 # Base number of Gems being able to be created by a kindergarten
+@kindergarten_capacity = 500 # number of Gems that a kindergarten deposit adds to the gem creation limit
+@gem_building_forced_weight = 1000

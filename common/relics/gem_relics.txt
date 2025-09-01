@@ -1,7 +1,3 @@
-@activation_cost = 3000
-@triumph_duration = 3600
-@triumph_duration_short = 1800
-@triumph_duration_veryshort = 900
 r_gem_whitepart = {
 	activation_duration = 1800
 	portrait = "GFX_relic_whitepart"

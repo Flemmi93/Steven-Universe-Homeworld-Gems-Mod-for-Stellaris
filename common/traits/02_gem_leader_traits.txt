@@ -91,17 +91,3 @@ trait_pink_court = {
 		pop_ethic_xenophobe_attraction_mult = 0.25
 	}
 }
-trait_pink_court2 = {
-	cost = 0
-	randomized = no
-	sorting_priority = 0
-	icon = "gfx/interface/icons/planet_modifiers/gem_pink_diamond.dds"
-	leader_class = { official scientist commander }
-	requires_traits = { trait_geoloid }
-	ai_weight = 0
-	selectable_weight = 0
-	planet_modifier = { 
-		job_entertainer_add = 2
-		pop_ethic_xenophile_attraction_mult = 0.25
-	}
-}

@@ -2,8 +2,6 @@
 # Building Documentation
 #############
 
-@forced_weight = 1000
-
 # might be outdated/contain untested features
 building_gem_spire1 = {
 	base_buildtime = @b1_time
@@ -293,12 +291,6 @@ building_buff_kindergarten1 = {
 		if = {
 			limit = { NOT = { is_variable_set = gem_pops_made } }
 			set_variable = { which = gem_pops_made value = 0 }
-			set_variable = { which = f93_gem_efficency value = 2 }
-			export_trigger_value_to_variable = {
-				trigger = planet_size
-				variable = f93_gems_limit
-			}
-			multiply_variable = { which = f93_gems_limit value = 3 }
 		}
 	}
 	upgrades = {
@@ -592,7 +584,7 @@ building_gem_sky_arena = {
 	}
 	
 	ai_weight = {
-		base = @forced_weight
+		base = @gem_building_forced_weight
 		modifier = {
 			factor = 0 
 			has_building = building_gem_sky_arena

@@ -117,10 +117,6 @@ country_event = {
 			remove_country_flag = era_three_flag
 			remove_country_flag = pink_got_earth
 			country_event = { id = gem_era.3 days = 21600 random = 3600 }
-			capital_scope = {
-				remove_modifier = pm_grand_court_1
-				add_modifier = { modifier = pm_grand_court_2 }
-			}
 			country_event = { id = gem_era.201 }
 			remove_modifier = gems_xeno_control
 			add_modifier = { modifier = gems_xeno_control mult = 0.5 }
@@ -233,10 +229,6 @@ country_event = {
 			owner = { remove_country_flag = era_one_flag }
 			owner = { remove_country_flag = era_two_flag }
 			owner = { set_country_flag = era_three_flag }
-			capital_scope = {
-				remove_modifier = pm_grand_court_2
-				add_modifier = { modifier = pm_grand_court_1 }
-			}
 			event_target:new_earth_civilisation_w_cg = { country_event = { id = gem_off_colors.2008 } }
 		}
 		country_event = { id = gem_off_colors.2009 days = 10 }

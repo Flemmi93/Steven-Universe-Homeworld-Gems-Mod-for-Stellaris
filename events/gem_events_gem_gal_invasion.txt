@@ -252,7 +252,7 @@ country_event = {
 					set_owner = last_created_country
 					set_capital = yes
 					while = {
-						count = 50
+						count = 5000
 						create_pop_group = { species = gem_invasion_species }
 					}
 					

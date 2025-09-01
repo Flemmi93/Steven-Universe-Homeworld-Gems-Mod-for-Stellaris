@@ -1,9 +1,6 @@
 ############################
 ### ANOMALY CATEGORIES ###
 ############################
-
-@distar_weight = 1
-
 # Crashed Ship (Asteroid)
 gems_lost_earth = {
 	desc = crashed_ship_asteroid_category_desc

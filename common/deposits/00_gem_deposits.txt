@@ -44,7 +44,7 @@ d_f93_xeno_preserve = {
 	category = deposit_cat_rare
 	
 	planet_modifier = {
-		job_farmer_add = 3
+		job_farmer_add = 300
 	}
 }
 
@@ -58,11 +58,10 @@ d_homeworld_special = {
 		planet_orbital_bombardment_damage = -0.1
 		GEOLOID_bonus_pop_growth_mult = 0.1
 		planet_stability_add = 5
-		planet_max_buildings_add = 12
 	}
 
 	potential = { always = no }
-can_be_cleared = { always = no }
+	can_be_cleared = { always = no }
 }
 
 #Galaxy Warp Deposit

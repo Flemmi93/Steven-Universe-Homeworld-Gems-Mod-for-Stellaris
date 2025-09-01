@@ -386,7 +386,7 @@ gem_sol_system = {
 			set_owner = last_created_country
 
 			while = {
-				count = 4
+				count = 400
 				create_pop_group = { species = last_created_species effect = { save_event_target_as = gem_sol_spawn_humans } }
 			}
 			add_building = building_primitive_dwellings

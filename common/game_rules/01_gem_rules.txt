@@ -7,7 +7,7 @@
 # This is my way of including gems in the pops that can be assembled.												#
 # Should another mod break this first add The Merger of Rules mod to see if that fixes it. Otherwise, read on		#
 # My rule addition is: "is_geoloid = yes" all that is required is that is stands alone in OR = { [here] } function	#
-# The OR fuction below encloses all ways to assemble pops, I marked it for your convienence.						#
+# 																													#
 #####################################################################################################################
 # Checks if a species uses bonus_growth modifier
 # This = Species

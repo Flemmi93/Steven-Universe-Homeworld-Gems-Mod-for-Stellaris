@@ -1,11 +1,23 @@
 namespace = gem_pop
 
-planet_event = {
+country_event = {
 	id = gem_pop.1
 	is_triggered_only = yes
 	hide_window = yes
-
+	trigger = {
+		is_ai = no
+	}
 	immediate = {
+		every_owned_planet = {
+			limit = { is_variable_set = geoloid_potential_left }
+			set_variable = { which = geoloid_potential_left value = value:geoloid_potential }
+			subtract_variable = { which = geoloid_potential_left value = gem_pops_made }
+			if = {
+				limit = { check_variable = { which = geoloid_potential_left value < 0 } }
+				set_variable = { which = geoloid_potential_left value = 0 }
+			}
+			round_variable = geoloid_potential_left
+		}
 	}
 }
 
@@ -17,10 +29,49 @@ planet_event = {
 		FromFrom = { is_geoloid = yes }
 	}
 	immediate = {
+		#Count the pops made on this world.
 		if = {
 			limit = { NOT = { is_variable_set = gem_pops_made } } 
 			set_variable = { which = gem_pops_made value = 0 }
 		}
 		change_variable = { which = gem_pops_made value = local_pop_amount }
+		#Assign the pops made to one of the Diamonds.
+		while = {
+			limit = {
+				any_owned_pop_group = {
+					is_part_of_a_court = no
+				}
+			}
+			random_owned_pop_group = {
+				limit = {
+					is_part_of_a_court = no
+				}
+				random_list = {
+					10 = {
+						modifier = { factor = 0.2 planet_belongs_to_white_diamond = no }
+						add_pops_to_white_diamonds_court = yes
+					}
+					10 = {
+						modifier = { factor = 0.2 planet_belongs_to_yellow_diamond = no }
+						add_pops_to_yellow_diamonds_court = yes
+					}
+					10 = {
+						modifier = { factor = 0.2 planet_belongs_to_blue_diamond = no }
+						add_pops_to_blue_diamonds_court = yes
+					}
+					10 = {
+						modifier = { factor = 0.2 planet_belongs_to_pink_diamond = no }
+						add_pops_to_pink_diamonds_court = yes
+					}
+					0 = {
+						add_off_colors = yes
+						modifier = {
+							add = 1
+							owner = { has_country_flag = era_two_flag }
+						}
+					}
+				}
+			}
+		}
 	}
 }

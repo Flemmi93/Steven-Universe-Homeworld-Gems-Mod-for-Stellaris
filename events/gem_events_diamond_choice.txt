@@ -6,57 +6,12 @@ namespace = gem_diamond_choice
 planet_event = { #replaces the grand court
     id = gem_diamond_choice.0001
 	picture = GFX_evt_gem_homeworld
-	title = pm_grand_court_1
-	desc = pm_grand_court_1_desc
+	title = pm_grand_court
+	desc = pm_grand_court_desc
 	is_triggered_only = yes
-	trigger = {
-		owner = { is_diamond_empire = yes }
-		OR = {
-			this = { NOT = { has_modifier = pm_grand_court_1 } }
-			this = { NOT = { has_modifier = pm_grand_court_2 } }
-		}
-		owner = { is_ai = no }
-	}
+	immediate = {}
 	option = {
-		trigger = {
-			owner = { has_country_flag = era_two_flag }
-		}
 		name = OK
-		this = { add_modifier = { modifier = pm_grand_court_2 } }
-		hidden_effect = { this = { set_planet_flag = grand_court } }
-	}	
-	option = {
-		trigger = {
-			OR = {
-				owner = { has_country_flag = era_one_flag }
-				owner = { has_country_flag = era_three_flag }
-			}
-		}
-		name = OK
-		this = { add_modifier = { modifier = pm_grand_court_1 } }
-		hidden_effect = { this = { set_planet_flag = grand_court } }
-	}
-	
-	after = {
-		hidden_effect = {
-			this = {
-				remove_modifier = pm_grand_court_1
-				remove_modifier = pm_grand_court_2
-				remove_planet_flag = grand_court
-				remove_modifier = "pm_gem_white_court"
-				remove_modifier = "pm_gem_yellow_court"
-				remove_modifier = "pm_gem_blue_court"
-				remove_modifier = "pm_gem_pink_court"
-				remove_modifier = "pm_gem_white_court2"
-				remove_modifier = "pm_gem_yellow_court2"
-				remove_modifier = "pm_gem_blue_court2"
-				remove_modifier = "pm_gem_pink_court2"
-				remove_planet_flag = white_court_flag
-				remove_planet_flag = yellow_court_flag
-				remove_planet_flag = blue_court_flag
-				remove_planet_flag = pink_court_flag
-			}
-		}
 	}
 }
 	
@@ -183,11 +138,6 @@ planet_event = { #What Diamond shall rule over this Planet
 		custom_tooltip = "gem_diamond_choice.a.desc"
 		hidden_effect = {
 			set_planet_flag = white_court_flag
-			if = {
-				limit = { owner = { NOT = { has_country_flag = white_ascended_flag } } }
-				add_modifier = { modifier = "pm_gem_white_court" }
-			}
-			else = { add_modifier = { modifier = "pm_gem_white_court2" } }
 		}
 	}
 	option = { # option for white when she is dead
@@ -210,11 +160,6 @@ planet_event = { #What Diamond shall rule over this Planet
 		custom_tooltip = "gem_diamond_choice.e.dead"
 		hidden_effect = {
 			set_planet_flag = white_court_flag
-			if = {
-				limit = { owner = { NOT = { has_country_flag = white_ascended_flag } } }
-				add_modifier = { modifier = "pm_gem_white_court" }
-			}
-			else = { add_modifier = { modifier = "pm_gem_white_court2" } }
 		}
 	
 	}
@@ -235,11 +180,6 @@ planet_event = { #What Diamond shall rule over this Planet
 		custom_tooltip = "gem_diamond_choice.b.desc"
 		hidden_effect = {
 			set_planet_flag = yellow_court_flag
-			if = {
-				limit = { owner = { NOT = { has_country_flag = yellow_ascended_flag } } }
-				add_modifier = { modifier = "pm_gem_yellow_court" }
-			}
-			else = { add_modifier = { modifier = "pm_gem_yellow_court2" } }
 		}
 	}
 	option = { # option for when yellow is dead.
@@ -262,11 +202,6 @@ planet_event = { #What Diamond shall rule over this Planet
 		custom_tooltip = gem_diamond_choice.e.dead
 		hidden_effect = {
 			set_planet_flag = yellow_court_flag
-			if = {
-				limit = { owner = { NOT = { has_country_flag = yellow_ascended_flag } } }
-				add_modifier = { modifier = "pm_gem_yellow_court" }
-			}
-			else = { add_modifier = { modifier = "pm_gem_yellow_court2" } }
 		}
 	
 	}
@@ -287,11 +222,6 @@ planet_event = { #What Diamond shall rule over this Planet
 		custom_tooltip = "gem_diamond_choice.c.desc"
 		hidden_effect = {
 			set_planet_flag = blue_court_flag
-			if = {
-				limit = { owner = { NOT = { has_country_flag = blue_ascended_flag } } }
-				add_modifier = { modifier = "pm_gem_blue_court" }
-			}
-			else = { add_modifier = { modifier = "pm_gem_blue_court2" } }
 		}
 	}
 	option = { # option when blue is dead
@@ -314,11 +244,6 @@ planet_event = { #What Diamond shall rule over this Planet
 		custom_tooltip = "gem_diamond_choice.e.dead"
 		hidden_effect = {
 			set_planet_flag = blue_court_flag
-			if = {
-				limit = { owner = { NOT = { has_country_flag = blue_ascended_flag } } }
-				add_modifier = { modifier = "pm_gem_blue_court" }
-			}
-			else = { add_modifier = { modifier = "pm_gem_blue_court2" } }
 		}
 	
 	}
@@ -334,14 +259,6 @@ planet_event = { #What Diamond shall rule over this Planet
 		}
 		name = "gem_diamond_choice.d"
 		custom_tooltip = "gem_diamond_choice.d.desc"
-		# hidden_effect = {
-		# 	set_planet_flag = pink_court_flag
-		# 	if = {
-		# 		limit = { owner = { NOT = { has_country_flag = pink_ascended_flag } } }
-		# 		add_modifier = { modifier = "pm_gem_pink_court" }
-		# 	}
-		# 	else = { add_modifier = { modifier = "pm_gem_pink_court2" } }
-		# }
 	}
 	option = { # option for pink to take the earth for the first time. any earth
 		trigger = {
@@ -359,11 +276,6 @@ planet_event = { #What Diamond shall rule over this Planet
 		custom_tooltip = "gem_diamond_choice.d.desc"
 		hidden_effect = {
 			set_planet_flag = pink_court_flag
-			# if = {
-			# 	limit = { owner = { NOT = { has_country_flag = pink_ascended_flag } } }
-			# 	add_modifier = { modifier = "pm_gem_pink_court" }
-			# }
-			# else = { add_modifier = { modifier = "pm_gem_pink_court2" } }
 			add_modifier = { modifier = "pm_gem_human_experiement" }
 			remove_planet_flag = gem_planet_earth
 			set_planet_flag = gem_planet_earth_owned_by_pink_pre_era_2
@@ -410,55 +322,9 @@ planet_event = { #What Diamond shall rule over this Planet
 		}
 		name = "gem_diamond_choice.d"
 		custom_tooltip = "gem_diamond_choice.e.dead"
-		# hidden_effect = {
-		# 	set_planet_flag = pink_court_flag
-		# 	if = {
-		# 		limit = { owner = { NOT = { has_country_flag = pink_ascended_flag } } }
-		# 		add_modifier = { modifier = "pm_gem_pink_court" }
-		# 	}
-		# 	else = { add_modifier = { modifier = "pm_gem_pink_court2" } }
-		# }
-	
-	}
-}
-
-country_event = { #update to the ascended court
-    id = gem_diamond_choice.1003
-	hide_window = yes
-	is_triggered_only = yes
-	
-	immediate = {
-		every_owned_planet = {
-			limit = {
-				has_modifier = pm_gem_white_court
-				owner = { has_country_flag = white_ascended_flag }
-			}
-			remove_modifier = pm_gem_white_court
-			add_modifier = { modifier = pm_gem_white_court2}
-		}
-		every_owned_planet = {
-			limit = {
-				has_modifier = pm_gem_yellow_court
-				owner = { has_country_flag = yellow_ascended_flag }
-			}
-			remove_modifier = pm_gem_yellow_court
-			add_modifier = { modifier = pm_gem_yellow_court2}
-		}
-		every_owned_planet = {
-			limit = {
-				has_modifier = pm_gem_blue_court
-				owner = { has_country_flag = blue_ascended_flag }
-			}
-			remove_modifier = pm_gem_blue_court
-			add_modifier = { modifier = pm_gem_blue_court2}
-		}
-		every_owned_planet = {
-			limit = {
-				has_modifier = pm_gem_pink_court
-				owner = { has_country_flag = pink_ascended_flag }
-			}
-			remove_modifier = pm_gem_pink_court
-			add_modifier = { modifier = pm_gem_pink_court2}
+		
+		hidden_effect = {
+			set_planet_flag = pink_court_flag
 		}
 	}
 }

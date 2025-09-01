@@ -13,6 +13,7 @@ country_event = {
 			scale_by = 0.75
 		}
 
+		capital_scope = { planet_event = { id = gem_pop.2 } }
 		capital_scope = { f93_seed_gem_planet_with_stuff = yes }
 
 		set_policy = { policy = robot_pop_policy option = robot_pops_outlawed }
@@ -21,12 +22,12 @@ country_event = {
     }
 }
 country_event = { # for play without Lithoid DLC
-    id = GEM_start.1001
-    hide_window = yes
-    is_triggered_only = yes
-    trigger = { owner = { is_lithoid_empire = no } }
-	
-	immediate = {
+id = GEM_start.1001
+hide_window = yes
+is_triggered_only = yes
+trigger = { owner = { is_lithoid_empire = no } }
+
+immediate = {
 		get_galaxy_setup_value = {
 			setting = mid_game_year
 			which = partway_to_mid_game_years_var
@@ -47,7 +48,6 @@ country_event = { # for play without Lithoid DLC
 				district_type = district_mining
 			}
 			set_planet_flag = grand_court
-			add_modifier = { modifier = pm_grand_court_1 }
 		}
     }
 }
@@ -201,7 +201,6 @@ country_event = {
 			set_planet_flag = gem_has_kindergarten
 			
 			set_planet_flag = grand_court
-			add_modifier = { modifier = pm_grand_court_1 }
 			if = {
 				limit = {
 					NOR = {
