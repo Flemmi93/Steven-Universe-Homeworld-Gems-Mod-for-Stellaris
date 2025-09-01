@@ -19,7 +19,7 @@ d_kindergarten = {
 	
 	potential = { always = no }
 	planet_modifier = {
-		# district_farming_max = -3
+		district_farming_max_add = -3
 		# district_kindergarten_max = 1
 	}
 	triggered_planet_modifier = {

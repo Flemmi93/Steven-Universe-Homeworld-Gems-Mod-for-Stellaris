@@ -108,27 +108,31 @@ create_gem_empire_normal = {
 }
 
 f93_seed_gem_planet_with_stuff = {
+	set_planet_flag = planet_had_court_before
 	set_variable = { which = gem_pops_made value = trigger:gem_pop_amount }
-	while = {
-		limit = {
-			any_owned_pop_group = { is_part_of_a_court = no }
-		}
-		random_owned_pop_group = {
-			limit = { is_part_of_a_court = no is_geoloid = yes }
-			add_pops_to_white_diamonds_court = yes
-		}
-		random_owned_pop_group = {
-			limit = { is_part_of_a_court = no is_geoloid = yes }
-			add_pops_to_yellow_diamonds_court = yes
-		}
-		random_owned_pop_group = {
-			limit = { is_part_of_a_court = no is_geoloid = yes }
-			add_pops_to_blue_diamonds_court = yes
-		}
-		random_owned_pop_group = {
-			limit = { is_part_of_a_court = no is_geoloid = yes }
-			add_pops_to_pink_diamonds_court = yes
-		}
+	# while = {
+	# 	limit = {
+	# 		any_owned_pop_group = { is_part_of_a_court = no }
+	# 	}
+	# 	random_owned_pop_group = {
+	# 		limit = { is_part_of_a_court = no is_geoloid = yes }
+	# 		add_pops_to_white_diamonds_court = yes
+	# 	}
+	# 	random_owned_pop_group = {
+	# 		limit = { is_part_of_a_court = no is_geoloid = yes }
+	# 		add_pops_to_yellow_diamonds_court = yes
+	# 	}
+	# 	random_owned_pop_group = {
+	# 		limit = { is_part_of_a_court = no is_geoloid = yes }
+	# 		add_pops_to_blue_diamonds_court = yes
+	# 	}
+	# 	random_owned_pop_group = {
+	# 		limit = { is_part_of_a_court = no is_geoloid = yes }
+	# 		add_pops_to_pink_diamonds_court = yes
+	# 	}
+	# }
+	owner_main_species = {
+		set_habitability_trait = { trait = trait_pc_gem_preference }
 	}
 	every_deposit = {
 		limit = {
@@ -185,55 +189,58 @@ f93_seed_gem_planet_with_stuff = {
 	}
 }
 
-add_pops_to_white_diamonds_court = {
-	if = {
-		limit = {
-			is_part_of_a_court = no
-		}
-		add_modifier = {
-			modifier = pop_mod_white_court
-		}
-		
-	}
-}
-add_pops_to_yellow_diamonds_court = {
-	if = {
-		limit = {
-			is_part_of_a_court = no
-		}
-		add_modifier = {
-			modifier = pop_mod_yellow_court
-		}
-	}
-}
-add_pops_to_blue_diamonds_court = {
-	if = {
-		limit = {
-			is_part_of_a_court = no
-		}
-		add_modifier = {
-			modifier = pop_mod_blue_court
-		}
-	}
-}
-add_pops_to_pink_diamonds_court = {
-	if = {
-		limit = {
-			is_part_of_a_court = no
-		}
-		add_modifier = {
-			modifier = pop_mod_pink_court
-		}
-	}
-}
+# add_pops_to_white_diamonds_court = {
+# 	if = {
+# 		limit = {
+# 			is_part_of_a_court = no
+# 		}
+# 		# add_modifier = {
+# 		# 	modifier = pop_mod_white_court
+# 		# }
+# 		set_pop_group_flag = flag_white_court
+# 	}
+# }
+# add_pops_to_yellow_diamonds_court = {
+# 	if = {
+# 		limit = {
+# 			is_part_of_a_court = no
+# 		}
+# 		# add_modifier = {
+# 		# 	modifier = pop_mod_yellow_court
+# 		# }
+# 		set_pop_group_flag = flag_yellow_court
+# 	}
+# }
+# add_pops_to_blue_diamonds_court = {
+# 	if = {
+# 		limit = {
+# 			is_part_of_a_court = no
+# 		}
+# 		# add_modifier = {
+# 		# 	modifier = pop_mod_blue_court
+# 		# }
+# 		set_pop_group_flag = flag_blue_court
+# 	}
+# }
+# add_pops_to_pink_diamonds_court = {
+# 	if = {
+# 		limit = {
+# 			is_part_of_a_court = no
+# 		}
+# 		# add_modifier = {
+# 		# 	modifier = pop_mod_pink_court
+# 		# }
+# 		set_pop_group_flag = flag_pink_court
+# 	}
+# }
 
-add_off_colors = {
-	if = {
-		limit = {
-			NOT = { has_modifier = pop_mod_off_colors }
-		}
-		add_modifier = {
-			modifier = pop_mod_off_colors
-		}
-	}
-}
+# add_off_colors = {
+# 	if = {
+# 		limit = {
+# 			NOT = { has_modifier = pop_mod_off_colors }
+# 		}
+# 		add_modifier = {
+# 			modifier = pop_mod_off_colors
+# 		}
+# 	}
+# }

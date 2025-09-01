@@ -13,7 +13,7 @@ country_event = {
 			scale_by = 0.75
 		}
 
-		capital_scope = { planet_event = { id = gem_pop.2 } }
+		# capital_scope = { planet_event = { id = gem_pop.2 } }
 		capital_scope = { f93_seed_gem_planet_with_stuff = yes }
 
 		set_policy = { policy = robot_pop_policy option = robot_pops_outlawed }

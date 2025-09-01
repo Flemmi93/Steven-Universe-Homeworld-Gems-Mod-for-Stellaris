@@ -40,6 +40,7 @@ on_monthly_pulse_country = {
 		gem_events_misc.002
 		gem_events_misc.004
 		gem_diamond_ruler.0002
+		gem_pop.1 # update old saves, once 4.0
 	}
 }
 
@@ -98,7 +99,7 @@ on_capital_changed = {
 # local_pop_amount = variable of how much was grown
 on_pop_growth = {
 	events = {
-		gem_pop.2
+		# gem_pop.2
 	}
 }
 

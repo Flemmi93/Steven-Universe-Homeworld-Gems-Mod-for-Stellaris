@@ -29,54 +29,68 @@ f93_can_make_gems = {
 	check_variable = { which = gem_pops_made value < value:geoloid_potential }
 }
 
-planet_belongs_to_white_diamond = {
-	planet = {
-			OR = {
-			exists = leader
-			leader = { has_leader_flag = white_diamond_flag }
-			has_planet_flag = white_court_flag
-			has_modifier = pm_gem_white_court
-		}
-	}
-}
+# planet_belongs_to_white_diamond = {
+# 	OR = {
+# 		AND = {
+# 			exists = leader
+# 			leader = { has_leader_flag = white_diamond_flag }
+# 		}
+# 		has_planet_flag = white_court_flag
+# 		has_modifier = pm_gem_white_court
+# 	}
+# }
 
-planet_belongs_to_yellow_diamond = {
-	planet = {
-		OR = {
-			leader = { has_leader_flag = yellow_diamond_flag }
-			has_planet_flag = yellow_court_flag
-			has_modifier = pm_gem_yellow_court
-		}
-	}
-}
+# planet_belongs_to_yellow_diamond = {
+# 	root = {
+# 		OR = {
+# 			AND = {
+# 				exists = leader
+# 				leader = { has_leader_flag = yellow_diamond_flag }
+# 			}
+# 			has_planet_flag = yellow_court_flag
+# 			has_modifier = pm_gem_yellow_court
+# 		}
+# 	}
+# }
 
-planet_belongs_to_blue_diamond = {
-	planet = {
-		OR = {
-			leader = { has_leader_flag = blue_diamond_flag }
-			has_planet_flag = blue_court_flag
-			has_modifier = pm_gem_blue_court
-		}
-	}
-}
+# planet_belongs_to_blue_diamond = {
+# 	root = {
+# 		OR = {
+# 			AND = {
+# 				exists = leader
+# 				leader = { has_leader_flag = blue_diamond_flag }
+# 			}
+# 			has_planet_flag = blue_court_flag
+# 			has_modifier = pm_gem_blue_court
+# 		}
+# 	}
+# }
 
-planet_belongs_to_pink_diamond = {
-	planet = {
-		OR = {
-			leader = { has_leader_flag = pink_diamond_flag }
-			has_planet_flag = pink_court_flag
-			has_modifier = pm_gem_pink_court
-		}
-	}
-}
+# planet_belongs_to_pink_diamond = {
+# 	root = {
+# 		OR = {
+# 			AND = {
+# 				exists = leader
+# 				leader = { has_leader_flag = pink_diamond_flag }
+# 			}
+# 			has_planet_flag = pink_court_flag
+# 			has_modifier = pm_gem_pink_court
+# 		}
+# 	}
+# }
 
-is_part_of_a_court = {
-	calc_true_if = {
-		amount = 1
-		has_modifier = pop_mod_white_court
-		has_modifier = pop_mod_yellow_court
-		has_modifier = pop_mod_blue_court
-		has_modifier = pop_mod_pink_court
-		has_modifier = pop_mod_off_colors
-	}
-}
+# is_part_of_a_court = {
+# 	calc_true_if = {
+# 		amount = 1
+# 		has_modifier = pop_mod_white_court
+# 		has_pop_group_flag = flag_white_court
+# 		has_modifier = pop_mod_yellow_court
+# 		has_pop_group_flag = flag_yellow_court
+# 		has_modifier = pop_mod_blue_court
+# 		has_pop_group_flag = flag_blue_court
+# 		has_modifier = pop_mod_pink_court
+# 		has_pop_group_flag = flag_pink_court
+# 		has_modifier = pop_mod_off_colors
+# 		has_pop_group_flag = flag_off_colors
+# 	}
+# }

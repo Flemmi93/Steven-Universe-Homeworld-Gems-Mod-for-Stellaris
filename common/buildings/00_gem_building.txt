@@ -177,10 +177,10 @@ building_gem_spire3 = {
 		unity = 12
 		}
 		upkeep = {
-		energy =  @b3_upkeep
+		energy =  @b2_upkeep
 		}
 		cost = {
-		minerals = @b3_minerals
+		minerals = @b2_minerals
 		}
 	}
 	
@@ -605,7 +605,7 @@ building_gem_sky_arena = {
 	}
 	
 	 planet_modifier = {
-		 planet_amenities_add = 500
+		planet_amenities_add = 500
 	 }
 
 	triggered_planet_modifier = {
@@ -613,8 +613,8 @@ building_gem_sky_arena = {
 			is_geo_empire = yes
 		}
 		modifier = { # Adjust for Balance
-			job_duelist_add = 2
-			job_technician_add = 1
+			job_duelist_add = 200
+			job_technician_add = 100
 		}
 	}
 	triggered_planet_modifier = {
@@ -624,8 +624,8 @@ building_gem_sky_arena = {
 			}
 		}
 		modifier = { # Adjust for Balance
-			job_duelist_add = 1
-			job_scrap_miner_add = 1
+			job_duelist_add = 100
+			job_scrap_miner_add = 100
 		}
 	}
 	

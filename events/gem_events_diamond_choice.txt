@@ -9,7 +9,31 @@ planet_event = { #replaces the grand court
 	title = pm_grand_court
 	desc = pm_grand_court_desc
 	is_triggered_only = yes
-	immediate = {}
+	immediate = {
+		if = {
+			limit = { exists = from }
+			from = {
+				remove_modifier = pm_gem_white_court
+				remove_modifier = pm_gem_yellow_court
+				remove_modifier = pm_gem_blue_court
+				remove_modifier = pm_gem_pink_court
+				remove_planet_flag = planet_had_court_before
+			}
+		}
+		set_planet_flag = planet_had_court_before
+		add_modifier = {
+			modifier = pm_gem_white_court
+		}
+		add_modifier = {
+			modifier = pm_gem_yellow_court
+		}
+		add_modifier = {
+			modifier = pm_gem_blue_court
+		}
+		add_modifier = {
+			modifier = pm_gem_pink_court
+		}
+	}
 	option = {
 		name = OK
 	}
@@ -20,10 +44,17 @@ planet_event = { #triggers the step counter
 	hide_window = yes
 	is_triggered_only = yes
 	trigger = {
+		owner = {
+			OR = {
+				has_civic = civic_tetrarchy
+				has_civic = civic_triarchy
+			}
+		}
 		NOT = { has_planet_flag = planet_had_court_before }
 	}
 	immediate = {
 		owner = { country_event = { id = gem_off_colors.0009} }
+		planet_event = { id = gem_diamond_choice.1001 days = 1 random = 359 } 
 	}
 }
 planet_event = {
@@ -114,7 +145,6 @@ planet_event = { #What Diamond shall rule over this Planet
 	}
 	immediate = {
 		set_planet_flag = planet_had_court_before
-		planet_event = { id = gem_diamond_choice.1002 days = 1} # triggers step cpunter
 		owner = {
 			set_country_flag = pink_is_ready4
 			set_country_flag = pink_is_ready5
@@ -138,6 +168,9 @@ planet_event = { #What Diamond shall rule over this Planet
 		custom_tooltip = "gem_diamond_choice.a.desc"
 		hidden_effect = {
 			set_planet_flag = white_court_flag
+			add_modifier = {
+				modifier = pm_gem_white_court
+			}
 		}
 	}
 	option = { # option for white when she is dead
@@ -160,6 +193,9 @@ planet_event = { #What Diamond shall rule over this Planet
 		custom_tooltip = "gem_diamond_choice.e.dead"
 		hidden_effect = {
 			set_planet_flag = white_court_flag
+			add_modifier = {
+				modifier = pm_gem_white_court
+			}
 		}
 	
 	}
@@ -180,6 +216,9 @@ planet_event = { #What Diamond shall rule over this Planet
 		custom_tooltip = "gem_diamond_choice.b.desc"
 		hidden_effect = {
 			set_planet_flag = yellow_court_flag
+			add_modifier = {
+				modifier = pm_gem_yellow_court
+			}
 		}
 	}
 	option = { # option for when yellow is dead.
@@ -202,6 +241,9 @@ planet_event = { #What Diamond shall rule over this Planet
 		custom_tooltip = gem_diamond_choice.e.dead
 		hidden_effect = {
 			set_planet_flag = yellow_court_flag
+			add_modifier = {
+				modifier = pm_gem_yellow_court
+			}
 		}
 	
 	}
@@ -222,6 +264,9 @@ planet_event = { #What Diamond shall rule over this Planet
 		custom_tooltip = "gem_diamond_choice.c.desc"
 		hidden_effect = {
 			set_planet_flag = blue_court_flag
+			add_modifier = {
+				modifier = pm_gem_blue_court
+			}
 		}
 	}
 	option = { # option when blue is dead
@@ -244,6 +289,9 @@ planet_event = { #What Diamond shall rule over this Planet
 		custom_tooltip = "gem_diamond_choice.e.dead"
 		hidden_effect = {
 			set_planet_flag = blue_court_flag
+			add_modifier = {
+				modifier = pm_gem_blue_court
+			}
 		}
 	
 	}
@@ -259,6 +307,12 @@ planet_event = { #What Diamond shall rule over this Planet
 		}
 		name = "gem_diamond_choice.d"
 		custom_tooltip = "gem_diamond_choice.d.desc"
+		hidden_effect = {
+			set_planet_flag = pink_court_flag
+			add_modifier = {
+				modifier = pm_gem_pink_court
+			}
+		}
 	}
 	option = { # option for pink to take the earth for the first time. any earth
 		trigger = {
@@ -325,6 +379,9 @@ planet_event = { #What Diamond shall rule over this Planet
 		
 		hidden_effect = {
 			set_planet_flag = pink_court_flag
+			add_modifier = {
+				modifier = pm_gem_pink_court
+			}
 		}
 	}
 }
