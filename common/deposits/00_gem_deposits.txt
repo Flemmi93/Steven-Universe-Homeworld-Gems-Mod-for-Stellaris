@@ -89,7 +89,7 @@ d_galaxy_warp = {
 			}
 		}
 		modifier = {
-			planet_amenities_add = 5
+			planet_amenities_add = 150
 		}
 	}
 }
@@ -110,7 +110,7 @@ d_galaxy_warp_damaged = {
 			}
 		}
 		modifier = {
-			planet_amenities_add = -5
+			planet_amenities_add = -150
 		}
 	}
 }
@@ -127,7 +127,7 @@ d_crystal_gem_temple = {
 		}
 		modifier = {
 			planet_max_buildings_add = 1
-			planet_amenities_add = 10
+			planet_amenities_add = 100
 			planet_stability_add = 5
 			planet_structures_upkeep_mult = 0.05
 		}

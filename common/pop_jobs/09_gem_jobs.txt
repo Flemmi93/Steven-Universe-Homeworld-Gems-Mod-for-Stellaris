@@ -1,5 +1,3 @@
-@gem_bonus_growth = 10 #0.3 would be similar to what humans have in prebuild empires. 
-#Gems are supposed to grow quickly but have a hard cap that can only be increased by life potential destructive methods
 kindergartener = {
 	category = specialist
 
@@ -39,15 +37,51 @@ kindergartener = {
 		potential = {
 			has_lithoids = yes
 			f93_can_make_gems = yes
+			owner = { has_policy_flag = kindergarten_output_small }
 		}
-		LITHOID_bonus_pop_growth = @gem_bonus_growth
+		LITHOID_bonus_pop_growth = @gem_bonus_growth_small
 	}
 	triggered_planet_modifier = {
 		potential = {
 			has_lithoids = no
 			f93_can_make_gems = yes
+			owner = { has_policy_flag = kindergarten_output_small }
 		}
-		GEOLOID_bonus_pop_growth = @gem_bonus_growth
+		GEOLOID_bonus_pop_growth = @gem_bonus_growth_small
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			has_lithoids = yes
+			f93_can_make_gems = yes
+			owner = { has_policy_flag = kindergarten_output_medium }
+		}
+		LITHOID_bonus_pop_growth = @gem_bonus_growth_medium
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_lithoids = no
+			f93_can_make_gems = yes
+			owner = { has_policy_flag = kindergarten_output_medium }
+		}
+		GEOLOID_bonus_pop_growth = @gem_bonus_growth_medium
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			has_lithoids = yes
+			f93_can_make_gems = yes
+			owner = { has_policy_flag = kindergarten_output_large }
+		}
+		LITHOID_bonus_pop_growth = @gem_bonus_growth_large
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_lithoids = no
+			f93_can_make_gems = yes
+			owner = { has_policy_flag = kindergarten_output_large }
+		}
+		GEOLOID_bonus_pop_growth = @gem_bonus_growth_large
 	}
 
 #Bonus from techs
@@ -366,15 +400,51 @@ kindergartener_drone = {
 		potential = {
 			has_lithoids = yes
 			f93_can_make_gems = yes
+			owner = { has_policy_flag = kindergarten_output_small }
 		}
-		LITHOID_bonus_pop_growth = @gem_bonus_growth
+		LITHOID_bonus_pop_growth = @gem_bonus_growth_small
 	}
 	triggered_planet_modifier = {
 		potential = {
 			has_lithoids = no
 			f93_can_make_gems = yes
+			owner = { has_policy_flag = kindergarten_output_small }
 		}
-		GEOLOID_bonus_pop_growth = @gem_bonus_growth
+		GEOLOID_bonus_pop_growth = @gem_bonus_growth_small
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			has_lithoids = yes
+			f93_can_make_gems = yes
+			owner = { has_policy_flag = kindergarten_output_medium }
+		}
+		LITHOID_bonus_pop_growth = @gem_bonus_growth_medium
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_lithoids = no
+			f93_can_make_gems = yes
+			owner = { has_policy_flag = kindergarten_output_medium }
+		}
+		GEOLOID_bonus_pop_growth = @gem_bonus_growth_medium
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			has_lithoids = yes
+			f93_can_make_gems = yes
+			owner = { has_policy_flag = kindergarten_output_large }
+		}
+		LITHOID_bonus_pop_growth = @gem_bonus_growth_large
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_lithoids = no
+			f93_can_make_gems = yes
+			owner = { has_policy_flag = kindergarten_output_large }
+		}
+		GEOLOID_bonus_pop_growth = @gem_bonus_growth_large
 	}
 
 	

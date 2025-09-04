@@ -33,7 +33,14 @@ building_gem_spire1 = {
 			}
 		}
 	}
-	
+
+	triggered_planet_modifier = {
+		potential = { owner = { is_geo_empire = yes } }
+		job_politician_add = 25
+		planet_researchers_produces_mult = 0.0125
+ 		planet_researchers_upkeep_mult = 0.0125
+	}
+
 	inline_script = {
 		script = jobs/researchers_add
 		AMOUNT = @building_static_jobs_3
@@ -100,6 +107,13 @@ building_gem_spire2 = {
 		}
 	}
 	
+	triggered_planet_modifier = {
+		potential = { owner = { is_geo_empire = yes } }
+		job_politician_add = 50
+		planet_researchers_produces_mult = 0.025
+ 		planet_researchers_upkeep_mult = 0.025
+	}
+	
 	inline_script = {
 		script = jobs/researchers_add
 		AMOUNT = @building_static_jobs_high_3
@@ -161,9 +175,12 @@ building_gem_spire3 = {
 			}
 		}
 	}
+	
 	triggered_planet_modifier = {
 		potential = { owner = { is_geo_empire = yes } }
-		job_noble_add = 1
+		job_politician_add = 75
+		planet_researchers_produces_mult = 0.05
+ 		planet_researchers_upkeep_mult = 0.05
 	}
 	
 	inline_script = {
@@ -605,7 +622,7 @@ building_gem_sky_arena = {
 	}
 	
 	 planet_modifier = {
-		planet_amenities_add = 500
+		planet_amenities_add = 200
 	 }
 
 	triggered_planet_modifier = {
@@ -613,8 +630,8 @@ building_gem_sky_arena = {
 			is_geo_empire = yes
 		}
 		modifier = { # Adjust for Balance
-			job_duelist_add = 200
-			job_technician_add = 100
+			job_politician_add = 50
+			job_soldier_add = 300	
 		}
 	}
 	triggered_planet_modifier = {
@@ -624,8 +641,9 @@ building_gem_sky_arena = {
 			}
 		}
 		modifier = { # Adjust for Balance
-			job_duelist_add = 100
-			job_scrap_miner_add = 100
+			job_politician_add = 10
+			job_knight_add = 100
+			job_squire_add = 150
 		}
 	}
 	

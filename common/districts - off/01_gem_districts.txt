@@ -35,7 +35,7 @@ district_kindergarten = {
 	}
 
 	planet_modifier = {
-		planet_housing_add = 1
+		planet_housing_add = 100
 	}
 
 	triggered_planet_modifier = {
