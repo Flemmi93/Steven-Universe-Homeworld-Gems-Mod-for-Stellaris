@@ -19,57 +19,66 @@ country_event = {
 			add_modifier = {
 				modifier = pm_gem_pink_court
 			}
+			update_diamond_court_modifier = yes
 		}
 	}
 }
 
-# planet_event = {
-# 	id = gem_pop.2
-# 	is_triggered_only = yes
-# 	hide_window = yes
-# 	trigger = {
-# 		FromFrom = { is_geoloid = yes }
-# 		NOT = { has_planet_flag = gem_pop2_just_happened }
-# 	}
-# 	immediate = {
-# 		#only once per pop creation batch
-# 		set_timed_planet_flag = {
-# 			flag = gem_pop2_just_happened
-# 			days = 1
-# 		}
-# 		#Count the pops made on this world.
-# 		if = {
-# 			limit = { NOT = { is_variable_set = gem_pops_made } } 
-# 			set_variable = { which = gem_pops_made value = 0 }
-# 		}
-# 		change_variable = { which = gem_pops_made value = local_pop_amount }
-# 		#Assign the pops made to one of the Diamonds.
-# 		FromFrom = {
-# 			random_list = {
-# 				10 = {
-# 					modifier = { factor = 0.2 planet_belongs_to_white_diamond = no }
-# 					add_pops_to_white_diamonds_court = yes
-# 				}
-# 				10 = {
-# 					modifier = { factor = 0.2 planet_belongs_to_yellow_diamond = no }
-# 					add_pops_to_yellow_diamonds_court = yes
-# 				}
-# 				10 = {
-# 					modifier = { factor = 0.2 planet_belongs_to_blue_diamond = no }
-# 					add_pops_to_blue_diamonds_court = yes
-# 				}
-# 				10 = {
-# 					modifier = { factor = 0.2 planet_belongs_to_pink_diamond = no }
-# 					add_pops_to_pink_diamonds_court = yes
-# 				}
-# 				0 = {
-# 					add_off_colors = yes
-# 					modifier = {
-# 						add = 1
-# 						owner = { has_country_flag = era_two_flag }
-# 					}
-# 				}
-# 			}
-# 		}
-# 	}
-# }
+# an amount of pops has grown as is assigned to a diamond as their liege
+# This = Planet scope
+# From = Country
+# FromFrom = Pop group
+# local_pop_amount = variable of how much was grown
+planet_event = {
+	id = gem_pop.2
+	is_triggered_only = yes
+	hide_window = yes
+	trigger = {
+		FromFrom = { is_geoloid = yes }
+		NOT = { has_planet_flag = gem_pop2_just_happened }
+	}
+	immediate = {
+		#only once per pop creation batch
+		set_timed_planet_flag = {
+			flag = gem_pop2_just_happened
+			days = 1
+		}
+		#Count the pops made on this world.
+		if = {
+			limit = { NOT = { is_variable_set = gem_pops_made } } 
+			set_variable = { which = gem_pops_made value = 0 }
+		}
+		change_variable = { which = gem_pops_made value = local_pop_amount }
+	}
+}
+
+country_event = {
+	id = gem_pop.3
+	is_triggered_only = yes
+	hide_window = yes
+	trigger = { is_geo_empire = yes }
+	immediate = {
+		every_owned_planet = {
+			update_diamond_court_modifier = yes
+		}
+
+
+		####this is a bugfix until i find the cause
+		every_owned_planet = {
+			limit = {
+				is_capital = no
+				calc_true_if = {
+					amount > 1
+					has_modifier = pm_gem_white_court
+					has_modifier = pm_gem_yellow_court
+					has_modifier = pm_gem_blue_court
+					has_modifier = pm_gem_pink_court
+				}
+			}
+			remove_modifier = pm_gem_white_court
+			remove_modifier = pm_gem_yellow_court
+			remove_modifier = pm_gem_blue_court
+			remove_modifier = pm_gem_pink_court
+		}
+	}
+}

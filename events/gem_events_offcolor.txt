@@ -733,18 +733,7 @@ planet_event = {
 	option = {
 		name = gem_off_colors.1040.a
 		assign_leader = event_target:gem_pink_diamond
-		event_target:gem_pink_diamond = {
-			if = {
-				limit = { NOT = { has_trait = trait_pink_court } }
-				add_trait = { trait = trait_pink_court }
-			}
-		}
-		owner = {
-			random_owned_planet = {
-				limit = { has_modifier = pm_gem_pink_court }
-				remove_modifier = pm_gem_pink_court
-			}
-		}
+		add_modifier = { modifier = pm_gem_pink_court mult = value:pink_mod_scale }
 	}
 	after = {
 		hidden_effect = {

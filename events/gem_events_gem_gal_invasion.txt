@@ -52,7 +52,6 @@ country_event = {
 				trait = "trait_gem_donteat"
 				trait = "trait_gem_static"
 			}
-			effect = { set_species_flag = f93_deposit_eater }
 		}
 		last_created_species = {
 			save_global_event_target_as = gem_invasion_species

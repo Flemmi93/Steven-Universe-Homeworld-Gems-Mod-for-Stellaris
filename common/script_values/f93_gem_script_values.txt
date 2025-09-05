@@ -108,70 +108,108 @@ geoloid_potential_left = {
 	subtract = from.gem_pops_made
 	min = 0
 }
-
-# white_diamond_court = {
-# 	base = 0
-# 	complex_trigger_modifier = {
-# 		trigger = count_owned_pop_amount
-# 		trigger_scope = root.root.root
-# 		parameters = {
-# 			limit = {
-# 				has_pop_group_flag = flag_white_court
-# 			}
-# 		}
-# 		mode = add
-# 	}
-# }
-# yellow_diamond_court = {
-# 	base = 0
-# 	complex_trigger_modifier = {
-# 		trigger = count_owned_pop_amount
-# 		trigger_scope = country
-# 		parameters = {
-# 			limit = {
-# 				has_pop_group_flag = flag_yellow_court
-# 			}
-# 		}
-# 		mode = add
-# 	}
-# }
-# blue_diamond_court = {
-# 	base = 0
-# 	complex_trigger_modifier = {
-# 		trigger = count_owned_pop_amount
-# 		trigger_scope = root.root
-# 		parameters = {
-# 			limit = {
-# 				has_pop_group_flag = flag_blue_court
-# 			}
-# 		}
-# 		mode = add
-# 	}
-# }
-# pink_diamond_court = {
-# 	base = 0
-# 	complex_trigger_modifier = {
-# 		trigger = count_owned_pop_amount
-# 		trigger_scope = root
-# 		parameters = {
-# 			limit = {
-# 				has_pop_group_flag = flag_pink_court
-# 			}
-# 		}
-# 		mode = add
-# 	}
-# }
-# gem_off_color_pops = {
-# 	base = 0
-# 	complex_trigger_modifier = {
-# 		trigger = count_owned_pop_amount
-# 		trigger_scope = root
-# 		parameters = {
-# 			# limit = {
-# 			# 	has_modifier = pop_mod_off_colors
-# 			# }
-# 			has_pop_group_flag = flag_off_colors
-# 		}
-# 		mode = add
-# 	}
-# }
+num_diamonds = {
+	complex_trigger_modifier = {
+		trigger = count_owned_leader
+		trigger_scope = owner
+		parameters = {
+			limit = {
+				has_trait = trait_ruler_diamond
+			}
+		}
+		mode = add
+	}
+	min = 1
+}
+num_gem_pops = {
+	complex_trigger_modifier = {
+		trigger = count_owned_pop_amount
+		trigger_scope = owner
+		parameters = {
+			limit = {
+				is_geoloid = yes
+			}
+		}
+		mode = add
+	}
+}
+white_diamond_court = {
+	add = value:num_gem_pops
+	multiply = value:white_diamond_strength # 0.9-1
+	subtract = value:gem_off_color_pops_fraction # starts in era 2
+	round = yes
+	min = 1
+	max = value:num_gem_pops
+}
+yellow_diamond_court = {
+	add = value:num_gem_pops
+	multiply = value:yellow_diamond_strength
+	subtract = value:gem_off_color_pops_fraction # starts in era 2
+	round = yes
+	min = 1
+	max = value:num_gem_pops
+}
+blue_diamond_court = {
+	add = value:num_gem_pops
+	multiply = value:blue_diamond_strength
+	subtract = value:gem_off_color_pops_fraction # starts in era 2
+	round = yes
+	min = 1
+	max = value:num_gem_pops
+}
+pink_diamond_court = {
+	add = value:num_gem_pops
+	multiply = value:pink_diamond_strength
+	subtract = value:gem_off_color_pops_fraction # starts in era 2
+	round = yes
+	min = 1
+	max = value:num_gem_pops
+}
+white_mod_scale = {
+	add = value:white_diamond_court
+	divide = 25000
+	min = 0.05
+	max = 1
+}
+yellow_mod_scale = {
+	add = value:yellow_diamond_court
+	divide = 25000
+	min = 0.05
+	max = 1
+}
+blue_mod_scale = {
+	add = value:blue_diamond_court
+	divide = 25000
+	min = 0.05
+	max = 1
+}
+pink_mod_scale = {
+	add = value:pink_diamond_court
+	divide = 25000
+	min = 0.05
+	max = 1
+}
+white_mod_percent = {
+	add = value:white_diamond_court
+	divide = 250
+	min = 5
+	max = 100
+}
+yellow_mod_percent = {
+	add = value:yellow_diamond_court
+	divide = 250
+	min = 5
+	max = 100
+}
+blue_mod_percent = {
+	add = value:blue_diamond_court
+	divide = 250
+	min = 5
+	max = 100
+}
+pink_mod_percent = {
+	add = value:pink_diamond_court
+	divide = 250
+	min = 5
+	max = 100
+}

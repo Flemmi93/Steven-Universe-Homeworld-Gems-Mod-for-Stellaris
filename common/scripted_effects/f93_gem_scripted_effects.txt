@@ -15,7 +15,6 @@ create_gem_empire_normal = {
 			trait = "trait_gem_donteat"
 			trait = "trait_gem_static"
 		}
-		effect = { set_species_flag = f93_deposit_eater }
 	}
 	event_target:gem_spawn_location = {
 		create_country = {
@@ -110,27 +109,6 @@ create_gem_empire_normal = {
 f93_seed_gem_planet_with_stuff = {
 	set_planet_flag = planet_had_court_before
 	set_variable = { which = gem_pops_made value = trigger:gem_pop_amount }
-	# while = {
-	# 	limit = {
-	# 		any_owned_pop_group = { is_part_of_a_court = no }
-	# 	}
-	# 	random_owned_pop_group = {
-	# 		limit = { is_part_of_a_court = no is_geoloid = yes }
-	# 		add_pops_to_white_diamonds_court = yes
-	# 	}
-	# 	random_owned_pop_group = {
-	# 		limit = { is_part_of_a_court = no is_geoloid = yes }
-	# 		add_pops_to_yellow_diamonds_court = yes
-	# 	}
-	# 	random_owned_pop_group = {
-	# 		limit = { is_part_of_a_court = no is_geoloid = yes }
-	# 		add_pops_to_blue_diamonds_court = yes
-	# 	}
-	# 	random_owned_pop_group = {
-	# 		limit = { is_part_of_a_court = no is_geoloid = yes }
-	# 		add_pops_to_pink_diamonds_court = yes
-	# 	}
-	# }
 	owner_main_species = {
 		set_habitability_trait = { trait = trait_pc_gem_preference }
 	}
@@ -172,10 +150,10 @@ f93_seed_gem_planet_with_stuff = {
 	set_planet_flag = gem_has_kindergarten
 	
 	set_planet_flag = grand_court
-	add_modifier = { modifier = pm_gem_white_court }
-	add_modifier = { modifier = pm_gem_yellow_court }
-	add_modifier = { modifier = pm_gem_blue_court }
-	add_modifier = { modifier = pm_gem_pink_court }
+	add_modifier = { modifier = pm_gem_white_court mult = value:white_mod_scale }
+	add_modifier = { modifier = pm_gem_yellow_court mult = value:yellow_mod_scale }
+	add_modifier = { modifier = pm_gem_blue_court mult = value:blue_mod_scale }
+	add_modifier = { modifier = pm_gem_pink_court mult = value:pink_mod_scale }
 	add_deposit = d_galaxy_warp
 	if = {
 		limit = {
@@ -188,59 +166,25 @@ f93_seed_gem_planet_with_stuff = {
 		add_building = building_buff_kindergarten2
 	}
 }
-
-# add_pops_to_white_diamonds_court = {
-# 	if = {
-# 		limit = {
-# 			is_part_of_a_court = no
-# 		}
-# 		# add_modifier = {
-# 		# 	modifier = pop_mod_white_court
-# 		# }
-# 		set_pop_group_flag = flag_white_court
-# 	}
-# }
-# add_pops_to_yellow_diamonds_court = {
-# 	if = {
-# 		limit = {
-# 			is_part_of_a_court = no
-# 		}
-# 		# add_modifier = {
-# 		# 	modifier = pop_mod_yellow_court
-# 		# }
-# 		set_pop_group_flag = flag_yellow_court
-# 	}
-# }
-# add_pops_to_blue_diamonds_court = {
-# 	if = {
-# 		limit = {
-# 			is_part_of_a_court = no
-# 		}
-# 		# add_modifier = {
-# 		# 	modifier = pop_mod_blue_court
-# 		# }
-# 		set_pop_group_flag = flag_blue_court
-# 	}
-# }
-# add_pops_to_pink_diamonds_court = {
-# 	if = {
-# 		limit = {
-# 			is_part_of_a_court = no
-# 		}
-# 		# add_modifier = {
-# 		# 	modifier = pop_mod_pink_court
-# 		# }
-# 		set_pop_group_flag = flag_pink_court
-# 	}
-# }
-
-# add_off_colors = {
-# 	if = {
-# 		limit = {
-# 			NOT = { has_modifier = pop_mod_off_colors }
-# 		}
-# 		add_modifier = {
-# 			modifier = pop_mod_off_colors
-# 		}
-# 	}
-# }
+update_diamond_court_modifier = {
+	if = {
+		limit = { has_modifier = pm_gem_white_court }
+		remove_modifier = pm_gem_white_court
+		add_modifier = { modifier = pm_gem_white_court mult = value:white_mod_scale }
+	}
+	if = {
+		limit = { has_modifier = pm_gem_yellow_court }
+		remove_modifier = pm_gem_yellow_court
+		add_modifier = { modifier = pm_gem_yellow_court mult = value:yellow_mod_scale }
+	}
+	if = {
+		limit = { has_modifier = pm_gem_blue_court }
+		remove_modifier = pm_gem_blue_court
+		add_modifier = { modifier = pm_gem_blue_court mult = value:blue_mod_scale }
+	}
+	if = {
+		limit = { has_modifier = pm_gem_pink_court }
+		remove_modifier = pm_gem_pink_court
+		add_modifier = { modifier = pm_gem_pink_court mult = value:pink_mod_scale }
+	}
+}

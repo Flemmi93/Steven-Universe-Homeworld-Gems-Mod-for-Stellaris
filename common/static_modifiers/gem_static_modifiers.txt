@@ -8,26 +8,26 @@ pm_off_colors = {
 pm_gem_white_court = {
 	icon = "gfx/interface/icons/planet_modifiers/gem_white_diamond.dds"
 	icon_frame = 1
-	planet_stability_add = 10
-	planet_jobs_upkeep_mult = -0.05
+	planet_stability_add = 20
+	planet_jobs_upkeep_mult = -0.1
 }
 pm_gem_yellow_court = {
 	icon = "gfx/interface/icons/planet_modifiers/gem_yellow_diamond.dds"
 	icon_frame = 1
-	planet_jobs_alloys_produces_mult = 0.1
-	planet_jobs_upkeep_mult = -0.05
+	planet_jobs_alloys_produces_mult = 0.2
+	planet_jobs_upkeep_mult = -0.1
 }
 pm_gem_blue_court = {
 	icon = "gfx/interface/icons/planet_modifiers/gem_blue_diamond.dds"
 	icon_frame = 1
-	pop_lifestyle_trade_value_mult = 0.1
-	planet_jobs_upkeep_mult = -0.05
+	pop_lifestyle_trade_value_mult = 0.2
+	planet_jobs_upkeep_mult = -0.1
 }
 pm_gem_pink_court = {
 	icon = "gfx/interface/icons/planet_modifiers/gem_pink_diamond.dds"
 	icon_frame = 1
-	pop_citizen_happiness = 0.10
-	planet_jobs_upkeep_mult = -0.05
+	pop_citizen_happiness = 0.20
+	planet_jobs_upkeep_mult = -0.1
 }
 pm_gem_galaxy_warp = { 
 	icon = "gfx/interface/icons/planet_modifiers/gem_galaxy_warp.dds"
@@ -262,26 +262,25 @@ promoted_pinkethic = {
 # Pop Modifier #
 ################
 pop_mod_white_court = {
-	icon = "gfx/interface/icons/planet_modifiers/gem_white_diamond.dds"
-	icon_frame = 1
 	planet_pops_upkeep_mult = -0.01
 }
 pop_mod_yellow_court = {
-	icon = "gfx/interface/icons/planet_modifiers/gem_yellow_diamond.dds"
-	icon_frame = 1
 	planet_pops_alloys_produces_mult = 0.01
+	planet_pops_upkeep_mult = -0.02
 }
 pop_mod_blue_court = {
-	icon = "gfx/interface/icons/planet_modifiers/gem_blue_diamond.dds"
-	icon_frame = 1
-	pop_housing_usage_mult = 0.1
+	pop_housing_usage_mult = -0.1
+	planet_pops_upkeep_mult = -0.03
 }
 pop_mod_pink_court = {
-	icon = "gfx/interface/icons/planet_modifiers/gem_pink_diamond.dds"
-	icon_frame = 1
 	pop_citizen_happiness = 0.01
+	planet_pops_upkeep_mult = -0.04
 }
 pop_mod_off_colors = {
 	icon = "gfx/interface/icons/planet_modifiers/gem_off_colors.dds"
 	icon_frame = 3
+}
+pop_mod_off_colors_good = {
+	icon = "gfx/interface/icons/planet_modifiers/gem_off_colors.dds"
+	icon_frame = 1
 }

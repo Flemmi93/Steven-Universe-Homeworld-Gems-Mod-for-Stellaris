@@ -34,19 +34,35 @@ defined_text = {
 	name = geoloid_potential_left_loc
 	value = value:geoloid_potential_left
 }
-# defined_text = {
-# 	name = white_diamond_court_loc
-# 	value = value:white_diamond_court
-# }
-# defined_text = {
-# 	name = yellow_diamond_court_loc
-# 	value = value:yellow_diamond_court
-# }
-# defined_text = {
-# 	name = blue_diamond_court_loc
-# 	value = value:blue_diamond_court
-# }
-# defined_text = {
-# 	name = pink_diamond_court_loc
-# 	value = value:pink_diamond_court
-# }
+defined_text = {
+	name = white_diamond_court_loc
+	value = value:white_diamond_court
+}
+defined_text = {
+	name = yellow_diamond_court_loc
+	value = value:yellow_diamond_court
+}
+defined_text = {
+	name = blue_diamond_court_loc
+	value = value:blue_diamond_court
+}
+defined_text = {
+	name = pink_diamond_court_loc
+	value = value:pink_diamond_court
+}
+defined_text = {
+	name = white_diamond_percent_loc
+	value = value:white_mod_percent
+}
+defined_text = {
+	name = yellow_diamond_percent_loc
+	value = value:yellow_mod_percent
+}
+defined_text = {
+	name = blue_diamond_percent_loc
+	value = value:blue_mod_percent
+}
+defined_text = {
+	name = pink_diamond_percent_loc
+	value = value:pink_mod_percent
+}

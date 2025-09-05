@@ -1,0 +1,109 @@
+white_diamond_strength = {
+	base = 1
+	multiply = value:white_planet_ratio
+	min = 0.01
+	max = 0.97
+}
+yellow_diamond_strength = {
+	base = 1
+	multiply = value:yellow_planet_ratio
+	min = 0.01
+	max = 0.97
+}
+blue_diamond_strength = {
+	base = 1
+	multiply = value:blue_planet_ratio
+	min = 0.01
+	max = 0.97
+}
+pink_diamond_strength = {
+	base = 1
+	multiply = value:pink_planet_ratio
+	min = 0.01
+	max = 0.97
+}
+gem_off_color_pops_fraction = {
+	add = value:gem_off_color_pops
+	divide = value:num_diamonds
+}
+count_diamond_owned_planets = {
+	complex_trigger_modifier = {
+		trigger = count_owned_planet
+		trigger_scope = owner
+		parameters = {
+			limit = {
+				is_colony = yes
+				OR = {
+					has_modifier = pm_gem_white_court
+					has_modifier = pm_gem_yellow_court
+					has_modifier = pm_gem_blue_court
+					has_modifier = pm_gem_pink_court
+				}
+			}
+		}
+		mode = add
+	}
+	min = 4 # to divide number of pops of a diamoned by 4 at game start.
+}
+white_planet_ratio = {
+	complex_trigger_modifier = {
+		trigger = count_owned_planet
+		trigger_scope = owner
+		parameters = {
+			limit = {
+				has_modifier = pm_gem_white_court
+			}
+		}
+		mode = add
+	}
+	divide = value:count_diamond_owned_planets
+}
+yellow_planet_ratio = {
+	complex_trigger_modifier = {
+		trigger = count_owned_planet
+		trigger_scope = owner
+		parameters = {
+			limit = {
+				has_modifier = pm_gem_yellow_court
+			}
+		}
+		mode = add
+	}
+	divide = value:count_diamond_owned_planets
+}
+blue_planet_ratio = {
+	complex_trigger_modifier = {
+		trigger = count_owned_planet
+		trigger_scope = owner
+		parameters = {
+			limit = {
+				has_modifier = pm_gem_blue_court
+			}
+		}
+		mode = add
+	}
+	divide = value:count_diamond_owned_planets
+}
+pink_planet_ratio = {
+	complex_trigger_modifier = {
+		trigger = count_owned_planet
+		trigger_scope = owner
+		parameters = {
+			limit = {
+				has_modifier = pm_gem_pink_court
+			}
+		}
+		mode = add
+	}
+	divide = value:count_diamond_owned_planets
+}
+gem_off_color_pops = {
+	add = value:num_gem_pops
+	divide = 1000
+	round = yes
+	modifier = {
+		owner = { has_country_flag = era_one_flag }
+		factor = 0
+	}
+	min = 1
+}

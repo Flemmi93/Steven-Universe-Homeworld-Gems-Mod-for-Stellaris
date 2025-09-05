@@ -33,6 +33,7 @@ planet_event = { #replaces the grand court
 		add_modifier = {
 			modifier = pm_gem_pink_court
 		}
+		owner = { update_diamond_court_modifier = yes }
 	}
 	option = {
 		name = OK
@@ -171,6 +172,7 @@ planet_event = { #What Diamond shall rule over this Planet
 			add_modifier = {
 				modifier = pm_gem_white_court
 			}
+			update_diamond_court_modifier = yes
 		}
 	}
 	option = { # option for white when she is dead
@@ -196,6 +198,7 @@ planet_event = { #What Diamond shall rule over this Planet
 			add_modifier = {
 				modifier = pm_gem_white_court
 			}
+			update_diamond_court_modifier = yes
 		}
 	
 	}
@@ -219,6 +222,7 @@ planet_event = { #What Diamond shall rule over this Planet
 			add_modifier = {
 				modifier = pm_gem_yellow_court
 			}
+			update_diamond_court_modifier = yes
 		}
 	}
 	option = { # option for when yellow is dead.
@@ -244,6 +248,7 @@ planet_event = { #What Diamond shall rule over this Planet
 			add_modifier = {
 				modifier = pm_gem_yellow_court
 			}
+			update_diamond_court_modifier = yes
 		}
 	
 	}
@@ -267,6 +272,7 @@ planet_event = { #What Diamond shall rule over this Planet
 			add_modifier = {
 				modifier = pm_gem_blue_court
 			}
+			update_diamond_court_modifier = yes
 		}
 	}
 	option = { # option when blue is dead
@@ -292,6 +298,7 @@ planet_event = { #What Diamond shall rule over this Planet
 			add_modifier = {
 				modifier = pm_gem_blue_court
 			}
+			update_diamond_court_modifier = yes
 		}
 	
 	}
@@ -312,6 +319,7 @@ planet_event = { #What Diamond shall rule over this Planet
 			add_modifier = {
 				modifier = pm_gem_pink_court
 			}
+			update_diamond_court_modifier = yes
 		}
 	}
 	option = { # option for pink to take the earth for the first time. any earth
@@ -382,6 +390,7 @@ planet_event = { #What Diamond shall rule over this Planet
 			add_modifier = {
 				modifier = pm_gem_pink_court
 			}
+			update_diamond_court_modifier = yes
 		}
 	}
 }
