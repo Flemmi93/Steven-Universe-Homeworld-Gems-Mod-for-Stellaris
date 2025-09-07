@@ -111,7 +111,7 @@ building_gem_spire2 = {
 		potential = { owner = { is_geo_empire = yes } }
 		job_politician_add = 50
 		planet_researchers_produces_mult = 0.025
- 		planet_researchers_upkeep_mult = 0.025
+ 		planet_researchers_upkeep_mult = 0.015
 	}
 	
 	inline_script = {
@@ -180,7 +180,7 @@ building_gem_spire3 = {
 		potential = { owner = { is_geo_empire = yes } }
 		job_politician_add = 75
 		planet_researchers_produces_mult = 0.05
- 		planet_researchers_upkeep_mult = 0.05
+ 		planet_researchers_upkeep_mult = 0.025
 	}
 	
 	inline_script = {
@@ -207,22 +207,23 @@ building_gem_spire3 = {
 }
 
 building_buff_kindergarten1 = {
-	base_buildtime = 360
+	base_buildtime = @b1_time
+	planet_limit = 1
+
 	category = pop_assembly
 
 	building_sets = {
 		government
 		urban
-		mining
 	}
 
+
 	# is_essential = yes
-	additional_ai_weight = 200
-	ai_estimate_without_unemployment = yes
+	# additional_ai_weight = 2000
+	# ai_estimate_without_unemployment = yes
 	
 	position_priority = 10
 	can_demolish = yes
-	base_cap_amount = 1
 	
 	potential = {
 		exists = owner
@@ -313,24 +314,23 @@ building_buff_kindergarten1 = {
 	upgrades = {
 		building_buff_kindergarten2
 	}
-	ai_weight = {
-		base = 1000
-	}
 }
 
 
 building_buff_kindergarten2 = {
-	base_buildtime = 720
+	base_buildtime = @b2_time
+	planet_limit = 1
+
 	category = pop_assembly
-	
+
 	building_sets = {
 		government
 		urban
-		mining
 	}
 
-	# is_essential = yes
-	additional_ai_weight = 200
+
+	is_essential = yes
+	additional_ai_weight = 2000
 	ai_estimate_without_unemployment = yes
 	
 	position_priority = 10
@@ -351,11 +351,6 @@ building_buff_kindergarten2 = {
 	allow = {
 		has_upgraded_capital = yes
 		owner = { has_technology = tech_housing_1 }
-		# OR = {
-		# 	has_deposit = d_kindergarten_small
-		# 	has_deposit = d_kindergarten_med
-		# 	has_deposit = d_kindergarten_large
-		# }
 	}
 	
 	destroy_trigger = {
@@ -433,17 +428,19 @@ building_buff_kindergarten2 = {
 }
 
 building_buff_kindergarten3 = {
-	base_buildtime = 1080
+	base_buildtime = @b3_time
+	planet_limit = 1
+
 	category = pop_assembly
-	
+
 	building_sets = {
 		government
 		urban
-		mining
 	}
 
-	# is_essential = yes
-	additional_ai_weight = 200
+
+	is_essential = yes
+	additional_ai_weight = 2000
 	ai_estimate_without_unemployment = yes
 	
 	position_priority = 10

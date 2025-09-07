@@ -171,10 +171,6 @@ country_event = {
 		hidden_effect = { country_event = { id = gem_off_colors.0031 days = 480 random = 120 } }
 	}
 	
-	after = {
-		#hidden_effect = { start_situation = { type = pink_situation } }
-	}
-	
 	option = {
 		trigger = { NOT = { is_diamond_empire = yes } }
 		name = gem_off_colors.0030.d
@@ -773,7 +769,7 @@ planet_event = {
 	trigger = {
 		AND = {
 			NOT = { has_leader_flag = pink_earth_flag }
-			has_leader_flag = is_pink_era_one
+			owner = { has_country_flag = era_one_flag }
 		}
 	}
 	immediate = {
@@ -954,7 +950,7 @@ planet_event = {
 			}
 			last_created_leader = {
 				change_leader_portrait = gemJ4 #Jasper (The big one)
-				save_global_event_target_as = gem_jasper_quartz
+				set_leader_flag = jasper_quartz_flag
 				set_immortal = yes
 			}
 			create_army = {
@@ -1003,7 +999,7 @@ planet_event = {
 		}
 		last_created_leader = {
 			change_leader_portrait = gemL1 # Lapis
-			save_global_event_target_as = lapis_lazuli_target
+			set_leader_flag = lapis_lazuli_flag
 		}
 	}
 	option = {

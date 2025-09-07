@@ -1,0 +1,7 @@
+
+entity = {
+	name = "pinks_garden_entity"
+	pdxmesh = "mammalian_01_orbital_station_frame_mesh"
+	attach = { "part1" 		 		= "mammalian_01_habitat_phase_03_section_entity" }
+	scale = 0.75
+}

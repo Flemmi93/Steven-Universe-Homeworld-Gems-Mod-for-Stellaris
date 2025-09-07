@@ -133,14 +133,14 @@
  trait_pc_gemworld_preference: "$trait_pc_gem_preference$"
  trait_pc_gemworld_preference_desc: "$trait_pc_gem_preference_desc$"
 
- trait_white_court: "$white_diamond$'s Court"
- trait_white_court_desc: "This is $white_diamond$'s Court, she brings her entourage wherever she goes, anything else is unthinkable. $white_diamond$ has §Y[root.white_diamond_court_loc]§! followers in her court."
- trait_yellow_court: "$yellow_diamond$'s Court"
- trait_yellow_court_desc: "This is $yellow_diamond$'s Court, she brings her entourage wherever she goes, anything else is unthinkable. $yellow_diamond$ has §Y[root.yellow_diamond_court_loc]§! followers in her court."
- trait_blue_court: "$blue_diamond$'s Court"
- trait_blue_court_desc: "This is $blue_diamond$'s Court, she brings her entourage wherever she goes, anything else is unthinkable. $blue_diamond$ has §Y[root.blue_diamond_court_loc]§! followers in her court."
- trait_pink_court: "$pink_diamond$'s Court"
- trait_pink_court_desc: "This is $pink_diamond$'s Court, she brings her entourage wherever she goes, anything else is unthinkable. $pink_diamond$ has §Y[root.pink_diamond_court_loc]§! followers in her court."
+ trait_white_court: "$white_diamond$'s Leadership"
+ trait_white_court_desc: "This is $white_diamond$'s influence on the Empire and Gems around her. $white_diamond$ has §Y[root.white_diamond_court_loc]§! followers in the empire."
+ trait_yellow_court: "$yellow_diamond$'s Leadership"
+ trait_yellow_court_desc: "This is $yellow_diamond$'s influence on the Empire and Gems around her. $yellow_diamond$ has §Y[root.yellow_diamond_court_loc]§! followers in the empire."
+ trait_blue_court: "$blue_diamond$'s Leadership"
+ trait_blue_court_desc: "This is $blue_diamond$'s influence on the Empire and Gems around her. $blue_diamond$ has §Y[root.blue_diamond_court_loc]§! followers in the empire."
+ trait_pink_court: "$pink_diamond$'s Leadership"
+ trait_pink_court_desc: "This is $pink_diamond$'s influence on the Empire and Gems around her. $pink_diamond$ has §Y[root.pink_diamond_court_loc]§! followers in the empire."
  trait_pink_court2: "$trait_pink_court$"
  trait_pink_court2_desc: "$trait_pink_court_desc$"
  trait_poofed_gem: "Poofed Gem"
@@ -176,6 +176,9 @@
  gov_perfect_authority: "Perfect Authority"
  gov_perfect_authority_desc: "This government is a unique form of gestalt autocracy, with a single immortal ruler forcefully imposing their vision of a perfect society in which each of their subjects have a purpose, place, and task to complete with perfect efficiency and competence. Free will is entirely unheard of."
  RT_MATRIARCH: "Matriarch"
+#Edicts
+ edict_f93_choose_a_ruler_edict: "Choose a ruler"
+ edict_f93_choose_a_ruler_edict_desc: "Gives you the opportunity to set another Diamond as the $RT_MATRIARCH$. This obviously does not diminish the importance of any other diamond. It is just an aesthetic choice."
 #Eras
  era_one: "Era One"
  era_two_desc: "Our empire is experiencing a period of rapid growth and unprecedented prosperity. We should take advantage of this opportunity to expand and colonize new worlds while it lasts."
@@ -425,8 +428,11 @@
  gem_diamond_ruler.100.desc: "The unthinkable has happened, and soon we will make it unhappen. For now we must suffer the indignity of waiting for her return."
  gem_diamond_ruler.101.name: "[FROM.Leader.GetName] went into seclusion"
  gem_diamond_ruler.101.desc: "For her own reason [FROM.Leader.GetName] decided to retreat to her private chambers, she will return to us in her own time. We can only hope it won't be too long."
- 
- 
+ pink_diamond_ruler_choice_not_ready: "While an euqal among the Diamonds, $pink_d$ is inexperienced and imature, always playing games and pranks."
+ white_diamond_ruler_choice: "$white_diamond$ will become the new $RT_MATRIARCH$"
+ yellow_diamond_ruler_choice: "$yellow_diamond$ will become the new $RT_MATRIARCH$"
+ blue_diamond_ruler_choice: "$blue_diamond$ will become the new $RT_MATRIARCH$"
+ pink_diamond_ruler_choice: "$pink_diamond$ will become the new $RT_MATRIARCH$"
  gem_new_features: "New Features!"
  gem_new_features_desc: "There was an update, and your old save was adjusted to the new one.\n\n§RIf this happened at the start of a new game, please ignore.§!\n\nIf this caused a bug with the Heir then getting into era 2 will fix it, but it's not a big deal either way. I would still like to hear about it.\n\nLook at your Current Ruler and Heir to see what changes.\n\nThere is also a new Building available."
  gem_new_features_tooltip: "a new Special Project is available"
@@ -486,7 +492,14 @@
  gem_off_colors.2009.desc: "Having regained contact with $pink_diamond$ we also made contact with the Species she protected for so long.\n\nWe can interact with Planet Earth once more."
  gem_off_colors.0020.name: "A World for $pink_d$"
  gem_off_colors.0020.desc: "We discovered a world that would be ideal for $pink_diamond$ it is near our Homeworld in the §YSol§! system."
-
+#Megastructure
+ MEGASTRUCTURE_TOOLTIP_REQUIREMENTS_PINK_GARDEN: "Must be built in Homeworld's System"
+ f93_pinks_garden: "$pink_d$'s Garden"
+ f93_pinks_garden_MEGASTRUCTURE_DETAILS: "Here in the Garden\nLet's play a game\nI'll show you how it's done"
+ f93_pinks_garden_DESC: "This garden was made for $pink_diamond$. She can spend her freetime enjoying it. Surly this is enough to have her never be bored again."
+ f93_pinks_garden2: "$f93_pinks_garden$"
+ f93_pinks_garden2_DESC: "$f93_pinks_garden_DESC$"
+ f93_pinks_garden2_MEGASTRUCTURE_DETAILS: "$f93_pinks_garden_MEGASTRUCTURE_DETAILS$"
 #Misc Events
  gem_events_misc.001.name: "Cookie Cats"
  gem_events_misc.001.desc: "We found a frozen treat with an all new taste\n\nAnd as far as we know, this is the only source in the Universe."
@@ -687,6 +700,9 @@
  yellow_diamond_got_poofed: "$yellow_diamond$ is reforming"
  blue_diamond_got_poofed: "$blue_diamond$ is reforming"
 
+#Situation log
+ f93_pink_garden_project: "$pink_d$'s mood"
+ f93_pink_garden_project_desc: "It can be difficult to please $pink_d$ her taste are particular and she is easly bored. We will task our engineers to develope the perfect fun place for her."
 #1000 year war
  gem_1000_year_war: "Crystal Gem Rebellion"
  gem_1000_year_war_name: "$START_SITUATION_EFFECT$the §Y[Planet.GetName] Rebellion§!"

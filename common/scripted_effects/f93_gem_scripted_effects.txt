@@ -188,3 +188,9 @@ update_diamond_court_modifier = {
 		add_modifier = { modifier = pm_gem_pink_court mult = value:pink_mod_scale }
 	}
 }
+f93_remove_diamond_ruler_flag = {
+	remove_country_flag = gem_white_rules
+	remove_country_flag = gem_yellow_rules
+	remove_country_flag = gem_blue_rules
+	remove_country_flag = gem_pink_rules
+}

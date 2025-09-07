@@ -1,0 +1,29 @@
+namespace = pink_situation
+
+country_event = {
+	id = pink_situation.1
+	is_triggered_only = yes
+	hide_window = yes
+
+	immediate = {
+		random_owned_leader = {
+			limit = { has_leader_flag = pink_diamond_flag }
+			save_event_target_as = gem_pink_diamond
+		}
+		begin_event_chain = {
+			event_chain = pink_diamond_event_chain
+			target = event_target:gem_pink_diamond
+		}
+	}
+}
+country_event = {
+	id = pink_situation.5
+	is_triggered_only = yes
+	hide_window = yes
+
+	immediate = {
+		enable_special_project = {
+			name = f93_pink_garden_project
+		}
+	}
+}

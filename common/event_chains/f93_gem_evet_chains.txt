@@ -1,0 +1,8 @@
+
+pink_event_chain = {
+	icon = "gfx/interface/icons/situation_log/situation_log_quest.dds"
+	picture = GFX_evt_society_research
+	abort_trigger = {
+		NOT = { has_country_flag = pink_alive }
+	}
+}

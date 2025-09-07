@@ -1,0 +1,5 @@
+# 2025 rework of this mod
+
+pink_is_ready = {
+	has_country_flag = era_three_flag
+}

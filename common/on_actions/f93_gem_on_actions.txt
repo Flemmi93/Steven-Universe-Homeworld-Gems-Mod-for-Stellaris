@@ -1,0 +1,51 @@
+# 2025 rework of this mod.
+# Triggers when the game starts
+on_game_start = {
+	events = {
+		f93_gem_era.1
+	}
+}
+
+
+# # Scope: Leader (just before unassignment)
+# # Fires if a leader is unassigned from their position for any reason (including being assigned elsewhere)
+# on_leader_unassigned = {
+# 	events = {
+# 		gem_off_colors.1042
+# 	}
+# }
+
+# # Executed as a leader has died
+# # This = Country
+# # From = Leader
+# on_leader_death_notify = {
+# 	events = {
+# 		gem_diamond_ruler.100
+# 	}
+# }
+# # Executed as a leader has died
+# # This = Country
+# # From = Leader
+# on_leader_death_no_notify = {
+# 	events = {
+# 		gem_diamond_ruler.100
+# 	}
+# }
+
+# # Executed as a leader has been fired
+# # This = Country
+# # From = Leader
+# on_leader_fired = {
+# 	events = {
+# 		gem_diamond_ruler.101
+# 	}
+# }
+
+# # We changed a species right
+# # This = pop
+# on_pop_rights_change = {
+# 	events = {
+# 		gem_events_misc.003
+# 	}
+# }
+

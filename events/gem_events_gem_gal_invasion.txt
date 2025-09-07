@@ -378,7 +378,6 @@ country_event = {
 		last_created_leader = {
 			change_leader_portrait = gemD4 #Pink
 			save_global_event_target_as = gem_pink_diamond
-			set_leader_flag = is_pink_era_one
 			set_leader_flag = pink_diamond_flag
 			change_background_ethic = ethic_xenophobe
 			set_council_position = councilor_state

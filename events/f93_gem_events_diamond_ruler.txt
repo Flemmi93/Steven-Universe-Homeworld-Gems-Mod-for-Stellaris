@@ -1,0 +1,590 @@
+namespace = gem_diamond_ruler
+# Main screen to choose what diamond should rule
+country_event = {
+	id = gem_diamond_ruler.0001
+	title = gem_diamond_traits.0001.name
+	desc = gem_diamond_traits.0001.desc
+	picture = "GFX_evt_gem_diamond_choice"
+	is_triggered_only = yes
+
+	#White############################################
+	option = {
+		name = white_diamond
+		custom_tooltip = white_diamond_ruler_choice
+		trigger = {
+			OR = {
+				has_country_flag = era_one_flag
+				has_country_flag = era_two_flag
+				has_country_flag = era_three_flag
+				has_country_flag = era_white_flag
+				has_country_flag = no_era_flag
+			}
+		}
+		allow = { has_country_flag = white_alive }
+		ai_chance = {
+			base = 1000
+		}
+		hidden_effect = {
+			f93_remove_diamond_ruler_flag = yes
+			set_country_flag = gem_white_rules
+		}
+	}
+	
+	#Yellow###########################################
+	option = {
+		name = yellow_diamond
+		custom_tooltip = yellow_diamond_ruler_choice
+		trigger = {
+			OR = {
+				has_country_flag = era_one_flag
+				has_country_flag = era_two_flag
+				has_country_flag = era_three_flag
+				has_country_flag = no_era_flag
+			}
+		}
+		allow = { has_country_flag = yellow_alive }
+		hidden_effect = {
+			f93_remove_diamond_ruler_flag = yes
+			set_country_flag = gem_yellow_rules
+		}
+	}
+	
+	#Yellow###########################################
+	option = {
+		name = blue_diamond
+		custom_tooltip = blue_diamond_ruler_choice
+		trigger = {
+			OR = {
+				has_country_flag = era_one_flag
+				has_country_flag = era_two_flag
+				has_country_flag = era_three_flag
+				has_country_flag = no_era_flag
+			}
+		}
+		allow = { has_country_flag = blue_alive }
+		hidden_effect = {
+			f93_remove_diamond_ruler_flag = yes
+			set_country_flag = gem_blue_rules
+		}
+	}
+	
+	#Pink#############################################
+	option = {
+		name = {
+			trigger = { pink_is_ready = yes }
+			text = pink_diamond
+		}
+		name = {
+			trigger = { pink_is_ready = no }
+			text = pink_is_ready5
+		}
+		custom_tooltip = pink_diamond_ruler_choice
+		trigger = {
+			OR = {
+				has_country_flag = era_one_flag
+				has_country_flag = era_three_flag
+				has_country_flag = no_era_flag
+			}
+		}
+		allow = {
+			custom_tooltip = {
+				has_country_flag = pink_alive
+				NOT = { has_country_flag = pink_got_earth }
+				pink_is_ready = yes
+				fail_text = pink_diamond_ruler_choice_not_ready
+			}
+		}
+		hidden_effect = {
+			f93_remove_diamond_ruler_flag = yes
+			set_country_flag = gem_pink_rules
+		}
+	}
+	option = {
+		name = CANCEL
+		trigger = { is_ai = yes }
+		
+		ai_chance = {
+			base = 100
+			modifier = {
+				factor = 0
+				days_passed < 2
+			}
+		}
+	}
+	after = {
+		if = {
+			limit = { NOT = { has_country_flag = diamond_got_generated } }
+			create_leader = {
+				class = official
+				name = "White Diamond"
+				species = owner_main_species
+				traits = {
+					trait = "trait_ruler_diamond"
+					trait = "trait_white_court"
+				}
+			}
+			hidden_effect = {
+				last_created_leader = {
+					change_leader_portrait = gemD1 #White
+					save_event_target_as = gem_white_diamond
+					set_leader_flag = white_diamond_flag
+					change_background_ethic = ethic_authoritarian
+					change_background_job = noble
+				}
+			}
+			create_leader = {
+				class = commander
+				name = "Yellow Diamond"
+				species = owner_main_species
+				traits = {
+					trait = "trait_ruler_diamond"
+					trait = "trait_yellow_court"
+				}
+			}
+			hidden_effect = {
+				last_created_leader = {
+					change_leader_portrait = gemD2 #Yellow
+					save_event_target_as = gem_yellow_diamond
+					set_leader_flag = yellow_diamond_flag
+					change_background_ethic = ethic_militarist
+					change_background_job = noble
+					set_council_position = councilor_defense
+				}
+			}
+			create_leader = {
+				class = scientist
+				name = "Blue Diamond"
+				species = owner_main_species
+				traits = {
+					trait = "trait_ruler_diamond"
+					trait = "trait_blue_court"
+				}
+			}
+			hidden_effect = {
+				last_created_leader = {
+					change_leader_portrait = gemD3 #Blue
+					save_event_target_as = gem_blue_diamond
+					set_leader_flag = blue_diamond_flag
+					change_background_ethic = ethic_spiritualist
+					change_background_job = noble
+					set_council_position = councilor_research
+				}
+			}
+			create_leader = {
+				class = official
+				name = "Pink Diamond"
+				species = owner_main_species
+				traits = {
+					trait = "trait_ruler_diamond"
+					trait = "trait_pink_court"
+				}
+			}
+			hidden_effect = {
+				last_created_leader = {
+					change_leader_portrait = gemD4 #Pink
+					save_event_target_as = gem_pink_diamond
+					set_leader_flag = pink_diamond_flag
+					change_background_ethic = ethic_xenophobe
+					change_background_job = noble
+					set_council_position = councilor_state
+				}
+			}
+			start_situation = { type = pink_situation target = event_target:gem_pink_diamond }
+		}
+		hidden_effect = {
+			set_country_flag = diamond_got_generated
+			if = {
+				limit = { has_country_flag = gem_white_rules }
+				event_target:gem_white_diamond = {
+					save_event_target_as = ruler_to_be
+				}
+			}
+			else_if = {
+				limit = { has_country_flag = gem_yellow_rules }
+				event_target:gem_yellow_diamond = {
+					save_event_target_as = ruler_to_be
+				}
+			}
+			else_if = {
+				limit = { has_country_flag = gem_blue_rules }
+				event_target:gem_blue_diamond = {
+					save_event_target_as = ruler_to_be
+				}
+			}
+			else = {
+				event_target:gem_pink_diamond = {
+					save_event_target_as = ruler_to_be
+				}
+				event_target:gem_white_diamond = {
+					set_council_position = councilor_state
+				}
+			}
+			random_list = {
+				1 = {
+					modifier = {
+						factor = 0
+						OR = {
+							has_country_flag = gem_white_rules
+							NOT = { has_country_flag = white_alive }
+						}
+					}
+					event_target:gem_white_diamond = {
+						save_event_target_as = heir_to_be
+					}
+				}
+				1 = {
+					modifier = {
+						factor = 0
+						OR = {
+							has_country_flag = gem_yellow_rules
+							NOT = { has_country_flag = yellow_alive }
+						}
+					}
+					event_target:gem_yellow_diamond = {
+						save_event_target_as = heir_to_be
+					}
+				}
+				1 = {
+					modifier = {
+						factor = 0
+						OR = {
+							has_country_flag = gem_blue_rules
+							NOT = { has_country_flag = blue_alive }
+						}
+					}
+					event_target:gem_blue_diamond = {
+						save_event_target_as = heir_to_be
+					}
+				}
+				1 = {
+					modifier = {
+						factor = 0
+						OR = {
+							has_country_flag = gem_pink_rules
+							NOT = { has_country_flag = pink_alive }
+						}
+					}
+					event_target:gem_pink_diamond = {
+						save_event_target_as = heir_to_be
+					}
+				}
+			}
+			set_heir = event_target:ruler_to_be
+			kill_leader = { show_notification = no }
+			set_leader = event_target:ruler_to_be
+			set_heir = event_target:heir_to_be
+			
+			leader = {
+				add_trait = { trait = trait_imperial_heir }
+			}
+		}
+	}
+}
+
+#Fix Leader Portraits on monthly
+country_event = {
+    id = gem_diamond_ruler.0002
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		is_geo_empire = yes
+	}
+	immediate = {
+		every_owned_leader = {
+			limit = { has_leader_flag = white_diamond_flag NOT = { has_trait = trait_poofed_gem } }
+			change_leader_portrait = gemD1 #White
+		}
+		every_owned_leader = {
+			limit = { has_leader_flag = yellow_diamond_flag NOT = { has_trait = trait_poofed_gem } }
+			change_leader_portrait = gemD2 #Yellow
+		}
+		every_owned_leader = {
+			limit = { has_leader_flag = blue_diamond_flag NOT = { has_trait = trait_poofed_gem } }
+			change_leader_portrait = gemD3 #Blue
+		}
+		every_owned_leader = {
+			limit = { has_leader_flag = pink_diamond_flag NOT = { has_trait = trait_poofed_gem } }
+			change_leader_portrait = gemD4 #Pink
+		}
+		every_owned_leader = {
+			limit = { has_leader_flag = white_diamond_flag has_trait = trait_poofed_gem }
+			change_leader_portrait = gemWG #White
+		}
+		every_owned_leader = {
+			limit = { has_leader_flag = yellow_diamond_flag has_trait = trait_poofed_gem }
+			change_leader_portrait = gemYG #Yellow
+		}
+		every_owned_leader = {
+			limit = { has_leader_flag = blue_diamond_flag has_trait = trait_poofed_gem }
+			change_leader_portrait = gemBG #Blue
+		}
+		every_owned_leader = {
+			limit = { has_leader_flag = pink_diamond_flag has_trait = trait_poofed_gem }
+			change_leader_portrait = gemPG #Pink
+		}
+		every_owned_leader = {
+			limit = { has_leader_flag = jasper_quartz_flag }
+			change_leader_portrait = gemJ4 #Jasper (The big one)
+		}
+		every_owned_leader = {
+			limit = { has_leader_flag = lapis_lazuli_flag }
+			change_leader_portrait = gemL1 #Lapis
+		}
+	}
+}
+
+#Events to revive Fallen Diamond Gems
+leader_event = {
+	id = gem_diamond_ruler.99
+	title = gem_diamond_ruler.99.name
+	desc = gem_diamond_ruler.99.desc
+	picture = GFX_evt_gem_diamond_choice
+	is_triggered_only = yes
+	option = {
+		name = EXCELLENT
+		remove_trait = trait_poofed_gem
+		hidden_effect = {
+			if = {
+				limit = {
+					has_trait = trait_white_court
+				}
+				change_leader_portrait = gemD1 #White
+			}
+			else_if = {
+				limit = {
+					has_trait = trait_yellow_court
+				}
+				change_leader_portrait = gemD2 #Yellow
+			}
+			else_if = {
+				limit = {
+					has_trait = trait_blue_court
+				}
+				change_leader_portrait = gemD3 #Blue
+			}
+			else_if = {
+				change_leader_portrait = gemD4 #Pink
+			}
+		}
+		ai_chance = {
+			base = 1000
+		}
+	}
+}
+# Executed as a leader has died
+# This = Country
+# From = Leader
+country_event = {
+	id = gem_diamond_ruler.100
+	title = "gem_diamond_ruler.100.name"
+	desc = "gem_diamond_ruler.100.desc"
+	picture = "GFX_evt_gem_diamond_choice"
+	is_triggered_only = yes
+	trigger = {
+		is_geo_empire = yes
+		from = { has_trait = trait_ruler_diamond }
+		NOT = { has_country_flag = block_revival_of_pink }
+	}
+	immediate = {
+		clone_leader = {
+			target = FROM
+		}
+		if = {
+			limit = {
+				from = { has_trait = trait_white_court }
+			}
+			last_created_leader = {
+				remove_all_traits = yes
+				add_trait = { trait =  trait_ruler_diamond }
+				add_trait = { trait =  trait_white_court }
+				add_trait = { trait =  trait_poofed_gem }
+				set_skill = 1
+				change_leader_portrait = gemWG
+				#change_leader_class = poofed_gem_class #waiting for recruitable = no to be fixed
+				save_global_event_target_as = white_got_poofed
+			}
+		}
+		else_if = {
+			limit = {
+				from = { has_trait = trait_yellow_court }
+			}
+			last_created_leader = {
+				remove_all_traits = yes
+				add_trait = { trait =  trait_ruler_diamond }
+				add_trait = { trait =  trait_yellow_court }
+				add_trait = { trait =  trait_poofed_gem }
+				set_skill = 1
+				change_leader_portrait = gemYG
+				#change_leader_class = poofed_gem_class #waiting for recruitable = no to be fixed
+				save_global_event_target_as = yellow_got_poofed
+			}
+		}
+		else_if = {
+			limit = {
+				from = { has_trait = trait_blue_court }
+			}
+			last_created_leader = {
+				remove_all_traits = yes
+				add_trait = { trait =  trait_ruler_diamond }
+				add_trait = { trait =  trait_blue_court }
+				add_trait = { trait =  trait_poofed_gem }
+				set_skill = 1
+				change_leader_portrait = gemBG
+				#change_leader_class = poofed_gem_class #waiting for recruitable = no to be fixed
+				save_global_event_target_as = blue_got_poofed
+			}
+		}
+		else_if = {
+			limit = {
+				from = { has_trait = trait_pink_court }
+				NOT = { owner = { has_modifier = era_one } }
+			}
+			last_created_leader = {
+				remove_all_traits = yes
+				add_trait = { trait =  trait_ruler_diamond }
+				add_trait = { trait =  trait_pink_court }
+				set_skill = 1
+				change_leader_portrait = gemBG
+				#change_leader_class = poofed_gem_class #waiting for recruitable = no to be fixed
+				save_global_event_target_as = pink_got_poofed
+			}
+		}
+		else_if = {
+			limit = {
+				from = {
+					NOR = {
+						has_trait = trait_white_court
+						has_trait = trait_yellow_court
+						has_trait = trait_blue_court
+						has_trait = trait_pink_court
+						NOT = { owner = { has_modifier = era_one } }
+					}
+				}
+			}
+			last_created_leader = {
+				remove_all_traits = yes
+				add_trait = { trait =  trait_ruler_diamond }
+				add_trait = { trait =  trait_poofed_gem }
+				set_skill = 1
+				change_leader_portrait = gemPG
+				#change_leader_class = poofed_gem_class #waiting for recruitable = no to be fixed
+				save_global_event_target_as = pink_got_poofed
+			}
+		}
+	}
+	option = {
+		name = OK
+		last_created_leader = { leader_event = { id = gem_diamond_ruler.99 days = 360 } }
+		ai_chance = {
+			base = 1000
+		}
+	}
+}
+
+
+# Executed as a leader has been fired
+# This = Country
+# From = Leader
+country_event = {
+	id = gem_diamond_ruler.101
+	title = "gem_diamond_ruler.101.name"
+	desc = "gem_diamond_ruler.101.desc"
+	picture = "GFX_evt_gem_diamond_choice"
+	is_triggered_only = yes
+	trigger = {
+		is_geo_empire = yes
+		from = { has_trait = trait_ruler_diamond }
+	}
+	immediate = {
+		clone_leader = {
+			target = FROM
+		}
+		if = {
+			limit = {
+				from = { has_trait = trait_white_court }
+			}
+			last_created_leader = {
+				remove_all_traits = yes
+				add_trait = { trait =  trait_ruler_diamond }
+				add_trait = { trait =  trait_white_court }
+				add_trait = { trait =  trait_poofed_gem }
+				set_skill = 1
+				change_leader_portrait = gemWG
+				#change_leader_class = poofed_gem_class #waiting for recruitable = no to be fixed
+				save_global_event_target_as = white_got_poofed
+			}
+		}
+		else_if = {
+			limit = {
+				from = { has_trait = trait_yellow_court }
+			}
+			last_created_leader = {
+				remove_all_traits = yes
+				add_trait = { trait =  trait_ruler_diamond }
+				add_trait = { trait =  trait_yellow_court }
+				add_trait = { trait =  trait_poofed_gem }
+				set_skill = 1
+				change_leader_portrait = gemYG
+				#change_leader_class = poofed_gem_class #waiting for recruitable = no to be fixed
+				save_global_event_target_as = yellow_got_poofed
+			}
+		}
+		else_if = {
+			limit = {
+				from = { has_trait = trait_blue_court }
+			}
+			last_created_leader = {
+				remove_all_traits = yes
+				add_trait = { trait =  trait_ruler_diamond }
+				add_trait = { trait =  trait_blue_court }
+				add_trait = { trait =  trait_poofed_gem }
+				set_skill = 1
+				change_leader_portrait = gemBG
+				#change_leader_class = poofed_gem_class #waiting for recruitable = no to be fixed
+				save_global_event_target_as = blue_got_poofed
+			}
+		}
+		else_if = {
+			limit = {
+				from = { has_trait = trait_pink_court }
+			}
+			last_created_leader = {
+				remove_all_traits = yes
+				add_trait = { trait =  trait_ruler_diamond }
+				add_trait = { trait =  trait_pink_court }
+				set_skill = 1
+				change_leader_portrait = gemBG
+				#change_leader_class = poofed_gem_class #waiting for recruitable = no to be fixed
+				save_global_event_target_as = pink_got_poofed
+			}
+		}
+		else_if = {
+			limit = {
+				from = {
+					NOR = {
+						has_trait = trait_white_court
+						has_trait = trait_yellow_court
+						has_trait = trait_blue_court
+						has_trait = trait_pink_court
+					}
+				}
+			}
+			last_created_leader = {
+				remove_all_traits = yes
+				add_trait = { trait =  trait_ruler_diamond }
+				add_trait = { trait =  trait_poofed_gem }
+				set_skill = 1
+				change_leader_portrait = gemPG
+				#change_leader_class = poofed_gem_class #waiting for recruitable = no to be fixed
+				save_global_event_target_as = pink_got_poofed
+			}
+		}
+	}
+	option = {
+		name = OK
+		last_created_leader = { leader_event = { id = gem_diamond_ruler.99 days = 360 } }
+		ai_chance = {
+			base = 1000
+		}
+	}
+}

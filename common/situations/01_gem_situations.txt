@@ -3,12 +3,11 @@
 #############################
 
 pink_situation = {
-	
 	picture = GFX_evt_gem_diamonds_worried
 	complete_icon_frame = GFX_situation_outcome_frame_green
 	complete_icon = GFX_situation_happy
-	category = neutral
-	start_value = 99
+	category = positive
+	start_value = 10
 	
 	desc = {
 		text = pink_situation_desc
@@ -25,7 +24,6 @@ pink_situation = {
 	
 	on_progress_complete = {
 		destroy_situation = this
-		#owner = { country_event = { id = gem_off_colors.0034 days = 1 random = 59 } } #event not real, # to remove error from log
 		custom_tooltip = pink_situation_complete
 	}
 	on_fail = {
@@ -36,16 +34,13 @@ pink_situation = {
 	on_abort =  {}#event abot how pink is dead
 	abort_trigger = { owner = { NOT = { has_country_flag = pink_alive } } }
 	
+	#called tantrum but flavored around her getting bored over time. 
+	#The Finisher is to research and Build the Garden and Spinel.	
 	stages = {
 		pm_pink_tantrum_3 = {
 			icon = GFX_situation_stage_1
 			icon_background = GFX_situation_stage_frame_red
 			end = 25
-#			on_first_enter = {
-#				owner = { country_event = { id = gem_off_colors.0020 } }
-#			}
-			#triggered_modifier = {}
-			#modifier = {}
 		}
 		pm_pink_tantrum_2 = {
 			icon = GFX_situation_stage_2
@@ -88,9 +83,9 @@ pink_situation = {
 	monthly_progress = {
 		base = 0
 		modifier = {
-			add = -1
+			add = -0.25
 			desc = situation_snow_very_hostile_tt
-			owner = { has_country_flag = gem_way_to_sol_done }
+			NOT = { situation_progress < 25 }
 		}
 	}
 }
@@ -390,3 +385,4 @@ gem_1000_year_war = {
 		}
 	}
 }
+

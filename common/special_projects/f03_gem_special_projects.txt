@@ -1,0 +1,43 @@
+# This document is now the one source of truth for Special Project Documentation
+# Written by Pierre du Plessis. Up to date as of February 2021
+
+special_project = {
+	key = f93_pink_garden_project
+	picture = GFX_evt_engineering_research
+	icon = "gfx/interface/icons/situation_log/situation_log_society.dds"
+	cost = {
+		base = 500
+		scaled_modifier = {
+			limit = { }
+			scope = this
+			add = 0.75
+			calc = pop_amount
+		}
+	}
+	tech_department = engineering_technology	# only relevant if cost is not 0, specifies which research category to use
+	event_chain = pink_event_chain
+	location = no
+	sound = yes
+	event_scope = country_event
+	on_success = {					# Effect happens when project completes
+		set_country_flag = f93_pink_garden_unlock
+		# Scopes:
+		#	THIS = project scope (matches setting in "event_scope" i.e. ship/planet/country)
+		#	FROM = location scope, if set (usually a planet)
+		#	PREV = country
+	}
+
+	on_start = {					# Effect happens when you start researching the project
+		# Scopes: see on_success
+	}
+
+	on_progress_25 = {
+		# Scopes: see on_success
+	}
+	on_progress_50 = {
+		# Scopes: see on_success
+	}
+	on_progress_75 = {
+		# Scopes: see on_success
+	}
+}

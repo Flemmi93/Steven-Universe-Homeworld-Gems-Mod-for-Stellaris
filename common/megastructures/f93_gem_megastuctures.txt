@@ -1,0 +1,69 @@
+f93_pinks_garden = {
+	entity = "habitat_phase_01_entity"
+	construction_entity = "habitat_phase_01_entity"
+	portrait = "GFX_megastructure_habitat_background"
+	place_entity_on_planet_plane = yes
+	show_galactic_map_icon = no
+	hide_name = no
+	show_in_outliner = no
+	# entity_offset = { x = 7 y = -7 }
+	build_time = 1080
+
+	resources = {
+		category = megastructures_habitat
+		cost = {
+			influence = 150
+		}
+		cost = {
+			energy = 2000
+			consumer_goods = 500
+			alloys = 1000
+		}
+	}
+
+	construction_blocks_and_blocked_by = self_type
+	# custom_tooltip_requirements = MEGASTRUCTURE_TOOLTIP_REQUIREMENTS_PINK_GARDEN
+	# build_system_tooltip = habitat_tooltip
+
+	potential = {
+		has_country_flag = f93_pink_garden_unlock
+	}
+
+	possible = {
+		hidden_trigger = {
+			exists = starbase
+		}
+		custom_tooltip = {
+			fail_text = "requires_inside_border"
+			is_inside_border = from
+		}
+	}
+	on_build_complete = {
+		remove_megastructure = fromfrom
+		spawn_megastructure = {
+			type = f93_pinks_garden2
+			graphical_culture = from
+			planet = star
+			orbit_distance = 100
+			orbit_angle = 50
+		}
+		from = {
+			random_situation = {
+				limit = { is_situation_type = pink_situation }
+				add_situation_progress = 25
+			}
+		}
+	}
+}
+f93_pinks_garden2 = {
+	entity = "pinks_garden_entity"
+	portrait = "GFX_megastructure_habitat_background"
+	place_entity_on_planet_plane = yes
+	show_galactic_map_icon = no
+	hide_name = no
+	show_in_outliner = no
+	# entity_offset = { x = 7 y = -7 }
+	potential = {
+		always = no
+	}
+}

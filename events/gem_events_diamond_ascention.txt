@@ -36,7 +36,7 @@ country_event = {
 ###################
 
 fleet_event = {
-	ID = gem_diamond_ascention.1101
+	id = gem_diamond_ascention.1101
 	is_triggered_only = yes
 	title =  gem_diamond_ascention.1101.name
 	desc =  gem_diamond_ascention.1101.desc
@@ -48,7 +48,7 @@ fleet_event = {
 	}
 }
 fleet_event = {
-	ID = gem_diamond_ascention.1102
+	id = gem_diamond_ascention.1102
 	is_triggered_only = yes
 	title =  gem_diamond_ascention.1101.name
 	desc =  gem_diamond_ascention.1102.desc
@@ -60,7 +60,7 @@ fleet_event = {
 	}
 }
 fleet_event = {
-	ID = gem_diamond_ascention.1103
+	id = gem_diamond_ascention.1103
 	is_triggered_only = yes
 	title =  gem_diamond_ascention.1101.name
 	desc =  gem_diamond_ascention.1103.desc
@@ -74,7 +74,7 @@ fleet_event = {
 	}
 }
 fleet_event = {
-	ID = gem_diamond_ascention.1201
+	id = gem_diamond_ascention.1201
 	is_triggered_only = yes
 	title =  gem_diamond_ascention.1201.name
 	desc =  gem_diamond_ascention.1201.desc
@@ -86,7 +86,7 @@ fleet_event = {
 	}
 }
 fleet_event = {
-	ID = gem_diamond_ascention.1202
+	id = gem_diamond_ascention.1202
 	is_triggered_only = yes
 	title =  gem_diamond_ascention.1201.name
 	desc =  gem_diamond_ascention.1202.desc
@@ -98,7 +98,7 @@ fleet_event = {
 	}
 }
 fleet_event = {
-	ID = gem_diamond_ascention.1203
+	id = gem_diamond_ascention.1203
 	is_triggered_only = yes
 	title =  gem_diamond_ascention.1201.name
 	desc =  gem_diamond_ascention.1203.desc
@@ -112,7 +112,7 @@ fleet_event = {
 	}
 }
 fleet_event = {
-	ID = gem_diamond_ascention.1301
+	id = gem_diamond_ascention.1301
 	is_triggered_only = yes
 	title =  gem_diamond_ascention.1301.name
 	desc =  gem_diamond_ascention.1301.desc
@@ -124,7 +124,7 @@ fleet_event = {
 	}
 }
 fleet_event = {
-	ID = gem_diamond_ascention.1302
+	id = gem_diamond_ascention.1302
 	is_triggered_only = yes
 	title =  gem_diamond_ascention.1301.name
 	desc =  gem_diamond_ascention.1302.desc
@@ -136,7 +136,7 @@ fleet_event = {
 	}
 }
 fleet_event = {
-	ID = gem_diamond_ascention.1303
+	id = gem_diamond_ascention.1303
 	is_triggered_only = yes
 	title =  gem_diamond_ascention.1301.name
 	desc =  gem_diamond_ascention.1303.desc
@@ -150,7 +150,7 @@ fleet_event = {
 	}
 }
 fleet_event = {
-	ID = gem_diamond_ascention.1401
+	id = gem_diamond_ascention.1401
 	is_triggered_only = yes
 	title =  gem_diamond_ascention.1401.name
 	desc =  gem_diamond_ascention.1401.desc
@@ -162,7 +162,7 @@ fleet_event = {
 	}
 }
 fleet_event = {
-	ID = gem_diamond_ascention.1402
+	id = gem_diamond_ascention.1402
 	is_triggered_only = yes
 	title =  gem_diamond_ascention.1401.name
 	desc =  gem_diamond_ascention.1402.desc
@@ -174,7 +174,7 @@ fleet_event = {
 	}
 }
 fleet_event = {
-	ID = gem_diamond_ascention.1403
+	id = gem_diamond_ascention.1403
 	is_triggered_only = yes
 	title =  gem_diamond_ascention.1401.name
 	desc =  gem_diamond_ascention.1403.desc

@@ -1,0 +1,24 @@
+# 2025 rework of this mod
+namespace = f93_gem_era
+
+#Game Start event
+event = {
+	id = f93_gem_era.1
+	is_triggered_only = yes
+	hide_window = yes
+
+	immediate = {
+		#Give Gem-epires the 4 Diamonds.
+		every_playable_country = {
+			limit = { is_diamond_empire = yes }
+			set_country_flag = era_one_flag
+			set_country_flag = white_alive
+			set_country_flag = yellow_alive
+			set_country_flag = blue_alive
+			set_country_flag = pink_alive
+			add_modifier = { modifier = era_one }
+			add_modifier = { modifier = gems_xeno_control mult = 0.85 }
+			country_event = { id = gem_diamond_ruler.0001 }
+		}
+	}
+}
