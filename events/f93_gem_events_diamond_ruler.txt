@@ -1,5 +1,5 @@
-namespace = gem_diamond_ruler
 # Main screen to choose what diamond should rule
+namespace = gem_diamond_ruler
 country_event = {
 	id = gem_diamond_ruler.0001
 	title = gem_diamond_traits.0001.name

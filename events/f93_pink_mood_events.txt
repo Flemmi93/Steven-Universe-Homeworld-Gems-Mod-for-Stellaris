@@ -11,19 +11,136 @@ country_event = {
 			save_event_target_as = gem_pink_diamond
 		}
 		begin_event_chain = {
-			event_chain = pink_diamond_event_chain
+			event_chain = pink_event_chain
 			target = event_target:gem_pink_diamond
 		}
+		#The Counter and the Variable always have to be in synch, as it is impossible to track the
+		# counter otherwise.
+		set_variable = { which = f93_pinks_mood_variable value = 0 }
+		increase_pink_mood = { ADD = 80 }
+		set_variable = { which = f93_pinks_mood_variable value = 80 } #just to be sure.
 	}
 }
+#Starts Pink's Tantrum Situation and Event every time her mood goes low
 country_event = {
-	id = pink_situation.5
+	id = pink_situation.2
 	is_triggered_only = yes
 	hide_window = yes
-
+	event_chain = pink_event_chain
+	trigger = {
+		is_diamond_empire = yes
+		has_event_chain = pink_event_chain
+		check_variable = { which = f93_pinks_mood_variable value < 30 }
+	}
+	immediate = {
+		random_owned_leader = {
+			limit = { has_leader_flag = pink_diamond_flag }
+			save_event_target_as = gem_pink_diamond
+		}
+		start_situation = { type = pink_situation target = event_target:gem_pink_diamond }
+		
+	}
+}
+#This Event enables the Garden Project.
+country_event = {
+	id = pink_situation.3
+	is_triggered_only = yes
+	hide_window = yes
+	event_chain = pink_event_chain
 	immediate = {
 		enable_special_project = {
 			name = f93_pink_garden_project
 		}
+	}
+}
+# The first choice during the garden project
+country_event = {
+	id = pink_situation.4
+	title = "pink_situation.4.name"
+	desc = "pink_situation.4.desc"
+	picture = GFX_evt_gem_homeworld
+	show_sound = offcolors_01 #replace with appropriate music-clip
+	
+	is_triggered_only = yes
+	event_chain = pink_event_chain
+
+	immediate = {
+		export_X_month_resource_income_to_variable = {
+			resource = energy
+			variable = year_energy
+			month = 12
+		}
+		export_X_month_resource_income_to_variable = {
+			resource = minerals
+			variable = year_minerals
+			month = 12
+		}
+		export_X_month_resource_income_to_variable = {
+			resource = consumer_goods
+			variable = year_consumer_goods
+			month = 12
+		}
+		export_X_month_resource_income_to_variable = {
+			resource = alloys
+			variable = year_alloys
+			month = 12
+		}
+		export_X_month_resource_income_to_variable = {
+			resource = food
+			variable = year_food
+			month = 12
+		}
+		export_X_month_resource_income_to_variable = {
+			resource = exotic_gases
+			variable = year_exotic_gases
+			month = 12
+		}
+		export_X_month_resource_income_to_variable = {
+			resource = volatile_motes
+			variable = year_volatile_motes
+			month = 12
+		}
+		export_X_month_resource_income_to_variable = {
+			resource = rare_crystals
+			variable = year_rare_crystals
+			month = 12
+		}
+	}
+	#Decision to do nothing for now.
+	option = {
+		name = "pink_situation.4.0"
+	}
+	#Small Price
+	option = {
+		name = "pink_situation.4.a"
+		allow = {
+			has_resource = {
+				type = energy amount > year_energy
+				type = minerals amount > year_minerals
+				type = alloys amount > year_alloys
+			}
+		}
+		add_monthly_resource_mult = { resource = energy value = -0.085 mult = year_energy }
+		add_monthly_resource_mult = { resource = minerals value = -0.085 mult = year_minerals }
+		add_monthly_resource_mult = { resource = alloys value = -0.085 mult = year_alloys }
+	}
+	#big price option
+	option = {
+		name = "pink_situation.4.b"
+		allow = {
+			has_resource = {
+				type = energy amount > year_energy
+				type = minerals amount > year_minerals
+				type = alloys amount > year_alloys
+				type = rare_crystals amount > year_rare_crystals
+			}
+			has_resource = {
+				type = rare_crystals amount > 500
+			}
+		}
+		add_monthly_resource_mult = { resource = energy value = -0.1 mult = year_energy }
+		add_monthly_resource_mult = { resource = minerals value = -0.1 mult = year_minerals }
+		add_monthly_resource_mult = { resource = alloys value = -0.1 mult = year_alloys }
+		add_monthly_resource_mult = { resource = rare_crystals value = -0.085 min = 500 mult = year_rare_crystals }
 	}
 }

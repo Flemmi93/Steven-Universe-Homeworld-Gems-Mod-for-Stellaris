@@ -6,7 +6,6 @@ f93_pinks_garden = {
 	show_galactic_map_icon = no
 	hide_name = no
 	show_in_outliner = no
-	# entity_offset = { x = 7 y = -7 }
 	build_time = 1080
 
 	resources = {
@@ -20,11 +19,7 @@ f93_pinks_garden = {
 			alloys = 1000
 		}
 	}
-
 	construction_blocks_and_blocked_by = self_type
-	# custom_tooltip_requirements = MEGASTRUCTURE_TOOLTIP_REQUIREMENTS_PINK_GARDEN
-	# build_system_tooltip = habitat_tooltip
-
 	potential = {
 		has_country_flag = f93_pink_garden_unlock
 	}
@@ -38,14 +33,43 @@ f93_pinks_garden = {
 			is_inside_border = from
 		}
 	}
+	
+	#Avoid the possability of 2 being build.
+	on_build_start = { owner = { remove_country_flag = f93_pink_garden_unlock } }
+	on_build_cancel = { owner = { set_country_flag = f93_pink_garden_unlock } }
+
 	on_build_complete = {
+		owner = { remove_country_flag = f93_pink_garden_unlock }
 		remove_megastructure = fromfrom
-		spawn_megastructure = {
-			type = f93_pinks_garden2
-			graphical_culture = from
-			planet = star
-			orbit_distance = 100
-			orbit_angle = 50
+		reroll_random = yes #in case it is badly placed reload right before the construction completes
+		random_list = {
+			1 = {
+				spawn_megastructure = {
+					type = f93_pinks_garden2
+					graphical_culture = from
+					planet = star
+					orbit_distance = 75
+					orbit_angle = 45
+				}
+			}
+			1 = {
+				spawn_megastructure = {
+					type = f93_pinks_garden2
+					graphical_culture = from
+					planet = star
+					orbit_distance = 80
+					orbit_angle = 295
+				}
+			}
+			1 = {
+				spawn_megastructure = {
+					type = f93_pinks_garden2
+					graphical_culture = from
+					planet = star
+					orbit_distance = 85
+					orbit_angle = 165
+				}
+			}
 		}
 		from = {
 			random_situation = {
@@ -62,7 +86,6 @@ f93_pinks_garden2 = {
 	show_galactic_map_icon = no
 	hide_name = no
 	show_in_outliner = no
-	# entity_offset = { x = 7 y = -7 }
 	potential = {
 		always = no
 	}

@@ -1,8 +1,15 @@
-
+#This event chain displays Pink's mood and some stats about her during Era 1
 pink_event_chain = {
 	icon = "gfx/interface/icons/situation_log/situation_log_quest.dds"
 	picture = GFX_evt_society_research
 	abort_trigger = {
 		NOT = { has_country_flag = pink_alive }
+	}
+	counter = {
+		f93_pinks_mood_counter = {
+			max = 100
+		}
+		f93_pink_tantrum_counter = {
+		}
 	}
 }

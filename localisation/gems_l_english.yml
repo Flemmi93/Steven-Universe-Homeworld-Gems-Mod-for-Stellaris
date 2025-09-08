@@ -685,9 +685,9 @@
  pink_got_earth: "$pink_d$ is busy on earth"
  approach_lost_controll: "We lost control of the Situation"
  
-#Situations
- pink_situation: "$pink_d$'s Mood"
- pink_situation_type: "$pink_d$'s Mood£happiness£"
+#Situations and Event Chain
+ pink_situation: "$pink_d$'s Tantrum£time£"
+ pink_situation_type: "$pink_d$'s Tantrum£military_power£"
  pink_situation_desc: "$pink_d$'s mood is good for now but it isn't stable, her mood can go up and down depending on what is happening to her or in the empire at large."
  pink_situation_desc_bad: "'You have so many worlds and I don't even have one! It's not fair! I. Want. One! I want my own army! I want my own planet! I deserve it! I'm just as important as you!' $pink_d$ exclaimed and stormed Off after being reprimanded, ,\n\nThis isn't the end of $pink_diamond$'s wrath her outburst are becoming increasingly violent. Something must be done, or she might do irreparable damage."
  pink_situation_monthly_change_tooltip: "Her mood is going down"
@@ -695,6 +695,7 @@
  pink_situation_complete_desc: "Pink Complete description"
  gem_sit_nothing_happens: "Nothing is happening"
  gem_sit_something_happens: "Something is happening"
+ pink_event_chain_title: "$pink_d$'S mood"
  pink_diamond_got_poofed: "$pink_diamond$ is reforming"
  white_diamond_got_poofed: "$white_diamond$ is reforming"
  yellow_diamond_got_poofed: "$yellow_diamond$ is reforming"

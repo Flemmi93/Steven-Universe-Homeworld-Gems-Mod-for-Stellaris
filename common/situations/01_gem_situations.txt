@@ -1,13 +1,14 @@
 #############################
 ### Story Line Situations ###
 #############################
-
+#This situation happens when Pink is close to a break, it is a sort of Last warning for the player
+#to stop her doing something bad,
 pink_situation = {
 	picture = GFX_evt_gem_diamonds_worried
 	complete_icon_frame = GFX_situation_outcome_frame_green
 	complete_icon = GFX_situation_happy
-	category = positive
-	start_value = 10
+	category = negative
+	start_value = 90
 	
 	desc = {
 		text = pink_situation_desc
@@ -25,6 +26,7 @@ pink_situation = {
 	on_progress_complete = {
 		destroy_situation = this
 		custom_tooltip = pink_situation_complete
+		increase_pink_mood = { ADD = 50 }
 	}
 	on_fail = {
 		destroy_situation = this
@@ -81,9 +83,9 @@ pink_situation = {
 	}
 	
 	monthly_progress = {
-		base = 0
+		base = -5
 		modifier = {
-			add = -0.25
+			add = 5
 			desc = situation_snow_very_hostile_tt
 			NOT = { situation_progress < 25 }
 		}
