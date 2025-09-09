@@ -1,10 +1,7 @@
-#From = Country scope (new owner)
-#This = Planet scope
-namespace = gem_diamond_choice        
+namespace = f93_diamond_court
 
-#planet court Distribution event
 planet_event = { #replaces the grand court
-    id = gem_diamond_choice.0001
+    id = f93_diamond_court.1
 	picture = GFX_evt_gem_homeworld
 	title = pm_grand_court
 	desc = pm_grand_court_desc
@@ -40,48 +37,7 @@ planet_event = { #replaces the grand court
 		name = OK
 	}
 }
-	
-planet_event = { #triggers the step counter
-    id = gem_diamond_choice.1002
-	hide_window = yes
-	is_triggered_only = yes
-	trigger = {
-		owner = {
-			OR = {
-				has_civic = civic_tetrarchy
-				has_civic = civic_triarchy
-			}
-		}
-		NOT = { has_planet_flag = planet_had_court_before }
-	}
-	immediate = {
-		owner = { country_event = { id = gem_off_colors.0009} }
-		planet_event = { id = gem_diamond_choice.1001 days = 1 random = 359 } 
-	}
-}
-planet_event = {
-	id = gem_diamond_choice.1010
-	
-	hide_window = yes
-	is_triggered_only = yes
-	trigger = {
-		owner = {
-			OR = {
-				has_civic = civic_tetrarchy
-				has_civic = civic_triarchy
-			}
-		}
-		NOR = {
-			has_planet_flag = white_court_flag		
-			has_planet_flag = yellow_court_flag
-			has_planet_flag = blue_court_flag
-			has_planet_flag = pink_court_flag
-			has_planet_flag = grand_court
-			has_planet_flag = gem_planet_pink_gone
-		}
-	}
-	immediate = { planet_event = { id = gem_diamond_choice.1001 } }
-}
+
 #The Event that regulates what diamond rules any given planet.
 #all 4 Diamonds are represented here but each diamonds section is made up of several choices
 #1. option is always the main option of the choice
@@ -90,7 +46,7 @@ planet_event = {
 #option 2 and 3 dont do much currently since diamonds cant die at this time.
 	
 planet_event = { #What Diamond shall rule over this Planet
-    id = gem_diamond_choice.1001
+    id = f93_diamond_court.1001
 	title = gem_diamond_choice.name
 	desc = {
 		text = gem_diamond_choice.desc
@@ -117,6 +73,7 @@ planet_event = { #What Diamond shall rule over this Planet
 				has_planet_flag = planet_earth # regular earth.
 			}
 			owner = { has_country_flag = gem_sol_system }
+			f93_pink_got_earth = no
 		}
 	}
 	desc = {

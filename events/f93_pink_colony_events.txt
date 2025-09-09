@@ -19,3 +19,138 @@ country_event = {
 		
 	}
 }
+#Find all planets that are valid targets for pinks colony.
+# if no such planet is found, one is spawned in nearby
+country_event = {
+	id = pink_colony.2
+	is_triggered_only = yes
+	hide_window = yes
+
+	immediate = {
+		if = {
+			#This flag is set by the player if they say, they want a random species instead of humans
+			# as the species the Crystal Gems defend
+			limit = { has_country_flag = any_planet_is_fine }
+			while = {
+				count = 5
+				closest_system = {
+					limit = {
+						NOR = {
+							has_star_flag = empire_cluster
+							has_star_flag = f93_valid_pink_colony@root
+						}
+						OR = {
+							has_star_flag = primitive_system
+							any_system_planet = {
+								NOT = { exists = owner }
+								any_owned_pop_group = {
+									species = { is_archetype = PRESAPIENT }
+								}
+							}
+						}
+						distance = { source = root.capital_scope.solar_system
+							type = hyperlane min_jumps = 5 max_jumps = 10 }
+					}
+					# set_name = "VALID TARGET"
+					set_star_flag = f93_valid_pink_colony@root
+				}
+			}
+		}
+		#for all other cases, this looks for earth, should it be nearby
+		else = {
+			closest_system = {
+				limit = {
+					NOT = { exists = owner }
+					any_system_planet = { has_planet_flag = planet_earth }
+					distance = { type = hyperlane max_jumps = 10 }
+				}
+				if = {
+					limit = { event_target:sol_system_earth = { is_colony = no } }
+					event_target:sol_system_earth = { 
+						change_pc = "pc_continental"
+						reset_planet = yes
+						f93_create_humans = yes
+					}
+					set_star_flag = f93_valid_pink_colony@root 
+				}
+				if = {
+					limit = { event_target:sol_system_earth = { exists = owner } }
+					set_star_flag = f93_valid_pink_colony@root 
+				}
+				# set_name = "SOL VALID TARGET"
+			}
+		}
+		#If Sol does not exist at all, it will be spawned in.
+		if = {
+			limit = {
+				NOT = { any_system = { has_star_flag = f93_valid_pink_colony@root } }
+				NOT = { exists = event_target:sol_system_earth }
+			}
+			random_system = {
+				limit = {
+					distance = { source = root.capital_scope.solar_system
+						type = hyperlane min_jumps = 5 max_jumps = 10 }
+					NOR = {
+						exists = owner
+						any_system_planet = { exists = owner }
+					}
+					any_system_planet = { is_planet_class = pc_barren }
+				}
+				f93_spawn_sol_system = yes
+				event_target:sol_system_earth = { f93_create_humans = yes }
+				last_created_system = {
+					set_star_flag = f93_valid_pink_colony@root
+					# set_name = "VALID HUMAN TARGET"
+				}
+			}
+			
+		}
+		# Creates a primitive human civ on a unowned, colonizeable planet
+		if = {
+			limit = { NOT = { any_system = { has_star_flag = f93_valid_pink_colony@root } } }
+			random_system = {
+				limit = {
+					distance = { source = root.capital_scope.solar_system
+						type = hyperlane min_jumps = 5 max_jumps = 10 }
+					NOR = {
+						exists = owner
+						any_system_planet = { exists = owner }
+					}
+					any_system_planet = { can_colonize = { who = root status = yes } }
+				}
+				random_system_planet = {
+					limit = { can_colonize = { who = root status = yes } }
+					f93_create_humans = yes
+					set_name = "Landing"
+				}
+				set_star_flag = f93_valid_pink_colony@root
+				# set_name = "VALID HUMAN TARGET"
+			}
+		}
+		#creates a colonizeable planet and then puts a primitive human civ on it
+		else_if = {
+			limit = { NOT = { any_system = { has_star_flag = f93_valid_pink_colony@root } } }
+			random_system = {
+				limit = {
+					distance = { source = root.capital_scope.solar_system
+						type = hyperlane min_jumps = 5 max_jumps = 10 }
+					NOR = {
+						exists = owner
+						any_system_planet = { exists = owner }
+					}
+					any_system_planet = { is_planet_class = pc_barren }
+				}
+				random_system_planet = {
+					limit = { is_planet_class = pc_barren }
+					change_pc = "pc_continental"
+					reset_planet = yes
+					set_planet_size = 18
+					f93_create_humans = yes
+					set_name = "Landing"
+				}
+				set_star_flag = f93_valid_pink_colony@root
+				# set_name = "VALID HUMAN TARGET"
+			}
+		}
+	}
+}

@@ -194,3 +194,73 @@ f93_remove_diamond_ruler_flag = {
 	remove_country_flag = gem_blue_rules
 	remove_country_flag = gem_pink_rules
 }
+
+f93_create_humans = {
+	if = {
+		limit = {
+			NOT = { exists = event_target:human_species }
+		}
+		random_galaxy_species = {
+			limit = { is_human_species = yes }
+			save_event_target_as = human_species
+		}
+		create_species = {
+			name = NAME_Human
+			plural = NAME_Human_plural
+			class = "HUM"
+			portrait = "human"
+			homeworld = THIS
+			traits = {
+				trait = "trait_adaptive"
+				trait = "trait_nomadic"
+				trait = "trait_wasteful"
+			}
+		}
+		last_created_species = { save_event_target_as = human_species }
+	}
+	create_country = {
+		name = random
+		type = primitive
+		authority = auth_imperial
+		civics = {
+			civic = civic_secret_of_fire
+			civic = civic_the_wheel
+		}
+		species = event_target:human_species
+		ethos = {
+			ethic = "ethic_xenophobe"
+			ethic = "ethic_fanatic_militarist"
+		}
+		# origin = "origin_enlightened" # Should only be visible if they become spacefaring
+		flag = {
+			icon = { category = "pre_ftl" file = "preftl_bronze_age.dds" }
+			background = { category = "backgrounds" file = "new_dawn.dds" }
+			colors = { "green" "dark_green" "null" "null" }
+		}
+		day_zero_contact = no
+	}
+	last_created_country = {
+		set_country_flag = bronze_age
+		set_pre_ftl_age = bronze_age
+		set_graphical_culture = preindustrial_01
+	}
+	set_owner = last_created_country
+	owner = { set_awareness = 0 }
+	create_pop = {
+		species = event_target:human_species
+		ethos = random
+		size = @bronze_age_pops
+	}
+	add_building = building_primitive_dwellings
+	add_building = building_stone_palace
+}
+
+f93_spawn_sol_system = {
+	spawn_system = {
+		min_distance = 10
+		max_distance = 30
+		max_jumps = 0
+		hyperlane = yes
+		initializer = sol_system_initializer
+	}
+}

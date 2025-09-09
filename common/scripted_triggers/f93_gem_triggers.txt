@@ -3,3 +3,18 @@
 pink_is_ready = {
 	has_country_flag = era_three_flag
 }
+f93_pink_got_earth = {
+	exists = event_target:pinks_primitive_world
+	event_target:pinks_primitive_world = {
+		exists = owner
+		owner = { is_diamond_empire = yes has_country_flag = pink_alive }
+		exists = leader
+		leader = { has_leader_flag = pink_diamond_flag }
+		has_modifier = pm_gem_pink_court
+	}
+}
+f93_valid_pink_colony = {
+	OR = {
+		has_planet_flag = f93_valid_pink_colony
+	}
+}

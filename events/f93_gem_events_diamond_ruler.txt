@@ -189,7 +189,6 @@ country_event = {
 					set_council_position = councilor_state
 				}
 			}
-			start_situation = { type = pink_situation target = event_target:gem_pink_diamond }
 		}
 		hidden_effect = {
 			set_country_flag = diamond_got_generated
