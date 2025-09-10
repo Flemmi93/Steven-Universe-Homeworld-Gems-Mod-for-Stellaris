@@ -54,10 +54,15 @@ pm_shattered_rose_gem = {
 	icon_frame = 2
 	planet_crime_mult = -0.15
 }
+# pm_pink_tantrum_1 = {
+# 	icon = "gfx/interface/icons/planet_modifiers/pm_unrest.dds"
+# 	icon_frame = 3
+# 	pop_citizen_happiness = -0.1
+# }
 pm_pink_tantrum_1 = {
 	icon = "gfx/interface/icons/planet_modifiers/pm_unrest.dds"
 	icon_frame = 3
-	pop_citizen_happiness = -0.1
+	leaders_upkeep_mult = 1
 }
 pm_pink_tantrum_2 = {
 	icon = "gfx/interface/icons/planet_modifiers/pm_unrest.dds"

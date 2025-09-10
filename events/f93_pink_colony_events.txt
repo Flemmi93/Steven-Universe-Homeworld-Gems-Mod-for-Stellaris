@@ -2,7 +2,7 @@
 #These events ensure that Pink get a colony, preferably Earth, but at users Choice it can be any world
 # as long as primitives are present, if need be a fitting world will be created.
 #To keep a timeline, Pinks mood will go down and become expensive to keep high. increasing as 
-# it becomes more possible to give0 her a colony.
+# it becomes more possible to give her a colony.
 
 namespace = pink_colony
 
@@ -10,7 +10,7 @@ country_event = {
 	id = pink_colony.1
 	is_triggered_only = yes
 	hide_window = yes
-
+	
 	immediate = {
 		if = {
 			limit = { is_variable_set = f93_pink_colony_var }
@@ -19,6 +19,13 @@ country_event = {
 		
 	}
 }
+
+###
+# Output of the "Earth" finder
+# star_flag = f93_valid_pink_star@root
+# planet_flag = f93_valid_pink_colony@root
+###
+
 #Find all planets that are valid targets for pinks colony.
 # if no such planet is found, one is spawned in nearby
 country_event = {
@@ -37,7 +44,7 @@ country_event = {
 					limit = {
 						NOR = {
 							has_star_flag = empire_cluster
-							has_star_flag = f93_valid_pink_colony@root
+							has_star_flag = f93_valid_pink_star@root
 						}
 						OR = {
 							has_star_flag = primitive_system
@@ -52,8 +59,33 @@ country_event = {
 							type = hyperlane min_jumps = 5 max_jumps = 10 }
 					}
 					# set_name = "VALID TARGET"
-					set_star_flag = f93_valid_pink_colony@root
+					set_star_flag = f93_valid_pink_star@root
+					random_system_planet = {
+						limit = {
+							NOT = { exists = owner }
+							any_owned_pop_group = {
+								species = { is_archetype = PRESAPIENT }
+							}
+						}
+						set_planet_flag = f93_valid_pink_colony@root
+					}
 				}
+			}
+		}
+		#check for colonies that are less thant 5 years old. and got Culture Shock
+		#Can scan for presapients, as those could have been moved.
+		else_if = {
+			limit = { has_country_flag = any_planet_is_fine }
+			every_owned_planet = {
+				limit = {
+					colony_age_years < 5
+					has_culture_shock = yes
+					any_owned_pop_group = {
+						is_geoloid = no
+					}
+				}
+				set_planet_flag = f93_valid_pink_colony@root
+				solar_system = { set_star_flag = f93_valid_pink_star@root }
 			}
 		}
 		#for all other cases, this looks for earth, should it be nearby
@@ -70,12 +102,13 @@ country_event = {
 						change_pc = "pc_continental"
 						reset_planet = yes
 						f93_create_humans = yes
+						set_planet_flag = f93_valid_pink_colony@root
 					}
-					set_star_flag = f93_valid_pink_colony@root 
+					set_star_flag = f93_valid_pink_star@root 
 				}
 				if = {
 					limit = { event_target:sol_system_earth = { exists = owner } }
-					set_star_flag = f93_valid_pink_colony@root 
+					set_star_flag = f93_valid_pink_star@root 
 				}
 				# set_name = "SOL VALID TARGET"
 			}
@@ -83,23 +116,22 @@ country_event = {
 		#If Sol does not exist at all, it will be spawned in.
 		if = {
 			limit = {
-				NOT = { any_system = { has_star_flag = f93_valid_pink_colony@root } }
+				NOT = { any_system = { has_star_flag = f93_valid_pink_star@root } }
 				NOT = { exists = event_target:sol_system_earth }
 			}
 			random_system = {
 				limit = {
 					distance = { source = root.capital_scope.solar_system
 						type = hyperlane min_jumps = 5 max_jumps = 10 }
-					NOR = {
-						exists = owner
-						any_system_planet = { exists = owner }
-					}
-					any_system_planet = { is_planet_class = pc_barren }
+					NOT = { has_star_flag = empire_cluster }
 				}
 				f93_spawn_sol_system = yes
-				event_target:sol_system_earth = { f93_create_humans = yes }
+				event_target:sol_system_earth = {
+					f93_create_humans = yes
+					set_planet_flag = f93_valid_pink_colony@root
+				}
 				last_created_system = {
-					set_star_flag = f93_valid_pink_colony@root
+					set_star_flag = f93_valid_pink_star@root
 					# set_name = "VALID HUMAN TARGET"
 				}
 			}
@@ -107,7 +139,7 @@ country_event = {
 		}
 		# Creates a primitive human civ on a unowned, colonizeable planet
 		if = {
-			limit = { NOT = { any_system = { has_star_flag = f93_valid_pink_colony@root } } }
+			limit = { NOT = { any_system = { has_star_flag = f93_valid_pink_star@root } } }
 			random_system = {
 				limit = {
 					distance = { source = root.capital_scope.solar_system
@@ -122,14 +154,15 @@ country_event = {
 					limit = { can_colonize = { who = root status = yes } }
 					f93_create_humans = yes
 					set_name = "Landing"
+					set_planet_flag = f93_valid_pink_colony@root
 				}
-				set_star_flag = f93_valid_pink_colony@root
+				set_star_flag = f93_valid_pink_star@root
 				# set_name = "VALID HUMAN TARGET"
 			}
 		}
 		#creates a colonizeable planet and then puts a primitive human civ on it
 		else_if = {
-			limit = { NOT = { any_system = { has_star_flag = f93_valid_pink_colony@root } } }
+			limit = { NOT = { any_system = { has_star_flag = f93_valid_pink_star@root } } }
 			random_system = {
 				limit = {
 					distance = { source = root.capital_scope.solar_system
@@ -147,8 +180,9 @@ country_event = {
 					set_planet_size = 18
 					f93_create_humans = yes
 					set_name = "Landing"
+					set_planet_flag = f93_valid_pink_colony@root
 				}
-				set_star_flag = f93_valid_pink_colony@root
+				set_star_flag = f93_valid_pink_star@root
 				# set_name = "VALID HUMAN TARGET"
 			}
 		}

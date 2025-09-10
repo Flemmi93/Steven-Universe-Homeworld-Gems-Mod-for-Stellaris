@@ -8,7 +8,7 @@ pink_situation = {
 	complete_icon_frame = GFX_situation_outcome_frame_green
 	complete_icon = GFX_situation_happy
 	category = negative
-	start_value = 90
+	start_value = 1
 	
 	desc = {
 		text = pink_situation_desc
@@ -39,30 +39,38 @@ pink_situation = {
 	#called tantrum but flavored around her getting bored over time. 
 	#The Finisher is to research and Build the Garden and Spinel.	
 	stages = {
-		pm_pink_tantrum_3 = {
+		pm_pink_tantrum_0 = {
 			icon = GFX_situation_stage_1
 			icon_background = GFX_situation_stage_frame_red
 			end = 25
+			on_first_enter = {
+				random_list = {
+					1 = { owner = { country_event = { id = pink_situation.21 } } }
+					# 1 = { owner = { country_event = { id = pink_situation.22 } } }
+					# 1 = { owner = { country_event = { id = pink_situation.23 } } }
+				}
+			}
 		}
-		pm_pink_tantrum_2 = {
+		pm_pink_tantrum_1 = {
 			icon = GFX_situation_stage_2
 			icon_background = GFX_situation_stage_frame_red
 			end = 50
 			on_first_enter = {
-				owner = { set_country_flag = pink_low_mood }
 			}
 		}
-		pm_pink_tantrum_1 = {
+		pm_pink_tantrum_2 = {
 			icon = GFX_situation_stage_3
 			icon_background = GFX_situation_stage_frame_red
 			end = 75
 			on_first_enter = {
 			}
 		}
-		pm_pink_tantrum_0 = {
+		pm_pink_tantrum_3 = {
 			icon = GFX_situation_stage_4
 			icon_background = GFX_situation_stage_frame_blue
 			end = 100
+			on_first_enter = {
+			}
 			modifier = {
 			
 			}
