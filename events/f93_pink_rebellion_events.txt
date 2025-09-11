@@ -1,1 +1,23 @@
 # Main screen to choose what diamond should rule
+namespace = pink_rebellion
+country_event = {
+	id = pink_rebellion.1
+	is_triggered_only = yes
+	title = pink_rebellion.1.name
+	desc = pink_rebellion.1.desc
+	picture = GFX_evt_gem_homeworld
+
+	trigger = {
+		is_diamond_empire = yes
+		years_passed = halfway_to_mid_game_year
+	}
+
+	immediate = {
+		set_country_flag = pink_wants_earth
+	}
+
+	option = {
+		name = pink_rebellion.1.a
+		change_stable_mood = { ADD = 25 }
+	}
+}

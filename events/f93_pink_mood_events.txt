@@ -23,6 +23,9 @@ country_event = {
 		set_variable = { which = f93_pinks_mood_variable value = 0 }
 		change_pink_mood = { ADD = 80 }
 		set_variable = { which = f93_pinks_mood_variable value = 80 } #just to be sure.
+		set_variable = { which = f93_pinks_stable_variable value = 0 }
+		change_stable_mood = { ADD = 40 }
+		set_variable = { which = f93_pinks_stable_variable value = 40 }
 	}
 }
 #Starts Pink's Tantrum Situation and Event every time her mood goes low
@@ -83,11 +86,17 @@ country_event = {
 
 	immediate = {
 		if = {
-			limit = { check_variable = { which = f93_pinks_mood_variable value > stable_mood_variable } }
+			limit = {
+				check_variable = { which = f93_pinks_mood_variable value > f93_pinks_stable_variable }
+				check_variable = { which = f93_pinks_mood_variable value > 0 }
+			}
 			change_pink_mood = { ADD = -1 }
 		}
 		if = {
-			limit = { check_variable = { which = f93_pinks_mood_variable value < stable_mood_variable } }
+			limit = {
+				check_variable = { which = f93_pinks_mood_variable value < f93_pinks_stable_variable }
+				check_variable = { which = f93_pinks_mood_variable value < 100 }
+			}
 			change_pink_mood = { ADD = 1 }
 		}
 	}

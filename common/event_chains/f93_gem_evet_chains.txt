@@ -10,6 +10,7 @@ pink_event_chain = {
 		f93_pinks_mood_counter = {
 			max = 100
 		}
-		f93_pinks_tantrum_counter = {}
+		f93_pinks_tantrum_counter = {
+		}
 	}
 }

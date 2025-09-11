@@ -9,14 +9,12 @@ change_stable_mood = {
 				has_event_chain = pink_event_chain
 				is_variable_set = f93_pinks_stable_variable
 			}
-			root.owner = {
-				add_event_chain_counter = {
-					event_chain = pink_event_chain
-					counter = f93_pinks_stable_counter
-					amount = $ADD$
-				}
-				change_variable = { which = f93_pinks_stable_variable value = $ADD$ }
+			add_event_chain_counter = {
+				event_chain = pink_event_chain
+				counter = f93_pinks_stable_counter
+				amount = $ADD$
 			}
+			change_variable = { which = f93_pinks_stable_variable value = $ADD$ }
 		}
 	}
 }
@@ -29,14 +27,12 @@ change_pink_mood = {
 				has_event_chain = pink_event_chain
 				is_variable_set = f93_pinks_mood_variable
 			}
-			root.owner = {
-				add_event_chain_counter = {
-					event_chain = pink_event_chain
-					counter = f93_pinks_mood_counter
-					amount = $ADD$
-				}
-				change_variable = { which = f93_pinks_mood_variable value = $ADD$ }
+			add_event_chain_counter = {
+				event_chain = pink_event_chain
+				counter = f93_pinks_mood_counter
+				amount = $ADD$
 			}
+			change_variable = { which = f93_pinks_mood_variable value = $ADD$ }
 		}
 	}
 }

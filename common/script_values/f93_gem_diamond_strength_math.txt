@@ -43,7 +43,7 @@ count_diamond_owned_planets = {
 		}
 		mode = add
 	}
-	min = 4 # to divide number of pops of a diamoned by 4 at game start.
+	min = value:num_diamonds # to divide number of pops per diamoned at game start.
 }
 white_planet_ratio = {
 	complex_trigger_modifier = {
