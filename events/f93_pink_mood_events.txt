@@ -3,6 +3,7 @@ namespace = pink_situation
 #initializing the mood System.
 #the rebel diamond can be any diamond. currently only pink's path is build
 #Blue, Yellow and White will have unique paths that are not them replacing pink
+#A moon event should trigger once a decade, halfway to the midgame pink should want a colony
 country_event = {
 	id = pink_situation.1
 	is_triggered_only = yes
@@ -20,7 +21,7 @@ country_event = {
 		#The Counter and the Variable always have to be in sync, as it is impossible to track the
 		# counter otherwise.
 		set_variable = { which = f93_pinks_mood_variable value = 0 }
-		increase_pink_mood = { ADD = 80 }
+		change_pink_mood = { ADD = 80 }
 		set_variable = { which = f93_pinks_mood_variable value = 80 } #just to be sure.
 	}
 }
@@ -68,6 +69,29 @@ country_event = {
 			mult = 0.1
 		}
 	}
+}
+
+#This Event Block can increase and descrease her mood.
+
+# Lowers Pink mood score ba a set amount during a set time interval, no lower than 20
+# Her mood Wanders over time to a Stable Point
+country_event = {
+	id = pink_situation.3
+	is_triggered_only = yes
+	hide_window = yes
+	event_chain = pink_event_chain
+
+	immediate = {
+		if = {
+			limit = { check_variable = { which = f93_pinks_mood_variable value > stable_mood_variable } }
+			change_pink_mood = { ADD = -1 }
+		}
+		if = {
+			limit = { check_variable = { which = f93_pinks_mood_variable value < stable_mood_variable } }
+			change_pink_mood = { ADD = 1 }
+		}
+	}
+
 }
 #This Event enables the Garden Project.
 country_event = {

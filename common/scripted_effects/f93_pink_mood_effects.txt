@@ -1,9 +1,28 @@
 #example
-increase_pink_mood_10 = {
-	increase_pink_mood = { ADD = 10 }
+change_pink_mood_10 = {
+	change_pink_mood = { ADD = -10 }
+}
+change_stable_mood = {
+	root.owner = {
+		if = {
+			limit = {
+				has_event_chain = pink_event_chain
+				is_variable_set = f93_pinks_stable_variable
+			}
+			root.owner = {
+				add_event_chain_counter = {
+					event_chain = pink_event_chain
+					counter = f93_pinks_stable_counter
+					amount = $ADD$
+				}
+				change_variable = { which = f93_pinks_stable_variable value = $ADD$ }
+			}
+		}
+	}
 }
 #increases the mood of pink by the number defined as ADD, example above would be 10
-increase_pink_mood = {
+#the counter can go negative.
+change_pink_mood = {
 	root.owner = {
 		if = {
 			limit = {

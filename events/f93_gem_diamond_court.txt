@@ -1,6 +1,6 @@
 namespace = f93_diamond_court
-
-planet_event = { #replaces the grand court
+#Moves all 4 Diamon Courts to the Capital Planet
+planet_event = {
     id = f93_diamond_court.1
 	picture = GFX_evt_gem_homeworld
 	title = pm_grand_court
@@ -16,6 +16,7 @@ planet_event = { #replaces the grand court
 				remove_modifier = pm_gem_blue_court
 				remove_modifier = pm_gem_pink_court
 				remove_planet_flag = planet_had_court_before
+				planet_event = { id = f93_diamond_court.1001 }
 			}
 		}
 		set_planet_flag = planet_had_court_before
@@ -44,6 +45,7 @@ planet_event = { #replaces the grand court
 #2. option is for when the diamond is dead, this is made so the fail text and the tooltip change.
 #3. this option shows when the diamond is the last one alive.
 #option 2 and 3 dont do much currently since diamonds cant die at this time.
+#Pink can be freely assigne to any planet Qualifying for her, once she wants a colony
 	
 planet_event = { #What Diamond shall rule over this Planet
     id = f93_diamond_court.1001

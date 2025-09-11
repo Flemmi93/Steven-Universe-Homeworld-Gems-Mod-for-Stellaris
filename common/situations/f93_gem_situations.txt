@@ -26,7 +26,7 @@ pink_situation = {
 	on_progress_complete = {
 		destroy_situation = this
 		custom_tooltip = pink_situation_complete
-		increase_pink_mood = { ADD = 50 }
+		change_pink_mood = { ADD = 50 }
 	}
 	on_fail = {
 		destroy_situation = this
