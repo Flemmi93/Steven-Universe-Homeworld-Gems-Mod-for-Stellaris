@@ -20,7 +20,7 @@ country_event = {
 	id = gem_kg.2
 	title = "gem_kg.2.name"
 	desc = gem_kg.2.desc
-	picture = GFX_evt_gem_kindergarten
+	picture = "GFX_evt_gem_kindergarten"
 	show_sound = event_mystic_reveal
 	is_triggered_only = yes
 

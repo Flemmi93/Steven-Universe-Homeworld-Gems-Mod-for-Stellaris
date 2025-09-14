@@ -4,7 +4,7 @@
 # Crashed Ship (Asteroid)
 gems_lost_earth = {
 	desc = crashed_ship_asteroid_category_desc
-	picture = GFX_evt_crashed_station
+	picture = "GFX_evt_crashed_station"
 	level = 10
 
 	spawn_chance = {

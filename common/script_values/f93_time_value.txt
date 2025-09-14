@@ -1,0 +1,260 @@
+start_to_mid_game_year_1_10th = {
+	complex_trigger_modifier = {
+		trigger = check_galaxy_setup_value
+		parameters = {
+			setting = mid_game_year
+		}
+		mode = add
+	}
+	divide = 10
+}
+start_to_mid_game_year_2_10th = {
+	complex_trigger_modifier = {
+		trigger = check_galaxy_setup_value
+		parameters = {
+			setting = mid_game_year
+		}
+		mode = add
+	}
+	divide = 10
+	multiply = 2
+}
+start_to_mid_game_year_3_10th = {
+	complex_trigger_modifier = {
+		trigger = check_galaxy_setup_value
+		parameters = {
+			setting = mid_game_year
+		}
+		mode = add
+	}
+	divide = 10
+	multiply = 3
+}
+start_to_mid_game_year_4_10th = {
+	complex_trigger_modifier = {
+		trigger = check_galaxy_setup_value
+		parameters = {
+			setting = mid_game_year
+		}
+		mode = add
+	}
+	divide = 10
+	multiply = 4
+}
+start_to_mid_game_year_5_10th = {
+	complex_trigger_modifier = {
+		trigger = check_galaxy_setup_value
+		parameters = {
+			setting = mid_game_year
+		}
+		mode = add
+	}
+	divide = 10
+	multiply = 5
+}
+start_to_mid_game_year_6_10th = {
+	complex_trigger_modifier = {
+		trigger = check_galaxy_setup_value
+		parameters = {
+			setting = mid_game_year
+		}
+		mode = add
+	}
+	divide = 10
+	multiply = 6
+}
+start_to_mid_game_year_7_10th = {
+	complex_trigger_modifier = {
+		trigger = check_galaxy_setup_value
+		parameters = {
+			setting = mid_game_year
+		}
+		mode = add
+	}
+	divide = 10
+	multiply = 7
+}
+start_to_mid_game_year_8_10th = {
+	complex_trigger_modifier = {
+		trigger = check_galaxy_setup_value
+		parameters = {
+			setting = mid_game_year
+		}
+		mode = add
+	}
+	divide = 10
+	multiply = 8
+}
+start_to_mid_game_year_9_10th = {
+	complex_trigger_modifier = {
+		trigger = check_galaxy_setup_value
+		parameters = {
+			setting = mid_game_year
+		}
+		mode = add
+	}
+	divide = 10
+	multiply = 9
+}
+mid_to_end_game_year_1_10th = {
+	complex_trigger_modifier = {
+		trigger = check_galaxy_setup_value
+		parameters = {
+			setting = mid_game_year
+		}
+		mode = subtract
+	}
+	complex_trigger_modifier = {
+		trigger = check_galaxy_setup_value
+		parameters = {
+			setting = end_game_year
+		}
+		mode = add
+	}
+	divide = 10
+	multiply = 1
+}
+mid_to_end_game_year_2_10th = {
+	complex_trigger_modifier = {
+		trigger = check_galaxy_setup_value
+		parameters = {
+			setting = mid_game_year
+		}
+		mode = subtract
+	}
+	complex_trigger_modifier = {
+		trigger = check_galaxy_setup_value
+		parameters = {
+			setting = end_game_year
+		}
+		mode = add
+	}
+	divide = 10
+	multiply = 2
+}
+mid_to_end_game_year_3_10th = {
+	complex_trigger_modifier = {
+		trigger = check_galaxy_setup_value
+		parameters = {
+			setting = mid_game_year
+		}
+		mode = subtract
+	}
+	complex_trigger_modifier = {
+		trigger = check_galaxy_setup_value
+		parameters = {
+			setting = end_game_year
+		}
+		mode = add
+	}
+	divide = 10
+	multiply = 3
+}
+mid_to_end_game_year_4_10th = {
+	complex_trigger_modifier = {
+		trigger = check_galaxy_setup_value
+		parameters = {
+			setting = mid_game_year
+		}
+		mode = subtract
+	}
+	complex_trigger_modifier = {
+		trigger = check_galaxy_setup_value
+		parameters = {
+			setting = end_game_year
+		}
+		mode = add
+	}
+	divide = 10
+	multiply = 4
+}
+mid_to_end_game_year_5_10th = {
+	complex_trigger_modifier = {
+		trigger = check_galaxy_setup_value
+		parameters = {
+			setting = mid_game_year
+		}
+		mode = subtract
+	}
+	complex_trigger_modifier = {
+		trigger = check_galaxy_setup_value
+		parameters = {
+			setting = end_game_year
+		}
+		mode = add
+	}
+	divide = 10
+	multiply = 5
+}
+mid_to_end_game_year_6_10th = {
+	complex_trigger_modifier = {
+		trigger = check_galaxy_setup_value
+		parameters = {
+			setting = mid_game_year
+		}
+		mode = subtract
+	}
+	complex_trigger_modifier = {
+		trigger = check_galaxy_setup_value
+		parameters = {
+			setting = end_game_year
+		}
+		mode = add
+	}
+	divide = 10
+	multiply = 6
+}
+mid_to_end_game_year_7_10th = {
+	complex_trigger_modifier = {
+		trigger = check_galaxy_setup_value
+		parameters = {
+			setting = mid_game_year
+		}
+		mode = subtract
+	}
+	complex_trigger_modifier = {
+		trigger = check_galaxy_setup_value
+		parameters = {
+			setting = end_game_year
+		}
+		mode = add
+	}
+	divide = 10
+	multiply = 7
+}
+mid_to_end_game_year_8_10th = {
+	complex_trigger_modifier = {
+		trigger = check_galaxy_setup_value
+		parameters = {
+			setting = mid_game_year
+		}
+		mode = subtract
+	}
+	complex_trigger_modifier = {
+		trigger = check_galaxy_setup_value
+		parameters = {
+			setting = end_game_year
+		}
+		mode = add
+	}
+	divide = 10
+	multiply = 8
+}
+mid_to_end_game_year_9_10th = {
+	complex_trigger_modifier = {
+		trigger = check_galaxy_setup_value
+		parameters = {
+			setting = mid_game_year
+		}
+		mode = subtract
+	}
+	complex_trigger_modifier = {
+		trigger = check_galaxy_setup_value
+		parameters = {
+			setting = end_game_year
+		}
+		mode = add
+	}
+	divide = 10
+	multiply = 9
+}

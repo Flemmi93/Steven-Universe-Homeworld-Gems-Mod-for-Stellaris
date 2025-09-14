@@ -4,7 +4,7 @@
 #This situation happens when Pink is close to a break, it is a sort of Last warning for the player
 #to stop her doing something bad,
 pink_situation = {
-	picture = GFX_evt_gem_diamonds_worried
+	picture = "GFX_evt_gem_diamonds_worried"
 	complete_icon_frame = GFX_situation_outcome_frame_green
 	complete_icon = GFX_situation_happy
 	category = negative
@@ -40,8 +40,8 @@ pink_situation = {
 	#The Finisher is to research and Build the Garden and Spinel.	
 	stages = {
 		pm_pink_tantrum_0 = {
-			icon = GFX_situation_stage_1
-			icon_background = GFX_situation_stage_frame_red
+			icon = "GFX_situation_stage_1"
+			icon_background = "GFX_situation_stage_frame_red"
 			end = 25
 			on_first_enter = {
 				random_list = {
@@ -53,14 +53,14 @@ pink_situation = {
 		}
 		pm_pink_tantrum_1 = {
 			icon = GFX_situation_stage_2
-			icon_background = GFX_situation_stage_frame_red
+			icon_background = "GFX_situation_stage_frame_red"
 			end = 50
 			on_first_enter = {
 			}
 		}
 		pm_pink_tantrum_2 = {
 			icon = GFX_situation_stage_3
-			icon_background = GFX_situation_stage_frame_red
+			icon_background = "GFX_situation_stage_frame_red"
 			end = 75
 			on_first_enter = {
 			}

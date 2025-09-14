@@ -19,7 +19,7 @@
 #}
 
 white_ascention_dig_site = {
-	picture = GFX_evt_gem_white_accension
+	picture = "GFX_evt_gem_white_accension"
 	desc = white_ascention_dig_site_desc
 	stages = 3
 	allow = {
@@ -52,7 +52,7 @@ white_ascention_dig_site = {
 	}
 }
 yellow_ascention_dig_site = {
-	picture = GFX_evt_gem_yellow_accension
+	picture = "GFX_evt_gem_yellow_accension"
 	desc = yellow_ascention_dig_site_desc
 	stages = 3
 	allow = {
@@ -85,7 +85,7 @@ yellow_ascention_dig_site = {
 	}
 }
 blue_ascention_dig_site = {
-	picture = GFX_evt_gem_blue_accension
+	picture = "GFX_evt_gem_blue_accension"
 	desc = blue_ascention_dig_site_desc
 	stages = 3
 	allow = {
@@ -118,7 +118,7 @@ blue_ascention_dig_site = {
 	}
 }
 pink_ascention_dig_site = {
-	picture = GFX_evt_gem_pink_accension
+	picture = "GFX_evt_gem_pink_accension"
 	desc = pink_ascention_dig_site_desc
 	stages = 3
 	allow = {

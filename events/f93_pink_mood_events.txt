@@ -3,7 +3,7 @@ namespace = pink_situation
 #initializing the mood System.
 #the rebel diamond can be any diamond. currently only pink's path is build
 #Blue, Yellow and White will have unique paths that are not them replacing pink
-#A moon event should trigger once a decade, halfway to the midgame pink should want a colony
+#A mood event should trigger once a decade, halfway to the midgame pink should want a colony
 country_event = {
 	id = pink_situation.1
 	is_triggered_only = yes
@@ -28,58 +28,13 @@ country_event = {
 		set_variable = { which = f93_pinks_stable_variable value = 40 }
 	}
 }
-#Starts Pink's Tantrum Situation and Event every time her mood goes low
-country_event = {
-	id = pink_situation.2
-	is_triggered_only = yes
-	hide_window = yes
-	event_chain = pink_event_chain
-	trigger = {
-		is_diamond_empire = yes
-		has_event_chain = pink_event_chain
-		check_variable = { which = f93_pinks_mood_variable value < 30 }
-	}
-	immediate = {
-		random_owned_leader = {
-			limit = { has_leader_flag = pink_diamond_flag }
-			save_event_target_as = gem_rebel_diamond@root
-		}
-		start_situation = { type = pink_situation target = event_target:gem_rebel_diamond@root }
-	}
-}
-#Pink plays a prank on a diamond, they get distracted for 1 year
-country_event = {
-	id = pink_situation.21
-	title = pink_situation.21.name
-	desc = pink_situation.21.desc
-	picture = GFX_evt_gem_homeworld
-	event_chain = pink_event_chain
-	is_triggered_only = yes
-	immediate = {
-		random_owned_leader = {
-			limit = { has_trait = trait_ruler_diamond NOT = { has_trait = trait_pink_court } }
-			save_event_target_as = target_leader
-		}
-	}
-	option = {
-		name = pink_situation.21.a
-		event_target:target_leader = {
-			add_experience = -200
-		}
-		add_modifier = {
-			modifier = pm_pink_tantrum_1
-			days = 360
-			mult = 0.1
-		}
-	}
-}
 
 #This Event Block can increase and descrease her mood.
 
 # Lowers Pink mood score ba a set amount during a set time interval, no lower than 20
 # Her mood Wanders over time to a Stable Point
 country_event = {
-	id = pink_situation.3
+	id = pink_situation.11
 	is_triggered_only = yes
 	hide_window = yes
 	event_chain = pink_event_chain
@@ -102,24 +57,124 @@ country_event = {
 	}
 
 }
-#This Event enables the Garden Project.
+
+#Starts Pink's Tantrum Situation and Event every time her mood goes low
 country_event = {
-	id = pink_situation.9
+	id = pink_situation.2
 	is_triggered_only = yes
 	hide_window = yes
 	event_chain = pink_event_chain
+	trigger = {
+		is_diamond_empire = yes
+		has_event_chain = pink_event_chain
+		check_variable = { which = f93_pinks_mood_variable value < 30 }
+	}
 	immediate = {
+		random_owned_leader = {
+			limit = { has_leader_flag = pink_diamond_flag }
+			save_event_target_as = gem_rebel_diamond@root
+		}
+		start_situation = { type = pink_situation target = event_target:gem_rebel_diamond@root }
+	}
+}
+#First stage events
+# Initial Events when the situation starts
+#Pink plays a prank on a diamond, they get distracted for 1 year
+country_event = {
+	id = pink_situation.21
+	title = pink_situation.21.name
+	desc = pink_situation.21.desc
+	picture = "GFX_evt_gem_homeworld"
+	event_chain = pink_event_chain
+	is_triggered_only = yes
+	immediate = {
+		random_owned_leader = {
+			limit = { has_trait = trait_ruler_diamond NOT = { has_trait = trait_pink_court } }
+			save_event_target_as = target_leader
+		}
+	}
+	option = {
+		name = pink_situation.21.a
+		event_target:target_leader = {
+			add_experience = -200
+		}
+		add_modifier = {
+			modifier = pm_pink_tantrum_1
+			days = 360
+			mult = 0.1
+		}
+	}
+}
+
+#Second stage events
+
+#Third stage events
+
+#Finisher events
+
+######################################
+#Events that Progress her Mood Story.#
+######################################
+#Creating her small attendance Gems
+country_event = {
+	id = pink_situation.3
+	title = "pink_situation.3.name"
+	desc = "pink_situation.3.desc"
+	picture = "GFX_evt_gem_homeworld"
+	show_sound = offcolors_01 #replace with appropriate music-clip
+	is_triggered_only = yes
+	event_chain = pink_event_chain
+	immediate = {
+		set_country_flag = f93_pink_mood_3
+	}
+	option = {
+		name = OK
+	}
+}
+#Creating Spinel
+country_event = {
+	id = pink_situation.4
+	title = "pink_situation.4.name"
+	desc = "pink_situation.4.desc"
+	picture = "GFX_evt_gem_homeworld"
+	show_sound = offcolors_01 #replace with appropriate music-clip
+	is_triggered_only = yes
+	event_chain = pink_event_chain
+	immediate = {
+		set_country_flag = f93_pink_mood_4
+		enable_special_project = {
+			name = f93_pink_spinel_project
+		}
+	}
+	option = {
+		name = OK
+	}
+}
+#This Event enables the Garden Project.
+country_event = {
+	id = pink_situation.5
+	title = "pink_situation.5.name"
+	desc = "pink_situation.5.desc"
+	picture = "GFX_evt_gem_homeworld"
+	show_sound = offcolors_01 #replace with appropriate music-clip
+	is_triggered_only = yes
+	event_chain = pink_event_chain
+	immediate = {
+		set_country_flag = f93_pink_mood_5
 		enable_special_project = {
 			name = f93_pink_garden_project
 		}
 	}
+	option = {
+		name = OK
+	}
 }
 # The first choice during the garden project
 country_event = {
-	id = pink_situation.91
-	title = "pink_situation.91.name"
-	desc = "pink_situation.91.desc"
-	picture = GFX_evt_gem_homeworld
+	id = pink_situation.51
+	title = "pink_situation.51.name"
+	desc = "pink_situation.51.desc"
+	picture = "GFX_evt_gem_homeworld"
 	show_sound = offcolors_01 #replace with appropriate music-clip
 	
 	is_triggered_only = yes
@@ -169,11 +224,11 @@ country_event = {
 	}
 	#Decision to do nothing for now.
 	option = {
-		name = "pink_situation.91.0"
+		name = "pink_situation.51.0"
 	}
-	#Small Price
+	#Small extra investment
 	option = {
-		name = "pink_situation.91.a"
+		name = "pink_situation.51.a"
 		allow = {
 			has_resource = {
 				type = energy amount > year_energy
@@ -181,13 +236,13 @@ country_event = {
 				type = alloys amount > year_alloys
 			}
 		}
-		add_monthly_resource_mult = { resource = energy value = -0.085 mult = year_energy }
-		add_monthly_resource_mult = { resource = minerals value = -0.085 mult = year_minerals }
-		add_monthly_resource_mult = { resource = alloys value = -0.085 mult = year_alloys }
+		add_monthly_resource_mult = { resource = energy value = -0.05 mult = year_energy }
+		add_monthly_resource_mult = { resource = minerals value = -0.05 mult = year_minerals }
+		add_monthly_resource_mult = { resource = alloys value = -0.05 mult = year_alloys }
 	}
-	#big price option
+	#big extra investment option
 	option = {
-		name = "pink_situation.91.b"
+		name = "pink_situation.51.b"
 		allow = {
 			has_resource = {
 				type = energy amount > year_energy
@@ -199,9 +254,30 @@ country_event = {
 				type = rare_crystals amount > 500
 			}
 		}
-		add_monthly_resource_mult = { resource = energy value = -0.1 mult = year_energy }
-		add_monthly_resource_mult = { resource = minerals value = -0.1 mult = year_minerals }
-		add_monthly_resource_mult = { resource = alloys value = -0.1 mult = year_alloys }
+		add_monthly_resource_mult = { resource = energy value = -0.125 mult = year_energy }
+		add_monthly_resource_mult = { resource = minerals value = -0.125 mult = year_minerals }
+		add_monthly_resource_mult = { resource = alloys value = -0.125 mult = year_alloys }
 		add_monthly_resource_mult = { resource = rare_crystals value = -0.085 min = 500 mult = year_rare_crystals }
+	}
+}
+
+#Pink Wants a Colony
+#Enables the option to give her a colony if said colony has the f93_valid_pink_colony@root flag
+country_event = {
+	id = pink_situation.9
+	title = "pink_situation.9.name"
+	desc = "pink_situation.9.desc"
+	picture = "GFX_evt_gem_homeworld"
+	show_sound = offcolors_01 #replace with appropriate music-clip
+	
+	is_triggered_only = yes
+	event_chain = pink_event_chain
+
+	immediate = {
+		set_country_flag = pink_wants_a_colony
+	}
+	option = {
+		name = pink_situation.9.a
+		custom_tooltip = pink_situation.9.a.desc
 	}
 }

@@ -5,7 +5,7 @@ country_event = {
 	is_triggered_only = yes
 	title = pink_rebellion.1.name
 	desc = pink_rebellion.1.desc
-	picture = GFX_evt_gem_homeworld
+	picture = "GFX_evt_gem_homeworld"
 
 	trigger = {
 		is_diamond_empire = yes

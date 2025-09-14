@@ -1,9 +1,3 @@
-# Main screen to choose what diamond should rule
-#These events ensure that Pink get a colony, preferably Earth, but at users Choice it can be any world
-# as long as primitives are present, if need be a fitting world will be created.
-#To keep a timeline, Pinks mood will go down and become expensive to keep high. increasing as 
-# it becomes more possible to give her a colony.
-
 namespace = pink_colony
 
 country_event = {

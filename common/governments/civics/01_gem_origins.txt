@@ -1,7 +1,7 @@
 origin_geoform = {
 	is_origin = yes
 	icon = "gfx/interface/icons/origins/origins_geoform.dds"
-	picture = GFX_origin_geoform
+	picture = "GFX_origin_geoform"
 
 	starting_colony = pc_gem
 	#habitability_preference = pc_gem
@@ -27,7 +27,7 @@ origin_geoform = {
 origin_crystal_gems = {
 	is_origin = yes
 	icon = "gfx/interface/icons/origins/origins_crystalgems.dds"
-	picture = GFX_origin_gem_crystal_gems
+	picture = "GFX_origin_gem_crystal_gems"
 
 	preferred_planet_class_neighbor = yes
 	max_once_global = yes
