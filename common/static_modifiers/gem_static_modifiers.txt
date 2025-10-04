@@ -54,11 +54,6 @@ pm_shattered_rose_gem = {
 	icon_frame = 2
 	planet_crime_mult = -0.15
 }
-# pm_pink_tantrum_1 = {
-# 	icon = "gfx/interface/icons/planet_modifiers/pm_unrest.dds"
-# 	icon_frame = 3
-# 	pop_citizen_happiness = -0.1
-# }
 pm_pink_tantrum_1 = {
 	icon = "gfx/interface/icons/planet_modifiers/pm_unrest.dds"
 	icon_frame = 3
@@ -67,23 +62,28 @@ pm_pink_tantrum_1 = {
 pm_pink_tantrum_2 = {
 	icon = "gfx/interface/icons/planet_modifiers/pm_unrest.dds"
 	icon_frame = 3
-	pop_citizen_happiness = -0.2
+	pop_citizen_happiness = -1
 }
 pm_pink_tantrum_3 = {
 	icon = "gfx/interface/icons/planet_modifiers/pm_unrest.dds"
 	icon_frame = 3
-	pop_citizen_happiness = -0.3
+	pop_category_rulers_upkeep_mult = 1
+}
+pm_pink_pebbles = {
+	icon = "gfx/interface/icons/planet_modifiers/gem_pink_attendant.dds"
+	icon_frame = 1
+	job_f93_gem_pink_pebbles_add = 1
 }
 pm_blue_visits = {
 	icon = "gfx/interface/icons/planet_modifiers/gem_blue_diamond.dds"
 	icon_frame = 2
-planet_jobs_unity_produces_mult = 0.25
+	planet_jobs_unity_produces_mult = 0.25
 	planet_stability_add = 5
 }
 pm_yellow_visits = {
 	icon = "gfx/interface/icons/planet_modifiers/gem_yellow_diamond.dds"
 	icon_frame = 2
-planet_jobs_alloys_produces_mult = 0.25
+	planet_jobs_alloys_produces_mult = 0.25
 	planet_stability_add = 5
 }
 pm_gem_no_assemble = {
@@ -151,7 +151,6 @@ era_one = {
 	pop_resettlement_cost_mult = -0.75
 	planet_colony_development_speed_mult = 0.50
 	ship_colonizer_cost_mult = -0.1
-	#country_official_cap_add = 2
 }
 era_two = {
 	icon = "gfx/interface/icons/traits/trait_gem_eratwo.dds"
@@ -171,6 +170,16 @@ era_crystal_gems = {
 	icon = "gfx/interface/icons/traits/trait_gem_crystal_gems.dds"
 	pop_happiness = 0.10
 	planet_crime_add = -10
+}
+pink_pebbles_stage_1 = {
+	icon = "gfx/interface/icons/jobs/job_gem_pink_pebbles.dds"
+	job_f93_gem_pink_pebbles_automated_workforce_mult = 1
+	
+}
+pink_pebbles_stage_2 = {
+	icon = "gfx/interface/icons/jobs/job_gem_pink_pebbles.dds"
+	pop_f93_gem_pink_pebbles_workforce_mult = -1
+
 }
 white_part_relict = {
 	icon = "gfx/interface/icons/traits/trait_gem_crystal_gems.dds"

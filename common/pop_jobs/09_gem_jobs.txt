@@ -16,11 +16,6 @@ kindergartener = {
 	}
 
 	possible_precalc = can_fill_specialist_job
-
-	possible = {
-		complex_specialist_job_check_trigger = yes
-	}
-	
 	resources = {
 		category = planet_managers
 		produces = {
@@ -467,5 +462,50 @@ kindergartener_drone = {
 				}
 			}
 		}
+	}
+}
+
+# Bonus pink gets these jobs as a bonus, a valuable job that she carries around with her. 
+# Valid Modifier
+# - job_f93_gem_pink_pebbles_add, Category: Planets
+# - job_f93_gem_pink_pebbles_per_pop, Category: Planets
+# - job_f93_gem_pink_pebbles_per_crime, Category: Planets
+# - pop_f93_gem_pink_pebbles_workforce_mult, Category: Pops
+# - pop_f93_gem_pink_pebbles_bonus_workforce_mult, Category: Pops
+# - job_f93_gem_pink_pebbles_max_workforce_add, Category: Job
+# - job_f93_gem_pink_pebbles_max_workforce_mult, Category: Job
+# - job_f93_gem_pink_pebbles_automated_workforce_mult, Category: Planets, Job
+f93_gem_pink_pebbles = {
+	category = ruler
+
+	swappable_data = {
+		default = {
+			condition_string = RULER_JOB_TRIGGER
+			building_icon = pebbles
+			icon = gem_pink_pebbles
+		}
+	}
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+
+	possible_precalc = can_fill_ruler_job
+	
+	resources = {
+		category = planet_managers
+		produces = {
+			unity = 2
+			consumer_goods = 1
+		}
+		upkeep = {
+			energy = 3
+			minerals = 1
+		}
+	}
+	weight = {
+		weight = 4000
 	}
 }
