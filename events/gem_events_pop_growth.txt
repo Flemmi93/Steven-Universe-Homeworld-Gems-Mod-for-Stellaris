@@ -38,16 +38,17 @@ planet_event = {
 		NOT = { has_planet_flag = gem_pop2_just_happened }
 	}
 	immediate = {
+		#in case the variable is not set for some reason
+		if = {
+			limit = { NOT = { is_variable_set = gem_pops_made } } 
+			set_variable = { which = gem_pops_made value = 0 }
+		}
 		#only once per pop creation batch
 		set_timed_planet_flag = {
 			flag = gem_pop2_just_happened
 			days = 1
 		}
 		#Count the pops made on this world.
-		if = {
-			limit = { NOT = { is_variable_set = gem_pops_made } } 
-			set_variable = { which = gem_pops_made value = 0 }
-		}
 		change_variable = { which = gem_pops_made value = local_pop_amount }
 	}
 }

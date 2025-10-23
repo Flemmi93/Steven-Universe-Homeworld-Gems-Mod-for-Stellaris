@@ -19,6 +19,10 @@ event = {
 			add_modifier = { modifier = era_one }
 			add_modifier = { modifier = gems_xeno_control mult = 0.85 }
 			country_event = { id = gem_diamond_ruler.0001 }
+			country_event = { id = GEM_start.1000 } # setting up homeworld
+			set_variable = { which = active_kindergartens value = 1 }
 		}
+		#Enbable the Mood System
+		# country_event = { id = pink_situation.1 days = 10 } #starts pinks mood system
 	}
 }

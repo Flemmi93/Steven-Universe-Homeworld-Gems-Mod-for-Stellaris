@@ -210,14 +210,18 @@ f93_create_humans = {
 			class = "HUM"
 			portrait = "human"
 			homeworld = THIS
+			sapient = no
 			traits = {
 				trait = "trait_adaptive"
 				trait = "trait_nomadic"
 				trait = "trait_wasteful"
+				trait = "trait_presapient_earthbound"
 			}
 		}
 		last_created_species = { save_event_target_as = human_species }
 	}
+}
+f93_create_human_nation_primitive = {
 	create_country = {
 		name = random
 		type = primitive
@@ -263,4 +267,49 @@ f93_spawn_sol_system = {
 		hyperlane = yes
 		initializer = sol_system_initializer
 	}
+}
+update_global_gem_potential = {
+	owner = {
+		set_variable = { which = global_geoloid_potential value = 0 }
+		every_owned_planet = {
+			limit = { is_variable_set = gem_pops_made }
+			owner = {
+				change_variable = { which = global_geoloid_potential value = prev.value:geoloid_potential }
+				subtract_variable = { which = global_geoloid_potential value = prev.gem_pops_made }
+			}
+		}
+	}
+}
+update_global_gems_to_be_made = {
+	owner = {
+		set_variable = { which = gems_to_be_made value = 0 }
+		every_owned_planet = {
+			export_trigger_value_to_variable = {
+				trigger = free_jobs
+				variable = free_jobs
+			}
+			owner = {
+				change_variable = { which = gems_to_be_made value = prev.free_jobs  }
+			}
+		}
+		subtract_variable = { which = gems_to_be_made value = value:num_gem_pops_civilian }
+	}
+}
+update_planet_gems_to_be_made = {
+	set_variable = { which = gems_to_be_made_here value = owner.gems_to_be_made }
+	owner = {
+		set_variable = { which = active_kindergartens value = 1 }
+		every_owned_planet = {
+			limit = {
+				is_variable_set = gem_pops_made
+				check_variable = { which = gem_pops_made value < value:geoloid_potential }
+			}
+			owner = { change_variable = { which = active_kindergartens value = 1 } }
+		}
+		if = {
+			limit = { check_variable = { which = active_kindergartens value > 1 } }
+			subtract_variable = { which = active_kindergartens value = 1 }
+		}
+	}
+	divide_variable = { which = gems_to_be_made_here value = owner.active_kindergartens }
 }

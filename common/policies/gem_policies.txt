@@ -11,41 +11,41 @@
 #
 ##########################################################################
 
-kindergarten_output = {
-	potential = {
-		OR = {
-			is_geo_empire = yes
-		}
-	}
+# kindergarten_output = {
+# 	potential = {
+# 		OR = {
+# 			is_geo_empire = yes
+# 		}
+# 	}
 
-	allow = {
-		always = yes
-	}
+# 	allow = {
+# 		always = yes
+# 	}
 
-	option = {
-		name = "kindergarten_output_small"
-		icon = "GFX_diplomatic_stance_belligerent"
-		policy_flags = { kindergarten_output_small }
-		ai_weight = {
-			weight = 10
-		}
-	}
+# 	option = {
+# 		name = "kindergarten_output_small"
+# 		icon = "GFX_diplomatic_stance_belligerent"
+# 		policy_flags = { kindergarten_output_small }
+# 		ai_weight = {
+# 			weight = 10
+# 		}
+# 	}
 
-	option = {
-		name = "kindergarten_output_medium"
-		icon = "GFX_diplomatic_stance_cooperative"
-		policy_flags = { kindergarten_output_medium }
-		ai_weight = {
-			weight = 10
-		}
-	}
+# 	option = {
+# 		name = "kindergarten_output_medium"
+# 		icon = "GFX_diplomatic_stance_cooperative"
+# 		policy_flags = { kindergarten_output_medium }
+# 		ai_weight = {
+# 			weight = 10
+# 		}
+# 	}
 
-	option = {
-		name = "kindergarten_output_large"
-		icon = "GFX_diplomatic_stance_isolationist"
-		policy_flags = { kindergarten_output_large }
-		ai_weight = {
-			weight = 10
-		}
-	}
-}
+# 	option = {
+# 		name = "kindergarten_output_large"
+# 		icon = "GFX_diplomatic_stance_isolationist"
+# 		policy_flags = { kindergarten_output_large }
+# 		ai_weight = {
+# 			weight = 10
+# 		}
+# 	}
+# }

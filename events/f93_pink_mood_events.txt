@@ -1,15 +1,16 @@
 namespace = pink_situation
 
-#initializing the mood System.
 #the rebel diamond can be any diamond. currently only pink's path is build
 #Blue, Yellow and White will have unique paths that are not them replacing pink
 #A mood event should trigger once a decade, halfway to the midgame pink should want a colony
+#initializing the mood System.
 country_event = {
 	id = pink_situation.1
 	is_triggered_only = yes
 	hide_window = yes
 
 	immediate = {
+		set_global_flag = f93_mood_system_enabled
 		random_owned_leader = {
 			limit = { has_leader_flag = pink_diamond_flag }
 			save_global_event_target_as = gem_rebel_diamond@root
@@ -38,7 +39,9 @@ country_event = {
 	is_triggered_only = yes
 	hide_window = yes
 	event_chain = pink_event_chain
-
+	trigger = {
+		has_global_flag = f93_mood_system_enabled
+	}
 	immediate = {
 		if = {
 			limit = {
@@ -55,7 +58,6 @@ country_event = {
 			change_pink_mood = { ADD = 1 }
 		}
 	}
-
 }
 
 #Starts Pink's Tantrum Situation and Event every time her mood goes low
@@ -65,6 +67,7 @@ country_event = {
 	hide_window = yes
 	event_chain = pink_event_chain
 	trigger = {
+		has_global_flag = f93_mood_system_enabled
 		is_diamond_empire = yes
 		has_event_chain = pink_event_chain
 		check_variable = { which = f93_pinks_mood_variable value < 30 }

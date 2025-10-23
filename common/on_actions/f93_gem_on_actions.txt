@@ -8,7 +8,9 @@ on_game_start = {
 
 on_monthly_pulse_country = {
 	events = {
+		pink_situation.11
 		pink_situation.2
+		gem_kg.6
 	}
 }
 

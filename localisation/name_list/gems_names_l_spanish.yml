@@ -1,4 +1,4 @@
-﻿l_english:
+﻿l_spanish:
 #Diamond Names
  white_diamond: "§WWhite Diamond§!"
  yellow_diamond: "§YYellow Diamond§!"
@@ -176,9 +176,6 @@
  gov_perfect_authority: "Perfect Authority"
  gov_perfect_authority_desc: "This government is a unique form of gestalt autocracy, with a single immortal ruler forcefully imposing their vision of a perfect society in which each of their subjects have a purpose, place, and task to complete with perfect efficiency and competence. Free will is entirely unheard of."
  RT_MATRIARCH: "Matriarch"
-#Edicts
- edict_f93_choose_a_ruler_edict: "Choose a ruler"
- edict_f93_choose_a_ruler_edict_desc: "Gives you the opportunity to set another Diamond as the $RT_MATRIARCH$. This obviously does not diminish the importance of any other diamond. It is just an aesthetic choice."
 #Eras
  era_one: "Era One"
  era_two_desc: "Our empire is experiencing a period of rapid growth and unprecedented prosperity. We should take advantage of this opportunity to expand and colonize new worlds while it lasts."
@@ -194,7 +191,7 @@
 #Kindergarten
  d_kindergarten_small: "Small Kindergarten Site"
  d_kindergarten_small_desc: "A fertile and malleable location of minimal size, decently suited for Kindergarten development."
- d_kindergarten_med: "Kindergarten"
+ d_kindergarten_med: "Standard Kindergarten Site"
  d_kindergarten_med_desc: "A fertile and malleable location of average size, well-suited for Kindergarten development."
  d_kindergarten_large: "Large Kindergarten Site"
  d_kindergarten_large_desc: "A fertile and malleable location of considerable size, ideally suited for Kindergarten development."
@@ -428,11 +425,8 @@
  gem_diamond_ruler.100.desc: "The unthinkable has happened, and soon we will make it unhappen. For now we must suffer the indignity of waiting for her return."
  gem_diamond_ruler.101.name: "[FROM.Leader.GetName] went into seclusion"
  gem_diamond_ruler.101.desc: "For her own reason [FROM.Leader.GetName] decided to retreat to her private chambers, she will return to us in her own time. We can only hope it won't be too long."
- pink_diamond_ruler_choice_not_ready: "While an euqal among the Diamonds, $pink_d$ is inexperienced and imature, always playing games and pranks."
- white_diamond_ruler_choice: "$white_diamond$ will become the new $RT_MATRIARCH$"
- yellow_diamond_ruler_choice: "$yellow_diamond$ will become the new $RT_MATRIARCH$"
- blue_diamond_ruler_choice: "$blue_diamond$ will become the new $RT_MATRIARCH$"
- pink_diamond_ruler_choice: "$pink_diamond$ will become the new $RT_MATRIARCH$"
+ 
+ 
  gem_new_features: "New Features!"
  gem_new_features_desc: "There was an update, and your old save was adjusted to the new one.\n\n§RIf this happened at the start of a new game, please ignore.§!\n\nIf this caused a bug with the Heir then getting into era 2 will fix it, but it's not a big deal either way. I would still like to hear about it.\n\nLook at your Current Ruler and Heir to see what changes.\n\nThere is also a new Building available."
  gem_new_features_tooltip: "a new Special Project is available"
@@ -492,14 +486,7 @@
  gem_off_colors.2009.desc: "Having regained contact with $pink_diamond$ we also made contact with the Species she protected for so long.\n\nWe can interact with Planet Earth once more."
  gem_off_colors.0020.name: "A World for $pink_d$"
  gem_off_colors.0020.desc: "We discovered a world that would be ideal for $pink_diamond$ it is near our Homeworld in the §YSol§! system."
-#Megastructure
- MEGASTRUCTURE_TOOLTIP_REQUIREMENTS_PINK_GARDEN: "Must be built in Homeworld's System"
- f93_pinks_garden: "$pink_d$'s Garden"
- f93_pinks_garden_MEGASTRUCTURE_DETAILS: "Here in the Garden\nLet's play a game\nI'll show you how it's done"
- f93_pinks_garden_DESC: "This garden was made for $pink_diamond$. She can spend her freetime enjoying it. Surly this is enough to have her never be bored again."
- f93_pinks_garden2: "$f93_pinks_garden$"
- f93_pinks_garden2_DESC: "$f93_pinks_garden_DESC$"
- f93_pinks_garden2_MEGASTRUCTURE_DETAILS: "$f93_pinks_garden_MEGASTRUCTURE_DETAILS$"
+
 #Misc Events
  gem_events_misc.001.name: "Cookie Cats"
  gem_events_misc.001.desc: "We found a frozen treat with an all new taste\n\nAnd as far as we know, this is the only source in the Universe."
@@ -551,14 +538,10 @@
  crystal_gem: "Crystal Gem"
  NAME_crystal_gem_army: "Crystal Gems"
  crystal_gem_army: " $NAME_crystal_gem_army$"
- crystal_gem_army_desc: " $NAME_crystal_gem_army$"
  gem_defense_army: " $defense_army$"
- gem_defense_army_desc: " $defense_army$"
  crystal_gem_army2: " $NAME_crystal_gem_army$"
- crystal_gem_army2_desc: " $NAME_crystal_gem_army$"
  gem_defense_army2: " $defense_army$"
  crystal_gem_army3: " $NAME_crystal_gem_army$"
- crystal_gem_army3_desc: " $NAME_crystal_gem_army$"
  gem_defense_army3: " $assault_army$"
  gems_lost_earth: "Abandoned World"
  gems_lost_earth_desc: "This world is a black mark in our collective memory, we do not wish to settle here."
@@ -689,9 +672,9 @@
  pink_got_earth: "$pink_d$ is busy on earth"
  approach_lost_controll: "We lost control of the Situation"
  
-#Situations and Event Chain
- pink_situation: "$pink_d$'s Tantrum£time£"
- pink_situation_type: "$pink_d$'s Tantrum£military_power£"
+#Situations
+ pink_situation: "$pink_d$'s Mood"
+ pink_situation_type: "$pink_d$'s Mood£happiness£"
  pink_situation_desc: "$pink_d$'s mood is good for now but it isn't stable, her mood can go up and down depending on what is happening to her or in the empire at large."
  pink_situation_desc_bad: "'You have so many worlds and I don't even have one! It's not fair! I. Want. One! I want my own army! I want my own planet! I deserve it! I'm just as important as you!' $pink_d$ exclaimed and stormed Off after being reprimanded, ,\n\nThis isn't the end of $pink_diamond$'s wrath her outburst are becoming increasingly violent. Something must be done, or she might do irreparable damage."
  pink_situation_monthly_change_tooltip: "Her mood is going down"
@@ -699,33 +682,11 @@
  pink_situation_complete_desc: "Pink Complete description"
  gem_sit_nothing_happens: "Nothing is happening"
  gem_sit_something_happens: "Something is happening"
- pink_event_chain_title: "$pink_d$'s mood"
- pink_event_chain_desc: "All Diamonds are perfect. This we know to be true. The Light of §Y[Root.GetName]§! is $pink_diamond$. Gems elate when she enters a room and her parties are unmatched. \n§W$white_d$ able to administer vast numbers to work flawless!\n§Y$yellow_d$ leading her armies to victory after victory§!\n§B$blue_d$ understands and cares for the needs of her subjects\n§!§P$pink_d$ socializes.§!\n\nPublicly, nothing else is even thinkable.\n\nThe Court of the Diamonds however cannot entirely close its eyes to one itsy bitsy issue: §R$pink_d$'s mood§!. More accurately her complete lack of self-control and her propensity to throw excessive and violent tantrums. When §Pshe§! is bored gems around her cower in fear.\n\n§LSmall balled fists fall like hammers, smashing whatever and whoever stands too close.§!"
- f93_pinks_stable_counter: "Her stable Mood:"
- f93_pinks_mood_counter: "Her current Mood:"
- f93_pinks_tantrum_counter: "Numer of tantrums:"
  pink_diamond_got_poofed: "$pink_diamond$ is reforming"
  white_diamond_got_poofed: "$white_diamond$ is reforming"
  yellow_diamond_got_poofed: "$yellow_diamond$ is reforming"
  blue_diamond_got_poofed: "$blue_diamond$ is reforming"
- pink_situation.21.desc: ""
- pink_situation.21.a: ""
- pink_situation.3.desc: ""
- pink_situation.4.desc: ""
- pink_situation.5.desc: ""
- pink_situation.51.desc: ""
- pink_situation.51.0: ""
- pink_situation.51.a: ""
- pink_situation.51.b: ""
- pink_situation.9.desc: ""
- pink_situation.9.a: ""
- pink_situation.9.a.desc: ""
- pink_rebellion.1.desc: ""
- pink_rebellion.1.a: ""
 
-#Situation log
- f93_pink_garden_project: "$pink_d$'s mood"
- f93_pink_garden_project_desc: "It can be difficult to please $pink_d$ her taste are particular and she is easly bored. We will task our engineers to develope the perfect fun place for her."
 #1000 year war
  gem_1000_year_war: "Crystal Gem Rebellion"
  gem_1000_year_war_name: "$START_SITUATION_EFFECT$the §Y[Planet.GetName] Rebellion§!"

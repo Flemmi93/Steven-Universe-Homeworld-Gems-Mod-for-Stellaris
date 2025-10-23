@@ -78,3 +78,16 @@ planet_event = {
 		}
 	}
 }
+
+
+country_event = {
+	id = gem_kg.6
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		update_global_gem_potential = yes
+		update_global_gems_to_be_made = yes
+		every_owned_planet = { update_planet_gems_to_be_made = yes }
+	}
+}

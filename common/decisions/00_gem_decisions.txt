@@ -34,7 +34,7 @@ f93_make_kindergarten = {
 			colony_type = col_farming
 			OR = {
 				has_deposit = d_kindergarten
-				count_owned_pop_amount = { count < 10 }
+				count_owned_pop_amount = { count < 1000 }
 			}
 		}
 		modifier = {
@@ -215,7 +215,7 @@ decision_gemcology_project_ai = {
 		}
 		modifier = {
 			add = 50
-			count_owned_pop_amount = { count > 35 }
+			count_owned_pop_amount = { count > 3500 }
 		}
 		modifier = {
 			add = 50
@@ -232,23 +232,23 @@ decision_gemcology_project_ai = {
 		}
 		modifier = {
 			add = 50
-			count_owned_pop_amount = { count > 40 }
+			count_owned_pop_amount = { count > 4000 }
 		}
 		modifier = {
 			add = 50
-			count_owned_pop_amount = { count > 45 }
+			count_owned_pop_amount = { count > 4500 }
 		}
 		modifier = {
 			add = 50
-			count_owned_pop_amount = { count > 50 }
+			count_owned_pop_amount = { count > 5000 }
 		}
 		modifier = {
 			add = 50
-			count_owned_pop_amount = { count > 55 }
+			count_owned_pop_amount = { count > 5500 }
 		}
 		modifier = {
 			add = 150
-			count_owned_pop_amount = { count > 60 }
+			count_owned_pop_amount = { count > 6000 }
 		}
 	}
 }
@@ -325,27 +325,27 @@ galaxy_warp_ai = {
 		}
 		modifier = {
 			add = 50
-			count_owned_pop_amount = { count > 10 }
+			count_owned_pop_amount = { count > 1000 }
 		}
 		modifier = {
 			add = 50
-			count_owned_pop_amount = { count > 15 }
+			count_owned_pop_amount = { count > 1500 }
 		}
 		modifier = {
 			add = 50
-			count_owned_pop_amount = { count > 20 }
+			count_owned_pop_amount = { count > 2000 }
 		}
 		modifier = {
 			add = 50
-			count_owned_pop_amount = { count > 25 }
+			count_owned_pop_amount = { count > 2500 }
 		}
 		modifier = {
 			add = 50
-			count_owned_pop_amount = { count > 30 }
+			count_owned_pop_amount = { count > 3000 }
 		}
 		modifier = {
 			add = 150
-			count_owned_pop_amount = { count > 35 }
+			count_owned_pop_amount = { count > 3500 }
 		}
 	}
 }

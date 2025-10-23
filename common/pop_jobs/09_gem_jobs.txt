@@ -37,52 +37,105 @@ kindergartener = {
 		potential = {
 			has_lithoids = yes
 			f93_can_make_gems = yes
-			owner = { has_policy_flag = kindergarten_output_small }
+			check_variable = { which = gems_to_be_made_here value >= 1 }
 		}
-		LITHOID_bonus_pop_growth = @gem_bonus_growth_small
+		LITHOID_bonus_pop_growth = 1
 	}
-	triggered_planet_modifier = {
-		potential = {
-			has_lithoids = no
-			f93_can_make_gems = yes
-			owner = { has_policy_flag = kindergarten_output_small }
-		}
-		GEOLOID_bonus_pop_growth = @gem_bonus_growth_small
-	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_lithoids = yes
 			f93_can_make_gems = yes
-			owner = { has_policy_flag = kindergarten_output_medium }
+			check_variable = { which = gems_to_be_made_here value >= 100 }
 		}
-		LITHOID_bonus_pop_growth = @gem_bonus_growth_medium
+		planet_resettlement_unemployed_mult = 25
+		LITHOID_bonus_pop_growth = 9
 	}
-	triggered_planet_modifier = {
-		potential = {
-			has_lithoids = no
-			f93_can_make_gems = yes
-			owner = { has_policy_flag = kindergarten_output_medium }
-		}
-		GEOLOID_bonus_pop_growth = @gem_bonus_growth_medium
-	}
-
 	triggered_planet_modifier = {
 		potential = {
 			has_lithoids = yes
 			f93_can_make_gems = yes
-			owner = { has_policy_flag = kindergarten_output_large }
+			check_variable = { which = gems_to_be_made_here value >= 1000 }
 		}
-		LITHOID_bonus_pop_growth = @gem_bonus_growth_large
+		planet_resettlement_unemployed_mult = 25
+		LITHOID_bonus_pop_growth = 10
+	}
+	
+	triggered_planet_modifier = {
+		potential = {
+			has_lithoids = no
+			f93_can_make_gems = yes
+			check_variable = { which = gems_to_be_made_here value >= 1 }
+		}
+		GEOLOID_bonus_pop_growth = 1
 	}
 	triggered_planet_modifier = {
 		potential = {
 			has_lithoids = no
 			f93_can_make_gems = yes
-			owner = { has_policy_flag = kindergarten_output_large }
+			check_variable = { which = gems_to_be_made_here value >= 100 }
+			planet_resettlement_unemployed_mult = 25
 		}
-		GEOLOID_bonus_pop_growth = @gem_bonus_growth_large
+		GEOLOID_bonus_pop_growth = 9
 	}
+	triggered_planet_modifier = {
+		potential = {
+			has_lithoids = no
+			f93_can_make_gems = yes
+			check_variable = { which = gems_to_be_made_here value >= 1000 }
+			planet_resettlement_unemployed_mult = 25
+		}
+		GEOLOID_bonus_pop_growth = 10
+	}
+	# triggered_planet_modifier = {
+	# 	potential = {
+	# 		has_lithoids = yes
+	# 		f93_can_make_gems = yes
+	# 		# owner = { has_policy_flag = kindergarten_output_small }
+	# 	}
+	# 	LITHOID_bonus_pop_growth = @gem_bonus_growth_small
+	# }
+	# triggered_planet_modifier = {
+	# 	potential = {
+	# 		has_lithoids = no
+	# 		f93_can_make_gems = yes
+	# 		# owner = { has_policy_flag = kindergarten_output_small }
+	# 	}
+	# 	GEOLOID_bonus_pop_growth = @gem_bonus_growth_small
+	# }
+
+	# triggered_planet_modifier = {
+	# 	potential = {
+	# 		has_lithoids = yes
+	# 		f93_can_make_gems = yes
+	# 		owner = { has_policy_flag = kindergarten_output_medium }
+	# 	}
+	# 	LITHOID_bonus_pop_growth = @gem_bonus_growth_medium
+	# }
+	# triggered_planet_modifier = {
+	# 	potential = {
+	# 		has_lithoids = no
+	# 		f93_can_make_gems = yes
+	# 		owner = { has_policy_flag = kindergarten_output_medium }
+	# 	}
+	# 	GEOLOID_bonus_pop_growth = @gem_bonus_growth_medium
+	# }
+
+	# triggered_planet_modifier = {
+	# 	potential = {
+	# 		has_lithoids = yes
+	# 		f93_can_make_gems = yes
+	# 		owner = { has_policy_flag = kindergarten_output_large }
+	# 	}
+	# 	LITHOID_bonus_pop_growth = @gem_bonus_growth_large
+	# }
+	# triggered_planet_modifier = {
+	# 	potential = {
+	# 		has_lithoids = no
+	# 		f93_can_make_gems = yes
+	# 		owner = { has_policy_flag = kindergarten_output_large }
+	# 	}
+	# 	GEOLOID_bonus_pop_growth = @gem_bonus_growth_large
+	# }
 
 #Bonus from techs
 	triggered_planet_modifier = {
@@ -400,7 +453,7 @@ kindergartener_drone = {
 		potential = {
 			has_lithoids = yes
 			f93_can_make_gems = yes
-			owner = { has_policy_flag = kindergarten_output_small }
+			# owner = { has_policy_flag = kindergarten_output_small }
 		}
 		LITHOID_bonus_pop_growth = @gem_bonus_growth_small
 	}
@@ -408,44 +461,44 @@ kindergartener_drone = {
 		potential = {
 			has_lithoids = no
 			f93_can_make_gems = yes
-			owner = { has_policy_flag = kindergarten_output_small }
+			# owner = { has_policy_flag = kindergarten_output_small }
 		}
 		GEOLOID_bonus_pop_growth = @gem_bonus_growth_small
 	}
 
-	triggered_planet_modifier = {
-		potential = {
-			has_lithoids = yes
-			f93_can_make_gems = yes
-			owner = { has_policy_flag = kindergarten_output_medium }
-		}
-		LITHOID_bonus_pop_growth = @gem_bonus_growth_medium
-	}
-	triggered_planet_modifier = {
-		potential = {
-			has_lithoids = no
-			f93_can_make_gems = yes
-			owner = { has_policy_flag = kindergarten_output_medium }
-		}
-		GEOLOID_bonus_pop_growth = @gem_bonus_growth_medium
-	}
+	# triggered_planet_modifier = {
+	# 	potential = {
+	# 		has_lithoids = yes
+	# 		f93_can_make_gems = yes
+	# 		owner = { has_policy_flag = kindergarten_output_medium }
+	# 	}
+	# 	LITHOID_bonus_pop_growth = @gem_bonus_growth_medium
+	# }
+	# triggered_planet_modifier = {
+	# 	potential = {
+	# 		has_lithoids = no
+	# 		f93_can_make_gems = yes
+	# 		owner = { has_policy_flag = kindergarten_output_medium }
+	# 	}
+	# 	GEOLOID_bonus_pop_growth = @gem_bonus_growth_medium
+	# }
 
-	triggered_planet_modifier = {
-		potential = {
-			has_lithoids = yes
-			f93_can_make_gems = yes
-			owner = { has_policy_flag = kindergarten_output_large }
-		}
-		LITHOID_bonus_pop_growth = @gem_bonus_growth_large
-	}
-	triggered_planet_modifier = {
-		potential = {
-			has_lithoids = no
-			f93_can_make_gems = yes
-			owner = { has_policy_flag = kindergarten_output_large }
-		}
-		GEOLOID_bonus_pop_growth = @gem_bonus_growth_large
-	}
+	# triggered_planet_modifier = {
+	# 	potential = {
+	# 		has_lithoids = yes
+	# 		f93_can_make_gems = yes
+	# 		owner = { has_policy_flag = kindergarten_output_large }
+	# 	}
+	# 	LITHOID_bonus_pop_growth = @gem_bonus_growth_large
+	# }
+	# triggered_planet_modifier = {
+	# 	potential = {
+	# 		has_lithoids = no
+	# 		f93_can_make_gems = yes
+	# 		owner = { has_policy_flag = kindergarten_output_large }
+	# 	}
+	# 	GEOLOID_bonus_pop_growth = @gem_bonus_growth_large
+	# }
 
 	
 	weight = {

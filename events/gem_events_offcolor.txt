@@ -20,7 +20,7 @@ country_event = {
 				}
 				count_owned_pop_amount = { count > 6000 }
 			}
-			# count_owned_pop_amount = { count > 12000 }
+			count_owned_pop_amount = { count > 12000 }
 			years_passed > partway_to_mid_game_years_var
 		}
 	}
@@ -47,24 +47,22 @@ country_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
-	trigger = { is_ai = no }
+	trigger = { is_ai = no NOT = { has_global_flag = f93_mood_system_enabled } }
 	immediate = {
 		set_global_flag = gem_sol_discovered
 		set_country_flag = gem_sol_system
 		set_country_flag = pink_wants_earth
-		if = {
+		capital_scope.solar_system = { save_event_target_as = source }
+		random_system = {
 			limit = {
-				any_system_within_border = { has_star_flag = gem_sol_system }
+				distance = {
+					source = event_target:source
+					type = hyperlane
+					min_jumps = 5
+					max_jumps = 7
+				}
 			}
-			random_system_within_border = {
-				limit = { has_star_flag = gem_sol_system }
-				save_event_target_as = gem_sol_spawn_system
-			}
-		}
-		else = {
-			random_system_within_border = {
-				save_event_target_as = gem_sol_spawn_system
-			}
+			save_event_target_as = gem_sol_spawn_system
 		}
 		event_target:gem_sol_spawn_system = {
 			spawn_system = {
@@ -84,14 +82,15 @@ country_event = {
 				add_extra_hyperlane_to_spawned_system_effect = yes
 			}
 		}
-		last_created_system = {
-			random_system_planet = {
-				limit = { 
-					has_planet_flag = gem_planet_earth
-				}
-				save_global_event_target_as = gem_planet_earth_event
+		event_target:gem_planet_earth_event = {
+			f93_create_humans = yes
+			create_pop = {
+				species = last_created_species
+				size = 1000
+				random = 1000
 			}
 		}
+		
 		country_event = { id = gem_off_colors.0020 days = 3 }
 	}
 }
@@ -1394,7 +1393,7 @@ country_event = { #Bronze Age -> Iron Age
 			set_variable = { which = earth_pop_buildup value = 6}
 			if = {
 				limit = {
-					count_owned_pop_amount = { count < earth_pop_buildup  }
+					count_owned_pop_amount = { count < earth_pop_buildup }
 				}
 				subtract_variable = { which = earth_pop_buildup value = value:f93_local_pop_numbers }
 				while = {

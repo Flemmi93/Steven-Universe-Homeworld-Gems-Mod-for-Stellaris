@@ -491,9 +491,9 @@ planet_event = { #event chain to make gems spawn on a colony world first as a wa
 			OR = {
 				AND = {
 					num_owned_planets > 6
-					count_owned_pop_amount = { count > 100 }
+					count_owned_pop_amount = { count > 10000 }
 				}
-				count_owned_pop_amount = { count > 200 }
+				count_owned_pop_amount = { count > 20000 }
 			}
 		}
 	}

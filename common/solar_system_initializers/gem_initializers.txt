@@ -213,7 +213,7 @@ gem_invasion_initializer = {
 
 gem_system_neighbor_1 = {
 	class = "rl_standard_stars"
-	flags = { gem_sol_system }
+	# flags = { gem_sol_system }
 
 	init_effect = {
 		every_neighbor_system = { set_star_flag = empire_cluster }
@@ -278,6 +278,7 @@ gem_system_neighbor_1 = {
 # Gem Sol System (Stone age only Primitive Humans)
 gem_sol_system = {
 	name = "NAME_Sol"
+
 	class = "sc_g"
 	asteroid_belt = {
 		type = rocky_asteroid_belt
@@ -288,7 +289,7 @@ gem_sol_system = {
 		radius = 290
 	}
 
-	flags = { gem_primitive_sol }
+	flags = {  sol_system sol }
 
 	planet = {
 		name = "NAME_Sol"
@@ -306,6 +307,14 @@ gem_sol_system = {
 		orbit_angle = 15
 		size = 10
 		has_ring = no
+		init_effect = {
+			set_planet_entity = {
+				entity = molten_planet_mercury_entity
+				atmosphere_color = hsv { 0.8 0.1 0.2 }
+				atmosphere_intensity = 0.1
+				atmosphere_width = 1.0
+			}
+		}
 	}
 
 	planet = {
@@ -315,6 +324,14 @@ gem_sol_system = {
 		orbit_angle = 125
 		size = 17
 		has_ring = no
+		init_effect = {
+			set_planet_entity = {
+				entity = toxic_planet_venus_entity
+				atmosphere_color = hsv { 0.854 0.072 0.7 }
+				atmosphere_intensity = 0.2
+				atmosphere_width = 1.0
+			}
+		}
 	}
 
 	planet = {
@@ -322,76 +339,21 @@ gem_sol_system = {
 		class = "pc_continental"
 		orbit_distance = 25
 		orbit_angle = 120
-		size = 20
+		size = 18
+		starting_planet = no
 		has_ring = no
 		entity = "continental_planet_earth_entity"
 		deposit_blockers = none
 		modifiers = none
-		flags = { gem_planet_earth }
+		flags = { planet_earth }
 
 		init_effect = {
-		# Medieval
-			create_species = {
-				name = NAME_Human
-				plural = NAME_Humans
-				class = "HUM"
-				portrait = "human"
-				homeworld = THIS
-				traits = {
-					trait = "trait_adaptive"
-					trait = "trait_nomadic"
-					trait = "trait_wasteful"
-				}
+			save_global_event_target_as = gem_planet_earth_event
+			if = {
+				limit = { NOT = { exists = event_target:sol_system_earth } }
+				save_global_event_target_as = sol_system_earth
 			}
-			last_created_species = { save_global_event_target_as = gem_human_species }
-			create_country = {
-				name = random
-				authority = auth_democratic
-				civics = {
-					civic = civic_secret_of_fire
-					civic = civic_the_wheel
-				}
-				species = last_created_species
-				ethos = {
-					ethic = "ethic_xenophobe"
-					ethic = "ethic_spiritualist"
-					ethic = "ethic_egalitarian"
-				}
-				origin = "origin_enlightened" # Should only be visible if they become spacefaring
-				flag = {
-					icon = {
-						category = "special"
-						file = "primitive.dds"
-					}
-					background= {
-						category = "backgrounds"
-						file = "new_dawn.dds"
-					}
-					colors={
-						"turquoise"
-						"green"
-						"null"
-						"null"
-					}
-				}
-				day_zero_contact = no
-				type = primitive
-			}
-			last_created_country = {
-				set_country_flag = bronze_age
-				set_pre_ftl_age = bronze_age
-				set_graphical_culture = preindustrial_01
-			}
-
-			set_owner = last_created_country
-
-			while = {
-				count = 400
-				create_pop_group = { species = last_created_species effect = { save_event_target_as = gem_sol_spawn_humans } }
-			}
-			add_building = building_primitive_dwellings
-			add_building = building_primitive_dwellings
-			add_building = building_stone_palace
+			prevent_anomaly = yes
 		}
 
 		moon = {
@@ -405,6 +367,7 @@ gem_sol_system = {
 		}
 	}
 
+
 	planet = {
 		name = "NAME_Mars"
 		class = "pc_barren"
@@ -413,6 +376,8 @@ gem_sol_system = {
 		size = 13
 		has_ring = no
 		entity = "barren_planet_mars_entity"
+		flags = { planet_mars }
+
 		init_effect = {
 			add_modifier = {
 				modifier = "terraforming_candidate"
@@ -457,7 +422,6 @@ gem_sol_system = {
 		has_ring = no
 	}
 
-
 	planet = {
 		name = "NAME_Jupiter"
 		class = "pc_gas_giant"
@@ -481,7 +445,7 @@ gem_sol_system = {
 			class = "pc_frozen"
 			size = 6
 			orbit_distance = 2.5
-			orbit_angle = 10
+			orbit_angle = 190
 			has_ring = no
 		}
 		moon = {
@@ -529,7 +493,14 @@ gem_sol_system = {
 		orbit_angle = 125
 		size = 20
 		has_ring = no
-		entity = "gas_giant_03_entity"
+		init_effect = {
+			set_planet_entity = {
+				entity = gas_giant_uranus_entity
+				atmosphere_color = hsv { 0.548 0.519 0.9 }
+				atmosphere_intensity = 0.1
+				atmosphere_width = 1.0
+			}
+		}
 	}
 
 	planet = {
@@ -539,7 +510,6 @@ gem_sol_system = {
 		orbit_angle = -195
 		size = 20
 		has_ring = no
-		entity = "gas_giant_02_entity"
 		change_orbit = 4
 
 		moon = {
@@ -549,6 +519,15 @@ gem_sol_system = {
 			orbit_distance = 7
 			orbit_angle = 115
 			has_ring = no
+		}
+
+		init_effect = {
+			set_planet_entity = {
+				entity = gas_giant_neptune_entity
+				atmosphere_color = hsv { 0.626 0.782 0.9 }
+				atmosphere_intensity = 0.1
+				atmosphere_width = 1.0
+			}
 		}
 	}
 

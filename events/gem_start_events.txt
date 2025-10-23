@@ -16,7 +16,6 @@ country_event = {
 		# capital_scope = { planet_event = { id = gem_pop.2 } }
 		capital_scope = { f93_seed_gem_planet_with_stuff = yes }
 		country_event = { id = GEM_start.1001 }
-		country_event = { id = GEM_start.1002 }
     }
 }
 country_event = { # for play without Lithoid DLC
@@ -47,29 +46,6 @@ immediate = {
 			}
 			set_planet_flag = grand_court
 		}
-    }
-}
-country_event = {
-    id = GEM_start.1002
-    hide_window = yes
-    is_triggered_only = yes
-    trigger = { owner = { is_lithoid_empire = yes } }
-
-	immediate = {
-		get_galaxy_setup_value = {
-			setting = mid_game_year
-			which = partway_to_mid_game_years_var
-			scale_by = 0.75
-		}
-        # capital_scope = {
-		# 	add_district  = {
-		# 		district_type = district_kindergarten
-		# 		ignore_cap = yes
-		# 	}
-		# 	add_district  = {
-		# 		district_type = district_kindergarten
-		# 	}
-		# }
     }
 }
 country_event = { #for crystal gems to have a gem producing building
@@ -211,7 +187,6 @@ country_event = {
 			}
 		}
 		country_event = { id = GEM_start.1001 }
-		country_event = { id = GEM_start.1002 }
 		country_event = { id = gem_era.1 }
     }
 }

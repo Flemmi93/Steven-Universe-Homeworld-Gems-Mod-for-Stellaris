@@ -91,16 +91,16 @@
 # 	}
 # }
 
-# # A pop amount has been grown
-# # This = Planet scope
-# # From = Country
-# # FromFrom = Pop group
-# # local_pop_amount = variable of how much was grown
-# on_pop_growth = {
-# 	events = {
-# 		gem_pop.2
-# 	}
-# }
+# A pop amount has been grown
+# This = Planet scope
+# From = Country
+# FromFrom = Pop group
+# local_pop_amount = variable of how much was grown
+on_pop_growth = {
+	events = {
+		gem_pop.2
+	}
+}
 
 # # This = construction ship
 # # From = planet it is built on

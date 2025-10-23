@@ -17,6 +17,7 @@ pc_gem = {
 	#tile_set = pc_gem
 	
 	icon = GFX_planet_type_gem
+	icon_large = GFX_planet_type_machine_big
 	
 	atmosphere_color 		= hsv { 0.75 0.10 0.60  }		#DONE
 	atmosphere_intensity 	= 0.8
@@ -53,6 +54,7 @@ pc_gemworld = { # gemworld terraforming
 	#tile_set = pc_gem
 	
 	icon = GFX_planet_type_gem
+	icon_large = GFX_planet_type_machine_big
 	
 	atmosphere_color 		= hsv { 0.75 0.10 0.60  }		#DONE
 	atmosphere_intensity 	= 0.8
