@@ -190,6 +190,22 @@
  era_crystal_gems: "The Crystal Gems"
  gem_era.5.desc: "The Era of the Gems is over, their power is broken and now the empire is ruled by lesser gems"
  gem_era.5.a: "§WI'll be back§!"
+#Pebbles
+ gem_pink_pebbles: "Pebbles"
+ gem_pink_pebbles_desc: "Small and Cute gems that exists around $pink_d$ and attend her every daily need."
+ job_f93_gem_pink_pebbles: "$gem_pink_pebbles$"
+ job_f93_gem_pink_pebbles_desc: "$gem_pink_pebbles_desc$"
+ pink_pebbles_stage_1: "$gem_pink_pebbles$"
+ pink_pebbles_stage_1_desc: "$gem_pink_pebbles_desc$"
+ pink_pebbles_stage_2: "$gem_pink_pebbles$"
+ pink_pebbles_stage_2_desc: "$gem_pink_pebbles_desc$"
+ pm_pink_pebbles: "$gem_pink_pebbles$"
+ pm_pink_pebbles_desc: "$gem_pink_pebbles_desc$"
+ f93_pink_pebbles_project: "Project: $gem_pink_pebbles$"
+ f93_pink_pebbles_project_DESC: "Project: $gem_pink_pebbles$ is the mindchild of $pink_d$ herself, a group of spezialized gems that attend to her daily needs.\n\n§GThis will surly keep her happy!§!"
+ mod_job_f93_gem_pink_pebbles_add: "$gem_pink_pebbles$ Jobs"
+ mod_pop_f93_gem_pink_pebbles_workforce_mult: "Job Efficiency for $gem_pink_pebbles$"
+ mod_job_f93_gem_pink_pebbles_automated_workforce_mult: "$gem_pink_pebbles$ $MOD_BONUS_AUTOMATED_WORKFORCE_MULT$"
  
 #Kindergarten
  d_kindergarten_small: "Small Kindergarten Site"

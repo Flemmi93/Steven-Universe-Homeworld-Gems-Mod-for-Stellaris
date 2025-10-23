@@ -33,7 +33,7 @@ country_event = {
 #This Event Block can increase and descrease her mood.
 
 # Lowers Pink mood score ba a set amount during a set time interval, no lower than 20
-# Her mood Wanders over time to a Stable Point
+# Her mood wanders over time to a Stable Point
 country_event = {
 	id = pink_situation.11
 	is_triggered_only = yes
@@ -58,16 +58,16 @@ country_event = {
 			change_pink_mood = { ADD = 1 }
 		}
 	}
+
 }
 
-#Starts Pink's Tantrum Situation and Event every time her mood goes low
+#Starts Pink's Tantrum Situation and Event every time her mood goes below 30
 country_event = {
 	id = pink_situation.2
 	is_triggered_only = yes
 	hide_window = yes
 	event_chain = pink_event_chain
 	trigger = {
-		has_global_flag = f93_mood_system_enabled
 		is_diamond_empire = yes
 		has_event_chain = pink_event_chain
 		check_variable = { which = f93_pinks_mood_variable value < 30 }
@@ -105,6 +105,32 @@ country_event = {
 			modifier = pm_pink_tantrum_1
 			days = 360
 			mult = 0.1
+		}
+	}
+}
+#Pink misstreats her Attendance Gems and increases maintenance of rulers
+country_event = {
+	id = pink_situation.22
+	title = pink_situation.22.name
+	desc = pink_situation.22.desc
+	picture = "GFX_evt_gem_homeworld"
+	event_chain = pink_event_chain
+	is_triggered_only = yes
+	trigger = {
+		has_country_flag = f93_pink_mood_3
+	}
+	immediate = {
+		random_owned_leader = {
+			limit = { has_trait = trait_ruler_diamond NOT = { has_trait = trait_pink_court } }
+			save_event_target_as = target_leader
+		}
+	}
+	option = {
+		name = pink_situation.22.a
+		add_modifier = {
+			modifier = pm_pink_tantrum_3
+			days = 360
+			mult = 0.01
 		}
 	}
 }
