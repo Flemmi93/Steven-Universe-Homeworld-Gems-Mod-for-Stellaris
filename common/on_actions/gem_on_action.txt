@@ -28,12 +28,7 @@
 # 		gem_gal_invasion.001 #spwn the invasion 0.75 of midgame timer
 # 	}
 # }
-# on_yearly_pulse_country = {
-# 	events = {
-# 		gem_gal_invasion.005 #reinforced the gem invasders with 15% of years passed with soldiers yearly. just so they have some on hand should AI bug and not build any.
-# 		gem_off_colors.0009
-# 	}
-# }
+
 # on_monthly_pulse_country = {
 # 	events = {
 # 		gem_events_misc.002
@@ -52,12 +47,6 @@
 # 	}
 # }
 
-# # X years has passed since a planet was colonized (won't trigger on empire homeworld)
-# on_colony_1_year_old = {
-# 	events = {
-# 		gem_diamond_choice.1002 #triggers step counter
-# 	}
-# }
 # # X years has passed since a planet was colonized (won't trigger on empire homeworld)
 # on_colony_5_years_old = {
 # 	events = {
@@ -82,25 +71,6 @@
 # 	}
 # }
 
-# #You have changed the location of your capital. Also called when a country's capital is first set e.g. during galaxy creation (but then FROM is not set)
-# #this/root = new capital
-# #from = old capital
-# on_capital_changed = {
-# 	events = {
-# 		gem_diamond_choice.0001
-# 	}
-# }
-
-# A pop amount has been grown
-# This = Planet scope
-# From = Country
-# FromFrom = Pop group
-# local_pop_amount = variable of how much was grown
-on_pop_growth = {
-	events = {
-		gem_pop.2
-	}
-}
 
 # # This = construction ship
 # # From = planet it is built on
@@ -109,7 +79,6 @@ on_pop_growth = {
 # 		#make it possible for pink to be happy with observation post
 # 	}
 # }
-
 
 # # Executed as a leader has died
 # # This = Country
@@ -145,13 +114,3 @@ on_pop_growth = {
 # 	}
 # }
 
-
-# # Fired whenever a new owner is set for a planet, following a war or through trade
-# # This = Planet scope
-# # From = Country scope (new owner)
-# # FromFrom = Country scope (previous owner, if any)
-# on_planet_transfer = {
-# 	events = {
-# 		gem_kg.5
-# 	}
-# }

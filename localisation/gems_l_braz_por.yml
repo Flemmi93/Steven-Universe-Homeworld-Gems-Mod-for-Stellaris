@@ -397,7 +397,7 @@
  gem_kg.2.b: "Don't show me this again!"
  
  gem_diamond_choice.name: "Grand this world"
- gem_diamond_choice.desc: "Let's see, §Y[This.GetName]§! shall be governed by..."
+ gem_diamond_choice.desc: "Some time has passed, since we took posession of this world. Now it is ready for one of our $su_diamond_class_plural$\n\nLet's see, §Y[This.GetName]§! shall be governed by..."
  gem_diamond_choice.desc1: "§P'I want a Colony!'§!\n\nLet's see, §Y[This.GetName]§! shall be governed by..."
  gem_diamond_choice.desc2: "§P'I want my own planet!'§!\n\nLet's see, §Y[This.GetName]§! shall be governed by..."
  gem_diamond_choice.desc3: "§P'I am just as important as you!'§!\n\nLet's see, §Y[This.GetName]§! shall be governed by..."

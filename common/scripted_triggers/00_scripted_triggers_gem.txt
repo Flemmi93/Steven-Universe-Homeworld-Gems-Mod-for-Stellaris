@@ -83,18 +83,11 @@ planet_belongs_to_pink_diamond = {
 	}
 }
 
-is_part_of_a_court = {
-	calc_true_if = {
-		amount = 1
-		has_modifier = pop_mod_white_court
-		has_pop_group_flag = flag_white_court
-		has_modifier = pop_mod_yellow_court
-		has_pop_group_flag = flag_yellow_court
-		has_modifier = pop_mod_blue_court
-		has_pop_group_flag = flag_blue_court
-		has_modifier = pop_mod_pink_court
-		has_pop_group_flag = flag_pink_court
-		has_modifier = pop_mod_off_colors
-		has_pop_group_flag = flag_off_colors
+has_a_court_assigned = {
+	OR ={
+		has_modifier = pm_gem_white_court
+		has_modifier = pm_gem_yellow_court
+		has_modifier = pm_gem_blue_court
+		has_modifier = pm_gem_pink_court
 	}
 }

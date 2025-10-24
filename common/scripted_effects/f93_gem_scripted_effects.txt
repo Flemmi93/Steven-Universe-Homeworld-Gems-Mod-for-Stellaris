@@ -80,22 +80,14 @@ create_gem_empire_normal = {
 			species = last_created_species
 		}
 		while = {
-			count = 3000
+			count = 1000
 			create_pop_group = { species = last_created_species }
 		}
 		set_capital = yes
 		f93_seed_gem_planet_with_stuff = yes
 		remove_building = building_colony_shelter
 		if = { limit = { NOT = { has_building = building_capital } } add_building = building_capital }
-		add_district = district_city
-		add_district = district_city
-		add_district = district_generator
-		add_district = district_generator
-		add_district = district_mining
-		add_district = district_mining
-		add_district = district_city
-		add_district = district_city
-		add_district = district_mining
+		
 		add_building = building_research_lab_1
 		solar_system = {
 			every_fleet_in_system = {
@@ -108,6 +100,12 @@ create_gem_empire_normal = {
 
 f93_seed_gem_planet_with_stuff = {
 	set_planet_flag = planet_had_court_before
+	random_owned_pop_job = {
+		limit = { has_job_type = gem_unemployment }
+		kill_assigned_pop_amount = {
+			percentage = 0.95
+		}
+	}
 	set_variable = { which = gem_pops_made value = trigger:gem_pop_amount }
 	owner_main_species = {
 		set_habitability_trait = { trait = trait_pc_gem_preference }
@@ -165,6 +163,22 @@ f93_seed_gem_planet_with_stuff = {
 		}
 		add_building = building_buff_kindergarten2
 	}
+	while = {
+		limit = { num_districts = { type = district_city value < 3 } }
+		add_district = district_city
+	}
+	while = {
+		limit = { num_districts = { type = district_generator value < 3 } }
+		add_district = district_generator
+	}
+	while = {
+		limit = { num_districts = { type = district_mining value < 4 } }
+		add_district = district_mining
+	}
+	add_building = {
+		zone = zone_research_unity
+		building = building_gem_spire2
+	}
 }
 update_diamond_court_modifier = {
 	if = {
@@ -203,6 +217,12 @@ f93_create_humans = {
 		random_galaxy_species = {
 			limit = { is_human_species = yes }
 			save_event_target_as = human_species
+			save_global_event_target_as = gem_human_species
+		}
+	}
+	if = {
+		limit = {
+			NOT = { exists = event_target:human_species }
 		}
 		create_species = {
 			name = NAME_Human
@@ -215,10 +235,24 @@ f93_create_humans = {
 				trait = "trait_adaptive"
 				trait = "trait_nomadic"
 				trait = "trait_wasteful"
-				trait = "trait_presapient_earthbound"
 			}
 		}
 		last_created_species = { save_event_target_as = human_species }
+		last_created_species = { save_global_event_target_as = gem_human_species }
+	}
+	modify_species = {
+		species = event_target:gem_human_species
+		remove_trait = trait_void_dweller_1
+		remove_trait = trait_void_dweller_2
+		ideal_planet_class = "pc_continental"
+		change_scoped_species = no
+		sapient = no
+	}
+}
+f93_make_human_sappient = {
+	modify_species = {
+		species = event_target:gem_human_species
+		sapient = yes
 	}
 }
 f93_create_human_nation_primitive = {
@@ -280,6 +314,7 @@ update_global_gem_potential = {
 		}
 	}
 }
+#finds out how many free jobs exists without a unenployed or civilian gem to fill that job
 update_global_gems_to_be_made = {
 	owner = {
 		set_variable = { which = gems_to_be_made value = 0 }
@@ -289,16 +324,22 @@ update_global_gems_to_be_made = {
 				variable = free_jobs
 			}
 			owner = {
+				export_trigger_value_to_variable = {
+					trigger = num_unemployed
+					variable = num_unemployed
+				}
 				change_variable = { which = gems_to_be_made value = prev.free_jobs  }
 			}
 		}
 		subtract_variable = { which = gems_to_be_made value = value:num_gem_pops_civilian }
+		subtract_variable = { which = gems_to_be_made value = value:num_gem_unemployed }
 	}
 }
+#divide the gems to be made number equally to all planets that can produce gems in their kindergartens.
 update_planet_gems_to_be_made = {
 	set_variable = { which = gems_to_be_made_here value = owner.gems_to_be_made }
 	owner = {
-		set_variable = { which = active_kindergartens value = 1 }
+		set_variable = { which = active_kindergartens value = 0 }
 		every_owned_planet = {
 			limit = {
 				is_variable_set = gem_pops_made
@@ -307,9 +348,30 @@ update_planet_gems_to_be_made = {
 			owner = { change_variable = { which = active_kindergartens value = 1 } }
 		}
 		if = {
-			limit = { check_variable = { which = active_kindergartens value > 1 } }
-			subtract_variable = { which = active_kindergartens value = 1 }
+			limit = { check_variable = { which = active_kindergartens value < 1 } }
+			set_variable = { which = active_kindergartens value = 1 }
 		}
 	}
 	divide_variable = { which = gems_to_be_made_here value = owner.active_kindergartens }
+	#limits the number of gems to be made to the geoloid potential
+	if = {
+		limit = { check_variable = { which = gems_to_be_made_here value > value:geoloid_potential } }
+		set_variable = { which = gems_to_be_made_here value = value:geoloid_potential }
+	}
+}
+f93_pink_gets_earth = {
+	event_target:gem_planet_earth_event = {
+		add_modifier = { modifier = "pm_gem_human_experiement" }
+		set_planet_flag = gem_planet_earth_owned_by_pink_pre_era_2
+		# assign_leader = event_target:gem_pink_diamond
+		if = {
+			limit = { NOT = { has_planet_flag = comes_from_court1001 } }
+			planet_event = { id = f93_diamond_court.1001 }
+		}
+		planet_event = { id = gem_off_colors.1000 }
+		owner = {
+			set_country_flag = pink_got_earth
+			remove_country_flag = pink_wants_earth
+		}
+	}
 }

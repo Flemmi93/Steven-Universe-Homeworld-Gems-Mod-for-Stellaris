@@ -24,11 +24,11 @@ country_event = {
 	show_sound = event_mystic_reveal
 	is_triggered_only = yes
 
-
+	#every time a colony is founded and they havent converted Farms to Kindergarten deposits they should get this
 	trigger = {
 		is_geo_empire = yes
 		owner = {
-			NOT = { has_country_flag = gem_dontshow_kg_tut } #every time a colony is founded and they havent converted Farms to Kindergarten deposits they should get this
+			NOT = { has_country_flag = gem_dontshow_kg_tut } 
 		}
 	}
 
@@ -76,18 +76,5 @@ planet_event = {
 				remove_deposit = yes
 			}
 		}
-	}
-}
-
-
-country_event = {
-	id = gem_kg.6
-	hide_window = yes
-	is_triggered_only = yes
-
-	immediate = {
-		update_global_gem_potential = yes
-		update_global_gems_to_be_made = yes
-		every_owned_planet = { update_planet_gems_to_be_made = yes }
 	}
 }

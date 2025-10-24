@@ -55,6 +55,19 @@
 # Then you can use $PARAM1$ in the script value and it will replace it with value1
 
 
+three_quarter_to_mid_game_year = {
+	base = -1
+	complex_trigger_modifier = {
+		trigger = check_galaxy_setup_value
+		parameters = {
+			setting = mid_game_year
+		}
+		mode = mult
+	}
+	multiply = 3
+	divide = 4
+}
+
 #Counts the number of Pops that arent gems
 f93_local_pop_numbers = {
 	complex_trigger_modifier = {
@@ -143,6 +156,13 @@ num_gem_pops_civilian = {
 				is_pop_category = civilian
 			}
 		}
+		mode = add
+	}
+}
+num_gem_unemployed = {
+	complex_trigger_modifier = {
+		trigger = num_unemployed
+		trigger_scope = owner
 		mode = add
 	}
 }

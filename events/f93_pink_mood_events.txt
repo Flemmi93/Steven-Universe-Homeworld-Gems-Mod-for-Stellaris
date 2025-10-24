@@ -68,7 +68,6 @@ country_event = {
 	hide_window = yes
 	event_chain = pink_event_chain
 	trigger = {
-		is_diamond_empire = yes
 		has_event_chain = pink_event_chain
 		check_variable = { which = f93_pinks_mood_variable value < 30 }
 	}

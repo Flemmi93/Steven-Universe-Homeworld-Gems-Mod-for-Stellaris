@@ -7,12 +7,6 @@ country_event = {
     trigger = { has_origin = origin_geoform }
     
 	immediate = {
-		get_galaxy_setup_value = {
-			setting = mid_game_year
-			which = partway_to_mid_game_years_var
-			scale_by = 0.75
-		}
-
 		# capital_scope = { planet_event = { id = gem_pop.2 } }
 		capital_scope = { f93_seed_gem_planet_with_stuff = yes }
 		country_event = { id = GEM_start.1001 }
@@ -25,11 +19,6 @@ is_triggered_only = yes
 trigger = { owner = { is_lithoid_empire = no } }
 
 immediate = {
-		get_galaxy_setup_value = {
-			setting = mid_game_year
-			which = partway_to_mid_game_years_var
-			scale_by = 0.75
-		}
         capital_scope = {
 			add_district  = {
 				# district_type = district_kindergarten
@@ -55,11 +44,6 @@ country_event = { #for crystal gems to have a gem producing building
     trigger = { has_origin = origin_crystal_gems }
 		
 	immediate = {
-		get_galaxy_setup_value = {
-			setting = mid_game_year
-			which = partway_to_mid_game_years_var
-			scale_by = 0.75
-		}
 		save_global_event_target_as = crystal_gems_nation
 		capital_scope = {
 			add_deposit = d_galaxy_warp_damaged
@@ -159,11 +143,6 @@ country_event = {
 	}
     
 	immediate = {
-		get_galaxy_setup_value = {
-			setting = mid_game_year
-			which = partway_to_mid_game_years_var
-			scale_by = 0.75
-		}
         capital_scope = {
 			
 			# 2 kindargarden
@@ -206,11 +185,7 @@ country_event = {
 		is_ai = no
 	}
 	immediate = {
-		get_galaxy_setup_value = {
-			setting = mid_game_year
-			which = partway_to_mid_game_years_var
-			scale_by = 0.75
-		}
+
 	}
 	option = {
 		name = YES

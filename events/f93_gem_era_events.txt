@@ -21,6 +21,7 @@ event = {
 			country_event = { id = gem_diamond_ruler.0001 }
 			country_event = { id = GEM_start.1000 } # setting up homeworld
 			set_variable = { which = active_kindergartens value = 1 }
+			country_event = { id = f93_gem_update.2 days = 28 }
 		}
 		#Enbable the Mood System
 		# country_event = { id = pink_situation.1 days = 10 } #starts pinks mood system

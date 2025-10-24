@@ -1,0 +1,47 @@
+namespace = f93_gem_update
+
+
+#Triggers the update one day before monthly change
+country_event = {
+	id = f93_gem_update.1
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { is_geo_empire = yes }
+	immediate = {
+		country_event = { id = f93_gem_update.2 days = 28 }
+	}
+}
+country_event = {
+	id = f93_gem_update.2
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		update_global_gem_potential = yes
+		update_global_gems_to_be_made = yes
+		every_owned_planet = { update_planet_gems_to_be_made = yes }
+		set_variable = { which = num_gem_pops value = value:num_gem_pops }
+	}
+}
+country_event = {
+	id = f93_gem_update.3
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { is_diamond_empire = yes }
+	immediate = {
+		# country_event = { id = pink_situation.11 }
+		# country_event = { id = pink_situation.2 }
+		if = {
+			limit = {
+				is_ai = no
+				#once the mood system is read a this global flag will be set on game start and all new saves will use the new system without breaking old saves
+				NOT = { has_global_flag = f93_mood_system_enabled }
+				is_variable_set = num_gem_pops
+				OR = {
+					check_variable = { which = num_gem_pops value >= 12000 }
+					mid_game_years_passed >= value:halfway_to_mid_game_year
+				}
+			}
+			country_event = { id = gem_off_colors.0009 }
+		}
+	}
+}

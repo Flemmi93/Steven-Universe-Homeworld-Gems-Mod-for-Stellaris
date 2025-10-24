@@ -115,7 +115,7 @@ gem_planet_initializer = {
 		has_ring = yes
 		deposit_blockers = none
 		modifiers = none
-		
+		flags = { gem_homeworld }
 		init_effect = {
 			prevent_anomaly = yes		
 		}

@@ -65,10 +65,10 @@ special_project = {
 		add_modifier = {
 			modifier = pink_pebbles_stage_1
 		}
-		random_owned_leader = {
-			limit = { has_leader_flag = pink_diamond_flag }
+		# random_owned_leader = {
+		# 	limit = { has_leader_flag = pink_diamond_flag }
 			
-		}
+		# }
 		# Scopes:
 		#	THIS = project scope (matches setting in "event_scope" i.e. ship/planet/country)
 		#	FROM = location scope, if set (usually a planet)

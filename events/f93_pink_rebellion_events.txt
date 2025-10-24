@@ -9,7 +9,7 @@ country_event = {
 
 	trigger = {
 		is_diamond_empire = yes
-		years_passed = halfway_to_mid_game_year
+		years_passed = value:halfway_to_mid_game_year
 	}
 
 	immediate = {

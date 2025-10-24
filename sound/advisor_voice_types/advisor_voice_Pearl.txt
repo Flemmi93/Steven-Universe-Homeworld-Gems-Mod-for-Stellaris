@@ -7,11 +7,11 @@ Pearl = {
 	}
 }
 
-Pearlfiltered = {
-	name = "Pearl filtered"
-    icon = "gfx/interface/icons/pearlfiltered.dds"
+# Pearlfiltered = {
+# 	name = "Pearl filtered"
+#     icon = "gfx/interface/icons/pearlfiltered.dds"
 	
-	weight = {
-		base = 0
-	}
-}
+# 	weight = {
+# 		base = 0
+# 	}
+# }

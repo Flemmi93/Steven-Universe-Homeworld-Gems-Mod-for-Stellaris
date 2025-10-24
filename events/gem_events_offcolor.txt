@@ -4,37 +4,16 @@ namespace = gem_off_colors
 # Era One #
 ###########
 
-#counts colonies for earth spawn
+#counts colonies/pops for earth spawn
 country_event = {
 	id = gem_off_colors.0009
 	hide_window = yes
 	is_triggered_only = yes
-	trigger = {
-		is_ai = no
-		is_geo_empire = yes
-		OR = {
-			AND = {
-				count_controlled_planet = {
-					count > 5
-					limit = { is_colony = yes }
-				}
-				count_owned_pop_amount = { count > 6000 }
-			}
-			count_owned_pop_amount = { count > 12000 }
-			years_passed > partway_to_mid_game_years_var
-		}
-	}
 	immediate = {
 		if = {
 			limit = {
-				any_owned_planet = { has_planet_flag = planet_earth }
+				exists = event_target:gem_planet_earth_event
 			}
-			random_owned_planet = {
-				limit = { has_planet_flag = planet_earth }
-				set_planet_flag = gem_planet_earth
-				save_global_event_target_as = gem_planet_earth_event
-			}
-			
 			country_event = { id = gem_off_colors.0020 days = 3 }
 		}
 		else = { country_event = { id = gem_off_colors.0010 } }
@@ -47,11 +26,9 @@ country_event = {
 	hide_window = yes
 	fire_only_once = yes
 	is_triggered_only = yes
-	trigger = { is_ai = no NOT = { has_global_flag = f93_mood_system_enabled } }
 	immediate = {
 		set_global_flag = gem_sol_discovered
-		set_country_flag = gem_sol_system
-		set_country_flag = pink_wants_earth
+		set_country_flag = gem_sol_system_spawned
 		capital_scope.solar_system = { save_event_target_as = source }
 		random_system = {
 			limit = {
@@ -85,7 +62,7 @@ country_event = {
 		event_target:gem_planet_earth_event = {
 			f93_create_humans = yes
 			create_pop = {
-				species = last_created_species
+				species = event_target:gem_human_species
 				size = 1000
 				random = 1000
 			}
@@ -103,10 +80,6 @@ country_event = {
 	picture = "GFX_evt_gem_pale_rose1"
 	show_sound = offcolors_01 #replace with offcolor music-clip
 	is_triggered_only = yes
-	
-	trigger = {
-		is_geo_empire = yes
-	}
 	option = {
 		trigger = {
 			NOR = { has_country_flag = pink_got_earth any_owned_planet = { has_planet_flag = planet_earth } }
@@ -123,7 +96,6 @@ country_event = {
 		random_owned_planet = {
 			limit = { has_planet_flag = planet_earth }
 			planet_event = { id = gem_off_colors.1040 }
-			save_global_event_target_as = gem_planet_earth_event
 		}
 	}
 	
@@ -132,7 +104,7 @@ country_event = {
 		name = MARVELOUS
 	}
 }
-#a colony for pink
+#a colony for pink (unused)
 system_event = {
 	id = gem_off_colors.0021
 	title = "gem_off_colors.0020.name"
@@ -154,11 +126,9 @@ country_event = {
 	picture = "GFX_evt_gem_pale_rose1"
 	show_sound = event_screams
 	is_triggered_only = yes
-	
-	trigger = {
-		NOT = { has_country_flag = pink_got_earth }
-	}
-	
+
+	trigger = { NOT = { has_country_flag = pink_got_earth } }
+
 	option = {
 		trigger = {
 			event_target:gem_planet_earth_event = {
@@ -184,13 +154,7 @@ country_event = {
 				is_homeworld = no
 			}
 		}
-		event_target:gem_planet_earth_event = {
-			add_modifier = { modifier = "pm_gem_human_experiement" }
-			set_planet_flag = gem_planet_earth_owned_by_pink_pre_era_2
-			#assign_leader = event_target:gem_pink_diamond
-		}
-		set_country_flag = pink_got_earth
-		remove_country_flag = pink_wants_earth
+		f93_pink_gets_earth = yes
 	}
 }
 
@@ -203,9 +167,7 @@ country_event = {
 	show_sound = event_bad_omen
 	is_triggered_only = yes
 	
-	trigger = {
-		NOT = { has_country_flag = pink_got_earth }
-	}
+	trigger = { NOT = { has_country_flag = pink_got_earth } }
 	
 	option = {
 		trigger = {
@@ -232,13 +194,7 @@ country_event = {
 				is_homeworld = no
 			}
 		}
-		event_target:gem_planet_earth_event = {
-			add_modifier = { modifier = "pm_gem_human_experiement" }
-			set_planet_flag = gem_planet_earth_owned_by_pink_pre_era_2
-			assign_leader = event_target:gem_pink_diamond
-		}
-		set_country_flag = pink_got_earth
-		remove_country_flag = pink_wants_earth
+		f93_pink_gets_earth = yes
 	}
 }
 
@@ -255,6 +211,7 @@ country_event = {
 	
 	option = {
 		trigger = {
+			is_diamond_empire = yes
 			event_target:gem_planet_earth_event = {
 				is_homeworld = yes
 			}
@@ -272,6 +229,7 @@ country_event = {
 			owner = {
 				capital_scope = {
 					random_owned_pop_group = {
+						limit = { is_geoloid = yes }
 						kill_pop_group = {
 							pop_group = this
 							amount = 1
@@ -280,11 +238,11 @@ country_event = {
 				}
 			}
 		}
-		hidden_effect = { country_event = { id = gem_off_colors.0032 days = 480 random = 120 } }
+		hidden_effect = { country_event = { id = gem_off_colors.0031 days = 980 random = 120 } }
 	}
 	
 	option = {
-		trigger = { NOT = { is_diamond_empire = yes } }
+		trigger = { is_diamond_empire = no }
 		name = gem_off_colors.0030.d
 		custom_tooltip = gem_off_colors.0030.d.desc
 	}
@@ -292,18 +250,13 @@ country_event = {
 	option = {
 		name = gem_off_colors.0031.b
 		trigger = {
+			is_diamond_empire = yes
 			event_target:gem_planet_earth_event = {
 				is_colony = yes
 				is_homeworld = no
 			}
 		}
-		event_target:gem_planet_earth_event = {
-			add_modifier = { modifier = "pm_gem_human_experiement" }
-			set_planet_flag = gem_planet_earth_owned_by_pink_pre_era_2
-			#assign_leader = event_target:gem_pink_diamond #happens later, could happer here tho
-		}
-		set_country_flag = pink_got_earth
-		remove_country_flag = pink_wants_earth
+		f93_pink_gets_earth = yes
 	}
 }
 
@@ -313,10 +266,6 @@ planet_event = {
 	hide_window = yes
 	is_triggered_only = yes
 	fire_only_once = yes
-	pre_triggers = {
-		is_homeworld = no
-		is_ai = no
-	}
 	trigger = {
 			OR = {
 				has_planet_flag = gem_planet_earth
@@ -325,10 +274,8 @@ planet_event = {
 			owner = { has_country_flag = era_one_flag is_ai = no }
 		}
 	immediate = {
-		planet_event = { id = gem_off_colors.1010 days = 360 } # appearence of an unknown Rose Gem
-		#planet_event = { id = gem_diamond_choice.1001 } # forces to assign this planet to pink
-		set_planet_flag = f93_no_more_deposit_eating
-		}
+		planet_event = { id = gem_off_colors.1010 days = 360 random = 72 } # appearence of an unknown Rose Gem
+	}
 }
 
 #Rose Quartz shows up
@@ -340,13 +287,11 @@ planet_event = {
 	desc = gem_off_colors.1010.desc
 	picture = "GFX_evt_gem_rose_kindergarten"
 	show_sound = event_bad_omen
-	trigger = { owner = { is_ai = no } }
 	option = {
 		name = PECULIAR
 		create_pop_group = { size = 1 species = owner_main_species }
 		hidden_effect = {
 			planet_event = { id = gem_off_colors.1020 days = 60 random  = 30 }
-			save_global_event_target_as = gem_planet_earth_event
 		}
 	}
 	after = {
@@ -718,12 +663,7 @@ planet_event = {
 	picture = "GFX_evt_gem_pinkvisits"
 	trigger = { owner = { has_country_flag = era_one_flag } }
 	immediate = {
-		hidden_effect = {
-			event_target:gem_pink_diamond = { set_leader_flag = pink_earth_flag }
-		}
-		owner = {
-			set_country_flag = pink_got_earth
-		}
+		event_target:gem_pink_diamond = { set_leader_flag = pink_earth_flag }
 	}
 	option = {
 		name = gem_off_colors.1040.a
@@ -766,10 +706,9 @@ planet_event = {
 	hide_window = yes
 	pre_triggers = { is_ai = no}
 	trigger = {
-		AND = {
-			NOT = { has_leader_flag = pink_earth_flag }
-			owner = { has_country_flag = era_one_flag }
-		}
+		exists = event_target:gem_planet_earth_event
+		NOT = { has_leader_flag = pink_earth_flag }
+		owner = { has_country_flag = era_one_flag }
 	}
 	immediate = {
 		event_target:gem_planet_earth_event = {

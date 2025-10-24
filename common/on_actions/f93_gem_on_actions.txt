@@ -8,51 +8,103 @@ on_game_start = {
 
 on_monthly_pulse_country = {
 	events = {
-		pink_situation.11
-		pink_situation.2
-		gem_kg.6
+		f93_gem_update.1
+		f93_gem_update.3
 	}
 }
 
-# # Scope: Leader (just before unassignment)
-# # Fires if a leader is unassigned from their position for any reason (including being assigned elsewhere)
-# on_leader_unassigned = {
+# on_yearly_pulse_country = {
 # 	events = {
-# 		gem_off_colors.1042
+# 		gem_off_colors.0009
 # 	}
 # }
+# Fired whenever a new owner is set for a planet, following a war or through trade
+# This = Planet scope
+# From = Country scope (new owner)
+# FromFrom = Country scope (previous owner, if any)
+on_planet_transfer = {
+	events = {
+		gem_kg.5
+	}
+}
 
-# # Executed as a leader has died
-# # This = Country
-# # From = Leader
-# on_leader_death_notify = {
-# 	events = {
-# 		gem_diamond_ruler.100
-# 	}
-# }
-# # Executed as a leader has died
-# # This = Country
-# # From = Leader
-# on_leader_death_no_notify = {
-# 	events = {
-# 		gem_diamond_ruler.100
-# 	}
-# }
 
-# # Executed as a leader has been fired
-# # This = Country
-# # From = Leader
-# on_leader_fired = {
-# 	events = {
-# 		gem_diamond_ruler.101
-# 	}
-# }
+# Scope: Leader (just before unassignment)
+# Fires if a leader is unassigned from their position for any reason (including being assigned elsewhere)
+on_leader_unassigned = {
+	events = {
+		gem_off_colors.1042
+	}
+}
 
-# # We changed a species right
-# # This = pop
-# on_pop_rights_change = {
-# 	events = {
-# 		gem_events_misc.003
-# 	}
-# }
+# Executed as a leader has died
+# This = Country
+# From = Leader
+on_leader_death_notify = {
+	events = {
+		gem_diamond_ruler.100
+	}
+}
+# Executed as a leader has died
+# This = Country
+# From = Leader
+on_leader_death_no_notify = {
+	events = {
+		gem_diamond_ruler.100
+	}
+}
 
+# Executed as a leader has been fired
+# This = Country
+# From = Leader
+on_leader_fired = {
+	events = {
+		gem_diamond_ruler.101
+	}
+}
+
+# We changed a species right
+# This = pop
+on_pop_rights_change = {
+	events = {
+		gem_events_misc.003
+	}
+}
+
+# X years has passed since a planet was colonized (won't trigger on empire homeworld)
+on_colony_1_year_old = {
+	events = {
+		gem_diamond_choice.1002 #triggers step counter
+	}
+}
+
+# Fired whenever a new owner is set for a planet, following a war or through trade
+# This = Planet scope
+# From = Country scope (new owner)
+# FromFrom = Country scope (previous owner, if any)
+on_planet_transfer = {
+	events = {
+		gem_diamond_choice.1002 #triggers step counter
+	}
+}
+
+
+# A pop amount has been grown
+# This = Planet scope
+# From = Country
+# FromFrom = Pop group
+# local_pop_amount = variable of how much was grown
+on_pop_growth = {
+	events = {
+		gem_pop.2
+	}
+}
+
+#You have changed the location of your capital. Also called when a country's capital is first set e.g. during galaxy creation (but then FROM is not set)
+#this/root = new capital
+#from = old capital
+on_capital_changed = {
+	events = {
+		f93_diamond_court.1
+	}
+}

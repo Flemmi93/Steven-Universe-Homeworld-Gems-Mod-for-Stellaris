@@ -68,8 +68,8 @@ kindergartener = {
 			has_lithoids = no
 			f93_can_make_gems = yes
 			check_variable = { which = gems_to_be_made_here value >= 100 }
-			planet_resettlement_unemployed_mult = 25
 		}
+		planet_resettlement_unemployed_mult = 25
 		GEOLOID_bonus_pop_growth = 9
 	}
 	triggered_planet_modifier = {
@@ -77,8 +77,8 @@ kindergartener = {
 			has_lithoids = no
 			f93_can_make_gems = yes
 			check_variable = { which = gems_to_be_made_here value >= 1000 }
-			planet_resettlement_unemployed_mult = 25
 		}
+		planet_resettlement_unemployed_mult = 25
 		GEOLOID_bonus_pop_growth = 10
 	}
 	# triggered_planet_modifier = {
@@ -132,7 +132,7 @@ kindergartener = {
 	# 	GEOLOID_bonus_pop_growth = @gem_bonus_growth_large
 	# }
 
-#Bonus from techs
+ #Bonus from techs
 	triggered_planet_modifier = {
 		potential = {
 			has_lithoids = no
@@ -265,7 +265,7 @@ kindergartener = {
 	}
 
 
-#Bonus from traditions
+ #Bonus from traditions
 	triggered_planet_modifier = {
 		potential = {
 			has_lithoids = no
@@ -308,7 +308,7 @@ kindergartener = {
 			LITHOID_bonus_pop_growth_mult = 0.1
 		}
 	}
-#Bonus from any ascension
+ #Bonus from any ascension
 	triggered_planet_modifier = {
 		potential = {
 			has_lithoids = no
@@ -561,4 +561,60 @@ f93_gem_pink_pebbles = {
 	weight = {
 		weight = 4000
 	}
+}
+
+
+gem_unemployment = {
+	category = worker_unemployment
+	count_as_available_for_ai = yes
+	allow_only_same_rank_pops = no
+
+	swappable_data = {
+		default = {
+			condition_string = WORKER_JOB_TRIGGER
+			icon = unemployment
+			building_icon = building_capital
+		}
+	}
+
+	possible = {
+		hidden_trigger = { exists = owner }
+		is_geo_empire = yes
+	}
+
+	possible_pre_triggers = {
+		has_owner = yes
+		is_enslaved = no
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+
+	resources = {
+		category = unemployment_resources
+		upkeep = {
+			consumer_goods = 0.1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			always = yes
+		}
+		planet_amenities_add = 10
+		mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
+	}
+
+	possible_precalc = can_fill_worker_job
+
+	weight = {
+		weight = 1
+	}
+
+	demotion = {
+	}
+
+	is_capped_by_modifier = no
+	can_set_priority = no
+	contributes_to_diplo_weight = yes
 }

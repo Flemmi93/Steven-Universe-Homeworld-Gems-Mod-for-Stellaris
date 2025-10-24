@@ -63,8 +63,7 @@ trait_geoloid = {
 	infertile = yes
 	
 	modifier = {
-		pc_gem_habitability = 1
-		pc_gemworld_habitability = 1
+		pop_civilian_workforce_mult = -10
 		pop_environment_tolerance = 1.5
 		planet_jobs_food_upkeep_mult = -1
 		planet_jobs_food_produces_mult = -0.75
