@@ -3,11 +3,11 @@
 #################
 # ASCENSION PATHS
 #################
-ap_diamond_ascention = {
+ap_diamond_ascension = {
 	on_enabled = {
-		custom_tooltip = "ap_diamond_ascention_tooltip"
+		custom_tooltip = "ap_diamond_ascension_tooltip"
 		hidden_effect = {
-			country_event = { id = gem_diamond_ascention.0001 }
+			country_event = { id = gem_diamond_ascension.0001 }
 		}
 	}
 	modifier = {
@@ -16,7 +16,7 @@ ap_diamond_ascention = {
 	potential = {
 		NOT = { always = yes }
 		is_diamond_empire = yes
-		NOT = {	has_ascension_perk = ap_diamond_ascention }
+		NOT = {	has_ascension_perk = ap_diamond_ascension }
 	}
 
 	ai_weight = {

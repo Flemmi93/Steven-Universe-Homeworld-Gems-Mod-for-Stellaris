@@ -1,4 +1,10 @@
-kindergartener = {
+@f93_slow_bonus_growth1 = 1
+@f93_slow_bonus_growth2 = 5
+@f93_slow_bonus_growth3 = 10
+@f93_resettle_tier2 = 25
+@f93_resettle_tier3 = 50
+
+kindergartner = {
 	category = specialist
 
 	swappable_data = {
@@ -33,17 +39,19 @@ kindergartener = {
 			has_lithoids = yes
 			f93_can_make_gems = yes
 			check_variable = { which = gems_to_be_made_here value >= 1 }
+			check_variable = { which = gems_to_be_made_here value < 100 }
 		}
-		LITHOID_bonus_pop_growth = 1
+		LITHOID_bonus_pop_growth = @f93_slow_bonus_growth1
 	}
 	triggered_planet_modifier = {
 		potential = {
 			has_lithoids = yes
 			f93_can_make_gems = yes
 			check_variable = { which = gems_to_be_made_here value >= 100 }
+			check_variable = { which = gems_to_be_made_here value < 1000 }
 		}
-		planet_resettlement_unemployed_mult = 25
-		LITHOID_bonus_pop_growth = 9
+		planet_resettlement_unemployed_mult = @f93_resettle_tier2
+		LITHOID_bonus_pop_growth = @f93_slow_bonus_growth2
 	}
 	triggered_planet_modifier = {
 		potential = {
@@ -51,8 +59,8 @@ kindergartener = {
 			f93_can_make_gems = yes
 			check_variable = { which = gems_to_be_made_here value >= 1000 }
 		}
-		planet_resettlement_unemployed_mult = 25
-		LITHOID_bonus_pop_growth = 10
+		planet_resettlement_unemployed_mult = @f93_resettle_tier3
+		LITHOID_bonus_pop_growth = @f93_slow_bonus_growth3
 	}
 	
 	triggered_planet_modifier = {
@@ -60,17 +68,19 @@ kindergartener = {
 			has_lithoids = no
 			f93_can_make_gems = yes
 			check_variable = { which = gems_to_be_made_here value >= 1 }
+			check_variable = { which = gems_to_be_made_here value < 100 }
 		}
-		GEOLOID_bonus_pop_growth = 1
+		GEOLOID_bonus_pop_growth = @f93_slow_bonus_growth1
 	}
 	triggered_planet_modifier = {
 		potential = {
 			has_lithoids = no
 			f93_can_make_gems = yes
 			check_variable = { which = gems_to_be_made_here value >= 100 }
+			check_variable = { which = gems_to_be_made_here value < 1000 }
 		}
-		planet_resettlement_unemployed_mult = 25
-		GEOLOID_bonus_pop_growth = 9
+		planet_resettlement_unemployed_mult = @f93_resettle_tier2
+		GEOLOID_bonus_pop_growth = @f93_slow_bonus_growth2
 	}
 	triggered_planet_modifier = {
 		potential = {
@@ -78,59 +88,9 @@ kindergartener = {
 			f93_can_make_gems = yes
 			check_variable = { which = gems_to_be_made_here value >= 1000 }
 		}
-		planet_resettlement_unemployed_mult = 25
-		GEOLOID_bonus_pop_growth = 10
+		planet_resettlement_unemployed_mult = @f93_resettle_tier3
+		GEOLOID_bonus_pop_growth = @f93_slow_bonus_growth3
 	}
-	# triggered_planet_modifier = {
-	# 	potential = {
-	# 		has_lithoids = yes
-	# 		f93_can_make_gems = yes
-	# 		# owner = { has_policy_flag = kindergarten_output_small }
-	# 	}
-	# 	LITHOID_bonus_pop_growth = @gem_bonus_growth_small
-	# }
-	# triggered_planet_modifier = {
-	# 	potential = {
-	# 		has_lithoids = no
-	# 		f93_can_make_gems = yes
-	# 		# owner = { has_policy_flag = kindergarten_output_small }
-	# 	}
-	# 	GEOLOID_bonus_pop_growth = @gem_bonus_growth_small
-	# }
-
-	# triggered_planet_modifier = {
-	# 	potential = {
-	# 		has_lithoids = yes
-	# 		f93_can_make_gems = yes
-	# 		owner = { has_policy_flag = kindergarten_output_medium }
-	# 	}
-	# 	LITHOID_bonus_pop_growth = @gem_bonus_growth_medium
-	# }
-	# triggered_planet_modifier = {
-	# 	potential = {
-	# 		has_lithoids = no
-	# 		f93_can_make_gems = yes
-	# 		owner = { has_policy_flag = kindergarten_output_medium }
-	# 	}
-	# 	GEOLOID_bonus_pop_growth = @gem_bonus_growth_medium
-	# }
-
-	# triggered_planet_modifier = {
-	# 	potential = {
-	# 		has_lithoids = yes
-	# 		f93_can_make_gems = yes
-	# 		owner = { has_policy_flag = kindergarten_output_large }
-	# 	}
-	# 	LITHOID_bonus_pop_growth = @gem_bonus_growth_large
-	# }
-	# triggered_planet_modifier = {
-	# 	potential = {
-	# 		has_lithoids = no
-	# 		f93_can_make_gems = yes
-	# 		owner = { has_policy_flag = kindergarten_output_large }
-	# 	}
-	# 	GEOLOID_bonus_pop_growth = @gem_bonus_growth_large
-	# }
 
  #Bonus from techs
 	triggered_planet_modifier = {
@@ -407,7 +367,7 @@ kindergartener = {
 	}
 }
 #white hive jobs
-kindergartener_drone = {
+kindergartner_drone = {
 	category = complex_drone
 	
 	swappable_data = {
@@ -608,10 +568,7 @@ gem_unemployment = {
 	possible_precalc = can_fill_worker_job
 
 	weight = {
-		weight = 1
-	}
-
-	demotion = {
+		weight = 0
 	}
 
 	is_capped_by_modifier = no

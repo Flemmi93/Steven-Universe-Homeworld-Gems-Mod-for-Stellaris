@@ -342,7 +342,7 @@ gem_1000_year_war = {
 	}
 	
 	approach = {
-		name = approach_lost_controll
+		name = approach_lost_control
 		icon = GFX_situation_approach_shrug
 		icon_background = GFX_situation_approach_bg_red
 		potential = {
@@ -377,7 +377,7 @@ gem_1000_year_war = {
 			desc = "gem_sit_something_happens"
 		}
 		modifier = {
-			current_situation_approach = approach_lost_controll
+			current_situation_approach = approach_lost_control
 			add = 1
 			desc = "gem_sit_something_happens"
 		}

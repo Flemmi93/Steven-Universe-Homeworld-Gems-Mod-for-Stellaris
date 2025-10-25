@@ -108,31 +108,31 @@ country_event = {
 	}
 }
 #Pink misstreats her Attendance Gems and increases maintenance of rulers
-country_event = {
-	id = pink_situation.22
-	title = pink_situation.22.name
-	desc = pink_situation.22.desc
-	picture = "GFX_evt_gem_homeworld"
-	event_chain = pink_event_chain
-	is_triggered_only = yes
-	trigger = {
-		has_country_flag = f93_pink_mood_3
-	}
-	immediate = {
-		random_owned_leader = {
-			limit = { has_trait = trait_ruler_diamond NOT = { has_trait = trait_pink_court } }
-			save_event_target_as = target_leader
-		}
-	}
-	option = {
-		name = pink_situation.22.a
-		add_modifier = {
-			modifier = pm_pink_tantrum_3
-			days = 360
-			mult = 0.01
-		}
-	}
-}
+# country_event = {
+# 	id = pink_situation.22
+# 	title = pink_situation.22.name
+# 	desc = pink_situation.22.desc
+# 	picture = "GFX_evt_gem_homeworld"
+# 	event_chain = pink_event_chain
+# 	is_triggered_only = yes
+# 	trigger = {
+# 		has_country_flag = f93_pink_mood_3
+# 	}
+# 	immediate = {
+# 		random_owned_leader = {
+# 			limit = { has_trait = trait_ruler_diamond NOT = { has_trait = trait_pink_court } }
+# 			save_event_target_as = target_leader
+# 		}
+# 	}
+# 	option = {
+# 		name = pink_situation.22.a
+# 		add_modifier = {
+# 			modifier = pm_pink_tantrum_3
+# 			days = 360
+# 			mult = 0.01
+# 		}
+# 	}
+# }
 
 #Second stage events
 

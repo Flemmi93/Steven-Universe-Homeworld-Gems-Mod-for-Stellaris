@@ -69,6 +69,11 @@ country_event = {
 		}
 		force_remove_civic = civic_tetrarchy
 		force_add_civic = civic_triarchy
+		
+		random_owned_leader = {
+			limit = { has_leader_flag = pink_diamond_flag }
+			save_event_target_as = gem_pink_diamond
+		}
 	}
 	option = {
 		trigger = { has_country_flag = gem_yellow_rules }
@@ -80,11 +85,15 @@ country_event = {
 			set_country_flag = block_revival_of_pink
 			event_target:gem_pink_diamond = {
 				kill_leader = {
-				class = official
-				show_notification = yes
+					class = official
+					show_notification = yes
 				}
 			}
-			set_heir = event_target:gem_blue_diamond
+			random_owned_leader = {
+				limit = { has_leader_flag = blue_diamond_flag }
+				save_event_target_as = diamond
+			}
+			set_heir = event_target:diamond
 		}
 		add_resource = { minerals = 1 }
 	}
@@ -105,7 +114,12 @@ country_event = {
 				heir = yes
 				show_notification = yes
 			}
-			set_heir = event_target:gem_yellow_diamond
+			
+			random_owned_leader = {
+				limit = { has_leader_flag = yellow_diamond_flag }
+				save_event_target_as = diamond
+			}
+			set_heir = event_target:diamond
 		}
 		add_resource = { minerals = 1 }
 	}

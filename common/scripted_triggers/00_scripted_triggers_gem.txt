@@ -91,3 +91,16 @@ has_a_court_assigned = {
 		has_modifier = pm_gem_pink_court
 	}
 }
+
+is_close_to_earth = {
+	any_system_within_border = {
+		any_neighbor_system = {
+			any_system_planet = {
+				OR = {
+					has_planet_flag = planet_earth
+					has_planet_flag = gem_planet_earth
+				}
+			}
+		}
+	}
+}

@@ -35,8 +35,8 @@ country_event = {
 				distance = {
 					source = event_target:source
 					type = hyperlane
-					min_jumps = 5
-					max_jumps = 7
+					min_jumps = 3
+					max_jumps = 6
 				}
 			}
 			save_event_target_as = gem_sol_spawn_system
@@ -78,14 +78,18 @@ country_event = {
 	title = "gem_off_colors.0020.name"
 	desc = "gem_off_colors.0020.desc"
 	picture = "GFX_evt_gem_pale_rose1"
+	fire_only_once = yes
 	show_sound = offcolors_01 #replace with offcolor music-clip
 	is_triggered_only = yes
+	immediate = {
+		set_country_flag = pink_wants_a_colony
+	}
 	option = {
 		trigger = {
 			NOR = { has_country_flag = pink_got_earth any_owned_planet = { has_planet_flag = planet_earth } }
 		}
 		name = MARVELOUS
-		hidden_effect = { country_event = { id = gem_off_colors.0030 days = 480 random = 120 } }
+		hidden_effect = { country_event = { id = gem_off_colors.0029 days = 480 random = 120 } }
 	}
 
 	option = {
@@ -115,6 +119,22 @@ system_event = {
 
 	option = {
 		name = MARVELOUS
+	}
+}
+# holding patter until earth is near enough
+country_event = {
+	id = gem_off_colors.0029
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = { is_close_to_earth = no }
+			country_event = { id = gem_off_colors.0029 days = 360 }
+		}
+		else = {
+			country_event = { id = gem_off_colors.0030 }
+		}
 	}
 }
 
@@ -265,16 +285,15 @@ planet_event = {
 	id = gem_off_colors.1000
 	hide_window = yes
 	is_triggered_only = yes
-	fire_only_once = yes
-	trigger = {
-			OR = {
-				has_planet_flag = gem_planet_earth
-				has_planet_flag = planet_earth
-			}
-			owner = { has_country_flag = era_one_flag is_ai = no }
-		}
+	# fire_only_once = yes
 	immediate = {
-		planet_event = { id = gem_off_colors.1010 days = 360 random = 72 } # appearence of an unknown Rose Gem
+		if = {
+			limit = { check_variable = { which = gem_pops_made value < 300 } }
+			planet_event = { id = gem_off_colors.1000 days = 360 }
+		}
+		else = {
+			planet_event = { id = gem_off_colors.1010 days = 360 random = 72 } # appearance of an unknown Rose Gem
+		}
 	}
 }
 
@@ -489,7 +508,6 @@ planet_event = {
 	picture = "GFX_evt_gem_visit_to_earth"
 	option = { 
 		name = gem_off_colors.1033.a
-		create_pop_group = { species = owner_main_species }
 		hidden_effect = {
 			random_targeting_situation = {
 				limit = { is_situation_type = gem_1000_year_war }
@@ -549,7 +567,7 @@ planet_event = {
 	immediate = {
 		random_targeting_situation = {
 			limit = { is_situation_type = gem_1000_year_war }
-			set_situation_approach = approach_lost_controll
+			set_situation_approach = approach_lost_control
 		}
 		if = {
 			limit = {	
@@ -663,6 +681,12 @@ planet_event = {
 	picture = "GFX_evt_gem_pinkvisits"
 	trigger = { owner = { has_country_flag = era_one_flag } }
 	immediate = {
+		owner = {
+			random_owned_leader = {
+				limit = { has_leader_flag = pink_diamond_flag }
+				save_event_target_as = gem_pink_diamond
+			}
+		}
 		event_target:gem_pink_diamond = { set_leader_flag = pink_earth_flag }
 	}
 	option = {
@@ -685,9 +709,13 @@ planet_event = {
 	desc = gem_off_colors.1041.desc
 	picture = "GFX_evt_gem_pinkvisits"
 	immediate = {
-		hidden_effect = {
-			event_target:gem_pink_diamond = { set_leader_flag = pink_earth_flag }
+		owner = {
+			random_owned_leader = {
+				limit = { has_leader_flag = pink_diamond_flag }
+				save_event_target_as = gem_pink_diamond
+			}
 		}
+		event_target:gem_pink_diamond = { set_leader_flag = pink_earth_flag }
 	}
 	option = {
 		name = gem_off_colors.1041.a
@@ -955,6 +983,10 @@ planet_event = {
 
 	immediate = {
 		owner = {
+			random_owned_leader = {
+				limit = { has_leader_flag = pink_diamond_flag }
+				save_event_target_as = gem_pink_diamond
+			}
 			event_target:gem_pink_diamond = { set_leader_flag = pink_earth_flag }
 			event_target:gem_planet_earth_event = {
 				assign_leader = event_target:lapis_lazuli_target 
@@ -1064,14 +1096,14 @@ country_event = {
 	option = {
 		name = gem_off_colors.2001.a
 		capital_scope = {
-			add_modifier = { modifier = "pm_boubled_rose_gem" }
+			add_modifier = { modifier = "pm_bubbled_rose_gem" }
 		}
 		while = {
 			count = 2
 			random_planet_within_border = {
 				limit = {
 					has_planet_flag = yellow_court_flag
-					NOT = { has_modifier = "pm_boubled_rose_gem" } 
+					NOT = { has_modifier = "pm_bubbled_rose_gem" } 
 				}
 				random_owned_pop_group = { 
 					limit = { has_trait = trait_geoloid }
@@ -1080,7 +1112,7 @@ country_event = {
 						amount = 1
 					}
 				}
-				add_modifier = { modifier = "pm_boubled_rose_gem" }
+				add_modifier = { modifier = "pm_bubbled_rose_gem" }
 			}
 		}
 	}
@@ -1144,7 +1176,7 @@ planet_event = {
 	picture = "GFX_evt_gem_tridiamondattack"
 	is_triggered_only = yes	
 	immediate = {
-		remove_modifier = pm_gem_human_experiement
+		remove_modifier = pm_gem_human_experiment
 	}
 
 	option = {

@@ -7,5 +7,5 @@ tags={
 }
 name="Steven Universe Homeworld Gems"
 picture="thumbnail.jpg"
-supported_version="v4.0.*"
+supported_version="v4.1.*"
 remote_file_id="1104213489"

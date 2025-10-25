@@ -65,7 +65,7 @@ pc_gemworld = { # gemworld terraforming
 	modifier = {
 		planet_jobs_produces_mult = 0.10
 		pop_housing_usage_mult = -0.10
-		job_kindergartener_add = 100
+		job_kindergartner_add = 100
 	}
 	
 	spawn_odds = 0

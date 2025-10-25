@@ -21,6 +21,7 @@ pm_gem_blue_court = {
 	icon = "gfx/interface/icons/planet_modifiers/gem_blue_diamond.dds"
 	icon_frame = 1
 	pop_lifestyle_trade_value_mult = 0.2
+	planet_researchers_produces_mult = 0.2
 	planet_jobs_upkeep_mult = -0.1
 }
 pm_gem_pink_court = {
@@ -44,8 +45,8 @@ pm_off_color_saboteur = {
 	icon_frame = 3
 	planet_building_build_speed_mult = -0.20
 }
-pm_boubled_rose_gem = {
-	icon = "gfx/interface/icons/planet_modifiers/pm_boubled_rose_gem.dds"
+pm_bubbled_rose_gem = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_bubbled_rose_gem.dds"
 	icon_frame = 2
 	planet_crime_mult = -0.15
 }
@@ -109,8 +110,8 @@ pm_gem_less_assemble3 = {
 	GEOLOID_bonus_pop_growth_mult = -0.2
 	job_soldier_add = 1000
 }
-pm_gem_human_experiement = {
-	icon = "gfx/interface/icons/planet_modifiers/pm_human_experiement.dds"
+pm_gem_human_experiment = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_human_experiment.dds"
 	icon_frame = 2
 	BIOLOGICAL_bonus_pop_growth_mult = -0.15
 	planet_amenities_mult = 0.20
@@ -129,8 +130,8 @@ pm_gem_cookie_cats = {
 	country_base_food_produces_add = 1
 	pop_happiness = 0.01
 }
-pm_f93_certified_kindergartener = {
-	icon = "gfx/interface/icons/planet_modifiers/f93_pm_certified_kindergartener.dds"
+pm_f93_certified_kindergartner = {
+	icon = "gfx/interface/icons/planet_modifiers/f93_pm_certified_kindergartner.dds"
 	icon_frame = 1
 }
 pm_f93_human_preserve = {

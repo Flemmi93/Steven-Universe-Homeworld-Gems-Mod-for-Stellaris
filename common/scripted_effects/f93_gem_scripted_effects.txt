@@ -153,6 +153,10 @@ f93_seed_gem_planet_with_stuff = {
 	add_modifier = { modifier = pm_gem_blue_court mult = value:blue_mod_scale }
 	add_modifier = { modifier = pm_gem_pink_court mult = value:pink_mod_scale }
 	add_deposit = d_galaxy_warp
+	while = {
+		limit = { any_deposit = { is_deposit_type = d_hibernating_lithoids } }
+		remove_deposit = d_hibernating_lithoids
+	}
 	if = {
 		limit = {
 			NOR = {
@@ -361,7 +365,7 @@ update_planet_gems_to_be_made = {
 }
 f93_pink_gets_earth = {
 	event_target:gem_planet_earth_event = {
-		add_modifier = { modifier = "pm_gem_human_experiement" }
+		add_modifier = { modifier = "pm_gem_human_experiment" }
 		set_planet_flag = gem_planet_earth_owned_by_pink_pre_era_2
 		# assign_leader = event_target:gem_pink_diamond
 		if = {

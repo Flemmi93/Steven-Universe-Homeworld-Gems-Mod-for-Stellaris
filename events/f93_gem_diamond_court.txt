@@ -1,5 +1,5 @@
 namespace = f93_diamond_court
-#Moves all 4 Diamon Courts to the Capital Planet
+#Moves all 4 Diamond Courts to the Capital Planet
 planet_event = {
     id = f93_diamond_court.1
 	picture = "GFX_evt_gem_homeworld"
@@ -44,8 +44,8 @@ planet_event = {
 #1. option is always the main option of the choice
 #2. option is for when the diamond is dead, this is made so the fail text and the tooltip change.
 #3. this option shows when the diamond is the last one alive.
-#option 2 and 3 dont do much currently since diamonds cant die at this time.
-#Pink can be freely assigne to any planet Qualifying for her, once she wants a colony
+#option 2 and 3 don't do much currently since diamonds cant die at this time.
+#Pink can be freely assign to any planet Qualifying for her, once she wants a colony
 	
 planet_event = { #What Diamond shall rule over this Planet
     id = f93_diamond_court.1001
@@ -116,13 +116,17 @@ planet_event = { #What Diamond shall rule over this Planet
 ###################
 	option = { #main option for white
 		trigger = {
-			AND = {
-				owner = { has_country_flag = white_alive }
-				NAND = {
+			owner = { has_country_flag = white_alive }
+			NAND = {
+				OR = {
 					has_planet_flag = gem_planet_earth
-					owner = { has_country_flag = era_one_flag }
+					has_planet_flag = f93_valid_pink_colony@root
+					has_planet_flag = planet_earth
 				}
+				owner = { has_country_flag = era_one_flag }
 			}
+		}
+		allow = {
 		}
 		name = "gem_diamond_choice.a"
 		custom_tooltip = "gem_diamond_choice.a.desc"
@@ -168,10 +172,14 @@ planet_event = { #What Diamond shall rule over this Planet
 		trigger = {
 			AND = {
 				owner = { has_country_flag = yellow_alive }
-				NAND = {
+			NAND = {
+				OR = {
 					has_planet_flag = gem_planet_earth
-					owner = { has_country_flag = era_one_flag }
+					has_planet_flag = f93_valid_pink_colony@root
+					has_planet_flag = planet_earth
 				}
+				owner = { has_country_flag = era_one_flag }
+			}
 			}
 		}
 		name = "gem_diamond_choice.b"
@@ -217,6 +225,14 @@ planet_event = { #What Diamond shall rule over this Planet
 	option = { # main option for blue
 		trigger = {
 			owner = { has_country_flag = blue_alive }
+			NAND = {
+				OR = {
+					has_planet_flag = gem_planet_earth
+					has_planet_flag = f93_valid_pink_colony@root
+					has_planet_flag = planet_earth
+				}
+				owner = { has_country_flag = era_one_flag }
+			}
 		}
 		name = "gem_diamond_choice.c"
 		custom_tooltip = "gem_diamond_choice.c.desc"
@@ -276,7 +292,7 @@ planet_event = { #What Diamond shall rule over this Planet
 			update_diamond_court_modifier = yes
 		}
 	}
-	option = { # option for pink to take the "earth" for the first time. any earth
+	option = { # option for pink to take the "earth" for the first time. any 'earth'
 		trigger = {
 			has_planet_flag = f93_valid_pink_colony@root
 			owner = {
@@ -292,7 +308,30 @@ planet_event = { #What Diamond shall rule over this Planet
 		custom_tooltip = "gem_diamond_choice.d.desc"
 		hidden_effect = {
 			set_planet_flag = pink_court_flag
-			add_modifier = { modifier = "pm_gem_human_experiement" }
+			add_modifier = { modifier = "pm_gem_human_experiment" }
+			add_modifier = { modifier = pm_gem_pink_court }
+		}
+	}
+	option = { # option for pink to take the "earth" for the first time. THE earth
+		trigger = {
+			has_planet_flag = planet_earth
+			owner = {
+				has_country_flag = era_one_flag
+				has_country_flag = pink_alive
+				NOT = { has_country_flag = pink_wants_a_colony }
+				NOT = {
+					owner = { any_owned_planet = { is_capital = no has_modifier = pm_gem_pink_court } }
+				}
+			}
+		}
+		name = "gem_diamond_choice.d.earth"
+		custom_tooltip = "gem_diamond_choice.d.desc"
+		hidden_effect = {
+			set_planet_flag = pink_court_flag
+			add_modifier = { modifier = "pm_gem_human_experiment" }
+			add_modifier = { modifier = pm_gem_pink_court }
+			planet_event = { id = gem_off_colors.1000 }
+			owner = { set_country_flag = pink_got_earth }
 		}
 	}
 	option = { # option when pink is dead.
@@ -303,7 +342,10 @@ planet_event = { #What Diamond shall rule over this Planet
 	}
 	option = { # option for era one, its always grayed out and has random names.
 		trigger = {
-			NOT = { has_planet_flag = f93_valid_pink_colony@root }
+			NOR = {
+				has_planet_flag = f93_valid_pink_colony@root
+				has_planet_flag = planet_earth
+			}
 			owner = { has_country_flag = era_one_flag }
 			owner = { has_country_flag = pink_alive }
 			NOT = { owner = { has_country_flag = pink_wants_a_colony } }

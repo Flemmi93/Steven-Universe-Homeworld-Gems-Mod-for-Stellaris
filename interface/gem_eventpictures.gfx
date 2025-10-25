@@ -183,26 +183,26 @@ spriteTypes = {
 		alwaystransparent = yes
 	}
 	spriteType = {
-		name = "GFX_evt_gem_white_accension"
-		texturefile = "gfx/event_pictures/gem_accension_white.dds"
+		name = "GFX_evt_gem_white_ascension"
+		texturefile = "gfx/event_pictures/gem_ascension_white.dds"
 		masking_texture = "gfx/interface/situation_log/event_mask.dds"
 		alwaystransparent = yes
 	}
 	spriteType = {
-		name = "GFX_evt_gem_yellow_accension"
-		texturefile = "gfx/event_pictures/gem_accension_yellow.dds"
+		name = "GFX_evt_gem_yellow_ascension"
+		texturefile = "gfx/event_pictures/gem_ascension_yellow.dds"
 		masking_texture = "gfx/interface/situation_log/event_mask.dds"
 		alwaystransparent = yes
 	}
 	spriteType = {
-		name = "GFX_evt_gem_blue_accension"
-		texturefile = "gfx/event_pictures/gem_accension_blue.dds"
+		name = "GFX_evt_gem_blue_ascension"
+		texturefile = "gfx/event_pictures/gem_ascension_blue.dds"
 		masking_texture = "gfx/interface/situation_log/event_mask.dds"
 		alwaystransparent = yes
 	}
 	spriteType = {
-		name = "GFX_evt_gem_pink_accension"
-		texturefile = "gfx/event_pictures/gem_accension_pink.dds"
+		name = "GFX_evt_gem_pink_ascension"
+		texturefile = "gfx/event_pictures/gem_ascension_pink.dds"
 		masking_texture = "gfx/interface/situation_log/event_mask.dds"
 		alwaystransparent = yes
 	}

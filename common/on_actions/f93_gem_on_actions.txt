@@ -13,11 +13,6 @@ on_monthly_pulse_country = {
 	}
 }
 
-# on_yearly_pulse_country = {
-# 	events = {
-# 		gem_off_colors.0009
-# 	}
-# }
 # Fired whenever a new owner is set for a planet, following a war or through trade
 # This = Planet scope
 # From = Country scope (new owner)

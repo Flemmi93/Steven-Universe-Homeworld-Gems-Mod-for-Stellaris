@@ -35,7 +35,7 @@ building_gem_spire1 = {
 	}
 
 	triggered_planet_modifier = {
-		potential = { owner = { is_geo_empire = yes } }
+		potential = { exists = owner owner = { is_geo_empire = yes } }
 		job_politician_add = 25
 		planet_researchers_produces_mult = 0.0125
  		planet_researchers_upkeep_mult = 0.0125
@@ -258,7 +258,7 @@ building_buff_kindergarten1 = {
 			}			
 		}
 		modifier = { # Adjust for Balance
-			job_kindergartener_add = 100
+			job_kindergartner_add = 100
 		}
 	}
 	triggered_desc = {
@@ -269,11 +269,12 @@ building_buff_kindergarten1 = {
 				NOT = { has_authority = auth_hive_mind }
 			}
 		}
-		text = job_kindergartener_effect_desc
+		text = job_kindergartner_effect_desc
 	}
 	
 	triggered_planet_modifier = {
 		potential = {
+			exists = owner
 			owner = {
 				has_authority = auth_hive_mind
 			}
@@ -289,7 +290,7 @@ building_buff_kindergarten1 = {
 			owner = { has_origin = origin_crystal_gems }		
 		}
 		modifier = { # Adjust for Balance
-			job_kindergartener_add = 100
+			job_kindergartner_add = 100
 		}
 	}
 	
@@ -371,7 +372,7 @@ building_buff_kindergarten2 = {
 			}			
 		}
 		modifier = { # Adjust for Balance
-			job_kindergartener_add = 200
+			job_kindergartner_add = 200
 		}
 	}
  
@@ -383,7 +384,7 @@ building_buff_kindergarten2 = {
 				NOT = { has_authority = auth_hive_mind }
 			}
 		}
-		text = job_kindergartener_effect_desc
+		text = job_kindergartner_effect_desc
 	}
 	
 	triggered_planet_modifier = {
@@ -403,7 +404,7 @@ building_buff_kindergarten2 = {
 			owner = { has_origin = origin_crystal_gems }		
 		}
 		modifier = { # Adjust for Balance
-			job_kindergartener_add = 200
+			job_kindergartner_add = 200
 		}
 	}
 	
@@ -485,7 +486,7 @@ building_buff_kindergarten3 = {
 			}			
 		}
 		modifier = { # Adjust for Balance
-			job_kindergartener_add = 300
+			job_kindergartner_add = 300
 		}
 	}
 	triggered_desc = {
@@ -496,7 +497,7 @@ building_buff_kindergarten3 = {
 				NOT = { has_authority = auth_hive_mind }
 			}
 		}
-		text = job_kindergartener_effect_desc
+		text = job_kindergartner_effect_desc
 	}
 	
 	triggered_planet_modifier = {
@@ -516,7 +517,7 @@ building_buff_kindergarten3 = {
 			owner = { has_origin = origin_crystal_gems }		
 		}
 		modifier = { # Adjust for Balance
-			job_kindergartener_add = 300
+			job_kindergartner_add = 300
 		}
 	}
 	

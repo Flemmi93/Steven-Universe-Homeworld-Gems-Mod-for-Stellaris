@@ -18,9 +18,9 @@
 #	on_visible = <effect>			# Effect to fire upon site visible, with scope this=country, from=archaeological site.
 #}
 
-white_ascention_dig_site = {
-	picture = "GFX_evt_gem_white_accension"
-	desc = white_ascention_dig_site_desc
+white_ascension_dig_site = {
+	picture = "GFX_evt_gem_white_ascension"
+	desc = white_ascension_dig_site_desc
 	stages = 3
 	allow = {
 		is_ship_class = shipclass_science_ship
@@ -32,17 +32,17 @@ white_ascention_dig_site = {
 	stage = {
 		difficulty = 2
 		icon = GFX_archaeology_runes_A1
-		event = gem_diamond_ascention.1101
+		event = gem_diamond_ascension.1101
 	}
 	stage = {
 		difficulty = 4
 		icon = GFX_archaeology_runes_A2
-		event = gem_diamond_ascention.1102
+		event = gem_diamond_ascension.1102
 	}
 	stage = {
 		difficulty = 6
 		icon = GFX_archaeology_runes_A3
-		event = gem_diamond_ascention.1103
+		event = gem_diamond_ascension.1103
 	}
 	
 	on_roll_failed = {
@@ -51,9 +51,9 @@ white_ascention_dig_site = {
 		}
 	}
 }
-yellow_ascention_dig_site = {
-	picture = "GFX_evt_gem_yellow_accension"
-	desc = yellow_ascention_dig_site_desc
+yellow_ascension_dig_site = {
+	picture = "GFX_evt_gem_yellow_ascension"
+	desc = yellow_ascension_dig_site_desc
 	stages = 3
 	allow = {
 		is_ship_class = shipclass_science_ship
@@ -65,17 +65,17 @@ yellow_ascention_dig_site = {
 	stage = {
 		difficulty = 4
 		icon = GFX_archaeology_runes_B2
-		event = gem_diamond_ascention.1201
+		event = gem_diamond_ascension.1201
 	}
 	stage = {
 		difficulty = 4
 		icon = GFX_archaeology_runes_B3
-		event = gem_diamond_ascention.1202
+		event = gem_diamond_ascension.1202
 	}
 	stage = {
 		difficulty = 6
 		icon = GFX_archaeology_runes_B4
-		event = gem_diamond_ascention.1203
+		event = gem_diamond_ascension.1203
 	}
 	
 	on_roll_failed = {
@@ -84,9 +84,9 @@ yellow_ascention_dig_site = {
 		}
 	}
 }
-blue_ascention_dig_site = {
-	picture = "GFX_evt_gem_blue_accension"
-	desc = blue_ascention_dig_site_desc
+blue_ascension_dig_site = {
+	picture = "GFX_evt_gem_blue_ascension"
+	desc = blue_ascension_dig_site_desc
 	stages = 3
 	allow = {
 		is_ship_class = shipclass_science_ship
@@ -98,17 +98,17 @@ blue_ascention_dig_site = {
 	stage = {
 		difficulty = 2
 		icon = GFX_archaeology_runes_C3
-		event = gem_diamond_ascention.1301
+		event = gem_diamond_ascension.1301
 	}
 	stage = {
 		difficulty = 4
 		icon = GFX_archaeology_runes_C4
-		event = gem_diamond_ascention.1302
+		event = gem_diamond_ascension.1302
 	}
 	stage = {
 		difficulty = 6
 		icon = GFX_archaeology_runes_C5
-		event = gem_diamond_ascention.1303
+		event = gem_diamond_ascension.1303
 	}
 	
 	on_roll_failed = {
@@ -117,9 +117,9 @@ blue_ascention_dig_site = {
 		}
 	}
 }
-pink_ascention_dig_site = {
-	picture = "GFX_evt_gem_pink_accension"
-	desc = pink_ascention_dig_site_desc
+pink_ascension_dig_site = {
+	picture = "GFX_evt_gem_pink_ascension"
+	desc = pink_ascension_dig_site_desc
 	stages = 3
 	allow = {
 		is_ship_class = shipclass_science_ship
@@ -131,17 +131,17 @@ pink_ascention_dig_site = {
 	stage = {
 		difficulty = 2
 		icon = GFX_archaeology_runes_D4
-		event = gem_diamond_ascention.1401
+		event = gem_diamond_ascension.1401
 	}
 	stage = {
 		difficulty = 4
 		icon = GFX_archaeology_runes_D5
-		event = gem_diamond_ascention.1402
+		event = gem_diamond_ascension.1402
 	}
 	stage = {
 		difficulty = 6
 		icon = GFX_archaeology_runes_D6
-		event = gem_diamond_ascention.1403
+		event = gem_diamond_ascension.1403
 	}
 	
 	on_roll_failed = {
