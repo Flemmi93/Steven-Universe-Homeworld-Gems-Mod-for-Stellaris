@@ -420,8 +420,7 @@
  gem_start.1005.c.desc: "There is a §Y50%§! Chance it will happen."
 
  gem_kg.2.name: "This is a §RTutorial§!"
- old_gem_kg.2.desc: "§WThere is a decision on any colonized planet with §GFarming Deposits§W £food£ to turn the §GFarming Deposits§W £food£ into §MKindergarten deposits§W £pops£.\n\nFurthermore there are several §Gadditional §YDecisions§W in this mod. For Example, you can §Gassign§! what §WDi§Yam§Bon§Pd§W controls what planet.\n\nThere is also a Special Project in the Situation log."
- gem_kg.2.desc: "§WThere is a decision on any colonized planet with §GFarming Deposits§W £food£ to turn the §GFarming Deposits§W £food£ into §MKindergarten deposits§W £pops£.\n\nFurthermore there are several §Gadditional §YFeatures§W in this mod.\n\nFor Example:\nDecisions\nPolicies\nA Special Project\nBuildings\nRoom for additional items"
+ gem_kg.2.desc: "§WTo facilitate £pops£ pop growth you need to build an $building_buff_kindergarten1$. You can convert $district_farming$ capacity into additional §YKindergarten sites§! via planetary decision. Check the Toolstip of the $building_buff_kindergarten1$ building chain for more info\n\nOther Content:\nDecisions\nPolicies\nA Special Project\nBuildings.
  gem_kg.2.b: "Don't show me this again!"
  
  gem_diamond_choice.name: "Grand this world"

@@ -13,6 +13,14 @@ on_monthly_pulse_country = {
 	}
 }
 
+# A planet has been colonized.
+# Scope = Planet
+on_colonized = {
+	events = {
+		gem_kg.1 #kindergarten tutorial event
+	}
+}
+
 # Fired whenever a new owner is set for a planet, following a war or through trade
 # This = Planet scope
 # From = Country scope (new owner)

@@ -39,14 +39,6 @@
 # 	}
 # }
 
-# # A planet has been colonized.
-# # Scope = Planet
-# on_colonized = {
-# 	events = {
-# 		gem_kg.1 #kindergarten tutorial event
-# 	}
-# }
-
 # # X years has passed since a planet was colonized (won't trigger on empire homeworld)
 # on_colony_5_years_old = {
 # 	events = {
