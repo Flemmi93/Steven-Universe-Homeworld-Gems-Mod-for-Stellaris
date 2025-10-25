@@ -253,10 +253,14 @@ f93_create_humans = {
 		sapient = no
 	}
 }
-f93_make_human_sappient = {
-	modify_species = {
-		species = event_target:gem_human_species
-		sapient = yes
+
+f93_make_human_sapient = {
+	every_owned_pop_group = {
+		limit = { is_human_species = yes }
+		modify_species = {
+			species = event_target:gem_human_species
+			sapient = yes
+		}
 	}
 }
 f93_create_human_nation_primitive = {
@@ -280,8 +284,10 @@ f93_create_human_nation_primitive = {
 			colors = { "green" "dark_green" "null" "null" }
 		}
 		day_zero_contact = no
+
 	}
 	last_created_country = {
+		f93_make_human_sapient = yes
 		set_country_flag = bronze_age
 		set_pre_ftl_age = bronze_age
 		set_graphical_culture = preindustrial_01

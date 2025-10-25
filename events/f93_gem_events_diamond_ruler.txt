@@ -380,9 +380,14 @@ country_event = {
 	picture = "GFX_evt_gem_diamond_choice"
 	is_triggered_only = yes
 	trigger = {
-		is_geo_empire = yes
-		from = { has_trait = trait_ruler_diamond }
-		NOT = { has_country_flag = block_revival_of_pink }
+		OR = {
+			AND = {
+				is_geo_empire = yes
+				from = { has_trait = trait_ruler_diamond }
+				NOT = { has_country_flag = block_revival_of_pink }
+			}
+			from = { is_same_value = event_target:gem_rose_diamond }
+		}
 	}
 	immediate = {
 		clone_leader = {
@@ -468,6 +473,15 @@ country_event = {
 				change_leader_portrait = gemPG
 				#change_leader_class = poofed_gem_class #waiting for recruitable = no to be fixed
 				save_global_event_target_as = pink_got_poofed
+			}
+		}
+		else_if = {
+			limit = { from = { is_same_value = event_target:gem_rose_diamond } }
+			change_leader_portrait = gemD5 #Rose
+			save_global_event_target_as = gem_rose_diamond
+			set_immortal = yes
+			random_owned_army = {
+				set_leader = event_target:gem_rose_diamond
 			}
 		}
 	}

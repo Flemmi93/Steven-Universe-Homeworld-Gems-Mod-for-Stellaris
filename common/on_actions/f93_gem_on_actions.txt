@@ -10,6 +10,7 @@ on_monthly_pulse_country = {
 	events = {
 		f93_gem_update.1
 		f93_gem_update.3
+		gem_diamond_ruler.0002 #make pictures correct.
 	}
 }
 

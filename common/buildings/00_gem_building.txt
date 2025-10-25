@@ -48,9 +48,6 @@ building_gem_spire1 = {
 	
 	resources = {
 		category = planet_buildings
-		produces = {
-			unity = 4
-		}
 		upkeep = {
 			energy =  @b1_upkeep
 		}
@@ -121,9 +118,6 @@ building_gem_spire2 = {
 	
 	resources = {
 		category = planet_buildings
-		produces = {
-		unity = 8
-		}
 		upkeep = {
 		energy =  @b2_upkeep
 		}
@@ -190,9 +184,6 @@ building_gem_spire3 = {
 	
 	resources = {
 		category = planet_buildings
-		produces = {
-		unity = 12
-		}
 		upkeep = {
 		energy =  @b2_upkeep
 		}
@@ -300,10 +291,10 @@ building_buff_kindergarten1 = {
 		}
 		upkeep = {
 		energy =  1
-		minerals =  @b1_upkeep
+			minerals =  @b1_upkeep
 		}
 		cost = {
-		minerals = @b1_minerals
+			minerals = @b1_minerals
 		}
 	}
 	on_built = {
@@ -414,10 +405,10 @@ building_buff_kindergarten2 = {
 		}
 		upkeep = {
 		energy =  1
-		minerals =  @b2_upkeep
+			minerals =  @b2_upkeep
 		}
 		cost = {
-		minerals = @b2_minerals
+			minerals = @b2_minerals
 		}
 	}
 	upgrades = {
@@ -527,10 +518,10 @@ building_buff_kindergarten3 = {
 		}
 		upkeep = {
 		energy =  1
-		minerals =  @b3_upkeep
+			minerals =  @b3_upkeep
 		}
 		cost = {
-		minerals = @b3_minerals
+			minerals = @b3_minerals
 		}
 	}
 	ai_weight = {
@@ -608,20 +599,13 @@ building_gem_sky_arena = {
 
 	resources = {
 		category = planet_buildings
-		produces = {
-		unity = 6
-		}
 		upkeep = {
-		energy =  @b1_upkeep
+			energy =  @b1_upkeep
 		}
 		cost = {
-		minerals = @b1_minerals
+			minerals = @b1_minerals
 		}
 	}
-	
-	 planet_modifier = {
-		planet_amenities_add = 200
-	 }
 
 	triggered_planet_modifier = {
 		potential = {
@@ -629,7 +613,8 @@ building_gem_sky_arena = {
 		}
 		modifier = { # Adjust for Balance
 			job_politician_add = 50
-			job_soldier_add = 300	
+			job_entertainer_add = 150
+			job_soldier_add = 200
 		}
 	}
 	triggered_planet_modifier = {
@@ -642,6 +627,7 @@ building_gem_sky_arena = {
 			job_politician_add = 10
 			job_knight_add = 100
 			job_squire_add = 150
+			job_entertainer_add = 50
 		}
 	}
 	
