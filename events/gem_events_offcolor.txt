@@ -63,8 +63,8 @@ country_event = {
 			f93_create_humans = yes
 			create_pop = {
 				species = event_target:gem_human_species
-				size = 1000
-				random = 1000
+				size = @bronze_age_pops
+				random = 50
 			}
 		}
 		
@@ -1361,7 +1361,7 @@ country_event = { #Bronze Age -> Iron Age
 		random_situation = { add_situation_progress = 3000 }
 		country_event = { id = gem_off_colors.2006 days = 720 random = 360 }
 		capital_scope = {
-			set_variable = { which = earth_pop_buildup value = 6}
+			set_variable = { which = earth_pop_buildup value = 6 }
 			if = {
 				limit = {
 					count_owned_pop_amount = { count < earth_pop_buildup }
@@ -1391,7 +1391,7 @@ country_event = { #Iron Age -> Medieval Age
 		random_situation = { add_situation_progress = 3000 }
 		country_event = { id = gem_off_colors.2007 days = 720 random = 360 }
 		capital_scope = {
-			set_variable = { which = earth_pop_buildup value = 7}
+			set_variable = { which = earth_pop_buildup value = 7 }
 			if = {
 				limit = {
 					count_owned_pop_amount = { count < earth_pop_buildup }
@@ -1421,7 +1421,7 @@ country_event = { #Medieval Age -> Renaissance Age
 		random_situation = { add_situation_progress = 3000 }
 		country_event = { id = gem_off_colors.2008 days = 720 random = 360 }
 		capital_scope = {
-			set_variable = { which = earth_pop_buildup value = 9}
+			set_variable = { which = earth_pop_buildup value = 9 }
 			if = {
 				limit = {
 					count_owned_pop_amount = { count < earth_pop_buildup }
@@ -1451,7 +1451,7 @@ country_event = { #Renaissance Age -> Steam Age
 		random_situation = { add_situation_progress = 3000 }
 		country_event = { id = gem_off_colors.2011 days = 720 random = 360 }
 		capital_scope = {
-			set_variable = { which = earth_pop_buildup value = 12}
+			set_variable = { which = earth_pop_buildup value = 12 }
 			if = {
 				limit = {
 					count_owned_pop_amount = { count < earth_pop_buildup }
@@ -1482,7 +1482,7 @@ country_event = { #Steam Age -> Industrial Age
 		random_situation = { add_situation_progress = 3000 }
 		country_event = { id = gem_off_colors.2012 days = 720 random = 360 }
 		capital_scope = {
-			set_variable = { which = earth_pop_buildup value = 16}
+			set_variable = { which = earth_pop_buildup value = 16 }
 			if = {
 				limit = {
 					count_owned_pop_amount = { count < earth_pop_buildup }
@@ -1514,7 +1514,7 @@ country_event = { #industrial Age -> Machine Age
 		random_situation = { add_situation_progress = 3000 }
 		#country_event = { id = gem_off_colors.2013 days = 720 random = 360 }
 		capital_scope = {
-			set_variable = { which = earth_pop_buildup value = 21}
+			set_variable = { which = earth_pop_buildup value = 21 }
 			if = {
 				limit = {
 					count_owned_pop_amount = { count < earth_pop_buildup }
@@ -1599,7 +1599,7 @@ planet_event = {
 ###########
 # Various #
 ###########
-#makee these events resapwn the diamond
+#make these events respawn the diamond
 #Diamond Deaths, currently unused
 country_event = { # White Diamond Death
 	is_triggered_only = yes
